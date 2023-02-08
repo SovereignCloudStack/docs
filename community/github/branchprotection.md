@@ -1,4 +1,4 @@
-# Branch protection rules
+# Branch Protection Rules
 
 To protect our source code from unwanted changes, we enforce the following branch protection rules for all repositories within our [GitHub organization](https://github.com/SovereignCloudStack):
 
