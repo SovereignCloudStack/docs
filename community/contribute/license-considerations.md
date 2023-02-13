@@ -76,7 +76,7 @@ the AGPL, GNU GPL, GNU LGPL, MPL or the [OSL](https://opensource.org/licenses/OS
 
 Despite this, many of the recent open source projects, especially in the cloud world
 have adopted permissive licenses, such as X11, BSD 3-clause, MIT and especially the popular
-[Apache software license](https://en.wikipedia.org/wiki/Apache_License>) (ASL2), as it
+[Apache software license](https://en.wikipedia.org/wiki/Apache_License) (ASL2), as it
 appears to allow for faster adoption by companies that may not have mature open source
 policies in place or that simply have overly careful lawyers which may be influenced
 by the scare tactics some bad companies have built on top of copyleft licenses.

@@ -4,7 +4,7 @@ This document gives an overview of the test and development cloud resources curr
 
 ## How to request cloud resources
 
-To request access to an existing project, please contact the responsible community member. To apply for a new project, please create a pull request against this document and assign it to the particular CSP team (e.g. @SovereignCloudStack/plusserver, @SovereignCloudStack/wavecon, ...)
+To request access to an existing project, please contact the responsible community member. To apply for a new project, please create a pull request against this document (leave `Unique Identifier` blank) and assign it to the particular CSP team (e.g. @SovereignCloudStack/plusserver, @SovereignCloudStack/wavecon, ...)
 
 ## PlusServer
 
@@ -55,6 +55,7 @@ Service users will have their default_project_id set to a specific project and w
 | 2c9e0e4ef8d44c36807df50b06b3c81d | p500924-cloudmon-target | costelter | Target project for CloudMon tests | 31.12.2023 |
 | 3501db829014406884990a1016f3e25d | p500924-sig-monitoring1 | fkr | SIG Monitoring - cloudmon target | 31.12.2023 |
 | 602778bad3d3470cbe58c4f7611e8eb7 | p500924-dnation | chess-knight | dNation Dev Project | ∞ |
+| 91091d4039a6457db27d48d58bb1b4e4 | p500924-jschoone | jschoone | KaaS dev and evaluation | ∞ |
 |  |  |  |  |  |
 
 ## Wavecon
