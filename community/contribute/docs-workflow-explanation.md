@@ -4,7 +4,7 @@ The aim within this documentation is to have a good developer experience and a l
 
 ## Information Architecture
 
-* All general docs are located within the `SovereignCloudStack/docs` repository.
+* All general docs are located within the [SovereignCloudStack/docs](https://github.com/SovereignCloudStack/docs) repository.
 
 * Docs that explain, guide or contextualize specific modules such as the openstack-image-manager or the k8s-cluster-api-provider reside within their repository in a seperate docs directory.
 

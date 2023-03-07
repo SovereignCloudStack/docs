@@ -1,8 +1,6 @@
 # Adding Docs Guide
 
-When you have landed here, most probably because you have documentation, which should be part of the SCS Documentation.
-
-In this Guide you will learn how to integrate your documentation to the SCS documentation, which you will find on docs.scs.community.
+In this Guide you will learn how to integrate your documentation to the SCS documentation, which you will find on [docs.scs.community](https://docs.scs.community).
 
 ## Step 1 – Documentation type
 
@@ -33,7 +31,7 @@ The documentation files have to be in markdown format and:
 
 ### Step 2 – Adding your repo to the docs.json
 
-File a Pull Request within the `docs-page` repository and add your repo to the docs.package.json:
+File a Pull Request within the [docs-page](https://github.com/SovereignCloudStack/docs-page) repository and add your repo to the docs.package.json:
 
 ```json
 [
@@ -63,7 +61,7 @@ Your doc files contain operational knowledge. Which layer in the stack do they b
 3. kaas
 4. operations
 
-File a Pull Request within the `docs` repository and add your markdown files to the fitting directory.
+File a Pull Request within the [docs](https://github.com/SovereignCloudStack/docs) repository and add your markdown files to the fitting directory.
 
 ## 3. Community documentation
 
