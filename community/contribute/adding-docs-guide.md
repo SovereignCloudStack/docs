@@ -23,7 +23,7 @@ Your repository containing the documentation has to be:
 
 The documentation files have to be in markdown format and:
 
-- comply [SCS licensing guidelines](../git◊hub/dco-and-licenses.md)
+- comply [SCS licensing guidelines](../github/dco-and-licenses.md)
 - match our
   - [markdown file structure guideline](../contribute/doc-files-structure-guide-md)
   - linting Rules
