@@ -10,7 +10,7 @@ Determine the type of your documentation and click to continue.
 2. [Operational documentation](#2-operational-documentation)
 3. [Community documentation](#3-community-documentation)
 
-If unsure don't hestitate to ask us at [Matrix](/community/communication/matrix.md)
+If unsure don't hestitate to ask us at [Matrix](../community/communication/matrix.md)
 
 ## 1. Technical Documentation
 
