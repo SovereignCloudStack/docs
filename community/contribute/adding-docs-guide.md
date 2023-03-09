@@ -16,12 +16,12 @@ If unsure don't hestitate to ask us at [Matrix](https://github.com/SovereignClou
 
 ### Step 1 – Checklist
 
-Your repository containing the documentation has to be:
+Your repository containing the documentation has to...
 
-- a public repository
+- be a public repository
 - contain a directory named `/doc` or `/docs` within root, containing the documentation files
 
-The documentation files have to be in markdown format and:
+The documentation files have to be in markdown format and...
 
 - comply [SCS licensing guidelines](https://github.com/SovereignCloudStack/docs/blob/main/community/github/dco-and-licenses.md)
 - match our
@@ -33,7 +33,7 @@ The documentation files have to be in markdown format and:
 
 File a Pull Request within the [docs-page](https://github.com/SovereignCloudStack/docs-page) repository and add your repo to the docs.package.json:
 
-```json
+```json5
 [
   {
     "repo": "demo-organisation/demo-repository",
@@ -54,6 +54,7 @@ File a Pull Request within the [docs-page](https://github.com/SovereignCloudStac
 Once it is approved and merged, a postinstall script will be triggered within the build process. This initiates downloading, copy and distilling which results in this static generated [documentation](https://docs.scs.community) page – now with your content.
 
 An explanation on how the sync & distill workflow and a guide on how to test it in a local development environment you will find [here](https://github.com/SovereignCloudStack/docs/blob/main/community/contribute/docs-workflow-explanation.md).
+
 
 ## 2. Operational documentation
 
