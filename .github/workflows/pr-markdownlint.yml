@@ -1,4 +1,4 @@
-name: Markdownlint (PR files)
+name: Markdownlint on PR
 
 on:
   pull_request:
@@ -33,13 +33,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: ".nvmrc"
-          cache: yarn
+          cache: npm
+          cache-dependency-path:  package-lock.json
 
-      - name: Install all yarn packages
-        run: yarn --frozen-lockfile
+
+      - name: Install all npm packages
+        run: npm ci
 
       - name: Lint markdown files
         run: |
-          echo "::add-matcher::.github/workflows/markdownlint-problem-matcher.json"
-          files_to_lint="${{ env.DIFF_DOCUMENTS }}"
-          yarn markdownlint-cli2 ${files_to_lint}
+          npm run lint:md ${files_to_lint}

@@ -10,7 +10,7 @@ Determine the type of your documentation and click to continue.
 2. [Operational documentation](#2-operational-documentation)
 3. [Community documentation](#3-community-documentation)
 
-If unsure don't hestitate to ask us at [Matrix](../community/communication/matrix.md)
+If unsure don't hestitate to ask us at [Matrix](https://github.com/SovereignCloudStack/docs/blob/main/community/communication/matrix.md)
 
 ## 1. Technical Documentation
 
@@ -23,11 +23,11 @@ Your repository containing the documentation has to be:
 
 The documentation files have to be in markdown format and:
 
-- comply [SCS licensing guidelines](../github/dco-and-licenses.md)
+- comply [SCS licensing guidelines](https://github.com/SovereignCloudStack/docs/blob/main/community/github/dco-and-licenses.md)
 - match our
-  - [markdown file structure guideline](../contribute/doc-files-structure-guide-md)
+  - [markdown file structure guideline](https://github.com/SovereignCloudStack/docs/blob/main/community/contribute/doc-files-structure-guide-md)
   - linting Rules
-  - [styleguide](../contribute/styleguide.md)
+  - [styleguide](https://github.com/SovereignCloudStack/docs/blob/main/community/contribute/styleguide.md)
 
 ### Step 2 – Adding your repo to the docs.json
 
@@ -35,22 +35,25 @@ File a Pull Request within the [docs-page](https://github.com/SovereignCloudStac
 
 ```json
 [
-    {
-        "repo": "demo-organisation/demo-repository",
-        // link to github organisation and repository 
-        "source": "doc/*.md",
-        // directory which shall be copied. Optional to specify only copying markdown files
-        "target": "docs",
-        // directory where the files should be copied to within the docs-page repo
-        "label": "demo-repository-label"
-        // label for directory. only mandatory if source file is set to copy only *.md files and not the complete directory
-    }
+  {
+    "repo": "demo-organisation/demo-repository",
+    "source": "doc/*.md",
+    "target": "docs",
+    "label": "demo-repository-label"
+  }
 ]
 ```
 
+| key    | description                                                                                                       |
+| ------ | ----------------------------------------------------------------------------------------------------------------- |
+| repo   | link to github organisation and repository                                                                        |
+| source | directory which shall be copied. Optional to specify only copying markdown files                                  |
+| target | directory where the files should be copied to within the docs-page repo                                           |
+| label  | label for directory. only mandatory if source file is set to copy only \*.md files and not the complete directory |
+
 Once it is approved and merged, a postinstall script will be triggered within the build process. This initiates downloading, copy and distilling which results in this static generated [documentation](https://docs.scs.community) page – now with your content.
 
-An explanation on how the sync & distill workflow and a guide on how to test it in a local development environment you will find [here](../contribute/docs-workflow-explanation.md).
+An explanation on how the sync & distill workflow and a guide on how to test it in a local development environment you will find [here](https://github.com/SovereignCloudStack/docs/blob/main/community/contribute/docs-workflow-explanation.md).
 
 ## 2. Operational documentation
 
@@ -65,6 +68,6 @@ File a Pull Request within the [docs](https://github.com/SovereignCloudStack/doc
 
 ## 3. Community documentation
 
-Your doc files contain knowledge regarding our community? Choose the right directory. If unsure don't hestitate to ask us at [Matrix](/community/communication/matrix.md).
+Your doc files contain knowledge regarding our community? Choose the right directory. If unsure don't hestitate to ask us at [Matrix](https://github.com/SovereignCloudStack/docs/blob/main/community/communication/matrix.md).
 
 File a Pull Request within the `docs` repository and add your markdown files to the fitting directory.

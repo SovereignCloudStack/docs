@@ -15,38 +15,38 @@ A brief guide on how to use the resources provided by PlusServer can be found [h
 ### Users
 
 As suggested in [#155](https://github.com/SovereignCloudStack/standards/issues/155) the username for non-"service users" will contain the users github handle and are prefixed with a PlusServer default.
-``prefix-<github handle>``
+`prefix-<github handle>`
 
 > **Note**
->  ATM this is not directly connected to the SovereignCloudStack github org membership, accounts will be created manually for now.
+> ATM this is not directly connected to the SovereignCloudStack github org membership, accounts will be created manually for now.
 
 Example:
 
-| github handle | PlusServer login |
-|:---:|:---:|
-| frosty-geek | u500924-frosty-geek |
-| fkr | u500924-fkr |
-| | |
+| github handle |  PlusServer login   |
+| :-----------: | :-----------------: |
+|  frosty-geek  | u500924-frosty-geek |
+|      fkr      |     u500924-fkr     |
+|               |                     |
 
 > **Note**
-> To easy collaboration & transparency within the SCS team all users will have their default_project_id set to ``p500924-scs-community`` by default and will have full access on all projects listed below.
+> To easy collaboration & transparency within the SCS team all users will have their default_project_id set to `p500924-scs-community` by default and will have full access on all projects listed below.
 
 ### Service Users
 
 Service users will have their default_project_id set to a specific project and will NOT be granted full access to other projects by default.
 
-|         Unique Identifier        | Service User Name          | Full Access on            | Community Contact | Description                                   | Needed until |
-|:--------------------------------:|----------------------------|---------------------------|-------------------|-----------------------------------------------|:------------:|
+|        Unique Identifier         | Service User Name          | Full Access on            | Community Contact | Description                                   | Needed until |
+| :------------------------------: | -------------------------- | ------------------------- | ----------------- | --------------------------------------------- | :----------: |
 | 9a1576af59644a2dbbace773ad17158d | u500924-svc-sig-monitoring | p500924-sig-monitoring1   | fkr               | Service User - SIG Monitoring                 |  31.12.2023  |
 | 4925967416894fd78be6701689059653 | u500924-svc-cloudmon       | p500924-cloudmon-target   | costelter         | Service User - CloudMon Test Project          |  31.12.2023  |
-| f89b3d64ddff4d9d8cadb5e06fa22299 | u500924-svc-healthmonitor  | p500924-scs-healthmonitor | garloff           | Service User - SCS Health Monitor             |       ∞      |
-| 49cc3d72fbdf41fe8dc407f57f026dbf | u500924-svc-standards      | p500924-scs-healthmonitor | itrich            | Service User - SCS Standards Compliance Check |       ∞      |
+| f89b3d64ddff4d9d8cadb5e06fa22299 | u500924-svc-healthmonitor  | p500924-scs-healthmonitor | garloff           | Service User - SCS Health Monitor             |      ∞       |
+| 49cc3d72fbdf41fe8dc407f57f026dbf | u500924-svc-standards      | p500924-scs-healthmonitor | itrich            | Service User - SCS Standards Compliance Check |      ∞       |
 |                                  |                            |                           |                   |                                               |
 
 ### Projects
 
 |        Unique Identifier         | Project Name                | Community Contact | Description                       | Needed until |
-|:--------------------------------:|-----------------------------|-------------------|-----------------------------------|:------------:|
+| :------------------------------: | --------------------------- | ----------------- | --------------------------------- | :----------: |
 | 2237c767cf5f456da19359ed31c1c16b | p500924-scs-community       | fkr               | SCS Community Project             |      ∞       |
 | e7ee61b62ecc417199b154ae4218f25f | p500924-beermann            | tibeer            | Project of Tim Beermann, OSISM    |      ∞       |
 | b43cfafbcf1f4eb08865b2886c29e09b | p500924-cluster-api-session | garloff           | cluster-api hands on session      |      ∞       |
@@ -66,15 +66,14 @@ Service users will have their default_project_id set to a specific project and w
 
 ### Service Users
 
-|         Unique Identifier        | Service User Name          | Full Access on            | Community Contact | Description                                   | Needed until |
-|:--------------------------------:|----------------------------|---------------------------|-------------------|-----------------------------------------------|:------------:|
-| df4af5376bbd4de587c4335622149be7 | scs-standards              |  scs-standards            | itrich            | Service User - SCS Standards Compliance Check |       ∞      |
+|        Unique Identifier         | Service User Name | Full Access on | Community Contact | Description                                   | Needed until |
+| :------------------------------: | ----------------- | -------------- | ----------------- | --------------------------------------------- | :----------: |
+| df4af5376bbd4de587c4335622149be7 | scs-standards     | scs-standards  | itrich            | Service User - SCS Standards Compliance Check |      ∞       |
 
 ### Projects
 
-|        Unique Identifier         | Project Name                | Community Contact | Description                       | Needed until |
-|:--------------------------------:|-----------------------------|-------------------|-----------------------------------|:------------:|
-| 718964b4b87446688ac04b151519fb51 | scs                         | garloff           | SCS Health Monitor                |      ∞       |
-| c46ccc9e695c4b23bacee2ad11145d9a | scs-health-monitor          | garloff           | SCS Health Monitor                |      ∞       |
-| 00de553df86949b49365baee6375fb5a | scs-standards               | itrich            | SCS Health Monitor                |      ∞       |
-
+|        Unique Identifier         | Project Name       | Community Contact | Description        | Needed until |
+| :------------------------------: | ------------------ | ----------------- | ------------------ | :----------: |
+| 718964b4b87446688ac04b151519fb51 | scs                | garloff           | SCS Health Monitor |      ∞       |
+| c46ccc9e695c4b23bacee2ad11145d9a | scs-health-monitor | garloff           | SCS Health Monitor |      ∞       |
+| 00de553df86949b49365baee6375fb5a | scs-standards      | itrich            | SCS Health Monitor |      ∞       |
