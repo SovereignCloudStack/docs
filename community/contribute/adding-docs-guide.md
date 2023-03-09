@@ -36,11 +36,11 @@ File a Pull Request within the [docs-page](https://github.com/SovereignCloudStac
 ```json5
 [
   {
-    "repo": "demo-organisation/demo-repository",
-    "source": "doc/*.md",
-    "target": "docs",
-    "label": "demo-repository-label"
-  }
+    repo: "demo-organisation/demo-repository",
+    source: "doc/*.md",
+    target: "docs",
+    label: "demo-repository-label",
+  },
 ]
 ```
 
@@ -54,7 +54,6 @@ File a Pull Request within the [docs-page](https://github.com/SovereignCloudStac
 Once it is approved and merged, a postinstall script will be triggered within the build process. This initiates downloading, copy and distilling which results in this static generated [documentation](https://docs.scs.community) page – now with your content.
 
 An explanation on how the sync & distill workflow and a guide on how to test it in a local development environment you will find [here](https://github.com/SovereignCloudStack/docs/blob/main/community/contribute/docs-workflow-explanation.md).
-
 
 ## 2. Operational documentation
 
