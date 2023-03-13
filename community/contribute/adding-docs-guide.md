@@ -33,10 +33,10 @@ The documentation files have to be in markdown format and...
 
 File a Pull Request within the [docs-page](https://github.com/SovereignCloudStack/docs-page) repository and add your repo to the docs.package.json:
 
-```json5
+```json
 [
   {
-    repo: "demo-organisation/demo-repository",
+    "repo": "demo-organisation/demo-repository",
     source: "doc/*.md",
     target: "docs",
     label: "demo-repository-label",
@@ -46,8 +46,8 @@ File a Pull Request within the [docs-page](https://github.com/SovereignCloudStac
 
 | key    | description                                                                                                       |
 | ------ | ----------------------------------------------------------------------------------------------------------------- |
-| repo   | link to github organisation and repository                                                                        |
-| source | directory which shall be copied. Optional to specify only copying markdown files                                  |
+| repo   | reference to github organisation and repository                                                                   |
+| source | path to content to copy: Either glob matching individual markdown files OR the path of a single directory         |
 | target | directory where the files should be copied to within the docs-page repo                                           |
 | label  | label for directory. only mandatory if source file is set to copy only \*.md files and not the complete directory |
 
