@@ -9,15 +9,15 @@ state: v0.9
 
 ### 1.1. Entropy in information Technology
 
-Entropy is a concept that is widely used in the scope of information 
+Entropy is a concept that is widely used in the scope of information
 technology. It is a measurement of the amount of disorder or randomness in
 a system. Entropy is used to measure the amount of information in a
 self contained systems, as well as the amount of incertitude that exists
 in this system. For cryptographic procedures and operations good entropy 
-is a must have! 
+is a must have!
 
 In traditional baremetal systems the amount of incertitude is generated
-by the randomness of read/write cycle of the disk heads of a disk-drive, 
+by the randomness of read/write cycle of the disk heads of a disk-drive,
 bus timings as well as items such as keyboard timings.
 
 ### 1.2 Entropy in Virtual Instances
@@ -27,32 +27,32 @@ for random numbers. An instance will operate normally, but as
 cryptographic operations happen, procedures will take an abnormal long time,
 because with a small entropy count cryptographic operation can not operate
 in realtime. Examples are malfunctioning applications and OpenSSL
-operations that will not work. 
+operations that will not work.
 
 ```console
-  $cat /proc/sys/kernel/random/entropy_avail 
+  $cat /proc/sys/kernel/random/entropy_avail
   256
 ```
 
 #### 1.2.1 How to generate entropy "Out-Of-Nothing" ?
 
 One procedure that was used in the past in virtual machines or virtual appliances
-was the use of an entropy daemon to ensure that here is a sufficient 
+was the use of an entropy daemon to ensure that here is a sufficient
 amount of entropy. Today this is a common operation although for embedded devices.
 [HavegeD](http://www.issihosts.com/haveged/) is one of those daemons.
 
 ```console
-   $cat /proc/sys/kernel/random/entropy_avail 
+   $cat /proc/sys/kernel/random/entropy_avail
    1956
 ```
 
 #### 1.2.2 CPU Hardware random number generator
 
-Modern server CPUs of ARM, AMD and Intel ship Hardware random 
+Modern server CPUs of ARM, AMD and Intel ship Hardware random
 number generator. This feature will be passed through to the virtualization
 layer. This will be addressed by virtio-rng.
 
-Baremetal systems and virtual instances will need the rng-tools or 
+Baremetal systems and virtual instances will need the rng-tools or
 rng-utils.
 
 ```console
@@ -83,4 +83,3 @@ Images must activate the attribute `hw_rng_model: virtio`.
 On compute nodes the rng-utils must be present and activate.
 This is a requirement to guarantee working confident cryptography
 in SCS Cloud Infrastructures.
-
