@@ -13,7 +13,7 @@ Entropy is a concept that is widely used in the scope of information
 technology. It is a measurement of the amount of disorder or randomness in
 a system. Entropy is used to measure the amount of information in a
 self contained systems, as well as the amount of incertitude that exists
-in this system. For cryptographic procedures and operations good entropy 
+in this system. For cryptographic procedures and operations good entropy
 is a must have!
 
 In traditional baremetal systems the amount of incertitude is generated
@@ -60,7 +60,7 @@ rng-utils.
      3843
 ```
 
-### 1.3  Entropy in SCS Clouds
+### 1.3 Entropy in SCS Clouds
 
 #### 1.3.1 Flavors
 
