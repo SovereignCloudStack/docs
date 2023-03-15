@@ -37,10 +37,10 @@ File a Pull Request within the [docs-page](https://github.com/SovereignCloudStac
 [
   {
     "repo": "demo-organisation/demo-repository",
-    source: "doc/*.md",
-    target: "docs",
-    label: "demo-repository-label",
-  },
+    "source": "doc/*.md",
+    "target": "docs",
+    "label": "demo-repository-label"
+  }
 ]
 ```
 
