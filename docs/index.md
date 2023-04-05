@@ -132,7 +132,7 @@ the [OpenStack trademark certification](https://refstack.openstack.org/#/guideli
 tests formerly known as DefCore) and the Kubernetes CNCF conformance tests run through
 [sonobuoy](https://sonobuoy.io/).
 
-We have specific [standards](https://github.com/SovereignCloudStack/standards/tree/main/Standards) aligned within the SCS community 
+We have specific [standards](https://github.com/SovereignCloudStack/standards/tree/main/Standards) aligned within the SCS community
 (and have also sought feedback from the broader Gaia-X and OpenStack communities).
 
 Beyond this, we have a [draft document](https://github.com/SovereignCloudStack/standards/blob/main/Drafts/SCS-Spec.md) that captures our
