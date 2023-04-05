@@ -41,6 +41,17 @@ const config = {
     ]
   ],
   plugins: [
+    async function myPlugin (context, options) {
+      return {
+        name: 'docusaurus-tailwindcss',
+        configurePostCss (postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require('tailwindcss'))
+          postcssOptions.plugins.push(require('autoprefixer'))
+          return postcssOptions
+        }
+      }
+    },
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -68,13 +79,13 @@ const config = {
         ({
           metadata: [{ title: 'One platform — standardized, built and operated by many.', description: 'Documentation and Community Platform for the Sovereign Cloud Stack' }],
           image: 'img/summit-social.png',
-          announcementBar: {
-            id: 'scs_summit',
-            content: '<a target="_blank" rel="noopener noreferrer" href="https://scs.community/summit" style="text-decoration: none"><b>Join us for our first SCS Summit on 23rd and 24th of May 2023 in Berlin. </b></a>',
-            backgroundColor: '#ffb729',
-            textColor: '#000',
-            isCloseable: true
-          },
+          // announcementBar: {
+          //   id: 'scs_summit',
+          //   content: '<a target="_blank" rel="noopener noreferrer" href="https://scs.community/summit" style="text-decoration: none"><b>Join us for our first SCS Summit on 23rd and 24th of May 2023 in Berlin. </b></a>',
+          //   backgroundColor: '#ffb729',
+          //   textColor: '#000',
+          //   isCloseable: true
+          // },
           navbar: {
             title: '',
             logo: {
