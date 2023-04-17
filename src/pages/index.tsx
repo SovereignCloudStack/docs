@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Link from "@docusaurus/Link";
 import Layout from "@theme/Layout";
 import Markprompt from "../components/Markprompt";
+import ConsentManager from "../components/ConsentManager";
 
 export default function Home(): JSX.Element {
     return (
@@ -61,9 +62,14 @@ export default function Home(): JSX.Element {
                                 </a>
                             </div>
                         </div>
+                        <div data-name="markprompt">
                         <div className="flex h-[calc(100vh-260px)] w-full flex-col items-center justify-center sm:px2 lg:px-8">
                             <div className="mt-16 md:mt-0 lg:mt-0 max-h-[480px] w-full max-w-[720px] flex-grow rounded-xl bg-neutral-1100 p-8 shadow-2xl">
-                                <Markprompt placeholder="Ask me anything about SCS..." projectKey="sk_test_AK8xpktAgXbHZwmRKaIIHafDiv2tdaRl" />
+                                    <Markprompt
+                                        placeholder="Ask me anything about SCS..."
+                                        projectKey="sk_test_AK8xpktAgXbHZwmRKaIIHafDiv2tdaRl"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -81,6 +87,7 @@ export default function Home(): JSX.Element {
                     </div>
                 </div>
             </main>
+            <ConsentManager />
         </Layout>
     );
 }
