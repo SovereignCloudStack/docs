@@ -3,6 +3,7 @@ import Link from "@docusaurus/Link";
 import Layout from "@theme/Layout";
 import Markprompt from "../components/Markprompt";
 import ConsentManager from "../components/ConsentManager";
+import { MarkpromptIcon } from "../components/icons/markprompt";
 
 export default function Home(): JSX.Element {
     return (
@@ -69,12 +70,23 @@ export default function Home(): JSX.Element {
                                         placeholder="Ask me anything about SCS..."
                                         projectKey="sk_test_AK8xpktAgXbHZwmRKaIIHafDiv2tdaRl"
                                     />
+                                    <a
+                                        href="https://markprompt.com/"
+                                        target="_blank"
+                                    >
+                                        <div className="float-right flex">
+                                            <p className="text-sm text-gray-600 dark:text-gray-300 m-0 mr-1">
+                                                powered by{" "}
+                                            </p>
+                                            <MarkpromptIcon className="w-5 m-auto dark:fill-gray-100 fill-gray-800" />
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div
-                        className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+                        className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(-10%)]"
                         aria-hidden="true"
                     >
                         <div

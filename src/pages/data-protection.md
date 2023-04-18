@@ -20,8 +20,6 @@ In order to make SCS more accessible we use a prompt on the index page which is 
 
 OpenAI keeps training data for 30 days. Read more: [OpenAI API data usage policies](https://openai.com/policies/api-data-usage-policies).
 
-Markprompt keeps the data as long as you need to query it. If you remove a file or delete a project, all associated data will be deleted immediately.
-
 ## By accessing our website, the following data will be stored
 
 2 bytes of the user’s IP address
@@ -32,11 +30,7 @@ The total time spent on our website
 The frequency with which our website is accessed
 The data collected by the Matomo is processed and stored exclusively on servers maintained by employees of the SCS project. We will not share any of the data collected with third parties.
 
-## Opt-Out
-
-Currently your visit to this website is being anonymously tracked by the Matomo Web Analytics Tool. Uncheck this box to stop being tracked.
-Responsible for Data Protection for this site
-In case of questions of stored data or any other privacy policy related request, please contact:
+## Imprint
 
 Kurt Garloff
 garloff [at] osb [minus] alliance [dot] com

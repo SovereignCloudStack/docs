@@ -143,6 +143,10 @@ const config = {
                   {
                     label: 'GitHub',
                     href: 'https://github.com/SovereignCloudStack/docs-page'
+                  },
+                  {
+                    label: 'Data Protection',
+                    to: '/data-protection'
                   }
                 ]
               }
