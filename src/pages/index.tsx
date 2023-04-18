@@ -23,7 +23,7 @@ export default function Home(): JSX.Element {
                     </div>
                     <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
                         <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-                            <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                            <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 dark:text-gray-300 ring-1 ring-gray-900/10 dark:ring-gray-300/10 hover:ring-gray-900/20 dark:hover:ring-gray-300/20">
                                 Announcing our next summit in Berlin on May 23rd{" "}
                                 <a
                                     href="https://scs.community/summit/"
@@ -38,10 +38,10 @@ export default function Home(): JSX.Element {
                             </div>
                         </div>
                         <div className="text-center">
-                            <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-slate-400 sm:text-6xl">
+                            <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-300 sm:text-6xl">
                                 SCS: The Cloud Stack you always wanted
                             </h1>
-                            <p className="mt-6 text-lg leading-8 text-gray-600">
+                            <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
                                 The Sovereign Cloud Stack combines the best of
                                 cloud computing in one unified standard and is
                                 built, backed, and operated by an active
@@ -50,21 +50,21 @@ export default function Home(): JSX.Element {
                             <div className="mt-10 flex items-center justify-center gap-x-6">
                                 <a
                                     href="/docs"
-                                    className="rounded-md bg-white border-solid text-blue-600 border-blue-600 px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-blue-600 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                    className="rounded-md bg-white border-solid text-blue-600 border-blue-600 px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-blue-600 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-gray-900 dark:hover:bg-blue-600 border-solid"
                                 >
                                     Get Started
                                 </a>
                                 <a
                                     href="https://scs.community"
-                                    className="text-sm font-semibold leading-6 text-gray-900"
+                                    className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-300"
                                 >
                                     Learn more <span aria-hidden="true">→</span>
                                 </a>
                             </div>
                         </div>
                         <div data-name="markprompt">
-                        <div className="flex h-[calc(100vh-260px)] w-full flex-col items-center justify-center sm:px2 lg:px-8">
-                            <div className="mt-16 md:mt-0 lg:mt-0 max-h-[480px] w-full max-w-[720px] flex-grow rounded-xl bg-neutral-1100 p-8 shadow-2xl">
+                            <div className="flex h-[calc(100vh-260px)] w-full flex-col items-center justify-center sm:px2 lg:px-8">
+                                <div className="mt-16 md:mt-0 lg:mt-0 max-h-[480px] w-full max-w-[720px] flex-grow rounded-xl bg-gray-1100 dark:bg-neutral-900 p-8 shadow-2xl">
                                     <Markprompt
                                         placeholder="Ask me anything about SCS..."
                                         projectKey="sk_test_AK8xpktAgXbHZwmRKaIIHafDiv2tdaRl"

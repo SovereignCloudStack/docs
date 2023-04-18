@@ -195,7 +195,7 @@ export const Markprompt: FC<MarkpromptProps> = ({
   }, [loading, answer, didCompleteFirstQuery]);
 
   return (
-    <div className="prose prose-invert relative flex h-full flex-col">
+    <div className="prose-neutral prose-invert relative flex h-full flex-col">
       <div className="h-12 border-b border-neutral-900">
         <form onSubmit={submitPrompt}>
           <input
@@ -203,7 +203,7 @@ export const Markprompt: FC<MarkpromptProps> = ({
             type="text"
             onChange={(e) => setPrompt(e.target.value)}
             placeholder={placeholder}
-            className="w-full appearance-none rounded-md border-0 bg-transparent px-0 pt-1 pb-2 outline-none placeholder:text-neutral-500 focus:outline-none focus:ring-0"
+            className="w-full appearance-none rounded-md border-0 bg-transparent px-0 pt-1 pb-2 outline-none placeholder:text-neutral-400 focus:outline-none focus:ring-0"
             autoComplete="off"
             autoCorrect="off"
             autoCapitalize="none"
@@ -223,13 +223,13 @@ export const Markprompt: FC<MarkpromptProps> = ({
       />
       <div
         ref={containerRef}
-        className="hidden-scrollbar prose prose-sm absolute inset-x-0 bottom-0 top-12 z-0 max-w-full overflow-y-auto scroll-smooth py-4 pb-8 dark:prose-invert"
+        className="hidden-scrollbar prose-neutral prose-sm absolute inset-x-0 bottom-0 top-12 z-0 max-w-full overflow-y-auto scroll-smooth py-4 pb-8 dark:prose-invert"
       >
         {loading && !(answer.length > 0) && <Caret />}
         {/* Need a container for ReactMarkdown to be able to access
             :last-child and display the caret */}
         <div
-          className={cn('prompt-answer prose prose-sm prose-invert', {
+          className={cn('prompt-answer prose-neutral prose-sm prose-invert', {
             'prompt-answer-done': !loading,
             'prompt-answer-loading': loading,
           })}
@@ -245,7 +245,7 @@ export const Markprompt: FC<MarkpromptProps> = ({
               h5: (props) => <WithCaret Component="h5" {...props} />,
               h6: (props) => <WithCaret Component="h6" {...props} />,
               pre: (props) => <WithCaret Component="pre" {...props} />,
-              code: (props) => <WithCaret Component="code" {...props} />,
+              // code: (props) => <WithCaret Component="code" {...props} />,
               td: (props) => <WithCaret Component="td" {...props} />,
             }}
             remarkPlugins={[remarkGfm]}
@@ -261,7 +261,7 @@ export const Markprompt: FC<MarkpromptProps> = ({
                 {references.map((r) => (
                   <div
                     key={`reference-${r}`}
-                    className="cursor-pointer rounded-md border border-neutral-900 bg-neutral-1100 px-2 py-1 text-sm font-medium text-neutral-300 transition hover:border-neutral-800 hover:text-neutral-200"
+                    className="cursor-pointer rounded-md border border-neutral-900 bg-neutral-1100 px-2 py-1 text-sm font-medium text-neutral-800 transition hover:border-neutral-800 hover:text-neutral-200"
                   >
                     {r}
                   </div>

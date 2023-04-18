@@ -24,14 +24,14 @@ table {
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
-    --ifm-color-primary: #0f5fe1;
-    --ifm-color-primary-dark: #0e56cb;
-    --ifm-color-primary-darker: #0c4cb4;
-    --ifm-color-primary-darkest: #0b439e;
-    --ifm-color-primary-light: #276fe4;
-    --ifm-color-primary-lighter: #3f7fe7;
-    --ifm-color-primary-lightest: #578fea;
-    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+    --ifm-color-primary: #5E9CFF;
+    --ifm-color-primary-dark: #5E9CFF;
+    --ifm-color-primary-darker: #5E9CFF;
+    --ifm-color-primary-darkest: #5E9CFF;
+    --ifm-color-primary-light: #5E9CFF;
+    --ifm-color-primary-lighter: #5E9CFF;
+    --ifm-color-primary-lightest: #5E9CFF;
+    --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.8);
 }
 
 [data-theme="secondary"] {
