@@ -77,3 +77,4 @@ Service users will have their default_project_id set to a specific project and w
 | 718964b4b87446688ac04b151519fb51 | scs                | garloff           | SCS Health Monitor |      ∞       |
 | c46ccc9e695c4b23bacee2ad11145d9a | scs-health-monitor | garloff           | SCS Health Monitor |      ∞       |
 | 00de553df86949b49365baee6375fb5a | scs-standards      | itrich            | SCS Health Monitor |      ∞       |
+|                                  | scs-k8s-e2e        | jschoone          | E2E-Test for KaaS  |      ∞       |
