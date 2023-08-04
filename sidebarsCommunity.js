@@ -5,31 +5,31 @@ const sidebars = {
   community: [
     'index',
     'calendar',
-    'community/collaboration',
+    'collaboration',
     {
       type: 'category',
       label: 'Communication',
       items: [
-        'community/communication/matrix'
+        'communication/matrix'
       ]
     },
     {
       type: 'category',
       label: 'Cloud Resources',
       items: [
-        'community/cloud-resources/cloud-resources',
-        'community/cloud-resources/getting-started-openstack',
-        'community/cloud-resources/plusserver-gx-scs',
-        'community/cloud-resources/wavestack'
+        'cloud-resources/cloud-resources',
+        'cloud-resources/getting-started-openstack',
+        'cloud-resources/plusserver-gx-scs',
+        'cloud-resources/wavestack'
       ]
     },
     {
       type: 'category',
       label: 'GitHub',
       items: [
-        'community/github/branchprotection',
-        'community/github/dco-and-licenses',
-        'community/github/tips-and-tricks'
+        'github/branchprotection',
+        'github/dco-and-licenses',
+        'github/tips-and-tricks'
       ]
     },
     {
@@ -39,15 +39,15 @@ const sidebars = {
         type: 'generated-index'
       },
       items: [
-        'community/contribute/adding-docs-guide',
-        'community/contribute/doc-files-structure-guide',
-        'community/contribute/docs-workflow-explanation',
-        'community/contribute/linting-guide',
-        'community/contribute/local-docusaurus-development-guide',
-        'community/contribute/styleguide'
+        'contribute/adding-docs-guide',
+        'contribute/doc-files-structure-guide',
+        'contribute/docs-workflow-explanation',
+        'contribute/linting-guide',
+        'contribute/local-docusaurus-development-guide',
+        'contribute/styleguide'
       ]
     },
-    'community/license-considerations'
+    'license-considerations'
   ]
 }
 
