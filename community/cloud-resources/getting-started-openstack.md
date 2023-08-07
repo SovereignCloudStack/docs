@@ -22,8 +22,8 @@ for ubuntu with snap openstack CLI is installable too:
 sudo snap install openstackclients
 ```
 
-[!NOTE]
-Versions from Linux repository could be in a stable but old state.
+>[!NOTE]
+>Versions from Linux repository could be in a stable but old state.
 
 Install it directly via [pypi](https://pypi.org/project/python-openstackclient)
 from upstream is the recommend way.
@@ -52,9 +52,9 @@ Here for example with Apple's MacOS
 brew install python3
 ```
 
-[!NOTE]
-Python installation for windows systems please use the [python installation guide](https://www.python.org/downloads/windows/)
-or recommend use the [Linux Subsystem WSL](https://learn.microsoft.com/de-de/windows/wsl/install)
+>[!NOTE]
+>Python installation for windows systems please use the [python installation guide](https://www.python.org/downloads/windows/)
+>or recommend use the [Linux Subsystem WSL](https://learn.microsoft.com/de-de/windows/wsl/install)
 
 Python Virtualenv
 
