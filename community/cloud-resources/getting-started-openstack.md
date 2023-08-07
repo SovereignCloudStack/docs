@@ -46,7 +46,7 @@ sudo apt install python3-minimal python3-pip python3-venv python3-dev build-esse
 sudo zypper in python3-pip python3-venv python3-dev
 ```
 
-Here for example with  Apple's MacOS
+Here for example with Apple's MacOS
 
 ```bash
 brew install python3
