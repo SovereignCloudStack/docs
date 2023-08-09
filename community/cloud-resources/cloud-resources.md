@@ -60,7 +60,7 @@ Service users will have their default_project_id set to a specific project and w
 | 91091d4039a6457db27d48d58bb1b4e4 | p500924-jschoone            | jschoone          | KaaS dev and evaluation           | ∞            |
 | 93956190702b4a7d8a8886806d57713f | p500924-metering            | cah-link          | Metering Dev Project              | 31.12.2023   |
 | abbe6561cf6248b6af395334aa09af85 | p500924-harbor              | chess-knight      | Project for Harbor deployment     | ∞            |
-|                                  | p500924-tender-6a           | jschoone          | Dev Environment for VP06a         | ∞            |
+| e7622c1048ac4520a2d050ae141e826b | p500924-tender-6a           | jschoone          | Dev Environment for VP06a         | ∞            |
 |                                  |                             |                   |                                   |              |
 
 ## Wavecon
