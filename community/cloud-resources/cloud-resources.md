@@ -48,7 +48,6 @@ Service users will have their default_project_id set to a specific project and w
 | Unique Identifier                | Project Name                | Community Contact | Description                       | Needed until |
 | :------------------------------: | --------------------------- | ----------------- | --------------------------------- | :----------: |
 | 2237c767cf5f456da19359ed31c1c16b | p500924-scs-community       | fkr               | SCS Community Project             | ∞            |
-| e7ee61b62ecc417199b154ae4218f25f | p500924-beermann            | tibeer            | Project of Tim Beermann, OSISM    | ∞            |
 | b43cfafbcf1f4eb08865b2886c29e09b | p500924-cluster-api-session | garloff           | cluster-api hands on session      | ∞            |
 | 9b7a73e516be4cd1acbd63d543985c52 | p500924-gonicus-dev         | o-otte            | GONICUS GmbH                      | ∞            |
 | 3829cc7c8f034fc985f5055a1df6f247 | p500924-scs-healthmonitor   | garloff           | SCS Health Monitor                | ∞            |
@@ -60,6 +59,8 @@ Service users will have their default_project_id set to a specific project and w
 | 91091d4039a6457db27d48d58bb1b4e4 | p500924-jschoone            | jschoone          | KaaS dev and evaluation           | ∞            |
 | 93956190702b4a7d8a8886806d57713f | p500924-metering            | cah-link          | Metering Dev Project              | 31.12.2023   |
 | abbe6561cf6248b6af395334aa09af85 | p500924-harbor              | chess-knight      | Project for Harbor deployment     | ∞            |
+| 4ff97734574146ccb4c7e7568bc1e36f | p500924-XPanse              | swaroopar         | Eclipse XPanse Projekt POC        | 31.11.2023   |
+| e7622c1048ac4520a2d050ae141e826b | p500924-tender-6a           | jschoone          | Dev Environment for VP06a         | ∞            |
 |                                  | p500924-dnation-k8s         | matofeder         | dNation K8s Dev Project           | ∞            |
 |                                  |                             |                   |                                   |              |
 
