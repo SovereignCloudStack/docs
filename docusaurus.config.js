@@ -29,7 +29,10 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: { sidebarPath: require.resolve('./sidebarsDocs.js') },
+        docs: {
+          sidebarPath: require.resolve('./sidebarsDocs.js'),
+          editUrl: 'https://github.com/SovereignCloudStack/docs-page/tree/main/'
+        },
         blog: {
           showReadingTime: true,
           editUrl: 'https://github.com/SovereignCloudStack/docs-page/tree/main/'
@@ -79,6 +82,7 @@ const config = {
               { to: '/docs', label: 'Docs', position: 'left' },
               { to: '/standards', label: 'Standards', position: 'left' },
               { to: '/community', label: 'Community', position: 'left' },
+              { to: '/docs/faq', label: 'FAQ', position: 'left' },
               {
                 href: 'https://github.com/SovereignCloudStack/docs-page',
                 label: 'GitHub',

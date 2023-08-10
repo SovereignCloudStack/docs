@@ -287,6 +287,11 @@ const sidebarsDocs = {
         'standards/index'
       ]
     },
+    {
+      type: 'doc',
+      id: 'faq/index',
+      label: 'FAQ'
+    },
     'glossary'
   ]
 }
