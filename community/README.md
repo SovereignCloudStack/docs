@@ -12,7 +12,6 @@ Entrypoint for getting onboarded.
   - [Mailing-List](https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/)
   - [RSS Feed](https://scs.community/feed.xml)
   - [Fosstodon](https://fosstodon.org/@sovereigncloudstack)
-  - [Twitter](https://twitter.com/scs_osballiance)
   - [LinkedIn](https://www.linkedin.com/showcase/sovereigncloudstack)
   - [Website](https://scs.community)
 - Video-Calls
