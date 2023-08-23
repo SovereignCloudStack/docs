@@ -11,9 +11,9 @@ const sidebarsDocs = {
         type: 'generated-index'
       },
       items: [
-        'getting-started/overview',
-        'getting-started/virtualization',
-        'getting-started/containerization'
+        // 'getting-started/overview',
+        // 'getting-started/virtualization',
+        // 'getting-started/containerization'
       ]
     },
     {
@@ -30,11 +30,11 @@ const sidebarsDocs = {
             type: 'generated-index'
           },
           items: [
-            'iaas/overview/architecture',
-            'iaas/overview/compute',
-            'iaas/overview/storage',
-            'iaas/overview/network',
-            'iaas/overview/knowledge'
+            // 'iaas/overview/architecture',
+            // 'iaas/overview/compute',
+            // 'iaas/overview/storage',
+            // 'iaas/overview/network',
+            // 'iaas/overview/knowledge'
           ]
         },
         {
@@ -51,9 +51,9 @@ const sidebarsDocs = {
                 type: 'generated-index'
               },
               items: [
-                'iaas/deployment-examples/a/index',
-                'iaas/deployment-examples/a/hardware',
-                'iaas/deployment-examples/a/software'
+                // 'iaas/deployment-examples/a/index',
+                // 'iaas/deployment-examples/a/hardware',
+                // 'iaas/deployment-examples/a/software'
               ]
             }
           ]
@@ -65,7 +65,7 @@ const sidebarsDocs = {
             type: 'generated-index'
           },
           items: [
-            'iaas/guides/guide1'
+            // 'iaas/guides/guide1'
           ]
         },
         {
@@ -107,8 +107,8 @@ const sidebarsDocs = {
             type: 'generated-index'
           },
           items: [
-            'container/overview/architecture',
-            'container/overview/knowledge'
+            // 'container/overview/architecture',
+            // 'container/overview/knowledge'
           ]
         },
         {
@@ -125,9 +125,9 @@ const sidebarsDocs = {
                 type: 'generated-index'
               },
               items: [
-                'container/deployment-examples/a/index',
-                'container/deployment-examples/a/hardware',
-                'container/deployment-examples/a/software'
+                // 'container/deployment-examples/a/index',
+                // 'container/deployment-examples/a/hardware',
+                // 'container/deployment-examples/a/software'
               ]
             }
           ]
@@ -139,7 +139,7 @@ const sidebarsDocs = {
             type: 'generated-index'
           },
           items: [
-            'container/guides/guide1'
+            // 'container/guides/guide1'
           ]
         },
         {
@@ -184,85 +184,85 @@ const sidebarsDocs = {
           ]
         }]
     },
-    {
-      type: 'category',
-      label: 'Operating SCS',
-      link: {
-        type: 'generated-index'
-      },
-      items: [
-        'operating-scs/overview',
-        {
-          type: 'category',
-          label: 'Guides',
-          link: {
-            type: 'generated-index'
-          },
-          items: [
-            'operating-scs/guides/guide-1'
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Monitoring',
-          link: {
-            type: 'generated-index'
-          },
-          items: [
-            'operating-scs/monitoring/index'
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Incident Management',
-          link: {
-            type: 'generated-index'
-          },
-          items: [
-            'operating-scs/incident-management/index'
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Audits',
-          link: {
-            type: 'generated-index'
-          },
-          items: [
-            'operating-scs/audits/index'
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Lifecycle Management',
-          link: {
-            type: 'generated-index'
-          },
-          items: [
-            'operating-scs/lifecycle-management/index'
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Logging',
-          link: {
-            type: 'generated-index'
-          },
-          items: [
-            'operating-scs/logging/index'
-          ]
-        }]
-    },
-    {
-      type: 'category',
-      label: 'Identity and Access Management (IAM)',
-      link: {
-        type: 'generated-index'
-      },
-      items: [
-        'iam/index'
-      ]
-    },
+    // {
+    //   type: 'category',
+    //   label: 'Operating SCS',
+    //   link: {
+    //     type: 'generated-index'
+    //   },
+    //   items: [
+    //     'operating-scs/overview',
+    //     {
+    //       type: 'category',
+    //       label: 'Guides',
+    //       link: {
+    //         type: 'generated-index'
+    //       },
+    //       items: [
+    //         'operating-scs/guides/guide-1'
+    //       ]
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'Monitoring',
+    //       link: {
+    //         type: 'generated-index'
+    //       },
+    //       items: [
+    //         'operating-scs/monitoring/index'
+    //       ]
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'Incident Management',
+    //       link: {
+    //         type: 'generated-index'
+    //       },
+    //       items: [
+    //         'operating-scs/incident-management/index'
+    //       ]
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'Audits',
+    //       link: {
+    //         type: 'generated-index'
+    //       },
+    //       items: [
+    //         'operating-scs/audits/index'
+    //       ]
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'Lifecycle Management',
+    //       link: {
+    //         type: 'generated-index'
+    //       },
+    //       items: [
+    //         'operating-scs/lifecycle-management/index'
+    //       ]
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'Logging',
+    //       link: {
+    //         type: 'generated-index'
+    //       },
+    //       items: [
+    //         'operating-scs/logging/index'
+    //       ]
+    //     }]
+    // },
+    // {
+    //   type: 'category',
+    //   label: 'Identity and Access Management (IAM)',
+    //   link: {
+    //     type: 'generated-index'
+    //   },
+    //   items: [
+    //     'iam/index'
+    //   ]
+    // },
     {
       type: 'category',
       label: 'Releases',
@@ -277,16 +277,16 @@ const sidebarsDocs = {
         'releases/Release4'
       ]
     },
-    {
-      type: 'category',
-      label: 'Standards',
-      link: {
-        type: 'generated-index'
-      },
-      items: [
-        'standards/index'
-      ]
-    },
+    // {
+    //   type: 'category',
+    //   label: 'Standards',
+    //   link: {
+    //     type: 'generated-index'
+    //   },
+    //   items: [
+    //     'standards/index'
+    //   ]
+    // },
     {
       type: 'doc',
       id: 'faq/index',
