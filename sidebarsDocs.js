@@ -184,75 +184,86 @@ const sidebarsDocs = {
           ]
         }]
     },
-    // {
-    //   type: 'category',
-    //   label: 'Operating SCS',
-    //   link: {
-    //     type: 'generated-index'
-    //   },
-    //   items: [
-    //     'operating-scs/overview',
-    //     {
-    //       type: 'category',
-    //       label: 'Guides',
-    //       link: {
-    //         type: 'generated-index'
-    //       },
-    //       items: [
-    //         'operating-scs/guides/guide-1'
-    //       ]
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: 'Monitoring',
-    //       link: {
-    //         type: 'generated-index'
-    //       },
-    //       items: [
-    //         'operating-scs/monitoring/index'
-    //       ]
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: 'Incident Management',
-    //       link: {
-    //         type: 'generated-index'
-    //       },
-    //       items: [
-    //         'operating-scs/incident-management/index'
-    //       ]
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: 'Audits',
-    //       link: {
-    //         type: 'generated-index'
-    //       },
-    //       items: [
-    //         'operating-scs/audits/index'
-    //       ]
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: 'Lifecycle Management',
-    //       link: {
-    //         type: 'generated-index'
-    //       },
-    //       items: [
-    //         'operating-scs/lifecycle-management/index'
-    //       ]
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: 'Logging',
-    //       link: {
-    //         type: 'generated-index'
-    //       },
-    //       items: [
-    //         'operating-scs/logging/index'
-    //       ]
-    //     }]
-    // },
+    {
+      type: 'category',
+      label: 'Operating SCS',
+      link: {
+        type: 'generated-index'
+      },
+      items: [
+        // 'operating-scs/overview',
+        // {
+        //   type: 'category',
+        //   label: 'Guides',
+        //   link: {
+        //     type: 'generated-index'
+        //   },
+        //   items: [
+        //     'operating-scs/guides/guide-1'
+        //   ]
+        // },
+        // {
+        //   type: 'category',
+        //   label: 'Monitoring',
+        //   link: {
+        //     type: 'generated-index'
+        //   },
+        //   items: [
+        //     'operating-scs/monitoring/index'
+        //   ]
+        // },
+        // {
+        //   type: 'category',
+        //   label: 'Incident Management',
+        //   link: {
+        //     type: 'generated-index'
+        //   },
+        //   items: [
+        //     'operating-scs/incident-management/index'
+        //   ]
+        // },
+        // {
+        //   type: 'category',
+        //   label: 'Audits',
+        //   link: {
+        //     type: 'generated-index'
+        //   },
+        //   items: [
+        //     'operating-scs/audits/index'
+        //   ]
+        // },
+        // {
+        //   type: 'category',
+        //   label: 'Lifecycle Management',
+        //   link: {
+        //     type: 'generated-index'
+        //   },
+        //   items: [
+        //     'operating-scs/lifecycle-management/index'
+        //   ]
+        // },
+        // {
+        //   type: 'category',
+        //   label: 'Logging',
+        //   link: {
+        //     type: 'generated-index'
+        //   },
+        //   items: [
+        //     'operating-scs/logging/index'
+        //   ]
+        // },
+        {
+          type: 'category',
+          label: 'Metering',
+          link: {
+            type: 'generated-index'
+          },
+          items: [
+            'operating-scs/metering/meter-configuration'
+          ]
+        }]
+
+    },
     // {
     //   type: 'category',
     //   label: 'Identity and Access Management (IAM)',
