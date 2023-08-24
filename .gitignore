@@ -3,6 +3,7 @@
 /docs/02-iaas/components
 /docs/03-container/components
 /docs/06-releases
+/standards
 
 # Dependencies
 /node_modules

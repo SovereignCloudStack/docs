@@ -22,5 +22,11 @@
         "source": "docs",
         "target": "docs/04-operating-scs",
         "label": "status-page"
+    },
+    {
+        "repo": "SovereignCloudStack/standards",
+        "source": "Standards/*.md",
+        "target": "standards",
+        "label": "active"
     }
 ]
