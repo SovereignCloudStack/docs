@@ -3,8 +3,6 @@ title: Introduction
 sidebar_position: 1
 ---
 
-# SCS Documentation
-
 [![Creative Commons Attribution-ShareAlike 4.0 International](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
 
 ## About
@@ -15,9 +13,10 @@ As only the sum of different repositories complete the SCS Stack, it is importan
 
 ## What is SCS? Why should I care?
 
+SCS describes a standard as well as a reference implementation of this standard.
+
 Please see our [public web site](https://scs.community/) and specifically
 the [About SCS](https://scs.community/About/) page.
-SCS describes a standard as well as a reference implementation of this standard.
 
 ## The reference implementation
 
