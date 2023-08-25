@@ -37,8 +37,7 @@ within "pipeline". The third important thing is to provide a "project" definitio
 If zuul is configured to observe your repository it will have a look at your projects
 definition. Minimal example:
 
-```
----
+```yaml
 - project:
     name: my-org/my-repo
     default-branch: main
@@ -84,7 +83,7 @@ can be found in the web ui of your zuul instance: [Example](https://zuul.scs.com
 
 First have a look on a basic job example:
 
-```
+```yaml
 - job:
     name: base
     parent: null
@@ -140,7 +139,7 @@ ressources in an openstack environment and you have to use something like app cr
 
 That is where job secrets are used. Example:
 
-```
+```yaml
 - job:
     name: SOME_JOB
     parent: base
@@ -158,7 +157,7 @@ The property `secret` references the secret that is defined within your project.
 
 Example:
 
-```
+```yaml
 - secret:
     name: app_credential_cloud_conf
     data:
@@ -174,12 +173,12 @@ public key to create secrets. But only zuul will be able to decrypt these values
 to be responsible for the correct encryption there is an zuul-client tool that will do this for you.
 
 Example:
-```
+```bash
 zuul-client --zuul-url ZUUL_URL  encrypt --tenant TENANT --project ORGANIZATION/PROJECT --infile creds.yaml --outfile clouds.yaml.enc
 ```
 
 The content may look like this:
-```
+```yaml
 - secret:
     name: <name>
     data:
