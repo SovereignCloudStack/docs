@@ -80,7 +80,7 @@ think about, how to create a pipeline. Just use one that fits your needs as clos
 All jobs that your zuul instances knows of can be used for your own purposes.
 Call them directly or implement a job that uses an existing job as parent.
 Didn't find the right job? Than we have to create a new one. Existing jobs
-can be found in the web ui of your zuul instance: (https://zuul.scs.community/t/SCS/jobs)
+can be found in the web ui of your zuul instance: [Example](https://zuul.scs.community/t/SCS/jobs)
 
 First have a look on a basic job example:
 
