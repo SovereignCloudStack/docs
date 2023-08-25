@@ -53,6 +53,7 @@ definition. Minimal example:
     ...
 
 ```
+
 By default zuul will observe all branches for such files. We have to set the repository name
 that have to match the exact value that was set for zuul. Set a default-branch where actions
 that don't match an explicit branch are executed on. Set the merge-mode that zuul has to use.
@@ -108,6 +109,7 @@ First have a look on a basic job example:
           label: ubuntu-jammy
 
 ```
+
 Each jobs needs a name. Each job need to define whether there is parent job or not.
 Jobs without a parent are called "base" jobs. Usually you don't want to implement base jobs since
 there are already some base jobs that implement often used stuff. A description may not be mandatory
@@ -163,6 +165,7 @@ Example:
     data:
       credentials: my-secret-value
 ```
+
 Within `my-playbook.yaml` you can reference the secret value using `"{{ clouds_conf.credentials }}"`.
 In this example `my-secret-value` is clear readable text. That is not something we want to keep
 secrets. But how do you encrypt secrets in a way that they are secure and also can be decrypted by
@@ -173,11 +176,13 @@ public key to create secrets. But only zuul will be able to decrypt these values
 to be responsible for the correct encryption there is an zuul-client tool that will do this for you.
 
 Example:
+
 ```bash
 zuul-client --zuul-url ZUUL_URL  encrypt --tenant TENANT --project ORGANIZATION/PROJECT --infile creds.yaml --outfile clouds.yaml.enc
 ```
 
 The content may look like this:
+
 ```yaml
 - secret:
     name: <name>
