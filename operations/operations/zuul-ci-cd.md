@@ -62,7 +62,6 @@ But beware that not all issue tracker support all methods. For github squash-mer
 After these three properties add the pipelines you want to use to the project definition.
 With the `jobs` list you define which jobs to run in which pipeline.
 
-
 ### Pipelines
 
 Every zuul instance will have at least one repository that is used for configuration. There
@@ -120,7 +119,7 @@ like a `noop` job or just printing something to stdout that is everything you ne
 Since anything we want to do requires a little bit more you have to define a nodeset. The nodes
 are used to run your playbooks on. In 99,9% you will need this too.
 
-The properties `pre-run` and `post-run` are useful for bootstrap and cleanup. If your actual job wants to create 
+The properties `pre-run` and `post-run` are useful for bootstrap and cleanup. If your actual job wants to create
 bootstrap some infrastructure you can to this in the `pre-run`. Using an cloud provider you want to release
 no longer used resources. That can be done in the `post-run`. If you are using a parent job it is likely
 that the parent job may has pre- and post-run playbooks. In this case your pre- and post-run playbooks are
@@ -202,4 +201,3 @@ The content may look like this:
 
 You may use this content or the file to provide it as a secret. You just have to update the `<name>` and the
 `<fieldname>` part.
-
