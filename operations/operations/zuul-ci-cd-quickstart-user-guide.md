@@ -45,10 +45,17 @@ So it doesn't matter whether you have just one branch containing zuul files or a
 is looking for the following pathes on your repositories root.
 
 ```bash
-./zuul.yaml
-./.zuul.yaml
-./zuul.d/
-./.zuul.d/
+./zuul.yaml # everything is in here
+
+./.zuul.yaml # ... or here
+
+./zuul.d/ # use directory style to get a bit of a structure
+├── jobs.yaml
+└── project.yaml
+
+./.zuul.d/ # the same as before just hidden
+├── jobs.yaml
+└── project.yaml
 ```
 
 Just use exact on of the four possiblities.
