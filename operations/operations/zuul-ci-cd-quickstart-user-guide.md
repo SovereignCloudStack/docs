@@ -2,10 +2,14 @@
 
 ## Prerequisites
 
-1. Repository is known by your zuul instance
+1. Repository is known by [SCS zuul](https://zuul.scs.community)
 2. Basic ansible knowledge
 3. Basic yaml knowledge
 4. zuul-client installed
+
+Check [SCS zuul projects](https://zuul.scs.community/t/SCS/projects) for your repository to
+be available. If it is missing you need an administrator to get your repository
+configured to zuul.
 
 ## Who is it for?
 
@@ -31,6 +35,28 @@ or ask an administrator for help.
 We consider that zuul knows about your repository so we can get started. There are three
 topics that you should know about. To get jobs running you need the "job" itself. Jobs run
 within "pipeline". The third important thing is to provide a "project" definition.
+
+## Where to save the zuul relavant data?
+
+Zuul will parse all branches of the untrusted repositories that zuul knows about.
+Your repository is most likley an untrusted one since only the configuration repostiories should
+have the "trusted" state.
+So it doesn't matter whether you have just one branch containing zuul files or all branches. Zuul
+is looking for the following pathes on your repositories root.
+
+```bash
+./zuul.yaml
+./.zuul.yaml
+./zuul.d/
+./.zuul.d/
+```
+
+Just use exact on of the four possiblities.
+
+If using the directory style configuration all `yaml` files within in this directory will be
+processed. If your projects configuration is small enough you may put all information in
+a single file called `zuul.yaml`. It is also possible to create the file or the directory
+with a leading dot to hide them for non zuul related work within the repository.
 
 ### Projects
 
