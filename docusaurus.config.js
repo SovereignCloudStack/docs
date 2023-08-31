@@ -50,8 +50,8 @@ const config = {
         fromExtensions: ["html", "htm"], // /myPage.html -> /myPage
         toExtensions: ["exe", "zip"], // /myAsset -> /myAsset.zip (if latter exists)
         createRedirects(existingPath) {
-          if (existingPath.includes("/community/community")) {
-            return [existingPath.replace("/community/community", "/community")];
+          if (existingPath.includes("/community")) {
+            return [existingPath.replace("/community", "/community/community")];
           }
           return undefined; // Return a falsy value: no redirect created
         },
