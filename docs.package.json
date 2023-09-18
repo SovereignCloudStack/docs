@@ -28,5 +28,17 @@
     "source": "Standards/*.md",
     "target": "standards",
     "label": ""
+  },
+  {
+    "repo": "osism/testbed",
+    "source": "doc",
+    "target": "docs/02-iaas/deployment-examples/testbed",
+    "label": "testbed"
+  },
+  {
+    "repo": "osism/cloud-in-a-box",
+    "source": "doc",
+    "target": "docs/02-iaas/deployment-examples/cloud-in-a-box",
+    "label": "cloud-in-a-box"
   }
 ]
