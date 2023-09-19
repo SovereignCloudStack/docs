@@ -32,13 +32,13 @@
   {
     "repo": "osism/testbed",
     "source": "doc",
-    "target": "docs/02-iaas/deployment-examples/testbed",
+    "target": "docs/02-iaas/deployment-examples",
     "label": "testbed"
   },
   {
-    "repo": "osism/cloud-in-a-box",
-    "source": "doc",
-    "target": "docs/02-iaas/deployment-examples/cloud-in-a-box",
+    "repo": "osism/osism.github.io",
+    "source": "docs/advanced-guides",
+    "target": "docs/02-iaas/deployment-examples",
     "label": "cloud-in-a-box"
   }
 ]
