@@ -46,14 +46,35 @@ const sidebarsDocs = {
           items: [
             {
               type: "category",
-              label: "Deployment A",
+              label: "Testbed",
               link: {
+                slug: "iaas/deployment-examples/testbed",
                 type: "generated-index",
               },
               items: [
-                // 'iaas/deployment-examples/a/index',
-                // 'iaas/deployment-examples/a/hardware',
-                // 'iaas/deployment-examples/a/software'
+                "iaas/deployment-examples/testbed/doc/overview",
+                "iaas/deployment-examples/testbed/doc/requirements",
+                "iaas/deployment-examples/testbed/doc/preparations",
+                "iaas/deployment-examples/testbed/doc/getting_started",
+                "iaas/deployment-examples/testbed/doc/usage",
+                "iaas/deployment-examples/testbed/doc/networking",
+                "iaas/deployment-examples/testbed/doc/important_notes",
+                "iaas/deployment-examples/testbed/doc/configuration",
+                "iaas/deployment-examples/testbed/doc/authentication",
+                "iaas/deployment-examples/testbed/doc/federation",
+                "iaas/deployment-examples/testbed/doc/contribute",
+                "iaas/deployment-examples/testbed/doc/license",
+              ],
+            },
+            {
+              type: "category",
+              label: "Cloud in a Box",
+              link: {
+                slug: "iaas/deployment-examples/cloud-in-a-box",
+                type: "generated-index",
+              },
+              items: [
+                "iaas/deployment-examples/cloud-in-a-box/advanced-guides/cloud-in-a-box",
               ],
             },
           ],
@@ -192,6 +213,28 @@ const sidebarsDocs = {
       },
       items: [
         // 'operating-scs/overview',
+        {
+          type: "category",
+          label: "Components",
+          link: {
+            type: "generated-index",
+          },
+          items: [
+            {
+              type: "category",
+              label: "Status Page API",
+              link: {
+                type: "generated-index",
+              },
+              items: [
+                "operating-scs/components/status-page/docs/overview",
+                "operating-scs/components/status-page/docs/component_overview",
+                "operating-scs/components/status-page/docs/components",
+                "operating-scs/components/status-page/docs/levels_of_consensus",
+              ],
+            },
+          ],
+        },
         // {
         //   type: 'category',
         //   label: 'Guides',
@@ -258,20 +301,20 @@ const sidebarsDocs = {
           link: {
             type: "generated-index",
           },
-          items: ["operating-scs/metering/meter-configuration"],
+          items: ["operating-scs/metering/meter_configuration"],
         },
       ],
     },
-    // {
-    //   type: 'category',
-    //   label: 'Identity and Access Management (IAM)',
-    //   link: {
-    //     type: 'generated-index'
-    //   },
-    //   items: [
-    //     'iam/index'
-    //   ]
-    // },
+    {
+      type: "category",
+      label: "Identity and Access Management (IAM)",
+      link: {
+        type: "generated-index",
+      },
+      items: [
+        "iam/intra-SCS-federation-setup-description-for-osism-doc-operations",
+      ],
+    },
     {
       type: "category",
       label: "Releases",

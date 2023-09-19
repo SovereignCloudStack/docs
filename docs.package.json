@@ -20,7 +20,7 @@
   {
     "repo": "SovereignCloudStack/status-page-openapi",
     "source": "docs",
-    "target": "docs/04-operating-scs",
+    "target": "docs/04-operating-scs/components",
     "label": "status-page"
   },
   {
@@ -28,5 +28,17 @@
     "source": "Standards/*.md",
     "target": "standards",
     "label": ""
+  },
+  {
+    "repo": "osism/testbed",
+    "source": "doc",
+    "target": "docs/02-iaas/deployment-examples",
+    "label": "testbed"
+  },
+  {
+    "repo": "osism/osism.github.io",
+    "source": "docs/advanced-guides",
+    "target": "docs/02-iaas/deployment-examples",
+    "label": "cloud-in-a-box"
   }
 ]
