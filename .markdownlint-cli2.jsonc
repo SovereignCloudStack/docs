@@ -4,7 +4,7 @@
     "MD013": false,
     "MD033": { "allowed_elements": ["li", "ul"] }, // only allowing ul, li elements for checkboxes within md tables
     "MD024": false,
-    "relative-links": true,
+    "relative-links": false,
     "search-replace": {
       "rules": [
         {
