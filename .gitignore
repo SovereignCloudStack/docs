@@ -6,7 +6,7 @@
 /docs/03-container/components
 /docs/04-operating-scs/components
 /docs/06-releases
-/standards
+/standards/*.md
 
 # Dependencies
 node_modules
