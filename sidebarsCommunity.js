@@ -47,6 +47,6 @@ const sidebars = {
     },
     'license-considerations'
   ]
-};
+}
 
-module.exports = sidebars;
+module.exports = sidebars

@@ -33,7 +33,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:md": "markdownlint-cli2 \"**/*.md\"",
     "fix:md": "markdownlint-cli2-fix \"**/*.md\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format": "prettier --log-level warn --write \"./**/*.{jsx,js}\""
   },
   "dependencies": {
     "@docusaurus/core": "^2.4.1",
@@ -53,7 +54,6 @@
     "lint-staged": "^13.1.2",
     "markdownlint-cli2": "^0.7.1",
     "markdownlint-rule-search-replace": "^1.0.9",
-    "prettier": "^2.8.4",
     "prism-react-renderer": "^1.3.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
@@ -73,6 +73,7 @@
     "markdownlint": "^0.26.2",
     "markdownlint-cli": "^0.32.2",
     "markdownlint-rule-relative-links": "^2.1.0",
+    "prettier": "3.0.3",
     "typescript": "^4.9.3"
   },
   "browserslist": {

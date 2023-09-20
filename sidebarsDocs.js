@@ -347,6 +347,6 @@ const sidebarsDocs = {
     },
     'glossary'
   ]
-};
+}
 
-module.exports = sidebarsDocs;
+module.exports = sidebarsDocs

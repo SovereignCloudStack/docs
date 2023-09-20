@@ -1,7 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -55,9 +55,9 @@ const config = {
         ],
         createRedirects(existingPath) {
           if (existingPath.includes('/community')) {
-            return [existingPath.replace('/community', '/community/community')];
+            return [existingPath.replace('/community', '/community/community')]
           }
-          return undefined; // Return a falsy value: no redirect created
+          return undefined // Return a falsy value: no redirect created
         }
       }
     ],
@@ -183,6 +183,6 @@ const config = {
       })
     ]
   ]
-};
+}
 
-module.exports = config;
+module.exports = config
