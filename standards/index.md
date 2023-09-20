@@ -8,4 +8,4 @@ Our Standards emerge within our open community of cloud service providers and in
 
 There are different and versions layers of Standards. Get to know these on our [Overview](./standards/overview) page.
 
-There is also the possibility of getting certified for clouds that fulfill these standards. You will find already ceritified clouds [here](./ceritifaction/certified-clouds) and also how to get certified [here](./certification/get-certified.md).
+There is also the possibility of getting certified for clouds that fulfill these standards. You will find already ceritified clouds [here](./certification/certified-clouds) and also how to get certified [here](./certification/get-certified).
