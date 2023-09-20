@@ -9,7 +9,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Communication',
-      items: ['communication/matrix'],
+      items: ['communication/matrix']
     },
     {
       type: 'category',
@@ -18,8 +18,8 @@ const sidebars = {
         'cloud-resources/cloud-resources',
         'cloud-resources/getting-started-openstack',
         'cloud-resources/plusserver-gx-scs',
-        'cloud-resources/wavestack',
-      ],
+        'cloud-resources/wavestack'
+      ]
     },
     {
       type: 'category',
@@ -27,14 +27,14 @@ const sidebars = {
       items: [
         'github/branchprotection',
         'github/dco-and-licenses',
-        'github/tips-and-tricks',
-      ],
+        'github/tips-and-tricks'
+      ]
     },
     {
       type: 'category',
       label: 'Contribute',
       link: {
-        type: 'generated-index',
+        type: 'generated-index'
       },
       items: [
         'contribute/adding-docs-guide',
@@ -42,11 +42,11 @@ const sidebars = {
         'contribute/docs-workflow-explanation',
         'contribute/linting-guide',
         'contribute/local-docusaurus-development-guide',
-        'contribute/styleguide',
-      ],
+        'contribute/styleguide'
+      ]
     },
-    'license-considerations',
-  ],
+    'license-considerations'
+  ]
 };
 
 module.exports = sidebars;

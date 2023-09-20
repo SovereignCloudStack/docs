@@ -13,7 +13,7 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   markdown: {
-    mermaid: true,
+    mermaid: true
   },
   organizationName: 'SovereignCloudStack', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
@@ -22,7 +22,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en']
   },
   presets: [
     [
@@ -31,17 +31,17 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebarsDocs.js'),
-          editUrl: 'https://github.com/SovereignCloudStack/docs/tree/main/',
+          editUrl: 'https://github.com/SovereignCloudStack/docs/tree/main/'
         },
         blog: {
           showReadingTime: true,
-          editUrl: 'https://github.com/SovereignCloudStack/docs/tree/main/',
+          editUrl: 'https://github.com/SovereignCloudStack/docs/tree/main/'
         },
         theme: {
-          customCss: [require.resolve('./src/css/custom.css')],
-        },
-      }),
-    ],
+          customCss: [require.resolve('./src/css/custom.css')]
+        }
+      })
+    ]
   ],
   plugins: [
     [
@@ -50,16 +50,16 @@ const config = {
         redirects: [
           {
             to: '/docs/iaas/deployment-examples/testbed',
-            from: '/docs/category/osism-testbed/',
-          },
+            from: '/docs/category/osism-testbed/'
+          }
         ],
         createRedirects(existingPath) {
           if (existingPath.includes('/community')) {
             return [existingPath.replace('/community', '/community/community')];
           }
           return undefined; // Return a falsy value: no redirect created
-        },
-      },
+        }
+      }
     ],
     [
       '@docusaurus/plugin-content-docs',
@@ -67,9 +67,9 @@ const config = {
         id: 'community',
         path: 'community',
         routeBasePath: 'community',
-        sidebarPath: require.resolve('./sidebarsCommunity.js'),
+        sidebarPath: require.resolve('./sidebarsCommunity.js')
         // ... other options
-      },
+      }
     ],
     [
       '@docusaurus/plugin-content-docs',
@@ -77,10 +77,10 @@ const config = {
         id: 'standards',
         path: 'standards',
         routeBasePath: 'standards',
-        sidebarPath: require.resolve('./sidebarsStandards.js'),
-      },
+        sidebarPath: require.resolve('./sidebarsStandards.js')
+      }
     ],
-    './src/plugins/docusaurus-plugin-matomo-analytics/index.js',
+    './src/plugins/docusaurus-plugin-matomo-analytics/index.js'
   ],
 
   themeConfig:
@@ -90,15 +90,15 @@ const config = {
         {
           title: 'One platform — standardized, built and operated by many.',
           description:
-            'Documentation and Community Platform for the Sovereign Cloud Stack',
-        },
+            'Documentation and Community Platform for the Sovereign Cloud Stack'
+        }
       ],
       image: 'img/summit-social.png',
       navbar: {
         title: '',
         logo: {
           alt: 'SCS',
-          src: 'img/logo.svg',
+          src: 'img/logo.svg'
         },
         items: [
           //   { to: '/blog', label: 'Blog', position: 'left' },
@@ -109,9 +109,9 @@ const config = {
           {
             href: 'https://github.com/SovereignCloudStack/docs',
             label: 'GitHub',
-            position: 'right',
-          },
-        ],
+            position: 'right'
+          }
+        ]
       },
       footer: {
         style: 'light',
@@ -121,22 +121,22 @@ const config = {
             items: [
               {
                 label: 'Contribute',
-                to: '/docs',
-              },
-            ],
+                to: '/docs'
+              }
+            ]
           },
           {
             title: 'Community',
             items: [
               {
                 label: 'Matrix',
-                href: 'https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org',
+                href: 'https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org'
               },
               {
                 label: 'Mastodon',
-                href: 'https://fosstodon.org/@sovereigncloudstack',
-              },
-            ],
+                href: 'https://fosstodon.org/@sovereigncloudstack'
+              }
+            ]
           },
           {
             title: 'More',
@@ -147,26 +147,26 @@ const config = {
               // },
               {
                 label: 'GitHub',
-                href: 'https://github.com/SovereignCloudStack/docs',
-              },
-            ],
-          },
+                href: 'https://github.com/SovereignCloudStack/docs'
+              }
+            ]
+          }
         ],
         copyright:
-          'Sovereign Cloud Stack, SCS and the logo are registered trademarks of the Open Source Business Alliance e.V. — Other trademarks are property of their respective owners.',
+          'Sovereign Cloud Stack, SCS and the logo are registered trademarks of the Open Source Business Alliance e.V. — Other trademarks are property of their respective owners.'
       },
       prism: {
         theme: darkCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['powershell', 'ruby'],
+        additionalLanguages: ['powershell', 'ruby']
       },
       matomoAnalytics: {
         matomoUrl: 'https://matomo.scs.community/',
         siteId: '2',
         phpLoader: 'matomo.php',
         jsLoader: 'matomo.js',
-        disableCookies: true,
-      },
+        disableCookies: true
+      }
     }),
 
   themes: [
@@ -179,10 +179,10 @@ const config = {
       ({
         hashed: true,
         docsDir: ['docs', 'community', 'standards'],
-        docsRouteBasePath: ['docs', 'community', 'standards'],
-      }),
-    ],
-  ],
+        docsRouteBasePath: ['docs', 'community', 'standards']
+      })
+    ]
+  ]
 };
 
 module.exports = config;

@@ -8,7 +8,7 @@ const sidebars = {
       label: 'Standards',
       link: {
         type: 'doc',
-        id: 'index',
+        id: 'index'
       },
       items: [
         'standards/overview',
@@ -16,18 +16,18 @@ const sidebars = {
           type: 'category',
           label: 'General Standards',
           link: {
-            type: 'generated-index',
+            type: 'generated-index'
           },
           items: [
             'scs-0001-v1-sovereign-cloud-standards',
-            'scs-0002-v2-standards-docs-org',
-          ],
+            'scs-0002-v2-standards-docs-org'
+          ]
         },
         {
           type: 'category',
           label: 'IaaS Standards',
           link: {
-            type: 'generated-index',
+            type: 'generated-index'
           },
           items: [
             'scs-0100-v3-flavor-naming',
@@ -35,36 +35,36 @@ const sidebars = {
             'scs-0102-v1-image-metadata',
             'scs-0104-v1-standard-images',
             'scs-0103-v1-standard-flavors',
-            'scs-0110-v1-ssd-flavors',
-          ],
+            'scs-0110-v1-ssd-flavors'
+          ]
         },
         {
           type: 'category',
           label: 'Container Standards',
           link: {
-            type: 'generated-index',
+            type: 'generated-index'
           },
           items: [
             'scs-0210-v1-k8s-new-version-policy',
-            'scs-0211-v1-kaas-default-storage-class',
-          ],
-        },
-      ],
+            'scs-0211-v1-kaas-default-storage-class'
+          ]
+        }
+      ]
     },
     {
       type: 'category',
       label: 'Certification',
       link: {
-        type: 'generated-index',
+        type: 'generated-index'
       },
       items: [
         'certification/overview',
         'certification/subjects-versions',
         'certification/certified-clouds',
-        'certification/get-certified',
-      ],
-    },
-  ],
+        'certification/get-certified'
+      ]
+    }
+  ]
 };
 
 module.exports = sidebars;
