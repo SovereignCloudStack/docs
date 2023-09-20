@@ -4,6 +4,7 @@
     "MD013": false,
     "MD033": { "allowed_elements": ["li", "ul"] }, // only allowing ul, li elements for checkboxes within md tables
     "MD024": false,
+    "relative-links": true,
     "search-replace": {
       "rules": [
         {
@@ -50,6 +51,10 @@
       ]
     }
   },
-  "customRules": ["markdownlint-rule-search-replace"],
-  "ignores": ["node_modules", ".github", "docs"]
+  "customRules": [
+    "markdownlint-rule-search-replace",
+    "markdownlint-rule-relative-links"
+  ],
+  "ignores": ["node_modules", ".github", "docs"],
+  "globs": ["**/*.{md}"]
 }
