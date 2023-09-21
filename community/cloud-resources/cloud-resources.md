@@ -63,6 +63,7 @@ Service users will have their default_project_id set to a specific project and w
 | e7622c1048ac4520a2d050ae141e826b | p500924-tender-6a           | jschoone          | Dev Environment for VP06a         | ∞            |
 | eeed7e0ad33f42f189fb4165116f5a1b | p500924-dnation-k8s         | matofeder         | dNation K8s Dev Project           | ∞            |
 | b342f37804f14459bdf703573169bf79 | p500924-minery              | 90n20             | Testbed env for Pentesting        | 30.11.2024   |
+|                                  | p500924-vp10-3              | tonifinger        | Dev Environment for VP10-3        | ∞            |
 |                                  |                             |                   |                                   |              |
 
 ## Wavecon
