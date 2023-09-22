@@ -52,18 +52,7 @@ const sidebarsDocs = {
                 type: 'generated-index'
               },
               items: [
-                'iaas/deployment-examples/testbed/doc/overview',
-                'iaas/deployment-examples/testbed/doc/requirements',
-                'iaas/deployment-examples/testbed/doc/preparations',
-                'iaas/deployment-examples/testbed/doc/getting_started',
-                'iaas/deployment-examples/testbed/doc/usage',
-                'iaas/deployment-examples/testbed/doc/networking',
-                'iaas/deployment-examples/testbed/doc/important_notes',
-                'iaas/deployment-examples/testbed/doc/configuration',
-                'iaas/deployment-examples/testbed/doc/authentication',
-                'iaas/deployment-examples/testbed/doc/federation',
-                'iaas/deployment-examples/testbed/doc/contribute',
-                'iaas/deployment-examples/testbed/doc/license'
+                'iaas/deployment-examples/cloud-in-a-box/advanced-guides/testbed'
               ]
             },
             {
@@ -97,18 +86,9 @@ const sidebarsDocs = {
           },
           items: [
             {
-              type: 'category',
+              type: 'doc',
               label: 'Openstack Image Manager',
-              link: {
-                type: 'generated-index'
-              },
-              items: [
-                'iaas/components/openstack-image-manager/overview',
-                'iaas/components/openstack-image-manager/requirements',
-                'iaas/components/openstack-image-manager/quickstart',
-                'iaas/components/openstack-image-manager/configuration',
-                'iaas/components/openstack-image-manager/contribute'
-              ]
+              id: 'iaas/components/image-manager'
             }
           ]
         }

@@ -6,10 +6,10 @@
     "label": "06-releases"
   },
   {
-    "repo": "osism/openstack-image-manager",
-    "source": "doc/*.md",
+    "repo": "osism/osism.github.io",
+    "source": "docs/guides/operations-guide/openstack/image-manager.md",
     "target": "docs/02-iaas/components",
-    "label": "openstack-image-manager"
+    "label": ""
   },
   {
     "repo": "SovereignCloudStack/k8s-cluster-api-provider",
@@ -28,12 +28,6 @@
     "source": "Standards/*.md",
     "target": "standards",
     "label": ""
-  },
-  {
-    "repo": "osism/testbed",
-    "source": "doc",
-    "target": "docs/02-iaas/deployment-examples",
-    "label": "testbed"
   },
   {
     "repo": "osism/osism.github.io",
