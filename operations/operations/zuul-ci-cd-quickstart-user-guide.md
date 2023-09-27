@@ -235,3 +235,50 @@ The content may look like this:
 
 You may use this content or the file to provide it as a secret. You just have to update the `<name>` and the
 `<fieldname>` part.
+
+#### Let's put it all together
+
+For a basic but working example the following content may be written into a `zuul.yaml` file.
+
+```yaml
+# zuul.yaml content
+
+---
+- secret:
+    name: mySecret
+    data:
+      secretValue: !encrypted/pkcs1-oaep
+        - <ENCYPTED_DATA>
+
+- job:
+    name: myFirstTestJob
+    parent: base
+    secrets:
+     - name: secretName # The name of the secret that is used within "playbooks/testPlaybook.yaml"
+       secret: mySecret
+    run: playbooks/testPlaybook.yaml
+
+- project:
+    check:
+      jobs:
+        - myFirstTestJob
+```
+
+This will run you job `myFirstTestJob` when ever the `check` pipeline is triggered.
+Within SCS this pipeline is always triggered if you open, change or reopen a pull request.
+The `check` pipeline can also be triggered manually if you write a comment on an already
+existing pull request and place the string `recheck` in it.
+
+The path to you playbook is always the full path within the repository. The playbook
+contains the tasks you actually want to run on all or a specific subset of nodes.
+Example playbook:
+
+```yaml
+# playbooks/testPlaybook.yaml content
+
+---
+- hosts: all
+  tasks:
+    - debug:
+        msg: "Debug print my secrets! {{ secretName.secretValue }}" # do not do this as it will expose your secrets
+```
