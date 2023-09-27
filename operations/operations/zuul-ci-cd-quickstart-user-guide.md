@@ -5,7 +5,7 @@
 1. Repository is known by [SCS zuul](https://zuul.scs.community)
 2. Basic ansible knowledge
 3. Basic yaml knowledge
-4. zuul-client installed
+4. zuul-client installed (Only if you want to create secrets. [See also](#what-about-secrets))
 
 Check [SCS zuul projects](https://zuul.scs.community/t/SCS/projects) for your repository to
 be available. If it is missing you need an administrator to get your repository
