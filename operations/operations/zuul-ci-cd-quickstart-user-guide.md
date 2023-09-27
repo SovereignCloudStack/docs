@@ -2,19 +2,19 @@
 
 ## Prerequisites
 
-1. Repository is known by [SCS zuul](https://zuul.scs.community)
+1. Repository is known by [SCS Zuul](https://zuul.scs.community)
 2. Basic ansible knowledge
 3. Basic yaml knowledge
 4. zuul-client installed (Only if you want to create secrets. [See also](#what-about-secrets))
 
-Check [SCS zuul projects](https://zuul.scs.community/t/SCS/projects) for your repository to
+Check [SCS Zuul projects](https://zuul.scs.community/t/SCS/projects) for your repository to
 be available. If it is missing you need an administrator to get your repository
-configured to zuul.
+configured to Zuul.
 
 ## Who is it for?
 
-You may have heard about zuul and may ask yourself if it is capable to support you.
-Basically everything you use ansible for can be done using zuul. That is not always
+You may have heard about Zuul and may ask yourself if it is capable to support you.
+Basically everything you use ansible for can be done using Zuul. That is not always
 a good thing since you may get careless and your workload will exceed the CI/CD concept.
 
 If you find yourself doing things under the following list you are at the right place.
@@ -22,26 +22,26 @@ If you find yourself doing things under the following list you are at the right 
 1. Code testing
 2. Deployment tests using IaC
 
-If you want to, let's say, monitor something using zuul, that is possible but not the
+If you want to, let's say, monitor something using Zuul, that is possible but not the
 intended use case.
 
 ## Where do I start?
 
-Right in your projects repository! The only prerequisite you need to fulfill, is that
-your repository you want zuul to work on is known by zuul. This is done by the zuuls
-tenant configuration. To update this configuration you need access to the zuul instance
+Right in your project's repository! The only prerequisite is that
+your repository you want Zuul to work on is known by Zuul. This is done by the Zuul's
+tenant configuration. To update this configuration you need access to the Zuul instance
 or ask an administrator for help.
 
-We consider that zuul knows about your repository so we can get started. There are three
+We assume that Zuul knows about your repository so we can get started. There are three
 topics that you should know about. To get jobs running you need the "job" itself. Jobs run
-within "pipeline". The third important thing is to provide a "project" definition.
+within a "pipeline". The third important thing is to provide a "project" definition.
 
-## Where to save the zuul relevant data?
+## Where to save the Zuul relevant data?
 
-Zuul will parse all branches of the untrusted repositories that zuul knows about.
+Zuul will parse all branches of the untrusted repositories that Zuul knows about.
 Your repository is most likely an untrusted one since only the configuration repositories should
 have the "trusted" state.
-So it doesn't matter whether you have just one branch containing zuul files or all branches. Zuul
+So it doesn't matter whether you have just one branch containing Zuul files or all branches. Zuul
 is looking for the following pathes on your repositories root.
 
 ```bash
@@ -67,7 +67,7 @@ with a leading dot to hide them for non zuul related work within the repository.
 
 ### Projects
 
-If zuul is configured to observe your repository it will have a look at your projects
+If Zuul is configured to observe your repository it will have a look at your projects
 definition. Minimal example:
 
 ```yaml
@@ -87,9 +87,9 @@ definition. Minimal example:
 
 ```
 
-By default zuul will observe all branches for such files. We have to set the repository name
-that have to match the exact value that was set for zuul. Set a default-branch where actions
-that don't match an explicit branch are executed on. Set the merge-mode that zuul has to use.
+By default Zuul will observe all branches for such files. We have to set the repository name
+that have to match the exact value that was set for Zuul. Set a default-branch where actions
+that don't match an explicit branch are executed on. Set the merge-mode that Zuul has to use.
 But beware that not all issue tracker support all methods. For github squash-merge will work.
 
 After these three properties add the pipelines you want to use to the project definition.
@@ -99,7 +99,7 @@ With the `jobs` list you define which jobs to run in which pipeline.
 
 ### Pipelines
 
-Every zuul instance will have at least one repository that is used for configuration. There
+Every Zuul instance will have at least one repository that is used for configuration. There
 you will find the available pipelines. Pipelines are used to run your jobs on a periodic or
 event driven base. Pipelines can be used to run other pipelines and to keep your jobs in a
 defined order if you need this.
@@ -114,10 +114,10 @@ think about, how to create a pipeline. Just use one that fits your needs as clos
 
 ### Jobs
 
-All jobs that your zuul instances knows of can be used for your own purposes.
+All jobs that your Zuul instances knows of can be used for your own purposes.
 Call them directly or implement a job that uses an existing job as parent.
 Didn't find the right job? Than we have to create a new one. Existing jobs
-can be found in the web ui of your zuul instance: [Example](https://zuul.scs.community/t/SCS/jobs)
+can be found in the web ui of your Zuul instance: [Example](https://zuul.scs.community/t/SCS/jobs)
 
 First have a look on a basic job example:
 
@@ -152,7 +152,7 @@ Jobs without a parent are called "base" jobs. Usually you don't want to implemen
 there are already some base jobs that implement often used stuff. A description may not be mandatory
 but is obviously useful.
 
-Necessary for zuul to do anything you just need to add a `run` or `roles` property. Within something that is
+Necessary for Zuul to do anything you just need to add a `run` or `roles` property. Within a job that is
 like a `noop` job or just printing something to stdout that is everything you need to run your first job.
 Since anything we want to do requires a little bit more you have to define a nodeset. The nodes
 are used to run your playbooks on. In 99,9% you will need this too.
@@ -216,10 +216,10 @@ Example:
 Within `my-playbook.yaml` you can reference the secret value using `"{{ clouds_conf.credentials }}"`.
 In this example `my-secret-value` is clear readable text. That is not something we want to keep
 secrets. But how do you encrypt secrets in a way that they are secure and also can be decrypted by
-zuul?
+Zuul?
 
-For this purpose zuul creates its own public/private key pair for each project. Everyone may use the
-public key to create secrets. But only zuul will be able to decrypt these values. To avoid the user
+For this purpose Zuul creates its own public/private key pair for each project. Everyone may use the
+public key to create secrets. But only Zuul will be able to decrypt these values. To avoid the user
 to be responsible for the correct encryption there is an zuul-client tool that will do this for you.
 
 Example:
