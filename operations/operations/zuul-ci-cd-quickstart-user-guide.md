@@ -95,7 +95,6 @@ But beware that not all issue tracker support all methods. For github squash-mer
 After these three properties add the pipelines you want to use to the project definition.
 With the `jobs` list you define which jobs to run in which pipeline.
 
-
 [See official documentation](https://zuul-ci.org/docs/zuul/latest/config/project.html)
 
 ### Pipelines
@@ -252,6 +251,7 @@ You may use this content or the file to provide it as a secret. You just have to
 `<fieldname>` part.
 
 Official documentation:
+
 1. [Secrets documentation](https://zuul-ci.org/docs/zuul/latest/config/secret.html#secret)
 2. [Encryption documentation](https://zuul-ci.org/docs/zuul/latest/project-config.html#encryption)
 
