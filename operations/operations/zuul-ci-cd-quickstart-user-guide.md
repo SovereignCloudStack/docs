@@ -147,7 +147,9 @@ First have a look on a basic job example:
 
 ```
 
-Each jobs needs a name. Each job need to define whether there is parent job or not.
+Each job needs a name that has to be unique within the whole tenant.
+A useful convention to achieve this is to prepend the name of the repository.
+Each job need to define whether there is parent job or not.
 Jobs without a parent are called "base" jobs. Usually you don't want to implement base jobs since
 there are already some base jobs that implement often used stuff. A description may not be mandatory
 but is obviously useful.
