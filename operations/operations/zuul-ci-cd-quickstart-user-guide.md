@@ -197,6 +197,14 @@ Secrets for a job are simply defined by the keyword `secrets`.
 Each secret needs a name that can be used in your playbooks.
 The property `secret` references the secret that is defined within your project.
 
+**ATTENTION!** If your job is using a secret `job.post-review` is automatically
+set to `true`. For untrusted projects, that means that your job is only called
+in piplines that have the `pipeline.post-review` flag set to `true`. In SCS context
+that means you may run these jobs only with the pipelines `tag` and `post`.
+
+If you want to run jobs on pipelines that have `post-review` set to `false`, which
+is default, and your job needs a secret, the secret may be defined in the zuul-config repository.
+
 Example:
 
 ```yaml
