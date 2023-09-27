@@ -60,7 +60,7 @@ is looking for the following pathes on your repositories root.
 
 Just use exactly one of the four possibilities.
 
-If using the directory style configuration all `yaml` files within in this directory will be
+If using the directory style configuration all `yaml` files within this directory will be
 processed. If your projects configuration is small enough you may put all information in
 a single file called `zuul.yaml`. It is also possible to create the file or the directory
 with a leading dot to hide them for non zuul related work within the repository.
