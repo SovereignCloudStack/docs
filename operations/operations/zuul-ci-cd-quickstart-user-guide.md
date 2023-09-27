@@ -95,6 +95,9 @@ But beware that not all issue tracker support all methods. For github squash-mer
 After these three properties add the pipelines you want to use to the project definition.
 With the `jobs` list you define which jobs to run in which pipeline.
 
+
+[See official documentation](https://zuul-ci.org/docs/zuul/latest/config/project.html)
+
 ### Pipelines
 
 Every zuul instance will have at least one repository that is used for configuration. There
@@ -107,6 +110,8 @@ See available [pipelines](https://github.com/SovereignCloudStack/zuul-config/blo
 You are not able to define new pipelines outside of a so called "configuration" repository. Since,
 by default your repo is considered "untrusted". So in the first place you don't need to
 think about, how to create a pipeline. Just use one that fits your needs as close as possible.
+
+[See official documentation](https://zuul-ci.org/docs/zuul/latest/config/pipeline.html)
 
 ### Jobs
 
@@ -165,6 +170,8 @@ that the parent job may has pre- and post-run playbooks. In this case your pre- 
 4. post-run parent
 
 If your job exceeds the defined timeout, the job is considered as failed.
+
+[See official documentation](https://zuul-ci.org/docs/zuul/latest/config/job.html)
 
 #### What about secrets?
 
@@ -235,6 +242,10 @@ The content may look like this:
 
 You may use this content or the file to provide it as a secret. You just have to update the `<name>` and the
 `<fieldname>` part.
+
+Official documentation:
+1. [Secrets documentation](https://zuul-ci.org/docs/zuul/latest/config/secret.html#secret)
+2. [Encryption documentation](https://zuul-ci.org/docs/zuul/latest/project-config.html#encryption)
 
 #### Let's put it all together
 
