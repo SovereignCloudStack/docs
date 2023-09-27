@@ -108,9 +108,65 @@ Have a look at the configuration repository to utilize the pipelines for your re
 See available [pipelines](https://github.com/SovereignCloudStack/zuul-config/blob/main/zuul.d/gh_pipelines.yaml) for SCS.
 You are not able to define new pipelines outside of a so called "configuration" repository. Since,
 by default your repo is considered "untrusted". So in the first place you don't need to
-think about, how to create a pipeline. Just use one that fits your needs as close as possible.
+think about, how to create a pipeline. Just use one that fits your needs as close as possible. Next you will
+find an enumeration and a small description about the available pipelines in SCS Zuul.
 
-[See official documentation](https://zuul-ci.org/docs/zuul/latest/config/pipeline.html)
+Pipelines available in SCS Zuul:
+
+#### 1. check
+
+* event driven pipeline
+* runs if a pull request is created, changed or reopened
+* re-runs if a comment contains `recheck`
+
+#### 2. gate
+
+* event driven pipeline
+* trigger events: pull_request_review, pull_request, check_run
+
+#### 3. post
+
+* event driven pipeline
+* trigger event: post
+
+#### 4. tag
+
+* event driven pipeline
+* trigger event: push
+
+#### 5. e2e-test
+
+* event driven pipeline
+* trigger event: pull_request
+
+#### 6. e2e-quick-test
+
+* event driven pipeline
+* trigger event: pull_request
+
+#### 7. unlabel-on-update-e2e-test
+
+* event driven pipeline
+* trigger event: pull_request
+
+#### 8. unlabel-on-update-e2e-quick-test
+
+* event driven pipeline
+* trigger event: pull_request
+
+#### 9. periodic-hourly
+
+* time based pipeline that runs every hour
+
+#### 10. periodic-daily
+
+* time based pipeline that runs every day at 3 o'clock am.
+
+#### 11. compliance_check
+
+* time based pipeline that runs every 15 minutes
+
+If you want to know more about pipelines: [See official documentation](https://zuul-ci.org/docs/zuul/latest/config/pipeline.html)
 
 ### Jobs
 
