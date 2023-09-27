@@ -36,10 +36,10 @@ We consider that zuul knows about your repository so we can get started. There a
 topics that you should know about. To get jobs running you need the "job" itself. Jobs run
 within "pipeline". The third important thing is to provide a "project" definition.
 
-## Where to save the zuul relavant data?
+## Where to save the zuul relevant data?
 
 Zuul will parse all branches of the untrusted repositories that zuul knows about.
-Your repository is most likley an untrusted one since only the configuration repostiories should
+Your repository is most likely an untrusted one since only the configuration repositories should
 have the "trusted" state.
 So it doesn't matter whether you have just one branch containing zuul files or all branches. Zuul
 is looking for the following pathes on your repositories root.
