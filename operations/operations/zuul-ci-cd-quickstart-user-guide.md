@@ -58,7 +58,7 @@ is looking for the following pathes on your repositories root.
 └── project.yaml
 ```
 
-Just use exact on of the four possiblities.
+Just use exactly one of the four possibilities.
 
 If using the directory style configuration all `yaml` files within in this directory will be
 processed. If your projects configuration is small enough you may put all information in
