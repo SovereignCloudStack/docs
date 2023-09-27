@@ -102,8 +102,9 @@ you will find the available pipelines. Pipelines are used to run your jobs on a 
 event driven base. Pipelines can be used to run other pipelines and to keep your jobs in a
 defined order if you need this.
 
-Have a look at the configuration repository to utilize the pipelines for your repository. You
-are not able to define new pipelines outside of a so called "configuration" repository. Since,
+Have a look at the configuration repository to utilize the pipelines for your repository.
+See available [pipelines](https://github.com/SovereignCloudStack/zuul-config/blob/main/zuul.d/gh_pipelines.yaml) for SCS.
+You are not able to define new pipelines outside of a so called "configuration" repository. Since,
 by default your repo is considered "untrusted". So in the first place you don't need to
 think about, how to create a pipeline. Just use one that fits your needs as close as possible.
 
