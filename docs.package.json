@@ -1,0 +1,38 @@
+[
+  {
+    "repo": "SovereignCloudStack/release-notes",
+    "source": "*.md",
+    "target": "docs",
+    "label": "06-releases"
+  },
+  {
+    "repo": "osism/osism.github.io",
+    "source": "docs/guides/operations-guide/openstack/image-manager.md",
+    "target": "docs/02-iaas/components",
+    "label": ""
+  },
+  {
+    "repo": "SovereignCloudStack/k8s-cluster-api-provider",
+    "source": "doc",
+    "target": "docs/03-container/components",
+    "label": "k8s-cluster-api-provider"
+  },
+  {
+    "repo": "SovereignCloudStack/status-page-openapi",
+    "source": "docs",
+    "target": "docs/04-operating-scs/components",
+    "label": "status-page"
+  },
+  {
+    "repo": "SovereignCloudStack/standards",
+    "source": "Standards/*.md",
+    "target": "standards",
+    "label": ""
+  },
+  {
+    "repo": "osism/osism.github.io",
+    "source": "docs/advanced-guides",
+    "target": "docs/02-iaas/deployment-examples",
+    "label": "cloud-in-a-box"
+  }
+]

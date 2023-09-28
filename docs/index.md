@@ -1,8 +1,7 @@
 ---
+title: Introduction
 sidebar_position: 1
 ---
-
-# SCS Documentation
 
 [![Creative Commons Attribution-ShareAlike 4.0 International](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
 
@@ -14,9 +13,10 @@ As only the sum of different repositories complete the SCS Stack, it is importan
 
 ## What is SCS? Why should I care?
 
+SCS describes a standard as well as a reference implementation of this standard.
+
 Please see our [public web site](https://scs.community/) and specifically
 the [About SCS](https://scs.community/About/) page.
-SCS describes a standard as well as a reference implementation of this standard.
 
 ## The reference implementation
 
@@ -108,14 +108,6 @@ Among others, this includes OpenStack Zed, Kubernetes Cluster API 1.3.x, Cluster
 for OpenStack 0.7.x, Kubernetes 1.26.x, and Ubuntu 22.04 LTS.
 
 See [Release Notes for R4](https://github.com/SovereignCloudStack/release-notes/blob/34d7ccb8f05b70cbb89f5995f9d10eab2ab8c052/Release4.md) for more information.
-
-### Release 5 (2023-03-20)
-
-No stone was left unturned in this release. As such the list of highlights is long, but
-does include OpenStack 2023.1 (Antelope), Ceph Quincy, Cluster Stacks Technical Preview,
-Support for diskless flavors, and IPv6 support for east-west and north-south.
-
-See [Release Notes for R5](https://github.com/SovereignCloudStack/release-notes/blob/main/Release5.md) for more information.
 
 ### Roadmap
 
