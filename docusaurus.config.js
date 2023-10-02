@@ -84,16 +84,6 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'dev-docs',
-        path: 'dev-docs',
-        routeBasePath: 'dev-docs',
-        sidebarPath: require.resolve('./sidebarsDevDocs.js')
-        // ... other options
-      }
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
         id: 'standards',
         path: 'standards',
         routeBasePath: 'standards',
