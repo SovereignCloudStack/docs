@@ -3,15 +3,15 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   standards: [
+    'index',
     {
       type: 'category',
       label: 'Standards',
       link: {
         type: 'doc',
-        id: 'index'
+        id: 'standards/overview'
       },
       items: [
-        'standards/overview',
         {
           type: 'category',
           label: 'General Standards',
@@ -40,7 +40,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Container Standards',
+          label: 'KaaS Standards',
           link: {
             type: 'generated-index'
           },
@@ -55,10 +55,10 @@ const sidebars = {
       type: 'category',
       label: 'Certification',
       link: {
-        type: 'generated-index'
+        type: 'doc',
+        id: 'certification/overview'
       },
       items: [
-        'certification/overview',
         'certification/subjects-versions',
         'certification/certified-clouds',
         'certification/get-certified'
