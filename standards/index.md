@@ -1,4 +1,4 @@
-# Standards
+# Introduction
 
 SCS unifies the best of cloud computing in a certified standard. With a decentralized and federated cloud stack, SCS puts users in control of their data and fosters trust in clouds, backed by a global open-source community.
 
