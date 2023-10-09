@@ -7,16 +7,17 @@ Osnabrück University of Applied Sciences operates its own data center in the la
 All laboratory-relevant workloads that are required for research and teaching will run in the SCS installation later on. The installation is freely available to everyone involved across lab area. It is part of the - so called - Open Campus Infrastructure, which also includes the OpenStack installation. Other components include the 5G core and the edge cloud. The edge cloud is divided into the Starling-X installation project of the Open Infra Foundation and the managed Cloud-in-a-Box cluster of the Sovereign Cloud Stack:
 
 - Open Campus Infrastructure (OCI)
- - Sovereign Cloud Stack (IaaS+KaaS)
- - OpenStack (IaaS)
- - Starling-X (Edge, IaaS+KaaS)
- - CIABs
- - 5G Core
+- Sovereign Cloud Stack (IaaS+KaaS)
+- OpenStack (IaaS)
+- Starling-X (Edge, IaaS+KaaS)
+- CIABs
+- 5G Core
 
 We first installed a test system. The hardware of the test system consists of the following components:
 
 4 x DELL R6515 with following components:
-- 1 x AMD EPYC 7702P 64core@2.0GHz
+
+- 1 x AMD EPYC 7702P <64core@2.0GHz>
 - 16 x 64GB RAM DDR4-3200
 - 2 x 480GB M.2 SATA SSD (for OS) RAID 1
 - 8 x 8TB NVMe (storage), S150 onboard
@@ -26,7 +27,8 @@ We first installed a test system. The hardware of the test system consists of th
 - 2 x 550W 1+1 redundancy
 
 2 x DELL R7525 with following components:
-- 2 x AMD EPYC 7532 32core@2.4GHz
+
+- 2 x AMD EPYC 7532 <32core@2.4GHz>
 - 8 x 64GB RAM DDR4-3200
 - 2 x 480GB SATA SSD (for OS) RAID 1
 - 12 x 18TB SATA HDD 7.2k (storage), PERC H745 no RAID
