@@ -12,6 +12,12 @@
     "label": ""
   },
   {
+    "repo": "osism/osism.github.io",
+    "source": "docs/guides/operations-guide/openstack/flavor-manager.md",
+    "target": "docs/02-iaas/components",
+    "label": ""
+  },
+  {
     "repo": "SovereignCloudStack/k8s-cluster-api-provider",
     "source": "doc",
     "target": "docs/03-container/components",
