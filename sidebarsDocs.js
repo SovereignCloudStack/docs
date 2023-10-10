@@ -90,6 +90,11 @@ const sidebarsDocs = {
               label: "Openstack Image Manager",
               id: "iaas/components/image-manager",
             },
+            {
+              type: "doc",
+              label: "Openstack Flavor Manager",
+              id: "iaas/components/flavor-manager",
+            },
           ],
         },
       ],
