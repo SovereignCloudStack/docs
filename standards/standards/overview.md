@@ -23,6 +23,5 @@ Standards are also subject of the certification process, which examines their co
 | [SCS-0101](/standards/iaas/scs-0101)   | v1                  | [IaaS](/standards/iaas)     | 🟠 Draft | Entropy                                  | -          |
 | [SCS-0103](/standards/iaas/scs-0103)   | v1                  | [IaaS](/standards/iaas)     | 🟠 Draft | Standard Flavors                         | -          |
 | [SCS-0104](/standards/iaas/scs-0104)   | v1                  | [IaaS](/standards/iaas)     | 🟠 Draft | Standard Images                          | -          |
-| [SCS-0110](/standards/iaas/scs-0110)   | v1                  | [IaaS](/standards/iaas)     | 🟠 Draft | Standard Images                          | -          |
 | [SCS-0300](/standards/iam/scs-0300)    | v1                  | [IAM](/standards/iam)       | 🟠 Draft | Requirements for SSO identity federation | -          |
 | [SCS-0412](/standards/ops/scs-0412)    | v1                  | [Ops](/standards/ops)       | 🟠 Draft | Exposition of IaaS metering data as JSON | -          |
