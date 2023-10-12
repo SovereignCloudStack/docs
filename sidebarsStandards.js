@@ -14,28 +14,33 @@ const sidebars = {
       items: [
         {
           type: 'category',
-          label: 'Global Standards',
+          label: 'Global',
           link: {
-            type: 'generated-index',
-            description:
-              'This track encompasses the foundational standards that guide the overall structure, documentation, and general topics related to the Sovereign Cloud Stack. It serves as the core framework, ensuring consistency, clarity, and comprehensibility across all aspects of the cloud stack, fostering an environment where information is easily accessible and understood.'
+            type: 'doc',
+            id: 'global/index'
           },
           items: [
             {
               type: 'category',
-              label: 'SCS-0001',
+              label: '🟢  SCS-0001',
               link: {
-                slug: 'standards/scs-0001',
-                type: 'generated-index'
+                type: 'doc',
+                id: 'global/scs-0001'
               },
-              items: ['scs-0001-v1-sovereign-cloud-standards']
+              items: [
+                {
+                  type: 'doc',
+                  label: 'V1',
+                  id: 'scs-0001-v1-sovereign-cloud-standards'
+                }
+              ]
             },
             {
               type: 'category',
-              label: 'SCS-0002',
+              label: '🟢 SCS-0002',
               link: {
-                slug: 'standards/scs-0002',
-                type: 'generated-index'
+                type: 'doc',
+                id: 'global/scs-0002'
               },
               items: [
                 {
@@ -52,10 +57,10 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'SCS-0003',
+              label: '🟠 SCS-0003',
               link: {
-                slug: 'standards/scs-0003',
-                type: 'generated-index'
+                type: 'doc',
+                id: 'global/scs-0003'
               },
               items: [
                 {
@@ -69,21 +74,18 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'IaaS Standards',
+          label: 'IaaS',
           link: {
-            type: 'generated-index',
-            description:
-              'The IaaS Layer Standards track focuses on the protocols, guidelines, and specifications that govern the infrastructure as a service layer. This encompasses standards for virtual machines, storage, networking, and other foundational resources, ensuring seamless, efficient, and secure operation, interoperability, and management of the underlying cloud infrastructure.'
+            type: 'doc',
+            id: 'iaas/index'
           },
           items: [
             {
               type: 'category',
-              label: 'SCS-0100',
+              label: '🟢 SCS-0100',
               link: {
-                slug: 'standards/scs-0100-flavor-naming',
-                type: 'generated-index',
-                description:
-                  'The SCS-0001 Flavor Naming Standard (v3.1 for SCS Release 5) establishes a systematic and backward-compatible naming convention for OpenStack environment flavors. The standard addresses the need for a unified naming scheme that encodes key instance features like the number of vCPUs, RAM, Root Disk, and extra features, enhancing the usability and consistency across different SCS flavors. It outlines detailed naming criteria, including required and optional elements, ensuring providers offer transparent, standardized, and easily understandable flavor names to users.'
+                type: 'doc',
+                id: 'iaas/scs-0100'
               },
               items: [
                 {
@@ -105,12 +107,10 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'SCS-0101',
+              label: '🟠 SCS-0101',
               link: {
-                slug: 'standards/scs-0101',
-                type: 'generated-index',
-                description:
-                  'The SCS-0101 Entropy Standard ensures adequate entropy is available in virtual instances, crucial for operations like secure key creation in cryptography. The standard recommends using kernel version 5.18 or higher and activating the hw_rng_model: virtio attribute for images, while compute nodes should employ CPUs with entropy accessing instructions unfiltered by the hypervisor. It allows the infusion of the hosts entropy sources into virtual instances and ensures the availability and quality of entropy in virtual environments, promoting system security and efficiency.'
+                type: 'doc',
+                id: 'iaas/scs-0101'
               },
               items: [
                 {
@@ -122,12 +122,10 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'SCS-0102',
+              label: '🟢 SCS-0102',
               link: {
-                slug: 'standards/scs-0102',
-                type: 'generated-index',
-                description:
-                  'The SCS-0102 Image Metadata Standard outlines how to categorize and manage metadata for cloud-based operating system images to ensure usability and clarity. The standard encompasses naming conventions, technical requirements, image handling protocols including updating and origin, and licensing/support details. These guidelines ensure that users can understand, access, and utilize OS images effectively, with clear information on features, updates, and licensing provided through well-defined metadata properties.'
+                type: 'doc',
+                id: 'iaas/scs-0102'
               },
               items: [
                 {
@@ -139,12 +137,10 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'SCS-0103',
+              label: '🟠 SCS-0103',
               link: {
-                slug: 'standards/scs-0103',
-                type: 'generated-index',
-                description:
-                  'The SCS-0103 standard outlines mandatory and recommended specifications for flavors and properties in OpenStack environments to ensure uniformity across SCS clouds. Mandatory and recommended flavors are defined with specific configurations of vCPUs, vCPU types, RAM, and root disk sizes, alongside extra specs like scs:name-vN, scs:cpu-type, and scs:diskN-type to detail the flavor’s specifications. This standard facilitates guaranteed availability and consistency of flavors, simplifying the deployment process for DevOps teams.'
+                type: 'doc',
+                id: 'iaas/scs-0103'
               },
               items: [
                 {
@@ -156,12 +152,10 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'SCS-0104',
+              label: '🟠 SCS-0104',
               link: {
-                slug: 'standards/scs-0104',
-                type: 'generated-index',
-                description:
-                  'The SCS-0104 standard establishes guidelines for virtual machine images in Sovereign Cloud Stack (SCS) environments, specifying mandatory, recommended, and optional images via a YAML file, ensuring interoperability and streamlined deployments. It mandates that image upload via Glance must be allowed, ensuring flexibility for users. The standard’s machine-readable document facilitates automated processing for compliance and integration purposes, promoting consistency and reliability in cloud environments.'
+                type: 'doc',
+                id: 'iaas/scs-0104'
               },
               items: [
                 {
@@ -175,21 +169,18 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'KaaS Standards',
+          label: 'KaaS',
           link: {
-            type: 'generated-index',
-            description:
-              'Standards in this track are concerned with Kubernetes as a Service layer, outlining norms and best practices for deploying, managing, and operating Kubernetes clusters. These standards aim to ensure that the orchestration of containers is streamlined, secure, and compatible across various cloud environments and platforms.'
+            type: 'doc',
+            id: 'kaas/index'
           },
           items: [
             {
               type: 'category',
-              label: 'SCS-0210',
+              label: '🟢 SCS-0210',
               link: {
-                slug: 'standards/scs-0210',
-                type: 'generated-index',
-                description:
-                  'The SCS-0210 standard outlines the expected pace at which providers should adopt new Kubernetes versions, aiming for alignment with the rapid development cycle of Kubernetes. Providers must offer the latest minor version within four months of its release and the newest patch version within a week, ensuring users have timely access to security updates, bug fixes, and features. The standard emphasizes the need for expedited updates for critical CVEs and expects providers to thoroughly test new versions before deployment.'
+                type: 'doc',
+                id: 'kaas/scs-0210'
               },
               items: [
                 {
@@ -201,12 +192,10 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'SCS-0211',
+              label: '🟢 SCS-0211',
               link: {
-                slug: 'standards/scs-0211',
-                type: 'generated-index',
-                description:
-                  'The SCS-0211 standard outlines the properties required for the default StorageClass in Kubernetes as a Service (KaaS). The standard ensures that the default StorageClass, identified by the "storageclass.kubernetes.io/is-default-class" annotation, supports the ReadWriteOnce access mode and protects volume data against loss due to single disk or host hardware failures.'
+                type: 'doc',
+                id: 'kaas/scs-0211'
               },
               items: [
                 {
@@ -220,21 +209,18 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'IAM Standards',
+          label: 'IAM',
           link: {
-            type: 'generated-index',
-            description:
-              'This track revolves around Identity and Access Management (IAM) standards, providing guidelines for ensuring secure and efficient user authentication, authorization, and administration. It addresses issues related to user identity, permissions, roles, and policies, aiming to safeguard and streamline access to cloud resources and services.'
+            type: 'doc',
+            id: 'iam/index'
           },
           items: [
             {
               type: 'category',
-              label: 'SCS-0300',
+              label: '🟢 SCS-0300',
               link: {
-                slug: 'standards/scs-0300',
-                type: 'generated-index',
-                description:
-                  'The SCS-0300 standard outlines requirements for Single Sign-On (SSO) identity federation within the Sovereign Cloud Stack (SCS). It addresses the need for customers to access SCS services using credentials stored and managed externally, facilitating user onboarding and reducing the need for additional dedicated SCS accounts. The standard focuses on delegating authentication to external identity providers and mapping users to roles within SCS for authorization, while also considering the use of machine identities. Keycloak is the current choice as an Identity Provider (IdP) for its support of OAuth 2.0 grants and its integration with OpenStack and kolla-ansible.'
+                type: 'doc',
+                id: 'iam/scs-0300'
               },
               items: [
                 {
@@ -248,21 +234,18 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Operational Standards',
+          label: 'Ops',
           link: {
-            type: 'generated-index',
-            description:
-              'Operational Tooling Standards cover the protocols and guidelines associated with tools and utilities used for monitoring, management, and maintenance of the cloud environment. This includes standards for status pages, alerts, logs, and other operational tools, aiming to optimize the reliability, performance, and security of cloud services and resources.'
+            type: 'doc',
+            id: 'ops/index'
           },
           items: [
             {
               type: 'category',
-              label: 'SCS-0412',
+              label: '🟠 SCS-0412',
               link: {
-                slug: 'standards/scs-0412',
-                type: 'generated-index',
-                description:
-                  'The SCS-0412 standard addresses the need for a standardized interface to expose IaaS metering data in JSON format within the Sovereign Cloud Stack (SCS). This is to aid cloud operators in integrating SCS IaaS layer data with their existing billing and customer relationship systems. The standard adopts the Ceilometer HTTP hook format provided by the OpenStack Ceilometer project for telemetry and metering, avoiding the need for additional translation layers and implementation components.'
+                type: 'doc',
+                id: 'ops/scs-0412'
               },
               items: [
                 {
@@ -280,7 +263,7 @@ const sidebars = {
       type: 'category',
       label: 'Decision Records',
       link: {
-        slug: 'standards/decision-records',
+        slug: 'decision-records',
         type: 'generated-index',
         description:
           'Decision records within the Sovereign Cloud Stack (SCS) are critical documents that outline the reasoning and determinations made leading to the development of specific standards. They encapsulate the discussions, evaluations, and considerations of various options and alternatives before a final decision is made. These records serve as a transparent and accessible historical account, offering insights into the contextual factors and rationale that underpin each established standard.'
@@ -290,7 +273,7 @@ const sidebars = {
           type: 'category',
           label: 'SCS-0110',
           link: {
-            slug: 'standards/scs-0110',
+            slug: 'scs-0110',
             type: 'generated-index'
           },
           items: [
@@ -445,7 +428,11 @@ const sidebars = {
         type: 'doc',
         id: 'certification/overview'
       },
-      items: []
+      items: [
+        'certification/certified-clouds',
+        'certification/get-certified',
+        'certification/subjects-versions'
+      ]
     }
   ]
 }
