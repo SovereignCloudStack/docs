@@ -65,8 +65,8 @@ Service users will have their default_project_id set to a specific project and w
 | b342f37804f14459bdf703573169bf79 | p500924-minery              | 90n20             | Testbed env for Pentesting        | 30.11.2024   |
 | 0fa3c3559f0d4f39ba7aa70c7f7188ca | p500924-tender-10-3         | tonifinger        | Dev Environment for VP10-3        | ∞            |
 | b682eb90fb834278afb1182018dd2133 | p500924-scoopex             | scoopex           | Marc's gx-scs project             | ∞            |
-|                                  |                             |                   |                                   |              |
-
+|  | p500924-gx-cred-generator         | anjastrunk        | Dev Environment for Gaia-X Credential Generator        | ∞            |
+|                                  |                             |                   |                                   
 ## Wavecon
 
 ### Service Users
