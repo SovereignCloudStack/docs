@@ -75,16 +75,25 @@ Depending on the infrastructure management solution and high-availability config
 
 The following sections describe actions available to CSP operators that possess the "`admin`" role.
 
-### Registering domains
+### Creating domains
 
 > **NOTE**  
 > It is highly recommended to use pseudonymized domain names when creating domains, since Domain Managers will be able to see the names of all existing domains.
+
+For each tenant for which a self-service area (i.e. a domain) is to be established, a domain should be created before creating any users, projects or groups for this tenant:
 
 ```
 openstack domain create $DOMAIN
 ```
 
+Any creation of users, projects or group for a tenant should happen strictly within the tenant's domain by passing the "`--domain`" flag to the corresponding creation commands, regardless of whether the commands are executed by an administrator or a Domain Manager.
+See the Domain Manager operation section further down for reference.
+
 ### Creating a Domain Manager user
+
+> **NOTE**  
+> Creating the first Domain Manager users for a domain is an action reserved for CSP administrators.
+> Depending on whether the `domain-manager` role has been approved as a domain-managed role in the policy configuration by the CSP, Domain Manager users may be able to appoint further Domain Managers within the domain on their own later on.
 
 First, create the user for the Domain Manager:
 
@@ -163,6 +172,7 @@ openstack group remove user $GROUP $USER
 ### Managing role assignments within a domain
 
 Role assignments managed by a Domain Manager work as usual with the exception that the roles that can be assigned and revoked are limited to a defined set which is explicitly approved for Domain Managers by the CSP.
+This may or may not include the `domain-manager` role itself, meaning that Domain Managers may either appoint other Domain Managers by themselves or have to ask the CSP to do so.
 
 #### Managing user role assignments
 
