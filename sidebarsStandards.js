@@ -6,6 +6,19 @@ const sidebars = {
     'index',
     {
       type: 'category',
+      label: 'Certification',
+      link: {
+        type: 'doc',
+        id: 'certification/overview'
+      },
+      items: [
+        'certification/certified-clouds',
+        'certification/get-certified',
+        'certification/subjects-versions'
+      ]
+    },
+    {
+      type: 'category',
       label: 'Standards',
       link: {
         type: 'doc',
@@ -419,19 +432,6 @@ const sidebars = {
             }
           ]
         }
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Certification',
-      link: {
-        type: 'doc',
-        id: 'certification/overview'
-      },
-      items: [
-        'certification/certified-clouds',
-        'certification/get-certified',
-        'certification/subjects-versions'
       ]
     }
   ]
