@@ -298,6 +298,7 @@ const sidebarsDocs = {
       },
       items: [
         "iam/intra-SCS-federation-setup-description-for-osism-doc-operations",
+        "iam/domain-manager-setup-and-usage",
       ],
     },
     {

@@ -47,7 +47,7 @@ Depending on the deployment method used, the adjustments may also need to be per
 The role `domain-manager` has to be created in Keystone once.
 This can be done with the OpenStackClient using the following command:
 
-```
+```bash
 openstack role create domain-manager
 ```
 
@@ -68,8 +68,9 @@ The following example entry adjusts the rule to allow both `member` and `reader`
 
 Refer to the SCS Domain Manager standard for more information.
 
-[^1]: "at runtime" in this context means that the configuration may be changed repeatedly after the initial configuration of Keystone and take effect immediately.
-Depending on the infrastructure management solution and high-availability configuration the described adjustments may or may not require a restart of the Keystone API service or lead to a downtime of the service.
+[^1]:
+    "at runtime" in this context means that the configuration may be changed repeatedly after the initial configuration of Keystone and take effect immediately.
+    Depending on the infrastructure management solution and high-availability configuration the described adjustments may or may not require a restart of the Keystone API service or lead to a downtime of the service.
 
 ## Administrative operation
 
@@ -83,7 +84,7 @@ The following sections describe actions available to CSP operators that possess 
 
 For each tenant for which a self-service area (i.e. a domain) is to be established, a domain should be created before creating any users, projects or groups for this tenant:
 
-```
+```bash
 openstack domain create $DOMAIN
 ```
 
@@ -98,19 +99,19 @@ See the [Domain Manager operation](#domain-manager-operation) section further do
 
 First, create the user for the Domain Manager:
 
-```
+```bash
 openstack user create --domain $DOMAIN $USER_NAME
 ```
 
 Next, assign the `domain-manager` role in a domain-scoped fashion:
 
-```
+```bash
 openstack role add --user $USER_NAME --domain $DOMAIN domain-manager
 ```
 
 ### Assigning the Domain Manager role to an existing user
 
-```
+```bash
 openstack role add --user $USER_NAME --domain $DOMAIN domain-manager
 ```
 
@@ -118,7 +119,7 @@ openstack role add --user $USER_NAME --domain $DOMAIN domain-manager
 
 In case the `domain-manager` role is to be revoked from an existing Domain Manager user, the following command can be used:
 
-```
+```bash
 openstack role remove --user $USER_NAME --domain $DOMAIN domain-manager
 ```
 
@@ -130,7 +131,7 @@ The following sections describe actions available to Domain Manager users that p
 
 Creating a user within a domain:
 
-```
+```bash
 openstack user create --domain $DOMAIN $USER_NAME
 ```
 
@@ -140,7 +141,7 @@ Note: the explicit domain-scoping is only required for the creation command, any
 
 Creating a project within a domain:
 
-```
+```bash
 openstack project create --domain $DOMAIN $PROJECT_NAME
 ```
 
@@ -150,7 +151,7 @@ Note: the explicit domain-scoping is only required for the creation command, any
 
 Creating a group within a domain:
 
-```
+```bash
 openstack group create --domain $DOMAIN $GROUP_NAME
 ```
 
@@ -160,13 +161,13 @@ Note: the explicit domain-scoping is only required for the creation command, any
 
 Adding a user to a group:
 
-```
+```bash
 openstack group add user $GROUP $USER
 ```
 
 Removing a user from a group:
 
-```
+```bash
 openstack group remove user $GROUP $USER
 ```
 
@@ -179,25 +180,25 @@ This may or may not include the `domain-manager` role itself, meaning that Domai
 
 Assigning a role to a user within a project:
 
-```
+```bash
 openstack role add --project $PROJECT --user $USER $ROLE
 ```
 
 Assigning a role to a user domain-wide:
 
-```
+```bash
 openstack role add --domain $DOMAIN --user $USER $ROLE
 ```
 
 Revoking a project-level role assignment from a user:
 
-```
+```bash
 openstack role remove --project $PROJECT --user $USER $ROLE
 ```
 
 Revoking a domain-wide role assignment from a user:
 
-```
+```bash
 openstack role remove --domain $DOMAIN --user $USER $ROLE
 ```
 
@@ -205,24 +206,24 @@ openstack role remove --domain $DOMAIN --user $USER $ROLE
 
 Assigning a role to a group within a project:
 
-```
+```bash
 openstack role add --project $PROJECT --group $GROUP $ROLE
 ```
 
 Assigning a role to a group domain-wide:
 
-```
+```bash
 openstack role add --domain $DOMAIN --group $GROUP $ROLE
 ```
 
 Revoking a project-level role assignment from a group:
 
-```
+```bash
 openstack role remove --project $PROJECT --group $GROUP $ROLE
 ```
 
 Revoking a domain-wide role assignment from a group:
 
-```
+```bash
 openstack role remove --domain $DOMAIN --group $GROUP $ROLE
 ```
