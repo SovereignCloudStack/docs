@@ -1,6 +1,6 @@
 # Scopes and Versions
 
-The SCS Certification scopes are discrimitated in two dimensions. The first is the technology layer, which is either IaaS (infrastructure) or KaaS (Kubernetes). The second dimension is the level, which refer to the level of sovereignity, which is achieved by the certificate. There are three different levels:
+The SCS Certification scopes are discriminated in two dimensions. The first is the technology layer, which is either IaaS (infrastructure) or KaaS (Kubernetes). The second dimension is the level, which refer to the level of sovereignty, which is achieved by the certificate. There are three different levels:
 
 - SCS compatible
 - SCS open
