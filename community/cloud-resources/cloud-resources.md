@@ -68,7 +68,6 @@ Service users will have their default_project_id set to a specific project and w
 |  | p500924-gx-cred-generator         | anjastrunk        | Dev Environment for Gaia-X Credential Generator        | ∞            |
 |                                  |                             |                   |                      
 
-
 ## Wavecon
 
 ### Service Users
