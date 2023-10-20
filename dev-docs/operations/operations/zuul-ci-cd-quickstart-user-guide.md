@@ -349,7 +349,7 @@ For a basic but working example the following content may be written into a `zuu
         - myFirstTestJob
     check:
       jobs:
-        - myFirstTestJob
+        - mySecondTestJob
 ```
 
 This will run the job `myFirstTestJob` whenever the `tag` pipeline is triggered, and
