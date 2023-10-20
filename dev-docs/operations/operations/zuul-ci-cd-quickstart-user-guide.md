@@ -352,7 +352,7 @@ For a basic but working example the following content may be written into a `zuu
         - myFirstTestJob
 ```
 
-This will run the job `myFirstTestJob` whenever the `gate` pipeline is triggered, and
+This will run the job `myFirstTestJob` whenever the `tag` pipeline is triggered, and
 `mySecondTestJob` whenever `check` is triggered.
 
 Within SCS the `check` pipeline is always triggered if you open, change or reopen a pull request.
