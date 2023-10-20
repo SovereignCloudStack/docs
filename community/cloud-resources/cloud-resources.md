@@ -51,7 +51,7 @@ Service users will have their default_project_id set to a specific project and w
 | b43cfafbcf1f4eb08865b2886c29e09b | p500924-cluster-api-session | garloff           | cluster-api hands on session      | ∞            |
 | 9b7a73e516be4cd1acbd63d543985c52 | p500924-gonicus-dev         | o-otte            | GONICUS GmbH                      | ∞            |
 | 3829cc7c8f034fc985f5055a1df6f247 | p500924-scs-healthmonitor   | garloff           | SCS Health Monitor                | ∞            |
-| b97d38bf128b4479981c4dbe2ef70cd5 | p500924-SIG-IAM             | fkr               | SIG IAM                           | ∞            |
+| b97d38bf128b4479981c4dbe2ef70cd5 | p500924-SIG-IAM             | fkr               | SIG IAM and VP08                  | ∞            |
 | 9de7d8dc2d674e52be44904d6b338b0b | p500924-cloudmon            | costelter         | CloudMon Test Project             | 31.12.2023   |
 | 2c9e0e4ef8d44c36807df50b06b3c81d | p500924-cloudmon-target     | costelter         | Target project for CloudMon tests | 31.12.2023   |
 | 3501db829014406884990a1016f3e25d | p500924-sig-monitoring1     | fkr               | SIG Monitoring - cloudmon target  | 31.12.2023   |
@@ -60,10 +60,11 @@ Service users will have their default_project_id set to a specific project and w
 | 93956190702b4a7d8a8886806d57713f | p500924-metering            | cah-link          | Dev Environment for VP13          | 31.12.2023   |
 | abbe6561cf6248b6af395334aa09af85 | p500924-harbor              | chess-knight      | SCS Harbor for VP06c              | ∞            |
 | 4ff97734574146ccb4c7e7568bc1e36f | p500924-XPanse              | swaroopar         | Eclipse XPanse Projekt POC        | 31.11.2023   |
-| e7622c1048ac4520a2d050ae141e826b | p500924-tender-6a           | jschoone          | Dev Environment for VP06a         | ∞            |
+| e7622c1048ac4520a2d050ae141e826b | p500924-tender-6a           | mxmxchere         | Dev Environment for VP06a         | ∞            |
 | eeed7e0ad33f42f189fb4165116f5a1b | p500924-dnation-k8s         | matofeder         | dNation dev for VP06c             | ∞            |
 | b342f37804f14459bdf703573169bf79 | p500924-minery              | 90n20             | Minery/Proventa Pentesting VP09c  | 30.11.2024   |
 | 0fa3c3559f0d4f39ba7aa70c7f7188ca | p500924-tender-10-3         | tonifinger        | Dev Environment for VP10-3        | ∞            |
+| b682eb90fb834278afb1182018dd2133 | p500924-scoopex             | scoopex           | Marc's gx-scs project             | ∞            |
 |                                  |                             |                   |                                   |              |
 
 ## Wavecon
