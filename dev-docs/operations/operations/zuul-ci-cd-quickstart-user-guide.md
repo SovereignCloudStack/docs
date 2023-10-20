@@ -279,13 +279,15 @@ For this purpose Zuul creates its own public/private key pair for each project. 
 public key to create secrets. But only Zuul will be able to decrypt these values. To avoid the user
 to be responsible for the correct encryption there is an zuul-client tool that will do this for you.
 
-Example:
+Example (reading from stdin and writing to stdout):
 
 ```bash
-zuul-client --zuul-url ZUUL_URL  encrypt --tenant TENANT --project ORGANIZATION/PROJECT --infile creds.yaml --outfile clouds.yaml.enc
+zuul-client --zuul-url ZUUL_URL encrypt --tenant SCS --project SovereignCloudStack/REPO
 ```
 
-The content may look like this:
+Add `--infile INFILE` or `--outfile OUTFILE` if you prefer to work with files directly.
+
+The output might look like this:
 
 ```yaml
 - secret:
@@ -307,6 +309,9 @@ The content may look like this:
 You may use this content or the file to provide it as a secret. You just have to update the `<name>` and the
 `<fieldname>` part.
 
+**NOTE!** The secret name has to be unique across all projects, so if you are unsure, it's
+best to disambiguate via a prefix or suffix that is related to the name of your repository.
+
 Official documentation:
 
 1. [Secrets documentation](https://zuul-ci.org/docs/zuul/latest/config/secret.html#secret)
@@ -320,7 +325,7 @@ For a basic but working example the following content may be written into a `zuu
 # zuul.yaml content
 ---
 - secret:
-    name: mySecret
+    name: mySecret  # has to be unique across projects!
     data:
       secretValue: !encrypted/pkcs1-oaep
         - <ENCYPTED_DATA>
@@ -329,20 +334,33 @@ For a basic but working example the following content may be written into a `zuu
     name: myFirstTestJob
     parent: base
     secrets:
-      - name: secretName # The name of the secret that is used within "playbooks/testPlaybook.yaml"
+      - name: secretName  # The name of the secret that is used within "playbooks/testPlaybook.yaml"
         secret: mySecret
     run: playbooks/testPlaybook.yaml
 
+- job:
+    name: mySecondTestJob
+    parent: base
+    run: playbooks/testPlaybookTwo.yaml
+
 - project:
+    tag:
+      jobs:
+        - myFirstTestJob
     check:
       jobs:
         - myFirstTestJob
 ```
 
-This will run you job `myFirstTestJob` when ever the `check` pipeline is triggered.
-Within SCS this pipeline is always triggered if you open, change or reopen a pull request.
-The `check` pipeline can also be triggered manually if you write a comment on an already
+This will run the job `myFirstTestJob` whenever the `gate` pipeline is triggered, and
+`mySecondTestJob` whenever `check` is triggered.
+
+Within SCS the `check` pipeline is always triggered if you open, change or reopen a pull request.
+This pipeline can also be triggered manually if you write a comment on an already
 existing pull request and place the string `recheck` in it.
+
+Recall that the first test job cannot run on the same pipeline because it uses a secret.
+The `tag` pipeline is run whenever a new tag is created.
 
 The path to you playbook is always the full path within the repository. The playbook
 contains the tasks you actually want to run on all or a specific subset of nodes.
