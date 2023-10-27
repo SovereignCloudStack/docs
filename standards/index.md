@@ -1,11 +1,9 @@
 # Introduction
 
-SCS unifies the best of cloud computing in a certified standard. With a decentralized and federated cloud stack, SCS puts users in control of their data and fosters trust in clouds, backed by a global open-source community.
+The Sovereign Cloud Stack (SCS) is a community-driven project that curates a set of standards—including both existing standards, such as the OpenInfra interoperability guides or the CNCF Kubernetes conformance, and newly created ones—to enable and ensure compatibility, openness, and sovereignty of cloud services across a wide range of providers, particularly small and medium businesses.
+
+In addition, SCS provides a certification framework that enables these providers to verify and advertise their compliance with these standards. This framework consists of six kinds of certificates of varying scope, where each scope corresponds to a subset of the set of standards mentioned above.
 
 ![Alt text](image.png)
 
-Our Standards emerge within our open community of cloud service providers and individuals with the common aim of meaningful decision that result in less duplicate work and most significantly to enable a federated cloud between cloud service provides based on the Souvereign Cloud Stack.
-
-There are different and versions layers of Standards. Get to know these on our Overview page.
-
-There is also the possibility of getting certified for clouds that fulfill these standards. You will find already ceritified clouds and also how to get certified.
+Learn more about these scopes as well as the currently certified clouds under [Certification](certification/overview.md). More details on individual standards can be found under [Standards](standards/overview.md).

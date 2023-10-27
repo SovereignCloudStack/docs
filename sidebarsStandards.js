@@ -10,12 +10,7 @@ const sidebars = {
       link: {
         type: 'doc',
         id: 'certification/overview'
-      },
-      items: [
-        'certification/certified-clouds',
-        'certification/get-certified',
-        'certification/subjects-versions'
-      ]
+      }
     },
     {
       type: 'category',
