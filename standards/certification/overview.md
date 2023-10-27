@@ -1,4 +1,6 @@
-# Certificate scopes and versions
+# Certification
+
+## Scopes and versions
 
 SCS provides a certification framework consisting of six different kinds of certificates of varying scope.
 These scopes can be sorted into two dimensions:
@@ -17,11 +19,11 @@ Each scope corresponds to a set of standards. As these standards progress, so do
 
 ![Alt text](image.png)
 
-# Becoming certified
+## Becoming certified
 
 In order for a cloud service offering to obtain a certificate, it has to conform to all standards of the respective scope, which will be tested at regular intervals, and the results of these tests will be made available publicly. For more details on how to become certified, please consult the corresponding [document](https://github.com/SovereignCloudStack/standards/blob/issue/337/Standards/scs-xxxx-v1-achieving-certification.md).
 
-# Compliant cloud environments
+## Compliant cloud environments
 
 This is a list of clouds that we test on a nightly basis against the certificate scope _SCS-compatible IaaS_.
 
