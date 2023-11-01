@@ -354,5 +354,5 @@ Example playbook:
 - hosts: all
   tasks:
     - debug:
-        msg: "Debug print my secrets! {{ secretName.secretValue }}" # do not do this as it will expose your secrets
+        msg: 'Debug print my secrets! {{ secretName.secretValue }}' # do not do this as it will expose your secrets
 ```

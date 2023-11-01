@@ -1,4 +1,9 @@
 {
+  "ignorePatterns": [
+    {
+      "pattern": "^/"
+    }
+  ],
   "httpHeaders": [
     {
       "urls": ["https://opensource.org/"],
