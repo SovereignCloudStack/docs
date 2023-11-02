@@ -334,11 +334,11 @@ For a basic but working example the following content may be written into a `zuu
     name: SECRET_REPOSITORY_NAME
     data:
       secretValue1: !encrypted/pkcs1-oaep
-        - <ENCYPTED_DATA>
+        - <ENCRYPTED_DATA>
       secretValue2: !encrypted/pkcs1-oaep
-        - <ENCYPTED_DATA>
+        - <ENCRYPTED_DATA>
       secretValue3: !encrypted/pkcs1-oaep
-        - <ENCYPTED_DATA>
+        - <ENCRYPTED_DATA>
 
 - job:
     name: myFirstTestJob
