@@ -309,8 +309,14 @@ The output might look like this:
 You may use this content or the file to provide it as a secret. You just have to update the `<name>` and the
 `<fieldname>` part.
 
-**NOTE!** The secret name has to be unique across all projects, so if you are unsure, it's
-best to disambiguate via a prefix or suffix that is related to the name of your repository.
+The secret name has to be unique across all projects. Because of this, we have a naming convention in the
+`SovereignCloudStack` organisation that ensures that a secret has a unique name.
+
+There is only one secret per Zuul configuration per project. This secret always has a name in the form
+`SECRET_REPOSITORY_NAME`. If a secret in the `SovereignCloudStack/k8s-cluster-api-provider` repository is
+to be used, it is given the name `SECRET_K8S_CLUSTER_API_PROVIDER`. The name of the repository is
+always written in capital letters. A minus is replaced with an underscore. Any number of values
+(`<fieldname>: !encrypted/pkcs1-oaep`) can then be assigned to this one secret.
 
 Official documentation:
 
@@ -325,9 +331,13 @@ For a basic but working example the following content may be written into a `zuu
 # zuul.yaml content
 ---
 - secret:
-    name: mySecret  # has to be unique across projects!
+    name: SECRET_REPOSITORY_NAME
     data:
-      secretValue: !encrypted/pkcs1-oaep
+      secretValue1: !encrypted/pkcs1-oaep
+        - <ENCYPTED_DATA>
+      secretValue2: !encrypted/pkcs1-oaep
+        - <ENCYPTED_DATA>
+      secretValue3: !encrypted/pkcs1-oaep
         - <ENCYPTED_DATA>
 
 - job:
@@ -335,7 +345,7 @@ For a basic but working example the following content may be written into a `zuu
     parent: base
     secrets:
       - name: secretName  # The name of the secret that is used within "playbooks/testPlaybook.yaml"
-        secret: mySecret
+        secret: SECRET_REPOSITORY_NAME
     run: playbooks/testPlaybook.yaml
 
 - job:
@@ -372,5 +382,5 @@ Example playbook:
 - hosts: all
   tasks:
     - debug:
-        msg: 'Debug print my secrets! {{ secretName.secretValue }}' # do not do this as it will expose your secrets
+        msg: 'Debug print my secrets! {{ secretName.secretValue1 }}'  # do not do this as it will expose your secrets
 ```
