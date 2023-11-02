@@ -86,24 +86,25 @@ const sidebarsDocs = {
           },
           items: [
             {
-              type: "doc",
-              label: "Openstack Image Manager",
-              id: "iaas/components/image-manager",
+              type: 'doc',
+              label: 'Openstack Image Manager',
+              id: 'iaas/components/image-manager'
             },
             {
-              type: "doc",
-              label: "Openstack Flavor Manager",
-              id: "iaas/components/flavor-manager",
-            },
-          ],
-        },
-      ],
+              type: 'doc',
+              label: 'Openstack Flavor Manager',
+              id: 'iaas/components/flavor-manager'
+            }
+          ]
+        }
+      ]
     },
     {
       type: 'category',
       label: 'Container Layer',
       link: {
-        type: 'generated-index'
+        type: 'doc',
+        id: 'container/index'
       },
       items: [
         {
