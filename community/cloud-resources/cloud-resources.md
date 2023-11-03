@@ -41,6 +41,7 @@ Service users will have their default_project_id set to a specific project and w
 | 4925967416894fd78be6701689059653 | u500924-svc-cloudmon       | p500924-cloudmon-target   | costelter         | Service User - CloudMon Test Project          | 31.12.2023   |
 | f89b3d64ddff4d9d8cadb5e06fa22299 | u500924-svc-healthmonitor  | p500924-scs-healthmonitor | garloff           | Service User - SCS Health Monitor             | ∞            |
 | 49cc3d72fbdf41fe8dc407f57f026dbf | u500924-svc-standards      | p500924-scs-healthmonitor | garloff           | Service User - SCS Standards Compliance Check | ∞            |
+| 49cc3d72fbdf41fe8dc407f57f026dbf | u500924-svc-zuul           | p500924-scs-zuul          | o-otte            | Service User - SCS Zuul                       | 30.11.2024   |
 |                                  |                            |                           |                   |                                               |              |
 
 ### Projects
@@ -66,6 +67,7 @@ Service users will have their default_project_id set to a specific project and w
 | 0fa3c3559f0d4f39ba7aa70c7f7188ca | p500924-tender-10-3         | tonifinger        | Dev Environment for VP10-3            | ∞            |
 | b682eb90fb834278afb1182018dd2133 | p500924-scoopex             | scoopex           | Marc's gx-scs project                 | ∞            |
 | 021af0688c594bf88ed675b942d3bea8 | p500924-gx-cred-generator   | anjastrunk        | SCS Gaia-X Self-Description Generator | ∞            |
+| a07c811315ad40f585945b2939ef12dd | p500924-scs-zuul            | o-otte            | SCS Zuul                              | 30.11.2024   |
 |                                  |                             |                   |                                       |              |
 
 ## Wavecon
