@@ -121,7 +121,7 @@ export default function Home(): JSX.Element {
                   title="Ops Layer"
                   body="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
                   buttonText="Learn More"
-                  url="/doc/ops"
+                  url="/docs"
                 />
               </div>
               <div className="col col--6">
@@ -130,7 +130,7 @@ export default function Home(): JSX.Element {
                     title="Container Layer"
                     body="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
                     buttonText="Learn More"
-                    url="/doc/ops"
+                    url="/docs"
                     maxHeight
                   />
                 </div>
@@ -138,7 +138,7 @@ export default function Home(): JSX.Element {
                   title="IaaS Layer"
                   body="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
                   buttonText="Learn More"
-                  url="/doc/ops"
+                  url="/docs"
                 />
               </div>
               <div className="col col--3">
@@ -147,7 +147,7 @@ export default function Home(): JSX.Element {
                   title="IAM Layer"
                   body="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
                   buttonText="Learn More"
-                  url="/doc/ops"
+                  url="/docs"
                 />
               </div>
             </div>
