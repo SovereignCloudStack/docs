@@ -18,19 +18,19 @@ const featureContentData = [
   {
     title: 'Upgrade Guides',
     body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
-    url: '2',
+    url: '/docs',
     buttonText: 'Dive Deeper'
   },
   {
     title: 'Introduction to SCS',
     body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
-    url: '3',
+    url: '/docs',
     buttonText: 'Start Now'
   },
   {
     title: 'Deployment Examples',
     body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
-    url: '4',
+    url: '/docs',
     buttonText: 'Explore Cases'
   }
 ]
@@ -45,19 +45,19 @@ const AdditionalResourcesData = [
   {
     title: 'Upgrade Guides',
     body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
-    url: '2',
+    url: '/docs',
     buttonText: 'Dive Deeper'
   },
   {
     title: 'Introduction to SCS',
     body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
-    url: '3',
+    url: '/docs',
     buttonText: 'Start Now'
   },
   {
     title: 'Deployment Examples',
     body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
-    url: '4',
+    url: '/docs',
     buttonText: 'Explore Cases'
   }
 ]
