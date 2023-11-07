@@ -131,6 +131,7 @@ export default function Home(): JSX.Element {
                     body="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
                     buttonText="Learn More"
                     url="/doc/ops"
+                    maxHeight
                   />
                 </div>
                 <ContentCard

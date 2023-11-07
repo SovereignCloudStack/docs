@@ -14,7 +14,7 @@ const ContentCard: React.FunctionComponent<ContentCardProps> = (props) => {
   const { title, body, url, buttonText, maxHeight } = props
 
   return (
-    <div className="card" style={maxHeight && { height: '100%' }}>
+    <div className={`${maxHeight && styles.card} card`}>
       <div className="card__header">
         <h3>{title}</h3>
       </div>

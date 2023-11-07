@@ -19,3 +19,13 @@
 .button:hover {
   background-color: #0f5fe1; /* Green */
 }
+
+@media only screen and (min-width: 996px) {
+  .card {
+    height: 100%;
+  }
+}
+
+.card {
+  margin-bottom: 1rem;
+}
