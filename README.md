@@ -3,8 +3,8 @@
 ## Licenses
 
 The content of this repository is published under multiple licenses.
-All files within `docs` are licensed under [CC-BY-SA 4.0](LICENSE-DOCS).
-All source code is licensed under the [MIT](LICENSE-CODE) license.
+All documentation content files within `docs, dev-docs, standards and community` are licensed under [CC-BY-SA 4.0](LICENSE-DOCS).
+All source code of this documenation page is licensed under the [MIT](LICENSE-CODE) license.
 
 ## Overview
 
