@@ -21,3 +21,20 @@
   align-items: center;
   justify-content: center;
 }
+
+.gradient {
+  background: linear-gradient(
+    180deg,
+    #0061ff 0%,
+    rgba(80, 195, 165, 0) 50%,
+    #50c3a5 100%
+  );
+  border-radius: 16px;
+  margin: 16px;
+  padding: 16px;
+}
+
+#marg {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
