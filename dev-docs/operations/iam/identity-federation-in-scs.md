@@ -18,7 +18,7 @@ The following sections describe how this is done.
 ## 1. IaaS / OpenStack
 
 To provide Infrastrucure as a Service SCS builds upon
-OpenStack. See section [OpenStack Federation via OpenID-Connect](https://docs-staging.scs.community/dev-docs/operations/iam/openstack-federation-via-oidc)
+OpenStack. See section [OpenStack Federation via OpenID-Connect](https://docs.scs.community/dev-docs/operations/iam/openstack-federation-via-oidc)
 for more details on identity federation for OpenStack.
 
 ## 2. CaaS
