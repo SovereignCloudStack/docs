@@ -22,7 +22,7 @@ const featureContentData = [
   },
   {
     title: 'Frequently Asked Questions',
-    body: 'You are wondering what is SCS about, what it can do and what it cant?',
+    body: 'You are wondering what SCS is all about, what it can do and what it cant?',
     url: '/docs/faq',
     buttonText: 'Get Answers'
   },
@@ -30,7 +30,7 @@ const featureContentData = [
     title: 'Existing Public Clouds',
     body: 'There are public SCS compliant clouds in production.',
     url: '/standards/certification/overview#compliant-cloud-environments',
-    buttonText: 'Test them'
+    buttonText: 'Test Them'
   }
 ]
 
