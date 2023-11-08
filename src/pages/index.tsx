@@ -22,7 +22,7 @@ const featureContentData = [
   },
   {
     title: 'Frequently Asked Questions',
-    body: 'You are wondering what SCS is all about, what it can do and what it cant?',
+    body: 'You are curious what SCS is all about, what it can do and what it cant?',
     url: '/docs/faq',
     buttonText: 'Get Answers'
   },
