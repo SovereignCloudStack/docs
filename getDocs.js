@@ -2,7 +2,9 @@ const fs = require('fs')
 const { execSync } = require('child_process')
 
 // Read the contents of the "docs.package.json" file and remove all whitespace
-const reposJson = fs.readFileSync('./docs.package.json', 'utf8').replace(/\s/g, '')
+const reposJson = fs
+  .readFileSync('./docs.package.json', 'utf8')
+  .replace(/\s/g, '')
 
 // Parse the JSON and create an array of repositories
 const repos = JSON.parse(reposJson)
