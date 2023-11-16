@@ -40,5 +40,11 @@
     "source": "docs/advanced-guides",
     "target": "docs/02-iaas/deployment-examples",
     "label": "cloud-in-a-box"
+  },
+  {
+    "repo": "osism/osism.github.io",
+    "source": "docs/guides",
+    "target": "docs/02-iaas/",
+    "label": ""
   }
 ]
