@@ -1,11 +1,9 @@
 const fs = require('fs')
+const sidebars = require('./sidebarsStandards.js')
 
-sidebars = require('./sidebarsStandards.js')
-sidebars.standards.splice(3)
-sidebarItems = []
-sidebars.standards[2].items = sidebarItems
-
-fns = fs.readdirSync('standards/').filter((fn) => fn.startsWith('scs-') && fn.endsWith('.md') && !fn.startsWith('scs-X'))
+var filenames = fs
+    .readdirSync('standards/')
+    .filter((fn) => fn.startsWith('scs-') && fn.endsWith('.md') && !fn.startsWith('scs-X'))
 
 keys = ['title', 'type', 'status', 'track', 'stabilized_at', 'obsoleted_at', 'replaces', 'authors', 'state']
 
@@ -14,7 +12,7 @@ today = new Date().toISOString().slice(0, 10)
 
 // collect all the information sorted into a track/adr-id/version hierarchy
 tracks = {}
-fns.forEach((fn) => {
+filenames.forEach((fn) => {
     var components = fn.split('-')
     var adrId = components[1]
     var version = components[2]
@@ -34,14 +32,11 @@ fns.forEach((fn) => {
     if (track === undefined) return
     if (tracks[track] === undefined) tracks[track] = {}
     var standards = tracks[track]
-    if (standards[adrId] === undefined) standards[adrId] = {active: [], versions: []}
+    if (standards[adrId] === undefined) standards[adrId] = {versions: []}
     standards[adrId].versions.push(obj)
     obj.isStable = obj.stabilized_at && obj.stabilized_at <= today
     obj.isObsolete = obj.obsoleted_at && obj.obsoleted_at <= today
     obj.isActive = obj.isStable && !obj.isObsolete
-    if (obj.isStable) {
-        standards[adrId].active.push(version)
-    }
 })
 
 function readPrefixLines(fn) {
@@ -58,6 +53,7 @@ function readPrefixLines(fn) {
 
 // walk down the hierarchy, building adr overview pages, track overview pages, and total overview page
 // as well as the new sidebar
+sidebarItems = []
 var lines = readPrefixLines('standards/standards/overview.md')
 lines.push('| Standard  | Track  | Description  | Active Versions  |')
 lines.push('| --------- | ------ | ------------ | ---------------- |')
@@ -74,13 +70,14 @@ Object.entries(tracks).forEach((trackEntry) => {
     }
     sidebarItems.push(trackItem)
     var tlines = readPrefixLines(`standards/${track.toLowerCase()}/index.md`)
+    if (!tlines.length) tlines.push(`${track} Standards\n`)
     tlines.push('| Standard  | Description  | Active Versions  |')
     tlines.push('| --------- | ------------ | ---------------- |')
     Object.entries(trackEntry[1]).forEach((standardEntry) => {
-        var active = standardEntry[1].active
         var versions = standardEntry[1].versions
+        var activeLinks = versions.filter((v) => v.isActive).map((v) => `[${v.version}](/standards/${v.id})`)
         var description = versions[versions.length - 1].title
-        var icon = active.length ? '🟢' : '🟠'
+        var icon = activeLinks.length ? '🟢' : '🟠'
         var adrId = standardEntry[0]
         var standardItem = {
             type: 'category',
@@ -89,17 +86,16 @@ Object.entries(tracks).forEach((trackEntry) => {
                 type: 'doc',
                 id: `${track.toLowerCase()}/scs-${adrId}`,
             },
-            items: [
-            ]
+            items: [],
         }
         trackItem.items.push(standardItem)
         var slines = readPrefixLines(`standards/${track.toLowerCase()}/scs-${adrId}.md`)
+        if (!slines.length) slines.push(`scs-${adrId}: ${description}\n`)
         slines.push('| Version  | Type  | State   | stabilized | obsoleted |')
         slines.push('| -------- | ----- | ------- | ---------- | --------- |')
         var link = `[${icon} scs-${adrId}](/standards/${track.toLowerCase()}/scs-${adrId})`
-        var activeLinks = versions.filter((v) => v.isActive).map((v) => `[${v.version}](/standards/${v.id})`)
-        lines.push(`| ${link} | ${track}  | ${description}  | ${activeLinks.join(', ')} |`)
-        tlines.push(`| ${link}  | ${description}  | ${activeLinks.join(', ')} |`)
+        lines.push(`| ${link}  | ${track}  | ${description}  | ${activeLinks.join(', ')}  |`)
+        tlines.push(`| ${link}  | ${description}  | ${activeLinks.join(', ')}  |`)
         standardEntry[1].versions.forEach((obj) => {
             var icon = obj.isActive ? '🟢' : '🟠'
             var versionItem = {
@@ -108,14 +104,19 @@ Object.entries(tracks).forEach((trackEntry) => {
                 id: obj.id,
             }
             standardItem.items.push(versionItem)
-            slines.push(`| [${icon} scs-${adrId}-${obj.version}](/standards/${obj.id})  | ${obj.type}  | ${obj.status || obj.state}  | ${obj.stabilized_at || '-'}  | ${obj.obsoleted_at || '-'} |`)
+            slines.push(`| [${icon} scs-${adrId}-${obj.version}](/standards/${obj.id})  | ${obj.type}  | ${obj.status || obj.state}  | ${obj.stabilized_at || '-'}  | ${obj.obsoleted_at || '-'}  |`)
         })
+        slines.push('')  // file should end with a single newline character
         fs.writeFileSync(`standards/${track.toLowerCase()}/scs-${adrId}.md`, slines.join('\n'), 'utf8')
     })
+    tlines.push('')  // file should end with a single newline character
     fs.writeFileSync(`standards/${track.toLowerCase()}/index.md`, tlines.join('\n'), 'utf8')
 })
+lines.push('')  // file should end with a single newline character
 fs.writeFileSync(`standards/standards/overview.md`, lines.join('\n'), 'utf8')
 
+sidebars.standards.splice(3)  // remove unnecessary remainder
+sidebars.standards[2].items = sidebarItems  // reset standards items
 var newSidebars = `// @ts-check
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
@@ -123,5 +124,4 @@ const sidebars = ${JSON.stringify(sidebars, null, '  ')}
 
 module.exports = sidebars
 `
-
 fs.writeFileSync('./sidebarsStandards.js', newSidebars, 'utf8')
