@@ -90,7 +90,7 @@ Object.entries(tracks).forEach((trackEntry) => {
         }
         trackItem.items.push(standardItem)
         var slines = readPrefixLines(`standards/${track.toLowerCase()}/scs-${adrId}.md`)
-        if (!slines.length) slines.push(`scs-${adrId}: ${description}\n`)
+        if (!slines.length) slines.push(`# scs-${adrId}: ${description}\n`)
         slines.push('| Version  | Type  | State   | stabilized | obsoleted |')
         slines.push('| -------- | ----- | ------- | ---------- | --------- |')
         var link = `[${icon} scs-${adrId}](/standards/${track.toLowerCase()}/scs-${adrId})`
