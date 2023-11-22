@@ -45,26 +45,14 @@ const sidebarsDocs = {
           },
           items: [
             // {
-            //   type: 'category',
+            //   type: 'doc',
             //   label: 'Testbed',
-            //   link: {
-            //     slug: 'iaas/deployment-examples/testbed',
-            //     type: 'generated-index'
-            //   },
-            //   items: [
-            //     'iaas/guides/deploy-guide/examples/testbed'
-            //   ]
+            //   id: 'iaas/guides/deploy-guide/examples/testbed'
             // },
             // {
-            //   type: 'category',
+            //   type: 'doc',
             //   label: 'Cloud in a Box',
-            //   link: {
-            //     slug: 'iaas/deployment-examples/cloud-in-a-box',
-            //     type: 'generated-index'
-            //   },
-            //   items: [
-            //     'iaas/guides/deploy-guide/examples/cloud-in-a-box'
-            //   ]
+            //   id: 'iaas/guides/deploy-guide/examples/cloud-in-a-box'
             // }
           ]
         },
