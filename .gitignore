@@ -1,6 +1,7 @@
 # Content Dependencies from docs.package.json
 /repo_to_be_edited_
 /docs/02-iaas/components
+/docs/02-iaas/guides
 /docs/02-iaas/guides/configuration-guides
 /docs/02-iaas/guides/deploy-guide
 /docs/02-iaas/guides/operations-guide

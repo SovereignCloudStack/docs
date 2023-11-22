@@ -56,7 +56,7 @@ const AdditionalResourcesData = [
   {
     title: 'Deployment Examples',
     body: 'Get to know different ways to deploy SCS with cloud resources or on bare metal.',
-    url: '/docs/category/deployment-examples',
+    url: '/docs/iaas/guides/deploy-guide/examples',
     buttonText: 'Explore Cases'
   }
 ]
