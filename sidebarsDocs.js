@@ -44,28 +44,28 @@ const sidebarsDocs = {
             type: 'generated-index'
           },
           items: [
-            {
-              type: 'category',
-              label: 'Testbed',
-              link: {
-                slug: 'iaas/deployment-examples/testbed',
-                type: 'generated-index'
-              },
-              items: [
-                'iaas/deployment-examples/cloud-in-a-box/advanced-guides/testbed'
-              ]
-            },
-            {
-              type: 'category',
-              label: 'Cloud in a Box',
-              link: {
-                slug: 'iaas/deployment-examples/cloud-in-a-box',
-                type: 'generated-index'
-              },
-              items: [
-                'iaas/deployment-examples/cloud-in-a-box/advanced-guides/cloud-in-a-box'
-              ]
-            }
+            // {
+            //   type: 'category',
+            //   label: 'Testbed',
+            //   link: {
+            //     slug: 'iaas/deployment-examples/testbed',
+            //     type: 'generated-index'
+            //   },
+            //   items: [
+            //     'iaas/guides/deploy-guide/examples/testbed'
+            //   ]
+            // },
+            // {
+            //   type: 'category',
+            //   label: 'Cloud in a Box',
+            //   link: {
+            //     slug: 'iaas/deployment-examples/cloud-in-a-box',
+            //     type: 'generated-index'
+            //   },
+            //   items: [
+            //     'iaas/guides/deploy-guide/examples/cloud-in-a-box'
+            //   ]
+            // }
           ]
         },
         // {
