@@ -1,5 +1,4 @@
 const fs = require('fs')
-const sidebars = require('./sidebarsStandards.js')
 
 const intro = `# Overview
 
@@ -135,13 +134,5 @@ ${trackIntros[track]}
 lines.push('')  // file should end with a single newline character
 fs.writeFileSync(`standards/standards/overview.md`, lines.join('\n'), 'utf8')
 
-sidebars.standards.splice(3)  // remove unnecessary remainder
-sidebars.standards[2].items = sidebarItems  // reset standards items
-var newSidebars = `// @ts-check
-
-/** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
-const sidebars = ${JSON.stringify(sidebars, null, '  ')}
-
-module.exports = sidebars
-`
-fs.writeFileSync('./sidebarsStandards.js', newSidebars, 'utf8')
+var newSidebars = `module.exports = ${JSON.stringify(sidebarItems, null, '  ')}`
+fs.writeFileSync('./sidebarsStandardsItems.js', newSidebars, 'utf8')
