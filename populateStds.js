@@ -1,6 +1,20 @@
 const fs = require('fs')
 const sidebars = require('./sidebarsStandards.js')
 
+const intro = `# Overview
+
+Standards are the core deliverable of SCS. By standardizing the open source software components of a cloud computing stack, their versions, how they are to be configured, deployed and utilized, SCS guarantees the reproducibility of a certain behavior of this technology.
+
+SCS standards are discussed, developed and maintained in the community by the corresponding teams (see Track in the table below), which naturally include existing users of SCS.
+`
+const trackIntros = {
+    'Global': 'This track encompasses the foundational standards that guide the overall structure, documentation, and general topics related to the Sovereign Cloud Stack. It serves as the core framework, ensuring consistency, clarity, and comprehensibility across all aspects of the cloud stack, fostering an environment where information is easily accessible and understood.',
+    'IaaS': 'The IaaS Layer Standards track focuses on the protocols, guidelines, and specifications that govern the infrastructure as a service layer. This encompasses standards for virtual machines, storage, networking, and other foundational resources, ensuring seamless, efficient, and secure operation, interoperability, and management of the underlying cloud infrastructure.',
+    'KaaS': 'Standards in this track are concerned with Kubernetes as a Service layer, outlining norms and best practices for deploying, managing, and operating Kubernetes clusters. These standards aim to ensure that the orchestration of containers is streamlined, secure, and compatible across various cloud environments and platforms.',
+    'IAM': 'This track revolves around Identity and Access Management (IAM) standards, providing guidelines for ensuring secure and efficient user authentication, authorization, and administration. It addresses issues related to user identity, permissions, roles, and policies, aiming to safeguard and streamline access to cloud resources and services.',
+    'Ops': 'Operational Tooling Standards cover the protocols and guidelines associated with tools and utilities used for monitoring, management, and maintenance of the cloud environment. This includes standards for status pages, alerts, logs, and other operational tools, aiming to optimize the reliability, performance, and security of cloud services and resources.',
+}
+
 var filenames = fs
     .readdirSync('standards/')
     .filter((fn) => fn.startsWith('scs-') && fn.endsWith('.md') && !fn.startsWith('scs-X'))
@@ -55,6 +69,7 @@ function readPrefixLines(fn) {
 // as well as the new sidebar
 sidebarItems = []
 var lines = readPrefixLines('standards/standards/overview.md')
+if (!lines.length) lines.push(intro)
 lines.push('| Standard  | Track  | Description  | Active Versions  |')
 lines.push('| --------- | ------ | ------------ | ---------------- |')
 Object.entries(tracks).forEach((trackEntry) => {
@@ -70,7 +85,12 @@ Object.entries(tracks).forEach((trackEntry) => {
     }
     sidebarItems.push(trackItem)
     var tlines = readPrefixLines(`standards/${track.toLowerCase()}/index.md`)
-    if (!tlines.length) tlines.push(`${track} Standards\n`)
+    if (!tlines.length) {
+        tlines.push(`# ${track} Standards
+
+${trackIntros[track]}
+`)
+    }
     tlines.push('| Standard  | Description  | Active Versions  |')
     tlines.push('| --------- | ------------ | ---------------- |')
     Object.entries(trackEntry[1]).forEach((standardEntry) => {
