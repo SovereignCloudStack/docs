@@ -1,4 +1,5 @@
 const fs = require('fs')
+const YAML = require('yaml')
 
 const intro = `# Overview
 
@@ -25,31 +26,24 @@ today = new Date().toISOString().slice(0, 10)
 
 // collect all the information sorted into a track/adr-id/version hierarchy
 tracks = {}
-filenames.forEach((fn) => {
-    var components = fn.split('-')
-    var adrId = components[1]
-    var version = components[2]
-    var obj = {id: fn.substring(0, fn.length - 3), filename: fn, adrId, version}
-    var prefixLines = fs.readFileSync(`standards/${fn}`, 'utf8').split('\n').slice(0, 10)
-    prefixLines.forEach((line) => {
-        var lhs = line.split(':', 1)[0]
-        var rhs = line.slice(lhs.length + 1).trim()
-        if (!rhs || keys.indexOf(lhs) == -1) return
-        obj[lhs] = rhs
-    })
-    // var type = obj.type
-    // if (type === undefined) return
-    // if (types[type] === undefined) types[type] = {}
-    // var tracks = types[type]
+filenames.forEach((filename) => {
+    var components = filename.split('-')
+    var obj = {
+        ...YAML.parseDocument(fs.readFileSync(`standards/${filename}`, 'utf8')).toJSON(),
+        filename,
+        id: filename.substring(0, filename.length - 3),
+        adrId: components[1],
+        version: components[2],
+    }
+    obj.isStable = obj.stabilized_at !== undefined && obj.stabilized_at <= today
+    obj.isObsolete = obj.obsoleted_at !== undefined && obj.obsoleted_at <= today
+    obj.isActive = obj.isStable && !obj.isObsolete
     var track = obj.track
     if (track === undefined) return
     if (tracks[track] === undefined) tracks[track] = {}
     var standards = tracks[track]
-    if (standards[adrId] === undefined) standards[adrId] = {versions: []}
-    standards[adrId].versions.push(obj)
-    obj.isStable = obj.stabilized_at && obj.stabilized_at <= today
-    obj.isObsolete = obj.obsoleted_at && obj.obsoleted_at <= today
-    obj.isActive = obj.isStable && !obj.isObsolete
+    if (standards[obj.adrId] === undefined) standards[obj.adrId] = {versions: []}
+    standards[obj.adrId].versions.push(obj)
 })
 
 function readPrefixLines(fn) {
