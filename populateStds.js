@@ -88,9 +88,13 @@ ${trackIntros[track]}
     tlines.push('| --------- | ------------ | ---------------- |')
     Object.entries(trackEntry[1]).forEach((standardEntry) => {
         var versions = standardEntry[1].versions
-        var activeLinks = versions.filter((v) => v.isActive).map((v) => `[${v.version}](/standards/${v.id})`)
-        var description = versions[versions.length - 1].title
-        var icon = activeLinks.length ? '🟢' : '🟠'
+        var activeVersions = versions.filter((v) => v.isActive)
+        var activeLinks = activeVersions.map((v) => `[${v.version}](/standards/${v.id})`)
+        var ref = versions[versions.length - 1]
+        if (activeVersions.length) {
+            activeVersions[activeVersions.length - 1]
+        }
+        var icon = activeVersions.length ? '🟢' : '🟠'
         var adrId = standardEntry[0]
         var standardItem = {
             type: 'category',
@@ -103,12 +107,17 @@ ${trackIntros[track]}
         }
         trackItem.items.push(standardItem)
         var slines = readPrefixLines(`standards/${track.toLowerCase()}/scs-${adrId}.md`)
-        if (!slines.length) slines.push(`# scs-${adrId}: ${description}\n`)
+        if (!slines.length) {
+            slines.push(`# scs-${adrId}: ${ref.title}\n`)
+            if (ref.description !== undefined) {
+                slines.push(ref.description)
+            }
+        }
         slines.push('| Version  | Type  | State   | stabilized | obsoleted |')
         slines.push('| -------- | ----- | ------- | ---------- | --------- |')
         var link = `[${icon} scs-${adrId}](/standards/${track.toLowerCase()}/scs-${adrId})`
-        lines.push(`| ${link}  | ${track}  | ${description}  | ${activeLinks.join(', ')}  |`)
-        tlines.push(`| ${link}  | ${description}  | ${activeLinks.join(', ')}  |`)
+        lines.push(`| ${link}  | ${track}  | ${ref.title}  | ${activeLinks.join(', ')}  |`)
+        tlines.push(`| ${link}  | ${ref.title}  | ${activeLinks.join(', ')}  |`)
         standardEntry[1].versions.forEach((obj) => {
             var icon = obj.isActive ? '🟢' : '🟠'
             var versionItem = {
