@@ -13,6 +13,9 @@ to achieve that goal. To simplify connecting the different parts of SCS
 to customer owned IAM solutions, SCS deploys Keycloak as central Identity
 Provider (IdP) service.
 
+Currently this is deployed automatically only in the [osism/testbed](https://docs.scs.community/docs/iaas/guides/deploy-guide/examples/testbed/),
+which provides [its own documentation for authentication with OIDC](https://docs.scs.community/docs/iaas/guides/deploy-guide/examples/testbed#authentication-with-oidc).
+
 The following sections describe how this is done.
 
 ## 1. IaaS / OpenStack
