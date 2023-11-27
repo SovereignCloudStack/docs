@@ -312,11 +312,18 @@ You may use this content or the file to provide it as a secret. You just have to
 The secret name has to be unique across all projects. Because of this, we have a naming convention in the
 `SovereignCloudStack` organisation that ensures that a secret has a unique name.
 
-There is only one secret per Zuul configuration per project. This secret always has a name in the form
-`SECRET_REPOSITORY_NAME`. If a secret in the `SovereignCloudStack/k8s-cluster-api-provider` repository is
+Our convention is as follows. There is only one secret per Zuul configuration per project (for exceptions,
+see below). This secret always has a name in the form
+`SECRET_REPOSITORY_NAME`. For instance, if a secret in the `SovereignCloudStack/k8s-cluster-api-provider`
+repository is
 to be used, it is given the name `SECRET_K8S_CLUSTER_API_PROVIDER`. The name of the repository is
-always written in capital letters. A minus is replaced with an underscore. Any number of values
+always written in capital letters. A dash is replaced with an underscore. Any number of values
 (`<fieldname>: !encrypted/pkcs1-oaep`) can then be assigned to this one secret.
+
+In certain cases, it can be undesireable to expose all secret information to all jobs in a project.
+Then additional secrets may be used, whose names have to be formed by appending an underscore and some
+upper-case prefix to the name of the primary secret. For instance, we might use the
+name `SECRET_REPOSITORY_NAME_FOOBAR`.
 
 Official documentation:
 
