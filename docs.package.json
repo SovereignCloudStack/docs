@@ -7,13 +7,7 @@
   },
   {
     "repo": "osism/osism.github.io",
-    "source": "docs/guides/operations-guide/openstack/image-manager.md",
-    "target": "docs/02-iaas/components",
-    "label": ""
-  },
-  {
-    "repo": "osism/osism.github.io",
-    "source": "docs/guides/operations-guide/openstack/flavor-manager.md",
+    "source": "docs/guides/operations-guide/openstack/*",
     "target": "docs/02-iaas/components",
     "label": ""
   },
