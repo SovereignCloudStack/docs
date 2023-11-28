@@ -7,7 +7,7 @@
   },
   {
     "repo": "osism/osism.github.io",
-    "source": "docs/guides/operations-guide/openstack/*",
+    "source": "docs/guides/operations-guide/openstack/day2-operations/*",
     "target": "docs/02-iaas/components",
     "label": ""
   },
