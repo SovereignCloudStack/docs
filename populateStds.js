@@ -94,7 +94,7 @@ ${trackIntros[track]}
         if (activeVersions.length) {
             activeVersions[activeVersions.length - 1]
         }
-        var icon = activeVersions.length ? '🟢' : '🟠'
+        var icon = activeVersions.length ? '📜' : '✏️'
         var adrId = standardEntry[0]
         var standardItem = {
             type: 'category',
@@ -119,7 +119,7 @@ ${trackIntros[track]}
         lines.push(`| ${link}  | ${track}  | ${ref.title}  | ${activeLinks.join(', ')}  |`)
         tlines.push(`| ${link}  | ${ref.title}  | ${activeLinks.join(', ')}  |`)
         standardEntry[1].versions.forEach((obj) => {
-            var icon = obj.isActive ? '🟢' : '🟠'
+            var icon = obj.isActive ? '📜' : '✏️'
             var versionItem = {
                 type: 'doc',
                 label: obj.version.toUpperCase(),
