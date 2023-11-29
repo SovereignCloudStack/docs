@@ -1,6 +1,6 @@
 # Introduction on Identity Management and Federation in SCS
 
-SovereignCloudStack wants to make it possible for operators to delegate
+Sovereign Cloud Stack wants to make it possible for operators to delegate
 administration of user identities to the organizational entities that the
 users are part of. Usually that's customer organizations but it could also
 be the operator itself. Federation protocols like OpenID Connect can be used
@@ -13,14 +13,14 @@ Keycloak as central Identity Provider (IdP) service.
 Keycloak can be deployed by running
 
 ```
-osism-infrastructure keycloak
+osism apply keycloak
 ```
 
 The required Keycloak client configuration that allows Keystone to obtain
 OIDC token from Keycloak needs to be deployed by running
 
 ```
-osism-infrastructure keycloak-oidc-client-config
+osism apply keycloak-oidc-client-config
 ```
 
 After these steps Keystone should be able to obtain token using the
@@ -36,9 +36,9 @@ Details TODO.
 
 The idea is that customer can create groups with specific names in their own IAM.
 These shall be mapped to a claim `groups` to be included in the OIDC token.
-Via the Keystone [mapping](https://docs.openstack.org/keystone/2023.2/admin/federation/mapping_combinations.html)
+Via the Keystone [mapping](https://docs.openstack.org/keystone/latest/admin/federation/mapping_combinations.html)
 they shall be mapped to roles on OpenStack projects.
-[The corresponding section for Developers](https://docs.scs.community/dev-docs/operations/iam/identity-federation-in-scs) may be interesting for more technical details.
+[The corresponding section for Developers](../../dev-docs/operations/iam/identity-federation-in-scs) may be interesting for more technical details.
 Please be aware that currently there are still some technical challenges to be solved
 within the OpenStack Keystone mapping engine and the mapping rules to make this work
 seamlessly.
@@ -47,7 +47,7 @@ seamlessly.
 
 Federation between separate deployments of SCS is possible via the IdP by
 means of OpenID Connect.
-The section on [inter SCS federation setup](https://docs.scs.community/docs/iam/intra-SCS-federation-setup-description-for-osism-doc-operations) explains the required steps in some detail.
+The section on [inter SCS federation setup](intra-SCS-federation-setup-description-for-osism-doc-operations) explains the required steps in some detail.
 
 ### Prerequisites and Requirements
 
@@ -68,8 +68,8 @@ The section on [inter SCS federation setup](https://docs.scs.community/docs/iam/
 
 ### Current state and future Outlook
 
-Currently SCS exemplifies deploying Keycloak on the `manager` node. This shall be moved to a `k3s` layer to improve
-scalability and architecture.
+Currently SCS exemplifies deploying Keycloak on the management plane. This shall be moved to a Kubernetes based
+management plane to improve scalability and architecture.
 
 In the near future, the Container layer shall be able to make use of the IdP to allow federated users to access Kubernetes.
 In the mid term, workloads on Kubernetes shall be able to make use of OAuth tokens to access resources on the IaaS layer.
