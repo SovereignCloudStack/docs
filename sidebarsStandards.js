@@ -5,9 +5,12 @@ const sidebars = {
   standards: [
     'index',
     {
-      type: 'doc',
+      type: 'category',
       label: 'Certification',
-      id: 'certification/overview'
+      link: {
+        type: 'doc',
+        id: 'certification/overview',
+      },
       items: require('./sidebarsCertificationItems.js'),
     },
     {
