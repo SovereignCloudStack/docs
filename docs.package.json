@@ -27,7 +27,7 @@
     "repo": "SovereignCloudStack/standards",
     "source": [
       "Standards/*.md",
-      "Tests/scs-*.yaml",
+      "Tests/scs-*.yaml"
     ],
     "target": "standards",
     "label": ""
