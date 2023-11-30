@@ -58,10 +58,13 @@ const sidebarItems = scopes.map((scope) => {
             }
         })
     })
-    lines = [`# ${scope.name}\n`]
+    
+    const values = Object.values(matrix)
     const columns = Object.keys(versionsShown)
+    values.sort((a, b) => a.name.localeCompare(b.name));
     columns.sort((a, b) => a.localeCompare(b));
 
+    lines = [`# ${scope.name}\n`]
     lines.push('| Scope versions ->  | ' + columns.join('  | ') + '  |')
     lines.push('| ================== | ' + columns.map((c) => '='.repeat(c.length)).join('  | ') + '  |')
     lines.push('| State              | ' + columns.map((c) => versionsShown[c].state).join('  | ') + '  |')
@@ -69,10 +72,6 @@ const sidebarItems = scopes.map((scope) => {
     lines.push('| Obsoleted at       | ' + columns.map((c) => versionsShown[c].obsoleted_at || '').join('  | ') + '  |')
     lines.push('| ================== | ' + columns.map((c) => '='.repeat(c.length)).join('  | ') + '  |')
     lines.push('| Standards          | ' + columns.map((c) => ' '.repeat(c.length)).join('  | ') + '  |')
-    
-    const values = Object.values(matrix)
-    values.sort((a, b) => a.name.localeCompare(b.name));
-
     values.forEach((row) => {
         lines.push(`| ${row.name}  | ` + columns.map((c) => row.columns[c]).map((col) => {
             if (col === undefined) {
@@ -82,12 +81,13 @@ const sidebarItems = scopes.map((scope) => {
             return `[${col.version}](${col.url})`
         }).join('  | ') + '  |')
     })
-    
     lines.push('')  // file should end with a single newline character
     fs.writeFileSync(`standards/${scope.id}.md`, lines.join('\n'), 'utf8')
+
+    const state = columns.filter((c) => versionsShown[c].isActive).length ? '📜' : '✏️'
     return {
         type: 'doc',
-        label: scope.name,
+        label: `${state} ${scope.name}`,
         id: scope.id,
     }
 
