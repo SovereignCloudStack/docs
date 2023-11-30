@@ -24,6 +24,8 @@ node_modules
 # Generated files
 .docusaurus
 .cache-loader
+sidebarsStandardsItems.js
+sidebarsCertificationItems.js
 
 # Misc
 .DS_Store

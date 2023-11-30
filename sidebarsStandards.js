@@ -8,6 +8,7 @@ const sidebars = {
       type: 'doc',
       label: 'Certification',
       id: 'certification/overview'
+      items: require('./sidebarsCertificationItems.js'),
     },
     {
       type: 'category',
