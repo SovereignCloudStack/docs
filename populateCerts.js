@@ -39,7 +39,7 @@ const sidebarItems = scopes.map((scope) => {
                 key = `scs-${components2[1]}`
                 name = `${key}: ${name}`
                 ver = components2[2]
-                url = `standards/${filename.substring(0, filename.length - 3)}`
+                url = `/standards/${filename.substring(0, filename.length - 3)}`
             } else {
                 const components2 = name.split(' ')
                 const v = components2.splice(components2.length - 1)
