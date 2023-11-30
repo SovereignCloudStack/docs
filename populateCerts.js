@@ -72,6 +72,7 @@ const sidebarItems = scopes.map((scope) => {
     lines.push('| Obsoleted at       | ' + columns.map((c) => versionsShown[c].obsoleted_at || '').join('  | ') + '  |')
     lines.push('| ------------------ | ' + columns.map((c) => '-'.repeat(c.length)).join('- | ') + '  |')
     lines.push('| Standards          | ' + columns.map((c) => ' '.repeat(c.length)).join('  | ') + '  |')
+    lines.push('| ------------------ | ' + columns.map((c) => '-'.repeat(c.length)).join('- | ') + '  |')
     values.forEach((row) => {
         lines.push(`| ${row.name}  | ` + columns.map((c) => row.columns[c]).map((col) => {
             if (col === undefined) {
