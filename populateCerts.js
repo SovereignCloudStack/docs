@@ -22,7 +22,8 @@ const sidebarItems = scopes.map((scope) => {
     const matrix = {}
     const versionsShown = {}
     var numOld = 0
-    scope.versions.sort((a, b) => a.version.localeCompare(b.version));
+    // sort in descending order, so we get the MAX_OLD most recent obsolete versions
+    scope.versions.sort((a, b) => b.version.localeCompare(a.version));
     scope.versions.forEach((version) => {
         version.isStable = version.stabilized_at !== undefined && version.stabilized_at <= today
         version.isObsolete = version.obsoleted_at !== undefined && version.obsoleted_at < today
