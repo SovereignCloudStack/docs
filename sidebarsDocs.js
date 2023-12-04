@@ -23,59 +23,127 @@ const sidebarsDocs = {
         type: 'generated-index'
       },
       items: [
-        {
-          type: 'category',
-          label: 'Overview',
-          link: {
-            type: 'generated-index'
-          },
-          items: [
-            // 'iaas/overview/architecture',
-            // 'iaas/overview/compute',
-            // 'iaas/overview/storage',
-            // 'iaas/overview/network',
-            // 'iaas/overview/knowledge'
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Deployment Examples',
-          link: {
-            type: 'generated-index'
-          },
-          items: [
-            {
-              type: 'category',
-              label: 'Testbed',
-              link: {
-                slug: 'iaas/deployment-examples/testbed',
-                type: 'generated-index'
-              },
-              items: [
-                'iaas/deployment-examples/cloud-in-a-box/advanced-guides/testbed'
-              ]
-            },
-            {
-              type: 'category',
-              label: 'Cloud in a Box',
-              link: {
-                slug: 'iaas/deployment-examples/cloud-in-a-box',
-                type: 'generated-index'
-              },
-              items: [
-                'iaas/deployment-examples/cloud-in-a-box/advanced-guides/cloud-in-a-box'
-              ]
-            }
-          ]
-        },
+        // {
+        //   type: 'category',
+        //   label: 'Overview',
+        //   link: {
+        //     type: 'generated-index'
+        //   },
+        //   items: [
+        //     // 'iaas/overview/architecture',
+        //     // 'iaas/overview/compute',
+        //     // 'iaas/overview/storage',
+        //     // 'iaas/overview/network',
+        //     // 'iaas/overview/knowledge'
+        //   ]
+        // },
+        // {
+        //   type: 'category',
+        //   label: 'Deployment Examples',
+        //   link: {
+        //     type: 'generated-index'
+        //   },
+        //   items: [
+        //     {
+        //       type: 'doc',
+        //       label: 'Testbed',
+        //       id: 'iaas/guides/deploy-guide/examples/testbed'
+        //     },
+        //     {
+        //       type: 'doc',
+        //       label: 'Cloud in a Box',
+        //       id: 'iaas/guides/deploy-guide/examples/cloud-in-a-box'
+        //     }
+        //   ]
+        // },
+        // {
+        //   type: 'category',
+        //   label: 'Guides',
+        //   link: {
+        //     type: 'generated-index'
+        //   },
+        //   items: [
+        //     {
+        //       type: 'category',
+        //       label: 'Deploy Guides',
+        //       link: {
+        //         type: 'generated-index'
+        //       },
+        //       items: [
+        //         'iaas/guides/deploy-guide/index',
+        //         'iaas/guides/deploy-guide/manager',
+        //         'iaas/guides/deploy-guide/bootstrap',
+        //         'iaas/guides/deploy-guide/infrastructure',
+        //         'iaas/guides/deploy-guide/network',
+        //         'iaas/guides/deploy-guide/ceph',
+        //         'iaas/guides/deploy-guide/openstack',
+        //         'iaas/guides/deploy-guide/ceph',
+        //         'iaas/guides/deploy-guide/logging-monitoring',
+        //         'iaas/guides/deploy-guide/zuul'
+        //       ]
+        //     },
+        //     {
+        //       type: 'category',
+        //       label: 'Operations Guides',
+        //       link: {
+        //         type: 'generated-index'
+        //       },
+        //       items: [
+        //         'iaas/guides/operations-guide/index',
+        //         {
+        //           type: 'category',
+        //           label: 'Manager',
+        //           link: {
+        //             type: 'doc',
+        //             id: 'iaas/components/image-manager'
+        //           },
+        //           items: [
+        //             'iaas/guides/operations-guide/manager/index',
+        //             'iaas/guides/operations-guide/manager/apply',
+        //             'iaas/guides/operations-guide/manager/log',
+        //             'iaas/guides/operations-guide/manager/console',
+        //             'iaas/guides/operations-guide/manager/task'
+        //           ]
+        //         }
+        //       ]
+        //     },
+        //     {
+        //       type: 'category',
+        //       label: 'Troubleshooting Guides',
+        //       link: {
+        //         type: 'generated-index'
+        //       },
+        //       items: [
+        //         'iaas/guides/troubleshooting-guides/manager',
+        //         'iaas/guides/troubleshooting-guides/openstack'
+        //       ]
+        //     },
+        //     {
+        //       type: 'category',
+        //       label: 'Upgrade Guides',
+        //       link: {
+        //         type: 'generated-index'
+        //       },
+        //       items: [
+        //         'iaas/guides/upgrade-guides/manager',
+        //         'iaas/guides/upgrade-guides/network',
+        //         'iaas/guides/upgrade-guides/ceph',
+        //         'iaas/guides/upgrade-guides/docker',
+        //         'iaas/guides/upgrade-guides/infrastructure',
+        //         'iaas/guides/upgrade-guides/logging-monitoring',
+        //         'iaas/guides/upgrade-guides/openstack'
+        //       ]
+        //     }
+        //   ]
+        // },
         {
           type: 'category',
           label: 'Guides',
-          link: {
-            type: 'generated-index'
-          },
           items: [
-            // 'iaas/guides/guide1'
+            {
+              type: 'autogenerated',
+              dirName: '02-iaas/guides' // '.' means the current docs folder
+            }
           ]
         },
         {
