@@ -121,8 +121,8 @@ See [Release Notes for R5](https://github.com/SovereignCloudStack/release-notes/
 
 ### Roadmap
 
-We have a 6 month release cadence — R4 will follow in March 2023.
-Until then, we will provide bugfixes and security fixes for R3.
+We have a 6 month release cadence — R6 will follow in March 2024.
+Until then, we will provide bugfixes and security fixes for R5.
 
 We do work towards a model where our partners can actually follow our main
 development branches — right now, our CI needs a bit more coverage though
