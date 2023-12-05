@@ -117,7 +117,7 @@ The container reference implementation has seen many updates is available as ver
 with Kubernetes v1.24 - 1.27 being officially supported. Furthermore this release brings
 the first technical preview of Cluster-Stack.
 
-See [Release Notes for R5](https://github.com/SovereignCloudStack/release-notes/blob/main/Release5.md) for more information.
+See [Release Notes for R5](https://github.com/SovereignCloudStack/release-notes/blob/364103536ab2c51435a078171c698d7967d7588d/Release5.md) for more information.
 
 ### Roadmap
 
