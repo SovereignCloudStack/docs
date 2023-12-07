@@ -68,7 +68,7 @@ function mkLinkList(versions) {
 sidebarItems = []
 var lines = readPrefixLines('standards/standards/overview.md')
 if (!lines.length) lines.push(intro)
-lines.push('| Standard  | Track  | Description  | Versions:<br />Preview | <br />Effective | <br /> Obsolete  |')
+lines.push('| Standard  | Track  | Description  | Preview | Effective | Obsolete  |')
 lines.push('| --------- | ------ | ------------ | --- | --- | --- |')
 Object.entries(tracks).forEach((trackEntry) => {
     var track = trackEntry[0]
@@ -91,7 +91,7 @@ Object.entries(tracks).forEach((trackEntry) => {
 ${trackIntros[track]}
 `)
     }
-    tlines.push('| Standard  | Description  | Versions:<br />Preview | <br />Effective | <br /> Obsolete  |')
+    tlines.push('| Standard  | Description  | Preview | Effective | Obsolete  |')
     tlines.push('| --------- | ------------ | --- | --- | --- |')
     Object.entries(trackEntry[1]).forEach((standardEntry) => {
         var versions = standardEntry[1].versions
