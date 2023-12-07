@@ -27,14 +27,13 @@ const sidebarItems = scopes.map((scope) => {
     scope.versions.forEach((version) => {
         version.isStable = version.stabilized_at !== undefined && version.stabilized_at <= today
         version.isObsolete = version.obsoleted_at !== undefined && version.obsoleted_at < today
-        version.isActive = version.isStable && !version.isObsolete
+        version.isEffective = version.isStable && !version.isObsolete
         version.isPreview = version.stabilized_at === undefined || today < version.stabilized_at
-        if (!version.isActive && !version.isPreview) {
+        if (!version.isEffective && !version.isPreview) {
             numOld += 1
             if (numOld > MAX_OLD) return
-            console.log(numOld)
         }
-        version.state = version.isActive ? '📜' : version.isPreview ? '✏️' : '🗑️'
+        version.state = version.isEffective ? 'effective' : version.isPreview ? 'preview' : 'obsolete'
         if (version.standards === undefined) return
         versionsShown[version.version] = version
         version.standards.forEach((standard) => {
@@ -100,10 +99,10 @@ const sidebarItems = scopes.map((scope) => {
     lines.push('')  // file should end with a single newline character
     fs.writeFileSync(`standards/${scope.id}.md`, lines.join('\n'), 'utf8')
 
-    const state = columns.filter((c) => versionsShown[c].isActive).length ? '📜' : '✏️'
+    const state = columns.filter((c) => versionsShown[c].isEffective).length ? '📜' : '✏️'
     return {
         type: 'doc',
-        label: `${state} ${scope.name}`,
+        label: scope.name,
         id: scope.id,
     }
 })

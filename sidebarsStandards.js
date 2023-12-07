@@ -11,7 +11,17 @@ const sidebars = {
         type: 'doc',
         id: 'certification/overview',
       },
-      items: require('./sidebarsCertificationItems.js'),
+      items: [
+        {
+          type: 'category',
+          label: 'Scopes and Versions',
+          link: {
+            type: 'doc',
+            id: 'certification/scopes-versions',
+          },
+          items: require('./sidebarsCertificationItems.js'),
+        },
+      ]
     },
     {
       type: 'category',

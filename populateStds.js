@@ -37,7 +37,7 @@ filenames.forEach((filename) => {
     }
     obj.isStable = obj.stabilized_at !== undefined && obj.stabilized_at <= today
     obj.isObsolete = obj.obsoleted_at !== undefined && obj.obsoleted_at <= today
-    obj.isActive = obj.isStable && !obj.isObsolete
+    obj.isEffective = obj.isStable && !obj.isObsolete
     var track = obj.track
     if (track === undefined) return
     if (tracks[track] === undefined) tracks[track] = {}
@@ -58,13 +58,18 @@ function readPrefixLines(fn) {
     return lines
 }
 
+function mkLinkList(versions) {
+    var links = versions.map((v) => `[${v.version}](/standards/${v.id})`)
+    return links.join(', ')
+}
+
 // walk down the hierarchy, building adr overview pages, track overview pages, and total overview page
 // as well as the new sidebar
 sidebarItems = []
 var lines = readPrefixLines('standards/standards/overview.md')
 if (!lines.length) lines.push(intro)
-lines.push('| Standard  | Track  | Description  | Active Versions  |')
-lines.push('| --------- | ------ | ------------ | ---------------- |')
+lines.push('| Standard  | Track  | Description  | Versions:<br />Preview | <br />Effective | <br /> Obsolete  |')
+lines.push('| --------- | ------ | ------------ | --- | --- | --- |')
 Object.entries(tracks).forEach((trackEntry) => {
     var track = trackEntry[0]
     var trackPath = `standards/${track.toLowerCase()}`
@@ -86,21 +91,22 @@ Object.entries(tracks).forEach((trackEntry) => {
 ${trackIntros[track]}
 `)
     }
-    tlines.push('| Standard  | Description  | Active Versions  |')
-    tlines.push('| --------- | ------------ | ---------------- |')
+    tlines.push('| Standard  | Description  | Versions:<br />Preview | <br />Effective | <br /> Obsolete  |')
+    tlines.push('| --------- | ------------ | --- | --- | --- |')
     Object.entries(trackEntry[1]).forEach((standardEntry) => {
         var versions = standardEntry[1].versions
-        var activeVersions = versions.filter((v) => v.isActive)
-        var activeLinks = activeVersions.map((v) => `[${v.version}](/standards/${v.id})`)
+        // unfortunately, some standards are obsolete without being stable
+        var previewVersions = versions.filter((v) => !v.isStable && !v.isObsolete)
+        var effectiveVersions = versions.filter((v) => v.isEffective)
+        var obsoleteVersions = versions.filter((v) => v.isObsolete)
         var ref = versions[versions.length - 1]
-        if (activeVersions.length) {
-            activeVersions[activeVersions.length - 1]
+        if (effectiveVersions.length) {
+            ref = effectiveVersions[effectiveVersions.length - 1]
         }
-        var icon = activeVersions.length ? '📜' : '✏️'
         var adrId = standardEntry[0]
         var standardItem = {
             type: 'category',
-            label: `${icon} scs-${adrId}`,
+            label: `scs-${adrId}`,
             link: {
                 type: 'doc',
                 id: `${track.toLowerCase()}/scs-${adrId}`,
@@ -117,18 +123,18 @@ ${trackIntros[track]}
         }
         slines.push('| Version  | Type  | State   | stabilized | obsoleted |')
         slines.push('| -------- | ----- | ------- | ---------- | --------- |')
-        var link = `[${icon} scs-${adrId}](/standards/${track.toLowerCase()}/scs-${adrId})`
-        lines.push(`| ${link}  | ${track}  | ${ref.title}  | ${activeLinks.join(', ')}  |`)
-        tlines.push(`| ${link}  | ${ref.title}  | ${activeLinks.join(', ')}  |`)
+        var link = `[scs-${adrId}](/standards/${track.toLowerCase()}/scs-${adrId})`
+        var versionList = `${mkLinkList(previewVersions) || '-'} | ${mkLinkList(effectiveVersions) || '-'} | ${mkLinkList(obsoleteVersions) || '-'}`
+        lines.push(`| ${link}  | ${track}  | ${ref.title}  | ${versionList}  |`)
+        tlines.push(`| ${link}  | ${ref.title}  | ${versionList}  |`)
         standardEntry[1].versions.forEach((obj) => {
-            var icon = obj.isActive ? '📜' : '✏️'
             var versionItem = {
                 type: 'doc',
                 label: obj.version.toUpperCase(),
                 id: obj.id,
             }
             standardItem.items.push(versionItem)
-            slines.push(`| [${icon} scs-${adrId}-${obj.version}](/standards/${obj.id})  | ${obj.type}  | ${obj.status || obj.state}  | ${obj.stabilized_at || '-'}  | ${obj.obsoleted_at || '-'}  |`)
+            slines.push(`| [scs-${adrId}-${obj.version}](/standards/${obj.id})  | ${obj.type}  | ${obj.status || obj.state}  | ${obj.stabilized_at || '-'}  | ${obj.obsoleted_at || '-'}  |`)
         })
         slines.push('')  // file should end with a single newline character
         fs.writeFileSync(`${trackPath}/scs-${adrId}.md`, slines.join('\n'), 'utf8')
