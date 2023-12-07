@@ -67,6 +67,8 @@ lines.push('| Standard  | Track  | Description  | Active Versions  |')
 lines.push('| --------- | ------ | ------------ | ---------------- |')
 Object.entries(tracks).forEach((trackEntry) => {
     var track = trackEntry[0]
+    var trackPath = `standards/${track.toLowerCase()}`
+    fs.mkdirSync(trackPath, { recursive: true })
     var trackItem = {
         type: 'category',
         label: track,
@@ -129,10 +131,10 @@ ${trackIntros[track]}
             slines.push(`| [${icon} scs-${adrId}-${obj.version}](/standards/${obj.id})  | ${obj.type}  | ${obj.status || obj.state}  | ${obj.stabilized_at || '-'}  | ${obj.obsoleted_at || '-'}  |`)
         })
         slines.push('')  // file should end with a single newline character
-        fs.writeFileSync(`standards/${track.toLowerCase()}/scs-${adrId}.md`, slines.join('\n'), 'utf8')
+        fs.writeFileSync(`${trackPath}/scs-${adrId}.md`, slines.join('\n'), 'utf8')
     })
     tlines.push('')  // file should end with a single newline character
-    fs.writeFileSync(`standards/${track.toLowerCase()}/index.md`, tlines.join('\n'), 'utf8')
+    fs.writeFileSync(`${trackPath}/index.md`, tlines.join('\n'), 'utf8')
 })
 lines.push('')  // file should end with a single newline character
 fs.writeFileSync(`standards/standards/overview.md`, lines.join('\n'), 'utf8')
