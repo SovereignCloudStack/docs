@@ -17,6 +17,7 @@ This guide will explain setup, configuration and usage of the SCS Domain Manager
 Due to architectural limitations currently existing in OpenStack Keystone, assigning the Domain Manager role to users will **enable them to see the IDs and names of all existing domains**.
 This includes domains other than their own, meaning that other tenant's identities might be exposed depending on the relation between them and the name of their domain.
 CSPs aiming to appoint Domain Manager users must be aware of this limitation and should exclusively **use pseudonymized domain names across the whole infrastructure**.
+If CSPs strictly follow the [SCS naming conventions](https://github.com/SovereignCloudStack/standards/blob/main/Standards/scs-0301-v1-naming-conventions.md) for domains this is already addressed.
 If this is not feasible for the CSP, they may opt to refrain from making use of the Domain Manager functionality at all, i.e. never assign this role to tenant users.
 
 ## Infrastructure configuration
@@ -150,6 +151,11 @@ openstack project create --domain $DOMAIN $PROJECT_NAME
 ```
 
 Note: the explicit domain-scoping is only required for the creation command, any other project-centric commands like "`project set`" or "`project delete`" do not require the "`--domain`" flag and are automatically scoped to the domain for Domain Managers.
+
+#### Deleting projects
+
+Note that before deleting projects, make sure that all cloud resources (servers, volumes etc.) belonging to that project have been removed beforehand.
+Otherwise such resources might become orphaned and inaccessible without involving the CSP.
 
 ### Managing groups within a domain
 
