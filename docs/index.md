@@ -109,10 +109,20 @@ for OpenStack 0.7.x, Kubernetes 1.26.x, and Ubuntu 22.04 LTS.
 
 See [Release Notes for R4](https://github.com/SovereignCloudStack/release-notes/blob/34d7ccb8f05b70cbb89f5995f9d10eab2ab8c052/Release4.md) for more information.
 
+### Release 5 (2023-09-20)
+
+The IaaS reference implementation now brings OpenStack 2023.1 (Antelope) and the default
+Ceph version is Ceph Quincy - both components are enabled by the OSISM 6.0.0 release.
+The container reference implementation has seen many updates is available as version 6.0.0,
+with Kubernetes v1.24 - 1.27 being officially supported. Furthermore this release brings
+the first technical preview of Cluster-Stack.
+
+See [Release Notes for R5](https://github.com/SovereignCloudStack/release-notes/blob/364103536ab2c51435a078171c698d7967d7588d/Release5.md) for more information.
+
 ### Roadmap
 
-We have a 6 month release cadence — R4 will follow in March 2023.
-Until then, we will provide bugfixes and security fixes for R3.
+We have a 6 month release cadence — R6 will follow in March 2024.
+Until then, we will provide bugfixes and security fixes for R5.
 
 We do work towards a model where our partners can actually follow our main
 development branches — right now, our CI needs a bit more coverage though
