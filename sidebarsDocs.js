@@ -363,7 +363,8 @@ const sidebarsDocs = {
       type: 'category',
       label: 'Identity and Access Management (IAM)',
       link: {
-        type: 'generated-index'
+        type: 'doc',
+        id: 'iam/index'
       },
       items: [
         'iam/intra-SCS-federation-setup-description-for-osism-doc-operations'
