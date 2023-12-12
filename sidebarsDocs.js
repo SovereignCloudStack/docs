@@ -37,37 +37,25 @@ const sidebarsDocs = {
         //     // 'iaas/overview/knowledge'
         //   ]
         // },
-        {
-          type: 'category',
-          label: 'Deployment Examples',
-          link: {
-            type: 'generated-index'
-          },
-          items: [
-            {
-              type: 'category',
-              label: 'Testbed',
-              link: {
-                slug: 'iaas/deployment-examples/testbed',
-                type: 'generated-index'
-              },
-              items: [
-                'iaas/deployment-examples/cloud-in-a-box/advanced-guides/testbed'
-              ]
-            },
-            {
-              type: 'category',
-              label: 'Cloud in a Box',
-              link: {
-                slug: 'iaas/deployment-examples/cloud-in-a-box',
-                type: 'generated-index'
-              },
-              items: [
-                'iaas/deployment-examples/cloud-in-a-box/advanced-guides/cloud-in-a-box'
-              ]
-            }
-          ]
-        },
+        // {
+        //   type: 'category',
+        //   label: 'Deployment Examples',
+        //   link: {
+        //     type: 'generated-index'
+        //   },
+        //   items: [
+        //     {
+        //       type: 'doc',
+        //       label: 'Testbed',
+        //       id: 'iaas/guides/deploy-guide/examples/testbed'
+        //     },
+        //     {
+        //       type: 'doc',
+        //       label: 'Cloud in a Box',
+        //       id: 'iaas/guides/deploy-guide/examples/cloud-in-a-box'
+        //     }
+        //   ]
+        // },
         // {
         //   type: 'category',
         //   label: 'Guides',
@@ -375,7 +363,8 @@ const sidebarsDocs = {
       type: 'category',
       label: 'Identity and Access Management (IAM)',
       link: {
-        type: 'generated-index'
+        type: 'doc',
+        id: 'iam/index'
       },
       items: [
         'iam/intra-SCS-federation-setup-description-for-osism-doc-operations'

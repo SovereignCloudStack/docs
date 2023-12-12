@@ -7,13 +7,7 @@
   },
   {
     "repo": "osism/osism.github.io",
-    "source": "docs/guides/operations-guide/openstack/image-manager.md",
-    "target": "docs/02-iaas/components",
-    "label": ""
-  },
-  {
-    "repo": "osism/osism.github.io",
-    "source": "docs/guides/operations-guide/openstack/flavor-manager.md",
+    "source": "docs/guides/operations-guide/openstack/day2-operations/*",
     "target": "docs/02-iaas/components",
     "label": ""
   },
@@ -34,12 +28,6 @@
     "source": "Standards/*.md",
     "target": "standards",
     "label": ""
-  },
-  {
-    "repo": "osism/osism.github.io",
-    "source": "docs/advanced-guides",
-    "target": "docs/02-iaas/deployment-examples",
-    "label": "cloud-in-a-box"
   },
   {
     "repo": "osism/osism.github.io",

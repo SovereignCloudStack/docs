@@ -56,7 +56,7 @@ const AdditionalResourcesData = [
   {
     title: 'Deployment Examples',
     body: 'Get to know different ways to deploy SCS with cloud resources or on bare metal.',
-    url: '/docs/category/deployment-examples',
+    url: '/docs/iaas/guides/deploy-guide/examples',
     buttonText: 'Explore Cases'
   }
 ]
@@ -142,7 +142,7 @@ export default function Home(): JSX.Element {
                   title="IAM Layer"
                   body="Working on Keycloak federated identity provider within our Team IAM."
                   buttonText="Learn More"
-                  url="/docs/category/identity-and-access-management-iam"
+                  url="/docs/iam"
                 />
               </div>
             </div>
