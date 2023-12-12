@@ -18,7 +18,7 @@ TODO
 
 #### Quick Start with Cloud-In-A-Box
 
-The fastest way to get in touch with SCS is to deploy a SCS cloud virtually. The Cloud-In-A-Box was built explicitely for this scenario. Check it out [here](/docs/02-iaas/deployment-examples/cloud-in-a-box)
+The fastest way to get in touch with SCS is to deploy a SCS cloud virtually. The Cloud-In-A-Box was built explicitely for this scenario. Check it out [here](/docs/iaas/guides/deploy-guide/examples/cloud-in-a-box)
 
 #### Reference Implementation Testbed
 
