@@ -38,7 +38,7 @@ The idea is that customer can create groups with specific names in their own IAM
 These shall be mapped to a claim `groups` to be included in the OIDC token.
 Via the Keystone [mapping](https://docs.openstack.org/keystone/latest/admin/federation/mapping_combinations.html)
 they shall be mapped to roles on OpenStack projects.
-[The corresponding section for Developers](../../dev-docs/operations/iam/identity-federation-in-scs) may be interesting for more technical details.
+[The corresponding section for Developers](https://docs.scs.community/dev-docs/operations/iam/identity-federation-in-scs) may be interesting for more technical details.
 Please be aware that currently there are still some technical challenges to be solved
 within the OpenStack Keystone mapping engine and the mapping rules to make this work
 seamlessly.
@@ -47,7 +47,7 @@ seamlessly.
 
 Federation between separate deployments of SCS is possible via the IdP by
 means of OpenID Connect.
-The section on [inter SCS federation setup](intra-SCS-federation-setup-description-for-osism-doc-operations) explains the required steps in some detail.
+The section on [inter SCS federation setup](https://docs.scs.community/docs/iam/intra-SCS-federation-setup-description-for-osism-doc-operations) explains the required steps in some detail.
 
 ### Prerequisites and Requirements
 
