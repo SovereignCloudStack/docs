@@ -142,7 +142,7 @@ export default function Home(): JSX.Element {
                   title="IAM Layer"
                   body="Working on Keycloak federated identity provider within our Team IAM."
                   buttonText="Learn More"
-                  url="/docs/category/identity-and-access-management-iam"
+                  url="/docs/iam"
                 />
               </div>
             </div>
