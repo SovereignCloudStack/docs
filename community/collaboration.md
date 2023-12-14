@@ -11,22 +11,34 @@ for more details.
 
 ### Project updates
 
-- Weekly with all teams on Thursday at 1505 CEST (45 mins)
+- Weekly with all teams on Thursday at 15:05 CEST (40 mins)
+- In some weeks we schedule an additional lightning talk at 15:40 CEST
 
 ### Sprint review/Backlog refinement/Sprint planning meetings
 
-- Weekly with Team IaaS on Wednesdays at 1005 CEST (1 hour)
-- Weekly with Team Container on Mondays at 1005 CEST (1 hour)
-- Weekly with Team OPS & IAM on Thursdays at 1005 CEST (1 hour)
+- Weekly Team meetings (~1hr) for currently 4 teams:
+  - Team IaaS
+  - Team Container
+  - Team IAM & Security
+  - Team Operations
+- Please refer to the public calendar (on the previous page) for details.
 
-### Special interest groups (SIGs)
+### Special interest groups (SIGs) and hacking sessions
 
-- Identity & Access Management (IAM): Bi-Weekly on Friday at 1005 CEST (1 hour)
-- Monitoring & Logging: Weekly on Friday at 1205 CEST (1 hour)
+- There are a number of SIG meetings and hacking sessions that meet weekly or bi-weekly
+  - Identity & Access Management (IAM) hacking session
+  - Monitoring and Logging
+  - SIG Standardization and Certification
+  - SIG Documentation
+  - SIG Community
+  - SIG Central API
+  - ...
+- Please refer to the Calendar (on the previous page) for details.
 
 ## Videoconference
 
 We use a self-hosted [Jitsi Meet](https://jitsi.org) instance for video conferencing.
+Thanks go to Cleura for providing the server for it.
 
 The server uses an automated deployment based on the
 [heat-docker-jitsi-meet](https://github.com/garloff/heat-docker-jitsi-meet) project.
@@ -34,6 +46,9 @@ The server uses an automated deployment based on the
 Configuration is such everyone who knows the room can connect, unless the moderator
 sets a password/PIN. Opening a new room requires authentication. (Contact Kurt if
 you need a password.)
+
+Links to the meeting room (as well as dial-in information) are in the appointments
+in the public calendar.
 
 ### Usage
 
@@ -52,17 +67,19 @@ for folks that lack internet connectivity (but have a working phone connection).
 ## Nextcloud
 
 We have a [Nextcloud](https://nextcloud.com)
-[instance](https://scs.sovereignit.de) for sharing files, calendar, contacts, ...
+[instance](https://scs.sovereignit.de) for sharing files, doing polls, ...
 setup for things that are not public.
 
-We are also using it for our taskboards currently, though we are looking at
-options to do this in the open.
-
-If you want to contribute, we'll do an onboarding call and add you to nextcloud.
-This will also add you to the `scs-member@lists.scs.community` mailing list.
+You can contribute to SCS via the github workflows, asking questions there (via
+opening issues against the issues repository), submitting pull requests, ...
+If you want to contribute on a regular basis, we are happy to also onboard you
+to the nextcloud and do an onboarding call. Nextcloud onboarding also adds you
+to the `scs-member@lists.scs.community` mailing list which also add you to the
+announcement list (described in the next paragraph).
 
 We have an announcements mailing list there `announce@lists.scs.community` and you
 can subscribe via the [mailman3 frontend](https://scs.sovereignit.de/mailman3/postorius/lists/)
+also without the SCS nextcloud account if you prefer.
 
 ## Zuul CI/CD pipelines and project gating
 
