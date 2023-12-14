@@ -33,7 +33,12 @@ const sidebarItems = scopes.map((scope) => {
             numOld += 1
             if (numOld > MAX_OLD) return
         }
-        version.state = version.isEffective ? 'effective' : version.isPreview ? 'preview' : 'obsolete'
+        version.state = (
+            version.stabilized_at === undefined ? 'Draft' :
+            version.isEffective ? 'Effective' :
+            version.isObsolete ? 'Deprecated' :
+            'Stable'
+        )
         if (version.standards === undefined) return
         versionsShown[version.version] = version
         version.standards.forEach((standard) => {
@@ -76,7 +81,10 @@ const sidebarItems = scopes.map((scope) => {
     rows.sort((a, b) => a.name.localeCompare(b.name));
     columns.sort((a, b) => a.localeCompare(b));
 
-    lines = [`# ${scope.name}\n`]
+    lines = [`# ${scope.name}
+
+Note that the state _Stable_ is shown here if _stabilized at_ is in the future, whereas _Effective_ is shown here if _stabilized at_ is in the past and _deprecated at_ is unset or in the future.
+`]
     lines.push('| Scope versions ->  | ' + columns.join('  | ') + '  |')
     lines.push('| :-- | ' + columns.map(() => ':--').join(' | ') + ' |')
     lines.push('| State              | ' + columns.map((c) => versionsShown[c].state).join('  | ') + '  |')

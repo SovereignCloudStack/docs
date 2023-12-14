@@ -14,6 +14,7 @@ const trackIntros = {
     'IAM': 'This track revolves around Identity and Access Management (IAM) standards, providing guidelines for ensuring secure and efficient user authentication, authorization, and administration. It addresses issues related to user identity, permissions, roles, and policies, aiming to safeguard and streamline access to cloud resources and services.',
     'Ops': 'Operational Tooling Standards cover the protocols and guidelines associated with tools and utilities used for monitoring, management, and maintenance of the cloud environment. This includes standards for status pages, alerts, logs, and other operational tools, aiming to optimize the reliability, performance, and security of cloud services and resources.',
 }
+const headerLegend = '*Legend to the column headings: Draft, Stable (but not effective), Effective, Deprecated (and no longer effective).'
 
 var filenames = fs
     .readdirSync('standards/')
@@ -67,9 +68,12 @@ function mkLinkList(versions) {
 // as well as the new sidebar
 sidebarItems = []
 var lines = readPrefixLines('standards/standards/overview.md')
-if (!lines.length) lines.push(intro)
-lines.push('| Standard  | Track  | Description  | Preview | Effective | Obsolete  |')
-lines.push('| --------- | ------ | ------------ | --- | --- | --- |')
+if (!lines.length) lines.push(`${intro}
+
+${headerLegend}
+`)
+lines.push('| Standard  | Track  | Description  | Draft | Stable* | Effective | Deprecated* |')
+lines.push('| --------- | ------ | ------------ | ----- | ------- | --------- | ----------- |')
 Object.entries(tracks).forEach((trackEntry) => {
     var track = trackEntry[0]
     var trackPath = `standards/${track.toLowerCase()}`
@@ -89,16 +93,19 @@ Object.entries(tracks).forEach((trackEntry) => {
         tlines.push(`# ${track} Standards
 
 ${trackIntros[track]}
+
+${headerLegend}
 `)
     }
-    tlines.push('| Standard  | Description  | Preview | Effective | Obsolete  |')
-    tlines.push('| --------- | ------------ | --- | --- | --- |')
+    tlines.push('| Standard  | Description  | Draft | Stable* | Effective | Deprecated* |')
+    tlines.push('| --------- | ------------ | ----- | ------- | --------- | ----------- |')
     Object.entries(trackEntry[1]).forEach((standardEntry) => {
         var versions = standardEntry[1].versions
         // unfortunately, some standards are obsolete without being stable
-        var previewVersions = versions.filter((v) => !v.isStable && !v.isObsolete)
+        var draftVersions = versions.filter((v) => v.stabilized_at === undefined && v.obsoleted_at === undefined)
+        var stableVersions = versions.filter((v) => v.stabilized_at !== undefined && !v.isEffective)
         var effectiveVersions = versions.filter((v) => v.isEffective)
-        var obsoleteVersions = versions.filter((v) => v.isObsolete)
+        var deprecatedVersions = versions.filter((v) => v.isObsolete)
         var ref = versions[versions.length - 1]
         if (effectiveVersions.length) {
             ref = effectiveVersions[effectiveVersions.length - 1]
@@ -124,7 +131,7 @@ ${trackIntros[track]}
         slines.push('| Version  | Type  | State   | stabilized | obsoleted |')
         slines.push('| -------- | ----- | ------- | ---------- | --------- |')
         var link = `[scs-${adrId}](/standards/${track.toLowerCase()}/scs-${adrId})`
-        var versionList = `${mkLinkList(previewVersions) || '-'} | ${mkLinkList(effectiveVersions) || '-'} | ${mkLinkList(obsoleteVersions) || '-'}`
+        var versionList = `${mkLinkList(draftVersions) || '-'} | ${mkLinkList(stableVersions) || '-'} | ${mkLinkList(effectiveVersions) || '-'} | ${mkLinkList(deprecatedVersions) || '-'}`
         lines.push(`| ${link}  | ${track}  | ${ref.title}  | ${versionList}  |`)
         tlines.push(`| ${link}  | ${ref.title}  | ${versionList}  |`)
         standardEntry[1].versions.forEach((obj) => {
