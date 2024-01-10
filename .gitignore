@@ -14,6 +14,8 @@
 /docs/04-operating-scs/components
 /docs/06-releases
 /standards/*.md
+/standards/*/*.md
+/standards/scs-*.yaml
 
 # Dependencies
 node_modules
@@ -24,6 +26,8 @@ node_modules
 # Generated files
 .docusaurus
 .cache-loader
+sidebarsStandardsItems.js
+sidebarsCertificationItems.js
 
 # Misc
 .DS_Store
