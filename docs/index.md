@@ -43,7 +43,9 @@ SCS cloud of course) checking out the code from
 
 #### Cluster Stacks
 
-TODO
+With Cluster Stacks, the V2 KaaS reference implementation, we provide an opinionated optimized configuration of Kubernetes clusters. Through better packaging, integrated testing, and bundled configuration SCS-based Kubernetes clusters can be individualized much easier.  
+Throughout the R6 development cycle Cluster Stacks are taken from a technical preview to be [functional and available on top of the IaaS reference implementation](https://github.com/SovereignCloudStack/issues/milestone/8) as well to replace the V1 KaaS reference implementation [k8s-cluster-api-provider](https://github.com/SovereignCloudStack/k8s-cluster-api-provider/).  
+The Cluster Stacks can already be tried out in a [demo](https://github.com/SovereignCloudStack/cluster-stacks-demo). Although this is based on the non production ready provider Docker, the usage is the same for every provider. 
 
 ### Public SCS Clouds in production
 
