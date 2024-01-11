@@ -67,7 +67,7 @@ Service users will have their default_project_id set to a specific project and w
 | b682eb90fb834278afb1182018dd2133 | p500924-scoopex             | scoopex           | Marc's gx-scs project                 | ∞            |
 | 021af0688c594bf88ed675b942d3bea8 | p500924-gx-cred-generator   | anjastrunk        | SCS Gaia-X Self-Description Generator | ∞            |
 | a07c811315ad40f585945b2939ef12dd | p500924-scs-zuul            | o-otte            | SCS Zuul                              | 30.11.2024   |
-| 1846709967a744b69f9eb48cac89bb04 | p500924-gxhackathon6-1      | chess-knight      | Gaia-X Hackathon 6 Projekt1           | ∞            |
+| 1846709967a744b69f9eb48cac89bb04 | p500924-scs-k8s-e2e         | chess-knight      | E2E-Test for KaaS                     | ∞            |
 |                                  |                             |                   |                                       |              |
 
 ## Wavecon
