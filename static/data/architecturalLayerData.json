@@ -1,0 +1,32 @@
+{
+  "left": [
+    {
+      "title": "Ops Layer",
+      "body": "Tooling and infrastructure design for easy, efficient and transparent ways to operate an SCS Cloud.",
+      "url": "/docs/category/operating-scs",
+      "buttonText": "Learn More"
+    }
+  ],
+  "center": [
+    {
+      "title": "Container Layer",
+      "body": "SCS offers a robust solution for managing container workloads on a Kubernetes infrastructure.",
+      "url": "/docs/container",
+      "buttonText": "Learn More"
+    },
+    {
+      "title": "IaaS Layer",
+      "body": "SCS offers OpenStack infrastructure solutions based on KVM virutalization to deploy VM workloads and enabling the container layer optionally.",
+      "url": "/docs/faq",
+      "buttonText": "Learn More"
+    }
+  ],
+  "right": [
+    {
+      "title": "IAM Layer",
+      "body": "Working on Keycloak federated identity provider within our Team IAM.",
+      "url": "/docs/iam",
+      "buttonText": "Learn More"
+    }
+  ]
+}
