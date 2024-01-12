@@ -29,13 +29,23 @@ export default function Home(): JSX.Element {
   const [additionalResources, setAdditionalResources] = useState([])
 
   useEffect(() => {
-    fetch('/data/featureContentData.json')
-      .then((response) => response.json())
-      .then((data) => setFeatureContent(data))
+    const fetchData = async () => {
+      try {
+        const featureResponse = await fetch('/data/featureContentData.json')
+        const featureData = await featureResponse.json()
+        setFeatureContent(featureData)
 
-    fetch('/data/additionalResourcesData.json')
-      .then((response) => response.json())
-      .then((data) => setAdditionalResources(data))
+        const resourcesResponse = await fetch(
+          '/data/additionalResourcesData.json'
+        )
+        const resourcesData = await resourcesResponse.json()
+        setAdditionalResources(resourcesData)
+      } catch (error) {
+        console.error('Error fetching data:', error)
+      }
+    }
+
+    fetchData()
   }, [])
 
   return (

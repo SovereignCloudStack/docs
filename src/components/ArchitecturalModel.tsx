@@ -23,17 +23,40 @@ const ArchitecturalModel: React.FunctionComponent<ArchitecturalModelProps> = ({
   jsonFilePath
 }) => {
   const [data, setData] = useState<ArchitecturalLayerData | null>(null)
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch(jsonFilePath) // Use the jsonFilePath prop
-      .then((response) => response.json())
-      .then((data: ArchitecturalLayerData) => setData(data))
-      .catch((error) => console.error('Error fetching data:', error))
-  }, [jsonFilePath]) // Dependency array includes jsonFilePath
+    const fetchData = async () => {
+      try {
+        const response = await fetch(jsonFilePath)
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`)
+        }
+        const data = (await response.json()) as ArchitecturalLayerData
+        setData(data)
+      } catch (err) {
+        setError(err.message)
+      } finally {
+        setIsLoading(false)
+      }
+    }
 
-  if (!data) {
+    fetchData()
+  }, [jsonFilePath])
+
+  if (isLoading) {
     return <div>Loading...</div>
   }
+
+  if (error) {
+    return <div>Error: {error}</div>
+  }
+
+  if (!data) {
+    return <div>No data available.</div>
+  }
+
   return (
     <div className={`${styles.gradient} row`}>
       <div className="col col--3">
