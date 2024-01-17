@@ -65,7 +65,6 @@ export default function Home(): JSX.Element {
             {featureContent.map((card, index) => (
               <div className="col col--3" key={index}>
                 <ContentCard
-                  maxHeight
                   title={card.title}
                   body={card.body}
                   url={card.url}
@@ -78,7 +77,12 @@ export default function Home(): JSX.Element {
             <div className="col col--12">
               <h1>Architectural Layers</h1>
             </div>
-            <ArchitecturalModel jsonFilePath="data/architecturalLayerData.json" />
+            <div style={{ marginLeft: '16px', marginRight: '16px' }}>
+              <ArchitecturalModel
+                topLayers
+                jsonFilePath="data/architecturalOverviewData.json"
+              />
+            </div>
           </div>
           <div className="row" style={{ marginTop: '3rem' }}>
             <div className="col col--12">
@@ -89,7 +93,6 @@ export default function Home(): JSX.Element {
             {additionalResources.map((card, index) => (
               <div className="col col--3" key={index}>
                 <ContentCard
-                  maxHeight
                   title={card.title}
                   body={card.body}
                   url={card.url}

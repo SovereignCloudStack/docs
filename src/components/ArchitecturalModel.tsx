@@ -7,21 +7,25 @@ interface ArchitecturalLayerItem {
   body: string
   url: string
   buttonText: string
+  components?: []
 }
 
 interface ArchitecturalLayerData {
-  left: ArchitecturalLayerItem[]
-  center: ArchitecturalLayerItem[]
-  right: ArchitecturalLayerItem[]
+  ops: ArchitecturalLayerItem[]
+  container: ArchitecturalLayerItem[]
+  iaas: ArchitecturalLayerItem[]
+  iam: ArchitecturalLayerItem[]
 }
 
 interface ArchitecturalModelProps {
   jsonFilePath: string
+  topLayers?: boolean
 }
 
-const ArchitecturalModel: React.FunctionComponent<ArchitecturalModelProps> = ({
-  jsonFilePath
-}) => {
+const ArchitecturalModel: React.FunctionComponent<ArchitecturalModelProps> = (
+  props
+) => {
+  const { jsonFilePath, topLayers } = props
   const [data, setData] = useState<ArchitecturalLayerData | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -58,41 +62,67 @@ const ArchitecturalModel: React.FunctionComponent<ArchitecturalModelProps> = ({
   }
 
   return (
-    <div className={`${styles.gradient} row`}>
-      <div className="col col--3">
-        {data.left.map((item) => (
+    <div className={`${styles.gradient} ${styles.border} row`}>
+      <div
+        style={{ padding: '8px 8px 8px 8px', margin: '0 0 0 0' }}
+        className={`${styles.bottom} col col--3`}>
+        {data.ops.map((layer) => (
           <ContentCard
-            maxHeight
-            title={item.title}
-            body={item.body}
-            buttonText={item.buttonText}
-            url={item.url}
+            small={!topLayers}
+            style={topLayers && { height: '100%' }}
+            title={layer.title}
+            body={topLayers && layer.body}
+            buttonText={topLayers && layer.buttonText}
+            url={layer.url}
+            components={!topLayers && layer.components}
           />
         ))}
       </div>
-      <div className="col col--6">
-        {data.center.map((item) => (
+      <div
+        className="col col--6"
+        style={{ padding: '8px 8px 8px 8px', margin: '0 0 0 0' }}>
+        {data.container.map((layer) => (
           <div
             style={{
-              marginBottom: item === data.center[0] ? '3rem' : '0'
+              marginBottom: layer === data.container[0] ? '8px' : '0'
             }}>
             <ContentCard
-              title={item.title}
-              body={item.body}
-              buttonText={item.buttonText}
-              url={item.url}
+              small={!topLayers}
+              style={topLayers && { height: '100%' }}
+              title={layer.title}
+              body={topLayers && layer.body}
+              buttonText={topLayers && layer.buttonText}
+              url={layer.url}
+              components={!topLayers && layer.components}
+            />
+          </div>
+        ))}
+        {data.iaas.map((layer) => (
+          <div>
+            <ContentCard
+              small={!topLayers}
+              style={topLayers && { height: '100%' }}
+              title={layer.title}
+              body={topLayers && layer.body}
+              buttonText={topLayers && layer.buttonText}
+              url={layer.url}
+              components={!topLayers && layer.components}
             />
           </div>
         ))}
       </div>
-      <div className="col col--3">
-        {data.right.map((item) => (
+      <div
+        className="col col--3"
+        style={{ padding: '8px 8px 8px 8px', margin: '0 0 0 0' }}>
+        {data.iam.map((layer) => (
           <ContentCard
-            maxHeight
-            title={item.title}
-            body={item.body}
-            buttonText={item.buttonText}
-            url={item.url}
+            small={!topLayers}
+            style={topLayers && { height: '100%' }}
+            title={layer.title}
+            body={topLayers && layer.body}
+            buttonText={topLayers && layer.buttonText}
+            url={layer.url}
+            components={!topLayers && layer.components}
           />
         ))}
       </div>

@@ -1,11 +1,20 @@
 .gradient {
   background: linear-gradient(
     180deg,
-    #0061ff 0%,
-    rgba(80, 195, 165, 0) 50%,
-    #50c3a5 100%
+    rgb(0, 97, 255, 0.2) 20%,
+    rgba(80, 195, 165, 10) 50%,
+    #50c3a5 80%
   );
   border-radius: 16px;
-  margin: 16px;
-  padding: 16px;
+  margin: 4px;
+}
+
+.border {
+  border: rgba(0, 97, 255, 1) solid 4px;
+  border-radius: 16px;
+  margin: 4px;
+}
+
+.bottom {
+  margin-bottom: 16px;
 }
