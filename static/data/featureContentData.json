@@ -19,7 +19,7 @@
   },
   {
     "title": "Existing Public Clouds",
-    "body": "There are public SCS compliant clouds in production.",
+    "body": "There are SCS compliant public clouds in production.",
     "url": "/standards/certification/overview#compliant-cloud-environments",
     "buttonText": "Test Them"
   }
