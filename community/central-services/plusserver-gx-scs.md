@@ -35,7 +35,11 @@ Spec:
   - image: ubuntu-capi-image-v1.27.5
   - k8s: v1.27.5
 
-#### MVP0 Monitoring
+## Project p500924-sig-monitoring1
+
+### K8s clusters
+
+#### Monitoring
 
 Responsibility: [@SovereignCloudStack/vp06c](https://github.com/orgs/SovereignCloudStack/teams/vp06c)
 
@@ -45,20 +49,20 @@ Services:
 
 Utilization:
 
-- Instances: 4
-- VCPUs: 20
-- RAM: 40GB
+- Instances: 7
+- VCPUs: 32
+- RAM: 64GB
 
 Spec:
 
 - version: v6.0.0 - R5
 - management cluster:
   - 1 instance: SCS-2V:4:20
-  - image: Ubuntu 22.04 (20231010)
+  - image: Ubuntu 22.04 (20231211)
   - k8s: v1.27.3 - KinD
 - workload cluster:
-  - 3 instances:
-    - 1 control-plane: SCS-2V:4:20
-    - 2 workers: SCS-8V:16:100
+  - 6 instances:
+    - 3 control-planes: SCS-2V:4:20
+    - 3 workers: SCS-8V:16:100
   - image: ubuntu-capi-image-v1.27.5
   - k8s: v1.27.5
