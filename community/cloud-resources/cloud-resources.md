@@ -55,7 +55,7 @@ Service users will have their default_project_id set to a specific project and w
 | b97d38bf128b4479981c4dbe2ef70cd5 | p500924-SIG-IAM             | fkr               | SIG IAM and VP08                      | ∞            |
 | 9de7d8dc2d674e52be44904d6b338b0b | p500924-cloudmon            | costelter         | CloudMon Test Project                 | 31.12.2023   |
 | 2c9e0e4ef8d44c36807df50b06b3c81d | p500924-cloudmon-target     | costelter         | Target project for CloudMon tests     | 31.12.2023   |
-| 3501db829014406884990a1016f3e25d | p500924-sig-monitoring1     | fkr               | SIG Monitoring - cloudmon target      | 31.12.2023   |
+| 3501db829014406884990a1016f3e25d | p500924-sig-monitoring1     | fkr               | SIG Monitoring - cloudmon target      | ∞            |
 | 602778bad3d3470cbe58c4f7611e8eb7 | p500924-dnation             | chess-knight      | dNation dev for VP06c                 | ∞            |
 | 91091d4039a6457db27d48d58bb1b4e4 | p500924-jschoone            | jschoone          | KaaS dev and evaluation               | ∞            |
 | 93956190702b4a7d8a8886806d57713f | p500924-metering            | cah-link          | Dev Environment for VP13              | 31.12.2023   |
