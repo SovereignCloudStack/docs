@@ -63,29 +63,20 @@ const ArchitecturalModel: React.FunctionComponent<ArchitecturalModelProps> = (
 
   return (
     <div className={`${styles.gradient} ${styles.border} row`}>
-      <div
-        style={{ padding: '8px 8px 8px 8px', margin: '0 0 0 0' }}
-        className={`${styles.bottom} col col--3`}>
-        {data.ops.map((layer) => (
-          <ContentCard
-            small={!topLayers}
-            style={topLayers && { height: '100%' }}
-            title={layer.title}
-            body={topLayers && layer.body}
-            buttonText={topLayers && layer.buttonText}
-            url={layer.url}
-            components={!topLayers && layer.components}
-          />
-        ))}
-      </div>
-      <div
-        className="col col--6"
-        style={{ padding: '8px 8px 8px 8px', margin: '0 0 0 0' }}>
-        {data.container.map((layer) => (
-          <div
-            style={{
-              marginBottom: layer === data.container[0] ? '8px' : '0'
-            }}>
+      {!topLayers && (
+        <div
+          style={{
+            display: 'flex',
+            margin: ' 10px 0 4px 12px'
+          }}>
+          <h5 style={{ marginBottom: 0 }}>SCS Component Map</h5>
+        </div>
+      )}
+      <div style={{ display: 'flex' }}>
+        <div
+          style={{ padding: '8px 8px 8px 8px', margin: '0 0 0 0' }}
+          className={`${styles.bottom} col col--3`}>
+          {data.ops.map((layer) => (
             <ContentCard
               small={!topLayers}
               style={topLayers && { height: '100%' }}
@@ -95,10 +86,45 @@ const ArchitecturalModel: React.FunctionComponent<ArchitecturalModelProps> = (
               url={layer.url}
               components={!topLayers && layer.components}
             />
-          </div>
-        ))}
-        {data.iaas.map((layer) => (
-          <div>
+          ))}
+        </div>
+        <div
+          className="col col--6"
+          style={{ padding: '8px 8px 8px 8px', margin: '0 0 0 0' }}>
+          {data.container.map((layer) => (
+            <div
+              style={{
+                marginBottom: layer === data.container[0] ? '8px' : '0'
+              }}>
+              <ContentCard
+                small={!topLayers}
+                style={topLayers && { height: '100%' }}
+                title={layer.title}
+                body={topLayers && layer.body}
+                buttonText={topLayers && layer.buttonText}
+                url={layer.url}
+                components={!topLayers && layer.components}
+              />
+            </div>
+          ))}
+          {data.iaas.map((layer) => (
+            <div>
+              <ContentCard
+                small={!topLayers}
+                style={topLayers && { height: '100%' }}
+                title={layer.title}
+                body={topLayers && layer.body}
+                buttonText={topLayers && layer.buttonText}
+                url={layer.url}
+                components={!topLayers && layer.components}
+              />
+            </div>
+          ))}
+        </div>
+        <div
+          className="col col--3"
+          style={{ padding: '8px 8px 8px 8px', margin: '0 0 0 0' }}>
+          {data.iam.map((layer) => (
             <ContentCard
               small={!topLayers}
               style={topLayers && { height: '100%' }}
@@ -108,23 +134,8 @@ const ArchitecturalModel: React.FunctionComponent<ArchitecturalModelProps> = (
               url={layer.url}
               components={!topLayers && layer.components}
             />
-          </div>
-        ))}
-      </div>
-      <div
-        className="col col--3"
-        style={{ padding: '8px 8px 8px 8px', margin: '0 0 0 0' }}>
-        {data.iam.map((layer) => (
-          <ContentCard
-            small={!topLayers}
-            style={topLayers && { height: '100%' }}
-            title={layer.title}
-            body={topLayers && layer.body}
-            buttonText={topLayers && layer.buttonText}
-            url={layer.url}
-            components={!topLayers && layer.components}
-          />
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   )

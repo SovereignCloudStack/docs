@@ -6,6 +6,8 @@ import { useLocation } from '@docusaurus/router'
 interface LayerComponent {
   title: string
   url: string
+  mandatory: string
+  stable: string
 }
 
 interface ContentCardProps {
@@ -40,13 +42,22 @@ const ContentCard: React.FunctionComponent<ContentCardProps> = (props) => {
                 style={
                   location.pathname == component.url
                     ? {
-                        background: 'rgba(0, 97, 255, 0.5)',
-                        color: '#FFF'
+                        color: 'blue',
+                        backgroundColor: '#0066ff44'
                       }
                     : {}
                 }
-                className={styles.layerComponent}>
+                className={
+                  component.stable == 'true'
+                    ? styles.layerComponent
+                    : styles.layerComponentWip
+                }>
                 {component.title}
+                {component.mandatory == 'true' ? (
+                  <div className={styles.chipMandatory}>mandatory</div>
+                ) : (
+                  <div className={styles.chipOptional}>optional</div>
+                )}
               </div>
             </Link>
           ))}

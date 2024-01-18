@@ -7,8 +7,10 @@
       "buttonText": "Learn More",
       "components": [
         {
-          "title": "Status Page API",
-          "url": "/docs/operating-scs/components/status-page/docs/overview"
+          "title": "Status Page",
+          "url": "/docs/operating-scs/components/status-page/docs/overview",
+          "mandatory": "true",
+          "stable": "true"
         }
       ]
     }
@@ -22,7 +24,15 @@
       "components": [
         {
           "title": "k8s Cluster API Provider",
-          "url": "/docs/category/k8s-cluster-api-provider"
+          "url": "/docs/category/k8s-cluster-api-provider",
+          "mandatory": "false",
+          "stable": "true"
+        },
+        {
+          "title": "Cluster Stacks",
+          "url": "/docs/category/cluster-stacks",
+          "mandatory": "false",
+          "stable": "false"
         }
       ]
     }
@@ -36,11 +46,15 @@
       "components": [
         {
           "title": "Image Manager",
-          "url": "/docs/iaas/components/image-manager"
+          "url": "/docs/iaas/components/image-manager",
+          "mandatory": "true",
+          "stable": "true"
         },
         {
           "title": "Flavor Manager",
-          "url": "/docs/iaas/components/flavor-manager"
+          "url": "/docs/iaas/components/flavor-manager",
+          "mandatory": "true",
+          "stable": "true"
         }
       ]
     }
@@ -53,8 +67,10 @@
       "buttonText": "Learn More",
       "components": [
         {
-          "title": "Status Page API",
-          "url": "/docs/category/status-page-api"
+          "title": "Keycloak",
+          "url": "/docs/category/status-page-api",
+          "mandatory": "false",
+          "stable": "true"
         }
       ]
     }
