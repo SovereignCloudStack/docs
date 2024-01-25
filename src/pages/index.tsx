@@ -5,7 +5,9 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import Layout from '@theme/Layout'
 import styles from './index.module.css'
 import ContentCard from '../components/ContentCard'
-import ArchitecturalModel from '../components/ArchitecturalModel'
+import ArchitecturalModel, {
+  ArchitecturalLayerData
+} from '../components/ArchitecturalModel'
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext()
@@ -24,29 +26,33 @@ function HomepageHeader() {
   )
 }
 
+interface FeatureContent {
+  title: string
+  body: string
+  buttonText: string
+  url: string
+}
+
+export interface GlobalDataPlugin {
+  default: {
+    architecturalOverviewData: ArchitecturalLayerData
+    featureContentData: any
+    additionalResourcesData: any
+  }
+}
+
+export interface GlobalData {
+  'global-data-plugin': GlobalDataPlugin
+}
+
 export default function Home(): JSX.Element {
-  const [featureContent, setFeatureContent] = useState([])
-  const [additionalResources, setAdditionalResources] = useState([])
+  const context = useDocusaurusContext()
+  const globalData = context.globalData as unknown as GlobalData
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const featureResponse = await fetch('/data/featureContentData.json')
-        const featureData = await featureResponse.json()
-        setFeatureContent(featureData)
-
-        const resourcesResponse = await fetch(
-          '/data/additionalResourcesData.json'
-        )
-        const resourcesData = await resourcesResponse.json()
-        setAdditionalResources(resourcesData)
-      } catch (error) {
-        console.error('Error fetching data:', error)
-      }
-    }
-
-    fetchData()
-  }, [])
+  const featureContent = globalData['global-data-plugin'].default
+    .featureContentData as FeatureContent[]
+  const additionalResources = globalData['global-data-plugin'].default
+    .additionalResourcesData as FeatureContent[]
 
   return (
     <Layout description="Documentation and Community Platform for the Sovereign Cloud Stack">
@@ -78,10 +84,7 @@ export default function Home(): JSX.Element {
               <h1>Architectural Layers</h1>
             </div>
             <div style={{ marginLeft: '16px', marginRight: '16px' }}>
-              <ArchitecturalModel
-                topLayers
-                jsonFilePath="data/architecturalOverviewData.json"
-              />
+              <ArchitecturalModel topLayers />
             </div>
           </div>
           <div className="row" style={{ marginTop: '3rem' }}>

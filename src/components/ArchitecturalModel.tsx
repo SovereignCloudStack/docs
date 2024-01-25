@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import ContentCard from './ContentCard'
 import styles from './architecturalmodel.module.css'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
+import { GlobalData } from '../pages'
 
 interface ArchitecturalLayerItem {
   title: string
@@ -10,7 +12,7 @@ interface ArchitecturalLayerItem {
   components?: []
 }
 
-interface ArchitecturalLayerData {
+export interface ArchitecturalLayerData {
   ops: ArchitecturalLayerItem[]
   container: ArchitecturalLayerItem[]
   iaas: ArchitecturalLayerItem[]
@@ -18,44 +20,17 @@ interface ArchitecturalLayerData {
 }
 
 interface ArchitecturalModelProps {
-  jsonFilePath: string
   topLayers?: boolean
 }
 
 const ArchitecturalModel: React.FunctionComponent<ArchitecturalModelProps> = (
   props
 ) => {
-  const { jsonFilePath, topLayers } = props
-  const [data, setData] = useState<ArchitecturalLayerData | null>(null)
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(jsonFilePath)
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`)
-        }
-        const data = (await response.json()) as ArchitecturalLayerData
-        setData(data)
-      } catch (err) {
-        setError(err.message)
-      } finally {
-        setIsLoading(false)
-      }
-    }
-
-    fetchData()
-  }, [jsonFilePath])
-
-  if (isLoading) {
-    return <div>Loading...</div>
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>
-  }
+  const { topLayers } = props
+  const context = useDocusaurusContext()
+  const globalData = context.globalData as unknown as GlobalData
+  const data =
+    globalData['global-data-plugin'].default.architecturalOverviewData
 
   if (!data) {
     return <div>No data available.</div>
@@ -76,8 +51,9 @@ const ArchitecturalModel: React.FunctionComponent<ArchitecturalModelProps> = (
         <div
           style={{ padding: '8px 8px 8px 8px', margin: '0 0 0 0' }}
           className={`${styles.bottom} col col--3`}>
-          {data.ops.map((layer) => (
+          {data.ops.map((layer, index) => (
             <ContentCard
+              key={index}
               small={!topLayers}
               style={topLayers && { height: '100%' }}
               title={layer.title}
@@ -91,8 +67,9 @@ const ArchitecturalModel: React.FunctionComponent<ArchitecturalModelProps> = (
         <div
           className="col col--6"
           style={{ padding: '8px 8px 8px 8px', margin: '0 0 0 0' }}>
-          {data.container.map((layer) => (
+          {data.container.map((layer, index) => (
             <div
+              key={index}
               style={{
                 marginBottom: layer === data.container[0] ? '8px' : '0'
               }}>
@@ -107,8 +84,8 @@ const ArchitecturalModel: React.FunctionComponent<ArchitecturalModelProps> = (
               />
             </div>
           ))}
-          {data.iaas.map((layer) => (
-            <div>
+          {data.iaas.map((layer, index) => (
+            <div key={index}>
               <ContentCard
                 small={!topLayers}
                 style={topLayers && { height: '100%' }}
@@ -124,8 +101,9 @@ const ArchitecturalModel: React.FunctionComponent<ArchitecturalModelProps> = (
         <div
           className="col col--3"
           style={{ padding: '8px 8px 8px 8px', margin: '0 0 0 0' }}>
-          {data.iam.map((layer) => (
+          {data.iam.map((layer, index) => (
             <ContentCard
+              key={index}
               small={!topLayers}
               style={topLayers && { height: '100%' }}
               title={layer.title}

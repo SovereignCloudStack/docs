@@ -24,7 +24,6 @@ const ContentCard: React.FunctionComponent<ContentCardProps> = (props) => {
   const { title, body, url, buttonText, style, small, components } = props
 
   const location = useLocation()
-  console.log(location.pathname)
 
   return (
     <div style={style} className={`${styles.contentCard} card`}>
@@ -36,8 +35,8 @@ const ContentCard: React.FunctionComponent<ContentCardProps> = (props) => {
       </div>
       <div style={{ display: 'flex' }}>
         {components &&
-          components.map((component) => (
-            <Link to={component.url}>
+          components.map((component, index) => (
+            <Link to={component.url} key={index}>
               <div
                 style={
                   location.pathname == component.url
