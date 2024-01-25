@@ -34,14 +34,14 @@ filenames.forEach((filename) => {
         id: filename.substring(0, filename.length - 3),
         adrId: components[1],
         version: components[2],
-        status: {},
+        state: {},
     }
     // now calculate the properties for the columns (plus stable0 as a helper)
-    obj.status.draft = obj.stabilized_at === undefined
-    obj.status.stable0 = !obj.status.draft && obj.stabilized_at <= today
-    obj.status.deprecated = obj.obsoleted_at !== undefined && obj.obsoleted_at < today
-    obj.status.stable = !obj.status.draft && !obj.status.stable0 && !obj.status.deprecated
-    obj.status.effective = obj.status.stable0 && !obj.status.deprecated
+    obj.state.draft = obj.stabilized_at === undefined
+    obj.state.stable0 = !obj.state.draft && obj.stabilized_at <= today
+    obj.state.deprecated = obj.obsoleted_at !== undefined && obj.obsoleted_at < today
+    obj.state.stable = !obj.state.draft && !obj.state.stable0 && !obj.state.deprecated
+    obj.state.effective = obj.state.stable0 && !obj.state.deprecated
     var track = obj.track
     if (track === undefined) return
     if (tracks[track] === undefined) tracks[track] = {}
@@ -105,7 +105,7 @@ ${headerLegend}
     Object.entries(trackEntry[1]).forEach((standardEntry) => {
         var versions = standardEntry[1].versions
         var ref = versions[versions.length - 1]
-        var effectiveVersions = versions.filter((v) => v.status.effective)
+        var effectiveVersions = versions.filter((v) => v.state.effective)
         if (effectiveVersions.length) {
             ref = effectiveVersions[effectiveVersions.length - 1]
         }
@@ -131,7 +131,7 @@ ${headerLegend}
         slines.push('| -------- | ----- | ------- | ---------- | --------- |')
         var link = `[scs-${adrId}](/standards/${track.toLowerCase()}/scs-${adrId})`
         var versionList = ['draft', 'stable', 'effective', 'deprecated'].map(
-            (column) => mkLinkList(versions.filter((v) => v.status[column])) || '-'
+            (column) => mkLinkList(versions.filter((v) => v.state[column])) || '-'
         ).join(' | ')
         lines.push(`| ${link}  | ${track}  | ${ref.title}  | ${versionList}  |`)
         tlines.push(`| ${link}  | ${ref.title}  | ${versionList}  |`)
@@ -142,7 +142,7 @@ ${headerLegend}
                 id: obj.id,
             }
             standardItem.items.push(versionItem)
-            slines.push(`| [scs-${adrId}-${obj.version}](/standards/${obj.id})  | ${obj.type}  | ${obj.status || obj.state}  | ${obj.stabilized_at || '-'}  | ${obj.obsoleted_at || '-'}  |`)
+            slines.push(`| [scs-${adrId}-${obj.version}](/standards/${obj.id})  | ${obj.type}  | ${obj.status}  | ${obj.stabilized_at || '-'}  | ${obj.obsoleted_at || '-'}  |`)
         })
         slines.push('')  // file should end with a single newline character
         fs.writeFileSync(`${trackPath}/scs-${adrId}.md`, slines.join('\n'), 'utf8')
