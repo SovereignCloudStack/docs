@@ -30,7 +30,7 @@
         },
         {
           "title": "Cluster Stacks",
-          "url": "/docs/category/cluster-stacks",
+          "url": "/docs/container",
           "mandatory": "false",
           "stable": "false"
         }
