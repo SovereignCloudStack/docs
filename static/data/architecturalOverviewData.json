@@ -68,7 +68,7 @@
       "components": [
         {
           "title": "Keycloak",
-          "url": "/docs/category/status-page-api",
+          "url": "/docs/iam/intra-SCS-federation-setup-description-for-osism-doc-operations",
           "mandatory": "false",
           "stable": "true"
         }
