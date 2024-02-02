@@ -65,6 +65,10 @@ The section on [inter SCS federation setup](https://docs.scs.community/docs/iam/
   see possibilities and alignement with upstream OpenDev development plans. Automatically creating `ephemeral` users in
   their specific OpenStack domains, as specified in their OIDC token is one example, currently beeing worked on. Please
   check carefully if the technical results meet the security demands of your specific environment.
+- Keystone currently has another limitation. This is limitation is also being addressed byt the SCS development team aligned
+  with upstream OpenDev development plans. The roles for federated users are stored on the database for the `ephemeral` users 
+  created during a federated login. This also limit the ability to modify users roles from the identity source directly, as
+  the `epehemeral` users roles are not clean up.
 
 ### Current state and future Outlook
 
