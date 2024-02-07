@@ -68,6 +68,7 @@ Service users will have their default_project_id set to a specific project and w
 | 021af0688c594bf88ed675b942d3bea8 | p500924-gx-cred-generator   | anjastrunk        | SCS Gaia-X Self-Description Generator | ∞            |
 | a07c811315ad40f585945b2939ef12dd | p500924-scs-zuul            | o-otte            | SCS Zuul                              | 30.11.2024   |
 | 1846709967a744b69f9eb48cac89bb04 | p500924-scs-k8s-e2e         | chess-knight      | E2E-Test for KaaS                     | ∞            |
+| 6ee4b373cb6d42a5bb59d5080987b70d | p500924-bitkeks             | bitkeks           | Cluster Stacks and Sec                | ∞            |
 |                                  |                             |                   |                                       |              |
 
 ## Wavecon
