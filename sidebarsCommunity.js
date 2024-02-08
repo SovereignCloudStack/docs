@@ -4,35 +4,63 @@
 const sidebars = {
   community: [
     'index',
-    'calendar',
-    'collaboration',
+    'mission-statement',
     {
       type: 'category',
-      label: 'Communication',
-      items: ['communication/matrix']
-    },
-    {
-      type: 'category',
-      label: 'Cloud Resources',
+      link: {
+        type: 'doc',
+        id: 'collaboration/index'
+      },
+      label: 'Collaboration',
       items: [
-        'cloud-resources/cloud-resources',
-        'cloud-resources/getting-started-openstack',
-        'cloud-resources/plusserver-gx-scs',
-        'cloud-resources/wavestack'
+        'collaboration/team-iaas',
+        'collaboration/team-iam',
+        'collaboration/team-container',
+        'collaboration/team-ops',
+        'collaboration/sig-central-api',
+        'collaboration/sig-community',
+        'collaboration/sig-documentation',
+        'collaboration/sig-monitoring',
+        'collaboration/sig-standardization'
       ]
     },
     {
       type: 'category',
-      label: 'GitHub',
+      label: 'Tools',
+      link: {
+        type: 'generated-index'
+      },
       items: [
-        'github/branchprotection',
-        'github/dco-and-licenses',
-        'github/tips-and-tricks'
+        'tools/jitsi',
+        'tools/matrix',
+        'tools/mailinglists',
+        'tools/nextcloud',
+        'tools/zuul',
+        ,
+        {
+          type: 'category',
+          label: 'GitHub',
+          items: [
+            'tools/github/branchprotection',
+            'tools/github/dco-and-licenses',
+            'tools/github/tips-and-tricks'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Cloud Resources',
+          items: [
+            'cloud-resources/cloud-resources',
+            'cloud-resources/getting-started-openstack',
+            'cloud-resources/plusserver-gx-scs',
+            'cloud-resources/wavestack'
+          ]
+        }
       ]
     },
     {
       type: 'category',
-      label: 'Contribute',
+      label: 'Contribute to Docs',
       link: {
         type: 'generated-index'
       },
@@ -44,8 +72,7 @@ const sidebars = {
         'contribute/local-docusaurus-development-guide',
         'contribute/styleguide'
       ]
-    },
-    'license-considerations'
+    }
   ]
 }
 
