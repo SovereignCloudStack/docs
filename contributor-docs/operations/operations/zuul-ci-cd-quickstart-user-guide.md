@@ -351,7 +351,7 @@ For a basic but working example the following content may be written into a `zuu
     name: myFirstTestJob
     parent: base
     secrets:
-      - name: secretName  # The name of the secret that is used within "playbooks/testPlaybook.yaml"
+      - name: secretName # The name of the secret that is used within "playbooks/testPlaybook.yaml"
         secret: SECRET_REPOSITORY_NAME
     run: playbooks/testPlaybook.yaml
 
@@ -389,5 +389,5 @@ Example playbook:
 - hosts: all
   tasks:
     - debug:
-        msg: 'Debug print my secrets! {{ secretName.secretValue1 }}'  # do not do this as it will expose your secrets
+        msg: 'Debug print my secrets! {{ secretName.secretValue1 }}' # do not do this as it will expose your secrets
 ```
