@@ -48,10 +48,10 @@ const config = {
       '@docusaurus/plugin-client-redirects',
       {
         redirects: [
-          // {
-          //   to: '/docs/iaas/deployment-examples/testbed',
-          //   from: '/docs/category/osism-testbed/'
-          // }
+          {
+            to: '/community/collaboration',
+            from: '/community/calendar'
+          }
         ],
         createRedirects(existingPath) {
           if (existingPath.includes('/community')) {
