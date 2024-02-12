@@ -189,6 +189,9 @@ See an example pipeline that reports failed result to the `SCS | Zuul Reports` M
         topic: "zuul/{pipeline}/{project}/{branch}/{change}"
 ```
 
+Visit the [official Zuul documentation](https://zuul-ci.org/docs/zuul/latest/config/pipeline.html#reporters)
+and explore the configuration options available for Zuul's reporters.
+
 ### Jobs
 
 All jobs that your Zuul instances knows of can be used for your own purposes.
