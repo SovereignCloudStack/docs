@@ -48,10 +48,10 @@ const config = {
       '@docusaurus/plugin-client-redirects',
       {
         redirects: [
-          {
-            to: '/community/collaboration',
-            from: '/community/calendar'
-          }
+          // {
+          //   to: '/community/collaboration',
+          //   from: '/community/calendar'
+          // }
         ],
         createRedirects(existingPath) {
           if (existingPath.includes('/community')) {
