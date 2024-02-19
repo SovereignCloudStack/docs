@@ -25,10 +25,7 @@
   },
   {
     "repo": "SovereignCloudStack/standards",
-    "source": [
-      "Standards/*.md",
-      "Tests/scs-*.yaml"
-    ],
+    "source": ["Standards/*.md", "Tests/scs-*.yaml"],
     "target": "standards",
     "label": ""
   },
@@ -37,5 +34,11 @@
     "source": "docs/guides",
     "target": "docs/02-iaas/",
     "label": ""
+  },
+  {
+    "repo": "SovereignCloudStack/k8s-harbor",
+    "source": "docs",
+    "target": "docs/03-container/components",
+    "label": "container-registry"
   }
 ]
