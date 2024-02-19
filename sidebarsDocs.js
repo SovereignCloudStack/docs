@@ -254,6 +254,23 @@ const sidebarsDocs = {
                   ]
                 }
               ]
+            },
+            {
+              type: 'category',
+              label: 'Container Registry',
+              link: {
+                type: 'generated-index'
+              },
+              items: [
+                'container/components/container-registry/docs/quickstart',
+                'container/components/container-registry/docs/scs-deployment',
+                'container/components/container-registry/docs/rate_limit',
+                'container/components/container-registry/docs/upgrade',
+                'container/components/container-registry/docs/backup_and_restore',
+                'container/components/container-registry/docs/migration',
+                'container/components/container-registry/docs/persistence',
+                'container/components/container-registry/docs/ha-deployment'
+              ]
             }
           ]
         }

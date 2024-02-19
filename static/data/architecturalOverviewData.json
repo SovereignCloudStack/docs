@@ -33,6 +33,12 @@
           "url": "/docs/container",
           "mandatory": "false",
           "stable": "false"
+        },
+        {
+          "title": "Container Registry",
+          "url": "/docs/category/container-registry",
+          "mandatory": "false",
+          "stable": "true"
         }
       ]
     }
