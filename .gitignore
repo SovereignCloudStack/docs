@@ -1,12 +1,21 @@
 # Content Dependencies from docs.package.json
 /repo_to_be_edited_
 /docs/02-iaas/components
+/docs/02-iaas/guides
+/docs/02-iaas/guides/configuration-guides
+/docs/02-iaas/guides/deploy-guide
+/docs/02-iaas/guides/operations-guide
+/docs/02-iaas/guides/troubleshooting-guides
+/docs/02-iaas/guides/upgrade-guides
+/docs/02-iaas/guides/index.md
 /docs/02-iaas/deployment-examples/cloud-in-a-box
 /docs/02-iaas/deployment-examples/testbed
 /docs/03-container/components
 /docs/04-operating-scs/components
 /docs/06-releases
-/standards
+/standards/*.md
+/standards/*/*.md
+/standards/scs-*.yaml
 
 # Dependencies
 node_modules
@@ -17,6 +26,8 @@ node_modules
 # Generated files
 .docusaurus
 .cache-loader
+sidebarsStandardsItems.js
+sidebarsCertificationItems.js
 
 # Misc
 .DS_Store

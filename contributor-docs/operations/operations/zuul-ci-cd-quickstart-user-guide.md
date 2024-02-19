@@ -168,6 +168,30 @@ Pipelines available in SCS Zuul:
 
 If you want to know more about pipelines: [See official documentation](https://zuul-ci.org/docs/zuul/latest/config/pipeline.html)
 
+### Reports
+
+The SCS Zuul instance can transmit build reports through an MQTT connection
+to the dedicated Matrix chat room `SCS | Zuul Reports`. Currently, this MQTT reporting
+feature is activated for periodic pipelines (periodic-hourly, periodic-daily,
+compliance_check), and reports are dispatched solely in the event of
+failures occurring in builds triggered by the mentioned pipelines.
+
+See an example pipeline that reports failed result to the `SCS | Zuul Reports` Matrix room:
+
+```yaml
+- pipeline:
+    name: pipeline-that-reports-to-matrix
+    description: |
+      In the event of a failure, this pipeline transmits reports to
+      the SCS | Zuul Reports Matrix chat room.
+    failure:
+      mqtt:
+        topic: "zuul/{pipeline}/{project}/{branch}/{change}"
+```
+
+Visit the [official Zuul documentation](https://zuul-ci.org/docs/zuul/latest/config/pipeline.html#reporters)
+and explore the configuration options available for Zuul's reporters.
+
 ### Jobs
 
 All jobs that your Zuul instances knows of can be used for your own purposes.
@@ -279,13 +303,15 @@ For this purpose Zuul creates its own public/private key pair for each project. 
 public key to create secrets. But only Zuul will be able to decrypt these values. To avoid the user
 to be responsible for the correct encryption there is an zuul-client tool that will do this for you.
 
-Example:
+Example (reading from stdin and writing to stdout):
 
 ```bash
-zuul-client --zuul-url ZUUL_URL  encrypt --tenant TENANT --project ORGANIZATION/PROJECT --infile creds.yaml --outfile clouds.yaml.enc
+zuul-client --zuul-url ZUUL_URL encrypt --tenant SCS --project SovereignCloudStack/REPO
 ```
 
-The content may look like this:
+Add `--infile INFILE` or `--outfile OUTFILE` if you prefer to work with files directly.
+
+The output might look like this:
 
 ```yaml
 - secret:
@@ -307,6 +333,22 @@ The content may look like this:
 You may use this content or the file to provide it as a secret. You just have to update the `<name>` and the
 `<fieldname>` part.
 
+The secret name has to be unique across all projects. Because of this, we have a naming convention in the
+`SovereignCloudStack` organisation that ensures that a secret has a unique name.
+
+Our convention is as follows. There is only one secret per Zuul configuration per project (for exceptions,
+see below). This secret always has a name in the form
+`SECRET_REPOSITORY_NAME`. For instance, if a secret in the `SovereignCloudStack/k8s-cluster-api-provider`
+repository is
+to be used, it is given the name `SECRET_K8S_CLUSTER_API_PROVIDER`. The name of the repository is
+always written in capital letters. A dash is replaced with an underscore. Any number of values
+(`<fieldname>: !encrypted/pkcs1-oaep`) can then be assigned to this one secret.
+
+In certain cases, it can be undesireable to expose all secret information to all jobs in a project.
+Then additional secrets may be used, whose names have to be formed by appending an underscore and some
+upper-case prefix to the name of the primary secret. For instance, we might use the
+name `SECRET_REPOSITORY_NAME_FOOBAR`.
+
 Official documentation:
 
 1. [Secrets documentation](https://zuul-ci.org/docs/zuul/latest/config/secret.html#secret)
@@ -320,29 +362,46 @@ For a basic but working example the following content may be written into a `zuu
 # zuul.yaml content
 ---
 - secret:
-    name: mySecret
+    name: SECRET_REPOSITORY_NAME
     data:
-      secretValue: !encrypted/pkcs1-oaep
-        - <ENCYPTED_DATA>
+      secretValue1: !encrypted/pkcs1-oaep
+        - <ENCRYPTED_DATA>
+      secretValue2: !encrypted/pkcs1-oaep
+        - <ENCRYPTED_DATA>
+      secretValue3: !encrypted/pkcs1-oaep
+        - <ENCRYPTED_DATA>
 
 - job:
     name: myFirstTestJob
     parent: base
     secrets:
       - name: secretName # The name of the secret that is used within "playbooks/testPlaybook.yaml"
-        secret: mySecret
+        secret: SECRET_REPOSITORY_NAME
     run: playbooks/testPlaybook.yaml
 
+- job:
+    name: mySecondTestJob
+    parent: base
+    run: playbooks/testPlaybookTwo.yaml
+
 - project:
-    check:
+    tag:
       jobs:
         - myFirstTestJob
+    check:
+      jobs:
+        - mySecondTestJob
 ```
 
-This will run you job `myFirstTestJob` when ever the `check` pipeline is triggered.
-Within SCS this pipeline is always triggered if you open, change or reopen a pull request.
-The `check` pipeline can also be triggered manually if you write a comment on an already
+This will run the job `myFirstTestJob` whenever the `tag` pipeline is triggered, and
+`mySecondTestJob` whenever `check` is triggered.
+
+Within SCS the `check` pipeline is always triggered if you open, change or reopen a pull request.
+This pipeline can also be triggered manually if you write a comment on an already
 existing pull request and place the string `recheck` in it.
+
+Recall that the first test job cannot run on the same pipeline because it uses a secret.
+The `tag` pipeline is run whenever a new tag is created.
 
 The path to you playbook is always the full path within the repository. The playbook
 contains the tasks you actually want to run on all or a specific subset of nodes.
@@ -354,5 +413,5 @@ Example playbook:
 - hosts: all
   tasks:
     - debug:
-        msg: "Debug print my secrets! {{ secretName.secretValue }}" # do not do this as it will expose your secrets
+        msg: 'Debug print my secrets! {{ secretName.secretValue1 }}' # do not do this as it will expose your secrets
 ```
