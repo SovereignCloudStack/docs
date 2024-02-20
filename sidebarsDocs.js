@@ -303,6 +303,26 @@ const sidebarsDocs = {
                 'operating-scs/components/status-page/docs/components',
                 'operating-scs/components/status-page/docs/levels_of_consensus'
               ]
+            },
+            {
+              type: 'category',
+              label: 'Monitoring',
+              link: {
+                type: 'generated-index'
+              },
+              items: [
+                'operating-scs/components/monitoring/docs/overview',
+                'operating-scs/components/monitoring/docs/quickstart',
+                'operating-scs/components/monitoring/docs/scs-deployment',
+                'operating-scs/components/monitoring/docs/infrastructure_services',
+                'operating-scs/components/monitoring/docs/iaas',
+                'operating-scs/components/monitoring/docs/kaas',
+                'operating-scs/components/monitoring/docs/zuul',
+                'operating-scs/components/monitoring/docs/alertmanager',
+                'operating-scs/components/monitoring/docs/oauth',
+                'operating-scs/components/monitoring/docs/tracing',
+                'operating-scs/components/monitoring/docs/tuning'
+              ]
             }
           ]
         },

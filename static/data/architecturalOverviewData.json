@@ -11,6 +11,12 @@
           "url": "/docs/operating-scs/components/status-page/docs/overview",
           "mandatory": "true",
           "stable": "true"
+        },
+        {
+          "title": "Monitoring",
+          "url": "/docs/category/monitoring",
+          "mandatory": "false",
+          "stable": "true"
         }
       ]
     }
