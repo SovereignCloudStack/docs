@@ -40,5 +40,11 @@
     "source": "docs",
     "target": "docs/03-container/components",
     "label": "container-registry"
+  },
+  {
+    "repo": "SovereignCloudStack/k8s-observability",
+    "source": "docs",
+    "target": "docs/04-operating-scs/components",
+    "label": "monitoring"
   }
 ]
