@@ -38,7 +38,7 @@ The idea is that customer can create groups with specific names in their own IAM
 These shall be mapped to a claim `groups` to be included in the OIDC token.
 Via the Keystone [mapping](https://docs.openstack.org/keystone/latest/admin/federation/mapping_combinations.html)
 they shall be mapped to roles on OpenStack projects.
-[The corresponding section for Developers](https://docs.scs.community/dev-docs/operations/iam/identity-federation-in-scs) may be interesting for more technical details.
+[The corresponding section for Developers](https://docs.scs.community/contributor-docs/operations/iam/identity-federation-in-scs) may be interesting for more technical details.
 Please be aware that currently there are still some technical challenges to be solved
 within the OpenStack Keystone mapping engine and the mapping rules to make this work
 seamlessly.
