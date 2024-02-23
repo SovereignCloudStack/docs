@@ -38,7 +38,7 @@ The idea is that customer can create groups with specific names in their own IAM
 These shall be mapped to a claim `groups` to be included in the OIDC token.
 Via the Keystone [mapping](https://docs.openstack.org/keystone/latest/admin/federation/mapping_combinations.html)
 they shall be mapped to roles on OpenStack projects.
-[The corresponding section for Developers](https://docs.scs.community/dev-docs/operations/iam/identity-federation-in-scs) may be interesting for more technical details.
+[The corresponding section for Developers](https://docs.scs.community/contributor-docs/operations/iam/identity-federation-in-scs) may be interesting for more technical details.
 Please be aware that currently there are still some technical challenges to be solved
 within the OpenStack Keystone mapping engine and the mapping rules to make this work
 seamlessly.
@@ -65,6 +65,10 @@ The section on [inter SCS federation setup](https://docs.scs.community/docs/iam/
   see possibilities and alignement with upstream OpenDev development plans. Automatically creating `ephemeral` users in
   their specific OpenStack domains, as specified in their OIDC token is one example, currently beeing worked on. Please
   check carefully if the technical results meet the security demands of your specific environment.
+- Keystone currently has another limitation which is being addressed by the SCS development team aligned
+  with upstream OpenDev development plans: The roles for federated users are stored on the database for the `ephemeral` users 
+  created during a federated login. This limits the ability to modify users roles from the identity source directly, as roles of
+  the `epehemeral` users do not get cleaned up or updated based on changes in the claims contained in the  OpenID-Connect token.
 
 ### Current state and future Outlook
 
