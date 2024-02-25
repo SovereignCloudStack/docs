@@ -69,6 +69,16 @@ Service users will have their default_project_id set to a specific project and w
 | a07c811315ad40f585945b2939ef12dd | p500924-scs-zuul            | o-otte            | SCS Zuul                              | 30.11.2024   |
 | 1846709967a744b69f9eb48cac89bb04 | p500924-scs-k8s-e2e         | chess-knight      | E2E-Test for KaaS                     | ∞            |
 | 6ee4b373cb6d42a5bb59d5080987b70d | p500924-bitkeks             | bitkeks           | Cluster Stacks and Sec                | ∞            |
+|                                  | p500924-kaas-playground0    | jschoone          | Playground0 for KaaS-Hackathon        | 31.03.2024   |
+|                                  | p500924-kaas-playground1    | jschoone          | Playground1 for KaaS-Hackathon        | 31.03.2024   |
+|                                  | p500924-kaas-playground2    | jschoone          | Playground2 for KaaS-Hackathon        | 31.03.2024   |
+|                                  | p500924-kaas-playground3    | jschoone          | Playground3 for KaaS-Hackathon        | 31.03.2024   |
+|                                  | p500924-kaas-playground4    | jschoone          | Playground4 for KaaS-Hackathon        | 31.03.2024   |
+|                                  | p500924-kaas-playground5    | jschoone          | Playground5 for KaaS-Hackathon        | 31.03.2024   |
+|                                  | p500924-kaas-playground6    | jschoone          | Playground6 for KaaS-Hackathon        | 31.03.2024   |
+|                                  | p500924-kaas-playground7    | jschoone          | Playground7 for KaaS-Hackathon        | 31.03.2024   |
+|                                  | p500924-kaas-playground8    | jschoone          | Playground8 for KaaS-Hackathon        | 31.03.2024   |
+|                                  | p500924-kaas-playground9    | jschoone          | Playground9 for KaaS-Hackathon        | 31.03.2024   |
 |                                  |                             |                   |                                       |              |
 
 ## Wavecon
