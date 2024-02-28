@@ -29,16 +29,16 @@
       "buttonText": "Learn More",
       "components": [
         {
-          "title": "k8s Cluster API Provider",
+          "title": "KaaS V1: K8s Cluster API Provider",
           "url": "/docs/category/k8s-cluster-api-provider",
           "mandatory": "false",
           "stable": "true"
         },
         {
-          "title": "Cluster Stacks",
-          "url": "/docs/container",
+          "title": "KaaS V2: Cluster Stacks",
+          "url": "/docs/category/cluster-stacks",
           "mandatory": "false",
-          "stable": "false"
+          "stable": "true"
         },
         {
           "title": "Container Registry",
