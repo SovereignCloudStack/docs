@@ -404,7 +404,17 @@ const sidebarsDocs = {
         id: 'iam/index'
       },
       items: [
-        'iam/intra-SCS-federation-setup-description-for-osism-doc-operations'
+        {
+          type: 'category',
+          label: 'Guides',
+          link: {
+            type: 'generated-index'
+          },
+          items: [
+            'iam/domain-manager-setup-and-usage',
+          ]
+        },
+        'iam/intra-SCS-federation-setup-description-for-osism-doc-operations',
       ]
     },
     {
