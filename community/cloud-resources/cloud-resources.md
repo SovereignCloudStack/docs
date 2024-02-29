@@ -69,16 +69,16 @@ Service users will have their default_project_id set to a specific project and w
 | a07c811315ad40f585945b2939ef12dd | p500924-scs-zuul            | o-otte            | SCS Zuul                              | 30.11.2024   |
 | 1846709967a744b69f9eb48cac89bb04 | p500924-scs-k8s-e2e         | chess-knight      | E2E-Test for KaaS                     | ∞            |
 | 6ee4b373cb6d42a5bb59d5080987b70d | p500924-bitkeks             | bitkeks           | Cluster Stacks and Sec                | ∞            |
-| 4ea22ba875474d039cb57d20b7f710b5 | p500924-kaas-playground0    | jschoone          | Playground0 for KaaS-Hackathon        | 31.03.2024   |
-| 476672f1023b4bac8837f95a76881757 | p500924-kaas-playground1    | jschoone          | Playground1 for KaaS-Hackathon        | 31.03.2024   |
-| 04dac2927f744479a5d4c23dd0a3c378 | p500924-kaas-playground2    | jschoone          | Playground2 for KaaS-Hackathon        | 31.03.2024   |
-| 75279777029847ab9b399390c0dd6042 | p500924-kaas-playground3    | jschoone          | Playground3 for KaaS-Hackathon        | 31.03.2024   |
-| 0b3c75f80b6743778daccec0da423465 | p500924-kaas-playground4    | jschoone          | Playground4 for KaaS-Hackathon        | 31.03.2024   |
-| 2340a73644ca47189329061e9c2a0bfe | p500924-kaas-playground5    | jschoone          | Playground5 for KaaS-Hackathon        | 31.03.2024   |
-| 3c5bae4a233c4a9d8ae2e4b799d757c9 | p500924-kaas-playground6    | jschoone          | Playground6 for KaaS-Hackathon        | 31.03.2024   |
-| 03783b4952344c849af37d26818d19f0 | p500924-kaas-playground7    | jschoone          | Playground7 for KaaS-Hackathon        | 31.03.2024   |
-| 5c6d4d7183834eafbc20108ad647a9c0 | p500924-kaas-playground8    | jschoone          | Playground8 for KaaS-Hackathon        | 31.03.2024   |
-| 7e18881932f749baa7d547ebd407b8d8 | p500924-kaas-playground9    | jschoone          | Playground9 for KaaS-Hackathon        | 31.03.2024   |
+| 4ea22ba875474d039cb57d20b7f710b5 | p500924-kaas-playground0    | jschoone          | Playground0 for Hackathon             | 30.04.2024   |
+| 476672f1023b4bac8837f95a76881757 | p500924-kaas-playground1    | jschoone          | Playground1 for Hackathon             | 30.04.2024   |
+| 04dac2927f744479a5d4c23dd0a3c378 | p500924-kaas-playground2    | jschoone          | Playground2 for Hackathon             | 30.04.2024   |
+| 75279777029847ab9b399390c0dd6042 | p500924-kaas-playground3    | jschoone          | Playground3 for Hackathon             | 30.04.2024   |
+| 0b3c75f80b6743778daccec0da423465 | p500924-kaas-playground4    | jschoone          | Playground4 for Hackathon             | 30.04.2024   |
+| 2340a73644ca47189329061e9c2a0bfe | p500924-kaas-playground5    | jschoone          | Playground5 for Hackathon             | 30.04.2024   |
+| 3c5bae4a233c4a9d8ae2e4b799d757c9 | p500924-kaas-playground6    | jschoone          | Playground6 for Hackathon             | 30.04.2024   |
+| 03783b4952344c849af37d26818d19f0 | p500924-kaas-playground7    | jschoone          | Playground7 for Hackathon             | 30.04.2024   |
+| 5c6d4d7183834eafbc20108ad647a9c0 | p500924-kaas-playground8    | jschoone          | Playground8 for Hackathon             | 30.04.2024   |
+| 7e18881932f749baa7d547ebd407b8d8 | p500924-kaas-playground9    | jschoone          | Playground9 for Hackathon             | 30.04.2024   |
 |                                  |                             |                   |                                       |              |
 
 ## Wavecon
