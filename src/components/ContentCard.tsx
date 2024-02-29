@@ -28,7 +28,11 @@ const ContentCard: React.FunctionComponent<ContentCardProps> = (props) => {
   return (
     <div style={style} className={`${styles.contentCard} card`}>
       <div className="card__header">
-        {small ? <h5>{title}</h5> : <h3>{title}</h3>}
+        {small ? (
+          <h5 style={{ marginLeft: '-6px' }}>{title}</h5>
+        ) : (
+          <h3>{title}</h3>
+        )}
       </div>
       <div className="card__body">
         <p>{body}</p>
@@ -52,11 +56,11 @@ const ContentCard: React.FunctionComponent<ContentCardProps> = (props) => {
                     : styles.layerComponentWip
                 }>
                 {component.title}
-                {component.mandatory == 'true' ? (
+                {/* {component.mandatory == 'true' ? (
                   <div className={styles.chipMandatory}>mandatory</div>
                 ) : (
                   <div className={styles.chipOptional}>optional</div>
-                )}
+                )} */}
               </div>
             </Link>
           ))}
