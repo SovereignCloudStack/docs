@@ -52,7 +52,7 @@
   "iaas": [
     {
       "title": "IaaS Layer",
-      "body": "SCS offers OpenStack infrastructure solutions based on KVM virutalization to deploy VM workloads and enabling the container layer optionally.",
+      "body": "SCS offers OpenStack infrastructure solutions based on KVM virtualization to deploy VM workloads and enabling the container layer optionally.",
       "url": "/docs/faq",
       "buttonText": "Learn More",
       "components": [
