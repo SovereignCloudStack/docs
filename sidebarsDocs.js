@@ -240,6 +240,7 @@ const sidebarsDocs = {
                 'container/components/k8s-cluster-api-provider/doc/Maintenance_and_Troubleshooting',
                 'container/components/k8s-cluster-api-provider/doc/LoadBalancer-ExtTrafficLocal',
                 'container/components/k8s-cluster-api-provider/doc/Upgrade-Guide',
+                'container/components/k8s-cluster-api-provider/doc/continuous-integration',
                 'container/components/k8s-cluster-api-provider/doc/roadmap',
                 {
                   type: 'category',
@@ -250,7 +251,12 @@ const sidebarsDocs = {
                     'container/components/k8s-cluster-api-provider/doc/usage/managing-many-clusters',
                     'container/components/k8s-cluster-api-provider/doc/usage/cluster-mgmt-capi-mgmt-node',
                     'container/components/k8s-cluster-api-provider/doc/usage/multi-az-and-multi-cloud-environments',
-                    'container/components/k8s-cluster-api-provider/doc/usage/testing'
+                    'container/components/k8s-cluster-api-provider/doc/usage/testing',
+                    'container/components/k8s-cluster-api-provider/doc/usage/containter-registry-configuration',
+                    'container/components/k8s-cluster-api-provider/doc/usage/custom-ca',
+                    'container/components/k8s-cluster-api-provider/doc/usage/gateway-api',
+                    'container/components/k8s-cluster-api-provider/doc/usage/harbor',
+                    'container/components/k8s-cluster-api-provider/doc/usage/migrate-to-cluster-class'
                   ]
                 }
               ]
