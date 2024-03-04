@@ -90,7 +90,8 @@ const config = {
         sidebarPath: require.resolve('./sidebarsStandards.js')
       }
     ],
-    './src/plugins/docusaurus-plugin-matomo-analytics/index.js'
+    './src/plugins/docusaurus-plugin-matomo-analytics/index.js',
+    './src/plugins/docusaurus-plugin-global-data/index.js'
   ],
 
   themeConfig:
