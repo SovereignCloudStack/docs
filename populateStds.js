@@ -175,7 +175,7 @@ ${headerLegend}
                     id: obj.id,
                 }
                 standardItem.items.push(versionItem)
-                slines.push(`| [open](/standards/${obj.id})  | ${obj.status}  | ${obj.stabilized_at || '-'}  | ${obj.obsoleted_at || '-'}  |`)
+                slines.push(`| [${obj.version}](/standards/${obj.id})  | ${obj.status}  | ${obj.stabilized_at || '-'}  | ${obj.obsoleted_at || '-'}  |`)
             })
         })
         slines.push('')  // file should end with a single newline character
