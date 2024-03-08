@@ -46,10 +46,10 @@ openstack security group rule delete $RULE_ID
 
 ### Default security group
 
-The default security group is used for all VMs and Ports to VMs, that are created when there was no security group explicitly assigned to them.
-To use any but the default security group it is just necessary to mention them in the creation process.
+Unless specified otherwise, the default security group is assigned to all VMs or Ports at creation.
+To use any other than the default security group at creation it is necessary to specify the desired security group(s) during the creation process.
 
-To see, what rules are set in the security group, the following command can be used:
+To review which rules are defined in a security group, the following command can be used:
 
 ```bash
 openstack security group show default
@@ -58,8 +58,8 @@ openstack security group show default
 ### Recommended security groups
 
 While projects can use very different aspects in security group rules and thus the security groups will always differ between projects, there are some security groups that are widely used.
-Through the nature of security groups being seen as a set of rules that can be brought together, having some basic security groups that allow basic protocols is a commonly used setup.
-This section will show how to create some security groups for commonly used protocols and ports.
+Through the nature of security groups being seen as a set of rules that can be combined, having some basic security groups that allow basic protocols is a commonly used setup.
+This section will demonstrate how to create some security groups for commonly used protocols and ports.
 
 1. A security groups, that allows incoming SSH traffic:
 
@@ -91,20 +91,27 @@ openstack security group rule create --protocol icmp icmp
 
 ## How to use security groups
 
-Usually security groups are added at the time of the creation of a VM.
-There can be multiple security groups added at the same time:
+:::info
+
+Security groups can be assigned to multiple resources simultaneously (such as VMs or Ports).
+This means that security groups are reusable and don't need to be recreated for each applicable resource individually.
+
+:::
+
+Usually, initial security groups are added at the time of the creation of a VM.
+During creation, multiple security groups can also be added at the same time by repeating the `--security-group` argument:
 
 ```bash
 openstack server create [...] --security-group $SECURITY_GROUP_1 --security-group $SECURITY_GROUP_2 $SERVER_NAME
 ```
 
-To add security groups to an existing VM, the following command can be used:
+To add a security group to an existing VM, the following command can be used:
 
 ```bash
 openstack server add security group $SERVER_NAME $SECURITY_GROUP
 ```
 
-To remove security groups from a VM, the following command can be used:
+To remove a security group from a VM, the following command can be used:
 
 ```bash
 openstack server remove security group $SERVER_NAME $SECURITY_GROUP
