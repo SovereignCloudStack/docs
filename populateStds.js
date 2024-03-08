@@ -169,6 +169,12 @@ ${headerLegend}
             slines.push('| Version  | State   | stabilized | obsoleted |')
             slines.push('| -------- | ------- | ---------- | --------- |')
             versions.forEach((obj) => {
+                var versionItem = {
+                    type: 'doc',
+                    label: obj.version.toUpperCase(),
+                    id: obj.id,
+                }
+                standardItem.items.push(versionItem)
                 slines.push(`| [${obj.version}](/standards/${obj.id})  | ${obj.status}  | ${obj.stabilized_at || '-'}  | ${obj.obsoleted_at || '-'}  |`)
             })
         })
