@@ -1,18 +1,20 @@
 # Best Practise: How to configure and use security groups
 
-Security groups in OpenStack are part of the security mechanisms rpovided for the users.
-They are grouping IP-table rules that then are used at the port connecting a VM to a network.
-Usually security groups are assigned, when a VM is created, but they can also be assigned later on.
-There can be multiple groups assigned to a VM or Port and they will act together as the union of all their rules.
+Security groups in OpenStack are part of the network security mechanisms provided for the users.
+They resemble sets of simple firewall rules allowing specific network traffic at a Port of a VM that connects it to a network.
+The rules allow specific network port numbers and protocols while also differentiating between ingress and egress directions.
+Usually security groups are assigned to the Port(s) when a VM is created, but assignments can also be changed at runtime later on.
+Multiple security groups can be assigned to a VM or Port simultaneously and in such case they will be combined as the union of all their rules.
 
 ## How to create security groups
 
 Security groups are managed within a project.
 So every project will have a different set of security groups.
-They can be added dynamically to each VM, while creation or afterwards.
+They can be added dynamically to each VM, during their creation or afterwards.
+Additionally, they may also be removed from VMs at any point.
 
 Every project has its own default security group, which rules can be edited.
-Additionally other security groups can be added until the quota is fully used.
+Additionally other security groups can be added until the project's quota is exhausted.
 To add a security group, use the following command:
 
 ```bash
@@ -48,33 +50,33 @@ openstack security group show default
 
 While projects can use very different aspects in security group rules and thus the security groups will always differ between projects, there are some security groups that are widely used.
 Through the nature of security groups being seen as a set of rules that can be brought together, having some basic security groups that allow basic protocols is a commonly used setup.
-This section will show, how to create some of those groups.
+This section will show how to create some security groups for commonly used protocols and ports.
 
-1. A security groups, that allows incoming ssh traffic:
+1. A security groups, that allows incoming SSH traffic:
 
 ```bash
 openstack security group create ssh
 openstack security group rule create --ingress --protocol tcp --dst-port 22 ssh
 ```
 
-2. A security group, that allows incoming http requests:
+2. A security group, that allows incoming HTTP requests:
 
 ```bash
 openstack security group create http
 openstack security group rule create --ingress --protocol tcp --dst-port 80 http
 ```
 
-3. A security group, that allows incoming https requests:
+3. A security group, that allows incoming HTTPS requests:
 
 ```bash
-openstack security group create http
+openstack security group create https
 openstack security group rule create --ingress --protocol tcp --dst-port 443 https
 ```
 
-3. A security group, that allows incoming icmp requests:
+3. A security group, that allows incoming ICMP requests:
 
 ```bash
-openstack security group create http
+openstack security group create icmp
 openstack security group rule create --protocol icmp icmp
 ```
 
@@ -87,7 +89,7 @@ There can be multiple security groups added at the same time:
 openstack server create [...] --security-group $SECURITY_GROUP_1 --security-group $SECURITY_GROUP_2 $SERVER_NAME
 ```
 
-To add security groups to an already running VM, the following command can be used:
+To add security groups to an existing VM, the following command can be used:
 
 ```bash
 openstack server add security group $SERVER_NAME $SECURITY_GROUP 
