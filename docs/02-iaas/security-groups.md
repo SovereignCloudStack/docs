@@ -6,6 +6,15 @@ The rules allow specific network port numbers and protocols while also different
 Usually security groups are assigned to the Port(s) when a VM is created, but assignments can also be changed at runtime later on.
 Multiple security groups can be assigned to a VM or Port simultaneously and in such case they will be combined as the union of all their rules.
 
+:::caution
+
+Security groups are mutable resources.
+Their rules can be adjusted at any time after creation.
+**Changing the rules of a security group will immediately apply the changes to all Ports or VMs it is assigned to.**
+It is advisable to always review resources which use a security group before making changes to it.
+
+:::
+
 ## How to create security groups
 
 Security groups are managed within a project.
@@ -59,21 +68,21 @@ openstack security group create ssh
 openstack security group rule create --ingress --protocol tcp --dst-port 22 ssh
 ```
 
-2. A security group, that allows incoming HTTP requests:
+1. A security group, that allows incoming HTTP requests:
 
 ```bash
 openstack security group create http
 openstack security group rule create --ingress --protocol tcp --dst-port 80 http
 ```
 
-3. A security group, that allows incoming HTTPS requests:
+1. A security group, that allows incoming HTTPS requests:
 
 ```bash
 openstack security group create https
 openstack security group rule create --ingress --protocol tcp --dst-port 443 https
 ```
 
-3. A security group, that allows incoming ICMP requests:
+1. A security group, that allows incoming ICMP requests:
 
 ```bash
 openstack security group create icmp
@@ -92,11 +101,11 @@ openstack server create [...] --security-group $SECURITY_GROUP_1 --security-grou
 To add security groups to an existing VM, the following command can be used:
 
 ```bash
-openstack server add security group $SERVER_NAME $SECURITY_GROUP 
+openstack server add security group $SERVER_NAME $SECURITY_GROUP
 ```
 
 To remove security groups from a VM, the following command can be used:
 
 ```bash
-openstack server remove security group $SERVER_NAME $SECURITY_GROUP 
+openstack server remove security group $SERVER_NAME $SECURITY_GROUP
 ```
