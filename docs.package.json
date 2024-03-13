@@ -55,8 +55,8 @@
   },
   {
     "repo": "SovereignCloudStack/openstack-health-monitor",
-    "source": "docs",
-    "target": "docs/04-operating-scs/guides",
-    "label": "openStack-health-monitor"
+    "source": "docs/*.md",
+    "target": "docs/04-operating-scs/01-guides",
+    "label": "openstack-health-monitor"
   }
 ]
