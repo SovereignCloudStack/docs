@@ -351,16 +351,16 @@ const sidebarsDocs = {
             }
           ]
         },
-        // {
-        //   type: 'category',
-        //   label: 'Guides',
-        //   link: {
-        //     type: 'generated-index'
-        //   },
-        //   items: [
-        //     'operating-scs/guides/guide-1'
-        //   ]
-        // },
+        {
+          type: 'category',
+          label: 'Guides',
+          link: {
+            type: 'generated-index'
+          },
+          items: [
+            'operating-scs/guides/openstack-health-monitor/Debian12-Install'
+          ]
+        },
         // {
         //   type: 'category',
         //   label: 'Monitoring',
@@ -435,11 +435,9 @@ const sidebarsDocs = {
           link: {
             type: 'generated-index'
           },
-          items: [
-            'iam/domain-manager-setup-and-usage',
-          ]
+          items: ['iam/domain-manager-setup-and-usage']
         },
-        'iam/intra-SCS-federation-setup-description-for-osism-doc-operations',
+        'iam/intra-SCS-federation-setup-description-for-osism-doc-operations'
       ]
     },
     {
