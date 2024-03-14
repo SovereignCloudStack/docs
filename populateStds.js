@@ -19,7 +19,7 @@ var filenames = fs
     .readdirSync('standards/')
     .filter((fn) => fn.startsWith('scs-') && fn.endsWith('.md') && !fn.startsWith('scs-X'))
 
-keys = ['title', 'type', 'status', 'track', 'stabilized_at', 'obsoleted_at', 'replaces', 'authors', 'state']
+keys = ['title', 'type', 'status', 'track', 'stabilized_at', 'deprecated_at', 'replaces', 'authors', 'state']
 
 // use the ISO string, because so do the standard documents, and we can use string comparison with ISO dates
 today = new Date().toISOString().slice(0, 10)
@@ -40,7 +40,7 @@ filenames.forEach((filename) => {
     // now calculate the properties for the columns (plus stable0 as a helper)
     obj.state.draft = obj.stabilized_at === undefined
     obj.state.stable0 = !obj.state.draft && obj.stabilized_at <= today
-    obj.state.deprecated = obj.obsoleted_at !== undefined && obj.obsoleted_at < today
+    obj.state.deprecated = obj.deprecated_at !== undefined && obj.deprecated_at < today
     obj.state.stable = !obj.state.draft && !obj.state.stable0 && !obj.state.deprecated
     obj.state.effective = obj.state.stable0 && !obj.state.deprecated
     var track = obj.track
@@ -135,8 +135,8 @@ ${headerLegend}
                 slines.push(ref.description)
             }
         }
-        slines.push('| Version  | Type  | State   | stabilized | obsoleted |')
-        slines.push('| -------- | ----- | ------- | ---------- | --------- |')
+        slines.push('| Version  | Type  | State   | stabilized | deprecated |')
+        slines.push('| -------- | ----- | ------- | ---------- | ---------- |')
         var link = `[scs-${adrId}](/standards/${track.toLowerCase()}/scs-${adrId})`
         var versionList = ['draft', 'stable', 'effective', 'deprecated'].map(
             (column) => mkLinkList(versions.filter((v) => v.state[column])) || '-'
@@ -150,7 +150,7 @@ ${headerLegend}
                 id: obj.id,
             }
             standardItem.items.push(versionItem)
-            slines.push(`| [scs-${adrId}-${obj.version}](/standards/${obj.id})  | ${obj.type}  | ${obj.status}  | ${obj.stabilized_at || '-'}  | ${obj.obsoleted_at || '-'}  |`)
+            slines.push(`| [scs-${adrId}-${obj.version}](/standards/${obj.id})  | ${obj.type}  | ${obj.status}  | ${obj.stabilized_at || '-'}  | ${obj.deprecated_at || '-'}  |`)
         })
         Object.values(supplements).forEach((obj) => {
             // var link = `[scs-${adrId}](/standards/${track.toLowerCase()}/scs-${adrId})`
@@ -166,8 +166,8 @@ ${headerLegend}
             lines.push(`|   |   | Supplement: ${title}  | ${versionList} |`)
             tlines.push(`|   | Supplement: ${title}  | ${versionList} |`)
             slines.push(`\n## Supplement: ${title}\n`)
-            slines.push('| Version  | State   | stabilized | obsoleted |')
-            slines.push('| -------- | ------- | ---------- | --------- |')
+            slines.push('| Version  | State   | stabilized | deprecated |')
+            slines.push('| -------- | ------- | ---------- | ---------- |')
             versions.forEach((obj) => {
                 var versionItem = {
                     type: 'doc',
@@ -175,7 +175,7 @@ ${headerLegend}
                     id: obj.id,
                 }
                 standardItem.items.push(versionItem)
-                slines.push(`| [${obj.version}](/standards/${obj.id})  | ${obj.status}  | ${obj.stabilized_at || '-'}  | ${obj.obsoleted_at || '-'}  |`)
+                slines.push(`| [${obj.version}](/standards/${obj.id})  | ${obj.status}  | ${obj.stabilized_at || '-'}  | ${obj.deprecated_at || '-'}  |`)
             })
         })
         slines.push('')  // file should end with a single newline character
