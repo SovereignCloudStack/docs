@@ -26,7 +26,7 @@ const sidebarItems = scopes.map((scope) => {
     scope.versions.sort((a, b) => b.version.localeCompare(a.version));
     scope.versions.forEach((version) => {
         version.isStable = version.stabilized_at !== undefined && version.stabilized_at <= today
-        version.isObsolete = version.obsoleted_at !== undefined && version.obsoleted_at < today
+        version.isObsolete = version.deprecated_at !== undefined && version.deprecated_at < today
         version.isEffective = version.isStable && !version.isObsolete
         version.isPreview = version.stabilized_at === undefined || today < version.stabilized_at
         if (!version.isEffective && !version.isPreview) {
@@ -89,7 +89,7 @@ Note that the state _Stable_ is shown here if _stabilized at_ is in the future, 
     lines.push('| :-- | ' + columns.map(() => ':--').join(' | ') + ' |')
     lines.push('| State              | ' + columns.map((c) => versionsShown[c].state).join('  | ') + '  |')
     lines.push('| Stabilized at      | ' + columns.map((c) => versionsShown[c].stabilized_at || '').join('  | ') + '  |')
-    lines.push('| Obsoleted at       | ' + columns.map((c) => versionsShown[c].obsoleted_at || '').join('  | ') + '  |')
+    lines.push('| Deprecated at      | ' + columns.map((c) => versionsShown[c].deprecated_at || '').join('  | ') + '  |')
     // md doesn't allow intermediate header rows
     // lines.push('| :-- | ' + columns.map(() => ':--').join(' | ') + ' |')
     lines.push('| **Standards**      | ' + columns.map((c) => ' '.repeat(c.length)).join('  | ') + '  |')
