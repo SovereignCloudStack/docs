@@ -17,7 +17,7 @@ adhering to specified requirement levels as indicated by RFC2119 keywords such a
 A systematic approach to test creation involves several steps:
 ## 1. Understanding SCS Standards and RFC2119 Keywords
 
-* SCS standards use RFC2119 keywords like "MUST," "MUST NOT," "SHOULD," "SHOULD NOT" and 
+SCS standards use RFC2119 keywords like "MUST," "MUST NOT," "SHOULD," "SHOULD NOT" and 
 "MAY" to define requirements for SCS-compatible IaaS and KaaS. These
 standards are crucial for ensuring interoperability and sovereignty in cloud services,
 as they are built on open-source components such as Kubernetes.
@@ -44,14 +44,16 @@ information or best practices. Their impact on compliance is not as direct as "M
 
 ## 4. Compliance and Test Passing Criteria
 
-* Emphasize that for a test to pass, it must meet all the "MUST" requirements without 
-errors. The presence of warnings or informational items from "SHOULD" and "MAY" 
-categories does not directly impact the pass/fail status but is important for overall 
-quality and compatibility with future standards.
+A test is considered to pass if and only if it doesn't produce any messages on the
+ERROR nor the CRITICAL channel. The presence of warnings or informational items from
+"SHOULD" and "MAY" categories do not directly impact the pass/fail status but is
+important for overall quality and compatibility with future standards.
 
 ## 5. Conclusion and Continuous Improvement
 
-* Summarize the importance of adhering to these guidelines for maintaining compliance 
+Summarize the importance of adhering to these guidelines for maintaining compliance 
 and adaptability within the SCS framework. Highlight the need for ongoing updates and 
 revisions to the document to align with evolving standards and best practices in cloud 
 infrastructure and services.
+
+In summary, in the context of the SCS framework it's 
