@@ -1,29 +1,40 @@
 # Domain Manager setup and usage
 
-> **NOTE**
-> The following documentation refers to a SCS standard that is still in draft state.
-> It is not meant for productive use yet but CSPs are encouraged to test-drive and provide feedback!
+:::info
+
+The following documentation refers to a SCS standard that is still in draft state.
+It is not meant for productive use yet but CSPs are encouraged to test-drive and provide feedback!
+
+:::
 
 ## Preface
 
-SCS defines the **Domain Manager** standard, introducing a special role to the OpenStack Keystone identity manager.
-This role offers a properly domain-scoped permission set to manage users, groups, projects and role assignments within a domain.
+SCS defines the **Domain Manager** standard, introducing a special persona to the OpenStack Keystone identity manager.
+This persona offers a properly domain-scoped permission set to manage users, groups, projects and role assignments within a domain.
 Its intended use case is to offer extensive identity management self-service capabilities to tenants mapped to a domain.
 
 This guide will explain setup, configuration and usage of the SCS Domain Manager standard.
 
 ### Warning regarding the exposure of domain names
 
-Due to architectural limitations currently existing in OpenStack Keystone, assigning the Domain Manager role to users will **enable them to see the IDs and names of all existing domains**.
+Due to architectural limitations currently existing in OpenStack Keystone, assigning the `manager` role to users while the configuration of the SCS Domain Manager standard has been applied will **enable them to see the IDs and names of all existing domains**.
 This includes domains other than their own, meaning that other tenant's identities might be exposed depending on the relation between them and the name of their domain.
 CSPs aiming to appoint Domain Manager users must be aware of this limitation and should exclusively **use pseudonymized domain names across the whole infrastructure**.
 If CSPs strictly follow the [SCS naming conventions](https://github.com/SovereignCloudStack/standards/blob/main/Standards/scs-0301-v1-naming-conventions.md) for domains this is already addressed.
-If this is not feasible for the CSP, they may opt to refrain from making use of the Domain Manager functionality at all, i.e. never assign this role to tenant users.
+If this is not feasible for the CSP, they may opt to refrain from making use of the Domain Manager functionality at all, i.e. never assign the `manager` role to tenant users.
+
+:::info
+
+This architectural limitation will be fixed in upcoming OpenStack and SCS releases.
+
+See <https://bugs.launchpad.net/keystone/+bug/2041611>
+
+:::
 
 ## Infrastructure configuration
 
-An initial infrastructure configuration of the Domain Manager role must be completed before it can be used.
-This includes adjusting the Keystone API policy configuration and registration of the role.
+An initial infrastructure configuration of the Domain Manager persona must be completed before it can be used.
+This includes adjusting the Keystone API policy configuration and the registration of the `manager` role.
 
 The following sections describe the configuration to be implemented on the infrastructure-level.
 This requires infrastructure access and OpenStack admin rights.
@@ -45,11 +56,12 @@ Depending on the deployment method used, the adjustments may also need to be per
 
 ### \[Initial\] Keystone role creation
 
-The role `domain-manager` has to be created in Keystone once.
+The role `manager` has to exist in Keystone.
+If the role does not exist, it needs to be created in Keystone once.
 This can be done with the OpenStackClient using the following command:
 
 ```bash
-openstack role create domain-manager
+openstack role create manager
 ```
 
 ### \[Runtime\] Domain Manager managed roles adjustment
@@ -64,7 +76,7 @@ This means that changes can be implemented at runtime[^1].
 The following example entry adjusts the rule to allow both `member` and `reader` roles to be managed by Domain Managers:
 
 ```yaml
-"is_domain_managed_role": "'member':%(target.role.name)s or 'reader':%(target.role.name)s"
+'is_domain_managed_role': "'member':%(target.role.name)s or 'reader':%(target.role.name)s"
 ```
 
 Refer to the SCS Domain Manager standard for more information.
@@ -79,9 +91,12 @@ The following sections describe actions available to CSP operators that possess 
 
 ### Creating domains
 
-> **NOTE**
-> It is highly recommended to use pseudonymized domain names when creating domains, since Domain Managers will be able to see the names of all existing domains.
-> See [Warning regarding the exposure of domain names](#warning-regarding-the-exposure-of-domain-names).
+:::caution
+
+It is highly recommended to use pseudonymized domain names when creating domains, since Domain Managers will currently be able to see the names of all existing domains.
+See [Warning regarding the exposure of domain names](#warning-regarding-the-exposure-of-domain-names) for more details.
+
+:::
 
 For each tenant for which a self-service area (i.e. a domain) is to be established, a domain should be created before creating any users, projects or groups for this tenant:
 
@@ -94,43 +109,51 @@ See the [Domain Manager operation](#domain-manager-operation) section further do
 
 ### Creating a Domain Manager user
 
-> **NOTE**
-> Creating the first Domain Manager users for a domain is an action reserved for CSP administrators.
-> Depending on whether the `domain-manager` role has been approved as a domain-managed role in the policy configuration by the CSP, Domain Manager users may be able to appoint further Domain Managers within the domain on their own later on.
+:::info
+
+Creating the first Domain Manager users for a domain is an action reserved for CSP administrators.
+Depending on whether the `manager` role has been approved as a domain-managed role in the policy configuration by the CSP, Domain Manager users may be able to appoint further Domain Managers within the domain on their own later on.
+
+:::
 
 First, create the user for the Domain Manager.
 You may create the Domain Manager user either directly in the target tenant's domain or in a different domain.
-The domain a Domain Manager will effectively be able to manage solely depends on where its role assignment of the `domain-manager` role is scoped, not the domain the Domain Manager user was originally created in.
+The domain a Domain Manager will effectively be able to manage solely depends on where its role assignment of the `manager` role is scoped, not the domain the Domain Manager user was originally created in.
 
 ```bash
 openstack user create --domain $MANAGER_DOMAIN $USER_NAME
 ```
 
-(`$MANAGER_DOMAIN` can be the same as the tenant's `$DOMAIN` or an entirely different one)
+:::note
 
-Next, assign the `domain-manager` role in a domain-scoped fashion to the tenant domain:
+`$MANAGER_DOMAIN` can be the same as the tenant domain `$DOMAIN` or an entirely different one, depending on the desired origin domain of the user.
+In the following sections `$DOMAIN` will denote the tenant domain that the user is intended to manage as the Domain Manager persona.
+
+:::
+
+Next, assign the `manager` role in a domain-scoped fashion to the tenant domain:
 
 ```bash
-openstack role add --user $USER_NAME --domain $DOMAIN domain-manager
+openstack role add --user $USER_NAME --domain $DOMAIN manager
 ```
 
 ### Assigning the Domain Manager role to an existing user
 
 ```bash
-openstack role add --user $USER_NAME --domain $DOMAIN domain-manager
+openstack role add --user $USER_NAME --domain $DOMAIN manager
 ```
 
 ### Revoking the Domain Manager role
 
-In case the `domain-manager` role is to be revoked from an existing Domain Manager user, the following command can be used:
+In case the `manager` role is to be revoked from an existing Domain Manager user, the following command can be used:
 
 ```bash
-openstack role remove --user $USER_NAME --domain $DOMAIN domain-manager
+openstack role remove --user $USER_NAME --domain $DOMAIN manager
 ```
 
 ## Domain Manager operation
 
-The following sections describe actions available to Domain Manager users that possess the `domain-manager` role.
+The following sections describe actions available to Domain Managers that possess the `manager` role.
 
 ### Managing users within a domain
 
@@ -140,7 +163,11 @@ Creating a user within a domain:
 openstack user create --domain $DOMAIN $USER_NAME
 ```
 
-Note: the explicit domain-scoping is only required for the creation command, any other user-centric commands like "`user set`" or "`user delete`" do not require the "`--domain`" flag and are automatically scoped to the domain for Domain Managers.
+:::note
+
+The explicit domain-scoping is only required for the creation command, any other user-centric commands like "`user set`" or "`user delete`" do not require the "`--domain`" flag and are automatically scoped to the domain for Domain Managers.
+
+:::
 
 ### Managing projects within a domain
 
@@ -150,7 +177,11 @@ Creating a project within a domain:
 openstack project create --domain $DOMAIN $PROJECT_NAME
 ```
 
-Note: the explicit domain-scoping is only required for the creation command, any other project-centric commands like "`project set`" or "`project delete`" do not require the "`--domain`" flag and are automatically scoped to the domain for Domain Managers.
+:::note
+
+The explicit domain-scoping is only required for the creation command, any other project-centric commands like "`project set`" or "`project delete`" do not require the "`--domain`" flag and are automatically scoped to the domain for Domain Managers.
+
+:::
 
 #### Deleting projects
 
@@ -165,7 +196,11 @@ Creating a group within a domain:
 openstack group create --domain $DOMAIN $GROUP_NAME
 ```
 
-Note: the explicit domain-scoping is only required for the creation command, any other group-centric commands like "`group set`" or "`group delete`" do not require the "`--domain`" flag and are automatically scoped to the domain for Domain Managers.
+:::note
+
+The explicit domain-scoping is only required for the creation command, any other group-centric commands like "`group set`" or "`group delete`" do not require the "`--domain`" flag and are automatically scoped to the domain for Domain Managers.
+
+:::
 
 #### Managing group membership
 
@@ -184,7 +219,7 @@ openstack group remove user $GROUP $USER
 ### Managing role assignments within a domain
 
 Role assignments managed by a Domain Manager work as usual with the exception that the roles that can be assigned and revoked are limited to a defined set which is explicitly approved for Domain Managers by the CSP.
-This may or may not include the `domain-manager` role itself, meaning that Domain Managers may either be able to appoint other Domain Managers by themselves or have to ask the CSP to do so.
+This may or may not include the `manager` role itself, meaning that Domain Managers may either be able to appoint other Domain Managers by themselves or have to ask the CSP to do so.
 
 #### Managing user role assignments
 
