@@ -15,34 +15,34 @@ It is advisable to always review resources which use a security group before mak
 
 :::
 
-## Gather Requirements of Your Setup
+## Identify the requirements of your setup
 
 Every virtual machine that is created may need different firewall rules.
 These requirements can also change over time.
-Adding or removing Security Groups will allow users to adjust the firewall rules specifically to their virtual machines.
+Adding or removing security groups will allow users to adapt the firewall rules specifically to their virtual machines.
 
 To harden the firewall settings for your virtual machine you may follow these steps:
 
-1. Before creating a virtual machine their purpose is already known. Identify all incoming and outgoing traffic that is needed.
-2. Look through already existing Security Groups and their rules. If a Security Group allows more traffic than needed it SHOULD NOT be used. If it contains only a few of the required rules it can be used in combination with other Security Groups, that have rules that fulfill the rest of the required traffic rules from point 1.
-3. If you were not successful in finding fitting security Groups or you need an additional special rule, you should create one or more new Security Groups in which you can set the reuquired rules.
-4. After having one or more Security Groups that fulfill your requirements, you can create the VM with those Security Groups already specified.
+1. Before creating a virtual machine its purpose is usually already known. Use this information to identify all incoming and outgoing traffic rules that will be needed based on the communication patterns of the services it is meant to deploy. This includes communication protocols, port numbers, communication directions and optionally target/source address ranges.
+2. Look through already existing security groups and their rules. If a security group allows more traffic than needed it SHOULD NOT be used. If a security group contains only a subset of the required rules it MAY be used in combination with other security groups that contain rules which fulfill the remaining required traffic rules from point 1.
+3. If you were not successful in finding an appropriate combination of existing security groups or you need additional specific rules to cover all requirements, you MAY create one or more new Security Groups in which you can add the required rules.
+4. After ensuring the existence of one or more security groups that fulfill your requirements, you can create the VM with those security groups already specified in the creation command.
 
-### Special Cases
+### Further security considerations
 
-When talking about network security it does not only rely on firewall rules but also on other configurations or time-crucial allowances.
+When implementing network security requirements, firewall rules alone are not always sufficient and might need to be augmented with additional configuration or time-based constraints. Notable examples are:
 
 **SSH**
-SSH is needed on many virtual machines to operate its workload.
-In the Security Group the port 22 can be opened to allow incoming traffic.
-But that only should be done with enabling SSH public key authentication (the recommended way) or having a strong username and password policy already applied to the used workload of the VM.
-Otherwise default usernames and passwords are used and through the opened port of the Security Group this enables attackers to compromise the virtual machine.
+SSH is needed on many virtual machines to operate their guest operating system.
+In a security group the port 22 can be opened for the TCP protocol to allow incoming SSH connections.
+But that only should be done while also restricting the SSH configuration to public key authentication only (the recommended way) or having a strong username and password policy already applied to the operating system of the VM.
+Otherwise default usernames and passwords which are often preconfigured in system images may be exploited through the exposed SSH port which enables attackers to compromise the virtual machine.
 
 **ICMP**
-It might be usefull to be able to ping a virtual machine or use other ICMP requests.
-But for some workloads this is not or only temporarily needed.
-The benefit of Security Groups among other things are to be easily added to and removed from existing virtual machines.
-So a Security Group allowing ICMP could be added temporarily to a virtual machine for debugging purposes and remoaved from it afterwards.
+It might be useful to be able to ping a virtual machine or use other ICMP requests.
+But for some virtual machine configurations this is either not necessary at all or only temporarily needed.
+One benefit of security groups among other things is the abiliity to easily added to and removed from existing virtual machines.
+So a dedicated security group allowing ICMP could be added temporarily to a virtual machine for debugging purposes and removed from it afterwards.
 
 ## How to create security groups
 
