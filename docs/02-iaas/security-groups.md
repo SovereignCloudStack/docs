@@ -3,7 +3,7 @@
 Security groups in OpenStack are part of the network security mechanisms provided for the users.
 They resemble sets of simple firewall rules allowing specific network traffic at a Port of a VM that connects it to a network.
 The rules allow specific network port numbers and protocols while also differentiating between ingress and egress directions.
-Usually security groups are assigned to the Port(s) when a VM is created, but assignments can also be changed at runtime later on.
+Usually security groups are assigned to the Port(s) when a virtual machine is created, but assignments can also be changed at runtime later on.
 Multiple security groups can be assigned to a VM or Port simultaneously and in such case they will be combined as the union of all their rules.
 
 :::caution
@@ -35,20 +35,20 @@ When implementing network security requirements, firewall rules alone are not al
 **SSH**
 SSH is needed on many virtual machines to operate their guest operating system.
 In a security group the port 22 can be opened for the TCP protocol to allow incoming SSH connections.
-But that only should be done while also restricting the SSH configuration to public key authentication only (the recommended way) or having a strong username and password policy already applied to the operating system of the VM.
+But that only should be done while also restricting the SSH configuration to public key authentication only (the recommended way) or having a strong username and password policy already applied to the operating system of the virtual machine.
 Otherwise default usernames and passwords which are often preconfigured in system images may be exploited through the exposed SSH port which enables attackers to compromise the virtual machine.
 
 **ICMP**
 It might be useful to be able to ping a virtual machine or use other ICMP requests.
 But for some virtual machine configurations this is either not necessary at all or only temporarily needed.
-One benefit of security groups among other things is the abiliity to easily added to and removed from existing virtual machines.
+One benefit of security groups among other things is the abiliity to be easily added to and removed from existing virtual machines.
 So a dedicated security group allowing ICMP could be added temporarily to a virtual machine for debugging purposes and removed from it afterwards.
 
 ## How to create security groups
 
 Security groups are managed within a project.
 So every project will have a different set of security groups.
-They can be added dynamically to each VM, during their creation or afterwards.
+They can be added dynamically to each virtual machine, during their creation or afterwards.
 Additionally, they may also be removed from VMs at any point.
 
 Every project has its own default security group, which rules can be edited.
