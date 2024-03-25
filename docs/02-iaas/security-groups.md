@@ -41,7 +41,7 @@ Otherwise default usernames and passwords which are often preconfigured in syste
 **ICMP**
 It might be useful to be able to ping a virtual machine or use other ICMP requests.
 But for some virtual machine configurations this is either not necessary at all or only temporarily needed.
-One benefit of security groups among other things is the abiliity to be easily added to and removed from existing virtual machines.
+One benefit of security groups among other things is the ability to be easily added to and removed from existing virtual machines.
 So a dedicated security group allowing ICMP could be added temporarily to a virtual machine for debugging purposes and removed from it afterwards.
 
 ## How to create security groups
