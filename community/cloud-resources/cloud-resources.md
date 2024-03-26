@@ -47,7 +47,7 @@ Service users will have their default_project_id set to a specific project and w
 ### Projects
 
 | Unique Identifier                | Project Name                | Community Contact        | Description                           | Needed until |
-| :------------------------------: | --------------------------- | -------------------------| ------------------------------------- | :----------: |
+| :------------------------------: | --------------------------- | ------------------------ | ------------------------------------- | :----------: |
 | 2237c767cf5f456da19359ed31c1c16b | p500924-scs-community       | fkr                      | SCS Community Project                 | ∞            |
 | b43cfafbcf1f4eb08865b2886c29e09b | p500924-cluster-api-session | garloff                  | cluster-api hands on session          | ∞            |
 | 9b7a73e516be4cd1acbd63d543985c52 | p500924-gonicus-dev         | o-otte                   | GONICUS GmbH                          | ∞            |
@@ -79,6 +79,7 @@ Service users will have their default_project_id set to a specific project and w
 | 03783b4952344c849af37d26818d19f0 | p500924-kaas-playground7    | jschoone                 | Playground7 for Hackathon             | 30.04.2024   |
 | 5c6d4d7183834eafbc20108ad647a9c0 | p500924-kaas-playground8    | jschoone                 | Playground8 for Hackathon             | 30.04.2024   |
 | 7e18881932f749baa7d547ebd407b8d8 | p500924-kaas-playground9    | jschoone                 | Playground9 for Hackathon             | 30.04.2024   |
+| d9dc2f33e76240219db484526e9f601d | p500924-akafazov            | akafazov                 | akafazov Testbed                      | 30.04.2024   |
 |                                  |                             |                          |                                       |              |
 
 ## Wavecon
