@@ -11,22 +11,26 @@ open-source components and aims to provide interoperable and sovereign cloud ser
 In creating tests for SCS, it's essential to consider the various aspects of cloud
 technology, including infrastructure, services, and the integration of these components. 
 The tests should be designed to ensure that the SCS standards are met, which includes
-adhering to specified requirement levels as indicated by RFC2119 keywords such as **MUST**,
-**SHOULD**, and **MAY**.
+adhering to specified requirement levels as indicated by RFC2119 keywords such as **MUST**, **SHOULD**, and **MAY**.
 
-A systematic approach to test creation involves several steps:
 ## 1. Understanding SCS Standards and RFC2119 Keywords
 
-SCS standards use RFC2119 keywords like **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT** and 
-**MAY** to define requirements for SCS-compatible IaaS and KaaS. These
-standards are crucial for ensuring interoperability and sovereignty in cloud services,
-as they are built on open-source components such as Kubernetes.
+SCS standards use RFC2119 keywords like:
+* **MUST** (same as **REQUIRED**, **SHALL**),
+* **MUST NOT** (same as **SHALL NOT**),
+* **SHOULD** (same as **RECOMMENDED**),
+* **SHOULD NOT** (same as **NOT RECOMMENDED**),
+* **MAY** (same as **OPTIONAL**)
+
+to define requirements for SCS-compatible IaaS and KaaS. These standards are crucial for ensuring interoperability and sovereignty in cloud services, as they are built on open-source components such as Kubernetes.
+
+To ensure readability and comprehensibility, only the main keywords **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT** and **MAY** are referred to below.
 
 ## 2. Interpreting RFC2119 Keywords in the Context of SCS
 
 * **MUST and MUST NOT**: These are binary and straightforward to test. Compliance or
 non-compliance directly affects the standard meeting. For visualization, fulfilled
-requirements could be marked in green, unfulfilled ones in red. 
+requirements could be marked in green, unfulfilled ones in red.
 * **SHOULD and SHOULD NOT**: These represent recommendations. While fulfilling these do
 not directly affect standard compliance, it is advised for future-proofing against
 potential standard evolutions. Non-compliance could be visualized in yellow, possibly
@@ -92,7 +96,7 @@ creation of SCS-compliant standard tests.
 def process_requirements(var1, var2):
     try:
         # debug log for input variables
-        logger.debug(f"Received input var1: {var1}, var2: {var2}")  
+        logger.debug(f"Received input var1: {var1}, var2: {var2}")
         
         # example of an error case (equivalent to MUST and MUST NOT)
         if var1 < 0:
