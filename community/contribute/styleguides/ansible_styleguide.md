@@ -1,17 +1,17 @@
 # Ansible Style Guide
 
 We use nearly all default rules of ansible lint. A listing of all these rules can be found in the Ansible Lint documentation:
-<https://ansible.readthedocs.io/projects/lint/rules/>.
+[https://ansible.readthedocs.io/projects/lint/rules/](https://ansible.readthedocs.io/projects/lint/rules/).
 Please always use the ansible linting to check if the code complies with the default linting rules.
 However, since in most cases we always use the latest version of packages and Ansible lint does not provide this, we decided to
 disable the package_latest rule.
 
 ## Task naming
 
-* Tasks must always have names. The only exception allowed is for forked playbooks.
-* A name never starts with a small letter
-* Names are written in present tense
-* No punctuation is used in names
+- Tasks must always have names. The only exception allowed is for forked playbooks.
+- A name never starts with a small letter
+- Names are written in present tense
+- No punctuation is used in names
 
 ## Key Order
 
@@ -24,7 +24,7 @@ The become directive is only set when needed and is always set explicitly for ea
 Blocks, roles or playbooks are never executed in a privileged mode.
 
 We always insert the become directive between the name of a task and the task itself. This also applies to related directives
-like *become_user* or *become_flags*. This is for better visibility if a task is privileged or not.
+like _become_user_ or _become_flags_. This is for better visibility if a task is privileged or not.
 
 ```yaml
 - name: Copy hddtemp configuration file
@@ -64,14 +64,14 @@ Collections are always defined as in the following example.
 ```yaml
 - name: Configure netbox manufacturers
   netbox.netbox.netbox_manufacturer:
-    netbox_url: "{{ netbox_url }}"
-    netbox_token: "{{ netbox_token }}"
+    netbox_url: '{{ netbox_url }}'
+    netbox_token: '{{ netbox_token }}'
     data:
-      name: "{{ item.value.name }}"
-      slug: "{{ item.value.slug }}"
+      name: '{{ item.value.name }}'
+      slug: '{{ item.value.slug }}'
       description: "{{ item.value.description | default('') }}"
     state: present
-  with_dict: "{{ netbox_data_manufacturers }}"
+  with_dict: '{{ netbox_data_manufacturers }}'
 ```
 
 Please don´t declare it in this way!:
@@ -102,8 +102,7 @@ roles:
     version: master
     type: git
     src: git+https://github.com/geerlingguy/ansible-role-certbot.git
-...
-
+---
 collections:
   - name: ansible.netcommon
     source: https://galaxy.ansible.com
@@ -122,8 +121,8 @@ First you have to declare the role or collection in the requirements.yml like sh
 Than you can use it in playbooks like this
 
 ```yaml
-  roles:
-    - role: osism.services.auditd
+roles:
+  - role: osism.services.auditd
 ```
 
 ## Parameters that offer lists
@@ -137,10 +136,10 @@ In the configuration repository, docker_hosts_extra is then used to add addition
 **docker_hosts** itself is never modified from the outside.
 
 ```yaml
-   docker_hosts_defaults:
-     - "unix:///var/run/docker.sock"
-   docker_hosts_extra: []
-   docker_hosts: "{{ docker_hosts_defaults + docker_hosts_extra }}"
+docker_hosts_defaults:
+  - 'unix:///var/run/docker.sock'
+docker_hosts_extra: []
+docker_hosts: '{{ docker_hosts_defaults + docker_hosts_extra }}'
 ```
 
 ## Usage of changed_when
@@ -153,4 +152,4 @@ implement.
 In principle, it is only allowed to disable rules if there is really no other possibility.
 Please do not disable rules in general but only in individual cases via Noqa. Please use in this case the full rulename and not
 the numbers, because them are depricated. If it makes sense to ignore a rule, please open up an issue in the
-<https://github.com/osism/issues> repository with a label discussion.
+[https://github.com/osism/issues](https://github.com/osism/issues) repository with a label discussion.

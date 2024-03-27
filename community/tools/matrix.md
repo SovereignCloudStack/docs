@@ -4,4 +4,4 @@ We have created an [open community space on the Matrix federation](https://matri
 
 ## Client and Registration
 
-To connect to the Matrix federation, you will need an account on a federated homeserver and a client. The easiest way to join us is register on the popular `matrix.org` homeserver via the Element web client: <https://app.element.io/#/register>. A list of curated Matrix clients is collected on the official Matrix website: <https://matrix.org/clients/>.
+To connect to the Matrix federation, you will need an account on a federated homeserver and a client. The easiest way to join us is register on the popular `matrix.org` homeserver via the Element web client: [https://app.element.io/#/register](https://app.element.io/#/register]). A list of curated Matrix clients is collected on the official Matrix website: [https://matrix.org/clients/](https://matrix.org/clients/)
