@@ -208,9 +208,9 @@ SCS follows this best practice.
 
 ## Further reading
 
-- <https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licences>
-- <https://en.wikipedia.org/wiki/Software_patents_and_free_software>
-- <https://joinup.ec.europa.eu/collection/eupl/matrix-eupl-compatible-open-source-licences>
+- [https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licences](https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licences)
+- [https://en.wikipedia.org/wiki/Software_patents_and_free_software](https://en.wikipedia.org/wiki/Software_patents_and_free_software)
+- [https://joinup.ec.europa.eu/collection/eupl/matrix-eupl-compatible-open-source-licences](https://joinup.ec.europa.eu/collection/eupl/matrix-eupl-compatible-open-source-licences)
 - <https://lwn.net/Articles/592503/>
 - <https://sfconservancy.org/blog/2020/jan/06/copyleft-equality/>
 - <https://developercertificate.org>

@@ -44,7 +44,7 @@ line to commit messages.
 ```bash
 My fancy commit message
 
-Signed-off-by: Christian Berendt <berendt@betacloud-solutions.de>
+Signed-off-by: Christian Berendt <$berendt@betacloud-solutions.de>
 ```
 
 Git has a `-s` command line option to append this automatically to your commit message:
@@ -61,6 +61,6 @@ Considerations behind the choice of AGPLv3, CC-BY-SA and the usage of the DCO ca
 
 ## Further reading
 
-- <https://developercertificate.org/>
-- <https://julien.ponge.org/blog/developer-certificate-of-origin-versus-contributor-license-agreements/>
-- <https://lwn.net/Articles/592503/>
+- [https://developercertificate.org/](https://developercertificate.org/)
+- [https://julien.ponge.org/blog/developer-certificate-of-origin-versus-contributor-license-agreements/](https://julien.ponge.org/blog/developer-certificate-of-origin-versus-contributor-license-agreements/)
+- [https://lwn.net/Articles/592503/](https://lwn.net/Articles/592503/)
