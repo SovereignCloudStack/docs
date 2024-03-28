@@ -4,14 +4,17 @@ type:
 status: Draft
 track: Global
 ---
-The process of test creation in Sovereign Cloud Stack (SCS) involves developing and
-validating tests that align with the specific requirements and standards set by SCS.
-This entails a comprehensive understanding of the SCS framework, which is built on
-open-source components and aims to provide interoperable and sovereign cloud services.
-In creating tests for SCS, it's essential to consider the various aspects of cloud
-technology, including infrastructure, services, and the integration of these components. 
-The tests should be designed to ensure that the SCS standards are met, which includes
-adhering to specified requirement levels as indicated by RFC2119 keywords such as **MUST**, **SHOULD**, and **MAY**.
+
+## Introduction
+
+The process of test creation and standards definition in Sovereign Cloud Stack (SCS)
+involves developing and validating tests that align with the specific requirements and
+standards set by SCS. This entails a comprehensive understanding of the SCS framework,
+which is built on open-source components and aims to provide interoperable and sovereign
+cloud services. In creating tests for SCS, it's essential to consider the various aspects
+of cloud technology, including infrastructure, services, and the integration of these
+components. The tests should be designed to ensure that the SCS standards are met, which
+includes adhering to specified requirement levels as indicated by [RFC2119 keywords](https://datatracker.ietf.org/doc/html/rfc2119).
 
 ## 1. Understanding SCS Standards and RFC2119 Keywords
 
@@ -22,7 +25,7 @@ SCS standards use RFC2119 keywords like:
 * **SHOULD NOT** (same as **NOT RECOMMENDED**),
 * **MAY** (same as **OPTIONAL**)
 
-to define requirements for SCS-compatible IaaS and KaaS. These standards are crucial for ensuring interoperability and sovereignty in cloud services, as they are built on open-source components such as Kubernetes.
+to define requirements for SCS-compatible IaaS and KaaS resources. These standards are crucial for ensuring interoperability and sovereignty in cloud services, as they are built on open-source components such as Kubernetes.
 
 To ensure readability and comprehensibility, only the main keywords **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT** and **MAY** are referred to below.
 
@@ -52,6 +55,12 @@ A test is considered to pass if and only if it doesn't produce any messages on t
 ERROR nor the CRITICAL channel. The presence of warnings or informational items from
 **SHOULD** and **MAY** categories do not directly impact the pass/fail status but is
 important for overall quality and compatibility with future standards.
+
+A test can have one of three results:
+
+* fail: if it has at least one message on ERROR
+* DNF (did not finish): if it has no message on ERROR, but at least one on CRITICAL
+* pass: otherwise
 
 ## 5. Example: Standards Document using RFC2119 Keywords
 
@@ -93,6 +102,10 @@ is intended to illustrate the use of RFC2119 keywords in connection with the
 creation of SCS-compliant standard tests.
 
 ```python
+import logging
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
 def process_requirements(var1, var2):
     try:
         # debug log for input variables
@@ -105,7 +118,7 @@ def process_requirements(var1, var2):
             logger.error("var1 must not exceed 100")
         
         # add debug log to confirm evaluation of var1
-        logger.debug(f"var1 evaluated: {var1 < 0 or var1 > 100}")
+        logger.debug(f"var1 evaluated: {var1 > 0 and var1 < 100}")
 
         # example of a warning case (equivalent to SHOULD and SHOULD NOT)
         if var2 < 10:
@@ -114,7 +127,7 @@ def process_requirements(var1, var2):
             logger.warning("var2 should not exceed 50 for optimal performance")
         
         # add debug log to confirm evaluation of var2
-        logger.debug(f"var2 evaluated: {var2 < 10 or var2 > 50}")
+        logger.debug(f"var2 evaluated: {var2 > 10 and var2 < 50}")
 
         # example of an informative case (equivalent to MAY)
         if var1 + var2 < 100:
