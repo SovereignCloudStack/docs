@@ -19,6 +19,7 @@ includes adhering to specified requirement levels as indicated by [RFC2119 keywo
 ## 1. Understanding SCS Standards and RFC2119 Keywords
 
 SCS standards use RFC2119 keywords like:
+
 * **MUST** (same as **REQUIRED**, **SHALL**),
 * **MUST NOT** (same as **SHALL NOT**),
 * **SHOULD** (same as **RECOMMENDED**),
@@ -69,10 +70,13 @@ is intended to illustrate the use of RFC2119 keywords in connection with the cre
 SCS-compliant standard documents.
 
 ### Web Server Installation Standard
+
 #### Purpose
+
 This document provides a concise set of requirements for installing a secure web server.
 
 #### Requirements
+
 * Web Server Software: Apache HTTP Server 2.4.x or Nginx 1.18.x **MUST** be installed. No
 other web server software versions or types are permitted.
 
@@ -92,16 +96,18 @@ such as 80 (HTTP) and 443 (HTTPS). All unnecessary ports **SHOULD NOT** be open.
 recommended that backup integrity checks are conducted to ensure recoverability.
 
 #### Compliance
+
 Failure to comply with these requirements results in the web server being
 considered non-compliant with the organization's security policies.
 
-## 6. Example: Test script using RFC2119 Keywords 
+## 6. Example: Test script using RFC2119 Keywords
 
 The following example of a fictitious code for a test of "process_requirements"
 is intended to illustrate the use of RFC2119 keywords in connection with the
 creation of SCS-compliant standard tests.
 
 ```python
+
 import logging
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -145,6 +151,6 @@ def process_requirements(var1, var2):
         # debug log before raising a critical error
         logger.debug("Encountered a critical error about to log", exc_info=True)
         logger.critical(f"Process failed: {e}", exc_info=True)
+
 ```
-Note: The DEBUG channel is used for additional information for developers to better understand a
-process and does not apply to RFC2119 keywords.
+Note: The DEBUG channel is used for additional information for developers to better understand a process and does not apply to RFC2119 keywords.
