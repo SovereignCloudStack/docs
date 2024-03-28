@@ -203,6 +203,8 @@ openstack secret get --decrypt --file $TARGET_FILE_PATH $SECRET_URI
 
 ### Retrieving volume encryption keys from Barbican
 
+<!-- TODO: rephrase this to use the image's metadata instead? (in case the image does also carry the key id reference - need to validate that) -->
+
 In case of encrypted volumes (i.e. using a volume type with encryption), a corresponding encryption key is stored in Barbican.
 In order to backup this key, the corresponding secret must first be identified.
 This is possible starting with the Volume API microversion 3.64:
