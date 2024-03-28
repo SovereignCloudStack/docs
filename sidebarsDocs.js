@@ -358,7 +358,8 @@ const sidebarsDocs = {
             type: 'generated-index'
           },
           items: [
-            'operating-scs/guides/openstack-health-monitor/Debian12-Install'
+            'operating-scs/guides/openstack-health-monitor/Debian12-Install',
+            'operating-scs/backups/user_data_backups'
           ]
         },
         // {
