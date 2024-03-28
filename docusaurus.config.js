@@ -49,8 +49,8 @@ const config = {
       {
         redirects: [
           // {
-          //   to: '/docs/iaas/deployment-examples/testbed',
-          //   from: '/docs/category/osism-testbed/'
+          //   to: '/community/collaboration',
+          //   from: '/community/calendar'
           // }
         ],
         createRedirects(existingPath) {
@@ -74,10 +74,10 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'dev-docs',
-        path: 'dev-docs',
-        routeBasePath: 'dev-docs',
-        sidebarPath: require.resolve('./sidebarsDevDocs.js')
+        id: 'contributor-docs',
+        path: 'contributor-docs',
+        routeBasePath: 'contributor-docs',
+        sidebarPath: require.resolve('./sidebarsContributorDocs.js')
         // ... other options
       }
     ],
@@ -90,7 +90,8 @@ const config = {
         sidebarPath: require.resolve('./sidebarsStandards.js')
       }
     ],
-    './src/plugins/docusaurus-plugin-matomo-analytics/index.js'
+    './src/plugins/docusaurus-plugin-matomo-analytics/index.js',
+    './src/plugins/docusaurus-plugin-global-data/index.js'
   ],
 
   themeConfig:
@@ -114,7 +115,11 @@ const config = {
           //   { to: '/blog', label: 'Blog', position: 'left' },
           { to: '/standards', label: 'Standards', position: 'left' },
           { to: '/docs', label: 'For Operators', position: 'left' },
-          { to: '/dev-docs', label: 'For Developers', position: 'left' },
+          {
+            to: '/contributor-docs',
+            label: 'For Contributors',
+            position: 'left'
+          },
           { to: '/community', label: 'Community', position: 'left' },
           { to: '/docs/faq', label: 'FAQ', position: 'left' },
           {
@@ -189,8 +194,13 @@ const config = {
       // @ts-ignore
       ({
         hashed: true,
-        docsDir: ['docs', 'community', 'standards', 'dev-docs'],
-        docsRouteBasePath: ['docs', 'community', 'standards', 'dev-docs']
+        docsDir: ['docs', 'community', 'standards', 'contributor-docs'],
+        docsRouteBasePath: [
+          'docs',
+          'community',
+          'standards',
+          'contributor-docs'
+        ]
       })
     ]
   ]

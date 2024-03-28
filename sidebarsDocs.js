@@ -240,6 +240,7 @@ const sidebarsDocs = {
                 'container/components/k8s-cluster-api-provider/doc/Maintenance_and_Troubleshooting',
                 'container/components/k8s-cluster-api-provider/doc/LoadBalancer-ExtTrafficLocal',
                 'container/components/k8s-cluster-api-provider/doc/Upgrade-Guide',
+                'container/components/k8s-cluster-api-provider/doc/continuous-integration',
                 'container/components/k8s-cluster-api-provider/doc/roadmap',
                 {
                   type: 'category',
@@ -250,9 +251,50 @@ const sidebarsDocs = {
                     'container/components/k8s-cluster-api-provider/doc/usage/managing-many-clusters',
                     'container/components/k8s-cluster-api-provider/doc/usage/cluster-mgmt-capi-mgmt-node',
                     'container/components/k8s-cluster-api-provider/doc/usage/multi-az-and-multi-cloud-environments',
-                    'container/components/k8s-cluster-api-provider/doc/usage/testing'
+                    'container/components/k8s-cluster-api-provider/doc/usage/testing',
+                    'container/components/k8s-cluster-api-provider/doc/usage/containter-registry-configuration',
+                    'container/components/k8s-cluster-api-provider/doc/usage/custom-ca',
+                    'container/components/k8s-cluster-api-provider/doc/usage/gateway-api',
+                    'container/components/k8s-cluster-api-provider/doc/usage/harbor',
+                    'container/components/k8s-cluster-api-provider/doc/usage/migrate-to-cluster-class'
                   ]
                 }
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Cluster Stacks',
+              link: {
+                type: 'generated-index'
+              },
+              items: [
+                {
+                  type: 'category',
+                  label: 'Cluster Stack Provider OpenStack',
+                  items: [
+                    'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/overview',
+                    'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/quickstart',
+                    'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/controllers',
+                    'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/develop'
+                  ]
+                }
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Container Registry',
+              link: {
+                type: 'generated-index'
+              },
+              items: [
+                'container/components/container-registry/docs/quickstart',
+                'container/components/container-registry/docs/scs-deployment',
+                'container/components/container-registry/docs/rate_limit',
+                'container/components/container-registry/docs/upgrade',
+                'container/components/container-registry/docs/backup_and_restore',
+                'container/components/container-registry/docs/migration',
+                'container/components/container-registry/docs/persistence',
+                'container/components/container-registry/docs/ha-deployment'
               ]
             }
           ]
@@ -286,19 +328,39 @@ const sidebarsDocs = {
                 'operating-scs/components/status-page/docs/components',
                 'operating-scs/components/status-page/docs/levels_of_consensus'
               ]
+            },
+            {
+              type: 'category',
+              label: 'Monitoring',
+              link: {
+                type: 'generated-index'
+              },
+              items: [
+                'operating-scs/components/monitoring/docs/overview',
+                'operating-scs/components/monitoring/docs/quickstart',
+                'operating-scs/components/monitoring/docs/scs-deployment',
+                'operating-scs/components/monitoring/docs/infrastructure_services',
+                'operating-scs/components/monitoring/docs/iaas',
+                'operating-scs/components/monitoring/docs/kaas',
+                'operating-scs/components/monitoring/docs/zuul',
+                'operating-scs/components/monitoring/docs/alertmanager',
+                'operating-scs/components/monitoring/docs/oauth',
+                'operating-scs/components/monitoring/docs/tracing',
+                'operating-scs/components/monitoring/docs/tuning'
+              ]
             }
           ]
         },
-        // {
-        //   type: 'category',
-        //   label: 'Guides',
-        //   link: {
-        //     type: 'generated-index'
-        //   },
-        //   items: [
-        //     'operating-scs/guides/guide-1'
-        //   ]
-        // },
+        {
+          type: 'category',
+          label: 'Guides',
+          link: {
+            type: 'generated-index'
+          },
+          items: [
+            'operating-scs/guides/openstack-health-monitor/Debian12-Install'
+          ]
+        },
         // {
         //   type: 'category',
         //   label: 'Monitoring',
@@ -367,6 +429,14 @@ const sidebarsDocs = {
         id: 'iam/index'
       },
       items: [
+        {
+          type: 'category',
+          label: 'Guides',
+          link: {
+            type: 'generated-index'
+          },
+          items: ['iam/domain-manager-setup-and-usage']
+        },
         'iam/intra-SCS-federation-setup-description-for-osism-doc-operations'
       ]
     },
@@ -382,7 +452,8 @@ const sidebarsDocs = {
         'releases/Release2',
         'releases/Release3',
         'releases/Release4',
-        'releases/Release5'
+        'releases/Release5',
+        'releases/Release6'
       ]
     },
     // {

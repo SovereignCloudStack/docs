@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Introduction to SCS",
+    "body": "Get to know SCS better and learn about the background.",
+    "url": "/docs",
+    "buttonText": "Get Started"
+  },
+  {
+    "title": "Releases",
+    "body": "SCS is currently in Release 6. Check out the latest Release Notes.",
+    "url": "/docs/releases/Release6",
+    "buttonText": "Learn More"
+  },
+  {
+    "title": "Frequently Asked Questions",
+    "body": "You are curious what SCS is all about, what it can do and what it can't?",
+    "url": "/docs/faq",
+    "buttonText": "Get Answers"
+  },
+  {
+    "title": "Existing Public Clouds",
+    "body": "There are SCS compliant public clouds in production.",
+    "url": "/standards/certification/overview#compliant-cloud-environments",
+    "buttonText": "Test Them"
+  }
+]
