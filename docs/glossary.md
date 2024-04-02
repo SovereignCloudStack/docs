@@ -6,7 +6,7 @@ glossary is not intended to evaluate or standardize specific terms.
 
 ## Definition of a Region
 
-An OpenStack/SCS region consists of at least one or more Availability Zones that share a Control Plane with their services. As a result, they share one API. Also a Control Plane can share one CEPH cluster over different fire departments or each Availbility Zone can have its own CEPH cluster. Within the region, any Layer 2 networks are available to the user. Availbility Zones which build a region are connected by redundant low-latency < 2ms high bandwidth (10s of Gbps) connections.
+An OpenStack/SCS region consists of at least one or more Availability Zones that share a Control Plane with their services. As a result, they share one API. Also a Control Plane can share one CEPH cluster over different fire departments or each Availbility Zone can have its own CEPH cluster. Within the region, any Layer 2 networks are available to the user. Availbility Zones which build a region are connected by redundant low-latency (\< 2ms ) high-bandwidth (10s of Gbps) connections.
 
 Regions can be federated when the SCS code is ready.
 
