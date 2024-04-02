@@ -43,6 +43,18 @@ Glance images may act as backup targets for other resources (such as volumes) bu
 
 When an image is to be backed up, it can be downloaded from the Glance image service and stored outside of the IaaS infrastructure for backup purposes.
 In this case it is the user's responsibility to establish the backup procedure and appropriate target storage.
+
+:::caution
+
+When creating images from volumes with a volume type that uses encryption, the resulting image will contain the raw LUKS-encrypted blocks of the volume.
+When transferred outside of the IaaS infrastructure, this data is only useful as a backup together with the corresponding encryption key.
+
+Such images can be identified by an attribute called `cinder_encryption_key_id` in the `properties` metadata field of the image.
+It only exists for encrypted images and references the encryption key in Barbican.
+Refer to the [Barbican secrets section](#barbican-secrets-backup-using-download) for instructions on how to backup the key.
+
+:::
+
 The API or the client may be used to initiate the download, for example:
 
 ```bash
@@ -57,7 +69,7 @@ This or the underlying API request may be automated as part of a regular backup 
 
 When using the `createImage` Compute API action (e.g. via the `openstack server image create` command) on a virtual machine that has volumes attached to it in addition to its Ephemeral Storage disk, the volumes will not be backed up into the image. Instead, a snapshot will be created for each attached volume and referenced in the image metadata. This does not replace genuine volume backups.
 
-See the [appendix section](#image-creation-action-for-servers-with-attached-volumes) for further details.
+See the [corresponding appendix section](#image-creation-action-for-servers-with-attached-volumes) for further details.
 
 :::
 
@@ -77,17 +89,15 @@ The following instructions only apply if the infrastructure offers the Cinder Ba
 
 :::note
 
-Backups of volumes using a volume type that uses encryption will retain their encryption and the dependency on the encryption key stored as a secret in Barbican.
-These backups can only be restored when the Barbican service is available and still has the corresponding key.
+Backups of volumes using a volume type that uses encryption will retain their encryption and a clone of the original encryption key is created in Barbican linked to the backup.
+These backups can only be restored when the Barbican service is available and still has the corresponding copy of the encryption key.
 
 :::
 
-<!-- TODO: verify the behavior of Cinder backups and Barbican keys -->
-
 :::info
 
-Backups created by the Cinder Backup API cannot be transferred outside of the IaaS infrastructure by a user.
-This can only be achieved by using Glance images.
+It might be difficult or even impossible for a user to transfer backups created by the Cinder Backup API outside of the IaaS infrastructure, depending on the backup backend.
+A more easily accessible backup of volumes can be created by using Glance images.
 See the [section about volume data backup using Glance images](#volume-data-backup-using-glance-images) for details.
 
 :::
@@ -134,14 +144,6 @@ Such images may also subsequently be downloaded to transfer the backup outside o
 :::note
 
 Glance image backups of Cinder volumes only allow full backup copies and do not offer incremental or differential backup mechanisms.
-
-:::
-
-:::caution
-
-When creating images from volumes with a volume type that uses encryption, the resulting image will contain the raw LUKS-encrypted blocks of the volume.
-This data is only useful together with the corresponding encryption key.
-Refer to the Barbican secrets section for instructions.
 
 :::
 
@@ -198,32 +200,41 @@ Before downloading secrets from Barbican make sure that a secure target environm
 Barbican secrets can be downloaded in plaintext using the corresponding API or client command:
 
 ```bash
-openstack secret get --decrypt --file $TARGET_FILE_PATH $SECRET_URI
+openstack secret get --file $TARGET_FILE_PATH --payload_content_type "application/octet-stream" $SECRET_ID
 ```
 
-### Retrieving volume encryption keys from Barbican
-
-<!-- TODO: rephrase this to use the image's metadata instead? (in case the image does also carry the key id reference - need to validate that) -->
+### Retrieving encryption keys from Barbican
 
 In case of encrypted volumes (i.e. using a volume type with encryption), a corresponding encryption key is stored in Barbican.
-In order to backup this key, the corresponding secret must first be identified.
-This is possible starting with the Volume API microversion 3.64:
+When an image is created from such a volume, the encryption key is duplicated in Barbican for the image.
+In order to backup those keys, the corresponding secret must first be identified.
+
+For volumes, this is possible starting with the Volume API microversion 3.64:
 
 ```bash
 openstack volume show --os-volume-api-version 3.64 $VOLUME_NAME_OR_ID
 ```
 
 The response will contain an `encryption_key_id` field with the ID of the Barbican secret.
-This ID can then be used to retrieve the key using the instructions above.
+
+For images, the secret reference is stored in the `properties` field instead:
+
+```bash
+openstack image show -f value -c properties $IMAGE_NAME_OR_ID
+```
+
+In case of images created from encrypted volumes, the resulting output will have a nested `cinder_encryption_key_id` field that contains the ID of the Barbican secret.
+
+The resulting IDs can be used to retrieve the corresponding key using the [Barbican instructions](#barbican-secrets-backup-using-download) above.
 
 :::caution
 
 Note that the key retrieved from the secret is not immediately usable as LUKS passphrase to the image data of the volume.
 OpenStack does some processing to the key before it is passed to the LUKS encryption, which must be mimicked accordingly in order to unlock the encryption outside of OpenStack!
 
-:::
+See the [example procedure for converting the LUKS key](#luks-encryption-key-conversion-to-decrypt-volume-images) in the appendix section.
 
-<!-- TODO: actually try this procedure on DevStack: encrypt volume, make image, download image, download secret and try to convert key correctly (hexlify) to be used by `cryptsetup luksOpen <image-file>` -->
+:::
 
 ## Appendix
 
@@ -237,3 +248,56 @@ In case of an Ephemeral Storage disk, only the Ephemeral Storage is copied into 
 In case of a virtual machine that has no Ephemeral Storage but only volumes, the `createImage` action leads to a Glance image that only consists of metadata (including the resulting volume snapshot references) but carries no actual binary data.
 
 ![Figure: createImage action flow involving Ephemeral Storage and/or volumes](./images/user_data_backups_figure1.png)
+
+### LUKS encryption key conversion to decrypt volume images
+
+The volume encryption keys stored in Barbican are not directly used as LUKS passphrases by OpenStack because they are in binary format.
+OpenStack converts them to ASCII internally before passing them to the encryption layer.
+This behavior needs to be reproduced if a decryption of a volume image is desired outside of OpenStack.
+
+:::danger
+
+The instructions below will expose plaintext data of encryption keys and encrypted volume images.
+Make sure to only execute these steps in a secure and trusted environment.
+
+:::
+
+First, download the image:
+
+```bash
+openstack image save --file image.raw $IMAGE_NAME_OR_ID
+```
+
+Next, inspect the image metadata, determine the reference to the encryption key (`cinder_encryption_key_id` property) and download the encryption key:
+
+```bash
+openstack image show -f value -c properties $IMAGE_NAME_OR_ID
+# (use the value of `cinder_encryption_key_id` as `$SECRET_ID` below)
+openstack secret get --file image.key --payload_content_type "application/octet-stream" $SECRET_ID
+```
+
+This will result in the following local files:
+
+- `image.raw` = the raw encrypted image downloaded from Glance
+- `image.key` = the LUKS encryption key in binary format (plaintext)
+
+Since OpenStack internally uses Python's `binascii.hexlify()` to convert the binary encryption key before passing it as a passphrase to the LUKS encryption, as a last step this conversion must be mimicked to unlock the encryption:
+
+```bash
+python3 -c "import binascii; \
+    f = open('image.key', 'rb'); \
+    print(binascii.hexlify(f.read()).decode('utf-8'))" \
+    | sudo cryptsetup luksOpen ./image.raw decrypted_image
+```
+
+The decrypted image is now accessible at `/dev/mapper/decrypted_image`.
+Note that this is a live en-/decryption operation on the `image.raw` file.
+The image is not converted, the encryption is simply unlocked in-memory using LUKS and dm-crypt until the encryption is closed again.
+
+The `/dev/mapper/decrypted_image` can now be handled like a raw block device (e.g. mounted as a filesystem) or snapshotted in decrypted form.
+
+To close the encryption execute:
+
+```bash
+sudo cryptsetup luksClose decrypted_image
+```
