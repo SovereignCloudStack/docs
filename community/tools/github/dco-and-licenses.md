@@ -44,7 +44,7 @@ line to commit messages.
 ```bash
 My fancy commit message
 
-Signed-off-by: Christian Berendt <berendt@betacloud-solutions.de>
+Signed-off-by: Christian Berendt <berendt@osism.tech>
 ```
 
 Git has a `-s` command line option to append this automatically to your commit message:
