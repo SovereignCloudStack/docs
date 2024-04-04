@@ -7,14 +7,11 @@ track: Global
 
 ## Introduction
 
-The process of test creation and standards definition in Sovereign Cloud Stack (SCS)
-involves developing and validating tests that align with the specific requirements and
-standards set by SCS. This entails a comprehensive understanding of the SCS framework,
-which is built on open-source components and aims to provide interoperable and sovereign
-cloud services. In creating tests for SCS, it's essential to consider the various aspects
-of cloud technology, including infrastructure, services, and the integration of these
-components. The tests should be designed to ensure that the SCS standards are met, which
-includes adhering to specified requirement levels as indicated by [RFC2119 keywords](https://datatracker.ietf.org/doc/html/rfc2119).
+The development and validation of tests within the Sovereign Cloud Stack (SCS) is a critical endeavor aimed at ensuring that cloud technologies meet the highest standards of interoperability, security and sovereignty. This process is not only about aligning with the technical specifications and standards set by SCS but also about safeguarding the principles of open-source collaboration and the autonomy of cloud services. By thoroughly crafting tests that adhere to the stringent requirement levels as indicated by [RFC2119 keywords](https://datatracker.ietf.org/doc/html/rfc2119), we ensure that the infrastructure, services and their integrations within the SCS ecosystem are robust, secure and sovereign.
+
+This detailed process is crucial for stakeholders seeking to develop or utilize sovereign cloud services that are reliable, compliant and capable of standing up to the demands of modern cloud computing. It serves as an indispensable guide for developers, operators and policymakers who are involved in the creation, deployment and governance of cloud services within SCS. By understanding and implementing the standards and tests defined by the SCS, professionals can contribute to a cloud infrastructure that is not only technologically advanced but also aligns with the core values of sovereignty and open-source ethics.
+
+Therefore, for individuals tasked with writing tests and defining standards within SCS, this document is particularly important. It serves as a base with guidelines on how to use and understand RFC2119 keywords in the context of SCS. Its insights are crucial for anyone from technical architects to regulatory bodies within the SCS ecosystem, underlining the foundational principles necessary for achieving a sovereign cloud environment.
 
 ## 1. Understanding SCS Standards and RFC2119 Keywords
 
@@ -26,14 +23,14 @@ SCS standards use RFC2119 keywords like:
 - **SHOULD NOT** (same as **NOT RECOMMENDED**),
 - **MAY** (same as **OPTIONAL**)
 
-to define requirements for SCS-compatible IaaS and KaaS resources. These standards are crucial for ensuring interoperability and sovereignty in cloud services, as they are built on open-source components such as Kubernetes.
+to define requirements for SCS-compatible IaaS and KaaS resources. These standards & tests are crucial for ensuring interoperability and sovereignty in cloud services, as they are built on open-source components such as Kubernetes and OpenStack.
 
 To ensure readability and comprehensibility, only the main keywords **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT** and **MAY** are referred to below.
 
 ## 2. Interpreting RFC2119 Keywords in the Context of SCS
 
 - **MUST and MUST NOT**: These are binary and straightforward to test. Compliance or
-  non-compliance directly affects the standard meeting. For visualization, fulfilled
+  non-compliance directly affects whether the standard is satisfied. For visualization, fulfilled
   requirements could be marked in green, unfulfilled ones in red.
 - **SHOULD and SHOULD NOT**: These represent recommendations. While fulfilling these do
   not directly affect standard compliance, it is advised for future-proofing against
@@ -45,10 +42,15 @@ To ensure readability and comprehensibility, only the main keywords **MUST**, **
 
 ## 3. Channels for Output in Test Scripts
 
-- Align the RFC2119 keywords with specific channels in test scripts:
-  - **MUST** and **MUST NOT** lead to the ERROR channel for failed tests
-  - **SHOULD** and **SHOULD NOT** lead to the WARNING channel, the test is still passed
-  - **MAY** to leads to the INFO channel, the test is still passed
+In test scripts, different channels are used to convey information of different importance to the user. These channels are based on the ubiquitous and de-facto standard logging levels of common logging libraries in scripting and programming languages, in particular Python: DEBUG, INFO, WARNING, ERROR and CRITICAL.
+
+Alignement of the RFC2119 keywords with specific channels in test scripts:
+
+- **MUST** and **MUST NOT** lead to the ERROR channel for failed tests
+- **SHOULD** and **SHOULD NOT** lead to the WARNING channel, the test is still passed
+- **MAY** leads to the INFO channel, the test is still passed
+
+However, the CRITICAL level is not directly associated with any of the RFC2119 keywords; it is instead used to signify that a test was unable to complete or was interrupted due to various issues, such as runtime failures.
 
 ## 4. Compliance and Test Passing Criteria
 
@@ -57,13 +59,27 @@ ERROR nor the CRITICAL channel. The presence of warnings or informational items 
 **SHOULD** and **MAY** categories do not directly impact the pass/fail status but is
 important for overall quality and compatibility with future standards.
 
-A test can have one of three results:
+That means a test can have one of three results:
 
 - fail: if it has at least one message on ERROR
 - DNF (did not finish): if it has no message on ERROR, but at least one on CRITICAL
 - pass: otherwise
 
-## 5. Example: Standards Document using RFC2119 Keywords
+In addition, a test **MUST** exit with a non-zero exit code (e.g., via `sys.exit(…)`) if there are any ERROR or CRITICAL messages, thus signaling a failure to meet a standard.
+
+It is crucial to determine and explicitly state within this document the expected conventions for logging output, specifically regarding the redirection of all channel outputs to standard error (**stderr**), which aligns with Python's default logging behavior. The format which **MUST** be used is **CHANNEL(MESSAGE)**, where **CHANNEL** represents the log level (e.g., DEBUG, INFO, WARNING, ERROR, CRITICAL) and **MESSAGE** encapsulates the actual log message.
+
+For instance, when logging an ERROR regarding a variable, the format should be as follows:
+
+```python
+logger.error("var1 must be positive")
+```
+
+This example adheres to our proposed format by clearly indicating the severity level (ERROR) followed by the specific message intended for the user or developer.
+
+## Examples
+
+### 5.1 Example: Standards Document using RFC2119 Keywords
 
 The following example of a fictitious document for a "Web Server Installation Standard"
 is intended to illustrate the use of RFC2119 keywords in connection with the creation of
@@ -100,7 +116,7 @@ This document provides a concise set of requirements for installing a secure web
 Failure to comply with these requirements results in the web server being
 considered non-compliant with the organization's security policies.
 
-## 6. Example: Test script using RFC2119 Keywords
+### 5.2 Example: Test script using RFC2119 Keywords
 
 The following example of a fictitious code for a test of "process_requirements"
 is intended to illustrate the use of RFC2119 keywords in connection with the
@@ -154,4 +170,4 @@ def process_requirements(var1, var2):
 
 ```
 
-Note: The DEBUG channel is used for additional information for developers to better understand a process and does not apply to RFC2119 keywords.
+**Note**: The DEBUG channel is used for additional information for developers to better understand a process and does not apply to RFC2119 keywords.
