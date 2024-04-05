@@ -96,7 +96,7 @@ changes to the software are being made available in this case.
 The AGPL thus closes a shortcoming in the traditional non-Affero GPL for a world that
 increasingly moves towards networked services.
 
-The very successful [Nextcloud](https://nextcloud.org/) project uses the AGPLv3.
+The very successful [Nextcloud](https://nextcloud.com/) project uses the AGPLv3.
 
 ## Derived works and Strong vs. Weak Copyleft
 
