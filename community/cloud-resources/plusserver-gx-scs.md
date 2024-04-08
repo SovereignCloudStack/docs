@@ -16,7 +16,7 @@ author: Ralf Heiringhoff, Mathias Fechner
 
 For your login you will need:
 
-- Username (`u500924-<github handle>`)
+- Username (`u500924-<$github-handle>`)
 - Password
 - Domain (`d500924`)
 

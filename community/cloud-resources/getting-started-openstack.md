@@ -22,8 +22,8 @@ for ubuntu with snap openstack CLI is installable too:
 sudo snap install openstackclients
 ```
 
->[!NOTE]
->Versions from Linux repository could be in a stable but old state.
+> [!NOTE]
+> Versions from Linux repository could be in a stable but old state.
 
 Install it directly via [pypi](https://pypi.org/project/python-openstackclient)
 from upstream is the recommend way.
@@ -40,7 +40,7 @@ Here for example Debian and Ubuntu:
 sudo apt install python3-minimal python3-pip python3-venv python3-dev build-essential
 ```
 
- Here as example for SUSE
+Here as example for SUSE
 
 ```bash
 sudo zypper in python3-pip python3-venv python3-dev
@@ -52,9 +52,9 @@ Here for example with Apple's MacOS
 brew install python3
 ```
 
->[!NOTE]
->Python installation for windows systems please use the [python installation guide](https://www.python.org/downloads/windows/)
->or recommend use the [Linux Subsystem WSL](https://learn.microsoft.com/de-de/windows/wsl/install)
+> [!NOTE]
+> Python installation for windows systems please use the [python installation guide](https://www.python.org/downloads/windows/)
+> or recommend use the [Linux Subsystem WSL](https://learn.microsoft.com/de-de/windows/wsl/install)
 
 Python Virtualenv
 
@@ -88,7 +88,7 @@ in to Horizon:
 - OpenStack RC File
 
 ```bash
-$ source ./<your file>-openrc.sh
+$ source ./<$yourfile>-openrc.sh
 Please enter your OpenStack Password for project XXX as user YYY:
 ```
 
@@ -124,9 +124,9 @@ object store via the swift or via the s3 protocol.
 
 ## References
 
-- [OpenStack](https://www.openstack.org "OpenStack Site")
-- [SovereignCloudStack](https://github.com/SovereignCloudStack "SovereignCloudStack on github")
-- [OSISM](https://github.com/osism "OSISM on github")
-- [ansible](https://docs.ansible.com/ansible/latest/collections/openstack/cloud/index.html "Ansible Module OpenStack")
-- [terraform](https://registry.terraform.io/providers/terraform-provider-openstack/openstack/latest/docs "OpenStack Terraform Provider")
-- [cloud-init](https://cloudinit.readthedocs.io/en/latest/ "cloud-init documentation")
+- [OpenStack](https://www.openstack.org 'OpenStack Site')
+- [SovereignCloudStack](https://github.com/SovereignCloudStack 'SovereignCloudStack on github')
+- [OSISM](https://github.com/osism 'OSISM on github')
+- [ansible](https://docs.ansible.com/ansible/latest/collections/openstack/cloud/index.html 'Ansible Module OpenStack')
+- [terraform](https://registry.terraform.io/providers/terraform-provider-openstack/openstack/latest/docs 'OpenStack Terraform Provider')
+- [cloud-init](https://cloudinit.readthedocs.io/en/latest/ 'cloud-init documentation')

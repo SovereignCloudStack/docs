@@ -12,7 +12,7 @@ Responsibility: [@SovereignCloudStack/vp06c](https://github.com/orgs/SovereignCl
 
 Services:
 
-- SCS Registry <https://registry.scs.community/>
+- [SCS Registry](https://registry.scs.community/)
   - [k8s-harbor](https://github.com/SovereignCloudStack/k8s-harbor/tree/main/envs/public)
 
 Utilization:
