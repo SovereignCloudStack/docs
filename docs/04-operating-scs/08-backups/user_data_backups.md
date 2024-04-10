@@ -203,6 +203,17 @@ Barbican secrets can be downloaded in plaintext using the corresponding API or c
 openstack secret get --file $TARGET_FILE_PATH --payload_content_type "application/octet-stream" $SECRET_ID
 ```
 
+:::tip
+
+In case the secret needs to be restored into an OpenStack Barbican later on, it is recommended to also note down the following attributes shown by `openstack secret get $SECRET_ID`:
+
+- Algorithm
+- Bit length
+- Secret type
+- Mode
+
+:::
+
 ### Retrieving encryption keys from Barbican
 
 In case of encrypted volumes (i.e. using a volume type with encryption), a corresponding encryption key is stored in Barbican.
@@ -235,6 +246,76 @@ OpenStack does some processing to the key before it is passed to the LUKS encryp
 See the [example procedure for converting the LUKS key](#luks-encryption-key-conversion-to-decrypt-volume-images) in the appendix section.
 
 :::
+
+## Restore
+
+### Restoring a backup of a Barbican secret
+
+:::note
+
+Note that restoring a Barbican secret by re-uploading it via the Barbican API will lead to the secret receiving a new ID.
+Existing resources referencing an old secret ID cannot make use of the restored copy.
+
+:::
+
+```bash
+openstack secret store --algorithm aes --bit-length 256 --mode cbc \
+    --secret-type symmetric --file $KEY_FILE_PATH --name $SECRET_NAME
+```
+
+Notes:
+
+- Attributes like algorithm, bit length, mode and secret type are not verified by Barbican. Their main purpose is to classify the secret on a metadata level. Make sure to align the attributes with the original secret.
+- `$KEY_FILE_PATH` is the local file path of the secret backup as created originally using the [instructions above](#barbican-secrets-backup-using-download).
+- `$SECRET_NAME` is entirely optional but helps identifying the restored secret later on and to distinguish it from secrets created by OpenStack itself. It is best to not put whitespace characters in the name, otherwise it has to be surrounded by quotes.
+
+The successful registration of the restored secret can subsequently be verified using:
+
+```bash
+openstack secret list --name $SECRET_NAME
+```
+
+### Restoring a backup of an unencrypted image
+
+Unencrypted image backups can simply be restored using the regular image upload functionality and specifying the backup file:
+
+```bash
+openstack image create --file $IMAGE_FILE_PATH $IMAGE_NAME
+```
+
+:::note
+
+In case the original image backup was not based on a volume originally, the image may have had a non-default disk or container format.
+In this case, add the command parameters `--container-format` and `--disk-format` to the command accordingly.
+
+:::
+
+### Restoring a backup of an encrypted image
+
+The following section only applies to image backups that were originally created from images of encrypted volumes.
+
+First, restore the corresponding secret of the image using the [instructions above](#restoring-a-backup-of-a-barbican-secret).
+The restored secret will receive a new ID in the form of a [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+Note down the ID of the restored secret and insert it in place of `$SECRET_ID` in the command below.
+
+```bash
+openstack image create --file $IMAGE_FILE_PATH \
+    --property cinder_encryption_key_id=$SECRET_ID \
+    --property cinder_encryption_key_deletion_policy=on_image_deletion \
+    $IMAGE_NAME
+```
+
+The `cinder_encryption_key_deletion_policy` attribute is optional.
+If not specified, the referenced secret will not be deleted on image deletion automatically.
+In contrast, if set to `on_image_deletion`, the referenced secret will be deleted as soon as the image referencing it is deleted.
+
+### Restoring a volume backup from an image
+
+<!-- TODO -->
+
+### Restoring a volume backup from the Cinder Backup service
+
+<!-- TODO -->
 
 ## Appendix
 
