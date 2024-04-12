@@ -44,7 +44,7 @@ To ensure readability and comprehensibility, only the main keywords **MUST**, **
 
 In test scripts, different channels are used to convey information of different importance to the user. These channels are based on the ubiquitous and de-facto standard logging levels of common logging libraries in scripting and programming languages, in particular Python: DEBUG, INFO, WARNING, ERROR and CRITICAL.
 
-Alignement of the RFC2119 keywords with specific channels in test scripts:
+Alignment of the RFC2119 keywords with specific channels in test scripts:
 
 - **MUST** and **MUST NOT** lead to the ERROR channel for failed tests
 - **SHOULD** and **SHOULD NOT** lead to the WARNING channel, the test is still passed
@@ -67,15 +67,15 @@ That means a test can have one of three results:
 
 In addition, a test **MUST** exit with a non-zero exit code (e.g., via `sys.exit(…)`) if there are any ERROR or CRITICAL messages, thus signaling a failure to meet a standard.
 
-It is crucial to determine and explicitly state within this document the expected conventions for logging output, specifically regarding the redirection of all channel outputs to standard error (**stderr**), which aligns with Python's default logging behavior. The format which **MUST** be used is **CHANNEL(MESSAGE)**, where **CHANNEL** represents the log level (e.g., DEBUG, INFO, WARNING, ERROR, CRITICAL) and **MESSAGE** encapsulates the actual log message.
+It is crucial to determine and explicitly state within this document the expected conventions for logging output. In test scripts it is a **MUST** to redirect all channel outputs to standard error (**stderr**), which aligns with Python's default logging behavior. The format which **MUST** be used is **CHANNEL: MESSAGE**, where **CHANNEL** represents the log level (e.g., DEBUG, INFO, WARNING, ERROR, CRITICAL) and **MESSAGE** encapsulates the actual log message.
 
-For instance, when logging an ERROR regarding a variable, the format should be as follows:
+For instance, when logging an ERROR regarding a Kubernetes cluster, the format on the command line should be like this:
 
-```python
-logger.error("var1 must be positive")
+```md
+INFO: Checking cluster specified by context 'my-cluster' in /path/to/.kube/config.
 ```
 
-This example adheres to our proposed format by clearly indicating the severity level (ERROR) followed by the specific message intended for the user or developer.
+This example adheres to our proposed format by clearly indicating the severity level (INFO) followed by the specific message intended for the user or developer.
 
 ## Examples
 
