@@ -311,7 +311,29 @@ In contrast, if set to `on_image_deletion`, the referenced secret will be delete
 
 ### Restoring a volume backup from an image
 
-<!-- TODO -->
+To restore a volume from an image backup, simply use the volume creation action and specify the image as source.
+
+Depending on whether the original volume the image was created from was encrypted or not, the target volume type might need to be specified accordingly.
+Whether this is the case can be identified by inspecting the image's metadata using `openstack image show $IMAGE_NAME_OR_ID` and looking for a "cinder_encryption_key_id" field within "properties".
+If it exists, the source volume of the image was encrypted.
+
+To restore the image of an unencrypted volume:
+
+```bash
+openstack volume create --image $IMAGE_NAME_OR_ID \
+    --size $VOLUME_SIZE_IN_GB $VOLUME_NAME
+```
+
+To restore the image of an encrypted volume:
+
+```bash
+openstack volume create --image $IMAGE_NAME_OR_ID \
+    --type $ENCRYPTED_VOLUME_TYPE \
+    --size $VOLUME_SIZE_IN_GB $VOLUME_NAME
+```
+
+If restoring an encrypted image, make sure to specify `$ENCRYPTED_VOLUME_TYPE` correctly and have it reference a volume type which also supports the encryption.
+Otherwise the volume will be unbootable or unusable by Nova instances.
 
 ### Restoring a volume backup from the Cinder Backup service
 
