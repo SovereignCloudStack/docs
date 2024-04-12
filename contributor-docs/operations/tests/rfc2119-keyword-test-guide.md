@@ -67,9 +67,9 @@ That means a test can have one of three results:
 
 In addition, a test **MUST** exit with a non-zero exit code (e.g., via `sys.exit(…)`) if there are any ERROR or CRITICAL messages, thus signaling a failure to meet a standard.
 
-It is crucial to determine and explicitly state within this document the expected conventions for logging output. In test scripts it is a **MUST** to redirect all channel outputs to standard error (**stderr**), which aligns with Python's default logging behavior. The format which **MUST** be used is **CHANNEL: MESSAGE**, where **CHANNEL** represents the log level (e.g., DEBUG, INFO, WARNING, ERROR, CRITICAL) and **MESSAGE** encapsulates the actual log message.
+In test scripts it is a **MUST** to redirect all channel outputs to standard error (**stderr**), which aligns with Python's default logging behavior. The format which **MUST** be used is **CHANNEL: MESSAGE**, where **CHANNEL** represents the log level (e.g., DEBUG, INFO, WARNING, ERROR, CRITICAL) and **MESSAGE** encapsulates the actual log message.
 
-For instance, when logging an ERROR regarding a Kubernetes cluster, the format on the command line should be like this:
+For instance, when logging an INFO regarding a Kubernetes cluster, the format on the command line should be like this:
 
 ```md
 INFO: Checking cluster specified by context 'my-cluster' in /path/to/.kube/config.
