@@ -92,6 +92,9 @@ The following instructions only apply if the infrastructure offers the Cinder Ba
 Backups of volumes using a volume type that uses encryption will retain their encryption and a clone of the original encryption key is created in Barbican linked to the backup.
 These backups can only be restored when the Barbican service is available and still has the corresponding copy of the encryption key.
 
+Also, it is advised to take note of the exact volume type when creating a backup of an encrypted volume, because this information will be needed to restore the backup.
+See [restoring an encrypted volume backup](#restoring-an-encrypted-volume-backup-cinder-backup).
+
 :::
 
 :::info
@@ -337,7 +340,75 @@ Otherwise the volume will be unbootable or unusable by Nova instances.
 
 ### Restoring a volume backup from the Cinder Backup service
 
-<!-- TODO -->
+The Cinder Backup service offers dedicated API actions and commands for restoring volume backups created using the service.
+These backups can be restored in one of two ways:
+
+1. Letting the Cinder Backup service create a new volume based on the backup.
+2. Overwriting an existing volume with the backup data.
+
+:::note
+
+If the volume backup was originally created from a volume that used a non-default encrypted volume type, letting Cinder Backup create a new volume for backup restoration does not work and the volume type must match exactly.
+In such case provision an empty volume with the correct type first and then restore the backup onto it [as explained further down](#restoring-an-encrypted-volume-backup-cinder-backup).
+
+:::
+
+#### Restoring to a new volume (Cinder Backup)
+
+```bash
+openstack volume backup restore $BACKUP_NAME_OR_ID $TARGET_NAME
+```
+
+... where `$TARGET_NAME` is the desired name of the new volume to be created.
+Make sure that no volume with this name already exists.
+The Cinder Backup service will create the volume with the same size as the backup indicates.
+
+#### Restoring on an existing volume (Cinder Backup)
+
+As an alternative to creating a new volume as the restore target, the backup can also be restored on an existing volume:
+
+```bash
+openstack volume backup restore --force $BACKUP_NAME_OR_ID $VOLUME_NAME_OR_ID
+```
+
+... which will overwrite the data on the existing volume, regardless of whether it is empty or not!
+
+The volume will enter the "restoring-backup" state temporarily and will return to the "available" state again once the restore process has finished.
+
+#### Restoring an encrypted volume backup (Cinder Backup)
+
+When restoring a volume backup of a volume that was using a non-default encrypted volume type, a new volume of that type needs to be created first and then the backup restored onto it.
+Otherwise, the restoration will fail with the target volume ending up in the "error_restoring" state.
+For this procedure to succeed it is necessary to know the exact volume type of the volume the backup was created from.
+
+If the source volume of the backup still exists, the original volume type can be determined by inspecting the backup's `volume_id` attribute and then using it to look up the corresponding volume and its `type` attribute.
+The following client command can be used for this (fill in the value for `BACKUP_ID`):
+
+```bash
+export BACKUP_ID=...
+
+SOURCE_VOLUME_ID="$(openstack volume backup show $BACKUP_ID -f value -c volume_id)"
+openstack volume show -f value -c type "$SOURCE_VOLUME_ID"
+```
+
+This returns the name of the original volume type.
+If the source volume does not exist anymore, rely on documentation about the backup to determine the type, if available.
+
+First, create a new empty volume as the restore target and use the backup's `size` metadata attribute to match the size of the volume to the backup:
+
+```bash
+openstack volume create --size $BACKUP_SIZE --type $VOLUME_TYPE $TARGET_NAME
+```
+
+... where `$TARGET_NAME` is the desired name of the new volume.
+
+Once the volume reaches "available" state, restore the backup onto it:
+
+```bash
+openstack volume backup restore --force $BACKUP_NAME_OR_ID $TARGET_NAME
+```
+
+The volume will enter the "restoring-backup" state temporarily and will return to the "available" state again once the restore process has finished.
 
 ## Appendix
 
