@@ -5,7 +5,7 @@ status: Draft
 track: IaaS
 ---
 
-This guide will explain common procedures for creating backups of user data accumulated in cloud resources such as volumes, images or ephemeral server disks.
+This guide will explain common procedures for creating and restoring backups of user data accumulated in cloud resources such as volumes, images or ephemeral server disks.
 
 ## Glossary
 
@@ -251,6 +251,8 @@ See the [example procedure for converting the LUKS key](#luks-encryption-key-con
 :::
 
 ## Restore
+
+The following sections will illustrate how to restore the individual resource backups that have been documented above.
 
 ### Restoring a backup of a Barbican secret
 
