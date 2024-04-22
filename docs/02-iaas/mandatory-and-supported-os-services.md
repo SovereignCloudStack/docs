@@ -21,6 +21,7 @@ The following OpenStack services MUST be present in SCS-compliant IaaS-Deploymen
 | **Nova** | Compute service |
 | **OpenstackSDK** | Multi-cloud Python SDK and CLI for End Users |
 | **Oslo** | Common libraries |
+| **Octavia** | Load-balancer service |
 | **Placement** | Hardware Describing Service for Nova |
 
 ## Supported OpenStack services
@@ -30,13 +31,15 @@ The following services MAY be present in SCS-compliant IaaS-Deployment and their
 | OpenStack Service | description | comment |
 |-----|-----|-------|
 | **Barbican** | Key Manager service | maybe a future mandatory service |
+| **Cloudkitty** | Rating/Billing service | maybe move to unsupported |
 | **Ceilometer** | Telemetry service | |
 | **Designate** | DNS service | |
 | **Gnocchi** | Time Series Database service | needed for Ceilometer |
 | **Heat** | Orchestration service | **maybe unsupported?** |
 | **Horizon** | Dashboard | |
 | **Ironic** | Bare Metal libraries | |
-| **Octavia** | Load-balancer service | |
+| **Manila** | Shared File Systems service | |
+| **Masakari** | Instances High Availability service | |
 | **Swift** | Object Storage service | if not used, move to unsupported |
 | **Skyline** | Dashboard | if not used, move to unsupported |
 
