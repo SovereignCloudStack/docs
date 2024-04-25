@@ -1,11 +1,11 @@
 # SCS mandatory and supported OpenStack services
 
-There are many OpenStack services that can be applied on IaaS-Level.
-Those services have differences in the quality of their implementation and liveness and some of them may be easily omitted when creating an IaaS-Deployment.
-To fulfill all SCS-provided standards there are only some of those services required.
+There are many OpenStack APIs and their services that can be applied on IaaS-Level.
+These services have differences in the quality of their implementation and liveness and some of them may be easily omitted when creating an IaaS-Deployment.
+To fulfill all SCS-provided standards there are only some of these APIs required.
 More but not all OpenStack services are tested or integrated in the reference implementation.
 This document will give readers insight about how the SCS looks at all the OpenStack services.
-If a cloud consists of all mandatory and maybe some supported OpenStack services it can be tested for SCS-compliance.
+If a cloud provides all mandatory and maybe some supported OpenStack APIs and implementation of their services it can be tested for SCS-compliance.
 Any unsupported services will not be tested.
 
 ## Mandatory OpenStack services
@@ -19,10 +19,9 @@ The following OpenStack services MUST be present in SCS-compliant IaaS-Deploymen
 | **Keystone** | Identity service |
 | **Neutron** | Networking service |
 | **Nova** | Compute service |
-| **OpenstackSDK** | Multi-cloud Python SDK and CLI for End Users |
-| **Oslo** | Common libraries |
 | **Octavia** | Load-balancer service |
 | **Placement** | Hardware Describing Service for Nova |
+| **S3 API object storage** | No formal standard exists, many implementations: Swift, RadosGW, minio... |
 
 ## Supported OpenStack services
 
@@ -40,7 +39,6 @@ The following services MAY be present in SCS-compliant IaaS-Deployment and their
 | **Ironic** | Bare Metal libraries | |
 | **Manila** | Shared File Systems service | |
 | **Masakari** | Instances High Availability service | |
-| **Swift** | Object Storage service | if not used, move to unsupported |
 | **Skyline** | Dashboard | if not used, move to unsupported |
 
 ## Unsupported OpenStack services
@@ -53,7 +51,5 @@ This list is not exhaustive:
 
 | OpenStack Service | description | comment |
 |-----|-----|-------|
-| **Cloudkitty** | Rating/Billing service | was requested once but not seen in production |
 | **Magnum** | Container Infrastructure Management service | |
-| **Manila** | Shared File Systems service | sometimes requestes |
 | **Freezer** | Backup, Restore, and Disaster Recovery service | interesting service, that some people on upstream want to revive |
