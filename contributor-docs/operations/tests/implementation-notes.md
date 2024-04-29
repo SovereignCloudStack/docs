@@ -26,14 +26,14 @@ Conformance tests will inevitably contain some non-trivial algorithms, be it for
 parsing flavor names or evaluating CVE vulnerability reports.
 Developers of such tests are therefore *strongly* encouraged to include unit
 and regression tests for the conformance test's logic.
-As a bonus, a well written unit tests also makes it easier for reviewers to
+As a bonus, a well written unit test also makes it easier for reviewers to
 cross check a given pull request with new or enhanced conformance tests.
 
 ### Requirements
 
 * Developing and running unit tests requires setting up the environment as outlined
   in the [README of the SCS conformance tests][tests-readme].
-* The name of the Python module implementing the conformance check should use be
+* The name of the Python module implementing the conformance check should be
   a valid [Python identifier][python-identifiers], to make it possible to import
   module members with the `import` statement.
 * Any module that ends in `_test`, will be picked up by pytest in our CI pipeline
