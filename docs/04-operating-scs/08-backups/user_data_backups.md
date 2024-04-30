@@ -1,9 +1,4 @@
----
-title: User Data Backups
-type:
-status: Draft
-track: IaaS
----
+# User Data Backups
 
 This guide will explain common procedures for creating and restoring backups of user data accumulated in cloud resources such as volumes, images or ephemeral server disks.
 
@@ -123,7 +118,7 @@ openstack volume backup create --incremental $VOLUME_NAME_OR_ID
 
 :::note
 
-When creating backups of attached (in-use) volumes, the `force` parameter has to be used. These backups capture a state of the full volume at runtime. They will be crash-consistent but not app-consistent.
+When creating backups of attached (in-use) volumes, the state of the full volume is captured at runtime. Backups created this way will be crash-consistent but not app-consistent.
 
 :::
 
