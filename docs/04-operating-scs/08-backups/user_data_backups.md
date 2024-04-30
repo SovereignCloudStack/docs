@@ -55,7 +55,7 @@ Refer to the [Barbican secrets section](#barbican-secrets-backup-using-download)
 
 :::
 
-The API or the client may be used to initiate the download, for example:
+The API or the OpenStack client may be used to initiate the download, for example:
 
 ```bash
 openstack image save --file $TARGET_FILE_PATH $IMAGE_NAME_OR_ID
@@ -73,7 +73,7 @@ See the [corresponding appendix section](#image-creation-action-for-servers-with
 
 :::
 
-Ephemeral Storage disks of virtual machines can be backed up to Glance images easily by using the `createImage` Compute API action or the corresponding client command:
+Ephemeral Storage disks of virtual machines can be backed up to Glance images easily by using the `createImage` Compute API action or the corresponding OpenStack client command:
 
 ```bash
 openstack server image create --name $IMAGE_NAME $SERVER_NAME_OR_ID
@@ -107,7 +107,7 @@ See the [section about volume data backup using Glance images](#volume-data-back
 
 ### Backup of detached volumes
 
-Backups can be created using the Cinder Backup API or the corresponding client commands:
+Backups can be created using the Cinder Backup API or the corresponding OpenStack client commands:
 
 ```bash
 openstack volume backup create $VOLUME_NAME_OR_ID
