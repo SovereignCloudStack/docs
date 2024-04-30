@@ -28,6 +28,9 @@ parsing flavor names or evaluating CVE vulnerability reports.
 As a bonus, a well written unit test also makes it easier for reviewers to
 cross check a given pull request with new or enhanced conformance tests.
 
+In general, unit and regression tests for the conformance tests are located in
+the same location as the conformance tests, that is, the `Tests/` directory of
+the [SCS standards repository][scs-standards].
 Setup and development of the unit tests is described in the [SCS conformance
 tests README][tests-readme].
 
@@ -136,6 +139,7 @@ In particular, this means:
 * Conformance tests scripts should not require root privileges, except for the
   installation of operating system prerequisites (e.g., a Python interpreter).
 
+[scs-standards]: https://github.com/SovereignCloudStack/standards/
 [tests-readme]: https://github.com/SovereignCloudStack/standards/blob/main/Tests/README.md
 [python-identifiers]: https://docs.python.org/3/reference/lexical_analysis.html#identifiers
 [gh-scripts]: https://github.com/SovereignCloudStack/standards/tree/main/Tests
