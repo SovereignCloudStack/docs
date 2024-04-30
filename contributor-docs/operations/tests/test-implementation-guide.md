@@ -101,7 +101,6 @@ if __name__ == "__main__":
 Adhering to this style makes it easier to test an algorithm in isolation,
 without actually making a call to some external service.
 
-
 ### Pytest Test Example
 
 Assuming we want to unit test some members of the module `property_compliance`, we would
