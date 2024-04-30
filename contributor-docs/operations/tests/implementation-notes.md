@@ -12,13 +12,11 @@ Our aim is that these tests are reliable, consistent and comprehensible for
 the users.
 This document summarizes the current best practices to achieve this goal.
 
-
 ## 1. RFC2119 Keywords
 
 Creating a conformance test for a standard involves the correct mapping of
 the keywords such as MUST and SHOULD, which is described in the
 [SCS RFC2119 Keyword Test Guide][scs-rfc2119-guide].
-
 
 ## 2. Unit and Regression Tests
 
@@ -52,7 +50,6 @@ cross check a given pull request with new or enhanced conformance tests.
 ### Example
 
 TBD
-  
 
 ## 3. Principle of Least Privilege
 
@@ -60,11 +57,10 @@ Conformance tests are expected to be executable without admin privileges (see §
 [Regulations for achieving SCS-compatible certification][scs-0004-v1]).
 In particular, this means:
 
-- The cloud credentials (e.g., kubeconfig and OpenStack `clouds.yaml`) passed to
+* The cloud credentials (e.g., kubeconfig and OpenStack `clouds.yaml`) passed to
   the scripts are non-admin credentials.
-- Conformance tests scripts should not require root privileges, except for the
+* Conformance tests scripts should not require root privileges, except for the
   installation of operating system prerequisites (e.g., a Python interpreter).
-
 
 [tests-readme]: https://github.com/SovereignCloudStack/standards/blob/main/Tests/README.md
 [python-identifiers]: https://docs.python.org/3/reference/lexical_analysis.html#identifiers
