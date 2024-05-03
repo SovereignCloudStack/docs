@@ -36,18 +36,18 @@ The following services MAY be present in SCS-compliant IaaS-Deployment and their
 | **Gnocchi** | Time Series Database service | needed for Ceilometer |
 | **Heat** | Orchestration service | **maybe unsupported?** |
 | **Horizon** | Dashboard | |
-| **Ironic** | Bare Metal libraries | |
+| **Ironic** | Bare Metal provisioning service | |
 | **Manila** | Shared File Systems service | |
 | **Masakari** | Instances High Availability service | |
 | **Skyline** | Dashboard | if not used, move to unsupported |
 
 ## Unsupported OpenStack services
 
-All other OpenStack services that are not mentioned in the mandatory or supported lists are not tested for their integration and behavior by the SCS.
-Those services MAY be used in IaaS-Deployments but the SCS will not assume they are present and potential issues that occur during the deploying or usage have to be handled by the CSP alone.
+All other OpenStack services that are not mentioned in the mandatory or supported lists are not tested for their integration and behavior by the SCS community.
+Those services may be integrated into IaaS deployments by a CSP on their own responsibility but the SCS will not assume they are present and potential issues that occur during deployment or usage have to be handled by the CSP on their own accord.
+The SCS standard offers no guarantees for compatibility or reliability of services categorized as unsupported in conjunction with an SCS-conformant infrastructure.
 
-There are still some notable services, that might come into the supported list, when there will be enough CSPs wanting this.
-This list is not exhaustive:
+Some notable but currently unsupported services which address popular use cases are listed below (list not exhaustive):
 
 | OpenStack Service | description | comment |
 |-----|-----|-------|
