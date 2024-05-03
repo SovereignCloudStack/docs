@@ -23,23 +23,32 @@ The following OpenStack services MUST be present in SCS-compliant IaaS-Deploymen
 | **Placement** | Hardware Describing Service for Nova |
 | **S3 API object storage** | No formal standard exists, many implementations: Swift, RadosGW, minio... |
 
+:::caution
+
+S3 API implementations may differ in certain offered features.
+CSPs must publicly describe, which implementation they use in their deployment.
+Users should always research whether a needed feature is supported in the offered implementation.
+
+:::
+
 ## Supported OpenStack services
 
-The following services MAY be present in SCS-compliant IaaS-Deployment and their integration had been tested by the SCS:
+The following services MAY be present in SCS-compliant IaaS-Deployment and they are considered in the SCS standards.
+Most of these services (except Cloudkitty, Gnocchi and Masakari) have been integrated and tested by the SCS reference implementation:
 
-| OpenStack Service | description | comment |
-|-----|-----|-------|
-| **Barbican** | Key Manager service | maybe a future mandatory service |
-| **Cloudkitty** | Rating/Billing service | maybe move to unsupported |
-| **Ceilometer** | Telemetry service | |
-| **Designate** | DNS service | |
-| **Gnocchi** | Time Series Database service | needed for Ceilometer |
-| **Heat** | Orchestration service | **maybe unsupported?** |
-| **Horizon** | Dashboard | |
-| **Ironic** | Bare Metal provisioning service | |
-| **Manila** | Shared File Systems service | |
-| **Masakari** | Instances High Availability service | |
-| **Skyline** | Dashboard | if not used, move to unsupported |
+| OpenStack Service | description |
+|-----|-----|
+| **Barbican** | Key Manager service |
+| **Cloudkitty** | Rating/Billing service |
+| **Ceilometer** | Telemetry service |
+| **Designate** | DNS service |
+| **Gnocchi** | Time Series Database service |
+| **Heat** | Orchestration service |
+| **Horizon** | Dashboard |
+| **Ironic** | Bare Metal provisioning service |
+| **Manila** | Shared File Systems service |
+| **Masakari** | Instances High Availability service |
+| **Skyline** | Dashboard |
 
 ## Unsupported OpenStack services
 
@@ -49,7 +58,7 @@ The SCS standard offers no guarantees for compatibility or reliability of servic
 
 Some notable but currently unsupported services which address popular use cases are listed below (list not exhaustive):
 
-| OpenStack Service | description | comment |
-|-----|-----|-------|
-| **Magnum** | Container Infrastructure Management service | |
-| **Freezer** | Backup, Restore, and Disaster Recovery service | interesting service, that some people on upstream want to revive |
+| OpenStack Service | description |
+|-----|-----|
+| **Magnum** | Container Infrastructure Management service |
+| **Freezer** | Backup, Restore, and Disaster Recovery service |
