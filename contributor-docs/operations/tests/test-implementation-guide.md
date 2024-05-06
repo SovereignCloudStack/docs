@@ -60,9 +60,10 @@ As a general rule of thumb, the earlier you begin writing unit tests, the better
 – it will force you to write modules that are easy to test.
 
 Divide conformance tests scripts into smaller, loosely coupled units, i.e.,
-functions that serve one purpose.
-Pass externally retrieved data as function arguments instead of hardcoding the
-calls to the retrieval functions inside a function.
+functions that serve one purpose each.
+Use the [*dependency injection*][wiki-di] technique, i.e., pass externally
+retrieved data as function arguments instead of hardcoding the calls to the
+retrieval functions inside a function.
 Avoid logging calls deep down in the call hierarchy and use explicit return
 values or raise exceptions, instead.
 Here is an abstract example of a conformance test which does exactly that:
@@ -103,8 +104,9 @@ without actually making a call to some external service.
 
 ### Pytest Test Example
 
-Assuming we want to unit test some members of the module `property_compliance`, we would
-create a file `property_compliance_test.py` with the following content as a starting point:
+Assuming we want to unit test some members of the module `property_compliance`
+from the previous section, we would create a file `property_compliance_test.py`
+with the following content as a starting point:
 
 ```python
 """Unit tests for property_compliance.
@@ -145,3 +147,4 @@ In particular, this means:
 [cert-scopes]: https://docs.scs.community/standards/certification/scopes-versions
 [scs-rfc2119-guide]: https://docs.scs.community/contributor-docs/operations/tests/rfc2119-keyword-test-guide
 [scs-0004-v1]: https://github.com/SovereignCloudStack/standards/blob/main/Standards/scs-0004-v1-achieving-certification.md
+[wiki-di]: https://en.wikipedia.org/wiki/Dependency_injection
