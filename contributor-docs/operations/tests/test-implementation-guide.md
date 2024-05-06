@@ -25,8 +25,10 @@ Test authors are *strongly* encouraged to include unit and regression tests for
 the conformance test's logic.
 Conformance tests will inevitably contain some non-trivial algorithms, be it for
 parsing flavor names or evaluating CVE vulnerability reports.
-As a bonus, a well written unit test also makes it easier for reviewers to
-cross check a given pull request with new or enhanced conformance tests.
+Testing them automatically and regularly against valid and invalid inputs helps
+test authors to find programming mistakes early on.
+As a bonus, a well written unit test also makes it easier for reviewers to cross
+check a given pull request with new, enhanced or refactored conformance tests.
 
 In general, unit and regression tests for the conformance tests are located in
 the same location as the conformance tests, that is, the `Tests/` directory of
