@@ -252,7 +252,8 @@ const sidebarsDocs = {
                 type: 'generated-index'
               },
               items: [
-                'operating-scs/components/central-api/overview'
+                'operating-scs/components/central-api/overview',
+                'operating-scs/components/central-api/poc-setup'
               ]
             },
           ]

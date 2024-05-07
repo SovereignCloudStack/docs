@@ -20,7 +20,7 @@
         },
         {
           "title": "Central API",
-          "url": "/docs/operating-scs/components/central-api/docs/overview",
+          "url": "/docs/operating-scs/components/central-api/overview",
           "mandatory": "true",
           "stable": "true"
         }
