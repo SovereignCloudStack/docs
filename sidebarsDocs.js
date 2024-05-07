@@ -252,7 +252,7 @@ const sidebarsDocs = {
                 type: 'generated-index'
               },
               items: [
-                'operating-scs/components/central-api/docs/overview'
+                'operating-scs/components/central-api/overview'
               ]
             },
           ]
