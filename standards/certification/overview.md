@@ -1,3 +1,4 @@
+<!-- markdownlint-disable -->
 # Certification
 
 SCS certificates come with various scopes. See [Scopes and Versions](scopes-versions.md) for details.
