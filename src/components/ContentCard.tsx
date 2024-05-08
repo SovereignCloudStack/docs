@@ -37,7 +37,7 @@ const ContentCard: React.FunctionComponent<ContentCardProps> = (props) => {
       <div className="card__body">
         <p>{body}</p>
       </div>
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {components &&
           components.map((component, index) => (
             <Link to={component.url} key={index}>
