@@ -245,7 +245,18 @@ const sidebarsDocs = {
                 'operating-scs/components/monitoring/docs/tracing',
                 'operating-scs/components/monitoring/docs/tuning'
               ]
-            }
+            },
+            {
+              type: 'category',
+              label: 'Central API',
+              link: {
+                type: 'generated-index'
+              },
+              items: [
+                'operating-scs/components/central-api/overview',
+                'operating-scs/components/central-api/poc-setup'
+              ]
+            },
           ]
         },
         {
