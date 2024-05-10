@@ -257,6 +257,17 @@ const sidebarsDocs = {
                 'operating-scs/components/central-api/poc-setup'
               ]
             },
+            {
+              type: 'category',
+              label: 'Automated Pentesting',
+              link: {
+                type: 'generated-index'
+              },
+              items: [
+                'operating-scs/components/automated-pentesting/overview',
+                'operating-scs/components/automated-pentesting/tools'
+              ]
+            },
           ]
         },
         {
