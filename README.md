@@ -1,5 +1,10 @@
 # SCS Docs Page Readme
 
+## Rendered docs
+The rendered docs are on the [SCS Docs Pages](https://docs.scs.community/).
+The staging branch gets rendered to the [staging server](https://docs-staging.scs.community/).
+Note that there are a few minutes delay due to the way the sync is done.
+
 ## Licenses
 
 The content of this repository is published under multiple licenses.
