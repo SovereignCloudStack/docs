@@ -65,5 +65,11 @@
     "source": "docs/*.md",
     "target": "docs/04-operating-scs/components",
     "label": "central-api"
+  },
+  {
+    "repo": "SovereignCloudStack/security-infra-scan-pipeline",
+    "source": "docs/*.md",
+    "target": "docs/04-operating-scs/components",
+    "label": "automated-pentesting"
   }
 ]
