@@ -17,6 +17,18 @@
           "url": "/docs/category/monitoring",
           "mandatory": "false",
           "stable": "true"
+        },
+        {
+          "title": "Central API",
+          "url": "/docs/operating-scs/components/central-api/overview",
+          "mandatory": "true",
+          "stable": "true"
+        },
+        {
+          "title": "Automated Pentesting",
+          "url": "/docs/operating-scs/components/automated-pentesting/overview",
+          "mandatory": "true",
+          "stable": "true"
         }
       ]
     }

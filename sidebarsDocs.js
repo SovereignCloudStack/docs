@@ -235,6 +235,7 @@ const sidebarsDocs = {
                 'operating-scs/components/monitoring/docs/overview',
                 'operating-scs/components/monitoring/docs/quickstart',
                 'operating-scs/components/monitoring/docs/scs-deployment',
+                'operating-scs/components/monitoring/docs/k3s',
                 'operating-scs/components/monitoring/docs/infrastructure_services',
                 'operating-scs/components/monitoring/docs/iaas',
                 'operating-scs/components/monitoring/docs/kaas',
@@ -244,7 +245,29 @@ const sidebarsDocs = {
                 'operating-scs/components/monitoring/docs/tracing',
                 'operating-scs/components/monitoring/docs/tuning'
               ]
-            }
+            },
+            {
+              type: 'category',
+              label: 'Central API',
+              link: {
+                type: 'generated-index'
+              },
+              items: [
+                'operating-scs/components/central-api/overview',
+                'operating-scs/components/central-api/poc-setup'
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Automated Pentesting',
+              link: {
+                type: 'generated-index'
+              },
+              items: [
+                'operating-scs/components/automated-pentesting/overview',
+                'operating-scs/components/automated-pentesting/tools'
+              ]
+            },
           ]
         },
         {
