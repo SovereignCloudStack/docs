@@ -81,6 +81,7 @@ Service users will have their default_project_id set to a specific project and w
 | 7e18881932f749baa7d547ebd407b8d8 | p500924-kaas-playground9    | jschoone                 | Playground9 for Hackathon             | 30.09.2024  |
 | d9dc2f33e76240219db484526e9f601d | p500924-akafazov            | akafazov                 | akafazov Testbed                      | 30.04.2024  |
 | b07ad6a84982471b9a344ef9947f0e0f | p500924-gtema               | gtema                    | Testbed for gtema                     |      ∞      |
+|                                  | p500924-compliance-monitor  | mbuechse                 | SCS Compliance Monitor Deployment     |      ∞      |
 
 ## Wavecon
 
