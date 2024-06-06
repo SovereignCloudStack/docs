@@ -354,7 +354,7 @@ const sidebarsDocs = {
           link: {
             type: 'generated-index'
           },
-          items: ['iam/domain-manager-setup-and-usage']
+          items: ['iam/domain-manager-setup-and-usage', 'iam/SCS-example-setup-configuration-description']
         },
         'iam/intra-SCS-federation-setup-description-for-osism-doc-operations'
       ]
