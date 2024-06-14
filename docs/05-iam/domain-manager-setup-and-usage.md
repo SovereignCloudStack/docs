@@ -13,6 +13,12 @@ SCS defines the **Domain Manager** standard, introducing a special persona to th
 This persona offers a properly domain-scoped permission set to manage users, groups, projects and role assignments within a domain.
 Its intended use case is to offer extensive identity management self-service capabilities to tenants mapped to a domain.
 
+:::note Domain Manager and Identity Federation
+
+In environments using **Identity Federation**, the Domain Manager persona is only available to local non-federated users and only supports managing non-federated identity resources.
+
+:::
+
 This guide will explain setup, configuration and usage of the SCS Domain Manager standard.
 
 ### Warning regarding the exposure of domain names
