@@ -83,6 +83,7 @@ Service users will have their default_project_id set to a specific project and w
 | b07ad6a84982471b9a344ef9947f0e0f | p500924-gtema               | gtema                    | Testbed for gtema                     |      ∞      |
 | e89ac8c9f66f46b5a983b2a05d2a66ec | p500924-zuse-z3             | zuse-z3                  | Josefine's gx-scs project             |      ∞      |
 | fc1f7a0e10a64d6083dcdbcb7ccf6ff4 | p500924-compliance-monitor  | mbuechse                 | SCS Compliance Monitor Deployment     |      ∞      |
+| eba5414a4f8549b28a62af199d82dab5 | p500924-tsmado              | tsmado                   | tsmado's gx-scs project               |      ∞      |
 
 ## Wavecon
 
