@@ -46,7 +46,19 @@
     "repo": "SovereignCloudStack/status-page-openapi",
     "source": "docs",
     "target": "docs/04-operating-scs/components",
-    "label": "status-page"
+    "label": "status-page-openapi"
+  },
+  {
+    "repo": "SovereignCloudStack/status-page-api",
+    "source": "docs",
+    "target": "docs/04-operating-scs/components",
+    "label": "status-page-api"
+  },
+  {
+    "repo": "SovereignCloudStack/status-page-deployment",
+    "source": "docs",
+    "target": "docs/04-operating-scs/components",
+    "label": "status-page-deployment"
   },
   {
     "repo": "SovereignCloudStack/k8s-observability",
