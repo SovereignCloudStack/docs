@@ -222,14 +222,23 @@ const sidebarsDocs = {
                 'operating-scs/components/status-page-openapi/docs/overview',
                 {
                   type: 'category',
-                  label: 'API',
+                  label: 'Concepts',
                   link: {
                     type: 'generated-index'
                   },
                   items: [
                     'operating-scs/components/status-page-openapi/docs/components',
                     'operating-scs/components/status-page-openapi/docs/levels_of_consensus',
-                    'operating-scs/components/status-page-openapi/docs/component_overview',
+                    'operating-scs/components/status-page-openapi/docs/component_overview'
+                  ]
+                },
+                {
+                  type: 'category',
+                  label: 'API',
+                  link: {
+                    type: 'generated-index'
+                  },
+                  items: [
                     'operating-scs/components/status-page-api/docs/requests',
                     'operating-scs/components/status-page-api/docs/example-requests'
                   ]
