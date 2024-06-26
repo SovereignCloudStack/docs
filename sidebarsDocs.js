@@ -219,7 +219,6 @@ const sidebarsDocs = {
                 type: 'generated-index'
               },
               items: [
-                'operating-scs/components/status-page-openapi/docs/overview',
                 {
                   type: 'category',
                   label: 'Concepts',
@@ -227,6 +226,7 @@ const sidebarsDocs = {
                     type: 'generated-index'
                   },
                   items: [
+                    'operating-scs/components/status-page-openapi/docs/overview',
                     'operating-scs/components/status-page-openapi/docs/components',
                     'operating-scs/components/status-page-openapi/docs/levels_of_consensus',
                     'operating-scs/components/status-page-openapi/docs/component_overview'
