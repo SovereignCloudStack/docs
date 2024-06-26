@@ -242,6 +242,8 @@ const sidebarsDocs = {
                   },
                   items: [
                     'operating-scs/components/status-page-deployment/docs/overview',
+                    'operating-scs/components/status-page-deployment/docs/requirements',
+                    'operating-scs/components/status-page-deployment/docs/quickstart',
                     {
                       type: 'category',
                       label: 'Configuration',
@@ -255,7 +257,9 @@ const sidebarsDocs = {
                         'operating-scs/components/status-page-deployment/docs/scs-public'
                       ]
                     },
-                    'operating-scs/components/status-page-deployment/docs/usage'
+                    'operating-scs/components/status-page-deployment/docs/usage',
+                    'operating-scs/components/status-page-deployment/docs/contribute',
+                    'operating-scs/components/status-page-deployment/docs/faq'
                   ]
                 }
               ]
