@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[1349],{47946:e=>{e.exports=JSON.parse('{"title":"IaaS Layer","slug":"/category/iaas-layer","permalink":"/docs/category/iaas-layer","navigation":{"previous":{"title":"Introduction","permalink":"/docs/"},"next":{"title":"Concept Guide","permalink":"/docs/iaas/guides/concept-guide/"}}}')}}]);
