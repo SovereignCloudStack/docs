@@ -239,8 +239,13 @@ const sidebarsDocs = {
                     type: 'generated-index'
                   },
                   items: [
+                    'operating-scs/components/status-page-api/docs/overview',
+                    'operating-scs/components/status-page-api/docs/requirements',
+                    'operating-scs/components/status-page-api/docs/quickstart',
+                    'operating-scs/components/status-page-api/docs/configuration',
                     'operating-scs/components/status-page-api/docs/requests',
-                    'operating-scs/components/status-page-api/docs/example-requests'
+                    'operating-scs/components/status-page-api/docs/example-requests',
+                    'operating-scs/components/status-page-api/docs/contribute'
                   ]
                 },
                 {
