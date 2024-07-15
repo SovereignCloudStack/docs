@@ -273,6 +273,7 @@ const sidebarsDocs = {
                     },
                     'operating-scs/components/status-page-deployment/docs/usage',
                     'operating-scs/components/status-page-deployment/docs/contribute',
+                    'operating-scs/components/status-page-deployment/docs/admin-authentication',
                     'operating-scs/components/status-page-deployment/docs/faq'
                   ]
                 }
