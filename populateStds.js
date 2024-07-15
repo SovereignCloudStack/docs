@@ -139,7 +139,6 @@ if (!lines.length)
   lines.push(`${intro}
 
 ${headerLegend}
-
 ${reactHighlightTableCellBackground}
 `)
 lines.push('<div id="color-table-cells" />') // used to find the sibling table for color encoded background
