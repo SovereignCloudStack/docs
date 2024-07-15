@@ -7,15 +7,13 @@ Standards are the core deliverable of SCS. By standardizing the open source soft
 
 SCS standards are discussed, developed and maintained in the community by the corresponding teams (see Track in the table below), which naturally include existing users of SCS.`
 const trackIntros = {
-  Global:
-    'This track encompasses the foundational standards that guide the overall structure, documentation, and general topics related to the Sovereign Cloud Stack. It serves as the core framework, ensuring consistency, clarity, and comprehensibility across all aspects of the cloud stack, fostering an environment where information is easily accessible and understood.',
-  IaaS: 'The IaaS Layer Standards track focuses on the protocols, guidelines, and specifications that govern the infrastructure as a service layer. This encompasses standards for virtual machines, storage, networking, and other foundational resources, ensuring seamless, efficient, and secure operation, interoperability, and management of the underlying cloud infrastructure.',
-  KaaS: 'Standards in this track are concerned with Kubernetes as a Service layer, outlining norms and best practices for deploying, managing, and operating Kubernetes clusters. These standards aim to ensure that the orchestration of containers is streamlined, secure, and compatible across various cloud environments and platforms.',
-  IAM: 'This track revolves around Identity and Access Management (IAM) standards, providing guidelines for ensuring secure and efficient user authentication, authorization, and administration. It addresses issues related to user identity, permissions, roles, and policies, aiming to safeguard and streamline access to cloud resources and services.',
-  Ops: 'Operational Tooling Standards cover the protocols and guidelines associated with tools and utilities used for monitoring, management, and maintenance of the cloud environment. This includes standards for status pages, alerts, logs, and other operational tools, aiming to optimize the reliability, performance, and security of cloud services and resources.'
+    'Global': 'This track encompasses the foundational standards that guide the overall structure, documentation, and general topics related to the Sovereign Cloud Stack. It serves as the core framework, ensuring consistency, clarity, and comprehensibility across all aspects of the cloud stack, fostering an environment where information is easily accessible and understood.',
+    'IaaS': 'The IaaS Layer Standards track focuses on the protocols, guidelines, and specifications that govern the infrastructure as a service layer. This encompasses standards for virtual machines, storage, networking, and other foundational resources, ensuring seamless, efficient, and secure operation, interoperability, and management of the underlying cloud infrastructure.',
+    'KaaS': 'Standards in this track are concerned with Kubernetes as a Service layer, outlining norms and best practices for deploying, managing, and operating Kubernetes clusters. These standards aim to ensure that the orchestration of containers is streamlined, secure, and compatible across various cloud environments and platforms.',
+    'IAM': 'This track revolves around Identity and Access Management (IAM) standards, providing guidelines for ensuring secure and efficient user authentication, authorization, and administration. It addresses issues related to user identity, permissions, roles, and policies, aiming to safeguard and streamline access to cloud resources and services.',
+    'Ops': 'Operational Tooling Standards cover the protocols and guidelines associated with tools and utilities used for monitoring, management, and maintenance of the cloud environment. This includes standards for status pages, alerts, logs, and other operational tools, aiming to optimize the reliability, performance, and security of cloud services and resources.',
 }
-const headerLegend =
-  '*Legend to the column headings: Draft, Stable (but not effective), Effective, Deprecated (and no longer effective).'
+const headerLegend = '*Legend to the column headings: Draft, Stable (but not effective), Effective, Deprecated (and no longer effective).'
 
 const reactHighlightTableCellBackground = `
 import { useEffect } from 'react';
@@ -54,23 +52,10 @@ export const TableCellStyleApplier = () => {
   `
 
 var filenames = fs
-  .readdirSync('standards/')
-  .filter(
-    (fn) =>
-      fn.startsWith('scs-') && fn.endsWith('.md') && !fn.startsWith('scs-X')
-  )
+    .readdirSync('standards/')
+    .filter((fn) => fn.startsWith('scs-') && fn.endsWith('.md') && !fn.startsWith('scs-X'))
 
-keys = [
-  'title',
-  'type',
-  'status',
-  'track',
-  'stabilized_at',
-  'deprecated_at',
-  'replaces',
-  'authors',
-  'state'
-]
+keys = ['title', 'type', 'status', 'track', 'stabilized_at', 'deprecated_at', 'replaces', 'authors', 'state']
 
 // use the ISO string, because so do the standard documents, and we can use string comparison with ISO dates
 today = new Date().toISOString().slice(0, 10)
@@ -78,197 +63,166 @@ today = new Date().toISOString().slice(0, 10)
 // collect all the information sorted into a track/adr-id/version hierarchy
 tracks = {}
 filenames.forEach((filename) => {
-  var components = filename.split('-')
-  var obj = {
-    ...YAML.parseDocument(
-      fs.readFileSync(`standards/${filename}`, 'utf8')
-    ).toJSON(),
-    filename,
-    id: filename.substring(0, filename.length - 3),
-    adrId: components[1],
-    version: components[2],
-    slug: filename.substring(12, filename.length - 3), // 12 == "scs-xxxx-vN-".length
-    state: {}
-  }
-  // now calculate the properties for the columns (plus stable0 as a helper)
-  obj.state.draft = obj.stabilized_at === undefined
-  obj.state.stable0 = !obj.state.draft && obj.stabilized_at <= today
-  obj.state.deprecated =
-    obj.deprecated_at !== undefined && obj.deprecated_at < today
-  obj.state.stable =
-    !obj.state.draft && !obj.state.stable0 && !obj.state.deprecated
-  obj.state.effective = obj.state.stable0 && !obj.state.deprecated
-  var track = obj.track
-  if (track === undefined) return
-  if (tracks[track] === undefined) tracks[track] = {}
-  var standards = tracks[track]
-  if (standards[obj.adrId] === undefined)
-    standards[obj.adrId] = { versions: [], supplements: {} }
-  if (obj.type === 'Supplement') {
-    var supplements = standards[obj.adrId].supplements
-    if (supplements[obj.slug] === undefined)
-      supplements[obj.slug] = { versions: [], title: obj.title }
-    supplements[obj.slug].versions.push(obj)
-  } else {
-    standards[obj.adrId].versions.push(obj)
-  }
+    var components = filename.split('-')
+    var obj = {
+        ...YAML.parseDocument(fs.readFileSync(`standards/${filename}`, 'utf8')).toJSON(),
+        filename,
+        id: filename.substring(0, filename.length - 3),
+        adrId: components[1],
+        version: components[2],
+        slug: filename.substring(12, filename.length - 3),  // 12 == "scs-xxxx-vN-".length
+        state: {},
+    }
+    // now calculate the properties for the columns (plus stable0 as a helper)
+    obj.state.draft = obj.stabilized_at === undefined
+    obj.state.stable0 = !obj.state.draft && obj.stabilized_at <= today
+    obj.state.deprecated = obj.deprecated_at !== undefined && obj.deprecated_at < today
+    obj.state.stable = !obj.state.draft && !obj.state.stable0 && !obj.state.deprecated
+    obj.state.effective = obj.state.stable0 && !obj.state.deprecated
+    var track = obj.track
+    if (track === undefined) return
+    if (tracks[track] === undefined) tracks[track] = {}
+    var standards = tracks[track]
+    if (standards[obj.adrId] === undefined) standards[obj.adrId] = {versions: [], supplements: {}}
+    if (obj.type === "Supplement") {
+        var supplements = standards[obj.adrId].supplements
+        if (supplements[obj.slug] === undefined) supplements[obj.slug] = {versions: [], title: obj.title}
+        supplements[obj.slug].versions.push(obj)
+    } else {
+        standards[obj.adrId].versions.push(obj)
+    }
 })
 
 function readPrefixLines(fn) {
-  var lines = []
-  if (fs.existsSync(fn)) {
-    lines = fs.readFileSync(fn, 'utf8').split('\n')
-    var tableIdx = lines.findIndex((line) => line.trim().startsWith('|'))
-    if (tableIdx >= 0) {
-      lines.splice(tableIdx)
-    }
-  } else console.log(`WARNING: file ${fn} not found`)
-  return lines
+    var lines = []
+    if (fs.existsSync(fn)) {
+        lines = fs.readFileSync(fn, 'utf8').split('\n')
+        var tableIdx = lines.findIndex((line) => line.trim().startsWith('|'))
+        if (tableIdx >= 0) {
+            lines.splice(tableIdx)
+        }
+    } else console.log(`WARNING: file ${fn} not found`)
+    return lines
 }
 
 function mkLinkList(versions) {
-  var links = versions.map((v) => `[${v.version}](/standards/${v.id})`)
-  return links.join(', ')
+    var links = versions.map((v) => `[${v.version}](/standards/${v.id})`)
+    return links.join(', ')
 }
 
 // walk down the hierarchy, building adr overview pages, track overview pages, and total overview page
 // as well as the new sidebar
 sidebarItems = []
 var lines = readPrefixLines('standards/standards/overview.mdx')
-if (!lines.length)
-  lines.push(`${intro}
+if (!lines.length) lines.push(`${intro}
 
 ${headerLegend}
 ${reactHighlightTableCellBackground}
 `)
 lines.push('<div id="color-table-cells" />') // used to find the sibling table for color encoded background
-lines.push(
-  '| Standard  | Track  | Description  | Draft | Stable* | Effective | Deprecated* |'
-)
-lines.push(
-  '| --------- | ------ | ------------ | ----- | ------- | --------- | ----------- |'
-)
+lines.push('| Standard  | Track  | Description  | Draft | Stable* | Effective | Deprecated* |')
+lines.push('| --------- | ------ | ------------ | ----- | ------- | --------- | ----------- |')
 Object.entries(tracks).forEach((trackEntry) => {
-  var track = trackEntry[0]
-  var trackPath = `standards/${track.toLowerCase()}`
-  fs.mkdirSync(trackPath, { recursive: true })
-  var trackItem = {
-    type: 'category',
-    label: track,
-    link: {
-      type: 'doc',
-      id: `${track.toLowerCase()}/index`
-    },
-    items: []
-  }
-  sidebarItems.push(trackItem)
-  var tlines = readPrefixLines(`standards/${track.toLowerCase()}/index.md`)
-  if (!tlines.length) {
-    tlines.push(`# ${track} Standards
+    var track = trackEntry[0]
+    var trackPath = `standards/${track.toLowerCase()}`
+    fs.mkdirSync(trackPath, { recursive: true })
+    var trackItem = {
+        type: 'category',
+        label: track,
+        link: {
+            type: 'doc',
+            id: `${track.toLowerCase()}/index`,
+        },
+        items: [],
+    }
+    sidebarItems.push(trackItem)
+    var tlines = readPrefixLines(`standards/${track.toLowerCase()}/index.md`)
+    if (!tlines.length) {
+        tlines.push(`# ${track} Standards
 
 ${trackIntros[track]}
 
 ${headerLegend}
 `)
-  }
-  tlines.push(
-    '| Standard  | Description  | Draft | Stable* | Effective | Deprecated* |'
-  )
-  tlines.push(
-    '| --------- | ------------ | ----- | ------- | --------- | ----------- |'
-  )
-  Object.entries(trackEntry[1]).forEach((standardEntry) => {
-    var versions = standardEntry[1].versions
-    var supplements = standardEntry[1].supplements
-    var ref = versions[versions.length - 1]
-    var effectiveVersions = versions.filter((v) => v.state.effective)
-    if (effectiveVersions.length) {
-      ref = effectiveVersions[effectiveVersions.length - 1]
     }
-    var adrId = standardEntry[0]
-    var standardItem = {
-      type: 'category',
-      label: `scs-${adrId}`,
-      link: {
-        type: 'doc',
-        id: `${track.toLowerCase()}/scs-${adrId}`
-      },
-      items: []
-    }
-    trackItem.items.push(standardItem)
-    var slines = readPrefixLines(
-      `standards/${track.toLowerCase()}/scs-${adrId}.md`
-    )
-    if (!slines.length) {
-      slines.push(`# scs-${adrId}: ${ref.title}\n`)
-      if (ref.description !== undefined) {
-        slines.push(ref.description)
-      }
-    }
-    slines.push('| Version  | Type  | State   | stabilized | deprecated |')
-    slines.push('| -------- | ----- | ------- | ---------- | ---------- |')
-    var link = `[scs-${adrId}](/standards/${track.toLowerCase()}/scs-${adrId})`
-    var versionList = ['draft', 'stable', 'effective', 'deprecated']
-      .map(
-        (column) => mkLinkList(versions.filter((v) => v.state[column])) || '-'
-      )
-      .join(' | ')
-    lines.push(`| ${link}  | ${track}  | ${ref.title}  | ${versionList}  |`)
-    tlines.push(`| ${link}  | ${ref.title}  | ${versionList}  |`)
-    versions.forEach((obj) => {
-      var versionItem = {
-        type: 'doc',
-        label: obj.version.toUpperCase(),
-        id: obj.id
-      }
-      standardItem.items.push(versionItem)
-      slines.push(
-        `| [scs-${adrId}-${obj.version}](/standards/${obj.id})  | ${
-          obj.type
-        }  | ${obj.status}  | ${obj.stabilized_at || '-'}  | ${
-          obj.deprecated_at || '-'
-        }  |`
-      )
-    })
-    Object.values(supplements).forEach((obj) => {
-      // var link = `[scs-${adrId}](/standards/${track.toLowerCase()}/scs-${adrId})`
-      var title = obj.title
-      var versions = obj.versions
-      var versionList = ['draft', 'stable', 'effective', 'deprecated']
-        .map(
-          (column) => mkLinkList(versions.filter((v) => v.state[column])) || '-'
-        )
-        .join(' | ')
-      if (title.startsWith(ref.title)) {
-        title = title.substring(ref.title.length)
-        if (title.startsWith(':')) title = title.substring(1).trimStart()
-      }
-      lines.push(`|   |   | Supplement: ${title}  | ${versionList} |`)
-      tlines.push(`|   | Supplement: ${title}  | ${versionList} |`)
-      slines.push(`\n## Supplement: ${title}\n`)
-      slines.push('| Version  | State   | stabilized | deprecated |')
-      slines.push('| -------- | ------- | ---------- | ---------- |')
-      versions.forEach((obj) => {
-        var versionItem = {
-          type: 'doc',
-          label: obj.version.toUpperCase(),
-          id: obj.id
+    tlines.push('| Standard  | Description  | Draft | Stable* | Effective | Deprecated* |')
+    tlines.push('| --------- | ------------ | ----- | ------- | --------- | ----------- |')
+    Object.entries(trackEntry[1]).forEach((standardEntry) => {
+        var versions = standardEntry[1].versions
+        var supplements = standardEntry[1].supplements
+        var ref = versions[versions.length - 1]
+        var effectiveVersions = versions.filter((v) => v.state.effective)
+        if (effectiveVersions.length) {
+            ref = effectiveVersions[effectiveVersions.length - 1]
         }
-        standardItem.items.push(versionItem)
-        slines.push(
-          `| [${obj.version}](/standards/${obj.id})  | ${obj.status}  | ${
-            obj.stabilized_at || '-'
-          }  | ${obj.deprecated_at || '-'}  |`
-        )
-      })
+        var adrId = standardEntry[0]
+        var standardItem = {
+            type: 'category',
+            label: `scs-${adrId}`,
+            link: {
+                type: 'doc',
+                id: `${track.toLowerCase()}/scs-${adrId}`,
+            },
+            items: [],
+        }
+        trackItem.items.push(standardItem)
+        var slines = readPrefixLines(`standards/${track.toLowerCase()}/scs-${adrId}.md`)
+        if (!slines.length) {
+            slines.push(`# scs-${adrId}: ${ref.title}\n`)
+            if (ref.description !== undefined) {
+                slines.push(ref.description)
+            }
+        }
+        slines.push('| Version  | Type  | State   | stabilized | deprecated |')
+        slines.push('| -------- | ----- | ------- | ---------- | ---------- |')
+        var link = `[scs-${adrId}](/standards/${track.toLowerCase()}/scs-${adrId})`
+        var versionList = ['draft', 'stable', 'effective', 'deprecated'].map(
+            (column) => mkLinkList(versions.filter((v) => v.state[column])) || '-'
+        ).join(' | ')
+        lines.push(`| ${link}  | ${track}  | ${ref.title}  | ${versionList}  |`)
+        tlines.push(`| ${link}  | ${ref.title}  | ${versionList}  |`)
+        versions.forEach((obj) => {
+            var versionItem = {
+                type: 'doc',
+                label: obj.version.toUpperCase(),
+                id: obj.id,
+            }
+            standardItem.items.push(versionItem)
+            slines.push(`| [scs-${adrId}-${obj.version}](/standards/${obj.id})  | ${obj.type}  | ${obj.status}  | ${obj.stabilized_at || '-'}  | ${obj.deprecated_at || '-'}  |`)
+        })
+        Object.values(supplements).forEach((obj) => {
+            // var link = `[scs-${adrId}](/standards/${track.toLowerCase()}/scs-${adrId})`
+            var title = obj.title
+            var versions = obj.versions
+            var versionList = ['draft', 'stable', 'effective', 'deprecated'].map(
+                (column) => mkLinkList(versions.filter((v) => v.state[column])) || '-'
+            ).join(' | ')
+            if (title.startsWith(ref.title)) {
+                title = title.substring(ref.title.length)
+                if (title.startsWith(':')) title = title.substring(1).trimStart()
+            }
+            lines.push(`|   |   | Supplement: ${title}  | ${versionList} |`)
+            tlines.push(`|   | Supplement: ${title}  | ${versionList} |`)
+            slines.push(`\n## Supplement: ${title}\n`)
+            slines.push('| Version  | State   | stabilized | deprecated |')
+            slines.push('| -------- | ------- | ---------- | ---------- |')
+            versions.forEach((obj) => {
+                var versionItem = {
+                    type: 'doc',
+                    label: obj.version.toUpperCase(),
+                    id: obj.id,
+                }
+                standardItem.items.push(versionItem)
+                slines.push(`| [${obj.version}](/standards/${obj.id})  | ${obj.status}  | ${obj.stabilized_at || '-'}  | ${obj.deprecated_at || '-'}  |`)
+            })
+        })
+        slines.push('')  // file should end with a single newline character
+        fs.writeFileSync(`${trackPath}/scs-${adrId}.md`, slines.join('\n'), 'utf8')
     })
-    slines.push('') // file should end with a single newline character
-    fs.writeFileSync(`${trackPath}/scs-${adrId}.md`, slines.join('\n'), 'utf8')
-  })
-  tlines.push('') // file should end with a single newline character
-  fs.writeFileSync(`${trackPath}/index.md`, tlines.join('\n'), 'utf8')
+    tlines.push('')  // file should end with a single newline character
+    fs.writeFileSync(`${trackPath}/index.md`, tlines.join('\n'), 'utf8')
 })
-lines.push('') // file should end with a single newline character
+lines.push('')  // file should end with a single newline character
 fs.writeFileSync(`standards/standards/overview.mdx`, lines.join('\n'), 'utf8')
 
 var newSidebars = `module.exports = ${JSON.stringify(sidebarItems, null, '  ')}`
