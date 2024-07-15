@@ -126,7 +126,7 @@ function readPrefixLines(fn) {
   return lines
 }
 
-function makeLinkList(versions) {
+function mkLinkList(versions) {
   var links = versions.map((v) => `[${v.version}](/standards/${v.id})`)
   return links.join(', ')
 }
@@ -142,7 +142,6 @@ ${headerLegend}
 
 ${reactHighlightTableCellBackground}
 `)
-
 lines.push('<div id="color-table-cells" />') // used to find the sibling table for color encoded background
 lines.push(
   '| Standard  | Track  | Description  | Draft | Stable* | Effective | Deprecated* |'
@@ -212,7 +211,7 @@ ${headerLegend}
     var link = `[scs-${adrId}](/standards/${track.toLowerCase()}/scs-${adrId})`
     var versionList = ['draft', 'stable', 'effective', 'deprecated']
       .map(
-        (column) => makeLinkList(versions.filter((v) => v.state[column])) || '-'
+        (column) => mkLinkList(versions.filter((v) => v.state[column])) || '-'
       )
       .join(' | ')
     lines.push(`| ${link}  | ${track}  | ${ref.title}  | ${versionList}  |`)
@@ -238,8 +237,7 @@ ${headerLegend}
       var versions = obj.versions
       var versionList = ['draft', 'stable', 'effective', 'deprecated']
         .map(
-          (column) =>
-            makeLinkList(versions.filter((v) => v.state[column])) || '-'
+          (column) => mkLinkList(versions.filter((v) => v.state[column])) || '-'
         )
         .join(' | ')
       if (title.startsWith(ref.title)) {
