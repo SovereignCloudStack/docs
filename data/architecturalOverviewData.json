@@ -1,0 +1,102 @@
+{
+  "ops": [
+    {
+      "title": "Ops Layer",
+      "body": "Tooling and infrastructure design for easy, efficient and transparent ways to operate an SCS Cloud.",
+      "url": "/docs/category/operating-scs",
+      "buttonText": "Learn More",
+      "components": [
+        {
+          "title": "Status Page",
+          "url": "/docs/operating-scs/components/status-page/docs/overview",
+          "mandatory": "true",
+          "stable": "true"
+        },
+        {
+          "title": "Monitoring",
+          "url": "/docs/category/monitoring",
+          "mandatory": "false",
+          "stable": "true"
+        },
+        {
+          "title": "Central API",
+          "url": "/docs/operating-scs/components/central-api/overview",
+          "mandatory": "true",
+          "stable": "true"
+        },
+        {
+          "title": "Automated Pentesting",
+          "url": "/docs/operating-scs/components/automated-pentesting/overview",
+          "mandatory": "true",
+          "stable": "true"
+        }
+      ]
+    }
+  ],
+  "container": [
+    {
+      "title": "Container Layer",
+      "body": "SCS offers a robust solution for managing container workloads on a Kubernetes infrastructure.",
+      "url": "/docs/container",
+      "buttonText": "Learn More",
+      "components": [
+        {
+          "title": "KaaS V1: K8s Cluster API Provider",
+          "url": "/docs/category/k8s-cluster-api-provider",
+          "mandatory": "false",
+          "stable": "true"
+        },
+        {
+          "title": "KaaS V2: Cluster Stacks",
+          "url": "/docs/category/cluster-stacks",
+          "mandatory": "false",
+          "stable": "true"
+        },
+        {
+          "title": "Container Registry",
+          "url": "/docs/category/container-registry",
+          "mandatory": "false",
+          "stable": "true"
+        }
+      ]
+    }
+  ],
+  "iaas": [
+    {
+      "title": "IaaS Layer",
+      "body": "SCS offers OpenStack infrastructure solutions based on KVM virtualization to deploy VM workloads and enabling the container layer optionally.",
+      "url": "/docs/category/iaas-layer",
+      "buttonText": "Learn More",
+      "components": [
+        {
+          "title": "Image Manager",
+          "url": "/docs/iaas/components/image-manager",
+          "mandatory": "true",
+          "stable": "true"
+        },
+        {
+          "title": "Flavor Manager",
+          "url": "/docs/iaas/components/flavor-manager",
+          "mandatory": "true",
+          "stable": "true"
+        }
+      ]
+    }
+  ],
+  "iam": [
+    {
+      "title": "IAM Layer",
+      "body": "Working on Keycloak federated identity provider within our Team IAM.",
+      "url": "/docs/iam",
+      "buttonText": "Learn More",
+      "components": [
+        {
+          "title": "Keycloak",
+          "url": "/docs/iam/intra-SCS-federation-setup-description-for-osism-doc-operations",
+          "mandatory": "false",
+          "stable": "true"
+        }
+      ]
+    }
+  ]
+}
