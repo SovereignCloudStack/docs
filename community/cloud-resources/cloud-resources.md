@@ -41,7 +41,7 @@ Service users will have their default_project_id set to a specific project and w
 | 4925967416894fd78be6701689059653 | u500924-svc-cloudmon       | p500924-cloudmon-target   | Erik-Kostelansky-dNation | Service User - VP12 Test Project              | 31.12.2024  |
 | f89b3d64ddff4d9d8cadb5e06fa22299 | u500924-svc-healthmonitor  | p500924-scs-healthmonitor | garloff                  | Service User - SCS Health Monitor             |      ∞       |
 | 49cc3d72fbdf41fe8dc407f57f026dbf | u500924-svc-standards      | p500924-scs-healthmonitor | garloff                  | Service User - SCS Standards Compliance Check |      ∞       |
-| 49cc3d72fbdf41fe8dc407f57f026dbf | u500924-svc-zuul           | p500924-scs-zuul          | o-otte                   | Service User - SCS Zuul                       | 30.11.2024  |
+| 1b6bb583fc5e40e49f2a7e9b4301de65 | u500924-svc-zuul           | p500924-scs-zuul          | o-otte                   | Service User - SCS Zuul                       | 30.11.2024  |
 |                                  |                            |                           |                          |                                               |              |
 
 ### Projects
@@ -80,7 +80,10 @@ Service users will have their default_project_id set to a specific project and w
 | 5c6d4d7183834eafbc20108ad647a9c0 | p500924-kaas-playground8    | jschoone                 | Playground8 for Hackathon             | 30.09.2024  |
 | 7e18881932f749baa7d547ebd407b8d8 | p500924-kaas-playground9    | jschoone                 | Playground9 for Hackathon             | 30.09.2024  |
 | d9dc2f33e76240219db484526e9f601d | p500924-akafazov            | akafazov                 | akafazov Testbed                      | 30.04.2024  |
-|                                  |                             |                          |                                       |              |
+| b07ad6a84982471b9a344ef9947f0e0f | p500924-gtema               | gtema                    | Testbed for gtema                     |      ∞      |
+| e89ac8c9f66f46b5a983b2a05d2a66ec | p500924-zuse-z3             | zuse-z3                  | Josefine's gx-scs project             |      ∞      |
+| fc1f7a0e10a64d6083dcdbcb7ccf6ff4 | p500924-compliance-monitor  | mbuechse                 | SCS Compliance Monitor Deployment     |      ∞      |
+| eba5414a4f8549b28a62af199d82dab5 | p500924-tsmado              | tsmado                   | tsmado's gx-scs project               |      ∞      |
 
 ## Wavecon
 

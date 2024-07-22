@@ -7,7 +7,7 @@
   },
   {
     "repo": "osism/osism.github.io",
-    "source": "docs/guides/operations-guide/openstack/day2-operations/*",
+    "source": "docs/guides/operations-guide/openstack/tools/*",
     "target": "docs/02-iaas/components",
     "label": ""
   },
@@ -22,12 +22,6 @@
     "source": "docs",
     "target": "docs/03-container/components/cluster-stacks/components",
     "label": "cluster-stack-provider-openstack"
-  },
-  {
-    "repo": "SovereignCloudStack/status-page-openapi",
-    "source": "docs",
-    "target": "docs/04-operating-scs/components",
-    "label": "status-page"
   },
   {
     "repo": "SovereignCloudStack/standards",
@@ -47,6 +41,25 @@
     "target": "docs/03-container/components",
     "label": "container-registry"
   },
+
+  {
+    "repo": "SovereignCloudStack/status-page-openapi",
+    "source": "docs",
+    "target": "docs/04-operating-scs/components",
+    "label": "status-page-openapi"
+  },
+  {
+    "repo": "SovereignCloudStack/status-page-api",
+    "source": "docs",
+    "target": "docs/04-operating-scs/components",
+    "label": "status-page-api"
+  },
+  {
+    "repo": "SovereignCloudStack/status-page-deployment",
+    "source": "docs",
+    "target": "docs/04-operating-scs/components",
+    "label": "status-page-deployment"
+  },
   {
     "repo": "SovereignCloudStack/k8s-observability",
     "source": "docs",
@@ -58,5 +71,17 @@
     "source": "docs/*.md",
     "target": "docs/04-operating-scs/01-guides",
     "label": "openstack-health-monitor"
+  },
+  {
+    "repo": "SovereignCloudStack/central-api",
+    "source": "docs/*.md",
+    "target": "docs/04-operating-scs/components",
+    "label": "central-api"
+  },
+  {
+    "repo": "SovereignCloudStack/security-infra-scan-pipeline",
+    "source": "docs/*.md",
+    "target": "docs/04-operating-scs/components",
+    "label": "automated-pentesting"
   }
 ]
