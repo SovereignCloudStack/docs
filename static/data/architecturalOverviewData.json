@@ -8,7 +8,7 @@
       "components": [
         {
           "title": "Status Page",
-          "url": "/docs/operating-scs/components/status-page/docs/overview",
+          "url": "/docs/category/status-page",
           "mandatory": "true",
           "stable": "true"
         },
