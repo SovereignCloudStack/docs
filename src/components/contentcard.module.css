@@ -26,6 +26,70 @@
   }
 }
 
-.card {
-  margin-bottom: 1rem;
+.contentCard {
+  border: solid #666 2px;
+  box-shadow: 2px 2px 4px 4px rgba(10, 10, 10, 0.1);
+}
+
+.layerComponent {
+  border: solid 2px rgba(70, 72, 213, 0.539);
+  border-radius: 4px;
+  background: #43d8b24f;
+  width: 80px;
+  height: 80px;
+  margin: 0 0 8px 8px;
+  padding: 8px;
+  font-weight: 600;
+  font-size: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.layerComponentWip {
+  border: dashed 2px rgba(70, 72, 213, 0.539);
+  border-radius: 4px;
+  width: 80px;
+  height: 80px;
+  margin: 0 0 8px 8px;
+  padding: 8px;
+  font-size: 10px;
+  text-decoration: none;
+  color: black;
+  background-image: repeating-linear-gradient(
+    45deg,
+    white 0%,
+    white 2%,
+    #43d8b24f 2%,
+    #43d8b24f 4%,
+    white 4%
+  );
+}
+
+.layerComponentWip:hover,
+.layerComponent:hover {
+  color: blue;
+  text-decoration: none !important;
+  background-color: #43d8b22f;
+}
+
+.chipOptional {
+  font-size: 8px;
+  border-radius: 8px;
+  padding: 2px 4px 2px 4px;
+  background-color: #892be27b;
+  text-align: center;
+  max-width: fit-content;
+  margin: 2px 2px 0 0;
+  color: #000;
+}
+
+.chipMandatory {
+  font-size: 8px;
+  border-radius: 8px;
+  padding: 2px 4px 2px 4px;
+  background-color: #e2a82b94;
+  text-align: center;
+  max-width: fit-content;
+  margin: 2px 2px 0 0;
+  color: #000;
 }

@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Get in touch",
+    "body": "Come into our Matrix Chat in the SCS | Tech Room.",
+    "url": "https://matrix.to/#/#scs-tech:matrix.org",
+    "buttonText": "Join Now"
+  },
+  {
+    "title": "Come to our Meet-Ups",
+    "body": "Our working groups and special interest groups meet weekly or biweekly. When? Find out within our public community calendar.",
+    "url": "/community/collaboration",
+    "buttonText": "Learn More"
+  },
+  {
+    "title": "Standardization in progress",
+    "body": "Get to know our current Decision Records and Standards.",
+    "url": "/standards",
+    "buttonText": "Start Now"
+  },
+  {
+    "title": "Deployment Examples",
+    "body": "Get to know different ways to deploy SCS with cloud resources or on bare metal.",
+    "url": "/docs/iaas/guides/deploy-guide/examples",
+    "buttonText": "Explore Cases"
+  }
+]

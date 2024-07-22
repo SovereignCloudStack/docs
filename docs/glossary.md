@@ -6,7 +6,7 @@ glossary is not intended to evaluate or standardize specific terms.
 
 ## Definition of a Region
 
-An OpenStack/SCS region consists of at least one or more Availability Zones that share a Control Plane with their services. As a result, they share one API. Also a Control Plane can share one CEPH cluster over different fire departments or each Availbility Zone can have its own CEPH cluster. Within the region, any Layer 2 networks are available to the user. Availbility Zones which build a region are connected by redundant low-latency (<2ms (guess!!) ) high bandwidth (10s of Gbps) connections.
+An OpenStack/SCS region consists of at least one or more Availability Zones that share a Control Plane with their services. As a result, they share one API. Also a Control Plane can share one CEPH cluster over different fire departments or each Availbility Zone can have its own CEPH cluster. Within the region, any Layer 2 networks are available to the user. Availbility Zones which build a region are connected by redundant low-latency (\< 2ms ) high-bandwidth (10s of Gbps) connections.
 
 Regions can be federated when the SCS code is ready.
 
@@ -107,7 +107,7 @@ The virtualized systems can be distributed over any number of so-called compute 
 
 ## Neutron
 
-The OpenStack Networking module Neutron provides the networking service for OpenStack. Neutron can be used to manage networks, subnets, and IP addresses/floating IPs. A floating IP in OpenStack refers to an official IP that serves as an interface from the internal to the public network. In addition to a load balancer, HA proxy and health monitor, Neutron also supports techniques such as VLAN and VPN. To secure the networks, Neutron uses a firewall that allows versatile port rules, e.g. on a security group basis. For trademark reasons, the OpenStack networking module had to be renamed "Neutron". The previous name was "Quantum."
+The OpenStack Networking module Neutron provides the networking service for OpenStack. Neutron can be used to manage networks, subnets, and IP addresses/floating IPs. A floating IP in OpenStack refers to an official IP that serves as an interface from the internal to the public network. In addition to a load balancer, HA proxy and health monitor, Neutron also supports techniques such as VLAN and VPN. To secure the networks, Neutron uses a firewall that allows versatile port rules, e.g. on a security group basis. For trademark reasons, the OpenStack networking module had to be renamed "Neutron". The previous name was "Quantum".
 
 For the management of the data link layer, Neutron offers the possibility to use various already existing networking software such as Open vSwitch or the bridge functionality of the Linux kernel by means of plugins.
 

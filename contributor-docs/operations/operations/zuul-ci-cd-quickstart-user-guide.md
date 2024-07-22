@@ -168,6 +168,30 @@ Pipelines available in SCS Zuul:
 
 If you want to know more about pipelines: [See official documentation](https://zuul-ci.org/docs/zuul/latest/config/pipeline.html)
 
+### Reports
+
+The SCS Zuul instance can transmit build reports through an MQTT connection
+to the dedicated Matrix chat room `SCS | Zuul Reports`. Currently, this MQTT reporting
+feature is activated for periodic pipelines (periodic-hourly, periodic-daily,
+compliance_check), and reports are dispatched solely in the event of
+failures occurring in builds triggered by the mentioned pipelines.
+
+See an example pipeline that reports failed result to the `SCS | Zuul Reports` Matrix room:
+
+```yaml
+- pipeline:
+    name: pipeline-that-reports-to-matrix
+    description: |
+      In the event of a failure, this pipeline transmits reports to
+      the SCS | Zuul Reports Matrix chat room.
+    failure:
+      mqtt:
+        topic: "zuul/{pipeline}/{project}/{branch}/{change}"
+```
+
+Visit the [official Zuul documentation](https://zuul-ci.org/docs/zuul/latest/config/pipeline.html#reporters)
+and explore the configuration options available for Zuul's reporters.
+
 ### Jobs
 
 All jobs that your Zuul instances knows of can be used for your own purposes.
@@ -351,7 +375,7 @@ For a basic but working example the following content may be written into a `zuu
     name: myFirstTestJob
     parent: base
     secrets:
-      - name: secretName  # The name of the secret that is used within "playbooks/testPlaybook.yaml"
+      - name: secretName # The name of the secret that is used within "playbooks/testPlaybook.yaml"
         secret: SECRET_REPOSITORY_NAME
     run: playbooks/testPlaybook.yaml
 
@@ -389,5 +413,5 @@ Example playbook:
 - hosts: all
   tasks:
     - debug:
-        msg: 'Debug print my secrets! {{ secretName.secretValue1 }}'  # do not do this as it will expose your secrets
+        msg: 'Debug print my secrets! {{ secretName.secretValue1 }}' # do not do this as it will expose your secrets
 ```

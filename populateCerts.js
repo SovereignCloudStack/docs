@@ -26,7 +26,7 @@ const sidebarItems = scopes.map((scope) => {
     scope.versions.sort((a, b) => b.version.localeCompare(a.version));
     scope.versions.forEach((version) => {
         version.isStable = version.stabilized_at !== undefined && version.stabilized_at <= today
-        version.isObsolete = version.obsoleted_at !== undefined && version.obsoleted_at < today
+        version.isObsolete = version.deprecated_at !== undefined && version.deprecated_at < today
         version.isEffective = version.isStable && !version.isObsolete
         version.isPreview = version.stabilized_at === undefined || today < version.stabilized_at
         if (!version.isEffective && !version.isPreview) {
@@ -72,6 +72,7 @@ const sidebarItems = scopes.map((scope) => {
             matrix[key].columns[version.version] = {
                 version: ver,
                 url,
+                parameters: standard.parameters,
             }
         })
     })
@@ -89,7 +90,7 @@ Note that the state _Stable_ is shown here if _stabilized at_ is in the future, 
     lines.push('| :-- | ' + columns.map(() => ':--').join(' | ') + ' |')
     lines.push('| State              | ' + columns.map((c) => versionsShown[c].state).join('  | ') + '  |')
     lines.push('| Stabilized at      | ' + columns.map((c) => versionsShown[c].stabilized_at || '').join('  | ') + '  |')
-    lines.push('| Obsoleted at       | ' + columns.map((c) => versionsShown[c].obsoleted_at || '').join('  | ') + '  |')
+    lines.push('| Deprecated at      | ' + columns.map((c) => versionsShown[c].deprecated_at || '').join('  | ') + '  |')
     // md doesn't allow intermediate header rows
     // lines.push('| :-- | ' + columns.map(() => ':--').join(' | ') + ' |')
     lines.push('| **Standards**      | ' + columns.map((c) => ' '.repeat(c.length)).join('  | ') + '  |')
@@ -101,7 +102,13 @@ Note that the state _Stable_ is shown here if _stabilized at_ is in the future, 
                 // this version of the cert does not include this standard
                 return ''
             }
-            return `[${col.version}](${col.url})`
+            let params = Object.entries(col.parameters || {}).map((entry) =>
+                entry[1].startsWith('https://') ? `[${entry[0]}](${entry[1]})` : `${entry[0]}=${entry[1]}`
+            ).join(', ')
+            if (params.length) {
+                params = `(${params})`
+            }
+            return `[${col.version}](${col.url}) ${params}`
         }).join('  | ') + '  |')
     })
     lines.push('')  // file should end with a single newline character

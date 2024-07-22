@@ -13,9 +13,11 @@
 /docs/02-iaas/guides/index.md
 /docs/03-container/components
 /docs/04-operating-scs/components
+/docs/04-operating-scs/01-guides
 /docs/06-releases
 /standards/*.md
 /standards/*/*.md
+/standards/*/*.mdx
 /standards/scs-*.yaml
 
 # Dependencies

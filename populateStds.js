@@ -15,11 +15,47 @@ const trackIntros = {
 }
 const headerLegend = '*Legend to the column headings: Draft, Stable (but not effective), Effective, Deprecated (and no longer effective).'
 
+const reactHighlightTableCellBackground = `
+import { useEffect } from 'react';
+export const TableCellStyleApplier = () => {
+    // apply background color based on cell index
+    const colorMapping = {
+      3: '#FBFDE2', // draft
+      4: '#E4FDE2', // stable
+      5: '#E2EAFD', // effective
+      6: '#FDE2E2' // deprecated
+    };
+  
+
+    useEffect(() => {
+        const divElement = document.querySelector('#color-table-cells');
+        if (divElement) {
+          // the next sibling of that element should be our table
+          const tableElement = divElement.nextElementSibling;
+          if (tableElement && tableElement.tagName.toLowerCase() === 'table') {
+            tableElement.querySelectorAll('tbody tr').forEach((row) => {
+              row.querySelectorAll('td').forEach((cell, index) => {
+                // apply background for all cells that have more content than '-'
+                if (colorMapping[index] && cell.textContent.trim() !== '-') {
+                  cell.style.backgroundColor = colorMapping[index];
+                }
+              });
+            });
+          }
+        }
+      }, []);
+  
+    return null;
+  };
+
+  <TableCellStyleApplier />
+  `
+
 var filenames = fs
     .readdirSync('standards/')
     .filter((fn) => fn.startsWith('scs-') && fn.endsWith('.md') && !fn.startsWith('scs-X'))
 
-keys = ['title', 'type', 'status', 'track', 'stabilized_at', 'obsoleted_at', 'replaces', 'authors', 'state']
+keys = ['title', 'type', 'status', 'track', 'stabilized_at', 'deprecated_at', 'replaces', 'authors', 'state']
 
 // use the ISO string, because so do the standard documents, and we can use string comparison with ISO dates
 today = new Date().toISOString().slice(0, 10)
@@ -34,20 +70,27 @@ filenames.forEach((filename) => {
         id: filename.substring(0, filename.length - 3),
         adrId: components[1],
         version: components[2],
+        slug: filename.substring(12, filename.length - 3),  // 12 == "scs-xxxx-vN-".length
         state: {},
     }
     // now calculate the properties for the columns (plus stable0 as a helper)
     obj.state.draft = obj.stabilized_at === undefined
     obj.state.stable0 = !obj.state.draft && obj.stabilized_at <= today
-    obj.state.deprecated = obj.obsoleted_at !== undefined && obj.obsoleted_at < today
+    obj.state.deprecated = obj.deprecated_at !== undefined && obj.deprecated_at < today
     obj.state.stable = !obj.state.draft && !obj.state.stable0 && !obj.state.deprecated
     obj.state.effective = obj.state.stable0 && !obj.state.deprecated
     var track = obj.track
     if (track === undefined) return
     if (tracks[track] === undefined) tracks[track] = {}
     var standards = tracks[track]
-    if (standards[obj.adrId] === undefined) standards[obj.adrId] = {versions: []}
-    standards[obj.adrId].versions.push(obj)
+    if (standards[obj.adrId] === undefined) standards[obj.adrId] = {versions: [], supplements: {}}
+    if (obj.type === "Supplement") {
+        var supplements = standards[obj.adrId].supplements
+        if (supplements[obj.slug] === undefined) supplements[obj.slug] = {versions: [], title: obj.title}
+        supplements[obj.slug].versions.push(obj)
+    } else {
+        standards[obj.adrId].versions.push(obj)
+    }
 })
 
 function readPrefixLines(fn) {
@@ -70,11 +113,13 @@ function mkLinkList(versions) {
 // walk down the hierarchy, building adr overview pages, track overview pages, and total overview page
 // as well as the new sidebar
 sidebarItems = []
-var lines = readPrefixLines('standards/standards/overview.md')
+var lines = readPrefixLines('standards/standards/overview.mdx')
 if (!lines.length) lines.push(`${intro}
 
 ${headerLegend}
+${reactHighlightTableCellBackground}
 `)
+lines.push('<div id="color-table-cells" />') // used to find the sibling table for color encoded background
 lines.push('| Standard  | Track  | Description  | Draft | Stable* | Effective | Deprecated* |')
 lines.push('| --------- | ------ | ------------ | ----- | ------- | --------- | ----------- |')
 Object.entries(tracks).forEach((trackEntry) => {
@@ -104,6 +149,7 @@ ${headerLegend}
     tlines.push('| --------- | ------------ | ----- | ------- | --------- | ----------- |')
     Object.entries(trackEntry[1]).forEach((standardEntry) => {
         var versions = standardEntry[1].versions
+        var supplements = standardEntry[1].supplements
         var ref = versions[versions.length - 1]
         var effectiveVersions = versions.filter((v) => v.state.effective)
         if (effectiveVersions.length) {
@@ -127,22 +173,48 @@ ${headerLegend}
                 slines.push(ref.description)
             }
         }
-        slines.push('| Version  | Type  | State   | stabilized | obsoleted |')
-        slines.push('| -------- | ----- | ------- | ---------- | --------- |')
+        slines.push('| Version  | Type  | State   | stabilized | deprecated |')
+        slines.push('| -------- | ----- | ------- | ---------- | ---------- |')
         var link = `[scs-${adrId}](/standards/${track.toLowerCase()}/scs-${adrId})`
         var versionList = ['draft', 'stable', 'effective', 'deprecated'].map(
             (column) => mkLinkList(versions.filter((v) => v.state[column])) || '-'
         ).join(' | ')
         lines.push(`| ${link}  | ${track}  | ${ref.title}  | ${versionList}  |`)
         tlines.push(`| ${link}  | ${ref.title}  | ${versionList}  |`)
-        standardEntry[1].versions.forEach((obj) => {
+        versions.forEach((obj) => {
             var versionItem = {
                 type: 'doc',
                 label: obj.version.toUpperCase(),
                 id: obj.id,
             }
             standardItem.items.push(versionItem)
-            slines.push(`| [scs-${adrId}-${obj.version}](/standards/${obj.id})  | ${obj.type}  | ${obj.status}  | ${obj.stabilized_at || '-'}  | ${obj.obsoleted_at || '-'}  |`)
+            slines.push(`| [scs-${adrId}-${obj.version}](/standards/${obj.id})  | ${obj.type}  | ${obj.status}  | ${obj.stabilized_at || '-'}  | ${obj.deprecated_at || '-'}  |`)
+        })
+        Object.values(supplements).forEach((obj) => {
+            // var link = `[scs-${adrId}](/standards/${track.toLowerCase()}/scs-${adrId})`
+            var title = obj.title
+            var versions = obj.versions
+            var versionList = ['draft', 'stable', 'effective', 'deprecated'].map(
+                (column) => mkLinkList(versions.filter((v) => v.state[column])) || '-'
+            ).join(' | ')
+            if (title.startsWith(ref.title)) {
+                title = title.substring(ref.title.length)
+                if (title.startsWith(':')) title = title.substring(1).trimStart()
+            }
+            lines.push(`|   |   | Supplement: ${title}  | ${versionList} |`)
+            tlines.push(`|   | Supplement: ${title}  | ${versionList} |`)
+            slines.push(`\n## Supplement: ${title}\n`)
+            slines.push('| Version  | State   | stabilized | deprecated |')
+            slines.push('| -------- | ------- | ---------- | ---------- |')
+            versions.forEach((obj) => {
+                var versionItem = {
+                    type: 'doc',
+                    label: obj.version.toUpperCase(),
+                    id: obj.id,
+                }
+                standardItem.items.push(versionItem)
+                slines.push(`| [${obj.version}](/standards/${obj.id})  | ${obj.status}  | ${obj.stabilized_at || '-'}  | ${obj.deprecated_at || '-'}  |`)
+            })
         })
         slines.push('')  // file should end with a single newline character
         fs.writeFileSync(`${trackPath}/scs-${adrId}.md`, slines.join('\n'), 'utf8')
@@ -151,7 +223,7 @@ ${headerLegend}
     fs.writeFileSync(`${trackPath}/index.md`, tlines.join('\n'), 'utf8')
 })
 lines.push('')  // file should end with a single newline character
-fs.writeFileSync(`standards/standards/overview.md`, lines.join('\n'), 'utf8')
+fs.writeFileSync(`standards/standards/overview.mdx`, lines.join('\n'), 'utf8')
 
 var newSidebars = `module.exports = ${JSON.stringify(sidebarItems, null, '  ')}`
 fs.writeFileSync('./sidebarsStandardsItems.js', newSidebars, 'utf8')

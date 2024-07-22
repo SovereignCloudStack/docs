@@ -4,7 +4,7 @@
 
 We adopt the default Admonition colors for Note, Tip, Info, Caution, Danger by docusaurus:
 
-[Docusaurus Admonitons](https://docusaurus.io/docs/2.0.1/markdown-features/admonitions)
+[Docusaurus Admonitons](https://docusaurus-archive-october-2023.netlify.app/docs/markdown-features/admonitions)
 
 :::note
 
@@ -52,7 +52,7 @@ Example Blockquote:
 
 We support markdown language features for Codeblocks.
 It is mandatory to define the language to be quoted, when using codeblocks.
-Syntax Highlighting is also supported by [Docusaurus via Prism](https://docusaurus.io/docs/2.0.1/markdown-features/code-blocks#supported-languages).
+Syntax Highlighting is also supported by [Docusaurus via Prism](https://docusaurus-archive-october-2023.netlify.app/docs/markdown-features/code-blocks#supported-languages).
 We are using the GitHub language themeing as default.
 
 ```python title="Python example"
@@ -68,22 +68,22 @@ for i in range(4):
 
 ```javascript title="Javascript example"
 const code_block = () => {
-    console.log("inside code_block");
-};
+  console.log('inside code_block')
+}
 ```
 
 ```yaml title="YAML example"
 ---
-doe: "a deer, a female deer"
-ray: "a drop of golden sun"
+doe: 'a deer, a female deer'
+ray: 'a drop of golden sun'
 pi: 3.14159
 xmas: true
 french-hens: 3
 calling-birds:
-    - huey
-    - dewey
-    - louie
-    - fred
+  - huey
+  - dewey
+  - louie
+  - fred
 ```
 
 ```ruby title="Ruby example"
