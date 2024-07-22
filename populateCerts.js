@@ -72,6 +72,7 @@ const sidebarItems = scopes.map((scope) => {
             matrix[key].columns[version.version] = {
                 version: ver,
                 url,
+                parameters: standard.parameters,
             }
         })
     })
@@ -101,7 +102,13 @@ Note that the state _Stable_ is shown here if _stabilized at_ is in the future, 
                 // this version of the cert does not include this standard
                 return ''
             }
-            return `[${col.version}](${col.url})`
+            let params = Object.entries(col.parameters || {}).map((entry) =>
+                entry[1].startsWith('https://') ? `[${entry[0]}](${entry[1]})` : `${entry[0]}=${entry[1]}`
+            ).join(', ')
+            if (params.length) {
+                params = `(${params})`
+            }
+            return `[${col.version}](${col.url}) ${params}`
         }).join('  | ') + '  |')
     })
     lines.push('')  // file should end with a single newline character
