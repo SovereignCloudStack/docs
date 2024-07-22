@@ -17,7 +17,7 @@ We first installed a test system. The hardware of the test system consists of th
 
 4 x DELL R6515 with following components:
 
-- 1 x AMD EPYC 7702P <64core@2.0GHz>
+- 1 x AMD EPYC 7702P `64core@2.0GHz`
 - 16 x 64GB RAM DDR4-3200
 - 2 x 480GB M.2 SATA SSD (for OS) RAID 1
 - 8 x 8TB NVMe (storage), S150 onboard
@@ -28,7 +28,7 @@ We first installed a test system. The hardware of the test system consists of th
 
 2 x DELL R7525 with following components:
 
-- 2 x AMD EPYC 7532 <32core@2.4GHz>
+- 2 x AMD EPYC 7532 `32core@2.4GHz`
 - 8 x 64GB RAM DDR4-3200
 - 2 x 480GB SATA SSD (for OS) RAID 1
 - 12 x 18TB SATA HDD 7.2k (storage), PERC H745 no RAID
