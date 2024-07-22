@@ -214,15 +214,70 @@ const sidebarsDocs = {
           items: [
             {
               type: 'category',
-              label: 'Status Page API',
+              label: 'Status Page',
               link: {
                 type: 'generated-index'
               },
               items: [
-                'operating-scs/components/status-page/docs/overview',
-                'operating-scs/components/status-page/docs/component_overview',
-                'operating-scs/components/status-page/docs/components',
-                'operating-scs/components/status-page/docs/levels_of_consensus'
+                {
+                  type: 'category',
+                  label: 'Concepts',
+                  link: {
+                    type: 'generated-index'
+                  },
+                  items: [
+                    'operating-scs/components/status-page-openapi/docs/overview',
+                    'operating-scs/components/status-page-openapi/docs/components',
+                    'operating-scs/components/status-page-openapi/docs/levels_of_consensus',
+                    'operating-scs/components/status-page-openapi/docs/component_overview'
+                  ]
+                },
+                {
+                  type: 'category',
+                  label: 'API',
+                  link: {
+                    type: 'generated-index'
+                  },
+                  items: [
+                    'operating-scs/components/status-page-api/docs/overview',
+                    'operating-scs/components/status-page-api/docs/requirements',
+                    'operating-scs/components/status-page-api/docs/quickstart',
+                    'operating-scs/components/status-page-api/docs/configuration',
+                    'operating-scs/components/status-page-api/docs/requests',
+                    'operating-scs/components/status-page-api/docs/example-requests',
+                    'operating-scs/components/status-page-api/docs/contribute'
+                  ]
+                },
+                {
+                  type: 'category',
+                  label: 'Deployment',
+                  link: {
+                    type: 'generated-index'
+                  },
+                  items: [
+                    'operating-scs/components/status-page-deployment/docs/overview',
+                    'operating-scs/components/status-page-deployment/docs/requirements',
+                    'operating-scs/components/status-page-deployment/docs/quickstart',
+                    {
+                      type: 'category',
+                      label: 'Configuration',
+                      link: {
+                        type: 'generated-index'
+                      },
+                      items: [
+                        'operating-scs/components/status-page-deployment/docs/configuration',
+                        'operating-scs/components/status-page-deployment/docs/kind',
+                        'operating-scs/components/status-page-deployment/docs/k3s',
+                        'operating-scs/components/status-page-deployment/docs/scs-public'
+                      ]
+                    },
+                    'operating-scs/components/status-page-deployment/docs/usage',
+                    'operating-scs/components/status-page-deployment/docs/monitoring',
+                    'operating-scs/components/status-page-deployment/docs/contribute',
+                    'operating-scs/components/status-page-deployment/docs/admin-authentication',
+                    'operating-scs/components/status-page-deployment/docs/faq'
+                  ]
+                }
               ]
             },
             {
@@ -267,7 +322,7 @@ const sidebarsDocs = {
                 'operating-scs/components/automated-pentesting/overview',
                 'operating-scs/components/automated-pentesting/tools'
               ]
-            },
+            }
           ]
         },
         {
@@ -354,7 +409,10 @@ const sidebarsDocs = {
           link: {
             type: 'generated-index'
           },
-          items: ['iam/domain-manager-setup-and-usage', 'iam/SCS-example-setup-configuration-description']
+          items: [
+            'iam/domain-manager-setup-and-usage',
+            'iam/SCS-example-setup-configuration-description'
+          ]
         },
         'iam/intra-SCS-federation-setup-description-for-osism-doc-operations'
       ]
