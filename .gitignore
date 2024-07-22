@@ -16,6 +16,7 @@
 /docs/06-releases
 /standards/*.md
 /standards/*/*.md
+/standards/*/*.mdx
 /standards/scs-*.yaml
 
 # Dependencies
