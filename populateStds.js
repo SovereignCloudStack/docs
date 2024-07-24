@@ -201,9 +201,9 @@ ${headerLegend}
                 title = title.substring(ref.title.length)
                 if (title.startsWith(':')) title = title.substring(1).trimStart()
             }
-            lines.push(`|   |   | Supplement: ${title}  | ${versionList} |`)
-            tlines.push(`|   | Supplement: ${title}  | ${versionList} |`)
-            slines.push(`\n## Supplement: ${title}\n`)
+            lines.push(`|   |   | Supplement: ${title.trim()}  | ${versionList} |`)
+            tlines.push(`|   | Supplement: ${title.trim() }  | ${versionList} |`)
+            slines.push(`\n## Supplement: ${title.trim() }\n`)
             slines.push('| Version  | State   | stabilized | deprecated |')
             slines.push('| -------- | ------- | ---------- | ---------- |')
             versions.forEach((obj) => {
