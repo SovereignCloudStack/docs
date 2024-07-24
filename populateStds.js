@@ -199,7 +199,8 @@ ${headerLegend}
             ).join(' | ')
             if (title.startsWith(ref.title)) {
                 title = title.substring(ref.title.length)
-                if (title.startsWith(':')) title = title.substring(1).trimStart()
+                if (title.startsWith(':')) title = title.substring(1)
+                title = title.trimStart()
             }
             lines.push(`|   |   | Supplement: ${title}  | ${versionList} |`)
             tlines.push(`|   | Supplement: ${title}  | ${versionList} |`)
