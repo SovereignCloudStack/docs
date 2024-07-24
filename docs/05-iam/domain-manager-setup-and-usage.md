@@ -33,7 +33,7 @@ If this is not feasible for the CSP, they may opt to refrain from making use of 
 
 This architectural limitation will be fixed in upcoming OpenStack and SCS releases.
 
-See <https://bugs.launchpad.net/keystone/+bug/2041611>
+See [https://bugs.launchpad.net/keystone/+bug/2041611](https://bugs.launchpad.net/keystone/+bug/2041611)
 
 :::
 

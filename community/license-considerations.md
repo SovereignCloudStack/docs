@@ -96,7 +96,7 @@ changes to the software are being made available in this case.
 The AGPL thus closes a shortcoming in the traditional non-Affero GPL for a world that
 increasingly moves towards networked services.
 
-The very successful [Nextcloud](https://nextcloud.org/) project uses the AGPLv3.
+The very successful [Nextcloud](https://nextcloud.com/) project uses the AGPLv3.
 
 ## Derived works and Strong vs. Weak Copyleft
 
@@ -208,10 +208,10 @@ SCS follows this best practice.
 
 ## Further reading
 
-- <https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licences>
-- <https://en.wikipedia.org/wiki/Software_patents_and_free_software>
-- <https://joinup.ec.europa.eu/collection/eupl/matrix-eupl-compatible-open-source-licences>
-- <https://lwn.net/Articles/592503/>
-- <https://sfconservancy.org/blog/2020/jan/06/copyleft-equality/>
-- <https://developercertificate.org>
-- <https://julien.ponge.org/blog/developer-certificate-of-origin-versus-contributor-license-agreements/>
+- [https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licences](https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licences)
+- [https://en.wikipedia.org/wiki/Software_patents_and_free_software](https://en.wikipedia.org/wiki/Software_patents_and_free_software)
+- [https://joinup.ec.europa.eu/collection/eupl/matrix-eupl-compatible-open-source-licences](https://joinup.ec.europa.eu/collection/eupl/matrix-eupl-compatible-open-source-licences)
+- [https://lwn.net/Articles/592503/](https://lwn.net/Articles/592503/)
+- [https://sfconservancy.org/blog/2020/jan/06/copyleft-equality/](https://sfconservancy.org/blog/2020/jan/06/copyleft-equality/)
+- [https://developercertificate.org](https://developercertificate.org)
+- [https://julien.ponge.org/blog/developer-certificate-of-origin-versus-contributor-license-agreements/](https://julien.ponge.org/blog/developer-certificate-of-origin-versus-contributor-license-agreements/)

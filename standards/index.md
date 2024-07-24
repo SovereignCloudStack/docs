@@ -6,4 +6,4 @@ In addition, SCS provides a certification framework that enables these providers
 
 ![Alt text](image.png)
 
-Learn more about these scopes as well as the currently certified clouds under [Certification](certification/overview.md). More details on individual standards can be found under [Standards](standards/overview.md).
+Learn more about these scopes as well as the currently certified clouds under [Certification](certification/overview.md). More details on individual standards can be found under [Standards](standards/overview.mdx).

@@ -15,6 +15,42 @@ const trackIntros = {
 }
 const headerLegend = '*Legend to the column headings: Draft, Stable (but not effective), Effective, Deprecated (and no longer effective).'
 
+const reactHighlightTableCellBackground = `
+import { useEffect } from 'react';
+export const TableCellStyleApplier = () => {
+    // apply background color based on cell index
+    const colorMapping = {
+      3: '#FBFDE2', // draft
+      4: '#E4FDE2', // stable
+      5: '#E2EAFD', // effective
+      6: '#FDE2E2' // deprecated
+    };
+  
+
+    useEffect(() => {
+        const divElement = document.querySelector('#color-table-cells');
+        if (divElement) {
+          // the next sibling of that element should be our table
+          const tableElement = divElement.nextElementSibling;
+          if (tableElement && tableElement.tagName.toLowerCase() === 'table') {
+            tableElement.querySelectorAll('tbody tr').forEach((row) => {
+              row.querySelectorAll('td').forEach((cell, index) => {
+                // apply background for all cells that have more content than '-'
+                if (colorMapping[index] && cell.textContent.trim() !== '-') {
+                  cell.style.backgroundColor = colorMapping[index];
+                }
+              });
+            });
+          }
+        }
+      }, []);
+  
+    return null;
+  };
+
+  <TableCellStyleApplier />
+  `
+
 var filenames = fs
     .readdirSync('standards/')
     .filter((fn) => fn.startsWith('scs-') && fn.endsWith('.md') && !fn.startsWith('scs-X'))
@@ -77,11 +113,13 @@ function mkLinkList(versions) {
 // walk down the hierarchy, building adr overview pages, track overview pages, and total overview page
 // as well as the new sidebar
 sidebarItems = []
-var lines = readPrefixLines('standards/standards/overview.md')
+var lines = readPrefixLines('standards/standards/overview.mdx')
 if (!lines.length) lines.push(`${intro}
 
 ${headerLegend}
+${reactHighlightTableCellBackground}
 `)
+lines.push('<div id="color-table-cells" />') // used to find the sibling table for color encoded background
 lines.push('| Standard  | Track  | Description  | Draft | Stable* | Effective | Deprecated* |')
 lines.push('| --------- | ------ | ------------ | ----- | ------- | --------- | ----------- |')
 Object.entries(tracks).forEach((trackEntry) => {
@@ -161,7 +199,8 @@ ${headerLegend}
             ).join(' | ')
             if (title.startsWith(ref.title)) {
                 title = title.substring(ref.title.length)
-                if (title.startsWith(':')) title = title.substring(1).trimStart()
+                if (title.startsWith(':')) title = title.substring(1)
+                title = title.trimStart()
             }
             lines.push(`|   |   | Supplement: ${title}  | ${versionList} |`)
             tlines.push(`|   | Supplement: ${title}  | ${versionList} |`)
@@ -185,7 +224,7 @@ ${headerLegend}
     fs.writeFileSync(`${trackPath}/index.md`, tlines.join('\n'), 'utf8')
 })
 lines.push('')  // file should end with a single newline character
-fs.writeFileSync(`standards/standards/overview.md`, lines.join('\n'), 'utf8')
+fs.writeFileSync(`standards/standards/overview.mdx`, lines.join('\n'), 'utf8')
 
 var newSidebars = `module.exports = ${JSON.stringify(sidebarItems, null, '  ')}`
 fs.writeFileSync('./sidebarsStandardsItems.js', newSidebars, 'utf8')

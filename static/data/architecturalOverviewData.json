@@ -8,7 +8,7 @@
       "components": [
         {
           "title": "Status Page",
-          "url": "/docs/operating-scs/components/status-page/docs/overview",
+          "url": "/docs/category/status-page",
           "mandatory": "true",
           "stable": "true"
         },
@@ -16,6 +16,18 @@
           "title": "Monitoring",
           "url": "/docs/category/monitoring",
           "mandatory": "false",
+          "stable": "true"
+        },
+        {
+          "title": "Central API",
+          "url": "/docs/operating-scs/components/central-api/overview",
+          "mandatory": "true",
+          "stable": "true"
+        },
+        {
+          "title": "Automated Pentesting",
+          "url": "/docs/operating-scs/components/automated-pentesting/overview",
+          "mandatory": "true",
           "stable": "true"
         }
       ]

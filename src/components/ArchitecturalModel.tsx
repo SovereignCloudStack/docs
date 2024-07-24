@@ -47,7 +47,7 @@ const ArchitecturalModel: React.FunctionComponent<ArchitecturalModelProps> = (
           <h5 style={{ marginBottom: 0 }}>SCS Component Map</h5>
         </div>
       )}
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         <div
           style={{ padding: '8px 8px 8px 8px', margin: '0 0 0 0' }}
           className={`${styles.bottom} col col--3`}>
