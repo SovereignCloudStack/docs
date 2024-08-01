@@ -1,0 +1,142 @@
+# Getting Started
+
+## Preface
+
+This document describes a possible environment setup for a pre-production or minimal production setup.
+In general hardware requirements can vary largely from environment to environment and this guide is not
+a hardware sizing guide nor the best placement solution of services for every setup. This guide intends to
+provide a starting point for a hardware based deployment of the SCS-IaaS reference implementation based on OSISM.
+
+## Node type definitions
+
+### Control Node
+
+A control node runs all or most of the openstack services, that are responsible for API-services and the corresponding
+runtimes. These nodes are necessary for any user to interact with the cloud and to keep the cloud in a managed state.
+However these nodes are usualy **not** running user virtual machines.
+Hence it is advisable to have the control nodes replicated. To have a RAFT-quorum three nodes are a good starting point.
+
+### Compute Node (HCI/no HCI)
+
+#### Not Hyperconverged Infrastructure (no HCI)
+
+Non HCI compute nodes are exclusively running user virtual machines. They are running no API-services, no storage daemons
+and no network routers, except for the necessary network infrastructure to connect virtual machines.
+
+#### Hyperconverged Infrastructure (HCI)
+
+HCI nodes generally run at least user virtual machines and storage daemons. It is possible to place networking services
+here as well but that is not considered good practice.
+
+#### No HCI / vs HCI
+
+Whether to use HCI nodes or not is in general not an easy question. For a getting started (pre production/smalles possible production)
+environment however, it is the most cost efficent option. Therefore we will continue with HCI nodes (compute + storage).
+
+### Storage Node
+
+A dedicated storage node runs only storage daemons. This can be necessary in larger deployments to protect the storage daemons from
+ressource starvation through user workloads.
+
+Not used in this setup.
+
+### Network Node
+
+A dedicated network node runs the routing infrastructure for user virtual machines that connects these machines with provider / external
+networks. In larger deployments these can be useful to enhance scaling and improve network performance.
+
+Not used in this setup.
+
+## Nodes in this deployment example
+
+As mentioned before we are running three dedicated control nodes. To be able to fully test an openstack environment it is
+recommended to run three compute nodes (HCI) as well. Technically you can get a setup running with just one compute node.
+See the following chapter (Use cases and validation) for more information.
+
+### Use cases and validation
+
+The setup described allows for the following use cases / test cases:
+
+- Highly available control plane
+  - Control plane failure toleration test (Database, RabbitMQ, Ceph Mons, Routers)
+- Highly available user virtual clusters (e.g. Kubernetes clusters)
+  - Compute host failure simulation
+- Host aggregates / compute node grouping
+- Host based storage replication (instead of OSD based)
+  - Fully replicated storage / storage high availability test
+
+### Control Node
+
+#### General requirements
+
+The control nodes do not run any user workloads. This means they are usually not sized as big as the compute nodes.
+Relevant metrics for control nodes are:
+
+- Fast and big enough discs. At least SATA-SSDs are recommended, NVMe will greatly improve the overall responsiveness.
+- A rather large amount of memory to house all the caches for databases and queues.
+- CPU performance should be average. A good compromise between amount of cores and speed should be used. However this is
+  the least important requirement on the list.
+
+#### Hardware recommendation
+
+**TODO:** Write more exact BOM
+3x Dell R630/R640/R650 1HE Server
+
+### Compute Node (HCI)
+
+The compute nodes in this scenario run all the user virtual workloads **and** the storage infrastructure. To make sure
+we don't starve these nodes, they should be of decent size.
+
+> This setup takes local storage tests into consideration. The SCS-standards require certain flavors with very fast disc speed
+> to house customer kubernetes control planes (etcd). These speeds are usually not achievable with shared storage. If you don't
+> intend to test this scenario, you can skip the NVMe discs.
+
+#### Hardware recommendation
+
+**TODO:** Write more exact BOM
+3x Dell R730(xd)/R740(xd)/R750(xd)
+or
+3x Supermicro
+
+## Network
+
+The network infrastructure can vary a lot from setup to setup. This guide does not intend to define the best networking solution
+for every cluster but rather give two possible scenarios.
+
+### Scenario A: Not recommended for production
+
+The smallest possible setup is just a single switch connected to all the nodes physically on one interface. The switch has to be
+VLAN enabled. Openstack recommends multiple isolated networks but the following are at least recommended to be split:
+
+- Out of Band network
+- Management networks
+- Storage backend network
+- Public / External network for virutal machines
+  If there is only one switch, these networks should all be defined as seperate VLANs. One of the networks can run in untagged default
+  VLAN 1.
+
+### Scenario B: Minimum recommended setup for small production environments
+
+The recommended setup uses two stacked switches connected in a LAG and at least three different physical network ports on each node.
+
+- Physical Network 1: VLANs for Public / External network for virutal machines, Management networks
+- Physical Network 2: Storage backend network
+- Physical Network 3: Out of Band network
+
+### Network adapters
+
+The out of band network does usually not need a lot of bandwith. Most modern servers come with 1Gbit/s adapters which are sufficient.
+For small test clusters, it might also be sufficient to use 1Gbit/s networks for the other two physical networks.
+For a minimum production cluster it is recommended to use the following:
+
+- OOB Network: 1Gbit/s
+- VLANs for Public / External network for virutal machines, Management networks: 10 Gbit/s
+- Storage backend network: 10 / 40 Gbit/s
+
+Whether you need a higher throughput for your storage backend services depends on your expected storage load. The faster the network
+the faster storage data can be replicated between nodes. This usually leads to improved performance and better/faster fault tolerance.
+
+## How to continue
+
+After implementing the recommended deployment example hardware, you can continue with the deployment guide.
+**TODO:** Add link to deployment guide.
