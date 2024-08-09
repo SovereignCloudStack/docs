@@ -30,7 +30,7 @@ Spec:
   - k8s: v1.25.3 - KinD
 - workload cluster:
   - 6 instances:
-    - 3 control-planes: SCS-2V:4:20
+    - 3 control-planes: SCS-2V-4-20s
     - 3 workers: SCS-8V:16:100
   - image: ubuntu-capi-image-v1.28.7
   - k8s: v1.28.7
@@ -55,14 +55,14 @@ Utilization:
 
 Spec:
 
-- version: v6.0.0 - R5
+- version: v7.0.0 - R6
 - management cluster:
   - 1 instance: SCS-2V:4:20
-  - image: Ubuntu 22.04 (20231211)
+  - image: Ubuntu 22.04 (20240125)
   - k8s: v1.27.3 - KinD
 - workload cluster:
   - 6 instances:
-    - 3 control-planes: SCS-2V:4:20
+    - 3 control-planes: SCS-2V-4-20s
     - 3 workers: SCS-8V:16:100
-  - image: ubuntu-capi-image-v1.27.5
-  - k8s: v1.27.5
+  - image: ubuntu-capi-image-v1.28.7
+  - k8s: v1.28.7
