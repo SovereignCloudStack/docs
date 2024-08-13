@@ -13,22 +13,12 @@ const trackIntros = {
     'IAM': 'This track revolves around Identity and Access Management (IAM) standards, providing guidelines for ensuring secure and efficient user authentication, authorization, and administration. It addresses issues related to user identity, permissions, roles, and policies, aiming to safeguard and streamline access to cloud resources and services.',
     'Ops': 'Operational Tooling Standards cover the protocols and guidelines associated with tools and utilities used for monitoring, management, and maintenance of the cloud environment. This includes standards for status pages, alerts, logs, and other operational tools, aiming to optimize the reliability, performance, and security of cloud services and resources.',
 }
-const headerLegend =
-  '*Legend to the column headings and entries:\nDocument states: Draft, Effective, Deprecated (and no longer effective).\nEntries in the effective column marked with an * are stable right now but turn to effective documents in the near future.\nEntries in the effective column marked with a † will turn deprecated in the near future.'
+const legend =`   
+<p>*Legend to the column headings and entries:</p>\n
+- Document states: Draft, Effective, Deprecated (and no longer effective)
+- Entries in the effective column marked with an * are stable right now but turn to effective documents in the near future
+- Entries in the effective column marked with a † will turn deprecated in the near future`;
 
-// convert the string into an array of lines
-const legendLines = headerLegend.split('\n')
-
-// extract the first line separately
-const firstLine = legendLines.shift()
-
-// render as a bullet-point list
-const legendWithBullets = `
-<p>${firstLine}</p>
-<ul>
-  ${legendLines.map((line) => `<li>${line}</li>`).join('')}
-</ul>
-`
 const reactHighlightTableCellBackground = `
 import { useEffect } from 'react';
 export const TableCellStyleApplier = () => {
@@ -109,7 +99,17 @@ filenames.forEach((filename) => {
 })
 
 function mkLinkList(versions) {
-    var links = versions.map((v) => `[${v.version}](/standards/${v.id})`)
+    var links = versions.map((v) => `[${v.version}](/standards/${v.id})` + 
+            // for the effective column, check if there is a "future" equivalent
+            // if so, this state will apply in the future and is marked with
+            // an * for "futureEffective" and with a † for "futureDeprecated"
+            (v.state.futureEffective
+                ? '*'
+                : v.state.futureDeprecated
+                ? '&#8224;'
+                : '')
+        )   
+
     return links.join(', ')
 }
 
@@ -119,7 +119,7 @@ sidebarItems = []
 var lines = []
 if (!lines.length) lines.push(`${intro}
 
-${legendWithBullets}
+${legend}
 ${reactHighlightTableCellBackground}
 `)
 lines.push('<div id="color-table-cells" />') // used to find the sibling table for color encoded background
@@ -145,7 +145,7 @@ Object.entries(tracks).forEach((trackEntry) => {
 
 ${trackIntros[track]}
 
-${legendWithBullets}
+${legend}
 `)
     }
     tlines.push('| Standard  | Description  | Draft | Effective | Deprecated* |')
@@ -179,30 +179,9 @@ ${legendWithBullets}
         slines.push('| Version  | Type  | State   | stabilized | deprecated |')
         slines.push('| -------- | ----- | ------- | ---------- | ---------- |')
         var link = `[scs-${adrId}](/standards/${track.toLowerCase()}/scs-${adrId})`
-        var versionList = ['draft', 'effective', 'deprecated']
-        .map(
-            (column) =>
-              mkLinkList(
-                versions
-                  .filter((v) => v.state[column])
-                  .map((v) => {
-                    // for the effective column, check if there is a "future" equivalent
-                    // if so, this state will apply in the future and is marked with
-                    // an * for "futureEffective" and with a † for "futureDeprecated"
-                    return {
-                      ...v,
-                      version:
-                        v.version +
-                        (v.state.futureEffective
-                          ? '*'
-                          : v.state.futureDeprecated
-                          ? '&#8224;'
-                          : '')
-                    }
-                  })
-              ) || '-'
-          )
-          .join(' | ')
+        var versionList = ['draft', 'effective', 'deprecated'].map(
+            (column) => mkLinkList(versions.filter((v) => v.state[column])) || '-'
+        ).join(' | ')
         lines.push(`| ${link}  | ${track}  | ${ref.title}  | ${versionList}  |`)
         tlines.push(`| ${link}  | ${ref.title}  | ${versionList}  |`)
         versions.forEach((obj) => {
