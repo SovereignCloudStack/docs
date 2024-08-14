@@ -5,13 +5,13 @@ status: Draft
 track: Global
 ---
 
-SovereignCloudStack (SCS) makes use of [Sonobuoy][sonobuoy]] as a test framework to run its tests on Kubernetes clusters, which are to be audited for compliance.
+SovereignCloudStack (SCS) makes use of [Sonobuoy][sonobuoy] as a test framework to run its tests on Kubernetes clusters, which are to be audited for compliance.
 The aim of using this framework is to make the execution of tests on a KaaS infrastructure as simple as possible.
 Hence this reduces the effort required to establish SCS conformity to a minimum.
 
 In short this is achieved by storing all tests in a container image, which can then be called and launched on the clusters managed by sonoobuoy.
 
-> A more detailed description of why the SCS has decided to use sonobuoys can be found on the corresponding  [Decsision Record][sonbouy-decision-record]
+> A more detailed description of why the SCS has decided to use sonobuoys can be found on the corresponding [Decsision Record][sonbouy-decision-record].
 > In addition, sonobuoy is also used as the toolset for executing Kubernetes very own [conformance tests][k8s-conformance].
 
 
@@ -192,13 +192,14 @@ sonobuoy status
 Once all tests have been executed successfully, you can read the results and receive feedback.
 You can call up the results as follows:
 
-```
-TODO:!!! be described in more detail
-```
+> TODO:!!! to be described in more detail
+
 
 
 
 ## Clean up after:
+
+To clean up the resourcec used for development, you can use the following commands:
 
 ```
 make dev-clean
@@ -206,13 +207,11 @@ make dev-purge
 ```
 
 
-
 [sonobuoy]: https://sonobuoy.io/
 [sonbouy-decision-record]: https://github.com/SovereignCloudStack/standards/blob/main/Standards/scs-0200-v1-using-sonobuoy-for-kaas-conformance-tests.md
 [k8s-conformance]: https://github.com/cncf/k8s-conformance/blob/master/instructions.md
 
 [kaas-sonobuoy-example] https://github.com/SovereignCloudStack/standards/tree/main/Tests/kaas/kaas-sonobuoy-go-example-e2e-framework#sonobuoy-usage-for-development-of-tests
-
 
 [docker-installation] https://docs.docker.com/engine/install/
 [sonobuoy-installation] https://sonobuoy.io/docs/v0.57.1/#installation
