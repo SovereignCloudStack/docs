@@ -19,40 +19,57 @@ const legend =`
 - Entries in the effective column marked with an * are stable right now but turn to effective documents in the near future
 - Entries in the effective column marked with a † will turn deprecated in the near future`;
 
+// This one component will be copied to all files containing tables we want colored.
+// These tables may differ from file to file, and the following snippet can work with all of them,
+// even those that might not be present in the file in question.
+// We trade this tiny bit of redundancy off for keeping this file simple.
 const reactHighlightTableCellBackground = `
 import { useEffect } from 'react';
+
 export const TableCellStyleApplier = () => {
     // apply background color based on cell index
-    const colorMapping = {
-      3: '#FBFDE2', // draft
-      4: '#E2EAFD', // effective
-      5: '#FDE2E2' // deprecated
+    const colorMappingOverview = {
+        3: '#FBFDE2', // draft
+        4: '#E2EAFD', // effective
+        5: '#FDE2E2'  // deprecated
     };
-  
+
+    const colorMappingTrackOverview = {
+        2: '#FBFDE2', // draft
+        3: '#E2EAFD', // effective
+        4: '#FDE2E2'  // deprecated
+    };
 
     useEffect(() => {
-        const divElement = document.querySelector('#color-table-cells');
-        if (divElement) {
-          // the next sibling of that element should be our table
-          const tableElement = divElement.nextElementSibling;
-          if (tableElement && tableElement.tagName.toLowerCase() === 'table') {
-            tableElement.querySelectorAll('tbody tr').forEach((row) => {
-              row.querySelectorAll('td').forEach((cell, index) => {
-                // apply background for all cells that have more content than '-'
-                if (colorMapping[index] && cell.textContent.trim() !== '-') {
-                  cell.style.backgroundColor = colorMapping[index];
+        const applyColorToTable = (tableId, colorMapping) => {
+            const divElement = document.querySelector('#' + tableId);
+            if (divElement) {
+                // The next sibling of that element should be our table
+                const tableElement = divElement.nextElementSibling;
+                if (tableElement && tableElement.tagName.toLowerCase() === 'table') {
+                    tableElement.querySelectorAll('tbody tr').forEach((row) => {
+                        row.querySelectorAll('td').forEach((cell, index) => {
+                            // Apply background for all cells that have more content than '-'
+                            if (colorMapping[index] && cell.textContent.trim() !== '-') {
+                                cell.style.backgroundColor = colorMapping[index];
+                            }
+                        });
+                    });
                 }
-              });
-            });
-          }
-        }
-      }, []);
-  
-    return null;
-  };
+            }
+        };
 
-  <TableCellStyleApplier />
-  `
+        // Apply colors to various tables (whatever tables are present)
+        applyColorToTable('color-table-cells-overview', colorMappingOverview);
+        applyColorToTable('color-table-cells-track-overview', colorMappingTrackOverview);
+    }, []);
+
+    return null;
+};
+
+<TableCellStyleApplier />
+
+`;
 
 var filenames = fs
     .readdirSync('standards/')
@@ -122,7 +139,7 @@ if (!lines.length) lines.push(`${intro}
 ${legend}
 ${reactHighlightTableCellBackground}
 `)
-lines.push('<div id="color-table-cells" />') // used to find the sibling table for color encoded background
+lines.push('<div id="color-table-cells-overview" />') // used to find the sibling table for color-encoded background
 lines.push('| Standard  | Track  | Description  | Draft | Effective | Deprecated* |')
 lines.push('| --------- | ------ | ------------ | ----- | --------- | ----------- |')
 Object.entries(tracks).forEach((trackEntry) => {
@@ -146,8 +163,10 @@ Object.entries(tracks).forEach((trackEntry) => {
 ${trackIntros[track]}
 
 ${legend}
+${reactHighlightTableCellBackground}
 `)
     }
+    tlines.push('<div id="color-table-cells-track-overview" />') // used to find the sibling table for color-encoded background
     tlines.push('| Standard  | Description  | Draft | Effective | Deprecated* |')
     tlines.push('| --------- | ------------ | ----- | --------- | ----------- |')
     Object.entries(trackEntry[1]).forEach((standardEntry) => {
