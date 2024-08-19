@@ -19,25 +19,25 @@ const legend =`
 - Entries in the effective column marked with an * are stable right now but turn to effective documents in the near future
 - Entries in the effective column marked with a † will turn deprecated in the near future`;
 
-// this one component will be copied to all files containing tables
-// the overview.mdx will always only be tableId 1, the other track files tableId 2
-// even though we have some code in the files that is not needed, it reduces read complexity in this file
+// This one component will be copied to all files containing tables we want colored.
+// These tables may differ from file to file, and the following snippet can work with all of them,
+// even those that might not be present in the file in question.
+// We trade this tiny bit of redundancy off for keeping this file simple.
 const reactHighlightTableCellBackground = `
 import { useEffect } from 'react';
 
 export const TableCellStyleApplier = () => {
     // apply background color based on cell index
-    const colorMappingPerTable = {
-        1: {
-            3: '#FBFDE2', // draft
-            4: '#E2EAFD', // effective
-            5: '#FDE2E2'  // deprecated
-        },
-        2: {
-            2: '#FBFDE2', // draft
-            3: '#E2EAFD', // effective
-            4: '#FDE2E2'  // deprecated
-        }
+    const colorMappingOverview = {
+        3: '#FBFDE2', // draft
+        4: '#E2EAFD', // effective
+        5: '#FDE2E2'  // deprecated
+    };
+
+    const colorMappingTrackOverview = {
+        2: '#FBFDE2', // draft
+        3: '#E2EAFD', // effective
+        4: '#FDE2E2'  // deprecated
     };
 
     useEffect(() => {
@@ -59,11 +59,9 @@ export const TableCellStyleApplier = () => {
             }
         };
 
-        // Apply colors for table 1 if exists
-        applyColorToTable('color-table-cells-1', colorMappingPerTable[1]);
-
-        // Apply colors for table 2 if exists
-        applyColorToTable('color-table-cells-2', colorMappingPerTable[2]);
+        // Apply colors to various tables (whatever tables are present)
+        applyColorToTable('color-table-cells-overview', colorMappingOverview);
+        applyColorToTable('color-table-cells-track-overview', colorMappingTrackOverview);
     }, []);
 
     return null;
@@ -141,7 +139,7 @@ if (!lines.length) lines.push(`${intro}
 ${legend}
 ${reactHighlightTableCellBackground}
 `)
-lines.push('<div id="color-table-cells-1" />') // used to find the sibling table for color encoded background
+lines.push('<div id="color-table-cells-overview" />') // used to find the sibling table for color-encoded background
 lines.push('| Standard  | Track  | Description  | Draft | Effective | Deprecated* |')
 lines.push('| --------- | ------ | ------------ | ----- | --------- | ----------- |')
 Object.entries(tracks).forEach((trackEntry) => {
@@ -168,7 +166,7 @@ ${legend}
 ${reactHighlightTableCellBackground}
 `)
     }
-    tlines.push('<div id="color-table-cells-2" />') // used to find the sibling table for color encoded background
+    tlines.push('<div id="color-table-cells-track-overview" />') // used to find the sibling table for color-encoded background
     tlines.push('| Standard  | Description  | Draft | Effective | Deprecated* |')
     tlines.push('| --------- | ------------ | ----- | --------- | ----------- |')
     Object.entries(trackEntry[1]).forEach((standardEntry) => {
