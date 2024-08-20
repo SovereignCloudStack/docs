@@ -308,10 +308,10 @@ const sidebarsDocs = {
                 type: 'generated-index'
               },
               items: [
-                'operating-scs/components/scs-health-monitor/docs/overview',
-                'operating-scs/components/scs-health-monitor/docs/Workflow',
-                'operating-scs/components/scs-health-monitor/docs/Testflow',
-                'operating-scs/components/scs-health-monitor/docs/ObservabilityStack/SetupObservabilityStack'
+                'operating-scs/components/scs-health-monitor/overview',
+                'operating-scs/components/scs-health-monitor/Workflow',
+                'operating-scs/components/scs-health-monitor/Testflow',
+                'operating-scs/components/scs-health-monitor/SetupObservabilityStack'
               ]
             },
             {
