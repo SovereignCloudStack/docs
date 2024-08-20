@@ -19,6 +19,12 @@
           "stable": "true"
         },
         {
+          "title": "SCS Health Monitor",
+          "url": "/docs/operating-scs/components/scs-health-monitor/overview",
+          "mandatory": "true",
+          "stable": "true"
+        },
+        {
           "title": "Central API",
           "url": "/docs/operating-scs/components/central-api/overview",
           "mandatory": "true",

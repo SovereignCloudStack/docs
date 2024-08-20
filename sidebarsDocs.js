@@ -303,6 +303,18 @@ const sidebarsDocs = {
             },
             {
               type: 'category',
+              label: 'SCS Health Monitor',
+              link: {
+                type: 'generated-index'
+              },
+              items: [
+                'operating-scs/components/scs-health-monitor/overview',
+                'operating-scs/components/scs-health-monitor/Workflow',
+                'operating-scs/components/scs-health-monitor/Testflow'
+              ]
+            },
+            {
+              type: 'category',
               label: 'Central API',
               link: {
                 type: 'generated-index'
