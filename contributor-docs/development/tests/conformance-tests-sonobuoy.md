@@ -6,6 +6,7 @@ Hence this reduces the effort required to establish SCS conformity to a minimum.
 
 In short this is achieved by storing all tests in a container image, which can then be called and launched on the clusters managed by sonoobuoy.
 
+> [!NOTE] 
 > A more detailed description of why the SCS has decided to use sonobuoys can be found on the corresponding [Decsision Record][sonbouy-decision-record].
 > In addition, sonobuoy is also used as the toolset for executing Kubernetes very own [conformance tests][k8s-conformance].
 
@@ -14,6 +15,7 @@ This requires a user to write the conformance tests in Golang, as this is the la
 
 ## Step-by-step instructions for the development of sonobuoy tests using `docker` and `kind`
 
+> [!NOTE] 
 > This guide refers to the brief instructions provided in the [standards repository][scs-sonobuoy-example-guide]
 
 ### Prerequisite
@@ -70,6 +72,7 @@ In general, SCS tests for KaaS are derived from standards that define certain ex
 As an example for this step-by-step guide, let's assume a scenario in which there is a fictional standard called "scs-0299-v1-example-standard.md".
 Pretend that the fictitious standard here stipulates that at least one pod MUST run in the namespace "namespace-test-a".
 
+> [!NOTE]  
 > The functions and behaviors to be tested MUST be precisely defined in a standard.
 > If you as a developer want to test something that you think is best tested but is not yet part of any standard, you MUST update the standard accordingly.
 
@@ -178,6 +181,7 @@ cat results/plugins/scsconformance/sonobuoy_results.yaml
 Once all tests have been executed successfully, you can read the results and receive feedback.
 You can call up the results as follows:
 
+> [!NOTE] 
 > TODO:!!! to be described in more detail
 
 ### Clean up after
