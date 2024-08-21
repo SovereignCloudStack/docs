@@ -73,6 +73,12 @@
     "label": "openstack-health-monitor"
   },
   {
+    "repo": "SovereignCloudStack/scs-health-monitor",
+    "source": ["docs/overview.md", "docs/Workflow.md", "docs/Testflow.md", "docs/ObservabilityStack/SetupObservabilityStack.md"],
+    "target": "docs/04-operating-scs/components",
+    "label": "scs-health-monitor"
+  },
+  {
     "repo": "SovereignCloudStack/central-api",
     "source": "docs/*.md",
     "target": "docs/04-operating-scs/components",
