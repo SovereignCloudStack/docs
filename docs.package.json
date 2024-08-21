@@ -89,5 +89,11 @@
     "source": "docs/*.md",
     "target": "docs/04-operating-scs/components",
     "label": "automated-pentesting"
+  },
+  {
+    "repo": "SovereignCloudStack/security-infra-scan-pipeline",
+    "source": "docs/images/*.png",
+    "target": "docs/04-operating-scs/components",
+    "label": "automated-pentesting/images"
   }
 ]
