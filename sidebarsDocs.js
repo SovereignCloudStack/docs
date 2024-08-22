@@ -173,6 +173,16 @@ const sidebarsDocs = {
                     'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/controllers',
                     'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/develop'
                   ]
+                },
+                {
+                  type: 'category',
+                  label: 'csctl',
+                  items: [
+                    'container/components/cluster-stacks/components/csctl/overview',
+                    'container/components/cluster-stacks/components/csctl/quickstart',
+                    'container/components/cluster-stacks/components/csctl/getting_started',
+                    'container/components/cluster-stacks/components/csctl/developing-and-testing-csctl'
+                  ]
                 }
               ]
             },

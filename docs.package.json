@@ -74,7 +74,12 @@
   },
   {
     "repo": "SovereignCloudStack/scs-health-monitor",
-    "source": ["docs/overview.md", "docs/Workflow.md", "docs/Testflow.md", "docs/ObservabilityStack/SetupObservabilityStack.md"],
+    "source": [
+      "docs/overview.md",
+      "docs/Workflow.md",
+      "docs/Testflow.md",
+      "docs/ObservabilityStack/SetupObservabilityStack.md"
+    ],
     "target": "docs/04-operating-scs/components",
     "label": "scs-health-monitor"
   },
@@ -95,5 +100,11 @@
     "source": "docs/images/*.png",
     "target": "docs/04-operating-scs/components",
     "label": "automated-pentesting/images"
+  },
+  {
+    "repo": "SovereignCloudStack/csctl",
+    "source": "docs/*.md",
+    "target": "docs/03-container/components/cluster-stacks/components",
+    "label": "csctl"
   }
 ]
