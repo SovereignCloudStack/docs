@@ -130,6 +130,13 @@ const sidebarsDocs = {
                 'container/components/cluster-stacks/components/cluster-stacks/overview',
                 {
                   type: 'category',
+                  label: 'Cluster Stack Operator',
+                  items: [
+                    'container/components/cluster-stacks/components/cluster-stack-operator/overview'
+                  ]
+                },
+                {
+                  type: 'category',
                   label: 'Cluster Stack Provider OpenStack',
                   items: [
                     'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/overview',
