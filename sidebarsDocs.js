@@ -333,6 +333,7 @@ const sidebarsDocs = {
               },
               items: [
                 'operating-scs/components/automated-pentesting/overview',
+                'operating-scs/components/automated-pentesting/quickstart',
                 'operating-scs/components/automated-pentesting/tools'
               ]
             }
