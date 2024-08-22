@@ -106,5 +106,11 @@
     "source": "docs/*.md",
     "target": "docs/03-container/components/cluster-stacks/components",
     "label": "csctl"
+  },
+  {
+    "repo": "SovereignCloudStack/cluster-stacks",
+    "source": "docs/overview.md",
+    "target": "docs/03-container/components/cluster-stacks/components",
+    "label": "cluster-stacks"
   }
 ]

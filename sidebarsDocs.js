@@ -127,6 +127,7 @@ const sidebarsDocs = {
                 type: 'generated-index'
               },
               items: [
+                'container/components/cluster-stacks/components/cluster-stacks/overview',
                 {
                   type: 'category',
                   label: 'Cluster Stack Provider OpenStack',
