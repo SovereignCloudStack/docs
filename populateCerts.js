@@ -29,23 +29,17 @@ const sidebarItems = scopes.map((scope) => {
         module.prettyName = module.id.startsWith('scs-') ? `${module.id}: ${module.name}` : module.name
     })
     scope.timeline.sort((a, b) => b.date.localeCompare(a.date))
-    // TODO find current entry
+    const current = scope.timeline.filter((entry) => entry.date <= today)
+    const lookup = current.length ? current[0].versions : {}
     scope.versions.sort((a, b) => b.version.localeCompare(a.version));
     scope.versions.forEach((version) => {
+        version.state = lookup[version.version] || 'obsolete'
         version.isStable = version.stabilized_at !== undefined && version.stabilized_at <= today
-        version.isObsolete = version.deprecated_at !== undefined && version.deprecated_at < today
-        version.isEffective = version.isStable && !version.isObsolete
-        version.isPreview = version.stabilized_at === undefined || today < version.stabilized_at
-        if (!version.isEffective && !version.isPreview) {
+        version.isEffective = version.state == 'effective'
+        if (['warn', 'effective', 'draft'].indexOf(version.state) == -1) {
             numOld += 1
             if (numOld > MAX_OLD) return
         }
-        version.state = (
-            version.stabilized_at === undefined ? 'Draft' :
-            version.isEffective ? 'Effective' :
-            version.isObsolete ? 'Deprecated' :
-            'Stable'
-        )
         if (version.include === undefined) return
         versionsShown[version.version] = version
         version.include.forEach((include) => {
