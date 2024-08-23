@@ -80,7 +80,7 @@ Note that the state _Stable_ is shown here if _stabilized at_ is in the future, 
     // md doesn't allow intermediate header rows
     // lines.push('| :-- | ' + columns.map(() => ':--').join(' | ') + ' |')
     rows.forEach((row) => {
-        lines.push(`| ${row.name}  | ` + columns.map((c) => row.columns[c]).map((col) => {
+        lines.push(`| [${row.name}](${row.url})  | ` + columns.map((c) => row.columns[c]).map((col) => {
             if (col === undefined) {
                 // this version of the cert does not include this standard
                 return ''
