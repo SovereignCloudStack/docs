@@ -33,7 +33,7 @@ const sidebarItems = scopes.map((scope) => {
     const lookup = current.length ? current[0].versions : {}
     scope.versions.sort((a, b) => b.version.localeCompare(a.version));
     scope.versions.forEach((version) => {
-        version.state = lookup[version.version] || 'obsolete'
+        version.state = lookup[version.version] || 'deprecated'
         version.isStable = version.stabilized_at !== undefined && version.stabilized_at <= today
         version.isEffective = version.state == 'effective'
         if (['warn', 'effective', 'draft'].indexOf(version.state) == -1) {
