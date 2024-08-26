@@ -22,7 +22,6 @@ const sidebarItems = scopes.map((scope) => {
     const matrix = {}
     const versionsShown = {}
     var numOld = 0
-    // sort in descending order, so we get the MAX_OLD most recent obsolete versions
     var modules = {}
     scope.modules.forEach((module) => {
         modules[module.id] = module
@@ -31,6 +30,7 @@ const sidebarItems = scopes.map((scope) => {
     scope.timeline.sort((a, b) => b.date.localeCompare(a.date))
     const current = scope.timeline.filter((entry) => entry.date <= today)
     const lookup = current.length ? current[0].versions : {}
+    // sort in descending order, so we get the MAX_OLD most recent obsolete versions
     scope.versions.sort((a, b) => b.version.localeCompare(a.version));
     scope.versions.forEach((version) => {
         version.state = lookup[version.version] || 'deprecated'
