@@ -132,7 +132,10 @@ const sidebarsDocs = {
                   type: 'category',
                   label: 'Cluster Stack Operator',
                   items: [
-                    'container/components/cluster-stacks/components/cluster-stack-operator/overview'
+                    'container/components/cluster-stacks/components/cluster-stack-operator/architecture/overview',
+                    'container/components/cluster-stacks/components/cluster-stack-operator/topics/quickstart',
+                    'container/components/cluster-stacks/components/cluster-stack-operator/topics/troubleshoot',
+                    'container/components/cluster-stacks/components/cluster-stack-operator/develop/develop'
                   ]
                 },
                 {

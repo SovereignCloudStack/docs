@@ -41,7 +41,6 @@
     "target": "docs/03-container/components",
     "label": "container-registry"
   },
-
   {
     "repo": "SovereignCloudStack/status-page-openapi",
     "source": "docs",
@@ -115,14 +114,8 @@
   },
   {
     "repo": "SovereignCloudStack/cluster-stack-operator",
-    "source": ["docs/architecture/overview.md"],
+    "source": ["docs/*"],
     "target": "docs/03-container/components/cluster-stacks/components",
     "label": "cluster-stack-operator"
-  },
-  {
-    "repo": "SovereignCloudStack/cluster-stack-operator",
-    "source": ["docs/pics/syself-cluster-stacks-web.png"],
-    "target": "docs/03-container/components/cluster-stacks/components",
-    "label": "pics"
   }
 ]
