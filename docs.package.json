@@ -108,7 +108,7 @@
   },
   {
     "repo": "SovereignCloudStack/cluster-stacks",
-    "source": "docs/overview.md",
+    "source": "docs/*",
     "target": "docs/03-container/components/cluster-stacks/components",
     "label": "cluster-stacks"
   },

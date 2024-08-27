@@ -157,6 +157,20 @@ const sidebarsDocs = {
                     'container/components/cluster-stacks/components/csctl/getting_started',
                     'container/components/cluster-stacks/components/csctl/developing-and-testing-csctl'
                   ]
+                },
+                {
+                  type: 'category',
+                  label: 'Predefined Cluster Stacks',
+                  items: [
+                    {
+                      type: 'category',
+                      label: 'Openstack',
+                      items: [
+                        'container/components/cluster-stacks/components/cluster-stacks/providers/openstack/quickstart',
+                        'container/components/cluster-stacks/components/cluster-stacks/providers/openstack/configuration'
+                      ]
+                    }
+                  ]
                 }
               ]
             },
