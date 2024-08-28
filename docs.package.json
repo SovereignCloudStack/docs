@@ -41,7 +41,6 @@
     "target": "docs/03-container/components",
     "label": "container-registry"
   },
-
   {
     "repo": "SovereignCloudStack/status-page-openapi",
     "source": "docs",
@@ -74,7 +73,12 @@
   },
   {
     "repo": "SovereignCloudStack/scs-health-monitor",
-    "source": ["docs/overview.md", "docs/Workflow.md", "docs/Testflow.md", "docs/ObservabilityStack/SetupObservabilityStack.md"],
+    "source": [
+      "docs/overview.md",
+      "docs/Workflow.md",
+      "docs/Testflow.md",
+      "docs/ObservabilityStack/SetupObservabilityStack.md"
+    ],
     "target": "docs/04-operating-scs/components",
     "label": "scs-health-monitor"
   },
@@ -95,5 +99,23 @@
     "source": "docs/images/*.png",
     "target": "docs/04-operating-scs/components",
     "label": "automated-pentesting/images"
+  },
+  {
+    "repo": "SovereignCloudStack/csctl",
+    "source": "docs/*.md",
+    "target": "docs/03-container/components/cluster-stacks/components",
+    "label": "csctl"
+  },
+  {
+    "repo": "SovereignCloudStack/cluster-stacks",
+    "source": "docs/*",
+    "target": "docs/03-container/components/cluster-stacks/components",
+    "label": "cluster-stacks"
+  },
+  {
+    "repo": "SovereignCloudStack/cluster-stack-operator",
+    "source": ["docs/*"],
+    "target": "docs/03-container/components/cluster-stacks/components",
+    "label": "cluster-stack-operator"
   }
 ]
