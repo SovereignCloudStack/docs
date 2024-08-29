@@ -5,6 +5,7 @@ const sidebars = {
   community: [
     'index',
     'mission-statement',
+    'license-considerations',
     {
       type: 'category',
       link: {
