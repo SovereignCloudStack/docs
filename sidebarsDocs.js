@@ -312,6 +312,20 @@ const sidebarsDocs = {
                     'operating-scs/components/status-page-deployment/docs/admin-authentication',
                     'operating-scs/components/status-page-deployment/docs/faq'
                   ]
+                },
+                {
+                  type: 'category',
+                  label: 'Web',
+                  link: {
+                    type: 'generated-index'
+                  },
+                  items: [
+                    'operating-scs/components/status-page-web/docs/overview',
+                    'operating-scs/components/status-page-web/docs/requirements',
+                    'operating-scs/components/status-page-web/docs/quickstart',
+                    'operating-scs/components/status-page-web/docs/configuration',
+                    'operating-scs/components/status-page-web/docs/contribute'
+                  ]
                 }
               ]
             },
