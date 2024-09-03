@@ -60,6 +60,12 @@
     "label": "status-page-deployment"
   },
   {
+    "repo": "SovereignCloudStack/status-page-web",
+    "source": "docs",
+    "target": "docs/04-operating-scs/components",
+    "label": "status-page-web"
+  },
+  {
     "repo": "SovereignCloudStack/k8s-observability",
     "source": "docs",
     "target": "docs/04-operating-scs/components",
