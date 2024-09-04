@@ -98,13 +98,19 @@
     "repo": "SovereignCloudStack/security-infra-scan-pipeline",
     "source": "docs/*.md",
     "target": "docs/04-operating-scs/components",
-    "label": "automated-pentesting"
+    "label": "automated-pentesting-iaas"
   },
   {
     "repo": "SovereignCloudStack/security-infra-scan-pipeline",
     "source": "docs/images/*.png",
     "target": "docs/04-operating-scs/components",
-    "label": "automated-pentesting/images"
+    "label": "automated-pentesting-iaas/images"
+  },
+  {
+    "repo": "SovereignCloudStack/security-k8s-scan-pipeline",
+    "source": "docs/*.md",
+    "target": "docs/04-operating-scs/components",
+    "label": "automated-pentesting-kaas"
   },
   {
     "repo": "SovereignCloudStack/csctl",

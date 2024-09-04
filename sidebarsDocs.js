@@ -381,9 +381,30 @@ const sidebarsDocs = {
                 type: 'generated-index'
               },
               items: [
-                'operating-scs/components/automated-pentesting/overview',
-                'operating-scs/components/automated-pentesting/quickstart',
-                'operating-scs/components/automated-pentesting/tools'
+                {
+                  type: 'category',
+                  label: 'Pentesting IaaS',
+                  link: {
+                    type: 'generated-index'
+                  },
+                  items: [
+                    'operating-scs/components/automated-pentesting-iaas/overview',
+                    'operating-scs/components/automated-pentesting-iaas/quickstart',
+                    'operating-scs/components/automated-pentesting-iaas/tools'
+                  ]
+                },
+                {
+                  type: 'category',
+                  label: 'Pentesting KaaS',
+                  link: {
+                    type: 'generated-index'
+                  },
+                  items: [
+                    'operating-scs/components/automated-pentesting-kaas/overview',
+                    'operating-scs/components/automated-pentesting-kaas/quickstart',
+                    'operating-scs/components/automated-pentesting-kaas/tools'
+                  ]
+                }
               ]
             }
           ]
