@@ -41,7 +41,6 @@
     "target": "docs/03-container/components",
     "label": "container-registry"
   },
-
   {
     "repo": "SovereignCloudStack/status-page-openapi",
     "source": "docs",
@@ -61,6 +60,12 @@
     "label": "status-page-deployment"
   },
   {
+    "repo": "SovereignCloudStack/status-page-web",
+    "source": "docs",
+    "target": "docs/04-operating-scs/components",
+    "label": "status-page-web"
+  },
+  {
     "repo": "SovereignCloudStack/k8s-observability",
     "source": "docs",
     "target": "docs/04-operating-scs/components",
@@ -73,6 +78,17 @@
     "label": "openstack-health-monitor"
   },
   {
+    "repo": "SovereignCloudStack/scs-health-monitor",
+    "source": [
+      "docs/overview.md",
+      "docs/Workflow.md",
+      "docs/Testflow.md",
+      "docs/ObservabilityStack/SetupObservabilityStack.md"
+    ],
+    "target": "docs/04-operating-scs/components",
+    "label": "scs-health-monitor"
+  },
+  {
     "repo": "SovereignCloudStack/central-api",
     "source": "docs/*.md",
     "target": "docs/04-operating-scs/components",
@@ -82,6 +98,36 @@
     "repo": "SovereignCloudStack/security-infra-scan-pipeline",
     "source": "docs/*.md",
     "target": "docs/04-operating-scs/components",
-    "label": "automated-pentesting"
+    "label": "automated-pentesting-iaas"
+  },
+  {
+    "repo": "SovereignCloudStack/security-infra-scan-pipeline",
+    "source": "docs/images/*.png",
+    "target": "docs/04-operating-scs/components",
+    "label": "automated-pentesting-iaas/images"
+  },
+  {
+    "repo": "SovereignCloudStack/security-k8s-scan-pipeline",
+    "source": "docs/*.md",
+    "target": "docs/04-operating-scs/components",
+    "label": "automated-pentesting-kaas"
+  },
+  {
+    "repo": "SovereignCloudStack/csctl",
+    "source": "docs/*.md",
+    "target": "docs/03-container/components/cluster-stacks/components",
+    "label": "csctl"
+  },
+  {
+    "repo": "SovereignCloudStack/cluster-stacks",
+    "source": "docs/*",
+    "target": "docs/03-container/components/cluster-stacks/components",
+    "label": "cluster-stacks"
+  },
+  {
+    "repo": "SovereignCloudStack/cluster-stack-operator",
+    "source": ["docs/*"],
+    "target": "docs/03-container/components/cluster-stacks/components",
+    "label": "cluster-stack-operator"
   }
 ]

@@ -135,6 +135,60 @@ const sidebarsDocs = {
           items: [
             {
               type: 'category',
+              label: 'Cluster Stacks',
+              link: {
+                type: 'generated-index'
+              },
+              items: [
+                'container/components/cluster-stacks/components/cluster-stacks/overview',
+                {
+                  type: 'category',
+                  label: 'Cluster Stack Operator',
+                  items: [
+                    'container/components/cluster-stacks/components/cluster-stack-operator/architecture/overview',
+                    'container/components/cluster-stacks/components/cluster-stack-operator/topics/quickstart',
+                    'container/components/cluster-stacks/components/cluster-stack-operator/topics/troubleshoot',
+                    'container/components/cluster-stacks/components/cluster-stack-operator/develop/develop'
+                  ]
+                },
+                {
+                  type: 'category',
+                  label: 'Cluster Stack Provider OpenStack',
+                  items: [
+                    'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/overview',
+                    'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/quickstart',
+                    'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/controllers',
+                    'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/develop'
+                  ]
+                },
+                {
+                  type: 'category',
+                  label: 'csctl',
+                  items: [
+                    'container/components/cluster-stacks/components/csctl/overview',
+                    'container/components/cluster-stacks/components/csctl/quickstart',
+                    'container/components/cluster-stacks/components/csctl/getting_started',
+                    'container/components/cluster-stacks/components/csctl/developing-and-testing-csctl'
+                  ]
+                },
+                {
+                  type: 'category',
+                  label: 'Predefined Cluster Stacks',
+                  items: [
+                    {
+                      type: 'category',
+                      label: 'Openstack',
+                      items: [
+                        'container/components/cluster-stacks/components/cluster-stacks/providers/openstack/quickstart',
+                        'container/components/cluster-stacks/components/cluster-stacks/providers/openstack/configuration'
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: 'category',
               label: 'K8s Cluster API Provider',
               link: {
                 type: 'generated-index'
@@ -166,25 +220,6 @@ const sidebarsDocs = {
                     'container/components/k8s-cluster-api-provider/doc/usage/gateway-api',
                     'container/components/k8s-cluster-api-provider/doc/usage/harbor',
                     'container/components/k8s-cluster-api-provider/doc/usage/migrate-to-cluster-class'
-                  ]
-                }
-              ]
-            },
-            {
-              type: 'category',
-              label: 'Cluster Stacks',
-              link: {
-                type: 'generated-index'
-              },
-              items: [
-                {
-                  type: 'category',
-                  label: 'Cluster Stack Provider OpenStack',
-                  items: [
-                    'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/overview',
-                    'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/quickstart',
-                    'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/controllers',
-                    'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/develop'
                   ]
                 }
               ]
@@ -290,6 +325,20 @@ const sidebarsDocs = {
                     'operating-scs/components/status-page-deployment/docs/admin-authentication',
                     'operating-scs/components/status-page-deployment/docs/faq'
                   ]
+                },
+                {
+                  type: 'category',
+                  label: 'Web',
+                  link: {
+                    type: 'generated-index'
+                  },
+                  items: [
+                    'operating-scs/components/status-page-web/docs/overview',
+                    'operating-scs/components/status-page-web/docs/requirements',
+                    'operating-scs/components/status-page-web/docs/quickstart',
+                    'operating-scs/components/status-page-web/docs/configuration',
+                    'operating-scs/components/status-page-web/docs/contribute'
+                  ]
                 }
               ]
             },
@@ -316,6 +365,19 @@ const sidebarsDocs = {
             },
             {
               type: 'category',
+              label: 'SCS Health Monitor',
+              link: {
+                type: 'generated-index'
+              },
+              items: [
+                'operating-scs/components/scs-health-monitor/overview',
+                'operating-scs/components/scs-health-monitor/Workflow',
+                'operating-scs/components/scs-health-monitor/Testflow',
+                'operating-scs/components/scs-health-monitor/SetupObservabilityStack'
+              ]
+            },
+            {
+              type: 'category',
               label: 'Central API',
               link: {
                 type: 'generated-index'
@@ -332,8 +394,30 @@ const sidebarsDocs = {
                 type: 'generated-index'
               },
               items: [
-                'operating-scs/components/automated-pentesting/overview',
-                'operating-scs/components/automated-pentesting/tools'
+                {
+                  type: 'category',
+                  label: 'Pentesting IaaS',
+                  link: {
+                    type: 'generated-index'
+                  },
+                  items: [
+                    'operating-scs/components/automated-pentesting-iaas/overview',
+                    'operating-scs/components/automated-pentesting-iaas/quickstart',
+                    'operating-scs/components/automated-pentesting-iaas/tools'
+                  ]
+                },
+                {
+                  type: 'category',
+                  label: 'Pentesting KaaS',
+                  link: {
+                    type: 'generated-index'
+                  },
+                  items: [
+                    'operating-scs/components/automated-pentesting-kaas/overview',
+                    'operating-scs/components/automated-pentesting-kaas/quickstart',
+                    'operating-scs/components/automated-pentesting-kaas/tools'
+                  ]
+                }
               ]
             }
           ]
