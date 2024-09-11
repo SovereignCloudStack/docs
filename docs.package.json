@@ -129,5 +129,11 @@
     "source": ["docs/*"],
     "target": "docs/03-container/components/cluster-stacks/components",
     "label": "cluster-stack-operator"
+  },
+  {
+    "repo": "SovereignCloudStack/hardware-landscape",
+    "source": ["documentation/overview.md"],
+    "target": "docs/turnkey-solution",
+    "label": ""
   }
 ]
