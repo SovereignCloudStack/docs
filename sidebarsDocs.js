@@ -6,18 +6,6 @@ const sidebarsDocs = {
     'index',
     {
       type: 'category',
-      label: 'Getting Started',
-      link: {
-        type: 'generated-index'
-      },
-      items: [
-        // 'getting-started/overview',
-        // 'getting-started/virtualization',
-        // 'getting-started/containerization'
-      ]
-    },
-    {
-      type: 'category',
       label: 'IaaS Layer',
       link: {
         type: 'generated-index'
@@ -419,56 +407,6 @@ const sidebarsDocs = {
             'operating-scs/guides/openstack-health-monitor/Debian12-Install'
           ]
         },
-        // {
-        //   type: 'category',
-        //   label: 'Monitoring',
-        //   link: {
-        //     type: 'generated-index'
-        //   },
-        //   items: [
-        //     'operating-scs/monitoring/index'
-        //   ]
-        // },
-        // {
-        //   type: 'category',
-        //   label: 'Incident Management',
-        //   link: {
-        //     type: 'generated-index'
-        //   },
-        //   items: [
-        //     'operating-scs/incident-management/index'
-        //   ]
-        // },
-        // {
-        //   type: 'category',
-        //   label: 'Audits',
-        //   link: {
-        //     type: 'generated-index'
-        //   },
-        //   items: [
-        //     'operating-scs/audits/index'
-        //   ]
-        // },
-        // {
-        //   type: 'category',
-        //   label: 'Lifecycle Management',
-        //   link: {
-        //     type: 'generated-index'
-        //   },
-        //   items: [
-        //     'operating-scs/lifecycle-management/index'
-        //   ]
-        // },
-        // {
-        //   type: 'category',
-        //   label: 'Logging',
-        //   link: {
-        //     type: 'generated-index'
-        //   },
-        //   items: [
-        //     'operating-scs/logging/index'
-        //   ]
-        // },
         {
           type: 'category',
           label: 'Metering',
@@ -503,6 +441,14 @@ const sidebarsDocs = {
     },
     {
       type: 'category',
+      label: 'Turnkey Solution',
+      link: {
+        type: 'generated-index'
+      },
+      items: ['turnkey-solution/overview']
+    },
+    {
+      type: 'category',
       label: 'Releases',
       link: {
         type: 'generated-index'
@@ -518,16 +464,6 @@ const sidebarsDocs = {
         'releases/Release7'
       ]
     },
-    // {
-    //   type: 'category',
-    //   label: 'Standards',
-    //   link: {
-    //     type: 'generated-index'
-    //   },
-    //   items: [
-    //     'standards/index'
-    //   ]
-    // },
     {
       type: 'doc',
       id: 'faq/index',
