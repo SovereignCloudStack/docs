@@ -6,18 +6,6 @@ const sidebarsDocs = {
     'index',
     {
       type: 'category',
-      label: 'Getting Started',
-      link: {
-        type: 'generated-index'
-      },
-      items: [
-        // 'getting-started/overview',
-        // 'getting-started/virtualization',
-        // 'getting-started/containerization'
-      ]
-    },
-    {
-      type: 'category',
       label: 'IaaS Layer',
       link: {
         type: 'generated-index'
@@ -466,6 +454,14 @@ const sidebarsDocs = {
     },
     {
       type: 'category',
+      label: 'Turnkey Solution',
+      link: {
+        type: 'generated-index'
+      },
+      items: ['turnkey-solution/overview']
+    },
+    {
+      type: 'category',
       label: 'Releases',
       link: {
         type: 'generated-index'
@@ -477,19 +473,10 @@ const sidebarsDocs = {
         'releases/Release3',
         'releases/Release4',
         'releases/Release5',
-        'releases/Release6'
+        'releases/Release6',
+        'releases/Release7'
       ]
     },
-    // {
-    //   type: 'category',
-    //   label: 'Standards',
-    //   link: {
-    //     type: 'generated-index'
-    //   },
-    //   items: [
-    //     'standards/index'
-    //   ]
-    // },
     {
       type: 'doc',
       id: 'faq/index',
