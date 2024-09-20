@@ -6,18 +6,6 @@ const sidebarsDocs = {
     'index',
     {
       type: 'category',
-      label: 'Getting Started',
-      link: {
-        type: 'generated-index'
-      },
-      items: [
-        // 'getting-started/overview',
-        // 'getting-started/virtualization',
-        // 'getting-started/containerization'
-      ]
-    },
-    {
-      type: 'category',
       label: 'IaaS Layer',
       link: {
         type: 'generated-index'
@@ -312,6 +300,20 @@ const sidebarsDocs = {
                     'operating-scs/components/status-page-deployment/docs/admin-authentication',
                     'operating-scs/components/status-page-deployment/docs/faq'
                   ]
+                },
+                {
+                  type: 'category',
+                  label: 'Web',
+                  link: {
+                    type: 'generated-index'
+                  },
+                  items: [
+                    'operating-scs/components/status-page-web/docs/overview',
+                    'operating-scs/components/status-page-web/docs/requirements',
+                    'operating-scs/components/status-page-web/docs/quickstart',
+                    'operating-scs/components/status-page-web/docs/configuration',
+                    'operating-scs/components/status-page-web/docs/contribute'
+                  ]
                 }
               ]
             },
@@ -367,9 +369,30 @@ const sidebarsDocs = {
                 type: 'generated-index'
               },
               items: [
-                'operating-scs/components/automated-pentesting/overview',
-                'operating-scs/components/automated-pentesting/quickstart',
-                'operating-scs/components/automated-pentesting/tools'
+                {
+                  type: 'category',
+                  label: 'Pentesting IaaS',
+                  link: {
+                    type: 'generated-index'
+                  },
+                  items: [
+                    'operating-scs/components/automated-pentesting-iaas/overview',
+                    'operating-scs/components/automated-pentesting-iaas/quickstart',
+                    'operating-scs/components/automated-pentesting-iaas/tools'
+                  ]
+                },
+                {
+                  type: 'category',
+                  label: 'Pentesting KaaS',
+                  link: {
+                    type: 'generated-index'
+                  },
+                  items: [
+                    'operating-scs/components/automated-pentesting-kaas/overview',
+                    'operating-scs/components/automated-pentesting-kaas/quickstart',
+                    'operating-scs/components/automated-pentesting-kaas/tools'
+                  ]
+                }
               ]
             }
           ]
@@ -384,56 +407,6 @@ const sidebarsDocs = {
             'operating-scs/guides/openstack-health-monitor/Debian12-Install'
           ]
         },
-        // {
-        //   type: 'category',
-        //   label: 'Monitoring',
-        //   link: {
-        //     type: 'generated-index'
-        //   },
-        //   items: [
-        //     'operating-scs/monitoring/index'
-        //   ]
-        // },
-        // {
-        //   type: 'category',
-        //   label: 'Incident Management',
-        //   link: {
-        //     type: 'generated-index'
-        //   },
-        //   items: [
-        //     'operating-scs/incident-management/index'
-        //   ]
-        // },
-        // {
-        //   type: 'category',
-        //   label: 'Audits',
-        //   link: {
-        //     type: 'generated-index'
-        //   },
-        //   items: [
-        //     'operating-scs/audits/index'
-        //   ]
-        // },
-        // {
-        //   type: 'category',
-        //   label: 'Lifecycle Management',
-        //   link: {
-        //     type: 'generated-index'
-        //   },
-        //   items: [
-        //     'operating-scs/lifecycle-management/index'
-        //   ]
-        // },
-        // {
-        //   type: 'category',
-        //   label: 'Logging',
-        //   link: {
-        //     type: 'generated-index'
-        //   },
-        //   items: [
-        //     'operating-scs/logging/index'
-        //   ]
-        // },
         {
           type: 'category',
           label: 'Metering',
@@ -468,6 +441,14 @@ const sidebarsDocs = {
     },
     {
       type: 'category',
+      label: 'Turnkey Solution',
+      link: {
+        type: 'generated-index'
+      },
+      items: ['turnkey-solution/overview']
+    },
+    {
+      type: 'category',
       label: 'Releases',
       link: {
         type: 'generated-index'
@@ -479,19 +460,10 @@ const sidebarsDocs = {
         'releases/Release3',
         'releases/Release4',
         'releases/Release5',
-        'releases/Release6'
+        'releases/Release6',
+        'releases/Release7'
       ]
     },
-    // {
-    //   type: 'category',
-    //   label: 'Standards',
-    //   link: {
-    //     type: 'generated-index'
-    //   },
-    //   items: [
-    //     'standards/index'
-    //   ]
-    // },
     {
       type: 'doc',
       id: 'faq/index',

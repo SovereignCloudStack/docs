@@ -31,8 +31,14 @@
           "stable": "true"
         },
         {
-          "title": "Automated Pentesting",
-          "url": "/docs/operating-scs/components/automated-pentesting/overview",
+          "title": "Automated Pentesting IaaS",
+          "url": "/docs/operating-scs/components/automated-pentesting-iaas/overview",
+          "mandatory": "true",
+          "stable": "true"
+        },
+        {
+          "title": "Automated Pentesting KaaS",
+          "url": "/docs/operating-scs/components/automated-pentesting-kaas/overview",
           "mandatory": "true",
           "stable": "true"
         }
