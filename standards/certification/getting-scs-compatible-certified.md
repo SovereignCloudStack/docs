@@ -108,8 +108,63 @@ For adjusting the environment, we of course do need admin access to the cloud.
 We use the tools referenced above:
 
 ```shell
+garloff@framekurt(//):/casa/src/SCS/standards/Tests [3]$ OS_CLOUD=ciab-admin ./iaas/flavor-naming/flavor-add-extra-specs.py -a apply
+INFO: Flavor SCS-8V-32: SET scs:cpu-type=shared-core
+INFO: Flavor SCS-8V-32: SET scs:name-v1=SCS-8V:32
+INFO: Flavor SCS-8V-32: SET scs:name-v2=SCS-8V-32
+INFO: Flavor SCS-4V-16: SET scs:cpu-type=shared-core
+INFO: Flavor SCS-4V-16: SET scs:name-v1=SCS-4V:16
+INFO: Flavor SCS-4V-16: SET scs:name-v2=SCS-4V-16
+INFO: Processed 15 flavors, 6 changes
+```
+and as this is a OSISM system, we can on the manager just do:
+```shell
+dragon@manager:~$ osism manage images --cloud admin --filter "Ubuntu 22.04"
+2024-09-23 13:21:43 | INFO     | Processing image 'Ubuntu 22.04 (20240705)'
+2024-09-23 13:21:43 | INFO     | Tested URL https://swift.services.a.regiocloud.tech/swift/v1/AUTH_b182637428444b9aa302bb8d5a5a418c/openstack-images/ubuntu-22.04/20240705-ubuntu-22.04.qcow2: 200
+2024-09-23 13:21:43 | INFO     | Importing image Ubuntu 22.04 (20240705)
+2024-09-23 13:21:43 | INFO     | Importing from URL https://swift.services.a.regiocloud.tech/swift/v1/AUTH_b182637428444b9aa302bb8d5a5a418c/openstack-images/ubuntu-22.04/20240705-ubuntu-22.04.qcow2
+2024-09-23 13:21:44 | INFO     | Waiting for image to leave queued state...
+2024-09-23 13:21:46 | INFO     | Waiting for import to complete...
+2024-09-23 13:21:56 | INFO     | Waiting for import to complete...
+2024-09-23 13:22:06 | INFO     | Waiting for import to complete...
+2024-09-23 13:22:16 | INFO     | Import of 'Ubuntu 22.04 (20240705)' successfully completed, reloading images
+2024-09-23 13:22:17 | INFO     | Checking parameters of 'Ubuntu 22.04 (20240705)'
+2024-09-23 13:22:17 | INFO     | Setting internal_version = 20240705
+2024-09-23 13:22:17 | INFO     | Setting image_original_user = ubuntu
+2024-09-23 13:22:17 | INFO     | Adding tag os:ubuntu
+2024-09-23 13:22:17 | INFO     | Setting property architecture: x86_64
+2024-09-23 13:22:17 | INFO     | Setting property hw_disk_bus: scsi
+2024-09-23 13:22:17 | INFO     | Setting property hw_rng_model: virtio
+2024-09-23 13:22:17 | INFO     | Setting property hw_scsi_model: virtio-scsi
+2024-09-23 13:22:17 | INFO     | Setting property hw_watchdog_action: reset
+2024-09-23 13:22:17 | INFO     | Setting property hypervisor_type: qemu
+2024-09-23 13:22:17 | INFO     | Setting property os_distro: ubuntu
+2024-09-23 13:22:18 | INFO     | Setting property os_version: 22.04
+2024-09-23 13:22:18 | INFO     | Setting property replace_frequency: quarterly
+2024-09-23 13:22:18 | INFO     | Setting property uuid_validity: last-3
+2024-09-23 13:22:18 | INFO     | Setting property provided_until: none
+2024-09-23 13:22:18 | INFO     | Setting property image_description: Ubuntu 22.04
+2024-09-23 13:22:18 | INFO     | Setting property image_name: Ubuntu 22.04
+2024-09-23 13:22:18 | INFO     | Setting property internal_version: 20240705
+2024-09-23 13:22:18 | INFO     | Setting property image_original_user: ubuntu
+2024-09-23 13:22:18 | INFO     | Setting property image_source: https://cloud-images.ubuntu.com/jammy/20240705/jammy-server-cloudimg-amd64.img
+2024-09-23 13:22:18 | INFO     | Setting property image_build_date: 2024-07-05
+2024-09-23 13:22:18 | INFO     | Checking status of 'Ubuntu 22.04 (20240705)'
+2024-09-23 13:22:18 | INFO     | Checking visibility of 'Ubuntu 22.04 (20240705)'
+2024-09-23 13:22:18 | INFO     | Setting visibility of 'Ubuntu 22.04 (20240705)' to 'public'
+2024-09-23 13:22:19 | INFO     | Renaming Ubuntu 22.04 (20240705) to Ubuntu 22.04
+2024-09-23 13:22:19 | INFO     | Processing image 'Ubuntu 22.04 Minimal (20240701)'
+dragon@manager:~$
 ```
 
+We now succeed:
+```shell
+garloff@framekurt(//):/casa/src/SCS/standards/Tests [130]$ ./scs-compliance-check.py -V v4 -s CIAB -a os_cloud=ciab-test scs-compatible-iaas.yaml 
+INFO: module opc-v2022.11 missing checks or test cases
+CIAB SCS-compatible IaaS v4 (effective):
+- main: PASS (5 passed)
+```
 
 A description how SCS-compatible IaaS compliance can be achieved on environments that use different
 OpenStack implementations is described in a blog article
