@@ -12,18 +12,18 @@ const sidebars = {
       items: [
         {
           type: 'doc',
-	  label: 'Getting SCS-compatible certified',
-          link: {
-            type: 'doc',
-            id: 'certification/getting-scs-compatible-certified'
-          },
-	},
-        {
-          type: 'doc',
 	  label: 'Overview',
           link: {
             type: 'doc',
             id: 'certification/overview'
+          },
+	},
+        {
+          type: 'doc',
+	  label: 'Getting SCS-compatible certified',
+          link: {
+            type: 'doc',
+            id: 'certification/getting-scs-compatible-certified'
           },
 	},
 	{
