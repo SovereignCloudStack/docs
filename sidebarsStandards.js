@@ -11,7 +11,7 @@ const sidebars = {
       },
       items: [
         {
-          type: 'category',
+          type: 'doc',
 	  label: 'Getting SCS-compatible certified',
           link: {
             type: 'doc',
@@ -19,7 +19,7 @@ const sidebars = {
           },
 	},
         {
-          type: 'category',
+          type: 'doc',
 	  label: 'Overview',
           link: {
             type: 'doc',
