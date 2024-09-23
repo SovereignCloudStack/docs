@@ -6,11 +6,27 @@ const sidebars = {
       type: 'category',
       label: 'Certification',
       link: {
-        type: 'doc',
-        id: 'certification/overview'
-      },
+	type: 'doc',
+	id: 'certification/digisov-and-cert.md'
+      }
       items: [
         {
+          type: 'category',
+	  label: 'Getting SCS-compatible certified',
+          link: {
+            type: 'doc',
+            id: 'getting-scs-compatible-certified.md'
+          },
+	},
+        {
+          type: 'category',
+	  label: 'Overview',
+          link: {
+            type: 'doc',
+            id: 'certification/overview'
+          },
+	},
+	{
           type: 'category',
           label: 'Scopes and Versions',
           link: {
