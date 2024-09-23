@@ -43,7 +43,7 @@ const sidebars = {
       link: {
         type: 'doc',
         id: 'standards/overview'
-      }
+      },
       items: require('./sidebarsStandardsItems.js') // this file will be generated entirely by `populateStds.js` via npm post-install hook found in the package.json
     }
   ]
