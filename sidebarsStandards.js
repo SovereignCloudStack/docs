@@ -15,7 +15,7 @@ const sidebars = {
 	  label: 'Getting SCS-compatible certified',
           link: {
             type: 'doc',
-            id: 'getting-scs-compatible-certified'
+            id: 'certification/getting-scs-compatible-certified'
           },
 	},
         {
