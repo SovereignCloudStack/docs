@@ -150,8 +150,8 @@ For small test clusters, it might also be sufficient to use 1Gbit/s networks for
 For a minimum production cluster it is recommended to use the following:
 
 - Out of Band Network: 1Gbit/s
-- VLANs for Public / External network for virutal machines, Management networks: 10 Gbit/s
-- Storage backend network: 10 / 40 Gbit/s
+- VLANs for Public / External network for virutal machines, Management networks: 10 / 25 Gbit/s
+- Storage backend network: 10 / 25 / 40 Gbit/s
 
 Whether you need a higher throughput for your storage backend services depends on your expected storage load. The faster the network
 the faster storage data can be replicated between nodes. This usually leads to improved performance and better/faster fault tolerance.
