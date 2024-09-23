@@ -58,7 +58,7 @@ const sidebarsDocs = {
           items: [
             {
               type: 'doc',
-              id: 'artcodix/index'
+              id: 'iaas/deployment-examples/artcodix/index'
             }
           ]
         }
