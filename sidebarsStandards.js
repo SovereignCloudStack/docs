@@ -7,7 +7,7 @@ const sidebars = {
       label: 'Certification',
       link: {
 	type: 'doc',
-	id: 'certification/digisov-and-cert.md'
+	id: 'certification/digisov-and-cert'
       },
       items: [
         {
@@ -15,7 +15,7 @@ const sidebars = {
 	  label: 'Getting SCS-compatible certified',
           link: {
             type: 'doc',
-            id: 'getting-scs-compatible-certified.md'
+            id: 'getting-scs-compatible-certified'
           },
 	},
         {
