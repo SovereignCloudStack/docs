@@ -79,8 +79,13 @@ Relevant metrics for control nodes are:
 
 #### Hardware recommendation
 
-**TODO:** Write more exact BOM
+The following server specs are just a starting point and can greatly vary between environments.
+Example: 
 3x Dell R630/R640/R650 1HE Server
+Dual 8 Core 3,00 GHz Intel/AMD
+128 GB RAM
+2x 3,84 TB NVMe in (Software-) RAID 1
+2x 10/25 GBit 2 Port SFP+/QSFP Network Cards 
 
 ### Compute Node (HCI)
 
@@ -93,10 +98,19 @@ we don't starve these nodes, they should be of decent size.
 
 #### Hardware recommendation
 
-**TODO:** Write more exact BOM
+The following server specs are just a starting point and can greatly vary between environments. The sizing of the nodes needs to fit 
+the expected workloads (customer VMs).
+Example:
 3x Dell R730(xd)/R740(xd)/R750(xd)
 or
 3x Supermicro
+Dual 16 Core 2,8 GHz Intel/AMD
+512 GB RAM 
+2x 3,84 TB NVMe in (Software-) RAID 1 if you want to have local storage available (optional)
+For hyperconverged ceph osds:
+4x 10 TB HDD -> This leads to ~30 TB of available HDD storage (optional)
+4x 7,68 TB SSD -> This leads to ~25 TB of available SSD storage (optional)
+2x 10/25 GBit 2 Port SFP+/QSFP Network Cards
 
 ## Network
 
@@ -129,7 +143,7 @@ The out of band network does usually not need a lot of bandwith. Most modern ser
 For small test clusters, it might also be sufficient to use 1Gbit/s networks for the other two physical networks.
 For a minimum production cluster it is recommended to use the following:
 
-- OOB Network: 1Gbit/s
+- Out of Band Network: 1Gbit/s
 - VLANs for Public / External network for virutal machines, Management networks: 10 Gbit/s
 - Storage backend network: 10 / 40 Gbit/s
 
@@ -139,4 +153,4 @@ the faster storage data can be replicated between nodes. This usually leads to i
 ## How to continue
 
 After implementing the recommended deployment example hardware, you can continue with the deployment guide.
-**TODO:** Add link to deployment guide.
+**TODO: @Max** Add link to deployment guide.
