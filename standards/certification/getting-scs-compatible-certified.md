@@ -29,7 +29,7 @@ publicly. For more details on how to become certified, please consult the
 corresponding [document](/standards/scs-0004-v1-achieving-certification).
 
 The best approach to get your cloud into compliance is by installing the
-test suite locally. Have a look at the [example](/standards/test-and-adapt-example).
+test suite locally. Have a look at the [example](/certification/test-and-adapt-example).
 
 A description how SCS-compatible IaaS compliance can be achieved on environments that use different
 OpenStack implementations is written up in a blog article
