@@ -34,7 +34,7 @@ test suite locally. Have a look at the
 
 A description how SCS-compatible IaaS compliance can be achieved on environments that use different
 OpenStack implementations is written up in a blog article
-[Cost of making an OpenStack Cluster SCS compliant](https://scs.community/de/2024/05/13/cost-of-making-an-openstack-cluster-scs-compliant/).
+[Cost of making an OpenStack Cluster SCS compliant](https://scs.community/2024/05/13/cost-of-making-an-openstack-cluster-scs-compliant/).
 
 ## Declarations
 
@@ -83,7 +83,7 @@ certification conditions.
 Note that for almost all certified clouds in the list of certified clouds, we also
 have a health monitor running (currently still
 [openstack-health-monitor](https://docs.scs.community/docs/operating-scs/guides/openstack-health-monitor/Debian12-Install)
-but soon the new [health-monitor](https://scs.community/de/tech/2024/09/06/vp12-scs-health-monitor-tech-preview/)),
+but soon the new [health-monitor](https://scs.community/tech/2024/09/06/vp12-scs-health-monitor-tech-preview/)),
 which exposes information on the performance and error rate of each cloud.
 This provides some transparency on the state of the clouds by constantly running
 scenario tests against them and is tremendously helpful for both the cloud operations
