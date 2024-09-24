@@ -81,7 +81,7 @@ certification conditions.
 
 Note that for almost all certified clouds in the list of certified clouds, we also
 have a health monitor running (currently still
-[openstack-health-monitor](https://github.com/SovereignCloudStack/openstack-health-monitor/),
+[openstack-health-monitor](https://docs.scs.community/docs/operating-scs/guides/openstack-health-monitor/Debian12-Install)
 but soon the new [health-monitor](https://scs.community/de/tech/2024/09/06/vp12-scs-health-monitor-tech-preview/)),
 which exposes information on the performance and error rate of each cloud.
 This provides some transparency on the state of the clouds by constantly running
