@@ -22,7 +22,7 @@ The SCS certification process typically consists of a few simple steps:
 
 ## Self-testing and technical adjustments
 
-Get the testsuite by cloning <https://github.com/SovereignCloudStack/standards/>.
+Get the testsuite by cloning [the SCS standards repo](https://github.com/SovereignCloudStack/standards/).
 In order to run the tests, you need to have normal customer (tenant) access to the cloud or
 container infrastructure that you want to test. (This is by design; we explicitly do not
 require nor recommend admin level access for compliance testing.)
@@ -31,7 +31,7 @@ You can run the testsuite from any machine that has a working `python3-openstack
 IaaS tests) or working `python3`, `kubectl` and `helm` (for the KaaS tests). Go to the
 checked out tree into the `Tests/` directory to run tests.
 
-Let's do a run
+Let's do a run against a sample environment:
 ```bash
 garloff@framekurt(//):/casa/src/SCS/standards/Tests [1]$ ./scs-compliance-check.py -V v4 -s CIAB -a os_cloud=ciab-test scs-compatible-iaas.yaml 
 INFO: module opc-v2022.11 missing checks or test cases
