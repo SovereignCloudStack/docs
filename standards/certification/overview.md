@@ -1,10 +1,6 @@
 # Compliant cloud environments overview
 <!-- markdownlint-disable -->
 
-## Becoming certified
-
-## Compliant cloud environments
-
 This is a list of clouds that we test on a nightly basis against the certificate scope _SCS-compatible IaaS_.
 
 | Name                                                                                                           | Description                                       | Operator                      |                                                         _SCS-compatible IaaS_ Compliance                                                              |                                                        HealthMon                                                         |
