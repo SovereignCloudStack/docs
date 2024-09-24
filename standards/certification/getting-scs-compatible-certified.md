@@ -12,7 +12,7 @@ that lets their applications run in a reliable way.
 
 The SCS certification process typically consists of a few simple steps:
 
-1. Running the SCS compliance testsuite and adjusting the infrastructure until it passes.
+1. Running the SCS compliance test suite and adjusting the infrastructure until it passes.
 2. Any additional declarations (for non-testable aspects) are written and passed to the SCS Forum.
 3. The operator must be a member ("shaper" or "advisor" level) of the Forum SCS-Standards in the
    OSB Alliance (a non-profit) and pay the respective membership fees. Alternatively fees can
@@ -28,15 +28,15 @@ regular intervals, and the results of these tests will be made available
 publicly. For more details on how to become certified, please consult the
 corresponding [document](/standards/scs-0004-v1-achieving-certification).
 
-Get the testsuite by cloning [the SCS standards repo](https://github.com/SovereignCloudStack/standards/).
+Get the test suite by cloning [the SCS standards repo](https://github.com/SovereignCloudStack/standards/).
 In order to run the tests, you need to have normal customer (tenant) access to the cloud or
 container infrastructure that you want to test. (This is by design; we explicitly do not
 require nor recommend admin level access for normal compliance testing.)
 
-You can run the testsuite from any machine that has a working `python3-openstacksdk` (for the
+You can run the test suite from any machine that has a working `python3-openstacksdk` (for the
 IaaS tests) or working `python3`, `kubectl` and `helm` (for the KaaS tests). Go to the
 checked out tree into the `Tests/` directory to run tests. Check that the tooling works,
-e.g. by issueing a command like `openstack --os-cloud=MYCLOUD catalog list` or
+e.g. by issuing a command like `openstack --os-cloud=MYCLOUD catalog list` or
 `KUBECONFIG=~/.kube/MYCLUSTER.yaml kubectl get nodes -o wide`.
 
 Let's do a run against a sample environment:
@@ -101,14 +101,14 @@ Let's have a look at the results:
       > Must fulfill all requirements of https://docs.scs.community/standards/scs-0104-v1-standard-images
 ```
 
-With option `-v`, we can make the testsuite more verbose to e.g. see that we pass the flavor naming test,
+With option `-v`, we can make the test suite more verbose to e.g. see that we pass the flavor naming test,
 the entropy test and the image metadata test.
 
 To fix the failures, we will thus need to:
 * Add properties to the two flavors where they are missing.
 * Register the `Ubuntu 22.04` image (with the appropriate metadata).
 
-Neither is difficult to do manually, but a more systematic and automated process is preferrable.
+Neither is difficult to do manually, but a more systematic and automated process is preferable.
 For the first issue, there is a [blog article on flavor metadata](https://scs.community/de/tech/2024/08/20/flavor-extra-specs-compliance/).
 For the image registration, the [OpenStack Image Manager](https://github.com/osism/openstack-image-manager) can be used.
 
@@ -180,7 +180,7 @@ OpenStack implementations is described in a blog article
 
 ## Declarations
 
-For the SCS-compatible IaaS v5 standard, the providers must -- if they implement availbility zones
+For the SCS-compatible IaaS v5 standard, the providers must -- if they implement availability zones
 at all (which is optional) -- guarantee certain levels of independence for these. This can not
 be fully tested by an automated test. The process thus envisions that providers must create some
 documentation on the physical infrastructure and how it maps to availability zones and declare that
@@ -189,7 +189,7 @@ criteria. In case of doubt, audits can be performed.
 
 ## Forum SCS-Standards @ OSBA
 
-The SCS brand belongs to the Open Source Business Alliance e.V. (OSBA), an non-profit organziation and
+The SCS brand belongs to the Open Source Business Alliance e.V. (OSBA), an non-profit organization and
 association for the Open Source Industry in Germany. The OSBA creates the Forum SCS-Standards
 which performs the work to evolve the SCS standards, develops the tests and perform the certification
 process.
@@ -209,7 +209,7 @@ can become officially certified.
 The SCS team will add the cloud to the [list of certified clouds](https://docs.scs.community/standards/certification/overview)
 on the SCS docs page. This can be used to prove to customers that the cloud is SCS compliant.
 Note that there will be a nightly job that tests the cloud for compliance, which will be
-triggered by SCS infrastructure (zuul). For this, acccess to a tenant on the cloud needs
+triggered by SCS infrastructure (zuul). For this, access to a tenant on the cloud needs
 to be provided free of charge. (This only requires very low quota, one VM is created for a minute
 in one of the tests.)
 The list of certified clouds will be replaced by the

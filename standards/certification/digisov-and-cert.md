@@ -1,22 +1,22 @@
-# Digitial Sovereignty and SCS certification
+# Digital Sovereignty and SCS certification
 
 ## The taxonomy of digital sovereignty
 
-As published in [DuD](https://rdcu.be/cWdBJ) (German, English verison in
+As published in [DuD](https://rdcu.be/cWdBJ) (German, English version in
 [the cloud report](https://the-report.cloud/why-digital-sovereignty-is-more-than-mere-legal-compliance/))
-and being summarized nicely in a [cloudahed article](https://www.cloudahead.de/der-freiheitskampf-des-sovereign-cloud-stacks),
+and being summarized nicely in a [cloudahead article](https://www.cloudahead.de/der-freiheitskampf-des-sovereign-cloud-stacks),
 we differentiate between several levels of digital sovereignty.
 We'll skip stage 0, introduced by Gregor Schuhmacher in his description, which
 specifies using a cloud at all as the pre-step to be taken. This has relevance,
 as some companies continue to call solutions that are not on-demand, not
 self-service API driven, not metered
-(see [NIST defnition of cloud](https://nvlpubs.nist.gov/nistpubs/legacy/sp/nistspecialpublication800-145.pdf))
+(see [NIST definition of cloud](https://nvlpubs.nist.gov/nistpubs/legacy/sp/nistspecialpublication800-145.pdf))
 to be (private) clouds. We talk about real clouds, where deployment of infrastructure
 is API-driven, unlocking DevOps teams productivity.
 
 The levels as seen by the SCS movement are:
 
-1. Control over data and data sharing and ability to fulfill regulartory requirements (GDPR)
+1. Control over data and data sharing and ability to fulfill regulatory requirements (GDPR)
 2. Capability to chose between *highly compatible* operators, this way enabling a provider
    switch or using several providers in a federated fashion. This also includes the
    possibility to run your infrastructure in a *highly compatible* manner.
@@ -28,10 +28,10 @@ The levels as seen by the SCS movement are:
 
 These aspects of sovereignty drive the work from the SCS team. 
 
-Level number 1 is sometimes referred to a "data sovereignty". Achieving it does require
+Level number 1 is sometimes referred to as "data sovereignty". Achieving it does require
 cloud infrastructure and cloud operations that can not be interfered with by actors that
 are outside of the respective jurisdiction. For Europeans that need to observe GDPR, this
-excludes using US clouds for peronally identifiable information, expecting that the
+excludes using US clouds for personally identifiable information, expecting that the
 adequacy decisions for the US do not fully address the risks. The SCS project does not
 have deep legal expertise and refers to the work from [noyb](https://noyb.eu/)
 and [ENISA](https://www.enisa.europa.eu/) here.
@@ -91,14 +91,14 @@ and also recommend to take the Gaia-X labels into account here.
 As of September 2024, we have not yet formalized the requirements for SCS-open and SCS-sovereign
 certification.
 
-The technical compatibility validation correpsonding to the SCS-compatible certification does
+The technical compatibility validation corresponding to the SCS-compatible certification does
 exist since more than a year. There are certificates for two layers of the SCS architecture
 stack:
 * The virtualization layer: SCS-compatible IaaS
 * The container layer: SCS-compatible KaaS
 
 For each of these, technical tests are being run to test service offerings for compliance.
-The standards and the corresponding tests are versioned. The SCS-compatible ceritification
+The standards and the corresponding tests are versioned. The SCS-compatible certification
 for a specific layer (currently IaaS or KaaS) and version is called a *certification scope*.
 Please see [Scopes and Versions](scopes-versions.md) for detailed definitions.
 
