@@ -22,14 +22,22 @@ The SCS certification process typically consists of a few simple steps:
 
 ## Self-testing and technical adjustments
 
+In order for a cloud service offering to obtain a certificate, it has to
+conform to all standards of the respective scope, which will be tested at
+regular intervals, and the results of these tests will be made available
+publicly. For more details on how to become certified, please consult the
+corresponding [document](/standards/scs-0004-v1-achieving-certification).
+
 Get the testsuite by cloning [the SCS standards repo](https://github.com/SovereignCloudStack/standards/).
 In order to run the tests, you need to have normal customer (tenant) access to the cloud or
 container infrastructure that you want to test. (This is by design; we explicitly do not
-require nor recommend admin level access for compliance testing.)
+require nor recommend admin level access for normal compliance testing.)
 
 You can run the testsuite from any machine that has a working `python3-openstacksdk` (for the
 IaaS tests) or working `python3`, `kubectl` and `helm` (for the KaaS tests). Go to the
-checked out tree into the `Tests/` directory to run tests.
+checked out tree into the `Tests/` directory to run tests. Check that the tooling works,
+e.g. by issueing a command like `openstack --os-cloud=MYCLOUD catalog list` or
+`KUBECONFIG=~/.kube/MYCLUSTER.yaml kubectl get nodes -o wide`.
 
 Let's do a run against a sample environment:
 ```bash
@@ -117,7 +125,7 @@ INFO: Flavor SCS-4V-16: SET scs:name-v1=SCS-4V:16
 INFO: Flavor SCS-4V-16: SET scs:name-v2=SCS-4V-16
 INFO: Processed 15 flavors, 6 changes
 ```
-and as this is a OSISM system, we can on the manager just do:
+and as this is a OSISM-based SCS system, we can on the manager just run the image manager:
 ```shell
 dragon@manager:~$ osism manage images --cloud admin --filter "Ubuntu 22.04"
 2024-09-23 13:21:43 | INFO     | Processing image 'Ubuntu 22.04 (20240705)'

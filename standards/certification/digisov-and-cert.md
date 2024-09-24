@@ -100,6 +100,7 @@ stack:
 For each of these, technical tests are being run to test service offerings for compliance.
 The standards and the corresponding tests are versioned. The SCS-compatible ceritification
 for a specific layer (currently IaaS or KaaS) and version is called a *certification scope*.
+Please see [Scopes and Versions](scopes-versions.md) for detailed definitions.
 
 As of September 2024, the latest SCS-compatible certification scope on the IaaS layer is
 SCS-compatible IaaS v4. For November 2024, SCS-compatible IaaS v5 and the first Kaas
@@ -110,11 +111,11 @@ scope SCS-compatible KaaS v1 are planned.
 Software can deliver infrastructure components for operators to provide SCS-compatible
 IaaS or KaaS; it is planned that infrastructure software can also receive SCS certification.
 
-Likewise, applications can be developed in a way that it will work without any changes on
+Likewise, applications can be developed in a way that they will work without any changes on
 all SCS-compatible IaaS or on all SCS-compatible KaaS (or may require both). It is planned
 that such software can also be certified.
 
 Implementation partners from the SCS ecosystem may support operators (CSPs) to build
 and operate SCS-compatible infrastructure. A certification program that certifies the
-skills and expereience of such partners is planned as well.
+skills and experience of such partners is planned as well.
 
