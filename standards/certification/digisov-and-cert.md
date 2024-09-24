@@ -1,8 +1,8 @@
 # Digitial Sovereignty and SCS certification
 
-## The txonomy of digital sovereignty
+## The taxonomy of digital sovereignty
 
-As published in [DuD](https://rdcu.be/cWdBJ)(German, English verison in
+As published in [DuD](https://rdcu.be/cWdBJ) (German, English verison in
 [the cloud report](https://the-report.cloud/why-digital-sovereignty-is-more-than-mere-legal-compliance/))
 and being summarized nicely in a [cloudahed article](https://www.cloudahead.de/der-freiheitskampf-des-sovereign-cloud-stacks),
 we differentiate between several levels of digital sovereignty.
@@ -11,7 +11,7 @@ specifies using a cloud at all as the pre-step to be taken. This has relevance,
 as some companies continue to call solutions that are not on-demand, not
 self-service API driven, not metered
 (see [NIST defnition of cloud](https://nvlpubs.nist.gov/nistpubs/legacy/sp/nistspecialpublication800-145.pdf))
-to be (private clouds). We talk about real clouds, where deployment of infrastructure
+to be (private) clouds. We talk about real clouds, where deployment of infrastructure
 is API-driven, unlocking DevOps teams productivity.
 
 The levels as seen by the SCS movement are:
@@ -33,7 +33,8 @@ cloud infrastructure and cloud operations that can not be interfered with by act
 are outside of the respective jurisdiction. For Europeans that need to observe GDPR, this
 excludes using US clouds for peronally identifiable information, expecting that the
 adequacy decisions for the US do not fully address the risks. The SCS project does not
-have deep legal expertise and refers to the work from noyb and ENISA here.
+have deep legal expertise and refers to the work from [noyb](https://noyb.eu/)
+and [ENISA](https://www.enisa.europa.eu/) here.
 
 In order to achieve level 2,
 the SCS community has worked on standards that define the APIs and the infrastructure
