@@ -1,4 +1,4 @@
-# Example: Testing adjustment for SCS IaaS-compatible compliance
+# Example testing and adjustment for SCS IaaS-compatible compliance
 
 ## Run the tests
 
