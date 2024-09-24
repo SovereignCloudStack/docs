@@ -11,7 +11,6 @@ const sidebars = {
       },
       items: [
         'certification/getting-scs-compatible-certified',
-        'certification/overview',
 	{
           type: 'category',
           label: 'Scopes and Versions',
@@ -20,7 +19,8 @@ const sidebars = {
             id: 'certification/scopes-versions'
           },
           items: require('./sidebarsCertificationItems.js') // this file will be generated entirely by `populateCerts.js` via npm post-install hook found in the package.json
-        }
+        },
+        'certification/overview'
       ]
     },
     {
