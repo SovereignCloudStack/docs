@@ -10,7 +10,6 @@ const sidebars = {
 	id: 'certification/digisov-and-cert'
       },
       items: [
-        'certification/getting-scs-compatible-certified',
 	{
           type: 'category',
           label: 'Scopes and Versions',
@@ -20,6 +19,8 @@ const sidebars = {
           },
           items: require('./sidebarsCertificationItems.js') // this file will be generated entirely by `populateCerts.js` via npm post-install hook found in the package.json
         },
+        'certification/getting-scs-compatible-certified',
+        'certification/test-and-adapt-example',
         'certification/overview'
       ]
     },
