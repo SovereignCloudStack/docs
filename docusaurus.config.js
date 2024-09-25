@@ -104,7 +104,7 @@ const config = {
             'Documentation and Community Platform for the Sovereign Cloud Stack'
         }
       ],
-      image: 'img/summit-social.png',
+      image: 'img/scs-og-basic.png',
       navbar: {
         title: '',
         logo: {
