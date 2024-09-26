@@ -31,7 +31,7 @@ The documentation files have to be in markdown format and...
 
 ### Step 2 – Adding your repo to the docs.json
 
-File a Pull Request within the [docs-page](https://github.com/SovereignCloudStack/docs-page) repository and add your repo to the docs.package.json:
+File a Pull Request within the [docs](https://github.com/SovereignCloudStack/docs) repository and add your repo to the docs.package.json:
 
 ```json
 [
