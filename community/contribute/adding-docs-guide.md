@@ -23,7 +23,7 @@ Your repository containing the documentation has to...
 
 The documentation files have to be in markdown format and...
 
-- comply [SCS licensing guidelines](https://github.com/SovereignCloudStack/docs/blob/main/community/github/dco-and-licenses.md)
+- comply [SCS licensing guidelines](https://github.com/SovereignCloudStack/docs/blob/main/community/license-considerations.md)
 - match our
   - [markdown file structure guideline](https://github.com/SovereignCloudStack/docs/blob/main/community/contribute/doc-files-structure-guide.md)
   - linting Rules
