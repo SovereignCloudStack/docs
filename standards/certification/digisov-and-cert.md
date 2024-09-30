@@ -61,8 +61,7 @@ are scarce. To address this, the SCS team networks operations staff from provide
 to share and distill common knowledge that help everyone to be more successful. SCS has
 thus been driving the [Open Operations](https://openoperations.org) initiative.
 
-Levels 2 and 3 are sometimes related to the term "technological sovereignty", indicating
-that the ability to control and shape the technology.
+Levels 2 and 3 are sometimes related to the term "technological sovereignty", indicating the ability to control and shape the technology.
 
 ## The SCS certification levels
 
