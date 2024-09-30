@@ -14,6 +14,7 @@ e.g. by issuing a command like `openstack --os-cloud=MYCLOUD catalog list` or
 `KUBECONFIG=~/.kube/MYCLUSTER.yaml kubectl get nodes -o wide`.
 
 Let's do a run against a sample environment:
+
 ```bash
 garloff@framekurt(//):/casa/src/SCS/standards/Tests [1]$ ./scs-compliance-check.py -V v4 -s CIAB -a os_cloud=ciab-test scs-compatible-iaas.yaml
 INFO: module opc-v2022.11 missing checks or test cases
@@ -56,7 +57,7 @@ CIAB SCS-compatible IaaS v4 (effective):
       > Must fulfill all requirements of https://docs.scs.community/standards/scs-0104-v1-standard-images
 ```
 
-So we run the SCS-compatible IaaS tests defined in `scs-compatible-iaas.yaml` in version `v4`; without option `-V`,
+So we run the *SCS-compatible IaaS* tests defined in `scs-compatible-iaas.yaml` in version `v4`; without option `-V`,
 the latest effective version would have been used. We further define the cloud to be named `CIAB` (short for
 Cloud-in-a-Box) in the report. And we set the parameter `os_cloud` to `ciab-test`. This references the
 name of the cloud as configured in OpenStack `clouds.yaml` and `secure.yaml` which contain the configuration
@@ -68,6 +69,7 @@ Let's have a look at the results:
   We also receive 13 warnings for not having recommended flavors, we can ignore them for now.
 * On the images side, the mandatory image `Ubuntu 22.04` is not registered.
 * The end result is that we passed three tests and failed to comply with two specs:
+
 ```yaml
     - standard-flavors-check:
       > Must fulfill all requirements of https://docs.scs.community/standards/scs-0103-v1-standard-flavors
@@ -81,6 +83,7 @@ the entropy test and the image metadata test.
 ## Address issues
 
 To fix the failures, we will thus need to:
+
 * Add properties to the two flavors where they are missing.
 * Register the `Ubuntu 22.04` image (with the appropriate metadata).
 
@@ -101,7 +104,9 @@ INFO: Flavor SCS-4V-16: SET scs:name-v1=SCS-4V:16
 INFO: Flavor SCS-4V-16: SET scs:name-v2=SCS-4V-16
 INFO: Processed 15 flavors, 6 changes
 ```
+
 and as this is a OSISM-based SCS system, we can on the manager just run the image manager:
+
 ```shell
 dragon@manager:~$ osism manage images --cloud admin --filter "Ubuntu 22.04"
 2024-09-23 13:21:43 | INFO     | Processing image 'Ubuntu 22.04 (20240705)'
@@ -142,14 +147,14 @@ dragon@manager:~$ osism manage images --cloud admin --filter "Ubuntu 22.04"
 dragon@manager:~$
 ```
 
-A description how SCS-compatible IaaS compliance can be achieved on environments that use different
+A description how *SCS-compatible IaaS* compliance can be achieved on environments that use different
 OpenStack implementations is written up in a blog article
 [Cost of making an OpenStack Cluster SCS compliant](https://scs.community/de/2024/05/13/cost-of-making-an-openstack-cluster-scs-compliant/).
-
 
 ## Rerun tests
 
 We now succeed:
+
 ```shell
 garloff@framekurt(//):/casa/src/SCS/standards/Tests [130]$ ./scs-compliance-check.py -V v4 -s CIAB -a os_cloud=ciab-test scs-compatible-iaas.yaml
 INFO: module opc-v2022.11 missing checks or test cases

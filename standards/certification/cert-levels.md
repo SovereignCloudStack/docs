@@ -14,12 +14,12 @@ operators of the infrastructure what compliance rules they fulfill.
 The SCS project however has defined certification levels for levels two,
 three and four in the sovereignty taxonomy.
 
-| Digital Sovereignty level         | SCS certification       |
-|-----------------------------------|-------------------------|
-| 1: Data Sov'ty / Legal compliance | (Refer to ENISA/Gaia-X) |
-| 2: Provider switching / Tech Compatiiblity | SCS-compatible |
-| 3: Ability to shape technology    | SCS-open                |
-| 4: Transparency & SKills for Operations    | SCS-sovereign  |
+| Digital Sovereignty level         | SCS certification         |
+|-----------------------------------|---------------------------|
+| 1: Data Sov'ty / Legal compliance | (Refer to ENISA/Gaia-X)   |
+| 2: Provider switching / Tech Compatiiblity | *SCS-compatible* |
+| 3: Ability to shape technology    | *SCS-open*                |
+| 4: Transparency & SKills for Operations    | *SCS-sovereign*  |
 
 As of September 2024, the *SCS-compatible* certification level is defined
 and used; the details for the higher levels are still being worked on.

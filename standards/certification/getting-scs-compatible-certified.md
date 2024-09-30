@@ -17,7 +17,7 @@ The SCS certification process typically consists of a few simple steps:
 3. The operator must be a member ("shaper" or "advisor" level) of the Forum SCS-Standards in the
    OSB Alliance (a non-profit) and pay the respective membership fees. Alternatively fees can
    be paid without becoming a member.
-4. The cloud can be listed on the SCS pages as SCS-compatible with a compatibility status that is
+4. The cloud can be listed on the SCS pages as *SCS-compatible* with a compatibility status that is
    updated on a daily basis. SCS then tests the infrastructure on a daily basis.
 
 ## Self-testing and technical adjustments
@@ -32,14 +32,14 @@ The best approach to get your cloud into compliance is by installing the
 test suite locally. Have a look at the
 [example](/standards/certification/test-and-adapt-example).
 
-A description how SCS-compatible IaaS compliance can be achieved on environments that use different
+A description how *SCS-compatible IaaS* compliance can be achieved on environments that use different
 OpenStack implementations is written up in a blog article
 [Cost of making an OpenStack Cluster SCS compliant](https://scs.community/2024/05/13/cost-of-making-an-openstack-cluster-scs-compliant/).
 
 ## Declarations
 
-For the SCS-compatible IaaS v5 standard, the providers must -- if they implement availability zones
-at all (which is optional) -- guarantee certain levels of independence for these. This can not
+For the SCS-compatible IaaS v5 standard, the providers must — if they implement availability zones
+at all (which is optional) — guarantee certain levels of independence for these. This can not
 be fully tested by an automated test. The process thus envisions that providers must create some
 documentation on the physical infrastructure and how it maps to availability zones and declare that
 this documentation reflects the truth. SCS will review the docs and judge whether they meet the
@@ -55,8 +55,7 @@ process.
 Members of the OSBA can become also member of the Forum SCS-Standards for an additional membership
 fee, providing the financial resources for the Forum to do its work. Membership in the OSBA is
 open to any organization that supports the goals of the OSBA.
-Alternatively, a certification fee can be paid without any membership; the fee corresponds to the
-lower tier membership fee.
+Alternatively, a certification fee can be paid without any membership.
 
 ## Getting listed and tested
 
@@ -88,7 +87,7 @@ which exposes information on the performance and error rate of each cloud.
 This provides some transparency on the state of the clouds by constantly running
 scenario tests against them and is tremendously helpful for both the cloud operations
 teams and their customers. Strictly speaking, it is *not* a requirement for the
-SCS-compatible certification, just best practice. It will be part of an
+*SCS-compatible* certification, just best practice. It will be part of an
 SCS-sovereign certification though, where transparency on operational aspects
 is included.
 
@@ -99,7 +98,7 @@ will enjoy the nightly tests. These might fail for a number of reasons:
 
 * There is a new version of the SCS standards in effect and you need to adjust things.
 * Your cloud was unreachable or otherwise had intermittent issues.
-* You have done changes to your cloud that break SCS-compatible compliance.
+* You have done changes to your cloud that break *SCS-compatible* compliance.
 * The test automation engine (github actions / zuul) is in trouble.
 * The tests have a bug.
 
