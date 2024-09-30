@@ -7,9 +7,10 @@ const sidebars = {
       label: 'Certification',
       link: {
         type: 'doc',
-        id: 'certification/digisov-and-cert'
+        id: 'certification/cert-levels'
       },
       items: [
+        'certification/digisov-and-cert',
         {
           type: 'category',
           label: 'Scopes and Versions',
