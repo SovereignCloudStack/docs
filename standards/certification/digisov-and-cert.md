@@ -47,7 +47,7 @@ standards is also possible, allowing for hybrid cloud setups without technical b
 Level 3 drives the work on a comprehensive openly developed open source software stack,
 allowing operators to use, study, change and redistribute the software according to the
 [Four Freedoms](https://en.wikipedia.org/wiki/The_Free_Software_Definition) of free software. We are requiring
-a complete stack that uses real open source licenses (as defined by [OSI](https://opensource.org/))
+a complete stack that uses [OSI](https://opensource.org/)-approved open source licenses
 as to ensure that users have the four freedoms, the right to use, study, modify, (re)distribute
 the software that drives the cloud stack. To ensure that this does not require extensive
 and expensive forking, we further require the [Four Opens](https://openinfra.dev/four-opens/)
