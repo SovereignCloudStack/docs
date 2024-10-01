@@ -23,6 +23,8 @@ This requires a user to write the conformance tests in Golang, as this is the la
 * [docker][docker-installation]
 * [kind][kind-installation]
 * [sonobuoy][sonobuoy-installation]
+* [yq][yq-installation]
+* [jq][jq-installation]
 
 ```bash
 go install github.com/vmware-tanzu/sonobuoy@latest
@@ -34,7 +36,7 @@ go install github.com/vmware-tanzu/sonobuoy@latest
 
 ```bash
 git clone https://github.com/SovereignCloudStack/standards
-cd standards/Tests/kaas/kaas-sonobuoy-go-example-e2e-framework/
+cd standards/Tests/kaas/kaas-sonobuoy-tests/
 ```
 
 #### 2. Check the prerequisites
@@ -54,16 +56,12 @@ Once all the prerequisite software is installed, you can proceed by starting an 
 make dev-setup
 ```
 
-#### 4. Setting environment variables for the image build process
+#### 4. Setting environment variables for the development process
+
+Set the number code of the standard you are currently working on.
 
 ```bash
-kubectl config view
-```
-
-```bash
-export IMAGE_VERSION_TAG="dev"
-export K8S_HOST=<kind-cluster-ip>
-export K8S_PORT=<kind-cluster-port>
+export TESTFUNCTION_CODE=<number code of the standard>
 ```
 
 ### Create a test
@@ -81,7 +79,7 @@ Pretend that the fictitious standard here stipulates that at least one pod MUST 
 The `scs_k8s_tests` directory contains the Golang files that define the tests.
 
 ```bash
-cd standards/Tests/kaas/kaas-sonobuoy-go-example-e2e-framework/scs_k8s_tests
+cd standards/Tests/kaas/kaas-sonobuoy-tests/scs_k8s_tests
 ```
 
 First create a test file according to your standard and adhere to the naming convention accordingly.
@@ -89,6 +87,7 @@ First create a test file according to your standard and adhere to the naming con
 * The prefix MUST contain the name of the standard in lower case letters.
 * As a suffix, the file must end with "_test.go".
 
+> [!NOTE]
 > The suffix requirement comes from the go test framework itself. All test files must end with `_test.go`.
 > Otherwise they will not be selected by the test environment.
 
@@ -103,10 +102,13 @@ As an example, we test here whether there are more than zero pods in the namespa
 The execution of this test should fail by default as there should be no pods in the namespace and the namespace itself should not exist.
 The aim is to display the results of a failed test so that we can show their interpretation in a later step.
 
+> [!NOTE]
 > Attention!!!: in order for the framework to select the functions for testing, their names must begin with "TEST_" in accordance with the naming convention of the golang test framework.
-> TODO:!!! link to golang test framework docs
+> The framework in use is [kubernetes-sigs/e2e-framework][e2e-framework].
+> They also provide examples. Before you start implementing your own tests, you should check whether you can use one of the examples as a starting point for your own implementation.
+> Have a look at: [kubernetes-sigs/e2e-framework/examples][e2e-framework-examples]
 
-Copy the following text into the file `scs_0299_v1_example_standard_test.go`:
+As an example of this step-by-step guide, copy the following text into the file `scs_0299_v1_example_standard_test.go`:
 
 ```go
 package scs_k8s_tests
@@ -147,7 +149,7 @@ func Test_scs_0299_TestListPodsFailing(t *testing.T) {
 
 ```
 
-#### 3. Build the test image, upload it to the art cluster and run it
+#### 3. Build the test image, upload it to the kind cluster and run it
 
 To create the image, execute the following:
 
@@ -174,8 +176,8 @@ sonobuoy status
 
 ```bash
 make dev-result
-cat results/plugins/scsconformance/results/global/out.json 
-cat results/plugins/scsconformance/sonobuoy_results.yaml
+cat results/plugins/scsconformance/results/global/out.json | jq
+cat results/plugins/scsconformance/sonobuoy_results.yaml | yq
 ```
 
 Once all tests have been executed successfully, you can read the results and receive feedback.
@@ -193,6 +195,27 @@ make dev-clean
 make dev-purge
 ```
 
+### (optional) Run all at once:
+
+In addition, you can trigger all processes from above with one command. There is a single target in the Makefile for this:
+
+```bash
+make dev-rerun
+```
+
+### (optional) Run only your testfunctions
+
+The above process always executes all tests. This can take some time.
+Therefore, it is also possible to run only your standard test functions outside the scope of sonobuoy:
+
+```bash
+export TESTFUNCTION_CODE="0299"
+make test-function
+```
+
+> [!NOTE]
+> [e2e-framework-examples]
+
 [sonobuoy]: https://sonobuoy.io/
 [sonbouy-decision-record]: https://github.com/SovereignCloudStack/standards/blob/main/Standards/scs-0200-v1-using-sonobuoy-for-kaas-conformance-tests.md
 [k8s-conformance]: https://github.com/cncf/k8s-conformance/blob/master/instructions.md
@@ -200,3 +223,8 @@ make dev-purge
 [sonobuoy-installation]: https://sonobuoy.io/docs/v0.57.1/#installation
 [kind-installation]: https://kind.sigs.k8s.io/docs/user/quick-start/#installation
 [scs-sonobuoy-example-guide]: https://github.com/SovereignCloudStack/standards/tree/main/Tests/kaas/kaas-sonobuoy-go-example-e2e-framework#sonobuoy-usage-for-development-of-tests
+
+[yq-installation]:https://github.com/mikefarah/yq/?tab=readme-ov-file#install
+[jq-installation]:https://jqlang.github.io/jq/download/
+[e2e-framework]:https://github.com/kubernetes-sigs/e2e-framework
+[e2e-framework-examples]:https://github.com/kubernetes-sigs/e2e-framework/tree/main/examples
