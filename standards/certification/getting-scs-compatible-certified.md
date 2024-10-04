@@ -96,7 +96,7 @@ is included.
 Once your cloud is listed in the
 [list of certified clouds](https://docs.scs.community/standards/certification/overview)
 or in the upcoming
-[compliance manager]((https://compliance.sovereignit.cloud/page/table), it
+[compliance manager](https://compliance.sovereignit.cloud/page/table), it
 will enjoy the nightly tests. These might fail for a number of reasons:
 
 * There is a new version of the SCS standards in effect and you need to adjust things.
