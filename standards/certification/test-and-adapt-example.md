@@ -1,4 +1,4 @@
-# Example testing and adjustment for SCS IaaS-compatible compliance
+# SCS-compatible IaaS: Example test and adjust
 
 ## Run the tests
 
@@ -39,7 +39,7 @@ WARNING: Missing recommended flavor 'SCS-4V-32-100'
 WARNING: Missing recommended flavor 'SCS-1L-1-5'
 DEBUG: Total critical / error / info: 0 / 2 / 0
 DEBUG: Fetching image list from cloud 'ciab-test'
-DEBUG: Images present: Cirros 0.6.1, Cirros 0.6.2, Debian 12, EVIL2, EVIL3, Ubuntu 22.04 Minimal, disk-bf.qcow2, disk-vmdk.vmdk, openSUSE 15.5, openSUSE 15.6
+DEBUG: Images present: Cirros 0.6.1, Cirros 0.6.2, Debian 12, Ubuntu 22.04 Minimal, openSUSE 15.6
 DEBUG: Checking 6 image specs against 10 images
 ERROR: Missing mandatory image 'Ubuntu 22.04'
 WARNING: Missing recommended image 'ubuntu-capi-image'
@@ -58,7 +58,7 @@ CIAB SCS-compatible IaaS v4 (effective):
 ```
 
 So we run the *SCS-compatible IaaS* tests defined in `scs-compatible-iaas.yaml` in version `v4`; without option `-V`,
-the latest effective version would have been used. We further define the cloud to be named `CIAB` (short for
+all active versions would have been used, producing more output. We further define the cloud to be named `CIAB` (short for
 Cloud-in-a-Box) in the report. And we set the parameter `os_cloud` to `ciab-test`. This references the
 name of the cloud as configured in OpenStack `clouds.yaml` and `secure.yaml` which contain the configuration
 and credentials to access the cloud as tenant user via the API (SDK or CLI).
@@ -71,6 +71,7 @@ Let's have a look at the results:
 * The end result is that we passed three tests and failed to comply with two specs:
 
 ```yaml
+  - FAILED:
     - standard-flavors-check:
       > Must fulfill all requirements of https://docs.scs.community/standards/scs-0103-v1-standard-flavors
     - standard-images-check:

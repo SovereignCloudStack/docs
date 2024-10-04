@@ -1,8 +1,8 @@
-# Getting SCS-compatible certification (for operators)
+# Getting SCS-compatible certification
 
 ## Process overview
 
-The SCS Certification is a technical certification:
+The *SCS-compatible* Certification for Operators is a technical certification:
 The Operator needs to fulfill technical requirements, such as providing certain
 APIs and guaranteeing certain platform behavior in order to be certifiable.
 
@@ -20,13 +20,16 @@ The SCS certification process typically consists of a few simple steps:
 4. The cloud can be listed on the SCS pages as *SCS-compatible* with a compatibility status that is
    updated on a daily basis. SCS then tests the infrastructure on a daily basis.
 
+The official documentation how to become certified is defined in the
+[SCS standard 0004](/standards/scs-0004-v1-achieving-certification).
+
+
 ## Self-testing and technical adjustments
 
 In order for a cloud service offering to obtain a certificate, it has to
 conform to all standards of the respective scope, which will be tested at
 regular intervals, and the results of these tests will be made available
-publicly. For more details on how to become certified, please consult the
-corresponding [document](/standards/scs-0004-v1-achieving-certification).
+publicly.
 
 The best approach to get your cloud into compliance is by installing the
 test suite locally. Have a look at the
@@ -69,15 +72,12 @@ Note that there will be a nightly job that tests the cloud for compliance, which
 triggered by SCS infrastructure (zuul). For this, access to a tenant on the cloud needs
 to be provided free of charge. (This only requires very low quota, one VM is created for a minute
 in one of the tests.)
-The list of certified clouds will be replaced by the
-[compliance monitor](https://compliance.sovereignit.cloud/page/table) soon.
 
 For clouds not being accessible from the outside, a VPN tunnel or a local monitoring
 job (with result upload) can be used.
 
-Next to the addition into the list, we also plan to create an SCS-certified badge that
-operators will be allowed to use in their marketing material as long as they fulfill the
-certification conditions.
+Please let us know if you want us to create an official SCS-certified badge that
+can be used in your marketing material beyond pointing to our list.
 
 Note that for almost all certified clouds in the list of certified clouds, we also
 have a health monitor running (currently still
@@ -88,12 +88,15 @@ This provides some transparency on the state of the clouds by constantly running
 scenario tests against them and is tremendously helpful for both the cloud operations
 teams and their customers. Strictly speaking, it is *not* a requirement for the
 *SCS-compatible* certification, just best practice. It will be part of an
-SCS-sovereign certification though, where transparency on operational aspects
+*SCS-sovereign* certification though, where transparency on operational aspects
 is included.
 
 ## Staying compliant
 
-Once your cloud is listed in the list of certified clouds or in the compliance manager, it
+Once your cloud is listed in the
+[list of certified clouds](https://docs.scs.community/standards/certification/overview)
+or in the upcoming
+[compliance manager]((https://compliance.sovereignit.cloud/page/table), it
 will enjoy the nightly tests. These might fail for a number of reasons:
 
 * There is a new version of the SCS standards in effect and you need to adjust things.
@@ -109,5 +112,5 @@ These are executed from the
 By looking at the logs from the github actions, you can typically see why the failure
 happened. You could of course also do a local test again to see if the issue can
 be reproduced.
-In the compliance manager, we will add links to the log files directly on the table,
-so it will be even easier to find the relevant log.
+In the compliance manager (executing tests via zuul), we will add links to the log
+files directly on the table, so it will be even easier to find the relevant log files.
