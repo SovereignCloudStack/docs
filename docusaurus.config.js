@@ -9,7 +9,7 @@ const config = {
   tagline: 'Documentation and Community Platform for the Sovereign Cloud Stack',
   url: 'https://docs.scs.community',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   markdown: {

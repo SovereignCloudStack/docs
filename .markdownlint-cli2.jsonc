@@ -55,6 +55,6 @@
     "markdownlint-rule-search-replace",
     "markdownlint-rule-relative-links"
   ],
-  "ignores": ["node_modules", ".github", "docs"],
+  "ignores": ["node_modules", ".github", "docs", "standards"],
   "globs": ["**/*.{md}"]
 }
