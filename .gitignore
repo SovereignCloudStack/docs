@@ -19,6 +19,7 @@
 /standards/*/*.md
 /standards/*/*.mdx
 /standards/scs-*.yaml
+/user-docs/application-examples
 
 # Dependencies
 node_modules

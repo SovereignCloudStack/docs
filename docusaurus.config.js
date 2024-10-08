@@ -84,6 +84,16 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
+        id: 'user-docs',
+        path: 'user-docs',
+        routeBasePath: 'user-docs',
+        sidebarPath: require.resolve('./sidebarsUserDocs.js')
+        // ... other options
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
         id: 'standards',
         path: 'standards',
         routeBasePath: 'standards',
@@ -118,6 +128,11 @@ const config = {
           {
             to: '/contributor-docs',
             label: 'For Contributors',
+            position: 'left'
+          },
+          {
+            to: '/user-docs',
+            label: 'For Users',
             position: 'left'
           },
           { to: '/community', label: 'Community', position: 'left' },
@@ -194,12 +209,19 @@ const config = {
       // @ts-ignore
       ({
         hashed: true,
-        docsDir: ['docs', 'community', 'standards', 'contributor-docs'],
+        docsDir: [
+          'docs',
+          'community',
+          'standards',
+          'contributor-docs',
+          'user-docs'
+        ],
         docsRouteBasePath: [
           'docs',
           'community',
           'standards',
-          'contributor-docs'
+          'contributor-docs',
+          'user-docs'
         ]
       })
     ]

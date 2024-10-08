@@ -135,5 +135,11 @@
     "source": ["documentation/overview.md"],
     "target": "docs/turnkey-solution",
     "label": ""
+  },
+  {
+    "repo": "SovereignCloudStack/opendesk-on-scs",
+    "source": "docs/*",
+    "target": "user-docs/application-examples",
+    "label": "opendesk-on-scs"
   }
 ]
