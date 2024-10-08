@@ -140,6 +140,6 @@
     "repo": "SovereignCloudStack/opendesk-on-scs",
     "source": "docs/*",
     "target": "user-docs/application-examples",
-    "label": "OpenDesk on SCS"
+    "label": "opendesk-on-scs"
   }
 ]

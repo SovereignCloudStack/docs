@@ -15,13 +15,13 @@ const sidebars = {
             type: 'generated-index'
           },
           items: [
-            'application-examples/OpenDesk on SCS/overview',
-            'application-examples/OpenDesk on SCS/quickstart',
-            'application-examples/OpenDesk on SCS/requirements',
-            'application-examples/OpenDesk on SCS/getting_started',
-            'application-examples/OpenDesk on SCS/configuration',
-            'application-examples/OpenDesk on SCS/user-import',
-            'application-examples/OpenDesk on SCS/contribute'
+            'application-examples/opendesk-on-scs/overview',
+            'application-examples/opendesk-on-scs/quickstart',
+            'application-examples/opendesk-on-scs/requirements',
+            'application-examples/opendesk-on-scs/getting_started',
+            'application-examples/opendesk-on-scs/configuration',
+            'application-examples/opendesk-on-scs/user-import',
+            'application-examples/opendesk-on-scs/contribute'
           ]
         }
       ]
