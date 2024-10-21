@@ -7,6 +7,9 @@ const sidebars = {
     {
       type: 'category',
       label: 'Application Examples',
+      link: {
+        type: 'generated-index'
+      },
       items: [
         {
           type: 'category',
