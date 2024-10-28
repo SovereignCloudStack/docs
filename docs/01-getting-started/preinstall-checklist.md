@@ -14,13 +14,17 @@ This list describes some aspects (without claiming to be exhaustive) that should
 
 The aim of this list is to reduce:
 
-- Projects that could be more successful
-- Long project waiting/implementation times
-- Unexpected errors or difficulties
-- Major restructuring work soon after the system was initially put into operation
-- Unexpected issues that have a major impact on costs.
+- projects that could be more successful
+- long project waiting/implementation times
+- unexpected errors or difficulties
+- major restructuring work soon after the system was initially put into operation
+- unexpected issues that have a major impact on costs.
 
-*Opensource benefits from the collaboration of its users and its developers.*
+For reasons of clarity, most of the topics are not described in such detail that readers who are new to this
+environment can easily understand the context of the question. Rather, this list should be seen as a catalog
+of questions or a task list that should be discussed, clarified and processed in the run-up to a project.
+
+_Opensource benefits from the collaboration of its users and its developers._
 
 For this reason, we are collecting questions, important topics to be clarified and hints to make it easier for users of the Sovereign Cloud Stack to increase the success with it.
 Therefore we would be very pleased if specific experiences from users, implementers and operators [were contributed](https://github.com/SovereignCloudStack/docs/docs/01-getting-started/preinstall-checklist.md) to this list.
@@ -30,13 +34,16 @@ Therefore we would be very pleased if specific experiences from users, implement
 ### Availability and Support
 
 - What requirements do you have for the availability of the system?
+  - How much downtime is acceptable for mainetenance tasks?
+  - What are your expectations in terms of downtimes or what downtime is just within the tolerable range for you?
+    (as you probably know, this has a significant impact on the hardware and personnel requirements)
 - What gradation or requirements are there for the elimination of problems with regard to the different types of problems?
 - Examples problem scenarios:
-  - complete loud service outage or downtime
+  - complete cloud service outage or downtime
   - performance problems
   - application problems
   - ....
-- Where should rollouts and changes to the system be tested or prepared, or does a dedicated environment make sense for t
+- Where should rollouts and changes to the system be tested or prepared, or does a dedicated environment make sense for
 
 ### Hardware Definition
 
@@ -50,18 +57,19 @@ Therefore we would be very pleased if specific experiences from users, implement
 Estimate the expected number of IP addresses and plan sufficient reserves so that no adjustments to the networks will be necessary at a later date.
 The installation can be carried out via IPv4 or IPv6 as well as hybrid.
 
-- Frontend Access: A dedicated IP address space / network for services published by the cloud platform and its users
+- Provider Networks: One or more dedicated public IP networks for services published by the cloud platform and its users
   - this is in most cases a public IPv4 network
-  - at least TCP port 443 should be accessible for all addresses of this network from other networks
-- Node Communication: A dedicated private IP adress space / network for the internal communication between the nodes
+  - at least TCP port 443 should be accessible for all addresses of this network from other networks (i.e. internet)
+- Openstack Node Communication: A dedicated private IP adress space / network for the internal communication between the nodes
   - every node needs a dedicated IP
-  - a DHCP range for installation might be useful, but not mandatory
+  - a DHCP range for for performing node installations might be useful, but not mandatory
   - all nodes in this network should have access to the NTP server
   - all nodes should have access to public DNS servers and HTTP/HTTPS servers
   - In some cases, it may make sense to operate Ceph in a dedicated network or multiple dedicated networks (public, cluster).
-       Methods for high-performance and scalable access to the storage:
+    Methods for high-performance and scalable access to the storage:
     - very high-performance routing (layer 3), for example via switch infrastructure
     - Dedicated network adapters in the compute nodes for direct access to the storage network
+- Ceph Node Communication: A dedicated private IP adress space / network for the internal communication between the ceph nodes
 - Management: A private IP adress space / network for the hardware out of out band management of the nodes
   - every node needs a dedicated management IP
   - a DHCP range for installation might be useful, but not mandatory
@@ -90,11 +98,11 @@ TBD:
 ### Domains and Hosts
 
 - Cloud Domain: A dedicated subdomain used for the cloud environment
-   (i.e. `*.zone1.landscape.scs.community`)
+  (i.e. `*.zone1.landscape.scs.community`)
 - Internal API endpoint: A hostname for the internal api endpoint which points to address to the "Node Communication" network
-   (i.e. `api-internal.zone1.landscape.scs.community`)
+  (i.e. `api-internal.zone1.landscape.scs.community`)
 - External API endpoint: A hostname for the external api endpoint which points to address to the "Frontend Access" network
-   (i.e. `api.zone1.landscape.scs.community`)
+  (i.e. `api.zone1.landscape.scs.community`)
 
 ### TLS Certificates
 
@@ -127,7 +135,6 @@ TBD:
 ### Monitoring and On-Call/On-Duty
 
 - Connection and integration into existing operational monitoring
-
 - What kind of On-Call/On-Duty do you need?
   - How quickly should the solution to a problem be started?
   - What downtimes are tolerable in extreme cases?
@@ -137,9 +144,9 @@ TBD:
 
 - The deployed nodes should have permanent access to at least 3 ntp servers
 - It has turned out to be advantageous that the 3 control nodes have access to NTP servers
-    and provide NTP servers for the other nodes of the SCS installation.
+  and provide NTP servers for the other nodes of the SCS installation.
 - The NTP servers used, should not run on virtual hardware
-    (Depending on the architecture and the virtualization platform, this can otherwise cause minor or major problems in special situations.)
+  (Depending on the architecture and the virtualization platform, this can otherwise cause minor or major problems in special situations.)
 
 ## Openstack
 
