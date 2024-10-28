@@ -26,3 +26,8 @@ CD in your Terminal to the root directory of the cloned repository. Install all 
 npm install
 npm start
 ```
+
+## Linting problems
+
+The repository establishes commit hooks which check the files for correctness and style.
+Have a look at the [linting-guide](https://docs.scs.community/community/contribute/linting-guide/) to get detailed information.
