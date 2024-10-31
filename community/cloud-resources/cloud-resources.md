@@ -85,7 +85,7 @@ Service users will have their default_project_id set to a specific project and w
 | fc1f7a0e10a64d6083dcdbcb7ccf6ff4 | p500924-compliance-monitor  | mbuechse                 | SCS Compliance Monitor Deployment     |      ∞      |
 | eba5414a4f8549b28a62af199d82dab5 | p500924-tsmado              | tsmado                   | tsmado's gx-scs project               |      ∞      |
 
-** SCS2 **
+**SCS2**
 
 | Unique Identifier                | Project Name                | Community Contact        | Description                           | Needed until |
 | :------------------------------: | --------------------------- | ------------------------ | ------------------------------------- | :----------: |
@@ -99,7 +99,6 @@ Service users will have their default_project_id set to a specific project and w
 | bf8d511728a44072b7c97b1fe00947b8 | p500924-kaas-playground3    | jschoone                 |                                       |              |
 | 61b315797c75431787dc20a61cbaf052 | p500924-kaas-playground4    | jschoone                 |                                       |              |
 | 94f7c7507be1484a9ce6aba20d19d1c6 | p500924-kaas-playground5    | jschoone                 |                                       |              |
-
 
 ## Wavecon
 
