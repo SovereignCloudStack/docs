@@ -29,7 +29,7 @@ Example:
 |               |                     |
 
 > **Note**
-> To easy collaboration & transparency within the SCS team all users will have their default_project_id set to `p500924-scs-community` by default and will have full access on all projects listed below.
+> To ease collaboration & transparency within the SCS team all users will have their `default_project_id` set to `p500924-scs-community` by default and will have full access on all projects listed below.
 
 ### Service Users
 
@@ -45,6 +45,8 @@ Service users will have their default_project_id set to a specific project and w
 |                                  |                            |                           |                          |                                               |              |
 
 ### Projects
+
+#### SCS1 (aka gx-scs)
 
 |        Unique Identifier         | Project Name                | Community Contact        | Description                           | Needed until |
 | :------------------------------: | --------------------------- | ------------------------ | ------------------------------------- | :----------: |
@@ -80,25 +82,25 @@ Service users will have their default_project_id set to a specific project and w
 | 5c6d4d7183834eafbc20108ad647a9c0 | p500924-kaas-playground8    | jschoone                 | Playground8 for Hackathon             | 30.09.2024  |
 | 7e18881932f749baa7d547ebd407b8d8 | p500924-kaas-playground9    | jschoone                 | Playground9 for Hackathon             | 30.09.2024  |
 | d9dc2f33e76240219db484526e9f601d | p500924-akafazov            | akafazov                 | akafazov Testbed                      | 30.04.2024  |
-| b07ad6a84982471b9a344ef9947f0e0f | p500924-gtema               | gtema                    | Testbed for gtema                     |      ∞      |
-| e89ac8c9f66f46b5a983b2a05d2a66ec | p500924-zuse-z3             | zuse-z3                  | Josefine's gx-scs project             |      ∞      |
-| fc1f7a0e10a64d6083dcdbcb7ccf6ff4 | p500924-compliance-monitor  | mbuechse                 | SCS Compliance Monitor Deployment     |      ∞      |
-| eba5414a4f8549b28a62af199d82dab5 | p500924-tsmado              | tsmado                   | tsmado's gx-scs project               |      ∞      |
+| b07ad6a84982471b9a344ef9947f0e0f | p500924-gtema               | gtema                    | Testbed for gtema                     |      ∞       |
+| e89ac8c9f66f46b5a983b2a05d2a66ec | p500924-zuse-z3             | zuse-z3                  | Josefine's gx-scs project             |      ∞       |
+| fc1f7a0e10a64d6083dcdbcb7ccf6ff4 | p500924-compliance-monitor  | mbuechse                 | SCS Compliance Monitor Deployment     |      ∞       |
+| eba5414a4f8549b28a62af199d82dab5 | p500924-tsmado              | tsmado                   | tsmado's gx-scs project               |      ∞       |
 
-**SCS2**
+#### SCS2
 
-| Unique Identifier                | Project Name                | Community Contact        | Description                           | Needed until |
-| :------------------------------: | --------------------------- | ------------------------ | ------------------------------------- | :----------: |
-| fe66fd7655814078924155876562dd3d | p500924-scs-community       | garloff                  |                                       |              |
-| 4a8829a5ecad480d8dde1e46a9c5284b | p500924-health-monitor      | garloff                  |                                       |              |
-| 9c482c928d68470ea35a764e1ba9211a | p500924-compliance-monitor  | garloff                  |                                       |              |
-| f2eccb67b16f4430b6d5e70afb515f9d | p500924-harbor              | garloff                  |                                       |              |
-| 34d3d89fc74e4db5a6df1c9ebf2f3a2a | p500924-scs-zuul            | garloff                  |                                       |              |
-| 45b5e27a5fe3431083e450cf2d13e71b | p500924-kaas-playground1    | jschoone                 |                                       |              |
-| ef12fed77f114eb4a20068f0422a8109 | p500924-kaas-playground2    | jschoone                 |                                       |              |
-| bf8d511728a44072b7c97b1fe00947b8 | p500924-kaas-playground3    | jschoone                 |                                       |              |
-| 61b315797c75431787dc20a61cbaf052 | p500924-kaas-playground4    | jschoone                 |                                       |              |
-| 94f7c7507be1484a9ce6aba20d19d1c6 | p500924-kaas-playground5    | jschoone                 |                                       |              |
+|        Unique Identifier         | Project Name               | Community Contact | Description | Needed until |
+| :------------------------------: | -------------------------- | ----------------- | ----------- | :----------: |
+| fe66fd7655814078924155876562dd3d | p500924-scs-community      | garloff           |             |              |
+| 4a8829a5ecad480d8dde1e46a9c5284b | p500924-health-monitor     | garloff           |             |              |
+| 9c482c928d68470ea35a764e1ba9211a | p500924-compliance-monitor | garloff           |             |              |
+| f2eccb67b16f4430b6d5e70afb515f9d | p500924-harbor             | garloff           |             |              |
+| 34d3d89fc74e4db5a6df1c9ebf2f3a2a | p500924-scs-zuul           | garloff           |             |              |
+| 45b5e27a5fe3431083e450cf2d13e71b | p500924-kaas-playground1   | jschoone          |             |              |
+| ef12fed77f114eb4a20068f0422a8109 | p500924-kaas-playground2   | jschoone          |             |              |
+| bf8d511728a44072b7c97b1fe00947b8 | p500924-kaas-playground3   | jschoone          |             |              |
+| 61b315797c75431787dc20a61cbaf052 | p500924-kaas-playground4   | jschoone          |             |              |
+| 94f7c7507be1484a9ce6aba20d19d1c6 | p500924-kaas-playground5   | jschoone          |             |              |
 
 ## Wavecon
 
