@@ -26,7 +26,7 @@ and used; the details for the higher levels are still being worked on.
 
 ## Certification process
 
-To get certified, the infrastructure needs to fulfill the criteria.
+To get certified, the infrastructure needs to fulfill certain criteria.
 As far as possible, these are implemented as automated tests that run
 continuously (daily) to assure continuous compliance. The results are
 made transparent via the the [Certified Clouds overview](overview) page.

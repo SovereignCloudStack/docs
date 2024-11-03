@@ -1,6 +1,6 @@
 # Getting SCS-compatible certification
 
-The conditions to become *SCS-copmatible* certified are defined in the
+The conditions to become *SCS-compatible* certified are defined in the
 [SCS standard 0004](/standards/scs-0004-v1-achieving-certification).
 
 Hints how the process is working in practice for existing certified
