@@ -48,6 +48,19 @@ const sidebarsDocs = {
               id: 'iaas/components/flavor-manager'
             }
           ]
+        },
+        {
+          type: 'category',
+          label: 'Deployment Examples',
+          link: {
+            type: 'generated-index'
+          },
+          items: [
+            {
+              type: 'doc',
+              id: 'iaas/deployment-examples/artcodix/index'
+            }
+          ]
         }
       ]
     },

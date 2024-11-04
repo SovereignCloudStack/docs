@@ -20,7 +20,13 @@
   {
     "title": "Deployment Examples",
     "body": "Get to know different ways to deploy SCS with cloud resources or on bare metal.",
-    "url": "/docs/iaas/guides/deploy-guide/examples",
+    "url": "/docs/category/deployment-examples",
+    "buttonText": "Explore Cases"
+  },
+  {
+    "title": "Application Examples",
+    "body": "Discover best practices to make the most of your cloud, from introductions to specific applications to advanced use cases.",
+    "url": "/user-docs/category/application-examples",
     "buttonText": "Explore Cases"
   }
 ]
