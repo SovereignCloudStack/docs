@@ -60,6 +60,12 @@
     "label": "status-page-deployment"
   },
   {
+    "repo": "SovereignCloudStack/status-page-web",
+    "source": "docs",
+    "target": "docs/04-operating-scs/components",
+    "label": "status-page-web"
+  },
+  {
     "repo": "SovereignCloudStack/k8s-observability",
     "source": "docs",
     "target": "docs/04-operating-scs/components",
@@ -92,13 +98,19 @@
     "repo": "SovereignCloudStack/security-infra-scan-pipeline",
     "source": "docs/*.md",
     "target": "docs/04-operating-scs/components",
-    "label": "automated-pentesting"
+    "label": "automated-pentesting-iaas"
   },
   {
     "repo": "SovereignCloudStack/security-infra-scan-pipeline",
     "source": "docs/images/*.png",
     "target": "docs/04-operating-scs/components",
-    "label": "automated-pentesting/images"
+    "label": "automated-pentesting-iaas/images"
+  },
+  {
+    "repo": "SovereignCloudStack/security-k8s-scan-pipeline",
+    "source": "docs/*.md",
+    "target": "docs/04-operating-scs/components",
+    "label": "automated-pentesting-kaas"
   },
   {
     "repo": "SovereignCloudStack/csctl",
@@ -117,5 +129,17 @@
     "source": ["docs/*"],
     "target": "docs/03-container/components/cluster-stacks/components",
     "label": "cluster-stack-operator"
+  },
+  {
+    "repo": "SovereignCloudStack/hardware-landscape",
+    "source": ["documentation/overview.md"],
+    "target": "docs/turnkey-solution",
+    "label": ""
+  },
+  {
+    "repo": "SovereignCloudStack/opendesk-on-scs",
+    "source": "docs/*",
+    "target": "user-docs/application-examples",
+    "label": "opendesk-on-scs"
   }
 ]

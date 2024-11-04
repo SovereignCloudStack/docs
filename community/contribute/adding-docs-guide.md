@@ -23,7 +23,7 @@ Your repository containing the documentation has to...
 
 The documentation files have to be in markdown format and...
 
-- comply [SCS licensing guidelines](https://github.com/SovereignCloudStack/docs/blob/main/community/github/dco-and-licenses.md)
+- comply [SCS licensing guidelines](https://github.com/SovereignCloudStack/docs/blob/main/community/license-considerations.md)
 - match our
   - [markdown file structure guideline](https://github.com/SovereignCloudStack/docs/blob/main/community/contribute/doc-files-structure-guide.md)
   - linting Rules
@@ -31,7 +31,7 @@ The documentation files have to be in markdown format and...
 
 ### Step 2 – Adding your repo to the docs.json
 
-File a Pull Request within the [docs-page](https://github.com/SovereignCloudStack/docs-page) repository and add your repo to the docs.package.json:
+File a Pull Request within the [docs](https://github.com/SovereignCloudStack/docs) repository and add your repo to the docs.package.json:
 
 ```json
 [
