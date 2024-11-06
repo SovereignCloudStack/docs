@@ -2,7 +2,7 @@
 
 ## How to add a new test subject in 8 easy steps
 
-This is a how-to guide for adding your own subject if you so desire. This will probably be the quickest way,
+This is a how-to guide for adding your own subject if you so desire. This way will probably be quickest,
 but we are of course happy to help.
 
 ### for SCS-compatible IaaS
@@ -13,6 +13,11 @@ to be used for purposes other than compliance testing (such as the
 [SCS Health Monitor](https://github.com/SovereignCloudStack/scs-health-monitor)).
 
 1. Create an application credential. It must be possible to create resources such as servers, routers, etc.
+
+   In the next steps, we are going to create a pull request that is very similar to real-life example that
+   [adds the test subject `scaleup-occ2`](https://github.com/SovereignCloudStack/standards/pull/797).
+   (However, note that this example also adds an optional GitHub workflow, which we won't do here.)
+
 2. Create a new branch in [the standards repository](https://github.com/SovereignCloudStack/standards):
 
     - `git clone git@github.com:SovereignCloudStack/standards.git`
@@ -135,5 +140,5 @@ to be used for purposes other than compliance testing (such as the
 
    ```shell
    git commit -asm "Add SUBJECT_NAME"
-   git push
+   git push  # the output of this command will show you the URL for creating the pull request
    ```
