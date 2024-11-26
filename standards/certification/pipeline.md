@@ -32,7 +32,7 @@ to be used for purposes other than compliance testing (such as the
 
 3. Add your subject to the results table. This is necessary so your subject shows up in the
    [compliance monitor web-site](https://compliance.sovereignit.cloud/page/table). Add the following lines
-   (substituting all-caps parts):
+   (substituting all-caps parts except `HM`):
 
    ```diff
     | [gx-scs](https://github.com/SovereignCloudStack/docs/blob/main/community/cloud-resources/plusserver-gx-scs.md) | Dev environment provided for SCS & GAIA-X context | plusserver GmbH |
@@ -151,7 +151,7 @@ We are going to create a pull request that is very similar to real-life example 
    +     - ENCRYPTED_SECRET
    ```
 
-   Note that you have to use the same keys as in Step 3 (that is, with special characters replaced).
+   Note that you have to use the same keys as in Step 1 (that is, with special characters replaced).
 
 5. Commit your changes and open a pull request:
 
@@ -175,7 +175,7 @@ injecting secrets. You may want to take inspiration from our own Zuul setup by l
    virtualenv .venv
    . .venv/bin/activate
    pip install -r requirements.txt
-   pip install passlib argon2_cffi  # these are only needed for step 2
+   pip install passlib argon2_cffi  # these are only needed for Step 2
    ```
 
 2. Run our support script (substitute `$SUBJECT_NAME` appropriately):
