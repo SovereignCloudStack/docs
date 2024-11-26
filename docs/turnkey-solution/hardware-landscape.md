@@ -5,13 +5,13 @@ sidebar_position: 99
 
 # The SCS Hardware-Landscape
 
-![An image of the SCS hardware landscape rack](images/combined_rack_visual.jpg "The SCS hardware landscape rack"){width=500px}
+![An image of the SCS hardware landscape rack](images/combined_rack_visual.jpg)
 
 ## General information
 
 The general aim of this environment is to install and operate the SCS reference implementation on hardware.
 In addition to the classic tasks in the area of quality assurance, the environment is also used to evaluate
-new concepts in the underlay(overlay network area, as a test environment for hardware-related developments,
+new concepts in the underlay/overlay network area, as a test environment for hardware-related developments,
 as a demonstration environment for interested parties and as a publicly accessible blueprint for users.
 The environment is designed for long-term use which a varying circle of users.
 
@@ -69,7 +69,7 @@ The relevant **References** section refers here to the individual documentation 
   adjustments and further developments are managed via GIT merge requests
 * Almost all installation steps are [documented and automated](https://github.com/SovereignCloudStack/hardware-landscape/blob/main/documentation/System_Deployment.md)
   based on a pure rack installation (The setup is extensively documented, in particular the few manual steps)
-  * The entire customized setup of the nodes is [implemented by OSISM/Ansible]<https://github.com/SovereignCloudStack/hardware-landscape/tree/main/environments/custom()>
+  * The entire customized setup of the nodes is [implemented by OSISM/Ansible](https://github.com/SovereignCloudStack/hardware-landscape/tree/main/environments/custom)
   * All secrets (e.g. passwords) of the environment are stored and versioned in the encrypted Ansible Vault in i
     the repository (when access is transferred, rekeying can be used to change the access or the rights to it).
   * A far-reaching or in-depth automation has been created that allows the environment to be re-set up or parts of it to
