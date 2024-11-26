@@ -53,12 +53,6 @@
       "buttonText": "Learn More",
       "components": [
         {
-          "title": "KaaS V1: K8s Cluster API Provider",
-          "url": "/docs/category/k8s-cluster-api-provider",
-          "mandatory": "false",
-          "stable": "true"
-        },
-        {
           "title": "KaaS V2: Cluster Stacks",
           "url": "/docs/category/cluster-stacks",
           "mandatory": "false",
