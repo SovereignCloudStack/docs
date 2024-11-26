@@ -30,6 +30,10 @@ to be used for purposes other than compliance testing (such as the
     - `cd standards`
     - `git checkout -b feat/add_my_cloud`
 
+   **CAUTION**: If you are not a member of the SCS Github org, this won't work.
+   Ask the SCS team (or other members) to add you. Alternatively, you may fork the repository on
+   Github first and then clone the fork.
+
 3. Add your subject to the results table. This is necessary so your subject shows up in the
    [compliance monitor web-site](https://compliance.sovereignit.cloud/page/table). Add the following lines
    (substituting all-caps parts except `HM`):
