@@ -18,7 +18,7 @@ The container layer within the Sovereign Cloud Stack (SCS) offers a robust solut
 ### Prerequisites and Requirements
 
 - Knowledge: Familiarity with Kubernetes, container orchestration, and basic cloud infrastructure principles is pivotal.
-- Software: The core software component are the Cluster Stacks based on Cluster API, crafted to function optimally on OpenStack environments. Although designed to run on the SCS IaaS layer, with minor configuration adjustments, it can operate on any OpenStack environment.
+- Software: The core software component are the Cluster Stacks based on Cluster API, crafted to function best on OpenStack environments. Although designed to run on the SCS IaaS layer, with minor configuration adjustments, it can operate on any OpenStack environment.
 - Hardware: Virtualization-enabled hardware capable of running OpenStack is essential if hosting the IaaS layer independently. For further details, refer to the IaaS layer documentation.
 
 ### Features
