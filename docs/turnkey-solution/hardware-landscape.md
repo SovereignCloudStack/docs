@@ -5,9 +5,9 @@ sidebar_position: 99
 
 # The SCS Hardware-Landscape
 
-## General information
+![An image of the SCS hardware landscape rack](images/combined_rack_visual.jpg "The SCS hardware landscape rack"){width=500px}
 
-![An image of the SCS hardware landscape rack](images/combined_rack_visual.jpg "The SCS hardware landscape rack")
+## General information
 
 The general aim of this environment is to install and operate the SCS reference implementation on hardware.
 In addition to the classic tasks in the area of quality assurance, the environment is also used to evaluate
