@@ -162,6 +162,8 @@ We are going to create a pull request that is very similar to real-life example 
 
 ## How to feed the compliance monitor yourself
 
+### for SCS-compatible IaaS
+
 Note: you may have to adapt these instructions to your infrastructure. For instance, the secrets
 we create here are stored locally. If you want to include the check suite into your own
 continuous-integration pipeline, you may want to use some dedicated credential store and mechanism for
