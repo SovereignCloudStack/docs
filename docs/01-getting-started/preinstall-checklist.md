@@ -27,7 +27,7 @@ of questions or a task list that should be discussed, clarified and processed in
 _Opensource benefits from the collaboration of its users and its developers._
 
 For this reason, we are collecting questions, important topics to be clarified and hints to make it easier for users of the Sovereign Cloud Stack to increase the success with it.
-Therefore we would be very pleased if specific experiences from users, implementers and operators [were contributed](https://github.com/SovereignCloudStack/docs/docs/01-getting-started/preinstall-checklist.md) to this list.
+Therefore we would be very pleased if specific experiences from users, implementers and operators [are contributing](https://github.com/SovereignCloudStack/docs/docs/01-getting-started/preinstall-checklist.md) to this list.
 
 ## General
 
@@ -43,11 +43,21 @@ Therefore we would be very pleased if specific experiences from users, implement
   - performance problems
   - application problems
   - ....
-- Where should rollouts and changes to the system be tested or prepared, or does a dedicated environment make sense for
+- How do you want to manage the lifecycle of your Systems?
+  - Where do you want to test releases, configuration changes and operational procedures before rolling them out for production environments?
+  - Is it possible to have a testing environment which compareable to production from a logical/architectural perspektive?
+  - Is it possible to have a testing environment which runs real-world workloads ("eat your own dogfood")
 
-### Hardware Definition
+### General Hardware Conditions
 
-- Are there defined hardware standards for the target data center and what are the general conditions?
+- Are there defined hardware standards for the target data center?
+  - Are there defined/standarized suppliers?
+  - Are there defined/standarized manufacturers and server models?
+    - Do the requirements of the defined hardware and vedors match these to the requirements for building a cloud system (cost structure, delivery times, support, automation options, quality, ...)?
+    - It may be worthwhile to evaluate other suppliers or manufacturers whose properties are more suitable.
+      (depending on how large the target systems are, this can quickly make sense)
+  - Instead of cost-intensive hardware support contracts, does it make sense to keep free additional capacities (which are already integrated into the cloud) or a stock of spare parts?
+- What are the general conditions for the target data center?
 - How should the systems be provisioned with an operating system?
 - Decide which base operating system is used (e.g. RHEL or Ubuntu) and whether this fits the hardware support, strategy, upgrade support and cost structure.
 - How many failure domains, environments, availability zones are required?
