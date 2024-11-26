@@ -458,7 +458,10 @@ const sidebarsDocs = {
       link: {
         type: 'generated-index'
       },
-      items: ['turnkey-solution/overview']
+      items: [
+        'turnkey-solution/overview',
+        'turnkey-solution/hardware-landscape'
+      ]
     },
     {
       type: 'category',
