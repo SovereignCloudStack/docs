@@ -11,7 +11,7 @@ sidebar_position: 99
 
 The general aim of this environment is to install and operate the SCS reference implementation on hardware.
 In addition to the classic tasks in the area of quality assurance, the environment is also used to evaluate
-new concepts in the underlay(overlay network area, as a test environment for hardware-related developments,
+new concepts in the underlay/overlay network area, as a test environment for hardware-related developments,
 as a demonstration environment for interested parties and as a publicly accessible blueprint for users.
 The environment is designed for long-term use which a varying circle of users.
 
