@@ -14,7 +14,7 @@
   {
     "repo": "SovereignCloudStack/cluster-stack-provider-openstack",
     "source": "docs",
-    "target": "docs/03-container/components/cluster-stacks/components",
+    "target": "docs/03-container/components",
     "label": "cluster-stack-provider-openstack"
   },
   {
@@ -109,19 +109,19 @@
   {
     "repo": "SovereignCloudStack/csctl",
     "source": "docs/*.md",
-    "target": "docs/03-container/components/cluster-stacks/components",
+    "target": "docs/03-container/components",
     "label": "csctl"
   },
   {
     "repo": "SovereignCloudStack/cluster-stacks",
     "source": "docs/*",
-    "target": "docs/03-container/components/cluster-stacks/components",
+    "target": "docs/03-container/components",
     "label": "cluster-stacks"
   },
   {
     "repo": "SovereignCloudStack/cluster-stack-operator",
     "source": ["docs/*"],
-    "target": "docs/03-container/components/cluster-stacks/components",
+    "target": "docs/03-container/components",
     "label": "cluster-stack-operator"
   },
   {
