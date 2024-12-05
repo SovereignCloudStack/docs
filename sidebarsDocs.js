@@ -74,45 +74,11 @@ const sidebarsDocs = {
       items: [
         {
           type: 'category',
-          label: 'Overview',
-          link: {
-            type: 'generated-index'
-          },
-          items: [
-            // 'container/overview/architecture',
-            // 'container/overview/knowledge'
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Deployment Examples',
-          link: {
-            type: 'generated-index'
-          },
-          items: [
-            {
-              type: 'category',
-              label: 'Deployment A',
-              link: {
-                type: 'generated-index'
-              },
-              items: [
-                // 'container/deployment-examples/a/index',
-                // 'container/deployment-examples/a/hardware',
-                // 'container/deployment-examples/a/software'
-              ]
-            }
-          ]
-        },
-        {
-          type: 'category',
           label: 'Guides',
           link: {
             type: 'generated-index'
           },
-          items: [
-            // 'container/guides/guide1'
-          ]
+          items: ['container/guides/guide1']
         },
         {
           type: 'category',
@@ -121,58 +87,38 @@ const sidebarsDocs = {
             type: 'generated-index'
           },
           items: [
+            'container/components/cluster-stacks/overview',
             {
               type: 'category',
-              label: 'Cluster Stacks',
+              label: 'Cluster Stack Operator',
               link: {
                 type: 'generated-index'
               },
               items: [
-                'container/components/cluster-stacks/components/cluster-stacks/overview',
-                {
-                  type: 'category',
-                  label: 'Cluster Stack Operator',
-                  items: [
-                    'container/components/cluster-stacks/components/cluster-stack-operator/architecture/overview',
-                    'container/components/cluster-stacks/components/cluster-stack-operator/topics/quickstart',
-                    'container/components/cluster-stacks/components/cluster-stack-operator/topics/troubleshoot',
-                    'container/components/cluster-stacks/components/cluster-stack-operator/develop/develop'
-                  ]
-                },
-                {
-                  type: 'category',
-                  label: 'Cluster Stack Provider OpenStack',
-                  items: [
-                    'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/overview',
-                    'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/quickstart',
-                    'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/controllers',
-                    'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/develop'
-                  ]
-                },
-                {
-                  type: 'category',
-                  label: 'csctl',
-                  items: [
-                    'container/components/cluster-stacks/components/csctl/overview',
-                    'container/components/cluster-stacks/components/csctl/quickstart',
-                    'container/components/cluster-stacks/components/csctl/getting_started',
-                    'container/components/cluster-stacks/components/csctl/developing-and-testing-csctl'
-                  ]
-                },
-                {
-                  type: 'category',
-                  label: 'Predefined Cluster Stacks',
-                  items: [
-                    {
-                      type: 'category',
-                      label: 'Openstack',
-                      items: [
-                        'container/components/cluster-stacks/components/cluster-stacks/providers/openstack/quickstart',
-                        'container/components/cluster-stacks/components/cluster-stacks/providers/openstack/configuration'
-                      ]
-                    }
-                  ]
-                }
+                'container/components/cluster-stack-operator/architecture/overview',
+                'container/components/cluster-stack-operator/topics/quickstart',
+                'container/components/cluster-stack-operator/topics/troubleshoot',
+                'container/components/cluster-stack-operator/develop/develop'
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Cluster Stack Provider OpenStack',
+              items: [
+                'container/components/cluster-stack-provider-openstack/docs/overview',
+                'container/components/cluster-stack-provider-openstack/docs/quickstart',
+                'container/components/cluster-stack-provider-openstack/docs/controllers',
+                'container/components/cluster-stack-provider-openstack/docs/develop'
+              ]
+            },
+            {
+              type: 'category',
+              label: 'csctl',
+              items: [
+                'container/components/csctl/overview',
+                'container/components/csctl/quickstart',
+                'container/components/csctl/getting_started',
+                'container/components/csctl/developing-and-testing-csctl'
               ]
             },
             {
@@ -191,6 +137,42 @@ const sidebarsDocs = {
                 'container/components/container-registry/docs/persistence',
                 'container/components/container-registry/docs/ha-deployment'
               ]
+            },
+            {
+              type: 'category',
+              label: 'Cluster Gen',
+              items: ['container/deployment-examples/a/software']
+            }
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Deployment Examples',
+          link: {
+            type: 'generated-index'
+          },
+          items: [
+            {
+              type: 'category',
+              label: 'Predefined Cluster Stacks',
+              items: [
+                {
+                  type: 'category',
+                  label: 'Openstack',
+                  items: [
+                    'container/components/cluster-stacks/providers/openstack/quickstart',
+                    'container/components/cluster-stacks/providers/openstack/configuration'
+                  ]
+                }
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Moin Cluster',
+              link: {
+                type: 'generated-index'
+              },
+              items: ['container/deployment-examples/a/software']
             }
           ]
         }
