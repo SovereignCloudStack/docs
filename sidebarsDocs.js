@@ -354,7 +354,8 @@ const sidebarsDocs = {
                   items: [
                     'operating-scs/components/automated-pentesting-iaas/overview',
                     'operating-scs/components/automated-pentesting-iaas/quickstart',
-                    'operating-scs/components/automated-pentesting-iaas/tools'
+                    'operating-scs/components/automated-pentesting-iaas/tools',
+                    'operating-scs/components/automated-pentesting-iaas/reports'
                   ]
                 },
                 {
