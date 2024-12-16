@@ -177,43 +177,6 @@ const sidebarsDocs = {
             },
             {
               type: 'category',
-              label: 'K8s Cluster API Provider',
-              link: {
-                type: 'generated-index'
-              },
-              items: [
-                'container/components/k8s-cluster-api-provider/doc/overview',
-                'container/components/k8s-cluster-api-provider/doc/requirements',
-                'container/components/k8s-cluster-api-provider/doc/quickstart',
-                'container/components/k8s-cluster-api-provider/doc/make-reference',
-                'container/components/k8s-cluster-api-provider/doc/application-credentials',
-                'container/components/k8s-cluster-api-provider/doc/configuration',
-                'container/components/k8s-cluster-api-provider/doc/Maintenance_and_Troubleshooting',
-                'container/components/k8s-cluster-api-provider/doc/LoadBalancer-ExtTrafficLocal',
-                'container/components/k8s-cluster-api-provider/doc/Upgrade-Guide',
-                'container/components/k8s-cluster-api-provider/doc/continuous-integration',
-                'container/components/k8s-cluster-api-provider/doc/roadmap',
-                {
-                  type: 'category',
-                  label: 'Usage',
-                  items: [
-                    'container/components/k8s-cluster-api-provider/doc/usage/usage',
-                    'container/components/k8s-cluster-api-provider/doc/usage/create-new-cluster',
-                    'container/components/k8s-cluster-api-provider/doc/usage/managing-many-clusters',
-                    'container/components/k8s-cluster-api-provider/doc/usage/cluster-mgmt-capi-mgmt-node',
-                    'container/components/k8s-cluster-api-provider/doc/usage/multi-az-and-multi-cloud-environments',
-                    'container/components/k8s-cluster-api-provider/doc/usage/testing',
-                    'container/components/k8s-cluster-api-provider/doc/usage/containter-registry-configuration',
-                    'container/components/k8s-cluster-api-provider/doc/usage/custom-ca',
-                    'container/components/k8s-cluster-api-provider/doc/usage/gateway-api',
-                    'container/components/k8s-cluster-api-provider/doc/usage/harbor',
-                    'container/components/k8s-cluster-api-provider/doc/usage/migrate-to-cluster-class'
-                  ]
-                }
-              ]
-            },
-            {
-              type: 'category',
               label: 'Container Registry',
               link: {
                 type: 'generated-index'
@@ -391,7 +354,8 @@ const sidebarsDocs = {
                   items: [
                     'operating-scs/components/automated-pentesting-iaas/overview',
                     'operating-scs/components/automated-pentesting-iaas/quickstart',
-                    'operating-scs/components/automated-pentesting-iaas/tools'
+                    'operating-scs/components/automated-pentesting-iaas/tools',
+                    'operating-scs/components/automated-pentesting-iaas/reports'
                   ]
                 },
                 {
@@ -458,7 +422,10 @@ const sidebarsDocs = {
       link: {
         type: 'generated-index'
       },
-      items: ['turnkey-solution/overview']
+      items: [
+        'turnkey-solution/overview',
+        'turnkey-solution/hardware-landscape'
+      ]
     },
     {
       type: 'category',
