@@ -16,26 +16,45 @@ SCS is built, backed, and operated by an active open-source community worldwide.
 
 ## Use Cases and Deployment Examples
 
-### IaaS Layer
+### Virtualization (IaaS) Layer
+
+The SCS IaaS reference implementation is based on [OSISM](https://osism.tech/).
 
 #### Quick Start with Cloud-In-A-Box
 
-The fastest way to get in touch with SCS is to deploy a SCS cloud virtually. The Cloud-In-A-Box was built explicitly for this scenario. Check it out [here](/docs/iaas/guides/deploy-guide/examples/cloud-in-a-box)
+You can do a single node installation for learning, testing or development purposes.
+The Cloud-In-A-Box configuration was built explicitly for this scenario.
+Check it out [here](/docs/iaas/deployment-examples/cloud-in-a-box)
+It comes with a complete set of services, even ceph is part of it
+(despite of course not offering much redundancy on a single-node).
 
 #### Reference Implementation Testbed
+
+The fastest way to get in touch with SCS is to deploy a SCS cloud virtually.
 
 This means that you set up an SCS test installation including all the infrastructure
 pieces such as database, message queueing, ceph, monitoring and logging, IAM, the
 [OpenStack](https://openstack.org/) core services, and (soon) the Container layer
-on top of an existing IaaS platform.
+on top of an existing OpenStack IaaS platform, ideally one that allows for nested
+virtualization.
 
-The SCS IaaS reference implementation is based on [OSISM](https://osism.tech/). Read on the
-[OSISM testbed docs](https://docs.osism.de/testbed/) to learn how to get the
+Read the [testbed docs](/docs/iaas/deployment-examples/testbed) to learn how to get the
 testbed running. Please read carefully through the
 [deployment](https://docs.osism.de/testbed/deployment.html) section of the
 manual.
 
+#### Examples for real deployments
+
+[artcodix](https://artcodix.com/) has [shared](/docs/iaas/deployment-examples/artcodix/)
+some details on their production setup. The SCS team itself has created [extensive
+documentation](/docs/turnkey-solution/hardware-landscape/) including details on the
+used hardware.
+
 ### Container Layer
+
+The Reference Implementation (v2) for the container (Kubernetes-as-a-Services = KaaS) layer
+is provided by [Cluster-Stacks](https://docs-staging.scs.community/docs/category/cluster-stacks)
+from [syself](https://syself.com/).
 
 #### Cluster Stacks
 
