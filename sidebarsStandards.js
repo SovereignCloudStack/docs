@@ -18,6 +18,11 @@ const sidebars = {
             id: 'certification/scopes-versions'
           },
           items: require('./sidebarsCertificationItems.js') // this file will be generated entirely by `populateCerts.js` via npm post-install hook found in the package.json
+        },
+        {
+          type: 'doc',
+          label: 'Compliance Check Pipeline',
+          id: 'certification/pipeline'
         }
       ]
     },

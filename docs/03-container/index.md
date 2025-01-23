@@ -18,26 +18,17 @@ The container layer within the Sovereign Cloud Stack (SCS) offers a robust solut
 ### Prerequisites and Requirements
 
 - Knowledge: Familiarity with Kubernetes, container orchestration, and basic cloud infrastructure principles is pivotal.
-- Software: The core software component is the K8s Cluster API Provider, crafted to function optimally on OpenStack environments. Although designed to run on the SCS IaaS layer, with minor configuration adjustments, it can operate on any OpenStack environment.
+- Software: The core software component are the Cluster Stacks based on Cluster API, crafted to function best on OpenStack environments. Although designed to run on the SCS IaaS layer, with minor configuration adjustments, it can operate on any OpenStack environment.
 - Hardware: Virtualization-enabled hardware capable of running OpenStack is essential if hosting the IaaS layer independently. For further details, refer to the IaaS layer documentation.
 
 ### Features
 
-- Automated Cluster Management: The K8s Cluster API Provider automates the process of creating, scaling, managing and updating Kubernetes clusters, thus significantly reducing the operational overhead.
+- Automated Cluster Management: The Cluster API automates the process of creating, scaling, managing and updating Kubernetes clusters, thus significantly reducing the operational overhead.
 - Standardized Operations: Upholding SCS standards across various clusters ensures operational consistency and reliability.
-- Integration with OpenStack: The K8s Cluster API Provider is tailored to work seamlessly with SCS IaaS (OpenStack), thus offering a unified platform for managing both containers and the underlying infrastructure.
-- Container Registry Integration: The container layer has an integrated container registry, facilitating easy management and deployment of container images.
-- Certificate Managment: The kubernetes clusters can optionaly include a certbot allowing for ease of deployment of public facing services out of the box.
-- Preconfigured ingress: Certificate Management: Optional inclusion of Certbot in Kubernetes clusters facilitates straightforward deployment of publicly accessible services.
-  Preconfigured Ingress: Kubernetes clusters come with a preconfigured Nginx ingress, designed with OpenStack in mind, providing a ready-to-use ingress solution with enhancements like out-of-the-box client source IP visibility.
+- Integration with OpenStack: The Cluster Stacks are tailored to work seamlessly with SCS IaaS (OpenStack), thus offering a unified platform for managing both containers and the underlying infrastructure.
+- Container Registry Integration: The container layer has an optional container registry, facilitating easy management and deployment of container images.
+- Cluster Addons: Cluster Stacks come with a small default set of workload applications needed to make the cluster usable, such as CNI plugin, CSI plugin and a cloud controller manager.
 
 ### Limitations
 
-- OpenStack Dependency: The current design primarily supports OpenStack environments, which could be a limitation for other infrastructure setups.
 - Serverless/Functions as a Service Support: Lack of direct support for serverless containers and Functions as a Service (FaaS) might require additional tools or platforms.
-
-### Current state and future Outlook
-
-The container layer has matured with multiple cloud providers now offering Kubernetes as a Service using this layer to manage a multitude of clusters. It follows a half-yearly release schedule to ensure security and up-to-date Kubernetes clusters, alongside providing backports for significant features into older versions.
-
-Looking ahead, a new version based on ClusterStacks is in the pipeline, currently in its Alpha state. This upcoming release aims to be backward compatible, facilitating smooth migration from existing setups, and further extending the capabilities of the SCS container layer.

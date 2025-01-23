@@ -12,12 +12,6 @@
     "label": ""
   },
   {
-    "repo": "SovereignCloudStack/k8s-cluster-api-provider",
-    "source": "doc",
-    "target": "docs/03-container/components",
-    "label": "k8s-cluster-api-provider"
-  },
-  {
     "repo": "SovereignCloudStack/cluster-stack-provider-openstack",
     "source": "docs",
     "target": "docs/03-container/components/cluster-stacks/components",
