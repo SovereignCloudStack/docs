@@ -7,7 +7,7 @@ const sidebars = {
       label: 'Certification',
       link: {
         type: 'doc',
-        id: 'certification/overview'
+        id: 'certification/digisov-and-cert'
       },
       items: [
         {
@@ -18,7 +18,10 @@ const sidebars = {
             id: 'certification/scopes-versions'
           },
           items: require('./sidebarsCertificationItems.js') // this file will be generated entirely by `populateCerts.js` via npm post-install hook found in the package.json
-        }
+        },
+        'certification/getting-scs-compatible-certified',
+        'certification/test-and-adapt-example',
+        'certification/overview'
       ]
     },
     {
