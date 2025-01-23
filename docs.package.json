@@ -30,6 +30,18 @@
     "label": ""
   },
   {
+    "repo": "osism/osism.github.io",
+    "source": "docs/cloud-in-a-box",
+    "target": "docs/02-iaas/deployment-examples",
+    "label": ""
+  },
+  {
+    "repo": "osism/osism.github.io",
+    "source": "docs/testbed.mdx",
+    "target": "docs/02-iaas/deployment-examples",
+    "label": ""
+  },
+  {
     "repo": "SovereignCloudStack/k8s-harbor",
     "source": "docs",
     "target": "docs/03-container/components",
