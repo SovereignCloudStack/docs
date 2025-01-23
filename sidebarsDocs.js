@@ -62,11 +62,11 @@ const sidebarsDocs = {
             },
             {
               type: 'doc',
-              id: 'iaas/deployment-examples/testbed/'
+              id: 'iaas/deployment-examples/testbed/index'
             },
             {
               type: 'doc',
-              id: 'iaas/deployment-examples/cloud-in-a-box/'
+              id: 'iaas/deployment-examples/cloud-in-a-box/index'
             }
           ]
         }
