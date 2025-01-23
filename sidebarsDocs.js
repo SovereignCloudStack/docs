@@ -62,7 +62,7 @@ const sidebarsDocs = {
             },
             {
               type: 'doc',
-              id: 'iaas/deployment-examples/testbed/index'
+              id: 'iaas/deployment-examples/testbed'
             },
             {
               type: 'doc',
