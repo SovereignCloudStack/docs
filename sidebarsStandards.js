@@ -21,7 +21,12 @@ const sidebars = {
         },
         'certification/getting-scs-compatible-certified',
         'certification/test-and-adapt-example',
-        'certification/overview'
+        'certification/overview',
+        {
+          type: 'doc',
+          label: 'Compliance Check Pipeline',
+          id: 'certification/pipeline'
+        }
       ]
     },
     {
