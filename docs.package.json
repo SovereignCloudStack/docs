@@ -37,7 +37,7 @@
   },
   {
     "repo": "osism/osism.github.io",
-    "source": "docs/testbed",
+    "source": "docs/testbed.mdx",
     "target": "docs/02-iaas/deployment-examples",
     "label": ""
   },
