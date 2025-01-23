@@ -59,6 +59,14 @@ const sidebarsDocs = {
             {
               type: 'doc',
               id: 'iaas/deployment-examples/artcodix/index'
+            },
+            {
+              type: 'doc',
+              id: 'iaas/deployment-examples/testbed/'
+            },
+            {
+              type: 'doc',
+              id: 'iaas/deployment-examples/cloud-in-a-box/'
             }
           ]
         }
