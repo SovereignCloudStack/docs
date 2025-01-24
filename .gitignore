@@ -1,15 +1,16 @@
 # Content Dependencies from docs.package.json
 /repo_to_be_edited_
 /docs/02-iaas/components
-/docs/02-iaas/guides
-/docs/02-iaas/guides/configuration-guides
-/docs/02-iaas/guides/deploy-guide
+/docs/02-iaas/guides/configuration-guide
 /docs/02-iaas/guides/operations-guide
-/docs/02-iaas/guides/troubleshooting-guides
-/docs/02-iaas/guides/upgrade-guides
+/docs/02-iaas/guides/troubleshooting-guide
+/docs/02-iaas/guides/other-guides
+/docs/02-iaas/guides/upgrade-guide
+/docs/02-iaas/guides/deploy-guide/*.md
+/docs/02-iaas/guides/deploy-guide/services
+/docs/02-iaas/guides/deploy-guide/examples/*.md
+/docs/02-iaas/guides/deploy-guide/examples/images
 /docs/02-iaas/guides/index.md
-/docs/02-iaas/deployment-examples/cloud-in-a-box
-/docs/02-iaas/deployment-examples/testbed
 /docs/03-container/components
 /docs/04-operating-scs/components
 /docs/04-operating-scs/01-guides
