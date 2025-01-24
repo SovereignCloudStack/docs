@@ -58,9 +58,12 @@ from [syself](https://syself.com/).
 
 #### Cluster Stacks
 
-With the Cluster Stacks, in the V2 KaaS reference implementation, we provide an opinionated optimized configuration of Kubernetes clusters. Through better packaging, integrated testing, and bundled configuration, SCS-based Kubernetes clusters provide easier individualization.
-Throughout the R6 development cycle Cluster Stacks are taken from a technical preview to be [functional and available on top of the IaaS reference implementation](https://github.com/SovereignCloudStack/issues/milestone/8) as well to replace the V1 KaaS reference implementation [k8s-cluster-api-provider](https://github.com/SovereignCloudStack/k8s-cluster-api-provider/).
-The Cluster Stacks can already be tried with the [demo](https://github.com/SovereignCloudStack/cluster-stacks-demo) repository. Although this is based on the not-production-ready Docker provider, the usage is the same for every provider.
+With the Cluster Stacks, in the V2 KaaS reference implementation, we provide an opinionated optimized configuration of Kubernetes cluster management based on [Kubernetes Cluster-API](https://cluster-api.sigs.k8s.io/).
+Through better packaging, integrated testing, and bundled configuration, SCS-based Kubernetes clusters provide easier individualization.
+Throughout the R6 development cycle Cluster Stacks were taken from a technical preview to be [functional and available on top of the IaaS reference implementation](https://github.com/SovereignCloudStack/issues/milestone/8) as well to replace the V1 KaaS reference implementation [k8s-cluster-api-provider](https://github.com/SovereignCloudStack/k8s-cluster-api-provider/).
+The Cluster Stacks have fully replaced V1 meanwhile to be the production-grade KaaS solution in SCS, please check out the
+[Quick Start Guide](/docs/container/components/cluster-stacks/providers/openstack/quickstart).
+For demo, test and development purposes, you can also try the [demo](https://github.com/SovereignCloudStack/cluster-stacks-demo) repository which is an implementation using the (not-for-production) Docker provider. Implementations for other infrastructure are intended; the one for Hetzner for example is maintained by syself itself.
 
 ### Public SCS Clouds in production
 
