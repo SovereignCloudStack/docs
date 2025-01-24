@@ -15,10 +15,12 @@
 /docs/04-operating-scs/components
 /docs/04-operating-scs/01-guides
 /docs/06-releases
+/docs/turnkey-solution
 /standards/*.md
 /standards/*/*.md
 /standards/*/*.mdx
 /standards/scs-*.yaml
+/user-docs/application-examples
 
 # Dependencies
 node_modules

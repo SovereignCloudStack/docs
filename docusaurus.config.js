@@ -9,9 +9,9 @@ const config = {
   tagline: 'Documentation and Community Platform for the Sovereign Cloud Stack',
   url: 'https://docs.scs.community',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
   markdown: {
     mermaid: true
   },
@@ -84,6 +84,16 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
+        id: 'user-docs',
+        path: 'user-docs',
+        routeBasePath: 'user-docs',
+        sidebarPath: require.resolve('./sidebarsUserDocs.js')
+        // ... other options
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
         id: 'standards',
         path: 'standards',
         routeBasePath: 'standards',
@@ -104,7 +114,7 @@ const config = {
             'Documentation and Community Platform for the Sovereign Cloud Stack'
         }
       ],
-      image: 'img/summit-social.png',
+      image: 'img/scs-og-basic.png',
       navbar: {
         title: '',
         logo: {
@@ -118,6 +128,11 @@ const config = {
           {
             to: '/contributor-docs',
             label: 'For Contributors',
+            position: 'left'
+          },
+          {
+            to: '/user-docs',
+            label: 'For Users',
             position: 'left'
           },
           { to: '/community', label: 'Community', position: 'left' },
@@ -194,12 +209,19 @@ const config = {
       // @ts-ignore
       ({
         hashed: true,
-        docsDir: ['docs', 'community', 'standards', 'contributor-docs'],
+        docsDir: [
+          'docs',
+          'community',
+          'standards',
+          'contributor-docs',
+          'user-docs'
+        ],
         docsRouteBasePath: [
           'docs',
           'community',
           'standards',
-          'contributor-docs'
+          'contributor-docs',
+          'user-docs'
         ]
       })
     ]

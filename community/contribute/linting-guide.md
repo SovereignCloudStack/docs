@@ -21,6 +21,13 @@ The markdownlint rules are defined in the configuration file `.markdownlint-cli2
 
 Additionally we use [markdownlint-rule-search-replace](https://github.com/OnkarRuikar/markdownlint-rule-search-replace) for fixing
 
+## Local Usage for development
+
+```bash
+npm run lint:md <file>
+npm run fix:md  <file>
+```
+
 ## Github Workflows
 
 There are two actions running on every Pull Request on the `main` branch.
