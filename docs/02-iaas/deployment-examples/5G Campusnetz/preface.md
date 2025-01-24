@@ -4,12 +4,11 @@
 
 Osnabrück University of Applied Sciences operates its own data center in the laboratory area for digital value creation processes on the Lingen campus. A private cloud based on OpenStack has been running there since 2016; the first release installed was Newton. As part of our 5G campus network project (2022-2027), we decided to operate an installation of the Sovereign Cloud Stack parallel in addition to the existing OpenStack environment. We rely directly on the hardware (so called bare-metal installation) and not on an any kind of already virtualized environment (see testbed). We have documented our installation process and hope for imitators!
 
-All laboratory-relevant workloads that are required for research and teaching will run in the SCS installation later on. The installation is freely available to everyone involved across lab area. It is part of the - so called - Open Campus Infrastructure, which also includes the OpenStack installation. Other components include the 5G core and the edge cloud. The edge cloud is divided into the Starling-X installation project of the Open Infra Foundation and the managed Cloud-in-a-Box cluster of the Sovereign Cloud Stack:
+All laboratory-relevant workloads that are required for research and teaching will run in the SCS installation later on. The installation is freely available to everyone involved across lab area. It is part of the - so called - Open Campus Infrastructure, which also includes the OpenStack installation. Other components include the 5G core and the edge cloud. The edge cloud will be driven by the managed Cloud-in-a-Box cluster of the Sovereign Cloud Stack:
 
 - Open Campus Infrastructure (OCI)
 - Sovereign Cloud Stack (IaaS+KaaS)
 - OpenStack (IaaS)
-- Starling-X (Edge, IaaS+KaaS)
 - CIABs
 - 5G Core
 
