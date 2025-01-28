@@ -59,6 +59,14 @@ const sidebarsDocs = {
             {
               type: 'doc',
               id: 'iaas/deployment-examples/artcodix/index'
+            },
+            {
+              type: 'doc',
+              id: 'iaas/deployment-examples/testbed'
+            },
+            {
+              type: 'doc',
+              id: 'iaas/deployment-examples/cloud-in-a-box/index'
             }
           ]
         }
@@ -336,7 +344,8 @@ const sidebarsDocs = {
                   items: [
                     'operating-scs/components/automated-pentesting-iaas/overview',
                     'operating-scs/components/automated-pentesting-iaas/quickstart',
-                    'operating-scs/components/automated-pentesting-iaas/tools'
+                    'operating-scs/components/automated-pentesting-iaas/tools',
+                    'operating-scs/components/automated-pentesting-iaas/reports'
                   ]
                 },
                 {
@@ -403,7 +412,10 @@ const sidebarsDocs = {
       link: {
         type: 'generated-index'
       },
-      items: ['turnkey-solution/overview']
+      items: [
+        'turnkey-solution/overview',
+        'turnkey-solution/hardware-landscape'
+      ]
     },
     {
       type: 'category',
