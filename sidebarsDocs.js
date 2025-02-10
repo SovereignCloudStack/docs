@@ -65,8 +65,18 @@ const sidebarsDocs = {
               id: 'iaas/deployment-examples/testbed'
             },
             {
-              type: 'doc',
-              id: 'iaas/deployment-examples/cloud-in-a-box/index'
+              type: 'category',
+              label: 'Cloud-in-a-Box',
+              link: {
+                type: 'doc',
+                id: 'iaas/deployment-examples/cloud-in-a-box/index'
+              },
+              items: [
+                {
+                  type: 'doc',
+                  id: 'iaas/deployment-exmples/cloud-in-a-box/running-on-a-virtual-machine'
+                }
+              ]
             }
           ]
         }
