@@ -4,7 +4,7 @@ version: 2022-12-22
 author: Ralf Heiringhoff, Mathias Fechner
 ---
 
-## Getting Started on SCS1/gx-scs (the Gaia-X Demonstrator @ plusserver)
+## Getting Started on SCS1 (the Gaia-X Demonstrator @ plusserver, aka. gx-scs)
 
 ### URLs for accessing SCS1
 
