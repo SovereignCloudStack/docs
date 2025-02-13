@@ -21,7 +21,12 @@ const sidebars = {
           items: require('./sidebarsCertificationItems.js') // this file will be generated entirely by `populateCerts.js` via npm post-install hook found in the package.json
         },
         'certification/getting-scs-compatible-certified',
-        'certification/overview'
+        'certification/overview',
+        {
+          type: 'doc',
+          label: 'Compliance Check Pipeline',
+          id: 'certification/pipeline'
+        }
       ]
     },
     {

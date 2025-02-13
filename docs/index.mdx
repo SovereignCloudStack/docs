@@ -16,38 +16,54 @@ SCS is built, backed, and operated by an active open-source community worldwide.
 
 ## Use Cases and Deployment Examples
 
-### IaaS Layer
+### Virtualization (IaaS) Layer
 
-#### Quick Start with Cloud-In-A-Box
+The SCS IaaS Reference Implementation is based on [OSISM](https://osism.tech/).
 
-The fastest way to get in touch with SCS is to deploy a SCS cloud virtually. The Cloud-In-A-Box was built explicitly for this scenario. Check it out [here](/docs/iaas/guides/deploy-guide/examples/cloud-in-a-box)
+#### Quick Start with Cloud-in-a-Box
+
+You can do a single node installation for learning, testing or development purposes.
+The Cloud-in-a-Box configuration was built explicitly for this scenario.
+Check it out [here](/docs/iaas/deployment-examples/cloud-in-a-box)
+It comes with a complete set of services, even Ceph is part of it
+(despite of course not offering much redundancy on a single-node).
 
 #### Reference Implementation Testbed
+
+The fastest way to get in touch with SCS is to deploy a SCS cloud virtually.
 
 This means that you set up an SCS test installation including all the infrastructure
 pieces such as database, message queueing, ceph, monitoring and logging, IAM, the
 [OpenStack](https://openstack.org/) core services, and (soon) the Container layer
-on top of an existing IaaS platform.
+on top of an existing OpenStack IaaS platform, ideally one that allows for nested
+virtualization.
 
-The SCS IaaS reference implementation is based on [OSISM](https://osism.tech/). Read on the
-[OSISM testbed docs](https://docs.osism.de/testbed/) to learn how to get the
+Read the [testbed docs](/docs/iaas/deployment-examples/testbed) to learn how to get the
 testbed running. Please read carefully through the
-[deployment](https://docs.osism.de/testbed/deployment.html) section of the
+[deployment](/docs/iaas/deployment-examples/testbed#deployment) section of the
 manual.
+
+#### Examples for real deployments
+
+[artcodix](https://artcodix.com/) has [shared](/docs/iaas/deployment-examples/artcodix/)
+some details on their production setup. The SCS team itself has created [extensive
+documentation](/docs/turnkey-solution/hardware-landscape/) including details on the
+used hardware.
 
 ### Container Layer
 
-#### K8s Cluster API Provider
-
-You can easily deploy the container layer on top of the testbed (or a production
-SCS cloud) checking out the code from
-[k8s-cluster-api-provider](https://github.com/SovereignCloudStack/k8s-cluster-api-provider/).
+The Reference Implementation (v2) for the container (Kubernetes-as-a-Service = KaaS) layer
+is provided by [Cluster Stacks](/docs/category/cluster-stacks)
+from [syself](https://syself.com/).
 
 #### Cluster Stacks
 
-With the Cluster Stacks, in the V2 KaaS reference implementation, we provide an opinionated optimized configuration of Kubernetes clusters. Through better packaging, integrated testing, and bundled configuration, SCS-based Kubernetes clusters provide easier individualization.  
-Throughout the R6 development cycle Cluster Stacks are taken from a technical preview to be [functional and available on top of the IaaS reference implementation](https://github.com/SovereignCloudStack/issues/milestone/8) as well to replace the V1 KaaS reference implementation [k8s-cluster-api-provider](https://github.com/SovereignCloudStack/k8s-cluster-api-provider/).  
-The Cluster Stacks can already be tried with the [demo](https://github.com/SovereignCloudStack/cluster-stacks-demo) repository. Although this is based on the not-production-ready Docker provider, the usage is the same for every provider.
+With the Cluster Stacks, in the V2 KaaS reference implementation, we provide an opinionated optimized configuration of Kubernetes cluster management based on [Kubernetes Cluster-API](https://cluster-api.sigs.k8s.io/).
+Through better packaging, integrated testing, and bundled configuration, SCS-based Kubernetes clusters provide easier individualization.
+Throughout the R6 development cycle Cluster Stacks were taken from a technical preview to be [functional and available on top of the IaaS reference implementation](https://github.com/SovereignCloudStack/issues/milestone/8) as well to replace the V1 KaaS reference implementation [k8s-cluster-api-provider](https://github.com/SovereignCloudStack/k8s-cluster-api-provider/).
+The Cluster Stacks have fully replaced V1 meanwhile to be the production-grade KaaS solution in SCS, please check out the
+[Quick Start Guide](/docs/container/components/cluster-stacks/providers/openstack/quickstart).
+For demo, test and development purposes, you can also try the [demo](https://github.com/SovereignCloudStack/cluster-stacks-demo) repository which is an implementation using the (not-for-production) Docker provider. Implementations for other infrastructure are intended; the one for Hetzner for example is maintained by syself itself.
 
 ### Public SCS Clouds in production
 
