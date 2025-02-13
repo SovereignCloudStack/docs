@@ -13,7 +13,7 @@ const sidebars = {
       items: [
         {
           type: 'category',
-          label: 'OpenDesk on SCS',
+          label: 'openDesk on SCS',
           link: {
             type: 'generated-index'
           },
