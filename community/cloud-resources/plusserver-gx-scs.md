@@ -40,6 +40,6 @@ Access to SCS2 is handled in the same way as to SCS1.
 
 ### URLs for accessing SCS2
 
-- UI (horizon): <https://scs2.api.pco.get-cloud.io/>
-- API auth URL: <https://scs2.api.pco.get-cloud.io:5000/>
-- Object Storage EP: <https://scs2.api.pco.get-cloud.io:8080/>
+- UI (horizon): [https://scs2.api.pco.get-cloud.io/](https://scs2.api.pco.get-cloud.io/)
+- API auth URL: [https://scs2.api.pco.get-cloud.io:5000/](https://scs2.api.pco.get-cloud.io:5000/)
+- Object Storage EP: [https://scs2.api.pco.get-cloud.io:8080/](https://scs2.api.pco.get-cloud.io:8080/)
