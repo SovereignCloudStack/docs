@@ -10,7 +10,7 @@ This guide will explain setup, configuration and usage of the SCS Domain Manager
 
 :::info
 
-The Domain Manager functionality, formerly exclusive to the corresponding SCS standard, will be natively integrated into OpenStack starting with release 2024.2 ("Dalmatian").
+The Domain Manager functionality was natively integrated into OpenStack starting with release 2024.2 ("Dalmatian").
 When using an OpenStack release equal to 2024.2 or later, you can omit the instructions for Keystone API policy adjustments.
 
 :::
