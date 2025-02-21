@@ -5,6 +5,17 @@ const sidebars = {
   community: [
     'index',
     'mission-statement',
+    {
+      type: 'category',
+      link: {
+        type: 'doc',
+        id: 'governance/index'
+      },
+      label: 'Governance',
+      items: [
+        'governance/project-board'
+      ]
+    },
     'license-considerations',
     {
       type: 'category',
