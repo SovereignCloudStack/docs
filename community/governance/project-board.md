@@ -8,10 +8,10 @@ For the term 2025 the project board consists of:
 
 Spokesperson: Felix Kronlage-Dammers, @fkr
 
-| Name, Firstname         | Github Handle  | E-Mail                              | Remark                         |
-| ----------------------- | -------------- | ----------------------------------- |---------------------------------
-| Berendt, Christian      | @berendt       | <berendt@osism.tech>                | Elected by Community           |
-| Feder, Matej            | @matofeder     | <matej.feder@dnation.cloud>         | Elected by Community           |
-| Garloff, Kurt           | @garloff       | <scs@garloff.de>                    | Elected by Community           |
-| Kronlage-Dammers, Felix | @fkr           | <fkr@osb-alliance.com>              | Represents Forum SCS-Standards |
-| Schoone, Jan            | @jschoone      | <jan.schoone@uhurutec.com>          | Elected by Community           |
+| Name, Firstname         | Github Handle                                  | E-Mail                              | Remark                         |
+| ----------------------- | ---------------------------------------------- | ----------------------------------- |---------------------------------
+| Berendt, Christian      | [@berendt](https://github.com/berendt)         | <berendt@osism.tech>                | Elected by Community           |
+| Feder, Matej            | [@matofeder](https://github.com/matofeder)     | <matej.feder@dnation.cloud>         | Elected by Community           |
+| Garloff, Kurt           | [@garloff](https://github.com/garloff)         | <scs@garloff.de>                    | Elected by Community           |
+| Kronlage-Dammers, Felix | [@fkr](https://github.com/fkr)                 | <fkr@osb-alliance.com>              | Represents Forum SCS-Standards |
+| Schoone, Jan            | [@jschoone](https://github.com/jschoone)       | <jan.schoone@uhurutec.com>          | Elected by Community           |
