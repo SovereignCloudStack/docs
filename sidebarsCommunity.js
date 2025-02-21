@@ -5,7 +5,6 @@ const sidebars = {
   community: [
     'index',
     'mission-statement',
-    'governance',
     {
       type: 'category',
       link: {
