@@ -14,8 +14,7 @@ const sidebars = {
       },
       label: 'Governance',
       items: [
-        'governance/project-board',
-        'governance/community'
+        'governance/project-board'
       ]
     },
     'license-considerations',
