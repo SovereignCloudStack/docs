@@ -12,12 +12,6 @@
     "label": ""
   },
   {
-    "repo": "SovereignCloudStack/cluster-stack-provider-openstack",
-    "source": "docs",
-    "target": "docs/03-container/components/cluster-stacks/components",
-    "label": "cluster-stack-provider-openstack"
-  },
-  {
     "repo": "SovereignCloudStack/standards",
     "source": ["Standards/*.md", "Tests/scs-*.yaml"],
     "target": "standards",
