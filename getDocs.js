@@ -14,34 +14,33 @@ const ghUrl = 'https://github.com/'
 repos.forEach((repo) => {
   const repoDir = `repo_to_be_edited/${repo.label}`
 
-  // Clone the repository
-  const cloneCommand = `git clone ${ghUrl + repo.repo} ${repoDir}`
+  // If the repo contains "cluster-stacks", clone the "restructure_container" branch
+  const branchOption = repo.repo.includes('cluster-stacks')
+    ? '--branch docs/r8 '
+    : ''
+  const cloneCommand = `git clone ${branchOption}${
+    ghUrl + repo.repo
+  } ${repoDir}`
+
+  console.log(`Cloning: ${cloneCommand}`)
   execSync(cloneCommand)
 
   // Remove git folders
-  const removeGitCommand = `rm -rf ${repoDir}/.git`
-  execSync(removeGitCommand)
+  execSync(`rm -rf ${repoDir}/.git`)
 
   // Remove README files
-  const removeReadmeCommand = `find ${repoDir} -name "README.md" | xargs rm -f`
-  execSync(removeReadmeCommand)
+  execSync(`find ${repoDir} -name "README.md" | xargs rm -f`)
 
   // Create the docusaurus subdirectory
   const subDirPath = `${repo.target}/${repo.label}`
   fs.mkdirSync(subDirPath, { recursive: true })
 
   // Copy docs content from A to B
-  // allow multiple sources here so the same repo need not be checked out multiple times
-  // however, it would be better if this script automatically grouped all entries by repo and then only
-  // checked out each repo only once; I leave this as a TODO because I don't fully grasp the meaning of
-  // label, for instance, and the label is used for the temporary repo directory
   let sources = Array.isArray(repo.source) ? repo.source : [repo.source]
   sources.forEach((source) => {
-    const copyDocsCommand = `cp -r ${repoDir}/${source} ${subDirPath}`
-    execSync(copyDocsCommand)
+    execSync(`cp -r ${repoDir}/${source} ${subDirPath}`)
   })
 
   // Remove the cloned repository
-  const removeRepoCommand = 'rm -rf repo_to_be_edited'
-  execSync(removeRepoCommand)
+  execSync('rm -rf repo_to_be_edited')
 })
