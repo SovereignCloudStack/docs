@@ -4,7 +4,7 @@ version: 2022-12-22
 author: Ralf Heiringhoff, Mathias Fechner
 ---
 
-## Getting Started on SCS1/gx-scs (the Gaia-X Demonstrator @ plusserver)
+## Getting Started on SCS1 (the Gaia-X Demonstrator @ plusserver, aka. gx-scs)
 
 ### URLs for accessing SCS1
 
@@ -30,7 +30,7 @@ After having used the SCS1 environment for validation, testing,
 skill building and having provided generous access to the SCS community,
 it will no longer be taken care of well by PlusServer as of January 2025
 and can thus be expected to run out of capacity and fail in other ways.
-It will be switched off in the coming months.
+It will be switched off in February 2025.
 SCS1 is replaced by the newer SCS2 environment that is maintained by
 PlusServer as reference environment and PS has agreed to provide community
 resources on SCS2. All SCS community activities that continue to be needed
@@ -40,6 +40,6 @@ Access to SCS2 is handled in the same way as to SCS1.
 
 ### URLs for accessing SCS2
 
-- UI (horizon): <https://scs2.api.pco.get-cloud.io/>
-- API auth URL: <https://scs2.api.pco.get-cloud.io:5000/>
-- Object Storage EP: <https://scs2.api.pco.get-cloud.io:8080/>
+- UI (horizon): [https://scs2.api.pco.get-cloud.io/](https://scs2.api.pco.get-cloud.io/)
+- API auth URL: [https://scs2.api.pco.get-cloud.io:5000/](https://scs2.api.pco.get-cloud.io:5000/)
+- Object Storage EP: [https://scs2.api.pco.get-cloud.io:8080/](https://scs2.api.pco.get-cloud.io:8080/)

@@ -10,6 +10,15 @@ const sidebars = {
       type: 'category',
       link: {
         type: 'doc',
+        id: 'governance/index'
+      },
+      label: 'Governance',
+      items: ['governance/project-board']
+    },
+    {
+      type: 'category',
+      link: {
+        type: 'doc',
         id: 'collaboration/index'
       },
       label: 'Collaboration',
