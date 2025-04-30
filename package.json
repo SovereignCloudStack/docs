@@ -30,6 +30,7 @@
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
     "postinstall": "node getDocs.js && node populateStds.js && node populateCerts.js && node populateClouds.js",
+    "postprocess": "node postprocess",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:md": "markdownlint-cli2 \"**/*.md\"",
     "fix:md": "markdownlint-cli2-fix \"**/*.md\"",

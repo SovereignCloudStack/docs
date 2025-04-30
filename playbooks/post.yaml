@@ -1,0 +1,6 @@
+- hosts: all
+  tasks:
+    - name: 'Postprocess docusaurus to generate artifacts usable for offline use'
+      ansible.builtin.command: 'npm run postprocess'
+      args:
+        chdir: '{{ zuul.project.src_dir }}'
