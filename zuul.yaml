@@ -1,0 +1,18 @@
+---
+- job:
+    name: docs-build
+    parent: js-build
+    nodeset: ubuntu-noble
+    vars:
+      node_version: 18
+      javascript_content_dir: build
+    # pre-run: playbooks/pre.yaml
+    # run: playbooks/run.yaml
+    post-run: playbooks/post.yaml
+
+- project:
+    merge-mode: squash-merge
+    default-branch: main
+    check:
+      jobs:
+        - docs-build
