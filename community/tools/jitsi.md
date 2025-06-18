@@ -55,17 +55,17 @@ This allows a distinct set of rooms to be provided with phone dial-in.
 
 Here's the setup:
 
-| Room Name       | Dialin Suffix |
-| --------------- | ------------- |
-| SCS-Tech        | 611           |
-| SCS-Governance  | 612           |
-| Open-Operations | 613           |
-| SCS-OSISM       | 614           |
-| SCS-Project     | 615           |
-| SCS-Forum       | 616           |
-| SCS-Kurt        | 617           |
-| SCS-Taskforce   | 618           |
-| SCS-ProjectTeam | 619           |
+| Room Name       | Dial-in Suffix |
+| --------------- | -------------- |
+| SCS-Tech        | 611            |
+| SCS-Governance  | 612            |
+| Open-Operations | 613            |
+| SCS-OSISM       | 614            |
+| SCS-Project     | 615            |
+| SCS-Forum       | 616            |
+| SCS-Kurt        | 617            |
+| SCS-Taskforce   | 618            |
+| SCS-ProjectTeam | 619            |
 
 Dial +49-221-292772-Suffix to connect.
 
@@ -94,7 +94,7 @@ By enabling experimental `media.webrtc.codec.video.av1.experimental_preferred` y
 or AV1 encoding support and on whether that is exposed by your graphics driver stack, this may or may
 not create high CPU usage which you may not consider welcome as mobile user.
 
-## Limitations
+## Limitations and issues
 
 ### Firewalls blocking UDP traffic
 
@@ -103,18 +103,7 @@ video is transmitted via UDP (port 10000+). Some corporate and many public secto
 that outgoing(!) UDP traffic is dangerous and needs to be intercepted. This means that our Jitsi
 setup will not work for participants behind such firewalls.
 (We do not currently have a [COTURN](https://github.com/coturn/coturn) server to work around this;
-instead we use other VC tools such as BB or OpenTalk or the tool of the partner.))
-
-### Large conferences
-
-For large conferences, it is recommended that participants stay muted and raise their hand
-in order to talk, so a moderator can ensure a somewhat structured discussion. While Jitsi can route
-a few dozens of video streams without trouble, the combines bandwidth may become a challenge for
-some of the participants and it is recommended to only switch on videos for the active participants.
-We have not tested much above 50 participants in the SCS community, so we don't know the precise limits
-of the server connection or capacity we use.
-
-## Known Issues
+instead we use other VC tools such as BB or OpenTalk or the tool of the partner.)
 
 ### Local audio
 
@@ -123,14 +112,23 @@ On Linux systems, the `pavucontrol` mixer may be the best starting point to reso
 
 ### Selective Stream forwarding failure
 
-Jitsi receives one or several audio and video streams from every participiant and selectively
+Jitsi receives one or several audio and video streams from every participant and selectively
 forwards those to all recipients that have subscribed to these streams. (Typically, a low-res video
 stream is sent in addition to a medium-res and a high-res one — if any high-res subscribers exist).
 This approach to video-conferencing is called
 [selective forwarding unit (SFU)](https://bloggeek.me/webrtcglossary/sfu/).
 Occasionally, one of the participants can not hear one other (out of many) participants but everyone
-else can hear echa other - a subscription to an audio (or video) stream may have gotten lost.
+else can hear each other - a subscription to an audio (or video) stream may have gotten lost.
 In this case, a reconnect by the one not hearing is the best remedy.
+
+### Large conferences
+
+For large conferences, it is recommended that participants stay muted and raise their hand
+in order to talk, so a moderator can ensure a somewhat structured discussion. While Jitsi can route
+a few dozens of video streams without trouble, the combined bandwidth may become a challenge for
+some of the participants and it is recommended to only switch on videos for the active participants.
+We have not tested much above 50 participants in the SCS community, so we don't know the precise limits
+of the server connection or capacity we use.
 
 ### Screen sharing frame rate
 
