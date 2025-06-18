@@ -77,7 +77,7 @@ to change room assignment or to resolve issues with dial-in.
 
 ## Browser specific hints
 
-Traditionally, the [blink](<https://en.wikipedia.org/wiki/Blink_(browser_engine)-based>>
+Traditionally, the [blink](https://en.wikipedia.org/wiki/Blink_%28browser_engine%29)-based
 browsers (like Google Chrome, Chromium, Edge, ...) supported WebRTC best.
 Safari and Firefox do work, but at the cost of inferior codecs or increased CPU or
 bandwidth requirements (e.g. due to missing [SimulCast](https://en.wikipedia.org/wiki/Simulcast)
