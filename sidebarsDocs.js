@@ -141,16 +141,6 @@ const sidebarsDocs = {
                 },
                 {
                   type: 'category',
-                  label: 'Cluster Stack Provider OpenStack',
-                  items: [
-                    'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/overview',
-                    'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/quickstart',
-                    'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/controllers',
-                    'container/components/cluster-stacks/components/cluster-stack-provider-openstack/docs/develop'
-                  ]
-                },
-                {
-                  type: 'category',
                   label: 'csctl',
                   items: [
                     'container/components/cluster-stacks/components/csctl/overview',
