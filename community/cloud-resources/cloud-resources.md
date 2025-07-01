@@ -93,7 +93,7 @@ The [guide for SCS1](plusserver-gx-scs.md) applies also to SCS2.
 
 ### SCS2 Users
 
-See [SCS1](#SCS1 Users).
+See [SCS1 Users](#scs1-users).
 
 ### SCS2 Projects
 
@@ -101,6 +101,7 @@ See [SCS1](#SCS1 Users).
 | :------------------------------: | -------------------------- | ----------------- | --------------------------------- | :----------: |
 | 9c482c928d68470ea35a764e1ba9211a | p500924-compliance-monitor | mbuechse          | SCS Compliance Monitor Deployment |      ∞       |
 | fe66fd7655814078924155876562dd3d | p500924-scs-community      | fkr               | SCS Community Project             |      ∞       |
+|                                  | p500924-compliance-monitor | depressiveRobot   | SCS Compliance Monitor Deployment |      ∞       |
 | 4a8829a5ecad480d8dde1e46a9c5284b | p500924-health-monitor     | garloff           | SCS Health Monitor                |      ∞       |
 | 34d3d89fc74e4db5a6df1c9ebf2f3a2a | p500924-scs-zuul           | garloff           | SCS Zuul                          |      ∞       |
 | 293b765e3492413ba8b0067b7edcb3a3 | p500924-monitoring         | garloff           | SCS Monitoring                    |      ∞       |
