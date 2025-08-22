@@ -97,20 +97,21 @@ See [SCS1 Users](#scs1-users).
 
 ### SCS2 Projects
 
-|        Unique Identifier         | Project Name               | Community Contact | Description                       | Needed until |
-| :------------------------------: | -------------------------- | ----------------- | --------------------------------- | :----------: |
-| 9c482c928d68470ea35a764e1ba9211a | p500924-compliance-monitor | mbuechse          | SCS Compliance Monitor Deployment |      ∞       |
-| fe66fd7655814078924155876562dd3d | p500924-scs-community      | fkr               | SCS Community Project             |      ∞       |
-|                                  | p500924-compliance-monitor | depressiveRobot   | SCS Compliance Monitor Deployment |      ∞       |
-| 4a8829a5ecad480d8dde1e46a9c5284b | p500924-health-monitor     | garloff           | SCS Health Monitor                |      ∞       |
-| 34d3d89fc74e4db5a6df1c9ebf2f3a2a | p500924-scs-zuul           | garloff           | SCS Zuul                          |      ∞       |
-| 293b765e3492413ba8b0067b7edcb3a3 | p500924-monitoring         | garloff           | SCS Monitoring                    |      ∞       |
-| f2eccb67b16f4430b6d5e70afb515f9d | p500924-harbor             | chess-knight      | SCS Registry (Harbor)             |      ∞       |
-| 45b5e27a5fe3431083e450cf2d13e71b | p500924-kaas-playground1   | jschoone          | Playground1 for Hackathon         | 30.09.2025  |
-| ef12fed77f114eb4a20068f0422a8109 | p500924-kaas-playground2   | jschoone          | Playground2 for Hackathon         | 30.09.2025  |
-| bf8d511728a44072b7c97b1fe00947b8 | p500924-kaas-playground3   | jschoone          | Moin Cluster                      |      ∞       |
-| 61b315797c75431787dc20a61cbaf052 | p500924-kaas-playground4   | jschoone          | Playground4 for Hackathon         | 30.09.2025  |
-| 94f7c7507be1484a9ce6aba20d19d1c6 | p500924-kaas-playground5   | jschoone          | Playground5 for Hackathon         | 30.09.2025  |
+|        Unique Identifier         | Project Name                | Community Contact | Description                       | Needed until |
+| :------------------------------: | --------------------------- | ----------------- | --------------------------------- | :----------: |
+| 9c482c928d68470ea35a764e1ba9211a | p500924-compliance-monitor  | mbuechse          | SCS Compliance Monitor Deployment |      ∞       |
+| fe66fd7655814078924155876562dd3d | p500924-scs-community       | fkr               | SCS Community Project             |      ∞       |
+|                                  | p500924-compliance-monitor  | depressiveRobot   | SCS Compliance Monitor Deployment |      ∞       |
+| 4a8829a5ecad480d8dde1e46a9c5284b | p500924-health-monitor      | garloff           | SCS Health Monitor                |      ∞       |
+| 34d3d89fc74e4db5a6df1c9ebf2f3a2a | p500924-scs-zuul            | garloff           | SCS Zuul                          |      ∞       |
+| 293b765e3492413ba8b0067b7edcb3a3 | p500924-monitoring          | garloff           | SCS Monitoring                    |      ∞       |
+| f2eccb67b16f4430b6d5e70afb515f9d | p500924-harbor              | chess-knight      | SCS Registry (Harbor)             |      ∞       |
+| 45b5e27a5fe3431083e450cf2d13e71b | p500924-kaas-playground1    | jschoone          | Playground1 for Hackathon         | 30.09.2025  |
+| ef12fed77f114eb4a20068f0422a8109 | p500924-kaas-playground2    | jschoone          | Playground2 for Hackathon         | 30.09.2025  |
+| bf8d511728a44072b7c97b1fe00947b8 | p500924-kaas-playground3    | jschoone          | Moin Cluster                      |      ∞       |
+| 61b315797c75431787dc20a61cbaf052 | p500924-kaas-playground4    | jschoone          | Playground4 for Hackathon         | 30.09.2025  |
+| 94f7c7507be1484a9ce6aba20d19d1c6 | p500924-kaas-playground5    | jschoone          | Playground5 for Hackathon         | 30.09.2025  |
+|                                  | p500924-openDesk-playground | gerbsen           | Playground for openDesk           | 30.11.2025  |
 
 ## Wavecon
 
