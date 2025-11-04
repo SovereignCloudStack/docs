@@ -184,7 +184,7 @@ including a cronjob.
    ```shell
    virtualenv .venv
    . .venv/bin/activate
-   pip install -r requirements.txt
+   pip install -r requirements.txt -r iaas/requirements.txt
    pip install passlib argon2_cffi  # these are only needed for Step 2
    ```
 
