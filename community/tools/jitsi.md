@@ -11,7 +11,7 @@ The server uses an automated deployment based on the
 
 Configuration is such everyone who knows the room can connect, unless the moderator
 sets a password/PIN. Opening a new room requires authentication. (Contact
-[Kurt](https://scs.community/garloff) if you need a password.)
+[Kurt](https://github.com/garloff) if you need a password.)
 
 Links to the meeting room (as well as dial-in information) are in the appointments
 in the public calendar.
