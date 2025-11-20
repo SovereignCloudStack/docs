@@ -18,7 +18,7 @@ in the public calendar.
 
 ## Usage
 
-Connect with a desktop browser or (for mobile devices) the Jitsi Meet App.
+Connect with a desktop browser, the Jitsi [desktop app](https://github.com/jitsi/jitsi-meet-electron) or the Jitsi [mobile app](https://jitsi.org/downloads/).
 
 Use the little arrows in the control bar at the bottom to select speaker, microphone
 and camera in case you lack audio/video.
@@ -78,7 +78,9 @@ to change room assignment or to resolve issues with dial-in.
 ## Browser specific hints
 
 Traditionally, the [blink](https://en.wikipedia.org/wiki/Blink_%28browser_engine%29)-based
-browsers (like Google Chrome, Chromium, Edge, ...) supported WebRTC best.
+browsers (like Google Chrome, Chromium, Edge, ...) support WebRTC best.
+A Jitsi [desktop app](https://github.com/jitsi/jitsi-meet-electron) and Jitsi [mobile app](https://jitsi.org/downloads/) is also available.
+
 Safari and Firefox do work, but at the cost of inferior codecs or increased CPU or
 bandwidth requirements (e.g. due to missing [SimulCast](https://en.wikipedia.org/wiki/Simulcast)
 support or missing hardware acceleration).
