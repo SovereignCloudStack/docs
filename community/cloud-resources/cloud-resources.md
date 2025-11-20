@@ -24,11 +24,11 @@ As suggested in [#155](https://github.com/SovereignCloudStack/standards/issues/1
 
 Example:
 
-| github handle | plusserver login    |
-| :-----------: | :-----------------: |
-|  frosty-geek  | u500924-frosty-geek |
-|      fkr      |     u500924-fkr     |
-|               |                     |
+|github handle | plusserver login    |
+|:-----------: | :-----------------: |
+| frosty-geek  | u500924-frosty-geek |
+|     fkr      |     u500924-fkr     |
+|              |                     |
 
 ### SCS2 Service Users
 
