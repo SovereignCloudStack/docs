@@ -44,8 +44,8 @@
         {
           "name": "double-spaces",
           "message": "Avoid double spaces",
-          "searchPattern": "/([^\\s>])  ([^\\s|])/g",
-          "replace": "$1 $2",
+          "searchPattern": "/^([^|].*)([^\\s>])  ([^\\s|])/g",
+          "replace": "$1 $2 $3",
           "skipCode": true
         }
       ]
