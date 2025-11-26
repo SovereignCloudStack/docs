@@ -1,0 +1,111 @@
+---
+layout: post
+title: 'Locating provider-managed images'
+author:
+  - 'Kurt Garloff'
+avatar:
+  - 'kgarloff.jpg'
+---
+
+## Purpose
+
+Many providers provide public images that they maintain for user convenience.
+Maintenance means that they regularly update it to include the latest bug- and
+security fixes. The exact policy is transparent from the image metadata as
+specified in SCS standard [scs-0102](https://docs.scs.community/standards/iaas/scs-0102).
+A few images have to be managed this way by the provider according to
+[scs-0104](https://docs.scs.community/standards/iaas/scs-0104).
+Previously (with [scs-0102-v1](https://docs.scs.community/standards/scs-0102-v1-image-metadata))
+the image could be referenced by a standard name to always get the current
+image whereas a reference by UUID would result in an unchanged image (until
+it is removed according to the provider's policy that is transparent from
+the metadata).
+
+Some providers prefer to use different image names. We intend to allow this with
+[scs-0102-v2](https://docs.scs.community/standards/scs-0102-v2-image-metadata).
+This however means that identifying the most recent "Ubuntu 24.04" image on
+an SCS-compatible IaaS cloud becomes a bit harder in a portable way.
+This article describes how to do this.
+
+## The new `os_purpose` property
+
+While we suggest to rename or better to hide old images, there can still legitimately
+be several variants of images, e.g. minimal variants or Kubernetes node images etc.
+These must not be confused with the standard general purpose images. To avoid
+confusion, we have introduce a new `os_purpose` (recommended in v1.1 of scs-0102
+and mandatory in v2) field, that can be set to `generic`, `minimal`, `k8snode`,
+`gpu`, `network`, or `custom` in v2.
+To now find the latest general purpose Ubuntu Noble Numbat 24.04 image, one can search the
+image catalog for `os_distro=ubuntu`, `os_version=24.04`, and `os_purpose=generic`.
+This is straightforward if all SCS clouds already comply to the new metadata standard
+and only have one matching image.
+It's a bit more complex in case we have to deal with a mixture of old and new ...
+
+## Identifying the right image using python (openstack-SDK)
+
+To find the Ubuntu 24.04 generic image, we would just do
+
+```python
+    images = [x for x in conn.image.images(os_distro=distro, os_version=version,
+                                           sort="name:desc,created_at:desc")
+              if x.properties.get("os_purpose") == purpose]
+```
+
+where `conn` is a connection to your OpenStack project and `distro`, `version` and
+`purpose` have been set to the lowercase strings you are looking for.
+
+Three notes:
+
+- We use a list comprehension to filter for `os_purpose` because `os_purpose`
+  is not one of the hardcoded properties that the SDK knows unlike `os_distro`
+  and `os_version`.
+- We can add additional filtering such as `visibility="public"` if we just want
+  to look for public images.
+- We sort the list, so in case we have several matches, we want the images grouped
+  by image name and within the same name have the latest images first. This would
+  typically find the latest image both in the case where a provider renames old
+  images "Ubuntu 24.04" to "Ubuntu 24.04 timestamp" or fails to rename them.
+  (The latter would not be compliant with scs-0102.)
+
+It gets a bit harder when you want SCS clouds that comply to the old v1 standard
+and do not yet have the `os_purpose` field set. Above call then returns an empty
+list. We then would fall back to look for images that match `os_distro` and
+`os_version`, but have no `os_purpose` property.
+
+```python
+        images = [x for x in conn.image.images(os_distro=distro, os_version=version,
+                                               sort="name:desc,created_at:desc")
+                  if "os_purpose" not in x.properties]
+```
+
+We have to expect several matches here and need some heuristic to find the
+right image, preferrably the one matching the old naming convention.
+
+Full code that does this is available in [find_img.py](find_img.py).
+Feel free to copy, I deliberately put this under MIT license.
+
+## Identifying the image with OpenStack CLI
+
+Unlike with Python, we can pass the `os_purpose` field just like the other
+properties.
+
+```bash
+ openstack image list --property os_distro="$DIST" --property os_version="$VERS" --property os_purpose="$PURP" -f value -c ID -c Name --sort name:desc,created_at:desc
+```
+
+where `OS_CLOUD` environment has been configured to access your cloud project and
+`DIST`, `VERS` and `PURP` are set to the lowercased image properties you
+are looking for. An additional filter `--public` parameter could be passed to only
+list public images. See above python comment for the sorting rationale.
+
+Dealing with old SCS clouds (not yet implementing v2 of scs-0102) is harder
+with shell code. The reason is that we can not pass a flag to `openstack
+image list` that would tell it to restrict results to records without an
+`os_purpose` property. So this requires looping over the images and filtering
+out all images with `os_purpose` (but not matching our request).
+
+Full code that does this is available in [find_img.sh](find_img.sh).
+
+## Terraform / opentofu
+
+TBW
