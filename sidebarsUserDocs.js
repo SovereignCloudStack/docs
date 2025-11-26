@@ -28,6 +28,15 @@ const sidebars = {
           ]
         }
       ]
+    },
+    {
+      type: 'category',
+      label: 'Portability Hints',
+      link: {
+        type: 'doc',
+        id: 'usage-hints/index'
+      },
+      items: ['usage-hints/find-image']
     }
   ]
 }
