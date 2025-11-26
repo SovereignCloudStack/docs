@@ -32,9 +32,9 @@ This article describes how to do this.
 While we suggest to rename or better to hide old images, there can still legitimately
 be several variants of images, e.g. minimal variants or Kubernetes node images etc.
 These must not be confused with the standard general purpose images. To avoid
-confusion, we have introduce a new `os_purpose` (recommended in v1.1 of scs-0102
+confusion, we have introduced a new `os_purpose` (recommended in v1.1 of scs-0102
 and mandatory in v2) field, that can be set to `generic`, `minimal`, `k8snode`,
-`gpu`, `network`, or `custom` in v2.
+`gpu`, `network`, or `custom` according to scs-0102-v2.
 To now find the latest general purpose Ubuntu Noble Numbat 24.04 image, one can search the
 image catalog for `os_distro=ubuntu`, `os_version=24.04`, and `os_purpose=generic`.
 This is straightforward if all SCS clouds already comply to the new metadata standard
@@ -63,7 +63,7 @@ Three notes:
   to look for public images.
 - We sort the list, so in case we have several matches, we want the images grouped
   by image name and within the same name have the latest images first. This would
-  typically find the latest image both in the case where a provider renames old
+  typically put the latest image first in the case where a provider renames old
   images "Ubuntu 24.04" to "Ubuntu 24.04 timestamp" or fails to rename them.
   (The latter would not be compliant with scs-0102.)
 
@@ -102,7 +102,9 @@ Dealing with old SCS clouds (not yet implementing v2 of scs-0102) is harder
 with shell code. The reason is that we can not pass a flag to `openstack
 image list` that would tell it to restrict results to records without an
 `os_purpose` property. So this requires looping over the images and filtering
-out all images with `os_purpose` (but not matching our request).
+out all images with `os_purpose` (but not matching our request). We would
+have to expect several matches now again and sort them by a heuristic,
+somewhat similar (but not identical) to the python code.
 
 Full code that does this is available in [find_img.sh](find_img.sh).
 
