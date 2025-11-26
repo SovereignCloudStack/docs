@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 #
-# find-img.py
+# find_img.py
 #
-# Searches for an image with distribution and version
+# Searches for an image with distribution and version and purpose
 #
 # (c) Kurt Garloff <s7n@garloff.de>, 7/2025
 # SPDX-License-Identifier: MIT
@@ -71,17 +71,19 @@ def img_sort_heuristic(images, distro, version, purpose):
 def find_image(conn, distro, version, purpose="generic", strict=False, log=None):
     """Return a sorted list of ID,Name pairs that contain the wanted image.
        Empty list indicates no image has been found. The list is sorted such
-       that (on SCS-compliant clouds), it will very likely contain the most
-       vanilla, most recent image as first element.
+       that (on SCS-compliant clouds), it will very likely contain the best
+       matching, most recent image as first element.
        If strict is set, multiple matches are not allowed.
     """
     ldistro = distro.lower()
     # FIXME: The image.images() method only passes selected filters
+    purpose_out = purpose
     images = [x for x in conn.image.images(os_distro=ldistro, os_version=version,
                                            sort="name:desc,created_at:desc", visibility="public")
               if x.properties.get("os_purpose") == purpose]
     if len(images) == 0:
         warn(log, f"No image found with os_distro={ldistro} os_version={version} os_purpose={purpose}")
+        purpose_out = ""
         # images = list(conn.image.images(os_distro=ldistro, os_version=version,
         #                                 sort="name:desc,created_at:desc"))
         images = [x for x in conn.image.images(os_distro=ldistro, os_version=version,
@@ -92,8 +94,8 @@ def find_image(conn, distro, version, purpose="generic", strict=False, log=None)
         return []
     # Now comes sorting magic for best backwards compatibility
     if len(images) > 1:
-        debug(log, f"Several {purpose} images found with os_distro={ldistro} os_version={version}")
-        if (strict):
+        debug(log, f"Several {purpose_out} images found with os_distro={ldistro} os_version={version}")
+        if strict:
             return []
         return img_sort_heuristic(images, distro, version, purpose)
     return [(img.id, img.name) for img in images]
