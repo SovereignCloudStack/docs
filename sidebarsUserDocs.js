@@ -36,7 +36,7 @@ const sidebars = {
         type: 'doc',
         id: 'usage-hints/index'
       },
-      items: ['usage-hints/find-image']
+      items: ['usage-hints/find-image/index']
     }
   ]
 }
