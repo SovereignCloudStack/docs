@@ -22,7 +22,7 @@ it is removed according to the provider's policy that is transparent from
 the metadata).
 
 Some providers prefer to use different image names. We intend to allow this with
-[scs-0102-v2](https://docs.scs.community/standards/scs-0102-v2-image-metadata).
+scs-0102-v2.<!--[scs-0102-v2](https://docs.scs.community/standards/scs-0102-v2-image-metadata).-->
 This however means that identifying the most recent "Ubuntu 24.04" image on
 an SCS-compatible IaaS cloud becomes a bit harder in a portable way.
 This article describes how to do this.
