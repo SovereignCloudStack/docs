@@ -37,10 +37,10 @@
     "format": "prettier --log-level warn --write \"./**/*.{jsx,js}\""
   },
   "dependencies": {
-    "@docusaurus/core": "^3.6.3",
-    "@docusaurus/plugin-client-redirects": "^3.6.3",
-    "@docusaurus/preset-classic": "^3.6.3",
-    "@docusaurus/theme-mermaid": "^3.6.3",
+    "@docusaurus/core": "^3.9.2",
+    "@docusaurus/plugin-client-redirects": "^3.9.2",
+    "@docusaurus/preset-classic": "^3.9.2",
+    "@docusaurus/theme-mermaid": "^3.9.2",
     "@easyops-cn/docusaurus-search-local": "^0.45.0",
     "@fullcalendar/core": "^6.0.1",
     "@fullcalendar/daygrid": "^6.0.1",
