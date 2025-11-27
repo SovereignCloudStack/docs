@@ -36,7 +36,8 @@ to be used for purposes other than compliance testing (such as the
 
 3. Add your subject to the results table. This is necessary so your subject shows up in the
    [compliance monitor web-site](https://compliance.sovereignit.cloud/page/table). Add the following lines
-   (substituting all-caps parts except `HM`):
+   (substituting all-caps parts except `HM`) to
+   [compliance-monitor/templates/overview.md.j2](https://github.com/SovereignCloudStack/standards/blob/main/compliance-monitor/templates/overview.md.j2):
 
    ```diff
     | [gx-scs](https://github.com/SovereignCloudStack/docs/blob/main/community/cloud-resources/plusserver-gx-scs.md) | Dev environment provided for SCS & GAIA-X context | plusserver GmbH |
