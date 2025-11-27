@@ -125,6 +125,16 @@ Swift is the so-called object storage that can be used by Nova. This is responsi
 
 A Ceph OSD (Object Storage Daemon) logically represents a storage device in a Ceph cluster, which can logically be a hard disk, which is the ideal case. In other cases it can also be a raid, which however leads to considerable performance limitations due to caching or other raid optimization.
 
+## Cluster Stacks
+
+The following terms can be used to distinguish between the various components of the Cluster Stacks.
+
+| Object       | Name                               |
+|--------------|------------------------------------|
+| scs2-*       | scs2 Cluster Stack                 |
+| scs2-1-33-*  | scs2 1.33 Cluster Stack releases   |
+| scs2-1-33-v2 | scs2 1.33 v2 Cluster Stack release |
+
 ## Personas
 
 | Persona             | Description                                                                                                                                                                             |
