@@ -82,6 +82,8 @@ We have to expect several matches here and need some heuristic to find the
 right image, preferrably the one matching the old naming convention.
 
 Full code that does this is available in [find_img.py](find_img.py).
+The script assume that you have set your `OS_CLOUD` environment variable
+and have configured working `clouds.yaml` and `secure.yaml`.
 Feel free to copy, I deliberately put this under MIT license.
 
 ## Identifying the image with OpenStack CLI
@@ -108,6 +110,39 @@ somewhat similar (but not identical) to the python code.
 
 Full code that does this is available in [find_img.sh](find_img.sh).
 
-## Terraform / opentofu
+## opentofu / terraform
 
-TBW
+With opentofu (or Hashicorp's terraform is you still use it), identifying
+the image in an HCL recipe looks like this:
+
+```hcl
+# Find the image
+data "openstack_images_image_v2" "my_image" {
+  most_recent = true
+
+  properties = {
+    os_distro       = "ubuntu"
+    os_version      = "24.04"
+    os_purpose      = "generic"
+  }
+  # sort_key        = "name"
+  # sort_direction  = "desc"
+}
+
+# Use the selected image
+resource "openstack_compute_instance_v2" "instance" {
+  image_id          = data.openstack_images_image_v2.my_image.id
+  ...
+}
+```
+
+This will find the most recent image wtih the `os_` variables set to `ubuntu`, `24.04`, `generic`.
+Note that unlike the python and shell examples, we can not easily sort for name and creation
+date at the same time; the name sorting is thus commented out here. To use name sorting you can
+enable it — using it and then selecting the latest if the name is identical requires some
+HCL magic using `locals` and `reverse(sort(...))` calls or calling an external program.
+
+An example can be found in [find_img.tf](find_img.tf). Call it with `tofu apply -auto-approve`
+(after you ran `tofu init` in this directory once).
+
+The fallback to name matching is harder.
