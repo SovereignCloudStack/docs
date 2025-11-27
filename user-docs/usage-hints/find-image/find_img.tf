@@ -1,5 +1,7 @@
 #!/usr/bin/env tofu apply -auto-approve
 # Pass variables with -var os_purpose=minimal
+# (c) Kurt Garloff <s7n@garloff.de>
+# SPDX-License-Identifier: MIT
 
 variable "os_distro" {
   type    = string
@@ -26,17 +28,20 @@ terraform {
 }
 
 provider "openstack" {
-  # Your cloud config (or use environment variables OS_CLOUD)
+  # Your cloud config (or use environment variable OS_CLOUD)
 }
 
 data "openstack_images_image_v2" "my_image" {
   most_recent = true
-  
+
   properties = {
-    os_distro        = "${var.os_distro}"
-    os_version       = "${var.os_version}"
-    os_purpose       = "${var.os_purpose}"
+    os_distro	  = "${var.os_distro}"
+    os_version    = "${var.os_version}"
+    os_purpose    = "${var.os_purpose}"
   }
+  #sort           = "name:desc,created_at:desc"
+  #sort_key       = "name"
+  #sort_direction = "desc"
 }
 
 # Output the results for inspection

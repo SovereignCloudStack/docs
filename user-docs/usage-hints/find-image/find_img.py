@@ -6,7 +6,7 @@
 #
 # (c) Kurt Garloff <s7n@garloff.de>, 7/2025
 # SPDX-License-Identifier: MIT
-"This module finds the a vanilla distribution image"
+"This module finds the a distribution image with a given purpose"
 
 import os
 import sys
