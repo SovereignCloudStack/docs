@@ -125,8 +125,9 @@ data "openstack_images_image_v2" "my_image" {
     os_version      = "24.04"
     os_purpose      = "generic"
   }
-  # sort_key        = "name"
-  # sort_direction  = "desc"
+  # sort             = "name:desc,created_at:desc"
+  # sort_key          = "name"
+  # sort_direction    = "desc"
 }
 
 # Use the selected image
@@ -138,11 +139,63 @@ resource "openstack_compute_instance_v2" "instance" {
 
 This will find the most recent image wtih the `os_` variables set to `ubuntu`, `24.04`, `generic`.
 Note that unlike the python and shell examples, we can not easily sort for name and creation
-date at the same time; the name sorting is thus commented out here. To use name sorting you can
-enable it — using it and then selecting the latest if the name is identical requires some
-HCL magic using `locals` and `reverse(sort(...))` calls or calling an external program.
+date at the same time; the only option to deal with several matches is to tell opentofu's
+openstack provider to return the latest (the one with the newest `created_at` date).
 
 An example can be found in [find_img.tf](find_img.tf). Call it with `tofu apply -auto-approve`
 (after you ran `tofu init` in this directory once).
 
-The fallback to name matching is harder.
+The fallback to name matching for clouds that don't have `os_purpose` yet is harder.
+
+We use an external program, the python script from before to select the right image and just create
+a little wrapper around it: [find_img2.py](find_img2.py). The HCL then looks like this:
+
+```hcl
+# Call python find_img.py to find best image
+data "external" "my_image2" {
+  program = ["python3", "${path.module}/find_img2.py"]
+
+  query = {
+    os_distro        = "${var.os_distro2}"
+    os_version       = "${var.os_version2}"
+    os_purpose       = "${var.os_purpose2}"
+  }
+}
+
+# Output the results for inspection
+output "selected_image2" {
+  value = {
+    id   = data.external.my_image2.result.image_id
+    name = data.external.my_image2.result.image_name
+  }
+}
+```
+
+Note that I have appended a `2` to the variable names, so they don't clash in case you have the
+original example in the same directory.
+
+## heat
+
+I did not find a good way to select an image based on its properties in heat.
+Obviously, you can use the python (or shell) script above and pass the image name
+or ID as a parameter when invoking heat.
+
+```yaml
+heat_template_version: 2018-08-31
+
+parameters:
+  image:
+    type: string
+    description: Image ID or name
+    constraints:
+      - custom_constraint: glance.image
+
+resources:
+  my_instance:
+    type: OS::Nova::Server
+    properties:
+      image: { get_param: image }
+      # ... other properties
+```
+
+and call `openstack stack create --parameter image=$ID $TEMPLATE $STACKNAME`.
