@@ -22,6 +22,8 @@ As suggested in [#155](https://github.com/SovereignCloudStack/standards/issues/1
 > **Note**
 > ATM this is not directly connected to the SovereignCloudStack github org membership, accounts will be created manually for now.
 
+<!-- markdownlint-disable search-replace -->
+
 Example:
 
 | github handle |  plusserver login   |
@@ -76,3 +78,5 @@ Service users will have their default_project_id set to a specific project and w
 | 718964b4b87446688ac04b151519fb51 | scs                | garloff           | SCS Health Monitor |      ∞       |
 | c46ccc9e695c4b23bacee2ad11145d9a | scs-health-monitor | garloff           | SCS Health Monitor |      ∞       |
 | 00de553df86949b49365baee6375fb5a | scs-standards      | itrich            | SCS Health Monitor |      ∞       |
+
+<!-- markdownlint-enable search-replace -->
