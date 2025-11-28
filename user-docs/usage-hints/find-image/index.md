@@ -113,7 +113,7 @@ Full code that does this is available in [find_img.sh](find_img.sh).
 
 ## opentofu / terraform
 
-With opentofu (or Hashicorp's terraform is you still use it), identifying
+With opentofu (or Hashicorp's terraform if you still use it), identifying
 the image in an HCL recipe looks like this:
 
 ```hcl
@@ -121,7 +121,7 @@ the image in an HCL recipe looks like this:
 data "openstack_images_image_v2" "my_image" {
   most_recent = true
 
-  properties = {
+  properties  = {
     os_distro       = "ubuntu"
     os_version      = "24.04"
     os_purpose      = "generic"
@@ -172,6 +172,7 @@ output "selected_image2" {
 }
 ```
 
+The HCL is in [find_img2.tf](find_img2.tf).
 Note that I have appended a `2` to the variable names, so they don't clash in case you have the
 original example in the same directory.
 
@@ -199,7 +200,7 @@ resources:
       # ... other properties
 ```
 
-and call `openstack stack create --parameter image=$ID $TEMPLATE $STACKNAME`.
+and call `openstack stack create --parameter image=$IMAGE_ID $TEMPLATE $STACKNAME`.
 
 ## ansible
 
@@ -245,4 +246,6 @@ can be done in ansible, but gets a bit complex. Find the ansible tasks in
 [find_img.yaml](find_img.yaml).
 So, while ansible YAML proves to be more expressive than HCL here, the by far
 simplest code is the python implementation.
-Full disclosure: The ansible YAML has been produced with the help of Claude AI.
+
+Transparency hint: The ansible YAML has been produced with the help of Claude AI.
+I tested (and fixed) it.
