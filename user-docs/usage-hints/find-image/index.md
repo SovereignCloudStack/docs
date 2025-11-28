@@ -205,31 +205,43 @@ and call `openstack stack create --parameter image=$ID $TEMPLATE $STACKNAME`.
 Finding the right image in ansible can be done with a task that matches the properties
 in a straight forward way.
 
-<!--TODO: The ansible stuff needs testing -->
-
 ```yaml
-tasks:
-  - name: Get available images matching os_distro and os_version
-    openstack.cloud.image_info:
-      cloud: '{{ cloud_name }}'
-      properties:
-        os_distro: '{{ os_distro }}'
-        os_version: '{{ os_version }}'
-        os_purpose: '{{ os_purpose }}'
-    register: _distro_purpose_images
-  - name: Select image with proper multi-key sort (single task)
-    set_fact:
-      selected_image: >-
-        {{
-          (_distro_purpose_images.images
-          | list
-          | sort(attribute='created_at', reverse=true)
-          | sort(attribute='name', reverse=true))[0]
-          | first
-        }}
+---
+- name: Select Image with purpose
+  hosts: localhost
+  gather_facts: false
+  vars:
+    # Primary selection criteria
+    os_version: '24.04'
+    os_distro: 'ubuntu'
+    os_purpose: 'generic'
+    cloud_name: "{{ lookup('env', 'OS_CLOUD') | default('openstack') }}"
+
+  tasks:
+    - name: Get available images matching os_distro and os_version and os_purpose
+      openstack.cloud.image_info:
+        cloud: '{{ cloud_name }}'
+        properties:
+          os_distro: '{{ os_distro }}'
+          os_version: '{{ os_version }}'
+      register: _distro_images
+    - name: Select image with proper multi-key sort (single task)
+      set_fact:
+        selected_image: >-
+          {{
+            _distro_images.images
+            | selectattr('properties.os_purpose', 'defined')
+            | selectattr('properties.os_purpose', 'equalto', os_purpose)
+            | list
+            | sort(attribute='created_at', reverse=true)
+            | sort(attribute='name', reverse=true)
+            | first
+          }}
 ```
 
 The fallback to name matching (for older clouds not yet complying to scs-0102-v2)
 can be done in ansible, but gets a bit complex. Find the ansible tasks in
 [find_img.yaml](find_img.yaml).
-Full disclosure: This has been produced with the help of Claude AI.
+So, while ansible YAML proves to be more expressive than HCL here, the by far
+simplest code is the python implementation.
+Full disclosure: The ansible YAML has been produced with the help of Claude AI.
