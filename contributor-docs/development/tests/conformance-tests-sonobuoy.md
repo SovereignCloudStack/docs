@@ -70,7 +70,7 @@ In general, SCS tests for KaaS are derived from standards that define certain ex
 As an example for this step-by-step guide, let's assume a scenario in which there is a fictional standard called "scs-0299-v1-example-standard.md".
 Pretend that the fictitious standard here stipulates that at least one pod MUST run in the namespace "namespace-test-a".
 
-> [!NOTE] 
+> [!NOTE]
 > The functions and behaviors to be tested MUST be precisely defined in a standard.
 > If you as a developer want to test something that you think is best tested but is not yet part of any standard, you MUST update the standard accordingly.
 
@@ -195,7 +195,7 @@ make dev-clean
 make dev-purge
 ```
 
-### (optional) Run all at once:
+### (optional) Run all at once
 
 In addition, you can trigger all processes from above with one command. There is a single target in the Makefile for this:
 
