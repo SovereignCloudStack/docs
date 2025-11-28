@@ -92,7 +92,8 @@ Unlike with Python, we can pass the `os_purpose` field just like the other
 properties.
 
 ```bash
- openstack image list --property os_distro="$DIST" --property os_version="$VERS" --property os_purpose="$PURP" -f value -c ID -c Name --sort name:desc,created_at:desc
+openstack image list --property os_distro="$DIST" --property os_version="$VERS" \
+--property os_purpose="$PURP" -f value -c ID -c Name --sort name:desc,created_at:desc
 ```
 
 where `OS_CLOUD` environment has been configured to access your cloud project and
