@@ -199,3 +199,37 @@ resources:
 ```
 
 and call `openstack stack create --parameter image=$ID $TEMPLATE $STACKNAME`.
+
+## ansible
+
+Finding the right image in ansible can be done with a task that matches the properties
+in a straight forward way.
+
+<!--TODO: The ansible stuff needs testing -->
+
+```yaml
+tasks:
+  - name: Get available images matching os_distro and os_version
+    openstack.cloud.image_info:
+      cloud: '{{ cloud_name }}'
+      properties:
+        os_distro: '{{ os_distro }}'
+        os_version: '{{ os_version }}'
+        os_purpose: '{{ os_purpose }}'
+    register: _distro_purpose_images
+  - name: Select image with proper multi-key sort (single task)
+    set_fact:
+      selected_image: >-
+        {{
+          (_distro_purpose_images.images
+          | list
+          | sort(attribute='created_at', reverse=true)
+          | sort(attribute='name', reverse=true))[0]
+          | first
+        }}
+```
+
+The fallback to name matching (for older clouds not yet complying to scs-0102-v2)
+can be done in ansible, but gets a bit complex. Find the ansible tasks in
+[find_img.yaml](find_img.yaml).
+Full disclosure: This has been produced with the help of Claude AI.

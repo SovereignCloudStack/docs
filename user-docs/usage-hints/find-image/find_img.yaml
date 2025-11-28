@@ -1,0 +1,149 @@
+---
+# Logic to identify image with given os_distro, os_version, os_purpose
+# Simply find the image for new SCS clouds that have os_purpose set.
+# Fall back to name matching otherwise.
+# (c) Kurt Garloff <s7n@garloff.de>, 11/2025
+# SPDX-License-Identifier: MIT
+# Created with help from Claude AI
+
+- name: Select Image with purpose and fall back to name matching
+  hosts: localhost
+  gather_facts: false
+  vars:
+    # Primary selection criteria
+    os_version: '24.04'
+    os_distro: 'ubuntu'
+    os_purpose: 'generic'
+    cloud_name: "{{ lookup('env', 'OS_CLOUD'} | default('openstack') }}"
+
+  tasks:
+    - name: Get available images matching os_distro and os_version
+      openstack.cloud.image_info:
+        cloud: '{{ cloud_name }}'
+        properties:
+          os_distro: '{{ os_distro }}'
+          os_version: '{{ os_version }}'
+      register: _distro_images
+
+    - name: 'First choice: Match os_purpose'
+      set_fact:
+        _primary_images: >-
+          {{
+            _distro_images.images
+            | selectattr('properties.os_purpose', 'defined')
+            | selectattr('properties.os_purpose', 'equalto', os_purpose)
+            | list
+            | sort(attribute='created_at', reverse=true)
+            | sort(attribute='name', reverse=true)
+          }}
+
+    - name: 'Select primary image if found'
+      set_fact:
+        selected_image_id: '{{ _primary_images[0].id }}'
+        selected_image_name: '{{ _primary_images[0].name }}'
+        selected_image: '{{ _primary_images[0] }}'
+        match_type: 'primary'
+      when: _primary_images | length > 0
+
+    # Fallback logic - only executed if no primary match
+    - name: "Fallback 1: Filter images without os_purpose, matching name pattern '{{ os_distro }} {{ os_version }} {{ os_purpose }}'"
+      set_fact:
+        _fallback1_images: >-
+          {{
+            _distro_images.images
+            | rejectattr('properties.os_purpose', 'defined')
+            | selectattr('name', 'match', '(?i)^.*' + os_distro | regex_escape + '\\s+' + os_version | regex_escape + '\\s+' + os_purpose | regex_escape + '.*$')
+            | list
+            | sort(attribute='created_at', reverse=true)
+            | sort(attribute='name', reverse=true)
+          }}
+      when: _primary_images | length == 0
+
+    - name: Select fallback 1 match if found
+      set_fact:
+        selected_image_id: '{{ _fallback1_matches[0].id }}'
+        selected_image_name: '{{ _fallback1_matches[0].name }}'
+        selected_image: '{{ _fallback1_matches[0] }}'
+        match_type: 'fallback_pattern1'
+      when:
+        - _primary_images | length == 0
+        - _fallback1_images | length > 0
+
+    - name: "Fallback 2: Filter images without os_purpose, matching name pattern '{{ os_distro }} {{ os_purpose }} {{ os_version }}'"
+      set_fact:
+        _fallback2_images: >-
+          {{
+            _distro_images.images
+            | rejectattr('properties.os_purpose', 'defined')
+            | selectattr('name', 'match', '(?i)^.*' + os_distro | regex_escape + '\\s+' + os_purpose | regex_escape + '\\s+' + os_version | regex_escape + '.*$')
+            | list
+            | sort(attribute='created_at', reverse=true)
+            | sort(attribute='name', reverse=true)
+          }}
+      when:
+        - _primary_images | length == 0
+        - _fallback1_images | default([]) | length == 0
+
+    - name: Select fallback 2 match if found
+      set_fact:
+        selected_image_id: '{{ _fallback2_matches[0].id }}'
+        selected_image_name: '{{ _fallback2_matches[0].name }}'
+        selected_image: '{{ _fallback2_matches[0] }}'
+        match_type: 'fallback_pattern2'
+      when:
+        - _primary_images | length == 0
+        - _fallback1_images | default([]) | length == 0
+        - _fallback2_images | length > 0
+
+    - name: "Fallback 3: Filter images without os_purpose, matching name pattern '{{ os_distro }} {{ os_version }}'"
+      set_fact:
+        _fallback3_images: >-
+          {{
+            _distro_images.images
+            | rejectattr('properties.os_purpose', 'defined')
+            | selectattr('name', 'match', '(?i)^.*' + os_distro | regex_escape + '\\s+' + os_version | regex_escape + '.*$')
+            | list
+            | sort(attribute='created_at', reverse=true)
+            | sort(attribute='name', reverse=true)
+          }}
+      when:
+        - _primary_images | length == 0
+        - _fallback1_images | default([]) | length == 0
+        - _fallback2_images | default([]) | length == 0
+
+    - name: Select fallback 3 match if found
+      set_fact:
+        selected_image_id: '{{ _fallback3_matches[0].id }}'
+        selected_image_name: '{{ _fallback3_matches[0].name }}'
+        selected_image: '{{ _fallback3_matches[0] }}'
+        match_type: 'fallback_pattern3'
+      when:
+        - _primary_images | length == 0
+        - _fallback1_images | default([]) | length == 0
+        - _fallback2_images | default([]) | length == 0
+        - _fallback3_images | length > 0
+
+    - name: Display selected image
+      debug:
+        msg:
+          - 'Match Type: {{ match_type }}'
+          - 'Image Name: {{ selected_image_name }}'
+          - 'Image ID: {{ selected_image_id }}'
+          - 'Created: {{ selected_image.created_at }}'
+          - 'Properties: {{ selected_image.properties }}'
+      when: selected_image is defined
+
+    - name: Fail if no suitable image found
+      fail:
+        msg: |
+          No suitable image found matching criteria:
+            - os_distro: {{ os_distro }}
+            - os_version: {{ os_version }}
+            - os_purpose: {{ os_purpose }}
+
+          Tried:
+            1. Images with os_purpose property = '{{ os_purpose }}'
+            2. Images matching name pattern '{{ os_distro }} {{ os_version }} {{ os_purpose }}'
+            3. Images matching name pattern '{{ os_distro }} {{ os_purpose }} {{ os_version }}'
+            4. Images matching name pattern '{{ os_distro }} {{ os_version }}'
+      when: selected_image is not defined
