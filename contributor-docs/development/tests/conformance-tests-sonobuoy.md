@@ -222,7 +222,7 @@ make test-function
 [docker-installation]: https://docs.docker.com/engine/install/
 [sonobuoy-installation]: https://sonobuoy.io/docs/v0.57.1/#installation
 [kind-installation]: https://kind.sigs.k8s.io/docs/user/quick-start/#installation
-[scs-sonobuoy-example-guide]: https://github.com/SovereignCloudStack/standards/tree/main/Tests/kaas/kaas-sonobuoy-go-example-e2e-framework#sonobuoy-usage-for-development-of-tests
+[scs-sonobuoy-example-guide]: https://github.com/SovereignCloudStack/standards/tree/main/Tests/kaas/kaas-sonobuoy-tests#sonobuoy-usage-for-development-of-tests
 
 [yq-installation]:https://github.com/mikefarah/yq/?tab=readme-ov-file#install
 [jq-installation]:https://jqlang.github.io/jq/download/
