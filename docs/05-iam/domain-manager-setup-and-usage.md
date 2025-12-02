@@ -1,12 +1,5 @@
 # Domain Manager setup and usage
 
-:::info
-
-The following documentation refers to a SCS standard that is still in draft state.
-It is not meant for productive use yet but CSPs are encouraged to test-drive and provide feedback!
-
-:::
-
 ## Preface
 
 SCS defines the **Domain Manager** standard, introducing a special persona to the OpenStack Keystone identity manager.
@@ -15,19 +8,10 @@ Its intended use case is to offer extensive identity management self-service cap
 
 This guide will explain setup, configuration and usage of the SCS Domain Manager standard.
 
-### Warning regarding the exposure of domain names
-
-Due to architectural limitations currently existing in OpenStack Keystone, assigning the `manager` role to users while the configuration of the SCS Domain Manager standard has been applied will **enable them to see the IDs and names of all existing domains**.
-This includes domains other than their own, meaning that other tenant's identities might be exposed depending on the relation between them and the name of their domain.
-CSPs aiming to appoint Domain Manager users must be aware of this limitation and should exclusively **use pseudonymized domain names across the whole infrastructure**.
-If CSPs strictly follow the [SCS naming conventions](https://github.com/SovereignCloudStack/standards/blob/main/Standards/scs-0301-v1-naming-conventions.md) for domains this is already addressed.
-If this is not feasible for the CSP, they may opt to refrain from making use of the Domain Manager functionality at all, i.e. never assign the `manager` role to tenant users.
-
 :::info
 
-This architectural limitation will be fixed in upcoming OpenStack and SCS releases.
-
-See [https://bugs.launchpad.net/keystone/+bug/2041611](https://bugs.launchpad.net/keystone/+bug/2041611)
+The Domain Manager functionality was natively integrated into OpenStack starting with release 2024.2 ("Dalmatian").
+When using an OpenStack release equal to 2024.2 or later, you can omit the instructions for Keystone API policy adjustments.
 
 :::
 
@@ -88,15 +72,6 @@ Refer to the SCS Domain Manager standard for more information.
 ## Administrative operation
 
 The following sections describe actions available to CSP operators that possess the `admin` role.
-
-### Creating domains
-
-:::caution
-
-It is highly recommended to use pseudonymized domain names when creating domains, since Domain Managers will currently be able to see the names of all existing domains.
-See [Warning regarding the exposure of domain names](#warning-regarding-the-exposure-of-domain-names) for more details.
-
-:::
 
 For each tenant for which a self-service area (i.e. a domain) is to be established, a domain should be created before creating any users, projects or groups for this tenant:
 
