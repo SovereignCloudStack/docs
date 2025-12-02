@@ -6,7 +6,7 @@
 #
 # (c) Kurt Garloff <s7n@garloff.de>, 7/2025
 # SPDX-License-Identifier: MIT
-"This module finds the a vanilla distribution image"
+"This module finds the a distribution image with a given purpose"
 
 import os
 import sys
@@ -103,7 +103,7 @@ def find_image(conn, distro, version, purpose="generic", strict=False, log=None)
 
 def usage():
     "Usage hints (CLI)"
-    print("Usage: find-img.sh [-s] DISTRO VERSION [PURPOSE]", file=sys.stderr)
+    print("Usage: find-img.py [-s] DISTRO VERSION [PURPOSE]", file=sys.stderr)
     print("Returns all images matching, latest first, purpose defaulting to generic", file=sys.stderr)
     print("[-s] sets strict mode where only one match is allowed.", file=sys.stderr)
     print("You need to have OS_CLOUD set when running this", file=sys.stderr)
