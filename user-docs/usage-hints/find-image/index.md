@@ -249,3 +249,19 @@ simplest code is the python implementation.
 
 Transparency hint: The ansible YAML has been produced with the help of Claude AI.
 I tested (and fixed) it.
+
+## Horizon Web Interface (GUI)
+
+If you are using the Horizon GUI, you may be able to manually determin which
+image is the one you want to use. To make sure and systematically analyze it by
+looking at `os_distro`, `os_version` and `os_purpose`, you need to go to
+Compute, Images, click on the Image. You can see all metadata, see screenshot.
+
+![Horizon Image Details](horizon.png)
+
+## Skyline Web Interface (GUI)
+
+This is similar to Horizon, you go to Compute, Images, Public Images tab,
+click on image ID. See screenshot.
+
+![Skyline Image Details](skyline.png)
