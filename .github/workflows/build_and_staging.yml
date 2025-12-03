@@ -8,6 +8,8 @@ on:
 
 jobs:
   build_and_staging:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
