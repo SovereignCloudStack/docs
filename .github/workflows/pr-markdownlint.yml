@@ -1,4 +1,6 @@
 name: Markdownlint on PR
+permissions:
+  contents: read
 
 on:
   pull_request:
