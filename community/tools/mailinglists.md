@@ -11,4 +11,4 @@ to our collaboration. Currently there is this set of mailing lists:
 
 ## SCS community Membership
 
-Membership means that you are onboarded to the Identity Management system of our [Nextcloud](nextcloud).
+Membership means that you are onboarded to the Identity Management system of our [Nextcloud](nextcloud.md).
