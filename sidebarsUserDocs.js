@@ -36,7 +36,10 @@ const sidebars = {
         type: 'doc',
         id: 'usage-hints/index'
       },
-      items: ['usage-hints/find-image/index']
+      items: [
+        'usage-hints/find-image/index',
+        'usage-hints/diskless-flavor/index'
+      ]
     }
   ]
 }
