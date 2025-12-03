@@ -9,4 +9,4 @@ opening issues against the issues repository), submitting pull requests, ...
 If you want to contribute on a regular basis, we are happy to also onboard you
 to the nextcloud and do an onboarding call. Nextcloud onboarding also adds you
 to the `scs-member@lists.scs.community` mailing list which also add you to the
-announcement list (described in the next paragraph).
+announcement list (described on the [Mailing Lists](mailinglists) page).
