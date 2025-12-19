@@ -4,15 +4,44 @@ This document gives an overview of the test and development cloud resources curr
 
 ## How to request cloud resources
 
-To request access to an existing project, please contact the responsible community member. To apply for a new project, please create a pull request against this document (leave `Unique Identifier` blank) and assign it to the particular CSP team (e.g. @SovereignCloudStack/plusserver, @SovereignCloudStack/wavecon, ...)
+To request access to an existing project, please contact the responsible community member as described below.
 
-## plusserver (SCS2)
+## SCS Hardware Landscape
+
+For access to the SCS Hardware Landscape, please send an email to the [SCS Project Board](https://docs.scs.community/community/governance/project-board) at [project-board@lists.scs.community](mailto:project-board@lists.scs.community).
+Please note that the email address you provide will also be used for your login details and further communication.
+The email should contain the following information:
+
+- link to PR for [SSH access](#ssh-access)
+  - OPTIONAL: if needed, information about the SSH key to be used
+- link to PR for [VPN access](#vpn-access)
+
+### SSH Access
+
+To request SSH access, [create a PR by following the steps 1 and 2](https://github.com/SovereignCloudStack/hardware-landscape/blob/main/documentation/System_Runbooks.md#manage-ssh-access-and-adminstrative-permissions).
+Assign the PR to the members of the SCS Project Board.
+Please note to specify your GitHub handle and that your GitHub SSH key (`https://github.com/<GITHUB_HANDLE>.keys`) will be used by default unless otherwise specified in your initial email request.
+Once the PR has been accepted, [configure your SSH access](https://github.com/SovereignCloudStack/hardware-landscape/blob/main/documentation/System_Usage.md#configure-ssh-access).
+
+### VPN Access
+
+To request VPN access, [create a PR by following the steps 1 to 3](https://github.com/SovereignCloudStack/hardware-landscape/blob/main/documentation/System_Usage.md#configure-vpn-access).
+Assign the PR to the members of the SCS Project Board.
+Once the PR has been accepted, [configure your VPN access by following the steps 5 to 7](https://github.com/SovereignCloudStack/hardware-landscape/blob/main/documentation/System_Usage.md#configure-vpn-access).
+
+### SCS Hardware Landscape Usage
+
+More information on how to use the Hardware Landscape can be found [here](hardware-landscape.md).
+
+## SCS2 @ plusserver
 
 SCS2 is the successor to gx-scs (or SCS1), which no longer exists.
 
+To apply for a new project, please create a pull request against this document (leave `Unique Identifier` blank) and assign it to the CSP team @SovereignCloudStack/plusserver.
+
 ### SCS2 Usage
 
-A brief guide on how to use the resources provided by plusserver GmbH can be found [here](plusserver-gx-scs.md)
+A brief guide on how to use the resources provided by plusserver GmbH can be found [here](plusserver-gx-scs.md).
 
 ### SCS2 Users
 
@@ -64,6 +93,12 @@ Service users will have their default_project_id set to a specific project and w
 |                                  | p500924-openDesk-playground | gerbsen           | Playground for openDesk           |  30.11.2025  |
 
 ## Wavecon
+
+To apply for a new project, please create a pull request against this document (leave `Unique Identifier` blank) and assign it to the CSP team @SovereignCloudStack/wavecon.
+
+### Wavestack Usage
+
+A brief guide on how to use the resources provided by Wavecon GmbH can be found [here](wavestack.md).
 
 ### Wavestack Service Users
 
