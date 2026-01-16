@@ -148,5 +148,5 @@ In particular, this means:
 [gh-scripts]: https://github.com/SovereignCloudStack/standards/tree/main/Tests
 [cert-scopes]: https://docs.scs.community/standards/certification/scopes-versions
 [scs-rfc2119-guide]: https://docs.scs.community/contributor-docs/operations/tests/rfc2119-keyword-test-guide
-[scs-0004-v1]: https://github.com/SovereignCloudStack/standards/blob/main/Standards/scs-0004-v1-achieving-certification.md
+[scs-0004-v1]: https://docs.scs.community/standards/scs-0004-v1-achieving-certification#regulations
 [wiki-di]: https://en.wikipedia.org/wiki/Dependency_injection
