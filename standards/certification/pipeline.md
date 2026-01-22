@@ -108,7 +108,7 @@ We are going to create a pull request that is very similar to real-life example 
 
    Again, insert your subject so that the list (after `gx-scs`) remains sorted.
 
-4. Finally, add application credentials to [.zuul.d/secure.yaml](https://github.com/SovereignCloudStack/standards/blob/main/.zuul.d/secure.yaml).
+4. Finally, add secrets to [.zuul.d/secure.yaml](https://github.com/SovereignCloudStack/standards/blob/main/.zuul.d/secure.yaml).
    This is necessary so the tests can access your cloud.
 
    :::info
@@ -179,7 +179,7 @@ We are going to create a pull request that is very similar to real-life example 
 You may have to adapt these instructions to your infrastructure. For instance, the application credentials
 we create here are stored locally. If you want to include the check suite into your own
 continuous-integration pipeline, you may want to use some dedicated credential store and mechanism for
-injecting application credentials.
+injecting secrets.
 
 You may want to take inspiration from our own Zuul setup by looking at
 [.zuul.d](https://github.com/SovereignCloudStack/standards/tree/main/.zuul.d) and
