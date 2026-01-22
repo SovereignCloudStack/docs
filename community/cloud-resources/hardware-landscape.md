@@ -12,10 +12,7 @@ It is currently running at a colocation of ScaleUp Technologies.
 
 ### URLs for accessing the SCS Hardware Landscape
 
-- UI (horizon): [https://api.dc1.muc.cloud.cnds.io/project/](https://api.dc1.muc.cloud.cnds.io/project/)
-- API auth URL: [https://api.dc1.muc.cloud.cnds.io:5000/](https://api.dc1.muc.cloud.cnds.io:5000/)
-- Object Storage endpoint: [https://api.dc1.muc.cloud.cnds.io:8080/](https://api.dc1.muc.cloud.cnds.io:8080/)
-- DNS Management: [https://portal.cnds.io/](https://portal.cnds.io/)
+To access the SCS Hardware Landscape refer to the [list of environment links](https://github.com/sovereignCloudStack/hardware-landscape?tab=readme-ov-file#environment-links) in the SCS Hardware Landscape repository.
 
 ### Authentication (UI)
 
