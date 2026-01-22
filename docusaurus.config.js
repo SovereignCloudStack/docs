@@ -34,8 +34,31 @@ const config = {
           editUrl: 'https://github.com/SovereignCloudStack/docs/tree/main/'
         },
         blog: {
+          path: './blog',
+          routeBasePath: 'blog',
+          // Author display
           showReadingTime: true,
-          editUrl: 'https://github.com/SovereignCloudStack/docs/tree/main/'
+          blogSidebarTitle: 'Recent posts',
+          blogSidebarCount: 10,
+          // Post metadata
+          blogTitle: 'SCS Community Blog',
+          blogDescription:
+            'Insights on cloud sovereignty, open infrastructure, and the Sovereign Cloud Stack',
+          // Authors
+          authorsMapPath: 'authors.yml',
+          // RSS/Atom feeds
+          feedOptions: {
+            type: 'all', // 'rss' | 'atom' | 'json' | 'all'
+            title: 'SCS Community Blog',
+            description:
+              'Latest articles from the Sovereign Cloud Stack community',
+            copyright: `Copyright © ${new Date().getFullYear()} Sovereign Cloud Stack`,
+            language: 'en'
+          },
+          // Post URLs
+          postsPerPage: 10,
+          // Edit links (important for contributions!)
+          editUrl: 'https://github.com/SovereignCloudStack/docs/edit/main/'
         },
         theme: {
           customCss: [require.resolve('./src/css/custom.css')]
@@ -103,33 +126,6 @@ const config = {
     './src/plugins/docusaurus-plugin-matomo-analytics/index.js',
     './src/plugins/docusaurus-plugin-global-data/index.js'
   ],
-  blog: {
-    path: './blog',
-    routeBasePath: 'blog',
-    // Author display
-    showReadingTime: true,
-    blogSidebarTitle: 'Recent posts',
-    blogSidebarCount: 10,
-    // Post metadata
-    blogTitle: 'SCS Community Blog',
-    blogDescription:
-      'Insights on cloud sovereignty, open infrastructure, and the Sovereign Cloud Stack',
-    // Authors
-    authorsMapPath: 'authors.yml',
-    // RSS/Atom feeds
-    feedOptions: {
-      type: 'all', // 'rss' | 'atom' | 'json' | 'all'
-      title: 'SCS Community Blog',
-      description: 'Latest articles from the Sovereign Cloud Stack community',
-      copyright: `Copyright © ${new Date().getFullYear()} Sovereign Cloud Stack`,
-      language: 'en'
-    },
-    // Post URLs
-    postsPerPage: 10,
-    // Edit links (important for contributions!)
-    editUrl: 'https://github.com/SovereignCloudStack/docs/edit/main/'
-  },
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
