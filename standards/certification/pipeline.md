@@ -113,9 +113,10 @@ We are going to create a pull request that is very similar to real-life example 
 
    :::info
 
-   When the application credentials expire, the test results in the [official pipeline](https://docs.scs.community/standards/certification/overview#compliant-cloud-environments) will turn red (MISS). This may also have a negative impact on a currently valid certification. There are two options to avoid this:
-   - It is recommended to use non-expiring application credentials. This ensures that renewal is not forgotten. You can withdraw them actively in case of a breach or any other reason you no longer want the official pipeline to access your cloud.
-   - Alternatively, application credentials that are about to expire must be renewed regularly via a pull request, as shown in this [PR example](https://github.com/SovereignCloudStack/standards/pull/1049). Please note that the renewal is your responsibility.
+    In case your secrets have an expiration date, it is your own responsibility
+    to update the secrets here in a timely fashion with a suitable PR
+    ([example](https://github.com/SovereignCloudStack/standards/pull/1049));
+    otherwise you risk losing your certification!
 
    :::
 
