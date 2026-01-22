@@ -1,7 +1,7 @@
 ---
 slug: introducing_new_blog
 title: Introducing A New Blog Site On Our Docs Page
-authors: [kurt_garloff]
+authors: [garloff]
 tags: [docusaurus, scs, blog]
 ---
 
