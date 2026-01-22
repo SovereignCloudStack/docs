@@ -174,9 +174,7 @@ We are going to create a pull request that is very similar to real-life example 
 
 ### for SCS-compatible IaaS
 
-:::note
-
-You may have to adapt these instructions to your infrastructure. For instance, the application credentials
+Note: you may have to adapt these instructions to your infrastructure. For instance, the secrets
 we create here are stored locally. If you want to include the check suite into your own
 continuous-integration pipeline, you may want to use some dedicated credential store and mechanism for
 injecting secrets.
@@ -186,8 +184,6 @@ You may want to take inspiration from our own Zuul setup by looking at
 [playbooks](https://github.com/SovereignCloudStack/standards/tree/main/playbooks).
 However, don't be overwhelmed by the complexities of Zuul; it's well possible to use other solutions,
 including a cronjob.
-
-:::
 
 1. Install requirements.
 
