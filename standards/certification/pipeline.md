@@ -111,8 +111,14 @@ We are going to create a pull request that is very similar to real-life example 
 4. Finally, add secrets to [.zuul.d/secure.yaml](https://github.com/SovereignCloudStack/standards/blob/main/.zuul.d/secure.yaml).
    This is necessary so the tests can access your cloud.
 
-   This step is the most involved, and you can always have us do it for you; in that case, please send us
-   the application credential id and secret via an encrypted channel, e.g. Matrix.
+   :::info
+
+    In case your secrets have an expiration date, it is your own responsibility
+    to update the secrets here in a timely fashion with a suitable PR
+    ([example](https://github.com/SovereignCloudStack/standards/pull/1049));
+    otherwise you risk losing your certification!
+
+   :::
 
    To proceed, you need `zuul-client` installed:
 
