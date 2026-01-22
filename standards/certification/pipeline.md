@@ -108,11 +108,16 @@ We are going to create a pull request that is very similar to real-life example 
 
    Again, insert your subject so that the list (after `gx-scs`) remains sorted.
 
-4. Finally, add secrets to [.zuul.d/secure.yaml](https://github.com/SovereignCloudStack/standards/blob/main/.zuul.d/secure.yaml).
+4. Finally, add application credentials to [.zuul.d/secure.yaml](https://github.com/SovereignCloudStack/standards/blob/main/.zuul.d/secure.yaml).
    This is necessary so the tests can access your cloud.
 
-   This step is the most involved, and you can always have us do it for you; in that case, please send us
-   the application credential id and secret via an encrypted channel, e.g. Matrix.
+   :::info
+
+   When the application credentials expire, the test results in the [official pipeline](https://docs.scs.community/standards/certification/overview#compliant-cloud-environments) will turn red (MISS). This may also have a negative impact on a currently valid certification. There are two options to avoid this:
+   - It is recommended to use non-expiring application credentials. This ensures that renewal is not forgotten. You can withdraw them actively in case of a breach or any other reason you no longer want the official pipeline to access your cloud.
+   - Alternatively, application credentials that are about to expire must be renewed regularly via a pull request, as shown in this [PR example](https://github.com/SovereignCloudStack/standards/pull/1049). Please note that the renewal is your responsibility.
+
+   :::
 
    To proceed, you need `zuul-client` installed:
 
@@ -169,16 +174,20 @@ We are going to create a pull request that is very similar to real-life example 
 
 ### for SCS-compatible IaaS
 
-Note: you may have to adapt these instructions to your infrastructure. For instance, the secrets
+:::note
+
+You may have to adapt these instructions to your infrastructure. For instance, the application credentials
 we create here are stored locally. If you want to include the check suite into your own
 continuous-integration pipeline, you may want to use some dedicated credential store and mechanism for
-injecting secrets.
+injecting application credentials.
 
 You may want to take inspiration from our own Zuul setup by looking at
 [.zuul.d](https://github.com/SovereignCloudStack/standards/tree/main/.zuul.d) and
 [playbooks](https://github.com/SovereignCloudStack/standards/tree/main/playbooks).
 However, don't be overwhelmed by the complexities of Zuul; it's well possible to use other solutions,
 including a cronjob.
+
+:::
 
 1. Install requirements.
 
