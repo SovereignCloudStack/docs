@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-standards docs-version-current docs-doc-page docs-doc-id-scs-0001-v1-sovereign-cloud-standards" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Sovereign Cloud Standards | One platform — standardized, built and operated by many.</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.scs.community/img/scs-og-basic.png"><meta data-rh="true" name="twitter:image" content="https://docs.scs.community/img/scs-og-basic.png"><meta data-rh="true" property="og:url" content="https://docs.scs.community/standards/scs-0001-v1-sovereign-cloud-standards"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-standards-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-standards-current"><meta data-rh="true" property="og:title" content="Sovereign Cloud Standards | One platform — standardized, built and operated by many."><meta data-rh="true" name="description" content="SCS-0001 outlines the structure, requirements, and lifecycle of standards, procedural documents, and decision
+records within the Sovereign Cloud Stack (SCS) community, ensuring clarity, organization, and governance in
+the development and maintenance of interoperable and transparent cloud infrastructure standards.
+"><meta data-rh="true" property="og:description" content="SCS-0001 outlines the structure, requirements, and lifecycle of standards, procedural documents, and decision
+records within the Sovereign Cloud Stack (SCS) community, ensuring clarity, organization, and governance in
+the development and maintenance of interoperable and transparent cloud infrastructure standards.
+"><link data-rh="true" rel="icon" href="/img/favicon.png"><link data-rh="true" rel="canonical" href="https://docs.scs.community/standards/scs-0001-v1-sovereign-cloud-standards"><link data-rh="true" rel="alternate" href="https://docs.scs.community/standards/scs-0001-v1-sovereign-cloud-standards" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.scs.community/standards/scs-0001-v1-sovereign-cloud-standards" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Standards","item":"https://docs.scs.community/standards/standards/overview"},{"@type":"ListItem","position":2,"name":"Global","item":"https://docs.scs.community/standards/global/"},{"@type":"ListItem","position":3,"name":"scs-0001","item":"https://docs.scs.community/standards/global/scs-0001"},{"@type":"ListItem","position":4,"name":"V1","item":"https://docs.scs.community/standards/scs-0001-v1-sovereign-cloud-standards"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="SCS Community Blog RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="SCS Community Blog Atom Feed">
+<link rel="alternate" type="application/json" href="/blog/feed.json" title="SCS Community Blog JSON Feed">
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://matomo.scs.community/">
+<script>var _paq=window._paq=window._paq||[];_paq.push(["setDocumentTitle",document.domain+"/"+document.title]),_paq.push(["disableCookies"]),_paq.push(["trackPageView"]),_paq.push(["enableLinkTracking"]),function(){var e="https://matomo.scs.community/";_paq.push(["setTrackerUrl",e+"matomo.php"]),_paq.push(["setSiteId","2"]);var a=document,t=a.createElement("script"),p=a.getElementsByTagName("script")[0];t.async=!0,t.src=e+"matomo.js",p.parentNode.insertBefore(t,p)}()</script><link rel="stylesheet" href="/assets/css/styles.7136250c.css">
+<script src="/assets/js/runtime~main.07d47f80.js" defer="defer"></script>
+<script src="/assets/js/main.23799193.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="SCS" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="SCS" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"></b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/standards">Standards</a><a class="navbar__item navbar__link" href="/docs">For Operators</a><a class="navbar__item navbar__link" href="/contributor-docs">For Contributors</a><a class="navbar__item navbar__link" href="/user-docs">For Users</a><a class="navbar__item navbar__link" href="/community">Community</a><a class="navbar__item navbar__link" href="/docs/faq">FAQ</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/SovereignCloudStack/docs" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/standards/"><span title="Introduction" class="linkLabel_WmDU">Introduction</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/standards/certification/digisov-and-cert"><span title="Certification" class="categoryLinkLabel_W154">Certification</span></a><button aria-label="Expand sidebar category &#x27;Certification&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/standards/standards/overview"><span title="Standards" class="categoryLinkLabel_W154">Standards</span></a><button aria-label="Collapse sidebar category &#x27;Standards&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/standards/global/"><span title="Global" class="categoryLinkLabel_W154">Global</span></a><button aria-label="Collapse sidebar category &#x27;Global&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/standards/global/scs-0001"><span title="scs-0001" class="categoryLinkLabel_W154">scs-0001</span></a><button aria-label="Collapse sidebar category &#x27;scs-0001&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-4 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/standards/scs-0001-v1-sovereign-cloud-standards"><span title="V1" class="linkLabel_WmDU">V1</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/global/scs-0002"><span title="scs-0002" class="categoryLinkLabel_W154">scs-0002</span></a><button aria-label="Expand sidebar category &#x27;scs-0002&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/global/scs-0003"><span title="scs-0003" class="categoryLinkLabel_W154">scs-0003</span></a><button aria-label="Expand sidebar category &#x27;scs-0003&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/global/scs-0004"><span title="scs-0004" class="categoryLinkLabel_W154">scs-0004</span></a><button aria-label="Expand sidebar category &#x27;scs-0004&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/global/scs-0005"><span title="scs-0005" class="categoryLinkLabel_W154">scs-0005</span></a><button aria-label="Expand sidebar category &#x27;scs-0005&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/global/scs-0006"><span title="scs-0006" class="categoryLinkLabel_W154">scs-0006</span></a><button aria-label="Expand sidebar category &#x27;scs-0006&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/global/scs-0007"><span title="scs-0007" class="categoryLinkLabel_W154">scs-0007</span></a><button aria-label="Expand sidebar category &#x27;scs-0007&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/"><span title="IaaS" class="categoryLinkLabel_W154">IaaS</span></a><button aria-label="Expand sidebar category &#x27;IaaS&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/"><span title="KaaS" class="categoryLinkLabel_W154">KaaS</span></a><button aria-label="Expand sidebar category &#x27;KaaS&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iam/"><span title="IAM" class="categoryLinkLabel_W154">IAM</span></a><button aria-label="Expand sidebar category &#x27;IAM&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/ops/"><span title="Ops" class="categoryLinkLabel_W154">Ops</span></a><button aria-label="Expand sidebar category &#x27;Ops&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/standards/standards/overview"><span>Standards</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/standards/global/"><span>Global</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/standards/global/scs-0001"><span>scs-0001</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">V1</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Sovereign Cloud Standards</h1></header><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="introduction">Introduction<a href="#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction" translate="no">​</a></h2>
+<p>The <a href="https://scs.community" target="_blank" rel="noopener noreferrer" class="">Sovereign Cloud Stack (SCS)</a> provides standards
+for a range of cloud infrastructure types.
+It strives for interoperable and sovereign cloud stacks
+which can be deployed and used by a wide range of organizations and individuals.
+Wherever feasible,
+transparency and openness both in respect to the inner workings of the platforms standardised by SCS,
+as well as the SCS organization itself
+are a paradigm we intend to live.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="requirements">Requirements<a href="#requirements" class="hash-link" aria-label="Direct link to Requirements" title="Direct link to Requirements" translate="no">​</a></h2>
+<p>The keywords &quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;, &quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;, &quot;MAY&quot;, and &quot;OPTIONAL&quot; in this document are to be interpreted as described in <a href="https://datatracker.ietf.org/doc/html/rfc2119" target="_blank" rel="noopener noreferrer" class="">RFC 2119</a>.</p>
+<p>In addition, &quot;FORBIDDEN&quot; is to be interpreted equivalent to &quot;MUST NOT&quot;.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sovereign-cloud-standard-documents">Sovereign Cloud Standard documents<a href="#sovereign-cloud-standard-documents" class="hash-link" aria-label="Direct link to Sovereign Cloud Standard documents" title="Direct link to Sovereign Cloud Standard documents" translate="no">​</a></h2>
+<p>One of the main products of the SCS organisation are Sovereign Cloud Standard documents.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="types-of-documents">Types of documents<a href="#types-of-documents" class="hash-link" aria-label="Direct link to Types of documents" title="Direct link to Types of documents" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="procedural">Procedural<a href="#procedural" class="hash-link" aria-label="Direct link to Procedural" title="Direct link to Procedural" translate="no">​</a></h4>
+<p>A procedural SCS document describes a process, a policy or a guideline
+to which the SCS community adheres.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="standard">Standard<a href="#standard" class="hash-link" aria-label="Direct link to Standard" title="Direct link to Standard" translate="no">​</a></h4>
+<p>A standard SCS document describes a technical standard for SCS compliant clouds.
+Note that it may not be necessary for all clouds to implement all standards.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="decision-record">Decision Record<a href="#decision-record" class="hash-link" aria-label="Direct link to Decision Record" title="Direct link to Decision Record" translate="no">​</a></h4>
+<p>Sometimes during the development of the SCS standard,
+a complex technical decision needs to be taken,
+which does not directly result in a new standard.</p>
+<p>The SCS document format formally integrates
+the documentation of such decisions
+as documents of type <code>Decision Record</code>.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="supplement">Supplement<a href="#supplement" class="hash-link" aria-label="Direct link to Supplement" title="Direct link to Supplement" translate="no">​</a></h4>
+<p>A supplement extends a Standard with additional information, such as implementation and testing notes,
+that is merely informative, but not authoritative, and that may be subject to change more frequently
+than the standard itself.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="document-format">Document format<a href="#document-format" class="hash-link" aria-label="Direct link to Document format" title="Direct link to Document format" translate="no">​</a></h3>
+<p>The SCS documents are provided in GitHub flavored markdown.
+Each document is assigned a unique number.
+To disambiguate with other organisations using similar schemes
+(such as XEPs, PEPs or IETF RFCs),
+the numbers are prefixed with <code>SCS-</code>.</p>
+<p>To allow a concept to evolve while allowing breaking changes,
+each SCS document is associated with a major version number.
+This major version number is a positive number
+and the numbering starts at one for each document.</p>
+<p>In order to make organisation of the SCS documents easier,
+each document also has a slugified title.
+The slugified title MUST NOT be changed after the acceptance of the document into the repository,
+as it is part of its canonical URL.
+It MUST consist only of lower-case ASCII letters, numbers and hyphens.
+It MUST NOT start with a hyphen and SHOULD start with a lower-case letter.
+It SHOULD NOT contain more than one subsequent hyphen.</p>
+<p>The file name of an SCS document is formed using the following pattern:
+<code>scs-XXXX-vN-T.md</code>, where
+<code>XXXX</code> is replaced with the zero-padded document number,
+<code>N</code> is replaced with the major version of the document, and
+<code>T</code> is replaced with the slugified title.
+For a document with the number 190, with a major version number 2 and a slugified title <code>flavor-naming</code>,
+the resulting file name would be <code>scs-0190-v2-flavor-naming.md</code>.</p>
+<p>Supplements deviate from this pattern in that they employ a <code>w</code> instead of a <code>v</code> in front of the version
+number, and each supplement uses the same document number as the main document it is extending.</p>
+<p>The second digit in <code>XXXX</code> describes the track where the document belongs:</p>
+<table><thead><tr><th>Track</th><th>Number</th></tr></thead><tbody><tr><td>Global</td><td>0</td></tr><tr><td>IaaS</td><td>1</td></tr><tr><td>KaaS</td><td>2</td></tr><tr><td>IAM</td><td>3</td></tr><tr><td>Ops</td><td>4</td></tr></tbody></table>
+<p>In addition to the number, each document has the following metadata,
+embedded in the markdown header.</p>
+<table><thead><tr><th>Field name</th><th>Requirement</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td>REQUIRED</td><td>one of <code>Procedural</code>, <code>Standard</code>, <code>Decision Record</code>, or <code>Supplement</code></td></tr><tr><td><code>status</code></td><td>REQUIRED precisely when <code>type</code> is not <code>Supplement</code></td><td>one of <code>Draft</code>, <code>Stable</code>, <code>Deprecated</code>, or <code>Rejected</code></td></tr><tr><td><code>track</code></td><td>REQUIRED</td><td>one of <code>Global</code>, <code>IaaS</code>, <code>KaaS</code>, <code>IAM</code>, <code>Ops</code></td></tr><tr><td><code>supplements</code></td><td>REQUIRED precisely when <code>type</code> is <code>Supplement</code></td><td>list of documents that are extended by this document (e.g., multiple major versions)</td></tr><tr><td><code>deprecated_at</code></td><td>REQUIRED if <code>status</code> is <code>Deprecated</code></td><td>ISO formatted date indicating the date after which the deprecation is in effect</td></tr><tr><td><code>stabilized_at</code></td><td>REQUIRED if <code>status</code> was ever <code>Stable</code></td><td>ISO formatted date indicating the date after which the document was considered stable</td></tr><tr><td><code>rejected_at</code></td><td>REQUIRED if <code>status</code> is <code>Rejected</code></td><td>ISO formatted date indicating the date on which the document was rejected</td></tr><tr><td><code>replaced_by</code></td><td>RECOMMENDED if <code>status</code> is <code>Deprecated</code> or <code>Rejected</code>, FORBIDDEN otherwise</td><td>List of documents which replace this document.</td></tr><tr><td><code>replaces</code></td><td>OPTIONAL</td><td>List of documents which this document replaces.</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sections">Sections<a href="#sections" class="hash-link" aria-label="Direct link to Sections" title="Direct link to Sections" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="standard-1">Standard<a href="#standard-1" class="hash-link" aria-label="Direct link to Standard" title="Direct link to Standard" translate="no">​</a></h4>
+<p>Each Standard document MUST have the following sections:</p>
+<ul>
+<li class="">An <em>Introduction</em> providing context on the document and linking to other relevant materials.</li>
+<li class="">A <em>Motivation</em> section which details why this document or the thing it describes is necessary.</li>
+<li class="">A section containing the actual standardization decision.</li>
+<li class="">A <em>Conformance Tests</em> section that contains hints on how to validate
+conformance with this spec, ideally links to conformance test cases.</li>
+</ul>
+<p>We also RECOMMEND the following sections:</p>
+<ul>
+<li class="">A <em>Terminology</em> section which briefly describes terms used in the document, including possible abbreviations.</li>
+</ul>
+<p>In addition, the following OPTIONAL sections should be considered:</p>
+<ul>
+<li class="">A <em>Design Considerations</em> section for Standard type documents,
+which details other choices
+which have been considered for the specific feature
+but were ultimately rejected.</li>
+<li class="">An <em>Open Questions</em> section which links to issues
+detailing any open discussion points with respect to a document.
+This section is RECOMMENDED during the discussion phase (pre 1.0.0)
+as a &quot;table of contents&quot; of things to work on in that context.</li>
+<li class="">A <em>Related Documents</em> section which references related Standards
+or Decisions, both upstream and/or other SCS documents.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="decision-record-1">Decision Record<a href="#decision-record-1" class="hash-link" aria-label="Direct link to Decision Record" title="Direct link to Decision Record" translate="no">​</a></h4>
+<p>Each Decision Record document MUST have the following sections:</p>
+<ul>
+<li class="">An <em>Abstract</em> providing a brief introduction on the topic of the document.</li>
+<li class="">A <em>Context</em> section describing the issue relevant for motivating this Decision Record.</li>
+<li class="">A section containing the actual decision that is introduced. The section should also include
+reasoning for this decision.</li>
+</ul>
+<p>We also RECOMMEND the following sections:</p>
+<ul>
+<li class="">A <em>Terminology</em> section which shortly describes terms used in the document, including possible abbreviations.</li>
+<li class="">A <em>Related Documents</em> section which references related Standards
+or Decisions, both upstream and/or other SCS documents.</li>
+</ul>
+<p>In addition, the following OPTIONAL sections should be considered:</p>
+<ul>
+<li class="">A <em>Consequences</em> section describing outcomes from implementing the changes described.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="process">Process<a href="#process" class="hash-link" aria-label="Direct link to Process" title="Direct link to Process" translate="no">​</a></h2>
+<p>The lifecycle of an SCS document goes through the following phases:
+Draft, Stable, Deprecated, and Rejected.
+(Supplements mark a deviation; more on that below.)</p>
+<!-- -->
+<p>All decisions for phase transitions follow loose consensus,
+where the group which has to form the consensus depends on the <code>track</code> of the document:</p>
+<ul>
+<li class="">IaaS: The team working on infrastructure-as-a-service topics</li>
+<li class="">KaaS: The team working on Kubernetes-as-a-service topics</li>
+<li class="">Ops: The team working on operations topics</li>
+<li class="">IAM: The team working on identity and access management topics</li>
+<li class="">Global: The SCS community, as defined in SCS-0005, as well as the Forum SCS-Standards</li>
+</ul>
+<p>Any pull request affecting a document in the Global track MUST NOT be merged
+unless approved by a representative of the <em>Forum SCS-Standards</em>.</p>
+<p>In case there is little or no activity in some team, the SIG Standardization/Certification
+can take decisions on behalf of such a team. The SIG will seek alignment with the Project
+Board for decisions with large impact to ensure we have the wanted broad alignment.</p>
+<p>From this perspective,
+Supplements are perpetually kept in phase Draft, because they are not authoritative,
+and this phase is not recorded in the document (i.e., no <code>status</code> field).</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="proposal-phase">Proposal phase<a href="#proposal-phase" class="hash-link" aria-label="Direct link to Proposal phase" title="Direct link to Proposal phase" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="proposal-of-a-new-document">Proposal of a new document<a href="#proposal-of-a-new-document" class="hash-link" aria-label="Direct link to Proposal of a new document" title="Direct link to Proposal of a new document" translate="no">​</a></h4>
+<p>To propose a new SCS document,
+a community participant creates a pull request on GitHub
+against the <a href="https://github.com/SovereignCloudStack/standards" target="_blank" rel="noopener noreferrer" class="">standards repository in the SovereignCloudStack organisation</a>.
+In the beginning, the pull request will contain a draft of an SCS document and
+the community participant should present it to the SCS community.
+They may refer to the <a href="https://docs.scs.community/community/" target="_blank" rel="noopener noreferrer" class="">SCS Community page</a>
+for an overview of applicable means of communication and online meetings
+to get in touch with the SCS community.
+Community participants are encouraged to present their proposal to the SCS community early on.
+Note that the proposal draft&#x27;s content does not need to be finished in any way at this stage.</p>
+<p>The pull request for the proposal MUST add exactly one SCS document of any type,
+plus potentially any number of supplements to the former document (if applicable),
+in the <code>Standards</code> folder.
+In the proposal phase,
+the document number MUST be replaced with <code>xxxx</code> in the file name,
+except for a Supplement, which uses the document number of the document it refers to.
+The major version MUST be 1.</p>
+<p>For a document with a slugified title <code>flavor-naming</code>,
+the file name would for instance be <code>scs-xxxx-v1-flavor-naming.md</code>;
+for a Supplement of <code>scs-0100-v3-flavor-naming.md</code>,
+the file name might be <code>scs-0100-w1-flavor-naming-implementation-testing.md</code> (note the <code>w1</code>!).</p>
+<p>The metadata MUST indicate the intended <code>track</code> and <code>type</code> of the document,
+and the <code>status</code> MUST be set to <code>Draft</code>,
+except for a Supplement;
+where, instead, the <code>supplements</code> field MUST be set
+to a list of documents (usually containing one element).</p>
+<p>Upon acceptance by the group of people identified by the <code>track</code>,
+a number is assigned
+(the next unused number)
+and the proposer is asked
+to rename the file to replace the <code>xxxx</code> with that number
+before the merge of the pull request.</p>
+<p><strong>Note:</strong>
+Documents on the <code>Design Record</code> track MAY be proposed or accepted directly into <code>Stable</code> state,
+if no further discussion is required.</p>
+<p>Hereafter,
+the pull request can be merged
+and henceforth the document is an official SCS document in <code>Draft</code> state.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="proposal-of-a-major-update-to-a-stable-document">Proposal of a major update to a stable document<a href="#proposal-of-a-major-update-to-a-stable-document" class="hash-link" aria-label="Direct link to Proposal of a major update to a stable document" title="Direct link to Proposal of a major update to a stable document" translate="no">​</a></h4>
+<p>To propose major update to a Stable SCS document,
+a community participant creates a pull request on GitHub
+against the <a href="https://github.com/SovereignCloudStack/standards" target="_blank" rel="noopener noreferrer" class="">standards repository in the SovereignCloudStack organisation</a>.</p>
+<p>The pull request MUST add exactly one SCS document of any type,
+plus potentially any number of supplements to the former document (if applicable),
+in the <code>Standards</code> folder.
+The document number MUST be the same as the document it is updating,
+and the major version number MUST be incremented by 1.
+The slugified title MAY be changed.</p>
+<p>It MUST refer to the old document in its <code>replaces</code> metadata.
+The pull request SHOULD NOT modify the previous document;
+deprecation of the previous document
+as well as adding the <code>replaced_by</code> metadata is a separate step,
+and can only be executed once the new document is <code>Stable</code>.</p>
+<p>For a document updating a hypothetical SCS-0390-v3 document,
+the file name may be <code>scs-0390-v4-flavor-naming-this-time-its-serious.md</code>.</p>
+<p>Other than the file naming difference,
+the proposal process is the same as for new documents.
+In particular, the new document starts out in <code>Draft</code> state
+and does not automatically become part of the normative corpus of an SCS release.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="development-phase-draft">Development phase (Draft)<a href="#development-phase-draft" class="hash-link" aria-label="Direct link to Development phase (Draft)" title="Direct link to Development phase (Draft)" translate="no">​</a></h3>
+<p>In this phase,
+the document is developed inside the SCS community.</p>
+<p>It should not be considered to be normative for any SCS release,
+even if an SCS release happens after the acceptance of the document.</p>
+<p>Experimental and exploratory implementations are encouraged,
+however, implementors must be prepared for breaking changes.</p>
+<p>Changes to the documents are gated through pull requests.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stabilized-phase-stable">Stabilized phase (Stable)<a href="#stabilized-phase-stable" class="hash-link" aria-label="Direct link to Stabilized phase (Stable)" title="Direct link to Stabilized phase (Stable)" translate="no">​</a></h3>
+<p>Once the document is deemed ready for production use,
+its <code>status</code> is changed to <code>Stable</code>.
+Additionally, the field <code>stabilized_at</code> MUST be added and set to a date after which the document is
+to be considered stable.</p>
+<p>If the document in question is a <code>Standard</code>
+(and if applicable),
+the following conditions MUST all be satisfied before stabilizing:</p>
+<ul>
+<li class="">the corresponding conformance tests have been implemented
+according to the general guidelines,</li>
+<li class="">they have been shown to work with the reference implementation,</li>
+<li class="">they are documented in the standard or one of its <code>Supplement</code>
+documents.</li>
+</ul>
+<p>After stabilization,
+changes to the document which may render existing implementations non-conformant
+MUST NOT be made.</p>
+<p>If a breaking change to an existing SCS document is deemed necessary,
+a new document with a new number shall be created
+and the old document SHOULD be deprecated.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="deprecation-phase-deprecated">Deprecation phase (Deprecated)<a href="#deprecation-phase-deprecated" class="hash-link" aria-label="Direct link to Deprecation phase (Deprecated)" title="Direct link to Deprecation phase (Deprecated)" translate="no">​</a></h3>
+<p>When a document is no longer deemed fit for production use,
+it can be marked as deprecated.</p>
+<p>Deprecations SHOULD be announced ahead of their execution by setting the
+<code>deprecated_at</code> field to a future date and moving the <code>status</code> to <code>Deprecated</code>.
+This signals current and future implementors
+that the subject of the document
+is not considered necessary or state of the art anymore.</p>
+<p>If one or more replacement documents for the document exists,
+it MUST be listed in the <code>replaced_by</code> metadata field.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rejection">Rejection<a href="#rejection" class="hash-link" aria-label="Direct link to Rejection" title="Direct link to Rejection" translate="no">​</a></h3>
+<p>If a document is removed from the normative corpus of SCS standards,
+its status is changed to <code>Rejected</code>.</p>
+<p>If one or more replacement documents for the document exists,
+it MUST be listed in the <code>replaced_by</code> metadata field.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="open-questions">Open Questions<a href="#open-questions" class="hash-link" aria-label="Direct link to Open Questions" title="Direct link to Open Questions" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stabilization-criteria">Stabilization criteria<a href="#stabilization-criteria" class="hash-link" aria-label="Direct link to Stabilization criteria" title="Direct link to Stabilization criteria" translate="no">​</a></h3>
+<p>When should a document be stabilized?
+Should we require at least one public implementation?
+Should we require a minimum experimental time?
+What about non-Standard track documents?</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="breaking-change-criteria">Breaking change criteria<a href="#breaking-change-criteria" class="hash-link" aria-label="Direct link to Breaking change criteria" title="Direct link to Breaking change criteria" translate="no">​</a></h3>
+<p>When is a change breaking and cannot be applied to a Stable document?
+What about previously undefined behaviour (uncovered edge case)?
+What about ambiguous wording?
+Do we need a separate &quot;Errata&quot; section?</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="design-considerations">Design Considerations<a href="#design-considerations" class="hash-link" aria-label="Direct link to Design Considerations" title="Direct link to Design Considerations" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="versioning">Versioning<a href="#versioning" class="hash-link" aria-label="Direct link to Versioning" title="Direct link to Versioning" translate="no">​</a></h3>
+<p>An alternative to the proposed scheme for stabilization
+is the use of <a href="https://semver.org/" target="_blank" rel="noopener noreferrer" class="">SemVer-like</a> versioning.</p>
+<p>In that case, one would have an individual version number with each document,
+where a major version greater than zero indicates a stable document.
+The <code>Stable</code> state would be merged with <code>Draft</code> state into an <em>Active</em> state
+and shared between the stabilized and the development phase.</p>
+<p>The advantages of such an approach are:</p>
+<ul>
+<li class="">It is easy to recognize whether an SCS document has changed between two SCS
+releases, just by looking at the released version number.</li>
+<li class="">It is possible to make breaking changes after stabilization by increasing the
+major version number.</li>
+</ul>
+<p>The disadvantages of that approach are:</p>
+<ul>
+<li class="">
+<p>It is possible to make breaking changes after stabilization.
+Potentially, a hypothetical SCS-1234 document might refer to something completely different
+in a hypothetical R15 release than what it meant in R5,
+if there have been sufficient, gradual breaking changes to the document.</p>
+<p>That means that for proper linking,
+it would be required to always include the major version number
+when referring to an SCS document.</p>
+<p>This implies having to keep all former versions around in a canonical, linkable form.
+This induces non-trivial organizational and editorial overhead
+and raises questions around which changes are acceptable to &quot;archived&quot; versions,
+if any.</p>
+</li>
+<li class="">
+<p>It would require a clone of the SemVer spec,
+as that spec is highly specific toward software
+and does not fully
+(at least not in the standard-as-written)
+cover specifics of a standards organisation&#x27;s use-cases.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="acknowledgements">Acknowledgements<a href="#acknowledgements" class="hash-link" aria-label="Direct link to Acknowledgements" title="Direct link to Acknowledgements" translate="no">​</a></h2>
+<p>This document is heavily inspired by <a href="https://xmpp.org/extensions/xep-0001.html" target="_blank" rel="noopener noreferrer" class="">XEP-0001</a>, as published by the XMPP Standards Foundation.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/standards/global/scs-0001"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">scs-0001: Sovereign Cloud Standards</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/standards/global/scs-0002"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">scs-0002: Standards, Docs and Organisation</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a></li><li><a href="#requirements" class="table-of-contents__link toc-highlight">Requirements</a></li><li><a href="#sovereign-cloud-standard-documents" class="table-of-contents__link toc-highlight">Sovereign Cloud Standard documents</a><ul><li><a href="#types-of-documents" class="table-of-contents__link toc-highlight">Types of documents</a></li><li><a href="#document-format" class="table-of-contents__link toc-highlight">Document format</a></li><li><a href="#sections" class="table-of-contents__link toc-highlight">Sections</a></li></ul></li><li><a href="#process" class="table-of-contents__link toc-highlight">Process</a><ul><li><a href="#proposal-phase" class="table-of-contents__link toc-highlight">Proposal phase</a></li><li><a href="#development-phase-draft" class="table-of-contents__link toc-highlight">Development phase (Draft)</a></li><li><a href="#stabilized-phase-stable" class="table-of-contents__link toc-highlight">Stabilized phase (Stable)</a></li><li><a href="#deprecation-phase-deprecated" class="table-of-contents__link toc-highlight">Deprecation phase (Deprecated)</a></li><li><a href="#rejection" class="table-of-contents__link toc-highlight">Rejection</a></li></ul></li><li><a href="#open-questions" class="table-of-contents__link toc-highlight">Open Questions</a><ul><li><a href="#stabilization-criteria" class="table-of-contents__link toc-highlight">Stabilization criteria</a></li><li><a href="#breaking-change-criteria" class="table-of-contents__link toc-highlight">Breaking change criteria</a></li></ul></li><li><a href="#design-considerations" class="table-of-contents__link toc-highlight">Design Considerations</a><ul><li><a href="#versioning" class="table-of-contents__link toc-highlight">Versioning</a></li></ul></li><li><a href="#acknowledgements" class="table-of-contents__link toc-highlight">Acknowledgements</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs">Contribute</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org" target="_blank" rel="noopener noreferrer" class="footer__link-item">Matrix<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://fosstodon.org/@sovereigncloudstack" target="_blank" rel="noopener noreferrer" class="footer__link-item">Mastodon<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/SovereignCloudStack/docs" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Sovereign Cloud Stack, SCS and the logo are registered trademarks of the Open Source Business Alliance e.V. — Other trademarks are property of their respective owners.</div></div></div></footer></div>
+</body>
+</html>

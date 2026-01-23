@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-standards docs-version-current docs-doc-page docs-doc-id-scs-0122-v1-node-to-node-encryption" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">End-to-End Encryption between Customer Workloads | One platform — standardized, built and operated by many.</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.scs.community/img/scs-og-basic.png"><meta data-rh="true" name="twitter:image" content="https://docs.scs.community/img/scs-og-basic.png"><meta data-rh="true" property="og:url" content="https://docs.scs.community/standards/scs-0122-v1-node-to-node-encryption"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-standards-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-standards-current"><meta data-rh="true" property="og:title" content="End-to-End Encryption between Customer Workloads | One platform — standardized, built and operated by many."><meta data-rh="true" name="description" content="Abstract"><meta data-rh="true" property="og:description" content="Abstract"><link data-rh="true" rel="icon" href="/img/favicon.png"><link data-rh="true" rel="canonical" href="https://docs.scs.community/standards/scs-0122-v1-node-to-node-encryption"><link data-rh="true" rel="alternate" href="https://docs.scs.community/standards/scs-0122-v1-node-to-node-encryption" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.scs.community/standards/scs-0122-v1-node-to-node-encryption" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Standards","item":"https://docs.scs.community/standards/standards/overview"},{"@type":"ListItem","position":2,"name":"IaaS","item":"https://docs.scs.community/standards/iaas/"},{"@type":"ListItem","position":3,"name":"scs-0122","item":"https://docs.scs.community/standards/iaas/scs-0122"},{"@type":"ListItem","position":4,"name":"V1","item":"https://docs.scs.community/standards/scs-0122-v1-node-to-node-encryption"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="SCS Community Blog RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="SCS Community Blog Atom Feed">
+<link rel="alternate" type="application/json" href="/blog/feed.json" title="SCS Community Blog JSON Feed">
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://matomo.scs.community/">
+<script>var _paq=window._paq=window._paq||[];_paq.push(["setDocumentTitle",document.domain+"/"+document.title]),_paq.push(["disableCookies"]),_paq.push(["trackPageView"]),_paq.push(["enableLinkTracking"]),function(){var e="https://matomo.scs.community/";_paq.push(["setTrackerUrl",e+"matomo.php"]),_paq.push(["setSiteId","2"]);var a=document,t=a.createElement("script"),p=a.getElementsByTagName("script")[0];t.async=!0,t.src=e+"matomo.js",p.parentNode.insertBefore(t,p)}()</script><link rel="stylesheet" href="/assets/css/styles.7136250c.css">
+<script src="/assets/js/runtime~main.07d47f80.js" defer="defer"></script>
+<script src="/assets/js/main.23799193.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="SCS" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="SCS" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"></b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/standards">Standards</a><a class="navbar__item navbar__link" href="/docs">For Operators</a><a class="navbar__item navbar__link" href="/contributor-docs">For Contributors</a><a class="navbar__item navbar__link" href="/user-docs">For Users</a><a class="navbar__item navbar__link" href="/community">Community</a><a class="navbar__item navbar__link" href="/docs/faq">FAQ</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/SovereignCloudStack/docs" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/standards/"><span title="Introduction" class="linkLabel_WmDU">Introduction</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/standards/certification/digisov-and-cert"><span title="Certification" class="categoryLinkLabel_W154">Certification</span></a><button aria-label="Expand sidebar category &#x27;Certification&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/standards/standards/overview"><span title="Standards" class="categoryLinkLabel_W154">Standards</span></a><button aria-label="Collapse sidebar category &#x27;Standards&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/global/"><span title="Global" class="categoryLinkLabel_W154">Global</span></a><button aria-label="Expand sidebar category &#x27;Global&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/standards/iaas/"><span title="IaaS" class="categoryLinkLabel_W154">IaaS</span></a><button aria-label="Collapse sidebar category &#x27;IaaS&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0100"><span title="scs-0100" class="categoryLinkLabel_W154">scs-0100</span></a><button aria-label="Expand sidebar category &#x27;scs-0100&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0101"><span title="scs-0101" class="categoryLinkLabel_W154">scs-0101</span></a><button aria-label="Expand sidebar category &#x27;scs-0101&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0102"><span title="scs-0102" class="categoryLinkLabel_W154">scs-0102</span></a><button aria-label="Expand sidebar category &#x27;scs-0102&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0103"><span title="scs-0103" class="categoryLinkLabel_W154">scs-0103</span></a><button aria-label="Expand sidebar category &#x27;scs-0103&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0104"><span title="scs-0104" class="categoryLinkLabel_W154">scs-0104</span></a><button aria-label="Expand sidebar category &#x27;scs-0104&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0110"><span title="scs-0110" class="categoryLinkLabel_W154">scs-0110</span></a><button aria-label="Expand sidebar category &#x27;scs-0110&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0111"><span title="scs-0111" class="categoryLinkLabel_W154">scs-0111</span></a><button aria-label="Expand sidebar category &#x27;scs-0111&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0112"><span title="scs-0112" class="categoryLinkLabel_W154">scs-0112</span></a><button aria-label="Expand sidebar category &#x27;scs-0112&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0113"><span title="scs-0113" class="categoryLinkLabel_W154">scs-0113</span></a><button aria-label="Expand sidebar category &#x27;scs-0113&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0114"><span title="scs-0114" class="categoryLinkLabel_W154">scs-0114</span></a><button aria-label="Expand sidebar category &#x27;scs-0114&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0115"><span title="scs-0115" class="categoryLinkLabel_W154">scs-0115</span></a><button aria-label="Expand sidebar category &#x27;scs-0115&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0116"><span title="scs-0116" class="categoryLinkLabel_W154">scs-0116</span></a><button aria-label="Expand sidebar category &#x27;scs-0116&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0117"><span title="scs-0117" class="categoryLinkLabel_W154">scs-0117</span></a><button aria-label="Expand sidebar category &#x27;scs-0117&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0118"><span title="scs-0118" class="categoryLinkLabel_W154">scs-0118</span></a><button aria-label="Expand sidebar category &#x27;scs-0118&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0119"><span title="scs-0119" class="categoryLinkLabel_W154">scs-0119</span></a><button aria-label="Expand sidebar category &#x27;scs-0119&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0120"><span title="scs-0120" class="categoryLinkLabel_W154">scs-0120</span></a><button aria-label="Expand sidebar category &#x27;scs-0120&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0121"><span title="scs-0121" class="categoryLinkLabel_W154">scs-0121</span></a><button aria-label="Expand sidebar category &#x27;scs-0121&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/standards/iaas/scs-0122"><span title="scs-0122" class="categoryLinkLabel_W154">scs-0122</span></a><button aria-label="Collapse sidebar category &#x27;scs-0122&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-4 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/standards/scs-0122-v1-node-to-node-encryption"><span title="V1" class="linkLabel_WmDU">V1</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0123"><span title="scs-0123" class="categoryLinkLabel_W154">scs-0123</span></a><button aria-label="Expand sidebar category &#x27;scs-0123&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0124"><span title="scs-0124" class="categoryLinkLabel_W154">scs-0124</span></a><button aria-label="Expand sidebar category &#x27;scs-0124&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0125"><span title="scs-0125" class="categoryLinkLabel_W154">scs-0125</span></a><button aria-label="Expand sidebar category &#x27;scs-0125&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0126"><span title="scs-0126" class="categoryLinkLabel_W154">scs-0126</span></a><button aria-label="Expand sidebar category &#x27;scs-0126&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0127"><span title="scs-0127" class="categoryLinkLabel_W154">scs-0127</span></a><button aria-label="Expand sidebar category &#x27;scs-0127&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/"><span title="KaaS" class="categoryLinkLabel_W154">KaaS</span></a><button aria-label="Expand sidebar category &#x27;KaaS&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iam/"><span title="IAM" class="categoryLinkLabel_W154">IAM</span></a><button aria-label="Expand sidebar category &#x27;IAM&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/ops/"><span title="Ops" class="categoryLinkLabel_W154">Ops</span></a><button aria-label="Expand sidebar category &#x27;Ops&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/standards/standards/overview"><span>Standards</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/standards/iaas/"><span>IaaS</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/standards/iaas/scs-0122"><span>scs-0122</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">V1</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>End-to-End Encryption between Customer Workloads</h1></header><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="abstract">Abstract<a href="#abstract" class="hash-link" aria-label="Direct link to Abstract" title="Direct link to Abstract" translate="no">​</a></h2>
+<p>This document explores options for developing end-to-end (E2E) encryption for
+VMs, Magnum workloads, and container layers to enhance security between user
+services. It includes a detailed review of various technologies, feedback from
+the OpenStack community, and the decision-making process that led to selecting
+VXLANs with the OpenStack ML2 plugin and it&#x27;s later abandonment in favour of
+natural openvswitch-ipsec solution.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="terminology">Terminology<a href="#terminology" class="hash-link" aria-label="Direct link to Terminology" title="Direct link to Terminology" translate="no">​</a></h2>
+<table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td>CSP</td><td>Cloud service provider, in this document it includes also an operator of a private cloud</td></tr><tr><td>VM</td><td>Virtual machine, alternatively instance, is a virtualized compute resource that functions as a self-contained server for a customer</td></tr><tr><td>Node</td><td>Machine under CSP administration which hosts cloud services and compute instances</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="context">Context<a href="#context" class="hash-link" aria-label="Direct link to Context" title="Direct link to Context" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="motivation">Motivation<a href="#motivation" class="hash-link" aria-label="Direct link to Motivation" title="Direct link to Motivation" translate="no">​</a></h3>
+<p>The security of customer/user workloads is one of CSPs main concerns. With
+larger and more diverse cloud instances, parts of the underlying physical
+infrastructure can be outside of CSPs direct control, either when
+interconnecting datacenters via public internet or in the case of renting
+infrastructure from third party. Many security breaches occur due to
+actions of malicious or negligent inhouse operators. While some burden lies
+with customers, which should secure their own workloads, CSP should have the
+option to transparently protect the data pathways between instances, more so
+for private clouds, where CSP and customer are the same entity or parts of the
+same entity.</p>
+<p>In RFC8926<sup><a href="#user-content-fn-rfc" id="user-content-fnref-rfc" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">1</a></sup> it is stated:</p>
+<blockquote>
+<p>A tenant system in a customer premises (private data center) may want to
+connect to tenant systems on their tenant overlay network in a public cloud
+data center, or a tenant may want to have its tenant systems located in
+multiple geographically separated data centers for high availability. Geneve
+data traffic between tenant systems across such separated networks should be
+protected from threats when traversing public networks. Any Geneve overlay
+data leaving the data center network beyond the operator&#x27;s security domain
+SHOULD be secured by encryption mechanisms, such as IPsec or other VPN
+technologies, to protect the communications between the NVEs when they are
+geographically separated over untrusted network links.</p>
+</blockquote>
+<p>We aren&#x27;t considering the communication intra node, meaning inside one host
+node between different VMs potentially of multiple tenants as this is a
+question of tenant isolation, not of networking security, and encryption here
+would be possibly a redundant measure. Isolation of VMs is handled by OpenStack
+on multiple levels - overlay tunneling protocols, routing rules on networking
+level, network namespaces on kernel level and hypervisor isolation mechanisms.
+All the communication here is existing inside node and any malicious agent with
+high enough access to the node itself to observe/tamper with the internal
+communication traffic would pressumably have access to the encryption keys
+themselves, rendering the encryption ineffective.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="potential-threats-in-detail">Potential threats in detail<a href="#potential-threats-in-detail" class="hash-link" aria-label="Direct link to Potential threats in detail" title="Direct link to Potential threats in detail" translate="no">​</a></h3>
+<p>We are assuming that:</p>
+<ul>
+<li class="">the customer workloads are not executed within secure enclaves (e.g. Security
+Guard Extensions (SGX)) and aren&#x27;t using security measures like end-to-end
+encryption themselves, either relying with security on the CSP or in the case
+of a private cloud are run by the operator of the cloud</li>
+<li class="">the CSP OpenStack administrators are deemed trustworthy since they possess
+root access to the host nodes, with access to keys and certificates, enabling
+them to bypass any form of internode communication encryption</li>
+<li class="">a third party or an independent team manages physical network communication
+between nodes within a colocation setting or the communication passes unsafe
+public infrastructure in the case of a single stretched instance spanning
+multiple data centers</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="man-in-the-middle-attack">Man in the Middle Attack<a href="#man-in-the-middle-attack" class="hash-link" aria-label="Direct link to Man in the Middle Attack" title="Direct link to Man in the Middle Attack" translate="no">​</a></h4>
+<p>Considering the assumptions and the objective to enforce end-to-end (E2E)
+encryption for user workloads, our primary security concern is averting
+man-in-the-middle (MITM) attacks. These can be categorized into two distinct
+forms: active and passive.</p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="passive-attacks---eavesdropping">Passive Attacks - Eavesdropping<a href="#passive-attacks---eavesdropping" class="hash-link" aria-label="Direct link to Passive Attacks - Eavesdropping" title="Direct link to Passive Attacks - Eavesdropping" translate="no">​</a></h5>
+<p>Consider the scenario where an untrusted individual, such as a third party
+network administrator, with physical access to the data center engages in
+&#x27;passive&#x27; covert surveillance, silently monitoring unencrypted traffic
+without interfering with data integrity or network operations.</p>
+<p>Wiretapping is a common technique employed in such espionage. It involves the
+unauthorized attachment to network cabling, enabling the covert observation of
+data transit. This activity typically goes unnoticed as it does not disrupt
+the flow of network traffic, although it may occasionally introduce minor
+transmission errors.</p>
+<p>An alternative strategy involves deploying an interception device that
+captures and retransmits data, which could potentially introduce network
+latency or, if deployed disruptively, cause connectivity interruptions. Such
+devices can be concealed by synchronizing their installation with network
+downtime, maintenance periods, or less conspicuous times like power outages.
+They could also be strategically placed in less secure, more accessible
+locations, such as inter-building network links. This applies to wiretapping
+as well.</p>
+<p>Furthermore, the vulnerability extends to network devices, where an attacker
+could exploit unsecured management ports or leverage compromised remote
+management tools (like IPMI) to gain unauthorized access. Such access points,
+especially those not routinely monitored like backup VPNs, present additional
+security risks.</p>
+<p>Below is a conceptual diagram depicting potential vulnerabilities in an
+OpenStack deployment across dual regions, highlighting how these passive
+eavesdropping techniques could be facilitated.</p>
+<p><img decoding="async" loading="lazy" src="https://github.com/SovereignCloudStack/issues/assets/1249759/f5b7edf3-d259-4b2a-8632-c877934f3e31" alt="image" class="img_ev3q"></p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="active---spoofing--tampering">Active - Spoofing / Tampering<a href="#active---spoofing--tampering" class="hash-link" aria-label="Direct link to Active - Spoofing / Tampering" title="Direct link to Active - Spoofing / Tampering" translate="no">​</a></h5>
+<p>Active network attacks like spoofing and tampering exploit various access
+points, often leveraging vulnerabilities uncovered during passive eavesdropping
+phases. These attacks actively manipulate or introduce unauthorized
+communications on the network.</p>
+<p>Spoofing involves an attacker masquerading as another device or user within the
+network. This deception can manifest in several ways:</p>
+<ul>
+<li class=""><strong>ARP Spoofing:</strong> The attacker sends forged ARP (Address Resolution Protocol)
+messages onto the network. This can redirect network traffic flow to the
+attacker&#x27;s machine, intercepting, modifying, or blocking data before it
+reaches its intended destination.</li>
+<li class=""><strong>DNS Spoofing:</strong> By responding with falsified DNS replies, an attacker can
+reroute traffic to malicious sites, further compromising or data exfiltration.</li>
+<li class=""><strong>IP Spoofing:</strong> The attacker disguises their network identity by falsifying
+IP address information in packets, tricking the network into accepting them
+as legitimate traffic. This can be particularly damaging if encryption is not
+enforced, enabling the attacker to interact with databases, invoke APIs, or
+execute unauthorized commands while appearing as a trusted entity.</li>
+</ul>
+<p>Moreover, when an active interception device is in place, attackers can extend
+their capabilities to traffic filtering. They might selectively delete or alter
+logs and metrics to erase traces of their intrusion or fabricate system
+performance data, thus obscuring the true nature of their activities.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="preliminary-considerations">Preliminary considerations<a href="#preliminary-considerations" class="hash-link" aria-label="Direct link to Preliminary considerations" title="Direct link to Preliminary considerations" translate="no">​</a></h3>
+<p>Initially we wanted to create a plugin into Neutron<sup><a href="#user-content-fn-ne" id="user-content-fnref-ne" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">2</a></sup> using eBPF<sup><a href="#user-content-fn-eb" id="user-content-fnref-eb" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">3</a></sup> to
+secure the traffic automatically between VMs. We presented the idea in a
+team IaaS call<sup><a href="#user-content-fn-ia" id="user-content-fnref-ia" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">4</a></sup>. After the initial round of feedback specific requirements
+emerged.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="utilize-existing-solutions">Utilize existing solutions<a href="#utilize-existing-solutions" class="hash-link" aria-label="Direct link to Utilize existing solutions" title="Direct link to Utilize existing solutions" translate="no">​</a></h4>
+<p>Leverage existing technologies and frameworks as much as possible. This
+approach aims to reduce development time and ensure the solution is built on
+proven, reliable foundations. Potential technologies include:</p>
+<ul>
+<li class=""><strong>OVS<sup><a href="#user-content-fn-sw" id="user-content-fnref-sw" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">5</a></sup> + IPSec<sup><a href="#user-content-fn-ip" id="user-content-fnref-ip" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">6</a></sup></strong>: Provides an overlay network and has built-in
+support for encryption using IPsec. Leveraging OVS can minimize development
+time since it is already integrated with OpenStack.</li>
+<li class=""><strong>Neutron<sup><a href="#user-content-fn-ne" id="user-content-fnref-ne-2" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">2</a></sup> with eBPF<sup><a href="#user-content-fn-eb" id="user-content-fnref-eb-2" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">3</a></sup></strong>: Using eBPF<sup><a href="#user-content-fn-eb" id="user-content-fnref-eb-3" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">3</a></sup> could provide fine-grained
+control over packet filtering and encryption directly in the kernel.</li>
+<li class=""><strong>TripleO<sup><a href="#user-content-fn-to" id="user-content-fnref-to" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">7</a></sup> (with IPsec)</strong>: TripleO<sup><a href="#user-content-fn-to" id="user-content-fnref-to-2" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">7</a></sup> tool set for OpenStack deployment
+supports IPsec tunnels between nodes.</li>
+<li class=""><strong>Neutron<sup><a href="#user-content-fn-ne" id="user-content-fnref-ne-3" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">2</a></sup> + Cilium<sup><a href="#user-content-fn-ci" id="user-content-fnref-ci" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">8</a></sup></strong>: Cilium is an open source, cloud native
+eBPF<sup><a href="#user-content-fn-eb" id="user-content-fnref-eb-4" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">3</a></sup>-based networking solution, including transparent encryption tools.</li>
+<li class=""><strong>Tailscale<sup><a href="#user-content-fn-ta" id="user-content-fnref-ta" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">9</a></sup></strong> is a mesh VPN based on WireGuard<sup><a href="#user-content-fn-wg" id="user-content-fnref-wg" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">10</a></sup> that simplifies the
+setup of secure, encrypted networks. This could be a potential alternative
+to managing encrypted connections in OpenStack environments.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="upstream-integration">Upstream integration<a href="#upstream-integration" class="hash-link" aria-label="Direct link to Upstream integration" title="Direct link to Upstream integration" translate="no">​</a></h4>
+<p>Move as much of the development work upstream into existing OpenStack projects.
+This will help ensure the solution is maintained by the wider OpenStack
+community, reducing the risk of it becoming unmaintained or unusable in the
+future. This means to collaborate with the OpenStack community to contribute
+changes upstream, particularly in projects like Neutron<sup><a href="#user-content-fn-ne" id="user-content-fnref-ne-4" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">2</a></sup>, OVN<sup><a href="#user-content-fn-ov" id="user-content-fnref-ov" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">11</a></sup>,
+kolla<sup><a href="#user-content-fn-kl" id="user-content-fnref-kl" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">12</a></sup> and ansible-kolla<sup><a href="#user-content-fn-ka" id="user-content-fnref-ka" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">13</a></sup>.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="address-threat-modeling-issues">Address threat modeling issues<a href="#address-threat-modeling-issues" class="hash-link" aria-label="Direct link to Address threat modeling issues" title="Direct link to Address threat modeling issues" translate="no">​</a></h4>
+<p>&quot;We should not encrypt something just for the sake of encryption.&quot; The solution
+must address the specific security issues identified in the
+<a href="#potential-threats-in-detail" class="">threat modeling</a>. This ideally includes
+protecting against both passive (eavesdropping) and active (spoofing,
+tampering) MITM attacks. Encryption mechanisms on all communication channels
+between VMs, containers, hosts prevents successfull eavesdropping,
+authentication and integrity checks prevent spoofing and tampering. For example
+IPsec<sup><a href="#user-content-fn-ip" id="user-content-fnref-ip-2" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">6</a></sup> provides mechanisms for both encyption and integrity verification.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance-impact-and-ease-of-use">Performance impact and ease of use<a href="#performance-impact-and-ease-of-use" class="hash-link" aria-label="Direct link to Performance impact and ease of use" title="Direct link to Performance impact and ease of use" translate="no">​</a></h4>
+<p>Evaluate the performance impact of the encryption solution and ensure it is
+minimal. Performance benchmarking should be conducted to assess the impact of
+the encryption solution on network throughput and latency. For local trusted
+scenarios opt out should be possible. The solution should also be easy to use
+and manage, both for administrators and ideally fully transparent for
+end-users. This may involve developing user-friendly interfaces and automated
+tools for key management and configuration.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="avoid-redundant-encryption">Avoid redundant encryption<a href="#avoid-redundant-encryption" class="hash-link" aria-label="Direct link to Avoid redundant encryption" title="Direct link to Avoid redundant encryption" translate="no">​</a></h4>
+<p>If possible, develop a mechanism to detect and avoid encrypting traffic that is
+already encrypted. This will help optimize performance and resource usage.</p>
+<p>By focusing on these detailed requirements and considerations, we aim to
+develop a robust, efficient, and sustainable E2E encryption solution for
+OpenStack environments. This solution will not only enhance security for user
+workloads but also ensure long-term maintainability and ease of use.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="exploration-of-technologies">Exploration of technologies<a href="#exploration-of-technologies" class="hash-link" aria-label="Direct link to Exploration of technologies" title="Direct link to Exploration of technologies" translate="no">​</a></h3>
+<p>Based on the result of the threat modeling and presentation, we explored the
+following technologies and also reached out to the OpenStack mailing list for
+additional comments.</p>
+<p>This section provides a brief explanation of OpenStack networking and design
+decisions for encryption between customer workloads.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="networking-in-openstack">Networking in OpenStack<a href="#networking-in-openstack" class="hash-link" aria-label="Direct link to Networking in OpenStack" title="Direct link to Networking in OpenStack" translate="no">​</a></h4>
+<p>The foundation of networking in OpenStack is the Neutron<sup><a href="#user-content-fn-ne" id="user-content-fnref-ne-5" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">2</a></sup> project,
+providing networking as a service (NaaS). It creates and manages network
+resources such as switches, routers, subnets, firewalls and load balancers,
+uses plugin architecture to support different physical network implementation
+options and is accessible to admin or other services through API.</p>
+<p>Another integral part is the Open vSwitch (OVS)<sup><a href="#user-content-fn-sw" id="user-content-fnref-sw-2" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">5</a></sup> - a widely adopted virtual
+switch implementation, which is not strictly necessary, as Neutron is quite
+flexible with compenents used to implement the infrastructure, but tends to
+be the agent of choice and is the current default agent for Neutron. It allows
+it to respond to environment changes, supporting accounting and monitoring
+protocols and maintaining OVSDB state database. It manages virtual ports,
+bridges and tunnels on hosts.</p>
+<p>Open Virtual Networking (OVN<sup><a href="#user-content-fn-ov" id="user-content-fnref-ov-2" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">11</a></sup>) is a logical abstraction layer on top of OVS,
+developed by the same community that became the default controller driver for
+Neutron. It manages logical networks insulated from underlying physical/virtual
+networks by encapsulation. It replaces the need for OVS agents running on each
+host and supports L2 switching, distributed L3 routing, access control and load
+balancing.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="encryption-options">Encryption options<a href="#encryption-options" class="hash-link" aria-label="Direct link to Encryption options" title="Direct link to Encryption options" translate="no">​</a></h4>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="macsec">MACsec<sup><a href="#user-content-fn-ms" id="user-content-fnref-ms" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">14</a></sup><a href="#macsec" class="hash-link" aria-label="Direct link to macsec" title="Direct link to macsec" translate="no">​</a></h5>
+<p>A layer 2 security protocol, defined by an IEEE standard 802.1AE. It allows to
+secure an ethernet link for almost all traffic, including control protocols
+like DHCP and ARP. It is mostly implemented in hardware, in routers and
+switches, but software implementations exist, notably a Linux kernel module.</p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="ebpf-based-encryption-with-linux-kernel-crypto-api">eBPF<sup><a href="#user-content-fn-eb" id="user-content-fnref-eb-5" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">3</a></sup>-based encryption with Linux Kernel Crypto API<a href="#ebpf-based-encryption-with-linux-kernel-crypto-api" class="hash-link" aria-label="Direct link to ebpf-based-encryption-with-linux-kernel-crypto-api" title="Direct link to ebpf-based-encryption-with-linux-kernel-crypto-api" translate="no">​</a></h5>
+<p>A network packet specific filtering technology in Linux kernel called
+Berkeley Packet Filter (BPF) uses a specialized virtual machine inside
+kernel to run filters on the networking stack. eBPF is an extension of this
+principle to a general purpose stack which can run sandboxed programs in kernel
+without changes of kernel code or loading modules. High-performance networking
+observability and security is a natural use-case with projects like Cilium<sup><a href="#user-content-fn-ci" id="user-content-fnref-ci-2" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">8</a></sup>
+implementing transparent in-kernel packet encryption with it. Linux kernel
+itself also provides an encryption framework called
+Linux Kernel Crypto API<sup><a href="#user-content-fn-lkc" id="user-content-fnref-lkc" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">15</a></sup> which such solutions use.</p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="ipsec">IPsec<sup><a href="#user-content-fn-ip" id="user-content-fnref-ip-3" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">6</a></sup><a href="#ipsec" class="hash-link" aria-label="Direct link to ipsec" title="Direct link to ipsec" translate="no">​</a></h5>
+<p>Internet Protocol security is a suite of protocols for network security on
+layer 3, providing authentication and packets encryption used for example in
+Virtual Private Network (VPN) setups. It is an IETF<sup><a href="#user-content-fn-ie" id="user-content-fnref-ie" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">16</a></sup> specification with
+various open source and commercial implementations. For historical
+reasons<sup><a href="#user-content-fn-ipwh" id="user-content-fnref-ipwh" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">17</a></sup> it defines two main transmission protocols
+Authentication Header (AH) and Encapsulating Security Payload (ESP) where only
+the latter provides encryption in addition to authentication and integrity. The
+key negotiations use the IKE(v1/v2) protocol to establish and maintain
+Security Associations (SA).</p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="wireguard">WireGuard<sup><a href="#user-content-fn-wg" id="user-content-fnref-wg-2" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">10</a></sup><a href="#wireguard" class="hash-link" aria-label="Direct link to wireguard" title="Direct link to wireguard" translate="no">​</a></h5>
+<p>Aims to be a simple and fast open source secure network tunneling solution
+working on layer 3, utilizing state-of-the-art cryptography while maintaining
+much simpler codebase and runtime setup as alternative solutions<sup><a href="#user-content-fn-wgwp" id="user-content-fnref-wgwp" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">18</a></sup>. Focus
+is on fast in-kernel encryption. WireGuard<sup><a href="#user-content-fn-wg" id="user-content-fnref-wg-3" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">10</a></sup> adds new network interfaces,
+managable by standard tooling (ifconfig, route,...) which act as tunneling
+interfaces. Main mechanism, called <em>Cryptokey routing</em>, are tables associating
+public keys of endpoints with allowed IPs inside given tunnels. These behave as
+routing tables when sending and access control lists (ACL) when receiving
+packets. All packets are sent over UDP. Built-in roaming is achieved by both
+server and clients being able to update the peer list by examining from where
+correctly authenticated data originates.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="solution-proposals">Solution proposals<a href="#solution-proposals" class="hash-link" aria-label="Direct link to Solution proposals" title="Direct link to Solution proposals" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="tripleo-with-ipsec">TripleO<sup><a href="#user-content-fn-to" id="user-content-fnref-to-3" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">7</a></sup> with IPsec<sup><a href="#user-content-fn-ip" id="user-content-fnref-ip-4" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">6</a></sup><a href="#tripleo-with-ipsec" class="hash-link" aria-label="Direct link to tripleo-with-ipsec" title="Direct link to tripleo-with-ipsec" translate="no">​</a></h4>
+<blockquote>
+<p>TripleO is a project aimed at installing, upgrading and operating OpenStack
+clouds using OpenStack&#x27;s own cloud facilities as the foundation - building on
+Nova, Ironic, Neutron and Heat to automate cloud management at datacenter
+scale</p>
+</blockquote>
+<p>This project is retired as of February 2024, but its approach was considered
+for adoption.</p>
+<p>Its deployment allowed for IPsec<sup><a href="#user-content-fn-ip" id="user-content-fnref-ip-5" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">6</a></sup> encryption of node communication. When
+utilized, two types of tunnels were created in overcloud: node-to-node tunnels
+for each two nodes on the same network, for all networks those nodes were on,
+and Virtual IP tunnels. Each node hosting the Virtual IP would open a tunnel
+for any node in the specific network that can properly authenticate.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="ovn--ipsec">OVN<sup><a href="#user-content-fn-ov" id="user-content-fnref-ov-3" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">11</a></sup> + IPsec<sup><a href="#user-content-fn-ip" id="user-content-fnref-ip-6" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">6</a></sup><a href="#ovn--ipsec" class="hash-link" aria-label="Direct link to ovn--ipsec" title="Direct link to ovn--ipsec" translate="no">​</a></h4>
+<p>There is support in the OVN<sup><a href="#user-content-fn-ov" id="user-content-fnref-ov-4" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">11</a></sup> project for IPsec<sup><a href="#user-content-fn-ip" id="user-content-fnref-ip-7" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">6</a></sup> encryption of tunnel
+traffic<sup><a href="#user-content-fn-oit" id="user-content-fnref-oit" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">19</a></sup>. A daemon running in each chassis automatically manages and
+monitors IPsec<sup><a href="#user-content-fn-ip" id="user-content-fnref-ip-8" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">6</a></sup> tunnel states.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="neutron--cilium">Neutron<sup><a href="#user-content-fn-ne" id="user-content-fnref-ne-6" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">2</a></sup> + Cilium<sup><a href="#user-content-fn-ci" id="user-content-fnref-ci-3" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">8</a></sup><a href="#neutron--cilium" class="hash-link" aria-label="Direct link to neutron--cilium" title="Direct link to neutron--cilium" translate="no">​</a></h4>
+<p>Another potential architecture involves a Neutron<sup><a href="#user-content-fn-ne" id="user-content-fnref-ne-7" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">2</a></sup> plugin hooking an
+eBPF<sup><a href="#user-content-fn-eb" id="user-content-fnref-eb-6" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">3</a></sup> proxy on each interface and moving internal traffic via an encrypted
+Cilium<sup><a href="#user-content-fn-ci" id="user-content-fnref-ci-4" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">8</a></sup> mesh. Cilium uses IPsec<sup><a href="#user-content-fn-ip" id="user-content-fnref-ip-9" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">6</a></sup> or WireGuard[wg] to transparently
+encrypt node-to-node traffic. There were some attempts to integrate Cilium<sup><a href="#user-content-fn-ci" id="user-content-fnref-ci-5" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">8</a></sup>
+with OpenStack <sup><a href="#user-content-fn-neci1" id="user-content-fnref-neci1" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">20</a></sup>, <sup><a href="#user-content-fn-neci2" id="user-content-fnref-neci2" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">21</a></sup>, but we didn&#x27;t find any concrete projects
+which would leverage the transparent encryption ability of Cilium<sup><a href="#user-content-fn-ci" id="user-content-fnref-ci-6" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">8</a></sup> in
+OpenStack environment. This path would pressumably require significant
+development.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="neutron--calico">Neutron<sup><a href="#user-content-fn-ne" id="user-content-fnref-ne-8" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">2</a></sup> + Calico<sup><a href="#user-content-fn-ca" id="user-content-fnref-ca" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">22</a></sup><a href="#neutron--calico" class="hash-link" aria-label="Direct link to neutron--calico" title="Direct link to neutron--calico" translate="no">​</a></h4>
+<p>The Calico<sup><a href="#user-content-fn-ca" id="user-content-fnref-ca-2" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">22</a></sup> project in its community open source version provides
+node-to-node encryption using WireGuard<sup><a href="#user-content-fn-wg" id="user-content-fnref-wg-4" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">10</a></sup>. Despite being primarily a
+Kubernetes networking project, it provides an OpenStack integration<sup><a href="#user-content-fn-caos" id="user-content-fnref-caos" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">23</a></sup> via
+a Neutron<sup><a href="#user-content-fn-ne" id="user-content-fnref-ne-9" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">2</a></sup> plugin and deploying the necessary subset of tools like etcd,
+Calico agent Felix, routing daemon BIRD and a DHCP agent.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="proof-of-concept-implementations">Proof of concept implementations<a href="#proof-of-concept-implementations" class="hash-link" aria-label="Direct link to Proof of concept implementations" title="Direct link to Proof of concept implementations" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="neutron-plugin">Neutron Plugin<a href="#neutron-plugin" class="hash-link" aria-label="Direct link to Neutron Plugin" title="Direct link to Neutron Plugin" translate="no">​</a></h4>
+<p>Initially the potential for developing a specialized Neutron plugin was
+investigated and a simple skeleton implementation for testing purposes was
+devised.</p>
+<p>Own development was later abandoned in favor of a more sustainable solution
+using existing technologies as disussed in
+<a href="#preliminary-considerations" class="">preliminary considerations</a>.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="manual-setup">Manual setup<a href="#manual-setup" class="hash-link" aria-label="Direct link to Manual setup" title="Direct link to Manual setup" translate="no">​</a></h4>
+<p>We created a working Proof of Concept with manually setting up VXLAN tunnels
+between nodes. While this solution ensures no impact on OpenStack and is easy
+to set up, it has limitations, such as unencrypted data transmission if the
+connection breaks. To mitigate this, we proposed using a dedicated subnet
+present only in the IPsec<sup><a href="#user-content-fn-ip" id="user-content-fnref-ip-10" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">6</a></sup> tunnels.</p>
+<p>We presented the idea to the kolla-ansible[^ak] project, but it was deemed out
+of scope. Instead, we were directed towards a native Open vSwitch solution
+supporting IPsec<sup><a href="#user-content-fn-ip" id="user-content-fnref-ip-11" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">6</a></sup>. This requires creating a new OpenStack service
+(working name: openstack-ipsec) and a role to manage chassis keys and run the
+openstack-ipsec container on each node.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="proof-of-concept-poc-implementation">Proof of concept (PoC) implementation<a href="#proof-of-concept-poc-implementation" class="hash-link" aria-label="Direct link to Proof of concept (PoC) implementation" title="Direct link to Proof of concept (PoC) implementation" translate="no">​</a></h4>
+<p>In our second proof of concept, we decided to implement support for
+openstack-ipsec. The initial step involved creating a new container image
+within the kolla<sup><a href="#user-content-fn-kl" id="user-content-fnref-kl-2" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">12</a></sup> project specifically for this purpose.</p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="architecture">Architecture<a href="#architecture" class="hash-link" aria-label="Direct link to Architecture" title="Direct link to Architecture" translate="no">​</a></h5>
+<p>When Neutron<sup><a href="#user-content-fn-ne" id="user-content-fnref-ne-10" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">2</a></sup> uses OVN<sup><a href="#user-content-fn-ov" id="user-content-fnref-ov-5" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">11</a></sup> as controller it instructs it to create the
+necessary virtual networking infrastructure (logical switches, routers, etc.),
+particullary to create Geneve tunnels between compute nodes. These tunnels are
+used to carry traffic between instances on different compute nodes.</p>
+<p>In PoC setup Libreswan<sup><a href="#user-content-fn-ls" id="user-content-fnref-ls" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">24</a></sup> suite runs on each compute node and manages the
+IPSec<sup><a href="#user-content-fn-ip" id="user-content-fnref-ip-12" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">6</a></sup> tunnels. It encrypts the traffic flowing over the Geneve tunnels,
+ensuring that data is secure as it traverses the physical network. In setup
+phase it establishes IPSec tunnels between compute nodes by negotiating the
+necessary security parameters (encryption, authentication, etc.). Once the
+tunnels are established, Libreswan<sup><a href="#user-content-fn-ls" id="user-content-fnref-ls-2" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">24</a></sup> monitors and manages them, ensuring
+that the encryption keys are periodically refreshed and that the tunnels remain
+up. It also dynamically adds and removes tunnels based on changes of network
+topology.</p>
+<p>A packet originating from a VM on one compute node and destined for a VM on
+a different node is processed by OVS and encapsulated into a Geneve tunnel.
+Before the Geneve-encapsulated packet leaves the compute node, it passes
+through the Libreswan process, which applies IPSec encryption. The encrypted
+packet traverses the physical network to the destination compute node. On the
+destination node, Libreswan<sup><a href="#user-content-fn-ls" id="user-content-fnref-ls-3" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">24</a></sup> decrypts the packet, and OVN<sup><a href="#user-content-fn-ov" id="user-content-fnref-ov-6" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">11</a></sup> handles
+decapsulation and forwards it to the target VM.</p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="challanges">Challanges<a href="#challanges" class="hash-link" aria-label="Direct link to Challanges" title="Direct link to Challanges" translate="no">​</a></h5>
+<p>Implementing the openstack-ipsec image we encountered a significant challenge:
+the ovs-ctl start-ovs-ipsec command could not run inside the container because
+it requires a running init.d or systemctl to start the IPsec daemon immediately
+after OVS<sup><a href="#user-content-fn-ov" id="user-content-fnref-ov-7" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">11</a></sup> deploys the configuration. We attempted to use supervisor to
+manage the processes within the container. However, this solution forced a
+manual start of the IPsec daemon before ovs-ctl had the chance to create the
+appropriate configurations.</p>
+<p>Another challenge was the requirement for both the IPsec daemon and ovs-ipsec
+to run within a single container. This added complexity to the container
+configuration and management, making it harder to ensure both services operated
+correctly and efficiently.</p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="additional-infrastructure">Additional infrastructure<a href="#additional-infrastructure" class="hash-link" aria-label="Direct link to Additional infrastructure" title="Direct link to Additional infrastructure" translate="no">​</a></h5>
+<p>New ansible role for generating chassis keys and distributing them to the
+respective machines was created. This utility also handles the configuration on
+each machine. Managing and creating production certificates is up to the user,
+which is also true for the backend TLS certificates in kolla-ansible<sup><a href="#user-content-fn-ka" id="user-content-fnref-ka-2" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">13</a></sup>.
+While this management should be handled within the same process, it currently
+poses a risk of downtime when certificates expire, as it requires careful
+management and timely renewal of certificates.</p>
+<p>The new container image was designed to include all necessary
+components for openstack-ipsec. Using supervisor to manage the IPsec daemon
+within the container involved creating configuration files to ensure all
+services start correctly. However, integrating supervisor introduced additional
+complexity and potential points of failure.</p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="possible-improvements">Possible improvements<a href="#possible-improvements" class="hash-link" aria-label="Direct link to Possible improvements" title="Direct link to Possible improvements" translate="no">​</a></h5>
+<p>PoC doesn&#x27;t currently address the opt-out possibility for disabling the
+encryption for some specific group of nodes, where operator deems it
+detrimental because of them being virtual or where security is already handled
+in some other layer of the stack. This could be implemented as a further
+customization available to the operator to encrypt only some subset of Geneve
+tunnels, either in blacklist or whitelist manner.</p>
+<p>Further refinement is needed to ensure ovs-ctl and the IPsec daemon start and
+configure correctly within the container environment. Exploring alternative
+process management tools or improving the configuration of supervisor could
+help achieve a more robust solution.</p>
+<p>Implementing automated certificate management could mitigate the risks
+associated with manual certificate renewals. Tools like Certbot or integration
+with existing Public Key Infrastructure (PKI) solutions might be beneficial.</p>
+<p>Engaging with the upstream Open vSwitch community to address containerization
+challenges and improve support for running ovs-ctl within containers could lead
+to more sustainable solution.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="decision">Decision<a href="#decision" class="hash-link" aria-label="Direct link to Decision" title="Direct link to Decision" translate="no">​</a></h2>
+<p>The final proof of concept implementation demonstrated the feasibility of
+implementing transparent IPsec<sup><a href="#user-content-fn-ip" id="user-content-fnref-ip-13" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">6</a></sup> encryption between nodes in an OVN<sup><a href="#user-content-fn-ov" id="user-content-fnref-ov-8" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">11</a></sup>
+logical networking setup in OpenStack.
+To recapitulate our preliminary considerations:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="utilize-existing-solutions-1">Utilize existing solutions<a href="#utilize-existing-solutions-1" class="hash-link" aria-label="Direct link to Utilize existing solutions" title="Direct link to Utilize existing solutions" translate="no">​</a></h3>
+<p>Implementation in kolla-ansible<sup><a href="#user-content-fn-ka" id="user-content-fnref-ka-3" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">13</a></sup> is unintrusive, provided by a
+self-contained new kolla<sup><a href="#user-content-fn-kl" id="user-content-fnref-kl-3" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">12</a></sup> container, which only adds an IPsec<sup><a href="#user-content-fn-ip" id="user-content-fnref-ip-14" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">6</a></sup>
+tunneling support module to OVS<sup><a href="#user-content-fn-sw" id="user-content-fnref-sw-3" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">5</a></sup>, which is already an integral part of
+OpenStack networking, and a mature open source toolkit - Libreswan<sup><a href="#user-content-fn-ls" id="user-content-fnref-ls-4" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">24</a></sup>. Also
+OVN<sup><a href="#user-content-fn-ov" id="user-content-fnref-ov-9" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">11</a></sup> has native support in OpenStack and became the default controller for
+Neutron<sup><a href="#user-content-fn-ne" id="user-content-fnref-ne-11" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">2</a></sup>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="address-threat-modeling-issues-1">Address threat modeling issues<a href="#address-threat-modeling-issues-1" class="hash-link" aria-label="Direct link to Address threat modeling issues" title="Direct link to Address threat modeling issues" translate="no">​</a></h3>
+<p>As disussed in <a href="#motivation" class="">motivation</a> and <a href="#potential-threats-in-detail" class="">threat
+modelling</a> sections our concern lies with the
+potentially vulnerable physical infrastructure between nodes inside or between
+data centers. In this case ensuring encryption and integrity of packets before
+leaving any node addresses these threats, while avoiding the complexity of
+securing the communication on the VM level, where frequent additions, deletions
+and migrations could render such system complicated and error prone. We also
+don&#x27;t needlessly encrypt VM communication inside one node.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="avoid-redundant-encryption-1">Avoid redundant encryption<a href="#avoid-redundant-encryption-1" class="hash-link" aria-label="Direct link to Avoid redundant encryption" title="Direct link to Avoid redundant encryption" translate="no">​</a></h3>
+<p>As the encryption happens inside tunnels specific for inter-node workload
+communication, isolated on own network and also inside Geneve tunnels, no cloud
+service data, which could be possibly encrypted on higher-levels (TLS) is
+possible here. As to the workload communication itself - detecting higher-layer
+encryption in a way that would allow IPsec<sup><a href="#user-content-fn-ip" id="user-content-fnref-ip-15" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">6</a></sup> to avoid redundant encryption
+is complex and would require custom modifications or non-standard solutions.
+It&#x27;s usually safer and more straightforward to allow the redundancy, ensuring
+security at multiple layers, rather than trying to eliminate it.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance-impact-and-ease-of-use-1">Performance impact and ease of use<a href="#performance-impact-and-ease-of-use-1" class="hash-link" aria-label="Direct link to Performance impact and ease of use" title="Direct link to Performance impact and ease of use" translate="no">​</a></h3>
+<p>Setup is straightforward for the operator, there is just a flag to enable or
+disable the IPsec<sup><a href="#user-content-fn-ip" id="user-content-fnref-ip-16" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">6</a></sup> encryption inside Geneve tunnels and the need to set the
+Neutron<sup><a href="#user-content-fn-ne" id="user-content-fnref-ne-12" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">2</a></sup> agent to OVN<sup><a href="#user-content-fn-ov" id="user-content-fnref-ov-10" data-footnote-ref="true" aria-describedby="footnote-label" class="anchorTargetStickyNavbar_Vzrq">11</a></sup>. No other configuration is necessary. The only
+other administrative burden is the deployment of certificates to provided
+configuration directory on the control node.</p>
+<p>Certificate management for this solution can and should be handled in the same
+way as for the backend service certificates which are part of the ongoing
+efforts to provide complete service communication encryption in kolla-ansible.
+Currently the management of these certificates is partially left on external
+processes, but if a toolset or a process would be devised inside the project,
+this solution would fit in.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="upstream-integration-1">Upstream integration<a href="#upstream-integration-1" class="hash-link" aria-label="Direct link to Upstream integration" title="Direct link to Upstream integration" translate="no">​</a></h3>
+<p>The potential for upstream adoption and long-term maintainability makes this a
+promising direction for securing inter-node communication in OpenStack
+environments.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="references">References<a href="#references" class="hash-link" aria-label="Direct link to References" title="Direct link to References" translate="no">​</a></h2>
+<!-- -->
+<section data-footnotes="true" class="footnotes"><h2 class="anchor anchorTargetStickyNavbar_Vzrq sr-only" id="footnote-label">Footnotes<a href="#footnote-label" class="hash-link" aria-label="Direct link to Footnotes" title="Direct link to Footnotes" translate="no">​</a></h2>
+<ol>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-rfc">
+<p><a href="https://datatracker.ietf.org/doc/html/rfc8926#name-inter-data-center-traffic" target="_blank" rel="noopener noreferrer" class="">RFC8926</a> <a href="#user-content-fnref-rfc" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-ne">
+<p><a href="https://docs.openstack.org/neutron/latest/" target="_blank" rel="noopener noreferrer" class="">Neutron</a> - networking as a service (NaaS) in OpenStack <a href="#user-content-fnref-ne" data-footnote-backref="" aria-label="Back to reference 2" class="data-footnote-backref">↩</a> <a href="#user-content-fnref-ne-2" data-footnote-backref="" aria-label="Back to reference 2-2" class="data-footnote-backref">↩<sup>2</sup></a> <a href="#user-content-fnref-ne-3" data-footnote-backref="" aria-label="Back to reference 2-3" class="data-footnote-backref">↩<sup>3</sup></a> <a href="#user-content-fnref-ne-4" data-footnote-backref="" aria-label="Back to reference 2-4" class="data-footnote-backref">↩<sup>4</sup></a> <a href="#user-content-fnref-ne-5" data-footnote-backref="" aria-label="Back to reference 2-5" class="data-footnote-backref">↩<sup>5</sup></a> <a href="#user-content-fnref-ne-6" data-footnote-backref="" aria-label="Back to reference 2-6" class="data-footnote-backref">↩<sup>6</sup></a> <a href="#user-content-fnref-ne-7" data-footnote-backref="" aria-label="Back to reference 2-7" class="data-footnote-backref">↩<sup>7</sup></a> <a href="#user-content-fnref-ne-8" data-footnote-backref="" aria-label="Back to reference 2-8" class="data-footnote-backref">↩<sup>8</sup></a> <a href="#user-content-fnref-ne-9" data-footnote-backref="" aria-label="Back to reference 2-9" class="data-footnote-backref">↩<sup>9</sup></a> <a href="#user-content-fnref-ne-10" data-footnote-backref="" aria-label="Back to reference 2-10" class="data-footnote-backref">↩<sup>10</sup></a> <a href="#user-content-fnref-ne-11" data-footnote-backref="" aria-label="Back to reference 2-11" class="data-footnote-backref">↩<sup>11</sup></a> <a href="#user-content-fnref-ne-12" data-footnote-backref="" aria-label="Back to reference 2-12" class="data-footnote-backref">↩<sup>12</sup></a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-eb">
+<p><a href="https://en.wikipedia.org/wiki/EBPF" target="_blank" rel="noopener noreferrer" class="">eBPF</a> <a href="#user-content-fnref-eb" data-footnote-backref="" aria-label="Back to reference 3" class="data-footnote-backref">↩</a> <a href="#user-content-fnref-eb-2" data-footnote-backref="" aria-label="Back to reference 3-2" class="data-footnote-backref">↩<sup>2</sup></a> <a href="#user-content-fnref-eb-3" data-footnote-backref="" aria-label="Back to reference 3-3" class="data-footnote-backref">↩<sup>3</sup></a> <a href="#user-content-fnref-eb-4" data-footnote-backref="" aria-label="Back to reference 3-4" class="data-footnote-backref">↩<sup>4</sup></a> <a href="#user-content-fnref-eb-5" data-footnote-backref="" aria-label="Back to reference 3-5" class="data-footnote-backref">↩<sup>5</sup></a> <a href="#user-content-fnref-eb-6" data-footnote-backref="" aria-label="Back to reference 3-6" class="data-footnote-backref">↩<sup>6</sup></a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-ia">
+<p>Team IaaS call <a href="https://github.com/SovereignCloudStack/minutes/blob/main/iaas/20240214.md" target="_blank" rel="noopener noreferrer" class="">minutes</a> <a href="#user-content-fnref-ia" data-footnote-backref="" aria-label="Back to reference 4" class="data-footnote-backref">↩</a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-sw">
+<p><a href="https://www.openvswitch.org/" target="_blank" rel="noopener noreferrer" class="">open vSwitch</a> <a href="#user-content-fnref-sw" data-footnote-backref="" aria-label="Back to reference 5" class="data-footnote-backref">↩</a> <a href="#user-content-fnref-sw-2" data-footnote-backref="" aria-label="Back to reference 5-2" class="data-footnote-backref">↩<sup>2</sup></a> <a href="#user-content-fnref-sw-3" data-footnote-backref="" aria-label="Back to reference 5-3" class="data-footnote-backref">↩<sup>3</sup></a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-ip">
+<p><a href="https://en.wikipedia.org/wiki/IPsec" target="_blank" rel="noopener noreferrer" class="">IPsec</a> <a href="#user-content-fnref-ip" data-footnote-backref="" aria-label="Back to reference 6" class="data-footnote-backref">↩</a> <a href="#user-content-fnref-ip-2" data-footnote-backref="" aria-label="Back to reference 6-2" class="data-footnote-backref">↩<sup>2</sup></a> <a href="#user-content-fnref-ip-3" data-footnote-backref="" aria-label="Back to reference 6-3" class="data-footnote-backref">↩<sup>3</sup></a> <a href="#user-content-fnref-ip-4" data-footnote-backref="" aria-label="Back to reference 6-4" class="data-footnote-backref">↩<sup>4</sup></a> <a href="#user-content-fnref-ip-5" data-footnote-backref="" aria-label="Back to reference 6-5" class="data-footnote-backref">↩<sup>5</sup></a> <a href="#user-content-fnref-ip-6" data-footnote-backref="" aria-label="Back to reference 6-6" class="data-footnote-backref">↩<sup>6</sup></a> <a href="#user-content-fnref-ip-7" data-footnote-backref="" aria-label="Back to reference 6-7" class="data-footnote-backref">↩<sup>7</sup></a> <a href="#user-content-fnref-ip-8" data-footnote-backref="" aria-label="Back to reference 6-8" class="data-footnote-backref">↩<sup>8</sup></a> <a href="#user-content-fnref-ip-9" data-footnote-backref="" aria-label="Back to reference 6-9" class="data-footnote-backref">↩<sup>9</sup></a> <a href="#user-content-fnref-ip-10" data-footnote-backref="" aria-label="Back to reference 6-10" class="data-footnote-backref">↩<sup>10</sup></a> <a href="#user-content-fnref-ip-11" data-footnote-backref="" aria-label="Back to reference 6-11" class="data-footnote-backref">↩<sup>11</sup></a> <a href="#user-content-fnref-ip-12" data-footnote-backref="" aria-label="Back to reference 6-12" class="data-footnote-backref">↩<sup>12</sup></a> <a href="#user-content-fnref-ip-13" data-footnote-backref="" aria-label="Back to reference 6-13" class="data-footnote-backref">↩<sup>13</sup></a> <a href="#user-content-fnref-ip-14" data-footnote-backref="" aria-label="Back to reference 6-14" class="data-footnote-backref">↩<sup>14</sup></a> <a href="#user-content-fnref-ip-15" data-footnote-backref="" aria-label="Back to reference 6-15" class="data-footnote-backref">↩<sup>15</sup></a> <a href="#user-content-fnref-ip-16" data-footnote-backref="" aria-label="Back to reference 6-16" class="data-footnote-backref">↩<sup>16</sup></a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-to">
+<p><a href="https://docs.openstack.org/developer/tripleo-docs/" target="_blank" rel="noopener noreferrer" class="">TripleO</a> - OpenStack on OpenStack <a href="#user-content-fnref-to" data-footnote-backref="" aria-label="Back to reference 7" class="data-footnote-backref">↩</a> <a href="#user-content-fnref-to-2" data-footnote-backref="" aria-label="Back to reference 7-2" class="data-footnote-backref">↩<sup>2</sup></a> <a href="#user-content-fnref-to-3" data-footnote-backref="" aria-label="Back to reference 7-3" class="data-footnote-backref">↩<sup>3</sup></a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-ci">
+<p><a href="https://cilium.io/" target="_blank" rel="noopener noreferrer" class="">Cillium</a> <a href="#user-content-fnref-ci" data-footnote-backref="" aria-label="Back to reference 8" class="data-footnote-backref">↩</a> <a href="#user-content-fnref-ci-2" data-footnote-backref="" aria-label="Back to reference 8-2" class="data-footnote-backref">↩<sup>2</sup></a> <a href="#user-content-fnref-ci-3" data-footnote-backref="" aria-label="Back to reference 8-3" class="data-footnote-backref">↩<sup>3</sup></a> <a href="#user-content-fnref-ci-4" data-footnote-backref="" aria-label="Back to reference 8-4" class="data-footnote-backref">↩<sup>4</sup></a> <a href="#user-content-fnref-ci-5" data-footnote-backref="" aria-label="Back to reference 8-5" class="data-footnote-backref">↩<sup>5</sup></a> <a href="#user-content-fnref-ci-6" data-footnote-backref="" aria-label="Back to reference 8-6" class="data-footnote-backref">↩<sup>6</sup></a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-ta">
+<p><a href="https://tailscale.com/solutions/devops" target="_blank" rel="noopener noreferrer" class="">Tailscale</a> <a href="#user-content-fnref-ta" data-footnote-backref="" aria-label="Back to reference 9" class="data-footnote-backref">↩</a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-wg">
+<p><a href="https://www.wireguard.com/" target="_blank" rel="noopener noreferrer" class="">WireGuard</a> <a href="#user-content-fnref-wg" data-footnote-backref="" aria-label="Back to reference 10" class="data-footnote-backref">↩</a> <a href="#user-content-fnref-wg-2" data-footnote-backref="" aria-label="Back to reference 10-2" class="data-footnote-backref">↩<sup>2</sup></a> <a href="#user-content-fnref-wg-3" data-footnote-backref="" aria-label="Back to reference 10-3" class="data-footnote-backref">↩<sup>3</sup></a> <a href="#user-content-fnref-wg-4" data-footnote-backref="" aria-label="Back to reference 10-4" class="data-footnote-backref">↩<sup>4</sup></a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-ov">
+<p><a href="https://www.ovn.org/en/" target="_blank" rel="noopener noreferrer" class="">Open Virtual Network</a> (OVN) <a href="#user-content-fnref-ov" data-footnote-backref="" aria-label="Back to reference 11" class="data-footnote-backref">↩</a> <a href="#user-content-fnref-ov-2" data-footnote-backref="" aria-label="Back to reference 11-2" class="data-footnote-backref">↩<sup>2</sup></a> <a href="#user-content-fnref-ov-3" data-footnote-backref="" aria-label="Back to reference 11-3" class="data-footnote-backref">↩<sup>3</sup></a> <a href="#user-content-fnref-ov-4" data-footnote-backref="" aria-label="Back to reference 11-4" class="data-footnote-backref">↩<sup>4</sup></a> <a href="#user-content-fnref-ov-5" data-footnote-backref="" aria-label="Back to reference 11-5" class="data-footnote-backref">↩<sup>5</sup></a> <a href="#user-content-fnref-ov-6" data-footnote-backref="" aria-label="Back to reference 11-6" class="data-footnote-backref">↩<sup>6</sup></a> <a href="#user-content-fnref-ov-7" data-footnote-backref="" aria-label="Back to reference 11-7" class="data-footnote-backref">↩<sup>7</sup></a> <a href="#user-content-fnref-ov-8" data-footnote-backref="" aria-label="Back to reference 11-8" class="data-footnote-backref">↩<sup>8</sup></a> <a href="#user-content-fnref-ov-9" data-footnote-backref="" aria-label="Back to reference 11-9" class="data-footnote-backref">↩<sup>9</sup></a> <a href="#user-content-fnref-ov-10" data-footnote-backref="" aria-label="Back to reference 11-10" class="data-footnote-backref">↩<sup>10</sup></a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-kl">
+<p><a href="https://opendev.org/openstack/kolla" target="_blank" rel="noopener noreferrer" class="">kolla</a> project <a href="#user-content-fnref-kl" data-footnote-backref="" aria-label="Back to reference 12" class="data-footnote-backref">↩</a> <a href="#user-content-fnref-kl-2" data-footnote-backref="" aria-label="Back to reference 12-2" class="data-footnote-backref">↩<sup>2</sup></a> <a href="#user-content-fnref-kl-3" data-footnote-backref="" aria-label="Back to reference 12-3" class="data-footnote-backref">↩<sup>3</sup></a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-ka">
+<p><a href="https://docs.openstack.org/kolla-ansible/latest/" target="_blank" rel="noopener noreferrer" class="">kolla-ansible</a> project <a href="#user-content-fnref-ka" data-footnote-backref="" aria-label="Back to reference 13" class="data-footnote-backref">↩</a> <a href="#user-content-fnref-ka-2" data-footnote-backref="" aria-label="Back to reference 13-2" class="data-footnote-backref">↩<sup>2</sup></a> <a href="#user-content-fnref-ka-3" data-footnote-backref="" aria-label="Back to reference 13-3" class="data-footnote-backref">↩<sup>3</sup></a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-ms">
+<p><a href="https://en.wikipedia.org/wiki/IEEE_802.1AE" target="_blank" rel="noopener noreferrer" class="">MACsec standard</a> <a href="#user-content-fnref-ms" data-footnote-backref="" aria-label="Back to reference 14" class="data-footnote-backref">↩</a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-lkc">
+<p><a href="https://www.kernel.org/doc/html/v4.10/crypto/index.html" target="_blank" rel="noopener noreferrer" class="">Linux Kernel Crypto API</a> <a href="#user-content-fnref-lkc" data-footnote-backref="" aria-label="Back to reference 15" class="data-footnote-backref">↩</a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-ie">
+<p><a href="https://www.ietf.org/" target="_blank" rel="noopener noreferrer" class="">Internet Engineering Task Force</a> (IETF) <a href="#user-content-fnref-ie" data-footnote-backref="" aria-label="Back to reference 16" class="data-footnote-backref">↩</a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-ipwh">
+<p><a href="https://destcert.com/resources/why-the-is-ipsec-so-complicated/" target="_blank" rel="noopener noreferrer" class="">Why is IPsec so complicated</a> <a href="#user-content-fnref-ipwh" data-footnote-backref="" aria-label="Back to reference 17" class="data-footnote-backref">↩</a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-wgwp">
+<p>WireGuard <a href="https://www.wireguard.com/papers/wireguard.pdf" target="_blank" rel="noopener noreferrer" class="">white paper</a> <a href="#user-content-fnref-wgwp" data-footnote-backref="" aria-label="Back to reference 18" class="data-footnote-backref">↩</a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-oit">
+<p><a href="https://docs.ovn.org/en/latest/tutorials/ovn-ipsec.html" target="_blank" rel="noopener noreferrer" class="">OVN IPsec tutorial</a> <a href="#user-content-fnref-oit" data-footnote-backref="" aria-label="Back to reference 19" class="data-footnote-backref">↩</a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-neci1">
+<p><a href="https://gist.github.com/oblazek/466a9ae836f663f8349b71e76abaee7e" target="_blank" rel="noopener noreferrer" class="">Neutron + Cilium architecture example</a> <a href="#user-content-fnref-neci1" data-footnote-backref="" aria-label="Back to reference 20" class="data-footnote-backref">↩</a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-neci2">
+<p><a href="https://github.com/cilium/cilium/issues/13433" target="_blank" rel="noopener noreferrer" class="">Neutron + Cilium Proposal</a> <a href="#user-content-fnref-neci2" data-footnote-backref="" aria-label="Back to reference 21" class="data-footnote-backref">↩</a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-ca">
+<p><a href="https://docs.tigera.io/calico/latest/about" target="_blank" rel="noopener noreferrer" class="">Calico</a> <a href="#user-content-fnref-ca" data-footnote-backref="" aria-label="Back to reference 22" class="data-footnote-backref">↩</a> <a href="#user-content-fnref-ca-2" data-footnote-backref="" aria-label="Back to reference 22-2" class="data-footnote-backref">↩<sup>2</sup></a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-caos">
+<p><a href="https://docs.tigera.io/calico/latest/getting-started/openstack/overview" target="_blank" rel="noopener noreferrer" class="">Calico for OpenStack</a> <a href="#user-content-fnref-caos" data-footnote-backref="" aria-label="Back to reference 23" class="data-footnote-backref">↩</a></p>
+</li>
+<li class="anchorTargetStickyNavbar_Vzrq" id="user-content-fn-ls">
+<p><a href="https://libreswan.org/" target="_blank" rel="noopener noreferrer" class="">Libreswan</a> VPN software <a href="#user-content-fnref-ls" data-footnote-backref="" aria-label="Back to reference 24" class="data-footnote-backref">↩</a> <a href="#user-content-fnref-ls-2" data-footnote-backref="" aria-label="Back to reference 24-2" class="data-footnote-backref">↩<sup>2</sup></a> <a href="#user-content-fnref-ls-3" data-footnote-backref="" aria-label="Back to reference 24-3" class="data-footnote-backref">↩<sup>3</sup></a> <a href="#user-content-fnref-ls-4" data-footnote-backref="" aria-label="Back to reference 24-4" class="data-footnote-backref">↩<sup>4</sup></a></p>
+</li>
+</ol>
+</section></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/standards/iaas/scs-0122"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">scs-0122: End-to-End Encryption between Customer Workloads</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/standards/iaas/scs-0123"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">scs-0123: Mandatory and Supported IaaS Services</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#abstract" class="table-of-contents__link toc-highlight">Abstract</a></li><li><a href="#terminology" class="table-of-contents__link toc-highlight">Terminology</a></li><li><a href="#context" class="table-of-contents__link toc-highlight">Context</a><ul><li><a href="#motivation" class="table-of-contents__link toc-highlight">Motivation</a></li><li><a href="#potential-threats-in-detail" class="table-of-contents__link toc-highlight">Potential threats in detail</a></li><li><a href="#preliminary-considerations" class="table-of-contents__link toc-highlight">Preliminary considerations</a></li><li><a href="#exploration-of-technologies" class="table-of-contents__link toc-highlight">Exploration of technologies</a></li><li><a href="#solution-proposals" class="table-of-contents__link toc-highlight">Solution proposals</a></li><li><a href="#proof-of-concept-implementations" class="table-of-contents__link toc-highlight">Proof of concept implementations</a></li></ul></li><li><a href="#decision" class="table-of-contents__link toc-highlight">Decision</a><ul><li><a href="#utilize-existing-solutions-1" class="table-of-contents__link toc-highlight">Utilize existing solutions</a></li><li><a href="#address-threat-modeling-issues-1" class="table-of-contents__link toc-highlight">Address threat modeling issues</a></li><li><a href="#avoid-redundant-encryption-1" class="table-of-contents__link toc-highlight">Avoid redundant encryption</a></li><li><a href="#performance-impact-and-ease-of-use-1" class="table-of-contents__link toc-highlight">Performance impact and ease of use</a></li><li><a href="#upstream-integration-1" class="table-of-contents__link toc-highlight">Upstream integration</a></li></ul></li><li><a href="#references" class="table-of-contents__link toc-highlight">References</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs">Contribute</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org" target="_blank" rel="noopener noreferrer" class="footer__link-item">Matrix<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://fosstodon.org/@sovereigncloudstack" target="_blank" rel="noopener noreferrer" class="footer__link-item">Mastodon<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/SovereignCloudStack/docs" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Sovereign Cloud Stack, SCS and the logo are registered trademarks of the Open Source Business Alliance e.V. — Other trademarks are property of their respective owners.</div></div></div></footer></div>
+</body>
+</html>

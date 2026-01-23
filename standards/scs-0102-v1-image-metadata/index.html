@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-standards docs-version-current docs-doc-page docs-doc-id-scs-0102-v1-image-metadata" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">SCS Image Metadata | One platform — standardized, built and operated by many.</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.scs.community/img/scs-og-basic.png"><meta data-rh="true" name="twitter:image" content="https://docs.scs.community/img/scs-og-basic.png"><meta data-rh="true" property="og:url" content="https://docs.scs.community/standards/scs-0102-v1-image-metadata"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-standards-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-standards-current"><meta data-rh="true" property="og:title" content="SCS Image Metadata | One platform — standardized, built and operated by many."><meta data-rh="true" name="description" content="This is version 1.1 of the SCS-0102 Image Metadata Standard.
+It outlines how to categorize and manage metadata for cloud-based operating
+system images to ensure usability and clarity. The standard encompasses naming conventions, technical requirements,
+image handling protocols including updating and origin, and licensing/support details. These guidelines ensure
+that users can understand, access, and utilize OS images effectively, with clear information on features, updates,
+and licensing provided through well-defined metadata properties.
+"><meta data-rh="true" property="og:description" content="This is version 1.1 of the SCS-0102 Image Metadata Standard.
+It outlines how to categorize and manage metadata for cloud-based operating
+system images to ensure usability and clarity. The standard encompasses naming conventions, technical requirements,
+image handling protocols including updating and origin, and licensing/support details. These guidelines ensure
+that users can understand, access, and utilize OS images effectively, with clear information on features, updates,
+and licensing provided through well-defined metadata properties.
+"><link data-rh="true" rel="icon" href="/img/favicon.png"><link data-rh="true" rel="canonical" href="https://docs.scs.community/standards/scs-0102-v1-image-metadata"><link data-rh="true" rel="alternate" href="https://docs.scs.community/standards/scs-0102-v1-image-metadata" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.scs.community/standards/scs-0102-v1-image-metadata" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Standards","item":"https://docs.scs.community/standards/standards/overview"},{"@type":"ListItem","position":2,"name":"IaaS","item":"https://docs.scs.community/standards/iaas/"},{"@type":"ListItem","position":3,"name":"scs-0102","item":"https://docs.scs.community/standards/iaas/scs-0102"},{"@type":"ListItem","position":4,"name":"V1","item":"https://docs.scs.community/standards/scs-0102-v1-image-metadata"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="SCS Community Blog RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="SCS Community Blog Atom Feed">
+<link rel="alternate" type="application/json" href="/blog/feed.json" title="SCS Community Blog JSON Feed">
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://matomo.scs.community/">
+<script>var _paq=window._paq=window._paq||[];_paq.push(["setDocumentTitle",document.domain+"/"+document.title]),_paq.push(["disableCookies"]),_paq.push(["trackPageView"]),_paq.push(["enableLinkTracking"]),function(){var e="https://matomo.scs.community/";_paq.push(["setTrackerUrl",e+"matomo.php"]),_paq.push(["setSiteId","2"]);var a=document,t=a.createElement("script"),p=a.getElementsByTagName("script")[0];t.async=!0,t.src=e+"matomo.js",p.parentNode.insertBefore(t,p)}()</script><link rel="stylesheet" href="/assets/css/styles.7136250c.css">
+<script src="/assets/js/runtime~main.07d47f80.js" defer="defer"></script>
+<script src="/assets/js/main.23799193.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="SCS" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="SCS" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"></b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/standards">Standards</a><a class="navbar__item navbar__link" href="/docs">For Operators</a><a class="navbar__item navbar__link" href="/contributor-docs">For Contributors</a><a class="navbar__item navbar__link" href="/user-docs">For Users</a><a class="navbar__item navbar__link" href="/community">Community</a><a class="navbar__item navbar__link" href="/docs/faq">FAQ</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/SovereignCloudStack/docs" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/standards/"><span title="Introduction" class="linkLabel_WmDU">Introduction</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/standards/certification/digisov-and-cert"><span title="Certification" class="categoryLinkLabel_W154">Certification</span></a><button aria-label="Expand sidebar category &#x27;Certification&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/standards/standards/overview"><span title="Standards" class="categoryLinkLabel_W154">Standards</span></a><button aria-label="Collapse sidebar category &#x27;Standards&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/global/"><span title="Global" class="categoryLinkLabel_W154">Global</span></a><button aria-label="Expand sidebar category &#x27;Global&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/standards/iaas/"><span title="IaaS" class="categoryLinkLabel_W154">IaaS</span></a><button aria-label="Collapse sidebar category &#x27;IaaS&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0100"><span title="scs-0100" class="categoryLinkLabel_W154">scs-0100</span></a><button aria-label="Expand sidebar category &#x27;scs-0100&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0101"><span title="scs-0101" class="categoryLinkLabel_W154">scs-0101</span></a><button aria-label="Expand sidebar category &#x27;scs-0101&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/standards/iaas/scs-0102"><span title="scs-0102" class="categoryLinkLabel_W154">scs-0102</span></a><button aria-label="Collapse sidebar category &#x27;scs-0102&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-4 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/standards/scs-0102-v1-image-metadata"><span title="V1" class="linkLabel_WmDU">V1</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-4 menu__list-item"><a class="menu__link" tabindex="0" href="/standards/scs-0102-w1-image-metadata-implementation-testing"><span title="W1" class="linkLabel_WmDU">W1</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0103"><span title="scs-0103" class="categoryLinkLabel_W154">scs-0103</span></a><button aria-label="Expand sidebar category &#x27;scs-0103&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0104"><span title="scs-0104" class="categoryLinkLabel_W154">scs-0104</span></a><button aria-label="Expand sidebar category &#x27;scs-0104&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0110"><span title="scs-0110" class="categoryLinkLabel_W154">scs-0110</span></a><button aria-label="Expand sidebar category &#x27;scs-0110&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0111"><span title="scs-0111" class="categoryLinkLabel_W154">scs-0111</span></a><button aria-label="Expand sidebar category &#x27;scs-0111&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0112"><span title="scs-0112" class="categoryLinkLabel_W154">scs-0112</span></a><button aria-label="Expand sidebar category &#x27;scs-0112&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0113"><span title="scs-0113" class="categoryLinkLabel_W154">scs-0113</span></a><button aria-label="Expand sidebar category &#x27;scs-0113&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0114"><span title="scs-0114" class="categoryLinkLabel_W154">scs-0114</span></a><button aria-label="Expand sidebar category &#x27;scs-0114&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0115"><span title="scs-0115" class="categoryLinkLabel_W154">scs-0115</span></a><button aria-label="Expand sidebar category &#x27;scs-0115&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0116"><span title="scs-0116" class="categoryLinkLabel_W154">scs-0116</span></a><button aria-label="Expand sidebar category &#x27;scs-0116&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0117"><span title="scs-0117" class="categoryLinkLabel_W154">scs-0117</span></a><button aria-label="Expand sidebar category &#x27;scs-0117&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0118"><span title="scs-0118" class="categoryLinkLabel_W154">scs-0118</span></a><button aria-label="Expand sidebar category &#x27;scs-0118&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0119"><span title="scs-0119" class="categoryLinkLabel_W154">scs-0119</span></a><button aria-label="Expand sidebar category &#x27;scs-0119&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0120"><span title="scs-0120" class="categoryLinkLabel_W154">scs-0120</span></a><button aria-label="Expand sidebar category &#x27;scs-0120&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0121"><span title="scs-0121" class="categoryLinkLabel_W154">scs-0121</span></a><button aria-label="Expand sidebar category &#x27;scs-0121&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0122"><span title="scs-0122" class="categoryLinkLabel_W154">scs-0122</span></a><button aria-label="Expand sidebar category &#x27;scs-0122&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0123"><span title="scs-0123" class="categoryLinkLabel_W154">scs-0123</span></a><button aria-label="Expand sidebar category &#x27;scs-0123&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0124"><span title="scs-0124" class="categoryLinkLabel_W154">scs-0124</span></a><button aria-label="Expand sidebar category &#x27;scs-0124&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0125"><span title="scs-0125" class="categoryLinkLabel_W154">scs-0125</span></a><button aria-label="Expand sidebar category &#x27;scs-0125&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0126"><span title="scs-0126" class="categoryLinkLabel_W154">scs-0126</span></a><button aria-label="Expand sidebar category &#x27;scs-0126&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/scs-0127"><span title="scs-0127" class="categoryLinkLabel_W154">scs-0127</span></a><button aria-label="Expand sidebar category &#x27;scs-0127&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/"><span title="KaaS" class="categoryLinkLabel_W154">KaaS</span></a><button aria-label="Expand sidebar category &#x27;KaaS&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iam/"><span title="IAM" class="categoryLinkLabel_W154">IAM</span></a><button aria-label="Expand sidebar category &#x27;IAM&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/ops/"><span title="Ops" class="categoryLinkLabel_W154">Ops</span></a><button aria-label="Expand sidebar category &#x27;Ops&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/standards/standards/overview"><span>Standards</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/standards/iaas/"><span>IaaS</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/standards/iaas/scs-0102"><span>scs-0102</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">V1</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>SCS Image Metadata</h1></header><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="motivation">Motivation<a href="#motivation" class="hash-link" aria-label="Direct link to Motivation" title="Direct link to Motivation" translate="no">​</a></h2>
+<p>Many clouds offer standard Operating System images for their users&#x27; convenience.
+To make them really useful, they should contain metadata (properties) to allow
+users to understand what they can expect using these images.</p>
+<p>The specification is targeting images that are managed by the service provider,
+provided for public consumption. The spec or parts of it however might turn out
+to be useful whenever someone manages images for somebody else&#x27;s consumption.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
+<p>We categorize the image properties into a few buckets</p>
+<ul>
+<li class="">Technical requirements and features</li>
+<li class="">Image handling aspects</li>
+<li class="">Licensing/Maintenance/Support aspects</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="naming">Naming<a href="#naming" class="hash-link" aria-label="Direct link to Naming" title="Direct link to Naming" translate="no">​</a></h2>
+<p>We suggest plain OS images to be named &quot;Distribution Version&quot;,
+e.g. &quot;openSUSE Leap 15.3&quot; or &quot;Ubuntu 20.04&quot; or &quot;CentOS 8&quot;, &quot;Windows Server 2012R2&quot;.
+We do not normally recommend to add more detailed patch levels into the name.</p>
+<p>Special variants that include specific non-standard features should be named
+&quot;Distribution Version Feature1 Feature2&quot;.</p>
+<p>There are several policies possible to provide updated images to include the latest
+bug- and security fixes. This is outlined in update policy description below.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="technical-requirements-and-features">Technical requirements and features<a href="#technical-requirements-and-features" class="hash-link" aria-label="Direct link to Technical requirements and features" title="Direct link to Technical requirements and features" translate="no">​</a></h2>
+<p>This is dependent on whether we deal with VM images or container images.</p>
+<p>For VM images (OpenStack), we recommend to use the properties as described
+in the <a href="https://docs.openstack.org/glance/latest//admin/useful-image-properties" target="_blank" rel="noopener noreferrer" class="">OpenStack Image documentation</a>.</p>
+<p>The following properties are considered mandatory:</p>
+<ul>
+<li class=""><code>architecture</code></li>
+<li class=""><code>min_disk</code> (in GiB), <code>min_ram</code> (in MiB)</li>
+<li class=""><code>os_version</code>, <code>os_distro</code></li>
+<li class=""><code>hw_disk_bus</code> (<code>scsi</code> recommended, and then setting <code>hw_scsi_model</code> is also recommended)</li>
+</ul>
+<p><strong>Note</strong>: Disk sizes tend to be measured in GB = 10^9 and not GiB = 2^30 in the disk industry, but OpenStack uses GiB.</p>
+<p>The value given vor <code>min_ram</code> MUST be sufficient for the VM to boot and survive (for at least 10 s).</p>
+<p>The following property is recommended:</p>
+<ul>
+<li class=""><code>hypervisor_type</code></li>
+</ul>
+<p>The values for <code>architecture</code> and <code>os_distro</code> and <code>hypervisor_type</code> (the latter only if specified) values
+must follow the <a href="https://docs.openstack.org/glance/2025.1/admin/useful-image-properties.html" target="_blank" rel="noopener noreferrer" class="">OpenStack specifications</a>.
+The <code>os_version</code> string should be numeric if the distribution uses numbers, the pair <code>os_distro</code> <code>os_version</code> should
+for example be <code>ubuntu</code> <code>24.04</code> for Ubuntu Noble Numbat 24.04[.x] LTS.</p>
+<p>To allow the distinction between general purpose images (which should come from upstream with at most some
+targeted adjustments as required by the cloud such as e.g. drivers) and images that are purpose-built, we
+recommend an additional field:</p>
+<ul>
+<li class="">
+<p><code>os_purpose</code></p>
+<p>The following values are allowed</p>
+<table><thead><tr><th><code>os_purpose</code> value</th><th>Intention</th></tr></thead><tbody><tr><td><code>generic</code></td><td>A general purpose image, (mostly) vanilla from upstream</td></tr><tr><td><code>minimal</code></td><td>A much more barebones general purpose image</td></tr><tr><td><code>k8snode</code></td><td>Node image built for k8s with CRI and kubelet</td></tr><tr><td><code>gpu</code></td><td>Image with GPU drivers e.g. for HPC or AI</td></tr><tr><td><code>network</code></td><td>Network appliance (firewall, router, loadbalancer, ...)</td></tr><tr><td><code>custom</code></td><td>None of the above</td></tr></tbody></table>
+<p>Note that no other values are currently allowed and <code>custom</code> should be used in case
+of doubt. Talk to the SCS standardization bodies if you&#x27;d like to see this list extended which is
+likely the case if you fall back to <code>custom</code>.</p>
+<p>The usage of standardized <code>os_distro</code>, <code>os_version</code>, <code>architecture</code>, and <code>os_purpose</code> help cloud users to create
+automation that works across clouds without requiring image names to be standardized.</p>
+<p><em>Uniqueness requirement</em>: whenever there are two images that have <code>os_hidden=False</code>, <code>visibility=public</code>,
+and that coincide in all three fields <code>os_distro</code>, <code>os_version</code>, and <code>architecture</code>, then only one of them may
+have <code>os_purpose=generic</code>. In other words, users who search visible public images for a generic OS
+of a certain distro, version, and architecture will not get more than one result.</p>
+<p>Note: Expect this field to become mandatory in v2 of this standard sooner rather than later.</p>
+</li>
+</ul>
+<p>The following further properties are recommended (if the features are supported):</p>
+<ul>
+<li class=""><code>hw_rng_model</code></li>
+<li class=""><code>os_secure_boot</code>, <code>hw_firmware_type</code></li>
+<li class=""><code>hw_watchdog_action</code>, <code>hw_mem_encryption</code>, <code>hw_pmu</code>, <code>hw_video_ram</code>, <code>hw_vif_multiqueue_enabled</code></li>
+</ul>
+<p>The <code>trait:XXX=required</code> property can be used to indicate that certain virtual hardware
+features <code>XXX</code> are required which may be advertised in matching
+<a href="https://docs.openstack.org/nova/latest/user/flavors.html#extra-specs" target="_blank" rel="noopener noreferrer" class="">flavor extra specs</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="image-handling">Image handling<a href="#image-handling" class="hash-link" aria-label="Direct link to Image handling" title="Direct link to Image handling" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="image-updating">Image updating<a href="#image-updating" class="hash-link" aria-label="Direct link to Image updating" title="Direct link to Image updating" translate="no">​</a></h3>
+<p>It is recommended that provider managed images are regularly updated.
+This means that users referencing an image <em>by name</em> will always get the latest image for the
+operating system indicated by that name (which includes a version number, but not the patch
+level).</p>
+<p>Technically, the thus updated image is a new image and will thus carry a new UUID.
+It is recommended that the old image gets renamed (e.g. build date or patch level attached)
+and hidden (<code>os_hidden=True</code>), but remains accessible via its (unchanged) UUID for some
+time.</p>
+<p>The update handling by the provider is described via the properties <code>replace_frequency</code>,
+<code>uuid_validity</code>, <code>provided_until</code>, and <code>hotfix_hours</code>.</p>
+<p>The <code>replace_frequency</code>, <code>provided_until</code>, and <code>hotfix_hours</code> fields reference to the image
+as referenced by its name.</p>
+<table><thead><tr><th><code>replace_frequency</code></th><th>meaning</th></tr></thead><tbody><tr><td><code>yearly</code></td><td>the image will get replaced <em>at least</em> once per year</td></tr><tr><td><code>quarterly</code></td><td>the image will get replaced <em>at least</em> once per quarter</td></tr><tr><td><code>monthly</code></td><td>the image will get replaced <em>at least</em> once per month</td></tr><tr><td><code>weekly</code></td><td>the image will get replaced <em>at least</em> once per week</td></tr><tr><td><code>daily</code></td><td>the image will get replaced <em>at least</em> once per day</td></tr><tr><td><code>critical_bug</code></td><td>the image will get replaced for critical issues only</td></tr><tr><td><code>never</code></td><td>the image referenced by name will never change (until the date <code>provided_until</code>)</td></tr></tbody></table>
+<p>Note the <em>at least</em> wording: Providers can replace images more often.
+The frequency is starting from the first release; so an image published on 2021-04-14 with an
+update frequency of <code>monthly</code>, should be replaced no later than 2021-05-14. Due to weekends
+etc., up to 3 days later is not considered a violation of this policy. So a valid sequence
+from an image with <code>monthly</code> update frequency might be 2021-04-14, 2021-05-14, 2021-06-15,
+2021-07-14, 2021-07-27 (hotfix), 2021-08-13 ...</p>
+<p>Promises to update the registered public images typically depend on upstream image providers
+(Linux distributors, OS vendors) keeping their promises to build and provide updated images.
+Failures from upstream are not a reason to claim the cloud provider to be in violation of his
+promises. However, if the provider observes massive upstream failures (which can e.g. cause
+increased security risks), we advise the provider to inform the users.</p>
+<p>We recommend updating images at least monthly.</p>
+<p>The <code>hotfix_hours</code> field indicates how providers deal with critical security issues
+that affect the images; it is an optional field that contains a numerical value, indicating
+how quickly (in hours) a new image is provided <em>after the latter of the points in time that
+the issue becomes public and a tested fix is available as maintenance update from the upstream
+distribution</em>. A value of 0 indicates a best-effort approach without firm SLAs; the field not
+being present indicates no commitment. A value of 48 would indicate that the provider
+commits to a new image within 48hrs. A critical issue is defined as a security vulnerability
+with a CVSS score of 9.0 or higher that affects software that is included in the image.</p>
+<p>The <code>provided_until</code> field is supposed to contain a date in <code>YYYY-MM-DD</code> format that
+indicates until when an image under this name will be provided and (according to the
+<code>replace_frequency</code>) updated at least. (Providers are free to provide updates for
+longer or leave the non-updated image visible for longer.)
+If this field is set to <code>none</code>, no promises are made, if it is set to <code>notice</code>, updates
+will be provided until a deprecation notice is published. (The values are the same as
+for below <code>uuid_validity</code>, except that <code>forever</code> and <code>last-N</code> don&#x27;t make any sense.)</p>
+<p>The <code>uuid_validity</code> field indicates how long the public image will be referencable
+by its UUID.</p>
+<table><thead><tr><th><code>uuid_validity</code></th><th>meaning</th></tr></thead><tbody><tr><td><code>none</code></td><td>UUID will only be valid as long as the content does not change</td></tr><tr><td><code>last-N</code></td><td>The last N images for newer replacement will remain accessible via UUID</td></tr><tr><td><code>YYYY-MM-DD</code></td><td>UUID will be valid until at least the date YYYY-MM-DD</td></tr><tr><td><code>notice</code></td><td>UUID will remain valid until a deprecation notice will be published</td></tr><tr><td><code>forever</code></td><td>UUID will remain valid for as long as the cloud operates</td></tr></tbody></table>
+<p>Note that the old images must be hidden from the image catalogue or renamed (or both)
+to avoid failing referencing by name. Note that <code>last-N</code> may be limited by the <code>provided_until</code>
+date. We recommend providers that keep old images according to the advertized <code>uuid_validity</code>
+to hide older images (setting the <code>os_hidden</code> property to <code>True</code>). If the outdated images must
+remain visible, the recommendation is to rename the images by attaching a datestamp in the
+format &quot; <code>YYYYMMDD</code>&quot; to the name where the date must reflect the <code>build_date</code> of the image.</p>
+<p>The three properties <code>uuid_validity</code>, <code>provided_until</code> and <code>replace_frequency</code> are mandatory;
+the field <code>hotfix_hours</code> is optional.</p>
+<p>All dates are in UTC.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="example">Example<a href="#example" class="hash-link" aria-label="Direct link to Example" title="Direct link to Example" translate="no">​</a></h4>
+<p>Providing an image with name <code>OPSYS MAJ.MIN</code> with
+<code>replace_frequency=monthly</code>, <code>provided_until=2022-09-30</code>, <code>uuid_validity=2022-12-31</code>,
+<code>hotfix_hours=0</code>
+means that we will have a new image with this name at least once per month (starting from
+the initial release) until the end of September 2022. Old images will be hidden and/or
+renamed, but remain accessible via their UUID until at least the end of 2022 (in Universal Time).
+The provider makes an effort to replace images upon critical security issues out of order.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="image-origin">Image Origin<a href="#image-origin" class="hash-link" aria-label="Direct link to Image Origin" title="Direct link to Image Origin" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>Mandatory: <code>image_source</code> needs to be a URL to point to a place from which the image can be downloaded.
+(Note: This may be set to the string &quot;private&quot; to indicate that the image can not be freely
+downloaded.)</p>
+</li>
+<li class="">
+<p>Mandatory: <code>image_description</code> needs to be a URL (or text) with release notes and other human-readable
+data about the image.</p>
+</li>
+<li class="">
+<p>Recommended <em>tag</em>: <code>managed_by_VENDOR</code></p>
+</li>
+</ul>
+<p>Note that for most images that come straight from an upstream source, <code>image_description</code> should point
+to an upstream web page where these images are described. If download links are available as well
+on that page, <code>image_source</code> can point to the same page, otherwise a more direct link to the image
+should be used, e.g. directly linking the <code>.qcow2</code> or <code>.img</code> file.
+If providers have their own image building machinery or do some post-processing on top of
+upstream images, they should point to the place where they document and offer these images.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="image-build-info">Image build info<a href="#image-build-info" class="hash-link" aria-label="Direct link to Image build info" title="Direct link to Image build info" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>Mandatory: <code>image_build_date</code> needs to be <code>YYYY-MM-DD</code> or <code>YYYY-MM-DD hh:mm[:ss]</code> (time in UTC,
+24hrs clock).
+All publicly released and generally recommended patches before this date must be included in the
+image build. If the cutoff date is earlier, this cutoff date needs to be set instead, even
+if the actual build happens significantly after the cutoff date. If not all patches can be
+included for a good reason, then the <code>patchlevel</code> field (see below) must be used to describe
+the patch status.</p>
+</li>
+<li class="">
+<p>Mandatory: <code>image_original_user</code> is the default login user for the operating system which can connect
+to the image via the injected SSH key or provided password. (This can be set to <code>none</code> if no default
+username exists for the operating system.)</p>
+</li>
+<li class="">
+<p>Optional: <code>patchlevel</code> can be set to an operating specific patch level that describes the
+patch status — typically we would expect the <code>image_build_date</code> to be sufficient.</p>
+</li>
+<li class="">
+<p>Recommended: <code>os_hash_algo</code> and <code>os_hash_value</code>: The sha256 or sha512 hash
+for the image file. (This references the image file in the format it is stored in, we
+recommend raw over qcow2 for systems that use ceph.) Note that these values are
+typically generated automatically upon image registration.</p>
+</li>
+<li class="">
+<p>Recommended <em>tag</em>: <code>os:OPERATINGSYSTEM</code></p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="licensing--maintenance-subscription--support">Licensing / Maintenance subscription / Support<a href="#licensing--maintenance-subscription--support" class="hash-link" aria-label="Direct link to Licensing / Maintenance subscription / Support" title="Direct link to Licensing / Maintenance subscription / Support" translate="no">​</a></h3>
+<p>Some images require a license; in many cases the cloud providers include the license cost
+by a per-use (e.g. hourly) fee. However, it is also possible sometimes that customers
+use their own license agreements with the OS vendor with a bring-your-own-license (BYOL)
+program. These properties may be attached to the image. Note that free Linux images
+might not use any of these properties, except maybe <code>maintained_until</code>. Note that
+Windows images would typically require <code>license_included</code>, <code>subscription_included</code>.
+A boolean property that is not present is considered to be <code>false</code>.</p>
+<ul>
+<li class="">Optional: <code>license_included</code> (boolean) indicates whether the flavor fee
+includes the licenses required to use this image. This field is mandatory for
+images that contain software that requires commercial licenses.</li>
+<li class="">Optional: <code>license_required</code> (boolean) indicates whether a customer must bring
+its own license to be license compliant. This can not be true at the same time as the
+previous setting. This field is mandatory IF customers need to bring their own
+license to use the image.</li>
+<li class="">Optional: <code>subscription_included</code> (boolean) indicates that the image contains already
+a maintenance subscription which typically gives access to bug fixes, security
+fixes and (minor) function updates. If a subscription is included, the CSP should
+have prepared the image to also receive the provided maintenance updates from the
+vendor (optionally via a mirror).</li>
+<li class="">Optional: <code>subscription_required</code> (boolean) indicates that the customer requires
+a maintenance subscription from the OS vendor in order to receive fixes
+(which is often also a prerequisite to be eligible for support).</li>
+<li class="">Optional: <code>maintained_until: YYYY-MM-DD</code> promises maintenance from the OS vendor
+until at least this date (in UTC).</li>
+<li class="">Optional: <code>l1_support_contact</code> contains a URI that provides customer support
+contact for issues with this image. Note that this field must only be set if the
+service provider does provide support for this image included in the image/flavor
+pricing (but it might be provided by a contracted 3rd party, e.g. the OS vendor).</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="version-history">Version history<a href="#version-history" class="hash-link" aria-label="Direct link to Version history" title="Direct link to Version history" translate="no">​</a></h3>
+<ul>
+<li class="">Version 1.0 has existed without notable changes since June 2021.</li>
+<li class="">Version 1.1 was created in preparation for a new major version 2.0 and has the following additional recommendations:<!-- -->
+<ul>
+<li class="">Reference OpenStack image spec for standard values of <code>os_distro</code>, <code>architecture</code> and <code>hypervisor_type</code>.</li>
+<li class="">Recommendation on <code>os_version</code> to be a version number (if such a value exists).</li>
+<li class="">Recommended field <code>os_purpose</code>.</li>
+</ul>
+</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/standards/iaas/scs-0102"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">scs-0102: SCS Image Metadata</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/standards/scs-0102-w1-image-metadata-implementation-testing"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">W1</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#motivation" class="table-of-contents__link toc-highlight">Motivation</a></li><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#naming" class="table-of-contents__link toc-highlight">Naming</a></li><li><a href="#technical-requirements-and-features" class="table-of-contents__link toc-highlight">Technical requirements and features</a></li><li><a href="#image-handling" class="table-of-contents__link toc-highlight">Image handling</a><ul><li><a href="#image-updating" class="table-of-contents__link toc-highlight">Image updating</a></li><li><a href="#image-origin" class="table-of-contents__link toc-highlight">Image Origin</a></li><li><a href="#image-build-info" class="table-of-contents__link toc-highlight">Image build info</a></li><li><a href="#licensing--maintenance-subscription--support" class="table-of-contents__link toc-highlight">Licensing / Maintenance subscription / Support</a></li><li><a href="#version-history" class="table-of-contents__link toc-highlight">Version history</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs">Contribute</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org" target="_blank" rel="noopener noreferrer" class="footer__link-item">Matrix<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://fosstodon.org/@sovereigncloudstack" target="_blank" rel="noopener noreferrer" class="footer__link-item">Mastodon<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/SovereignCloudStack/docs" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Sovereign Cloud Stack, SCS and the logo are registered trademarks of the Open Source Business Alliance e.V. — Other trademarks are property of their respective owners.</div></div></div></footer></div>
+</body>
+</html>

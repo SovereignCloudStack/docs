@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-standards docs-version-current docs-doc-page docs-doc-id-scs-0217-v1-cluster-hardening" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Kubernetes cluster hardening | One platform — standardized, built and operated by many.</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.scs.community/img/scs-og-basic.png"><meta data-rh="true" name="twitter:image" content="https://docs.scs.community/img/scs-og-basic.png"><meta data-rh="true" property="og:url" content="https://docs.scs.community/standards/scs-0217-v1-cluster-hardening"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-standards-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-standards-current"><meta data-rh="true" property="og:title" content="Kubernetes cluster hardening | One platform — standardized, built and operated by many."><meta data-rh="true" name="description" content="Introduction"><meta data-rh="true" property="og:description" content="Introduction"><link data-rh="true" rel="icon" href="/img/favicon.png"><link data-rh="true" rel="canonical" href="https://docs.scs.community/standards/scs-0217-v1-cluster-hardening"><link data-rh="true" rel="alternate" href="https://docs.scs.community/standards/scs-0217-v1-cluster-hardening" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.scs.community/standards/scs-0217-v1-cluster-hardening" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Standards","item":"https://docs.scs.community/standards/standards/overview"},{"@type":"ListItem","position":2,"name":"KaaS","item":"https://docs.scs.community/standards/kaas/"},{"@type":"ListItem","position":3,"name":"scs-0217","item":"https://docs.scs.community/standards/kaas/scs-0217"},{"@type":"ListItem","position":4,"name":"V1","item":"https://docs.scs.community/standards/scs-0217-v1-cluster-hardening"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="SCS Community Blog RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="SCS Community Blog Atom Feed">
+<link rel="alternate" type="application/json" href="/blog/feed.json" title="SCS Community Blog JSON Feed">
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://matomo.scs.community/">
+<script>var _paq=window._paq=window._paq||[];_paq.push(["setDocumentTitle",document.domain+"/"+document.title]),_paq.push(["disableCookies"]),_paq.push(["trackPageView"]),_paq.push(["enableLinkTracking"]),function(){var e="https://matomo.scs.community/";_paq.push(["setTrackerUrl",e+"matomo.php"]),_paq.push(["setSiteId","2"]);var a=document,t=a.createElement("script"),p=a.getElementsByTagName("script")[0];t.async=!0,t.src=e+"matomo.js",p.parentNode.insertBefore(t,p)}()</script><link rel="stylesheet" href="/assets/css/styles.7136250c.css">
+<script src="/assets/js/runtime~main.07d47f80.js" defer="defer"></script>
+<script src="/assets/js/main.23799193.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="SCS" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="SCS" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"></b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/standards">Standards</a><a class="navbar__item navbar__link" href="/docs">For Operators</a><a class="navbar__item navbar__link" href="/contributor-docs">For Contributors</a><a class="navbar__item navbar__link" href="/user-docs">For Users</a><a class="navbar__item navbar__link" href="/community">Community</a><a class="navbar__item navbar__link" href="/docs/faq">FAQ</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/SovereignCloudStack/docs" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/standards/"><span title="Introduction" class="linkLabel_WmDU">Introduction</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/standards/certification/digisov-and-cert"><span title="Certification" class="categoryLinkLabel_W154">Certification</span></a><button aria-label="Expand sidebar category &#x27;Certification&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/standards/standards/overview"><span title="Standards" class="categoryLinkLabel_W154">Standards</span></a><button aria-label="Collapse sidebar category &#x27;Standards&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/global/"><span title="Global" class="categoryLinkLabel_W154">Global</span></a><button aria-label="Expand sidebar category &#x27;Global&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/"><span title="IaaS" class="categoryLinkLabel_W154">IaaS</span></a><button aria-label="Expand sidebar category &#x27;IaaS&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/standards/kaas/"><span title="KaaS" class="categoryLinkLabel_W154">KaaS</span></a><button aria-label="Collapse sidebar category &#x27;KaaS&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/scs-0200"><span title="scs-0200" class="categoryLinkLabel_W154">scs-0200</span></a><button aria-label="Expand sidebar category &#x27;scs-0200&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/scs-0210"><span title="scs-0210" class="categoryLinkLabel_W154">scs-0210</span></a><button aria-label="Expand sidebar category &#x27;scs-0210&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/scs-0211"><span title="scs-0211" class="categoryLinkLabel_W154">scs-0211</span></a><button aria-label="Expand sidebar category &#x27;scs-0211&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/scs-0212"><span title="scs-0212" class="categoryLinkLabel_W154">scs-0212</span></a><button aria-label="Expand sidebar category &#x27;scs-0212&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/scs-0213"><span title="scs-0213" class="categoryLinkLabel_W154">scs-0213</span></a><button aria-label="Expand sidebar category &#x27;scs-0213&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/scs-0214"><span title="scs-0214" class="categoryLinkLabel_W154">scs-0214</span></a><button aria-label="Expand sidebar category &#x27;scs-0214&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/scs-0215"><span title="scs-0215" class="categoryLinkLabel_W154">scs-0215</span></a><button aria-label="Expand sidebar category &#x27;scs-0215&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/scs-0216"><span title="scs-0216" class="categoryLinkLabel_W154">scs-0216</span></a><button aria-label="Expand sidebar category &#x27;scs-0216&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/standards/kaas/scs-0217"><span title="scs-0217" class="categoryLinkLabel_W154">scs-0217</span></a><button aria-label="Collapse sidebar category &#x27;scs-0217&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-4 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/standards/scs-0217-v1-cluster-hardening"><span title="V1" class="linkLabel_WmDU">V1</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/scs-0218"><span title="scs-0218" class="categoryLinkLabel_W154">scs-0218</span></a><button aria-label="Expand sidebar category &#x27;scs-0218&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/scs-0219"><span title="scs-0219" class="categoryLinkLabel_W154">scs-0219</span></a><button aria-label="Expand sidebar category &#x27;scs-0219&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iam/"><span title="IAM" class="categoryLinkLabel_W154">IAM</span></a><button aria-label="Expand sidebar category &#x27;IAM&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/ops/"><span title="Ops" class="categoryLinkLabel_W154">Ops</span></a><button aria-label="Expand sidebar category &#x27;Ops&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/standards/standards/overview"><span>Standards</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/standards/kaas/"><span>KaaS</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/standards/kaas/scs-0217"><span>scs-0217</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">V1</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Kubernetes cluster hardening</h1></header><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="introduction">Introduction<a href="#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction" translate="no">​</a></h2>
+<p>Due to the regular changes and updates, there are always new security features to deploy and use in Kubernetes.
+Nevertheless, a provider (or even a customer) needs to take action in order to achieve a
+baseline-secure cluster due to the myriad of configurations possible. This is especially
+the case since Kubernetes ships with insecure features and configurations out of the box,
+which will need to be mitigated by an administrator with the proper knowledge.
+Secure Kubernetes clusters are desirable regardless of the possible threat model,
+since higher security doesn&#x27;t necessarily mean higher complexity in this case.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="terminology">Terminology<a href="#terminology" class="hash-link" aria-label="Direct link to Terminology" title="Direct link to Terminology" translate="no">​</a></h2>
+<table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td>TLS</td><td>Transport Layer Security</td></tr><tr><td>CA</td><td>Certificate Authority</td></tr><tr><td>JWT</td><td>JSON Web Token</td></tr><tr><td>ABAC</td><td>Attribute-based access control</td></tr><tr><td>RBAC</td><td>Role-based access control</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="motivation">Motivation<a href="#motivation" class="hash-link" aria-label="Direct link to Motivation" title="Direct link to Motivation" translate="no">​</a></h2>
+<p>Kubernetes clusters are highly configurable, which also gives rise to different security
+problems, if the configuration isn&#x27;t done properly.
+These security risks can potentially be exposed in many different parts of a cluster, e.g.
+different APIs, authorization and authentication procedures or even Pod privilege mechanisms.
+In order to mitigate these problems, different steps and hardening mechanisms could be used
+to increase the security of a Kubernetes setup.
+Due to the focus of the SCS KaaS standards on the providers, best practices for security
+that are more focused on user environments aren&#x27;t described here, e.g., the possibility for
+network traffic control between pods. This could theoretically be set up by a provider,
+but isn&#x27;t very practical for the user, since he would probably need to request changes
+regularly in this case.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hardening-kubernetes">Hardening Kubernetes<a href="#hardening-kubernetes" class="hash-link" aria-label="Direct link to Hardening Kubernetes" title="Direct link to Hardening Kubernetes" translate="no">​</a></h2>
+<p>This section is non-authoritative and only describes concepts and design considerations.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regular-updates">Regular updates<a href="#regular-updates" class="hash-link" aria-label="Direct link to Regular updates" title="Direct link to Regular updates" translate="no">​</a></h3>
+<p>Due to the risk associated with running older versions of software, e.g. known security vulnerabilities,
+bugs or missing features as well as the difficulty of tracking or identifying attack vectors,
+it is advised to first and foremost keep the version of the Kubernetes components up-to-date.
+It should be especially important to keep on track with the patch-level <a href="https://kubernetes.io/releases/" target="_blank" rel="noopener noreferrer" class="">versions of Kubernetes</a>,
+since they include bugfixes and security patches, which are also backported to the previous
+three minor-level versions, depending on their severity and the feasibility. It is also recommended
+to refer to the version skew policy for more details about <a href="https://kubernetes.io/releases/version-skew-policy/" target="_blank" rel="noopener noreferrer" class="">component versions</a>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="securing-etcd">Securing etcd<a href="#securing-etcd" class="hash-link" aria-label="Direct link to Securing etcd" title="Direct link to Securing etcd" translate="no">​</a></h3>
+<p>The etcd database is the storage for Kubernetes, containing information about cluster workloads, states and secrets.
+Gaining access to this critical infrastructure part would enable a bad actor to read the aforementioned information;
+write access would be equivalent to administrative access on the Kubernetes cluster and information could be manipulated
+while ignoring any restrictions or validations put in place by other Kubernetes components.</p>
+<p>Securing etcd can be done through different or a combination of
+many mechanisms, including strong security credentials for the etcd server, the isolation of the etcd servers behind a firewall, separate etcd
+instances for components beside the API-server, ACL restrictions for read-write-access to subsets of the keyspace and
+a separate CA for etcd communication, which limits the trusted partners of the etcd database to clients with a certificate from this CA.
+These strategies will be explained a bit more in-depth in the following subsections.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="strong-authentication">Strong authentication<a href="#strong-authentication" class="hash-link" aria-label="Direct link to Strong authentication" title="Direct link to Strong authentication" translate="no">​</a></h4>
+<p>If an etcd instance wasn&#x27;t secured correctly, it could be possible that a bad actor would try to authenticate against
+the database.
+It is therefore advised to use strong security credentials (see e.g. <a href="https://pages.nist.gov/800-63-3/sp800-63b.html" target="_blank" rel="noopener noreferrer" class="">the strong credentials requirements by NIST</a>) for
+all user accounts on the etcd server as well as the machines running this critical component.
+This is obviously a fact for all possibly accessible components, but especially true for etcd, since it contains
+the complete cluster state.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="multiple-etcd-instances">Multiple etcd instances<a href="#multiple-etcd-instances" class="hash-link" aria-label="Direct link to Multiple etcd instances" title="Direct link to Multiple etcd instances" translate="no">​</a></h4>
+<p>etcd is a critical component that needs to be protected from
+bad actors as well as outages. Kubernetes recommends a <a href="https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/#multi-node-etcd-cluster" target="_blank" rel="noopener noreferrer" class="">five-member cluster</a> for durability and high-availability as well as regular back-ups of the data.
+For more information on high-availability, look into the <a class="" href="/standards/scs-0214-v1-k8s-node-distribution">Kubernetes Node Distribution and Availability Standard</a>.
+It would also be possible to use these etcd instances in order to select specific instances
+that aren&#x27;t the current etcd leader for interaction with different components (e.g. Calico), since access to the primary etcd instance could be considered dangerous, because the full keyspace could be viewed without further restrictions (see <a href="https://cheatsheetseries.owasp.org/cheatsheets/Kubernetes_Security_Cheat_Sheet.html#limiting-access-to-the-primary-etcd-instance" target="_blank" rel="noopener noreferrer" class="">here</a> or <a href="https://docs.tigera.io/calico/latest/reference/etcd-rbac/kubernetes-advanced" target="_blank" rel="noopener noreferrer" class="">here</a>).
+This approach should still be paired with <a href="#acl-restrictions" class="">etcd ACL</a> to better restrict access.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="etcd-isolation">etcd isolation<a href="#etcd-isolation" class="hash-link" aria-label="Direct link to etcd isolation" title="Direct link to etcd isolation" translate="no">​</a></h4>
+<p>The etcd database should at best be isolated from the rest of a Kubernetes cluster.
+Access should only be granted to components that need it, which is in most cases mainly (or only)
+the API server. Best practice would be to host etcd on machines separate from the Kubernetes cluster
+and block access from machines or networks that don&#x27;t need access with specific firewall rules.
+In most cases, only the API server machines should need access to etcd on ports 2379-2380.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="acl-restrictions">ACL restrictions<a href="#acl-restrictions" class="hash-link" aria-label="Direct link to ACL restrictions" title="Direct link to ACL restrictions" translate="no">​</a></h4>
+<p>etcd implements access control lists (ACL) and authentication since version 2.1 <a href="https://etcd.io/docs/v3.3/op-guide/authentication/" target="_blank" rel="noopener noreferrer" class="">1</a>.
+etcd provides users and roles; users gain permissions through roles. When authentication is enabled,
+each request to etcd requires authentication and the transaction is only allowed, if the user has the correct access rights.
+etcd can also be launched with <code>--client-cert-auth=true</code>, which enables authentication via
+the Common Name (CN) field of a client TLS certificate without a password.
+This option enables Kubernetes components to authenticate as a user without providing a password,
+which is neither possible for Kubernetes components nor planned in future releases.
+This method is recommended in order to implement ACL for different Kubernetes components and
+not give the Kubernetes API full root access to the etcd instance; instead, a separate user can be created.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="tls-communication">TLS communication<a href="#tls-communication" class="hash-link" aria-label="Direct link to TLS communication" title="Direct link to TLS communication" translate="no">​</a></h4>
+<p>etcd should use TLS for peer- and cluster-communication, so that traffic between different peered etcd instances as well
+as the communication with the Kubernetes cluster can be secured.
+etcd provides options for all these scenarios, including <code>--peer-key-file=peer.key</code> and <code>--peer-cert-file=peer.cert</code>
+for securing peer communication and the flags <code>--key-file=k8sclient.key</code> and <code>--cert-file=k8sclient.cert</code> for securing
+client communication (and therefore cluster communication).
+Additionally, HTTPS should be used as the URL schema.
+It is also possible to use a separate CA for the etcd in order to separate and better control access through client
+certificates, since etcd by default trusts all the certificates issued by the root CA <a href="https://kubernetes.io/blog/2021/10/05/nsa-cisa-kubernetes-hardening-guidance/" target="_blank" rel="noopener noreferrer" class="">2</a>.
+More information about authentication via TLS is provided in the chapter <a href="#acl-restrictions" class="">ACL restrictions</a>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="securing-endpoints">Securing endpoints<a href="#securing-endpoints" class="hash-link" aria-label="Direct link to Securing endpoints" title="Direct link to Securing endpoints" translate="no">​</a></h3>
+<p>Kubernetes provides a well-defined set of ports in its default configuration. These ports are
+used for inter-component communication as well as external access. Due to the distribution of information
+about Kubernetes clusters, it is easy for a bad actor to identify a clusters
+ports and try to attack them. In order to minimize the attack vector, internal ports (and therefore components)
+should not be accessible from external networks, except if there are requirements to enable this behavior.</p>
+<p>A good way to restrict access would be a combination of firewalls with port
+blocking and the integration of network separation.
+How this is done is highly dependent on the specific setup of the provider.
+An additional document could be provided in the future to give basic
+guidelines for this task.</p>
+<p>A list of the default ports used in Kubernetes as well as the components accessing them can be found below:</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="control-plane-nodes">Control plane nodes<a href="#control-plane-nodes" class="hash-link" aria-label="Direct link to Control plane nodes" title="Direct link to Control plane nodes" translate="no">​</a></h4>
+<table><thead><tr><th>Ports</th><th>Protocol</th><th>Purpose</th><th>Used by</th><th>Access type</th></tr></thead><tbody><tr><td>6443</td><td>TCP</td><td>API server</td><td>All</td><td>External, internal</td></tr><tr><td>2379-2380</td><td>TCP</td><td>etcd server</td><td>kube-apiserver, etcd</td><td>Internal</td></tr><tr><td>10250</td><td>TCP</td><td>Kubelet API</td><td>Self, Control plane</td><td>Internal</td></tr><tr><td>10255</td><td>TCP</td><td>Read-only Kubelet API</td><td>External applications</td><td>External, Internal</td></tr><tr><td>10257</td><td>TCP</td><td>kube-controller-manager</td><td>Self</td><td>Internal</td></tr><tr><td>10259</td><td>TCP</td><td>kube-scheduler</td><td>Self</td><td>Internal</td></tr></tbody></table>
+<p>Hint: <code>Self</code> in the <code>Used by</code> context means, that a resource will access its own port for requests.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="worker-nodes">Worker nodes<a href="#worker-nodes" class="hash-link" aria-label="Direct link to Worker nodes" title="Direct link to Worker nodes" translate="no">​</a></h4>
+<table><thead><tr><th>Ports</th><th>Protocol</th><th>Purpose</th><th>Used by</th><th>Access type</th></tr></thead><tbody><tr><td>10250</td><td>TCP</td><td>Kubelet API</td><td>Self, Control plane</td><td>Internal</td></tr><tr><td>10255</td><td>TCP</td><td>Read-only Kubelet API</td><td>External applications</td><td>External, internal</td></tr><tr><td>30000-32767</td><td>TCP</td><td>NodePort Services</td><td></td><td>External</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="api-security-authentication-and-authorization">API security, authentication and authorization<a href="#api-security-authentication-and-authorization" class="hash-link" aria-label="Direct link to API security, authentication and authorization" title="Direct link to API security, authentication and authorization" translate="no">​</a></h3>
+<p>In order to secure Kubernetes against bad actors, limiting and securing access to API requests
+is recommended, since requests to those are able to control the entire Kubernetes cluster.
+Access control is applied to both human users and Kubernetes service accounts, which goes through
+several stages after a request reaches the API.</p>
+<ol>
+<li class="">The Kubernetes API server listens on port 6443 on the first non-localhost network interface by default,
+protected by TLS <a href="https://kubernetes.io/docs/concepts/security/controlling-access/" target="_blank" rel="noopener noreferrer" class="">3</a>. The TLS certificate can either be signed with a private CA or based on a public key
+infrastructure with a widely recognized CA behind it.</li>
+<li class="">The authentication step checks the request for correct authentication based on different possible
+authentication modules like password, plain tokens or JWT. Only one of these methods needs to succeed
+in order to allow a request to pass to the next stage.</li>
+<li class="">The authorization step authorizes a request, if a user is allowed to carry out a specific operation.
+The request must contain the username of the requester, the requested action and the affected object.
+Kubernetes supports different authorization modules like ABAC, RBAC or Webhooks. Only one of these
+modules need to approve the request in order for it to be authorized.</li>
+<li class="">The last step are Admission control modules, which can modify or reject requests after accessing
+the objects contents.</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="authentication">Authentication<a href="#authentication" class="hash-link" aria-label="Direct link to Authentication" title="Direct link to Authentication" translate="no">​</a></h4>
+<p>Kubernetes provides different internal authentication mechanisms, that can be used depending
+on the requirements of the cluster provider and user. Multiple authentication systems can
+be enabled and the <a href="https://kubernetes.io/docs/reference/access-authn-authz/authentication/" target="_blank" rel="noopener noreferrer" class="">Kubernetes documentation</a> recommends at least using two methods,
+including Service Account Tokens and another method. Methods directly provided by Kubernetes include
+the following (a more complete or up-to-date list may be found in the <a href="https://kubernetes.io/docs/reference/access-authn-authz/authentication/" target="_blank" rel="noopener noreferrer" class="">Kubernetes authentication docs</a>):</p>
+<ul>
+<li class="">
+<p><em>Static Token Files</em></p>
+<p>This method reads bearer tokens from requests and checks them against a CSV file provided to Kubernetes containing
+three columns named <code>token</code>, <code>username</code> and <code>uid</code>. These tokens last indefinitely and the list can&#x27;t be changed
+without a restart of the API server. This makes this option unsuitable for production clusters.</p>
+</li>
+<li class="">
+<p><em>Service Account Tokens</em></p>
+<p>A service account is an authenticator that uses signed bearer tokens for request verification.
+Service accounts can be given to the API server with a file containing PEM-encoded X509 RSA or
+ECDSA private or public keys that verify the Service Account Tokens.
+Service Accounts are normally created automatically by the API server and associated with the
+pods through the <code>ServiceAccount</code> admission controller. Tokens are signed JSON Web Tokens,
+that can be used as a Bearer Token or mounted into the pods for API server access.
+Since Service Account Tokens are mainly used to allow workloads accessing the API server,
+they&#x27;re not really intended to authenticate users in production clusters.</p>
+</li>
+<li class="">
+<p><em>X509 client certificates</em></p>
+<p>Client certificate authentication can be enabled by providing a <code>Certificate Authority</code>
+file to the API server via the <code>--client-ca-file=</code> option. The file contains one
+or more CAs that a presented client certificate is validated against.
+In this case the common subject name is used as the username for the request;
+additionally, a group membership can be indicated with the certificates organization field.
+These certificates are unsuitable for production use, because Kubernetes does not
+support certificate revocation. This means user credentials can&#x27;t be modified or
+revoked without rotating the root CA and re-issuing all cluster certificates.</p>
+</li>
+</ul>
+<p>As outlined, most internal authentication mechanisms of Kubernetes aren&#x27;t really
+usable in productive environments at the current time. Instead, external authentication
+should be used in order to provide production-ready workflows.
+The Kubernetes documentation lists a few examples for external authenticators, e.g.</p>
+<ul>
+<li class=""><a href="https://kubernetes.io/docs/reference/access-authn-authz/authentication/#openid-connect-tokens" target="_blank" rel="noopener noreferrer" class="">OpenIDConnect</a></li>
+<li class="">Bearer Tokens with <a href="https://kubernetes.io/docs/reference/access-authn-authz/authentication/#webhook-token-authentication" target="_blank" rel="noopener noreferrer" class="">Webhook Token Authentication</a></li>
+<li class="">Request Header Authentication with an <a href="https://kubernetes.io/docs/reference/access-authn-authz/authentication/#authenticating-proxy" target="_blank" rel="noopener noreferrer" class="">Authenticating Proxy</a></li>
+</ul>
+<p>All of these examples are useful to set up for an organization or can be used with
+an already in-place solution. More information can be found in their respective
+part of the Kubernetes documentation.
+Most of these are good solutions for productive setups, since they enable easy
+user management, access revocation and things like short-lived access tokens.
+What will be used by your organization depends on the present setup and the use case.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="authorization">Authorization<a href="#authorization" class="hash-link" aria-label="Direct link to Authorization" title="Direct link to Authorization" translate="no">​</a></h4>
+<p>Authorization is done after the authentication step in order to check the rights
+of a user within the system. Kubernetes authorizes API requests with the API server,
+which evaluates requests against all policies in place and then allows or denies these requests.
+By default, a request would be denied.</p>
+<p>Kubernetes provides several authentication modes to authorize a request:</p>
+<ul>
+<li class="">
+<p><em>Node</em></p>
+<p>The <a href="https://kubernetes.io/docs/reference/access-authn-authz/node/" target="_blank" rel="noopener noreferrer" class="">Node authorization mode</a> grants permission to a Kubelet
+based on the scheduled pods running on them. It allows a Kubelet to perform specific
+API operations. The goal is to have a minimal set of permissions to ensure
+the Kubelet can operate correctly.
+Each Kubelet identifies with credentials belonging to the <code>system:nodes</code> group and
+a username <code>system:nodes:&lt;node&gt;</code> against this authorizer.</p>
+</li>
+<li class="">
+<p><em>ABAC (Attribute-based access control)</em></p>
+<p>ABAC grants access rights based on policies dependent on attributes like
+user attributes, resource attributes or environment attributes.
+An example would be the <code>resource</code> attribute, which could limit access for a user
+to only <code>Pod</code> resources.</p>
+</li>
+<li class="">
+<p><em>RBAC (Role-based access control)</em></p>
+<p>RBAC is a method of regulating access to the resources based on the roles of
+individual users. A user therefore must have the ability to perform a specific set
+of tasks with a set of resources based on his role.
+Kubernetes implements <code>Role</code>s to accomplish this and binds these with <code>Role Binding</code>s
+to a user in order to specify his permission set.</p>
+</li>
+<li class="">
+<p><em>Webhook</em></p>
+<p>Webhook authorization uses an HTTP callback to check the authorization of a user
+against a URL provided for this mode. This externalises the authorization part
+outside of Kubernetes.</p>
+</li>
+</ul>
+<p>Most organizations and deployments work with RBAC, most often due to organizational or
+customer-owner-relationship-like structures in place.
+Nonetheless, neither ABAC, RBAC nor Webhook authorization can be recommended over the
+other, since this all depends on the use case and required structure of a deployment.
+Using at least one of these modes is recommended.</p>
+<p>It is also recommended to enable the Node authorizer in order to limit Kubelet
+permissions to a minimum operational state.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="admission-controllers">Admission Controllers<a href="#admission-controllers" class="hash-link" aria-label="Direct link to Admission Controllers" title="Direct link to Admission Controllers" translate="no">​</a></h4>
+<p>Admission controllers intercept requests to the Kubernetes API after the
+authentication and authorization step, which validate and/or mutate the request.
+This step is limited to <code>create</code>, <code>modify</code> and <code>delete</code> objects as well as custom
+verbs, but other requests are not blocked.
+Kubernetes provides multiple admission controllers, some of which are enabled by default.</p>
+<p>One recommended admission controller is the <a href="https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#noderestriction" target="_blank" rel="noopener noreferrer" class=""><code>NodeRestriction</code> controller</a>,
+which limits the <code>Node</code> and <code>Pod</code> objects a Kubelet is allowed to modify to their own <code>Node</code> or
+objects that are bound to them. It also disallows updating or removing taints and prevents changing
+or adding labels with a <code>node-restriction.kubernetes.io/</code> prefix.
+Be aware that Kubelets will only be limited by this admission controller, if the user credentials
+in the <code>system:nodes</code> group begin with a <code>system:node:&lt;nodeName&gt;</code> username. Administrators must therefore
+configure their Kubelets correctly, if the <code>NodeRestriction</code> controller should be fully functional.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="kubelet-access-control">Kubelet access control<a href="#kubelet-access-control" class="hash-link" aria-label="Direct link to Kubelet access control" title="Direct link to Kubelet access control" translate="no">​</a></h3>
+<p>The Kubelet is the node agent that runs on each node. It registers with the API
+server and ensures, that pods handed over to it are running and healthy according
+to the specification provided to it. The HTTPS endpoint of a Kubelet exposes APIs
+with varying access to sensitive data and also enables various levels
+of performant operations enabling manipulation of node data and containers.
+There is also a read-only HTTP endpoint that was used for monitoring a Kubelet and
+its information. This port was also used by applications like <code>kubeadm</code> to check
+the health status of the Kubelet.
+This port is still available, but it is planned to be <a href="https://github.com/kubernetes/kubernetes/issues/12968" target="_blank" rel="noopener noreferrer" class="">removed</a>
+in a future version. At the moment, the port is disabled by default since <a href="https://github.com/kubernetes/kubernetes/pull/59666" target="_blank" rel="noopener noreferrer" class="">Kubernetes 1.10</a>
+and shortly later also in <a href="https://github.com/kubernetes/kubeadm/issues/732" target="_blank" rel="noopener noreferrer" class=""><code>kubeadm</code></a>.
+Different sources recommend disabling this port <a href="https://www.stigviewer.com/stig/kubernetes/2021-04-14/finding/V-242387" target="_blank" rel="noopener noreferrer" class="">4</a> <a href="https://docs.datadoghq.com/security/default_rules/cis-kubernetes-1.5.1-4.2.4/" target="_blank" rel="noopener noreferrer" class="">5</a> due to possible
+security risks, but since this standard recommends restricting accessibility of internal ports,
+this port wouldn&#x27;t be accessible from external networks.
+It is nevertheless recommended to keep this port disabled, since Kubernetes also acknowledged
+its risks and plans to remove it.</p>
+<p>By default, the API server does not verify the Kubelets serving certificate and
+requests to the HTTPS endpoint that are not rejected by other authentication
+methods are treated as anonymous requests with the combination of name <code>system:anonymous</code>
+and group <code>system:unauthenticated</code>.
+This can be disabled by starting the Kubelet with the flag <code>--anonymous-auth=false</code>,
+which return <code>401 Unauthorized</code> for unauthenticated requests.
+It is also possible to enable internal authentication methods for the Kubelet.
+Possibilities include X509 client certificates as well as API bearer tokens to
+authenticate against the Kubelet; details for these methods can be found in the <a href="https://kubernetes.io/docs/reference/access-authn-authz/kubelet-authn-authz/#kubelet-authorization" target="_blank" rel="noopener noreferrer" class="">Kubernetes docs</a>.</p>
+<p>After a request is authenticated, the authorization for it is checked, with the default
+being <code>AlwaysAllow</code>. Requests should at best be authorized depending on their source,
+so differentiation of access makes sense for the Kubelet; not all users should have
+the same access rights. How access can be configured and delegated to the Kubernetes
+API server can be found in the <a href="https://kubernetes.io/docs/reference/access-authn-authz/kubelet-authn-authz/#kubelet-authorization" target="_blank" rel="noopener noreferrer" class="">Kubernetes docs</a>. The process works like the API request
+authorization approach with verbs and resources being used as identifiers in roles and role bindings.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pod-security-policies">Pod security policies<a href="#pod-security-policies" class="hash-link" aria-label="Direct link to Pod security policies" title="Direct link to Pod security policies" translate="no">​</a></h3>
+<p>Pod security plays a big part in securing a Kubernetes cluster, since bad actors could use pods to gain
+privileged access to the systems underneath. The security risk here is mainly influenced by the capabilities
+and privileges given to a container. It is therefore recommended to apply the principal of &quot;least privilege&quot;,
+which should limit the security risk to a minimum.</p>
+<p>Kubernetes defines the <a href="https://kubernetes.io/docs/concepts/security/pod-security-standards/" target="_blank" rel="noopener noreferrer" class=""><em>Pod security standards</em></a>
+in the form of three policies that try to cover the range of the security spectrum.
+These policies can be found in the following list and define a list of restricted fields that can only be
+changed to a set of allowed values. An up-to-date list of these values can be found <a href="https://kubernetes.io/docs/concepts/security/pod-security-standards/" target="_blank" rel="noopener noreferrer" class="">here</a>.</p>
+<ul>
+<li class="">
+<p><em>Privileged</em></p>
+<p>Unrestricted policy, providing the widest possible level of permissions.
+This policy allows for known privilege escalations.</p>
+</li>
+<li class="">
+<p><em>Baseline</em></p>
+<p>Minimally restrictive policy which prevents known privilege escalations.
+Allows the default (minimally specified) Pod configuration.</p>
+</li>
+<li class="">
+<p><em>Restricted</em></p>
+<p>Heavily restricted policy, following current Pod hardening best practices.</p>
+</li>
+</ul>
+<p>Kubernetes also offers the <em>Pod security</em> admission controller, which enforces
+the <em>Pod security standards</em> on a namespace level during pod creation.
+The admission controller defines the standard to be used with the three levels
+<code>privileged</code>, <code>baseline</code> and <code>restricted</code>. Each namespace can be configured to enforce
+a different control mode, which defines what action the control plane takes
+after a violation of the selected <em>Pod security</em> is detected.</p>
+<ul>
+<li class="">
+<p><code>enforce</code></p>
+<p>Policy violations will cause the pod to be rejected.</p>
+</li>
+<li class="">
+<p><code>audit</code></p>
+<p>Policy violations will trigger the addition of an audit annotation to the event
+recorded in the audit log, but are otherwise allowed.</p>
+</li>
+<li class="">
+<p><code>warn</code></p>
+<p>Policy violations will trigger a user-facing warning, but are otherwise allowed.</p>
+</li>
+</ul>
+<p>Be aware, that <code>enforce</code> is not applied to workload resources, only to the pods created from their template.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="further-measurements">Further measurements<a href="#further-measurements" class="hash-link" aria-label="Direct link to Further measurements" title="Direct link to Further measurements" translate="no">​</a></h3>
+<p>While researching this topic, further measurements were considered such as container image verification,
+distroless images, usage of <code>ImagePolicyWebhook</code>, network policy enforcement,
+container sandboxing and prevention of kernel module loading.
+Most of these were taken out of the document during writing due to either being the responsibility
+of the clusters&#x27; user (and therefore not possible to implement for the provider), being more relevant
+for high security clusters or changing the expected cluster environment too much, so that normally
+expected operations could potentially not work in such a modified cluster.
+These measurements will possibly be introduced in a future document about higher security clusters.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="standard">Standard<a href="#standard" class="hash-link" aria-label="Direct link to Standard" title="Direct link to Standard" translate="no">​</a></h2>
+<p>This standard provides the baseline security requirements for a cluster in the SCS context.</p>
+<p>Kubernetes clusters MUST be updated regularly in order to receive bugfixes and security patches.
+For more information refer to the <a class="" href="/standards/scs-0210-v2-k8s-version-policy">SCS K8s Version Policy</a>,
+which outlines the version update policies of the SCS.</p>
+<p>Hardening etcd is important due to it being a critical component inside a Kubernetes cluster.
+etcd SHOULD be isolated from the Kubernetes cluster by being hosted on separate (virtual) machines.
+If this is the case, access to these instances MUST be configured, so that only the API server and
+necessary cluster components requiring access can access etcd.
+Communication with etcd MUST be secured with TLS for both peer- and cluster-communication.
+It is RECOMMENDED to use a CA separate from the one used for the Kubernetes cluster for etcd in
+order to better control and issue certificates for clients allowed to access etcd.
+ACL MUST be enabled for etcd, which allows better control of the access rights to specific key sets
+for specific users. Authentication MUST be done via the Common Name (CN) field of the TLS client
+certificates (since normal username-password-authentication isn&#x27;t implemented for Kubernetes).</p>
+<p>Kubernetes&#x27; endpoints MUST be secured in order to provide a small attack surface for bad actors.
+It MUST NOT be possible to access Kubernetes ports from outside the internal network hosting the
+Kubernetes cluster except for the ports of the API server (default 6443) and the NodePort Services
+(default 30000-32767). The read-only Kubelet API port (default 10255), which is mostly used for monitoring,
+SHOULD be disabled altogether if it isn&#x27;t in use, mainly because the port is HTTP-only
+and can deliver sensitive information to the outside.
+Endpoints MUST be secured via HTTPS.</p>
+<p>Securing Kubernetes via authentication and authorization is another important topic here.
+Authentication is possible through multiple mechanisms, including Kubernetes-provided systems as well as external
+authentication processes.
+A cluster MUST implement at least two methods for authentication. One of these MUST be <em>Service Account Tokens</em>, in order
+to provide full functionality to Pods. A second authentication mechanisms can be chosen depending on the requirements
+of the provider and/or customer.</p>
+<p>Authorization also can be provided through multiple mechanisms.
+A cluster MUST activate at least two authorization methods, one of which MUST be <em>Node authorization</em> and another one
+consisting of either ABAC, RBAC or Webhook authorization depending on the required use case.
+We RECOMMEND RBAC due to it fitting most use cases and being very well documented, but your setup might require another solution.</p>
+<p>In order to harden Kubelet access control, a Kubelet SHOULD only be accessible internally via HTTPS. This is already the
+case for the Kubelet API, except for the read-only port, which is only available as HTTP. As mentioned earlier, this port
+should be disabled.
+Kubelets MUST disable anonymous request authentication to disallow non-rejected requests to go through as anonymous requests.
+OPTIONALLY, X509 client certificate authentication or API bearer token authentication can be enabled.
+Request authorization for the Kubelet MUST be delegated to the API server via <code>Webhook</code> authorization as it is recommended
+by the <a href="https://kubernetes.io/docs/reference/access-authn-authz/kubelet-authn-authz/#kubelet-authorization" target="_blank" rel="noopener noreferrer" class="">Kubernetes documentation</a>.
+Additionally, the <code>NodeRestriction</code> admission controller MUST be activated in order to limit interactions between
+different Kubelets by disallowing modification of <code>Pod</code> objects, if they&#x27;re not bound to the Kubelet requesting the modification.</p>
+<p>At last, <em>Pod security standards</em> in the form of policies MUST be activated for the cluster. The SCS REQUIRES at least
+the <em>Baseline</em> policy with the <em>Restricted</em> policy CAN also be used.
+The <em>Pod security</em> admission controller MUST also be activated in order to enforce these policies on a namespace level.
+We RECOMMEND the <code>enforce</code> level to be used for this admission controller setup.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="conformance-tests">Conformance Tests<a href="#conformance-tests" class="hash-link" aria-label="Direct link to Conformance Tests" title="Direct link to Conformance Tests" translate="no">​</a></h2>
+<p>Conformance Tests will be written within another issue.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-documents">Related Documents<a href="#related-documents" class="hash-link" aria-label="Direct link to Related Documents" title="Direct link to Related Documents" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://cheatsheetseries.owasp.org/cheatsheets/Kubernetes_Security_Cheat_Sheet.html" target="_blank" rel="noopener noreferrer" class="">OWASP Kubernetes Security Sheet</a></li>
+<li class=""><a href="https://kubernetes.io/docs/concepts/security/" target="_blank" rel="noopener noreferrer" class="">Kubernetes security concepts</a></li>
+<li class=""><a href="https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/" target="_blank" rel="noopener noreferrer" class="">Securing a cluster</a></li>
+<li class=""><a href="https://kubernetes.io/docs/concepts/security/controlling-access/" target="_blank" rel="noopener noreferrer" class="">Controlling access</a></li>
+<li class=""><a href="https://kubernetes.io/docs/concepts/security/pod-security-standards/" target="_blank" rel="noopener noreferrer" class="">Pod security standards</a></li>
+<li class=""><a href="https://kubernetes.io/blog/2021/10/05/nsa-cisa-kubernetes-hardening-guidance/" target="_blank" rel="noopener noreferrer" class="">NSA CISA Kubernetes hardening</a></li>
+<li class=""><a href="https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/" target="_blank" rel="noopener noreferrer" class="">Configure etcd</a></li>
+<li class=""><a href="https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-trust" target="_blank" rel="noopener noreferrer" class="">Google Kubernetes cluster trust</a></li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/standards/kaas/scs-0217"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">scs-0217: Kubernetes cluster hardening</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/standards/kaas/scs-0218"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">scs-0218: Container registry for SCS standard implementation</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a></li><li><a href="#terminology" class="table-of-contents__link toc-highlight">Terminology</a></li><li><a href="#motivation" class="table-of-contents__link toc-highlight">Motivation</a></li><li><a href="#hardening-kubernetes" class="table-of-contents__link toc-highlight">Hardening Kubernetes</a><ul><li><a href="#regular-updates" class="table-of-contents__link toc-highlight">Regular updates</a></li><li><a href="#securing-etcd" class="table-of-contents__link toc-highlight">Securing etcd</a></li><li><a href="#securing-endpoints" class="table-of-contents__link toc-highlight">Securing endpoints</a></li><li><a href="#api-security-authentication-and-authorization" class="table-of-contents__link toc-highlight">API security, authentication and authorization</a></li><li><a href="#kubelet-access-control" class="table-of-contents__link toc-highlight">Kubelet access control</a></li><li><a href="#pod-security-policies" class="table-of-contents__link toc-highlight">Pod security policies</a></li><li><a href="#further-measurements" class="table-of-contents__link toc-highlight">Further measurements</a></li></ul></li><li><a href="#standard" class="table-of-contents__link toc-highlight">Standard</a></li><li><a href="#conformance-tests" class="table-of-contents__link toc-highlight">Conformance Tests</a></li><li><a href="#related-documents" class="table-of-contents__link toc-highlight">Related Documents</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs">Contribute</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org" target="_blank" rel="noopener noreferrer" class="footer__link-item">Matrix<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://fosstodon.org/@sovereigncloudstack" target="_blank" rel="noopener noreferrer" class="footer__link-item">Mastodon<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/SovereignCloudStack/docs" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Sovereign Cloud Stack, SCS and the logo are registered trademarks of the Open Source Business Alliance e.V. — Other trademarks are property of their respective owners.</div></div></div></footer></div>
+</body>
+</html>

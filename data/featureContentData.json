@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Introduction to SCS",
+    "body": "Get to know SCS better and learn about the background.",
+    "url": "/docs",
+    "buttonText": "Get Started"
+  },
+  {
+    "title": "Releases",
+    "body": "The latest release of the SCS reference implementation is R8. Check out the Release Notes.",
+    "url": "/docs/releases/Release8",
+    "buttonText": "Learn More"
+  },
+  {
+    "title": "Frequently Asked Questions",
+    "body": "You are curious what SCS is all about, what it can do and what it can't?",
+    "url": "/docs/faq",
+    "buttonText": "Get Answers"
+  },
+  {
+    "title": "Existing Public Clouds",
+    "body": "There are SCS compliant public clouds in production.",
+    "url": "/standards/certification/overview#compliant-cloud-environments",
+    "buttonText": "Test Them"
+  }
+]
