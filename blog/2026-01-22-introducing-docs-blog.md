@@ -2,7 +2,7 @@
 slug: introducing_new_blog
 title: Introducing A New Blog Site On Our Docs Page
 authors: [garloff]
-tags: [docusaurus, scs, blog]
+tags: [docusaurus, scs, community, blog]
 ---
 
 ## Evolution of SCS activities
@@ -42,7 +42,7 @@ to prioritize neutrality as top priority, but benefits and prefers those project
 that contribute useful content to it.
 
 We have decided to use docusaurus' blog feature to publish blog articles
-[here](https://docs.scs.community/blog/). We appreciat contributions.
+[here](https://docs.scs.community/blog/). We appreciate contributions.
 
 ## Old blog content
 
@@ -51,4 +51,4 @@ The blog content from the old web site has been migrated over into the
 can also find the other types of community news [there](https://sovereigncloudstack.org/en/community-news/).
 
 Some news that might fit the Blog category have also been published in the
-[main news section](https://sovereigncloudstack.org/en/insights/news/) on the new page.
+[main news section](https://sovereigncloudstack.org/en/insights/news/) on the new web site.
