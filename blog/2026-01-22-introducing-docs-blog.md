@@ -22,7 +22,7 @@ with distinct goals:
    from the various software projects that belong to the SCS ecosystem, it is neutral towards
    them beyond the preference for standards compliance. This reflects that there can and
    ideally should be several implementations for a standard.
-   The [new website](https://sovereigncloudstack.org/) focuses on the standardization.
+   The [new website](https://sovereigncloudstack.org/) serves as an overall entrance point to Sovereign Cloud Stack with a focus on the standardization and certification.
 2. The SCS community consists of individuals and organizations that develop, support,
    test, use, or otherwise contribute to the software and standards that implement and
    codify SCS. The community elects a [project board](https://docs.scs.community/standards/scs-0005-v2-project-governance)
