@@ -41,5 +41,13 @@ to prioritize neutrality as top priority, but benefits and prefers those project
 that contribute useful content to it.
 
 We have decided to use docusaurus' blog feature to publish blog articles
-[here](https://docs.scs.community/blog/). We will migrate some content over
-and appreciate contributions.
+[here](https://docs.scs.community/blog/). We appreciat contributions.
+
+## Old blog content
+
+The blog content from the old web site has been migrated over into the
+[archive on the new site](https://sovereigncloudstack.org/en/community_blog/). You
+can also find the other types of community news [there](https://sovereigncloudstack.org/en/community-news/).
+
+Some news that might fit the Blog category have also been published in the
+[main news section](https://sovereigncloudstack.org/en/insights/news/) on the new page.
