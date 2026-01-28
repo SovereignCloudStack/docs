@@ -1,5 +1,5 @@
 ---
-title: Getting Started Gaia-X Demonstrator @ plusserver
+title: Getting Started with SCS2 @ plusserver
 version: 2022-12-22
 author: Ralf Heiringhoff, Mathias Fechner
 ---
