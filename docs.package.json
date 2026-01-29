@@ -24,6 +24,12 @@
     "label": ""
   },
   {
+    "repo": "SovereignCloudStack/standards",
+    "source": "Docs/guides/testing-guide/*",
+    "target": "docs/02-iaas/guides/testing-guide",
+    "label": ""
+  },
+  {
     "repo": "osism/osism.github.io",
     "source": "docs/cloud-in-a-box",
     "target": "docs/02-iaas/deployment-examples",
