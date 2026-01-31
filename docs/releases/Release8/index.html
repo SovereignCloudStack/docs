@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-releases/Release8" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Release Notes for SCS Release 8 | One platform — standardized, built and operated by many.</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.scs.community/img/scs-og-basic.png"><meta data-rh="true" name="twitter:image" content="https://docs.scs.community/img/scs-og-basic.png"><meta data-rh="true" property="og:url" content="https://docs.scs.community/docs/releases/Release8"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Release Notes for SCS Release 8 | One platform — standardized, built and operated by many."><meta data-rh="true" name="description" content="The SCS Software (reference implementation) is released in version 8 on 2025-04-09."><meta data-rh="true" property="og:description" content="The SCS Software (reference implementation) is released in version 8 on 2025-04-09."><link data-rh="true" rel="icon" href="/img/favicon.png"><link data-rh="true" rel="canonical" href="https://docs.scs.community/docs/releases/Release8"><link data-rh="true" rel="alternate" href="https://docs.scs.community/docs/releases/Release8" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.scs.community/docs/releases/Release8" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Releases","item":"https://docs.scs.community/docs/category/releases"},{"@type":"ListItem","position":2,"name":"Release Notes for SCS Release 8","item":"https://docs.scs.community/docs/releases/Release8"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="SCS Community Blog RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="SCS Community Blog Atom Feed">
+<link rel="alternate" type="application/json" href="/blog/feed.json" title="SCS Community Blog JSON Feed">
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://matomo.scs.community/">
+<script>var _paq=window._paq=window._paq||[];_paq.push(["setDocumentTitle",document.domain+"/"+document.title]),_paq.push(["disableCookies"]),_paq.push(["trackPageView"]),_paq.push(["enableLinkTracking"]),function(){var e="https://matomo.scs.community/";_paq.push(["setTrackerUrl",e+"matomo.php"]),_paq.push(["setSiteId","2"]);var a=document,t=a.createElement("script"),p=a.getElementsByTagName("script")[0];t.async=!0,t.src=e+"matomo.js",p.parentNode.insertBefore(t,p)}()</script><link rel="stylesheet" href="/assets/css/styles.7136250c.css">
+<script src="/assets/js/runtime~main.ff722ccb.js" defer="defer"></script>
+<script src="/assets/js/main.6cc1e574.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="SCS" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="SCS" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"></b></a><a class="navbar__item navbar__link" href="/standards">Standards</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs">For Operators</a><a class="navbar__item navbar__link" href="/contributor-docs">For Contributors</a><a class="navbar__item navbar__link" href="/user-docs">For Users</a><a class="navbar__item navbar__link" href="/community">Community</a><a class="navbar__item navbar__link" href="/docs/faq">FAQ</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/SovereignCloudStack/docs" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/"><span title="Introduction" class="linkLabel_WmDU">Introduction</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/category/iaas-layer"><span title="IaaS Layer" class="categoryLinkLabel_W154">IaaS Layer</span></a><button aria-label="Expand sidebar category &#x27;IaaS Layer&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/container/"><span title="Container Layer" class="categoryLinkLabel_W154">Container Layer</span></a><button aria-label="Expand sidebar category &#x27;Container Layer&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/category/operating-scs"><span title="Operating SCS" class="categoryLinkLabel_W154">Operating SCS</span></a><button aria-label="Expand sidebar category &#x27;Operating SCS&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/iam/"><span title="Identity and Access Management (IAM)" class="categoryLinkLabel_W154">Identity and Access Management (IAM)</span></a><button aria-label="Expand sidebar category &#x27;Identity and Access Management (IAM)&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/category/turnkey-solution"><span title="Turnkey Solution" class="categoryLinkLabel_W154">Turnkey Solution</span></a><button aria-label="Expand sidebar category &#x27;Turnkey Solution&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/docs/category/releases"><span title="Releases" class="categoryLinkLabel_W154">Releases</span></a><button aria-label="Collapse sidebar category &#x27;Releases&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/releases/Release0"><span title="Release Notes for SCS Release 0" class="linkLabel_WmDU">Release Notes for SCS Release 0</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/releases/Release1"><span title="Release Notes for SCS Release 1" class="linkLabel_WmDU">Release Notes for SCS Release 1</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/releases/Release2"><span title="Release Notes for SCS Release 2" class="linkLabel_WmDU">Release Notes for SCS Release 2</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/releases/Release3"><span title="Release Notes for SCS Release 3" class="linkLabel_WmDU">Release Notes for SCS Release 3</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/releases/Release4"><span title="Release Notes for SCS Release 4" class="linkLabel_WmDU">Release Notes for SCS Release 4</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/releases/Release5"><span title="Release Notes for SCS Release 5" class="linkLabel_WmDU">Release Notes for SCS Release 5</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/releases/Release6"><span title="Release Notes for SCS Release 6" class="linkLabel_WmDU">Release Notes for SCS Release 6</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/releases/Release7"><span title="Release Notes for SCS Release 7" class="linkLabel_WmDU">Release Notes for SCS Release 7</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/releases/Release8"><span title="Release Notes for SCS Release 8" class="linkLabel_WmDU">Release Notes for SCS Release 8</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/faq/"><span title="FAQ" class="linkLabel_WmDU">FAQ</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/glossary"><span title="Glossary" class="linkLabel_WmDU">Glossary</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/docs/category/releases"><span>Releases</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Release Notes for SCS Release 8</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Release Notes for SCS Release 8</h1></header>
+<p>The SCS Software (reference implementation) is released in version 8 on 2025-04-09.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="scope">Scope<a href="#scope" class="hash-link" aria-label="Direct link to Scope" title="Direct link to Scope" translate="no">​</a></h2>
+<p>SCS continues to deliver a coordinated release covering the various modules that comprise
+the SCS reference implementation. SCS includes the latest proven upstream technologies and
+ensures that upgrades to R8 are smooth using the CI processes. The reference implementation
+with the default settings fulfills the requirements from SCS-compatible IaaS v5.1 and
+KaaS v1.0 standards.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="component-versions-and-user-visible-improvements-highlights">Component Versions and User-visible improvements (highlights)<a href="#component-versions-and-user-visible-improvements-highlights" class="hash-link" aria-label="Direct link to Component Versions and User-visible improvements (highlights)" title="Direct link to Component Versions and User-visible improvements (highlights)" translate="no">​</a></h2>
+<ul>
+<li class="">Cluster API Provider OpenStack v0.12<!-- -->
+<ul>
+<li class="">adds OpenStack Resource Controller (ORC) as external component</li>
+</ul>
+</li>
+<li class="">OpenStack 2024.2 is included in R8, but can be skipped in case Operators
+want to make use of skipping over it and upgrade directly from 2024.1 to 2025.1
+(with the next release of SCS).</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cluster-stacks">Cluster Stacks<a href="#cluster-stacks" class="hash-link" aria-label="Direct link to Cluster Stacks" title="Direct link to Cluster Stacks" translate="no">​</a></h3>
+<p>The SCS Cluster Stacks for R8 can be found on the SCS Harbor at
+registry.scs.community/kaas/cluster-stacks with the tags</p>
+<ul>
+<li class=""><code>openstack-scs-1-30-v3</code></li>
+<li class=""><code>openstack-scs-1-31-v2</code></li>
+<li class=""><code>openstack-scs-1-32-v1</code></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-features-highlights">New Features (Highlights)<a href="#new-features-highlights" class="hash-link" aria-label="Direct link to New Features (Highlights)" title="Direct link to New Features (Highlights)" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="iaas">IaaS<a href="#iaas" class="hash-link" aria-label="Direct link to IaaS" title="Direct link to IaaS" translate="no">​</a></h3>
+<ul>
+<li class="">Support of OpenStack 2024.1 and OpenStack 2024.2 (the SLURP model will be supported in future,
+OpenStack 2025.1 (Epoxy) is the first SLURP release, you can upgrade to 2025.1 from 2024.2 (Dalmatian),
+but (new) also directly from 2024.1 (Caracal) if you prefer to skip the .2 release.<!-- -->
+<ul>
+<li class="">The domain-manager enhancements from the SCS community have been included in the upstream
+2024.2 OpenStack release.</li>
+</ul>
+</li>
+<li class="">Support of Ceph Quincy and Ceph Reef</li>
+<li class="">Support of Kubernetes 1.31 for the Kubernetes cluster that is integrated in the IaaS layer for extensions</li>
+<li class="">The Netbox integration has been completely revised, there is now a dedicated tool called
+Netbox Manager that allows you to manage content from the Netbox with an independent repository</li>
+<li class="">There is now a special burn-in image for preparing new hardware (this is used when new cloudpods
+are created and Ironic cannot yet be used)</li>
+<li class="">A bunch of new services such as Wazuh agent, Teleport agent or Dnsmasq</li>
+<li class="">Enhancement of the testbed, in specific with Ironic to improve the CI capabilities</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="kaas">KaaS<a href="#kaas" class="hash-link" aria-label="Direct link to KaaS" title="Direct link to KaaS" translate="no">​</a></h3>
+<ul>
+<li class="">Cluster Stacks <code>SCS</code> to use Multi Stage Addons<!-- -->
+<ul>
+<li class="">Support for Multi Stage Addons, a Cluster Stack Operator feature that enables structured addon upgrades, was introduced in R7 as part of KaaS.
+In R8, this feature has been fully implemented into the stable SCS Cluster Stacks for OpenStack.
+Now, key addons, including the Container Network Interface (CNI), Container Storage Interface (CSI), and Cloud Controller Manager (CCM), are installed in a predefined sequence after the Kubernetes control plane is initialized.
+The upgrade order of these addons is also orchestrated before the Kubernetes cluster version is upgraded. This ensures smooth upgrades and stability throughout the Kubernetes version transitions.</li>
+</ul>
+</li>
+<li class="">ORC Image kind in Cluster Stacks <code>SCS</code>
+<ul>
+<li class="">Cluster Stacks <code>SCS</code> can now include an ORC Image resource, which simplifies and automates the upload of cloud images to OpenStack</li>
+<li class="">This functionality was previously handled by the Cluster Stack Provider for OpenStack, which is now deprecated in favor of ORC. ORC offers enhanced support, including checksum verification for improved reliability</li>
+</ul>
+</li>
+<li class="">Helm charts to manage Cluster Stack Operator<!-- -->
+<ul>
+<li class="">simplifies configuration of release source</li>
+<li class="">additional RBAC for provider specific resources can be configured</li>
+</ul>
+</li>
+<li class="">Cluster Stacks with latest Kubernetes Cluster API and latest Kubernetes versions (1.32)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="operator-focused-improvements">Operator focused improvements<a href="#operator-focused-improvements" class="hash-link" aria-label="Direct link to Operator focused improvements" title="Direct link to Operator focused improvements" translate="no">​</a></h3>
+<ul>
+<li class="">The openstack-health-monitor has seen minor improvements:<!-- -->
+<ul>
+<li class="">The calculation of the percentage of IOs that have latencies above 10ms has been corrected.</li>
+<li class="">It can monitor the availability of endpoints for heat, swift, manila, octavia, barbican, senlin, magnum, aodh, gnocchi and ironic
+just doing simple list (GET) calls if these are available and the client tooling is present (option -X).</li>
+<li class="">The plan is still to replace openstack-health-monitor with the scs-health-monitor in the future.</li>
+</ul>
+</li>
+<li class="">The container registry (SCS release v8.0.0) has been upgraded to Harbor v2.12.2<!-- -->
+<ul>
+<li class="">Since the last SCS release, the container registry has introduced numerous features and enhancements. Key highlights include:<!-- -->
+<ul>
+<li class="">Improved granular access control for robot accounts, enhancing security and automation</li>
+<li class="">Audit logging now includes robot account activities for better traceability</li>
+<li class="">Introduced proxy cache bandwidth limits to control network speed when pulling artifacts</li>
+<li class="">Optimized LDAP onboarding for faster user authentication</li>
+<li class="">Support for generating Software Bill of Materials (SBOM) of artifacts either manually or automatically</li>
+<li class="">Support for OCI Distribution Spec v1.1.0 and more</li>
+</ul>
+</li>
+<li class="">The backup and restore procedure, as documented in the <a href="https://docs.scs.community/docs/container/components/container-registry/docs/backup_and_restore" target="_blank" rel="noopener noreferrer" class="">SCS documentation</a>, was successfully tested with production data during the migration from the SCS1 to the SCS2 environment</li>
+</ul>
+</li>
+<li class="">The observability platform (SCS release v8.0.0) has been upgraded to dNation Kubernetes Monitoring Stack v3.8.1<!-- -->
+<ul>
+<li class="">This upgrade introduces several updates to key observability stack components, including Prometheus Operator v0.74, Thanos v0.37, and Loki v3.2</li>
+<li class="">Support for deploying the Prometheus OpenStack Exporter, enabling IaaS layer monitoring within the Observability platform</li>
+<li class="">The deployment procedure, as outlined in the <a href="https://docs.scs.community/docs/operating-scs/components/monitoring/docs/scs-deployment" target="_blank" rel="noopener noreferrer" class="">SCS documentation</a>, was successfully tested during the migration to the SCS2 environment. The platform now offers visibility into the new SCS environment</li>
+</ul>
+</li>
+</ul>
+<p>The container registry and observability platform are fundamental and reliable
+components of the Sovereign Cloud Stack. By actively using them ourselves, we
+validate their functionality and ensure they are well-suited for seamless
+adoption by Cloud Service Providers.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="upgrademigration-notes">Upgrade/Migration notes<a href="#upgrademigration-notes" class="hash-link" aria-label="Direct link to Upgrade/Migration notes" title="Direct link to Upgrade/Migration notes" translate="no">​</a></h2>
+<ul>
+<li class="">Upgrading SCS KaaS R7 to R8 for all OpenStack installations requires installing the ORC component into the management cluster. ORC was split off from the Cluster-API Provider OpenStack v0.12<!-- -->
+<ul>
+<li class="">[ORC installation]((<a href="https://github.com/k-orc/openstack-resource-controller?tab=readme-ov-file#installation" target="_blank" rel="noopener noreferrer" class="">https://github.com/k-orc/openstack-resource-controller?tab=readme-ov-file#installation</a>) should be performed as part of the upgrade to Cluster-API Provider OpenStack v0.12</li>
+<li class="">Also the CSO needs permissions to manage ORC images. This can be applied with CSO Helm values, see <a href="https://github.com/SovereignCloudStack/cluster-stacks/blob/main/providers/openstack/scs/README.md" target="_blank" rel="noopener noreferrer" class="">SCS Cluster Stack</a> for an example.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="removals">Removals<a href="#removals" class="hash-link" aria-label="Direct link to Removals" title="Direct link to Removals" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="iaas-1">IaaS<a href="#iaas-1" class="hash-link" aria-label="Direct link to IaaS" title="Direct link to IaaS" translate="no">​</a></h3>
+<ul>
+<li class="">virtualbmc service (in favor of Redfish with sushy)</li>
+<li class="">keycloak and cloudnative_pg service</li>
+<li class="">tang and clevis service</li>
+<li class="">SCS metering service</li>
+<li class="">OpenStack health monitor service</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="kaas-1">KaaS<a href="#kaas-1" class="hash-link" aria-label="Direct link to KaaS" title="Direct link to KaaS" translate="no">​</a></h3>
+<ul>
+<li class="">Node Image from Cluster Stacks <code>SCS</code>
+<ul>
+<li class="">keeps specific provider configuration on ClusterAPI level</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="deprecations">Deprecations<a href="#deprecations" class="hash-link" aria-label="Direct link to Deprecations" title="Direct link to Deprecations" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ops-tooling">Ops Tooling<a href="#ops-tooling" class="hash-link" aria-label="Direct link to Ops Tooling" title="Direct link to Ops Tooling" translate="no">​</a></h3>
+<ul>
+<li class="">openstack-health-monitor will be removed in the future in favor of the scs-health-monitor</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="kaas-2">KaaS<a href="#kaas-2" class="hash-link" aria-label="Direct link to KaaS" title="Direct link to KaaS" translate="no">​</a></h3>
+<ul>
+<li class="">Cluster Stack Provider OpenStack<!-- -->
+<ul>
+<li class="">in favor of ORC</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="standards-conformance">Standards Conformance<a href="#standards-conformance" class="hash-link" aria-label="Direct link to Standards Conformance" title="Direct link to Standards Conformance" translate="no">​</a></h2>
+<p>The SCS reference implementation fulfills the relevant SCS standards.</p>
+<p>In particular, the IaaS layer from OSISM fulfills the OpenStack Interop Guidelines 2022.11
+and the SCS-compatible IaaS standards v5.1.</p>
+<p>The KaaS layer with the SCS Cluster Stacks
+fulfills the SCS-compatible KaaS standards v1 and pass the CNCF e2e tests. When chosing the
+default cilium CNI provider, we observe two failed test cases for network policies.
+These failures are not specifc to SCS cluster stacks and we are accompagnying the
+upstream evolution around them. We expect to provide solutions, workarounds, or waivers
+for these in the future but do not see particular relevance for these.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="release-tagging">Release Tagging<a href="#release-tagging" class="hash-link" aria-label="Direct link to Release Tagging" title="Direct link to Release Tagging" translate="no">​</a></h2>
+<p>OSISM uses the tag 9.0.0 for SCS R8 and some of the related repositories in the SCS project
+use a similar tag. Some repositories use maintained (stable) branches where the amount of changes
+is limited to mainly bug and security fixes to make life easier for our operators that need to
+stay on top of our security fixes without incurring too much change. Please note that by default,
+we will stop maintaining the old R7 branches after May.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="list-of-known-issues--restrictions-in-r8">List of known issues &amp; restrictions in R8<a href="#list-of-known-issues--restrictions-in-r8" class="hash-link" aria-label="Direct link to List of known issues &amp; restrictions in R8" title="Direct link to List of known issues &amp; restrictions in R8" translate="no">​</a></h2>
+<p>Please read above notes on ORC installation and the CNCF e2e network policy test failures.</p>
+<p>The limitation in capo that does not allow us to ensure that control plane nodes of a k8s cluster
+never end up on the same host continues to exist; the k8s community continues to insist on a
+notion of failure domains that does neither exactly correspond to IaaS availability zone nor
+to hosts. We are arguing for a pragmatic approach here and still hope to be able find a solution
+that avoids our own downstream divergence.</p>
+<p>Progress has been made on the OVN load balancer file descriptor leak; yet it is not completely
+resolved yet. Nevertheless, we consider the OVN load balancer the tool of choice for most
+scenarios where L7 (https) loadbalancing is <em>not</em> required, such as e.g. when used in front
+of the kubernetes API or a k8s ingress/gateway. Please see the R7 release notes for more details.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="documentation">Documentation<a href="#documentation" class="hash-link" aria-label="Direct link to Documentation" title="Direct link to Documentation" translate="no">​</a></h2>
+<p>As before, the documentation has been kept up-to-date with changes in the implementation.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="contributing">Contributing<a href="#contributing" class="hash-link" aria-label="Direct link to Contributing" title="Direct link to Contributing" translate="no">​</a></h2>
+<p>We appreciate contribution to strategy and implementation, please join
+our community -- or just leave input on the github issues and PRs.
+Have a look at our <a href="https://docs.scs.community/community/" target="_blank" rel="noopener noreferrer" class="">How to contribute page</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-releases">Next releases<a href="#next-releases" class="hash-link" aria-label="Direct link to Next releases" title="Direct link to Next releases" translate="no">​</a></h2>
+<p>We intend to continue doing coordinated releases. However, OSISM has stated an intention
+to publish an OSISM release containing OpenStack 2025.1 ahead of the normal Sep/Oct time
+that our partners have come to expect, so there may be a one-off. As soon as the plans
+solidify, we&#x27;ll announce it via our matrix channels and mailing lists.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="thanks">Thanks<a href="#thanks" class="hash-link" aria-label="Direct link to Thanks" title="Direct link to Thanks" translate="no">​</a></h2>
+<p>Numerous community members and companies have contributed to this release. Notably the
+elected members of the project board have stepped up and taken responsibility to drive
+the efforts to develop the software. We&#x27;d like to call out dNation, OSISM, UhuruTec,
+syself, syseleven and S7n Cloud Services for their contributions. We&#x27;d also like to
+thank ScaleUp Technologies, plusserver, Wavecon, Artcodix, and Cleura for sponsoring
+infrastructure. We also rely on the standardization work that is governed by the Forum
+SCS-Standards in the OSBA and funded by 17 supporting companies and supported by
+the ALASCA association. SCS has received funding from the German Government (BMWK)
+between 2021 and 2024 in the context of supporting Gaia-X.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/SovereignCloudStack/docs/tree/main/docs/06-releases/Release8.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/releases/Release7"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Release Notes for SCS Release 7</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/faq/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">FAQ</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#scope" class="table-of-contents__link toc-highlight">Scope</a></li><li><a href="#component-versions-and-user-visible-improvements-highlights" class="table-of-contents__link toc-highlight">Component Versions and User-visible improvements (highlights)</a><ul><li><a href="#cluster-stacks" class="table-of-contents__link toc-highlight">Cluster Stacks</a></li></ul></li><li><a href="#new-features-highlights" class="table-of-contents__link toc-highlight">New Features (Highlights)</a><ul><li><a href="#iaas" class="table-of-contents__link toc-highlight">IaaS</a></li><li><a href="#kaas" class="table-of-contents__link toc-highlight">KaaS</a></li><li><a href="#operator-focused-improvements" class="table-of-contents__link toc-highlight">Operator focused improvements</a></li></ul></li><li><a href="#upgrademigration-notes" class="table-of-contents__link toc-highlight">Upgrade/Migration notes</a></li><li><a href="#removals" class="table-of-contents__link toc-highlight">Removals</a><ul><li><a href="#iaas-1" class="table-of-contents__link toc-highlight">IaaS</a></li><li><a href="#kaas-1" class="table-of-contents__link toc-highlight">KaaS</a></li></ul></li><li><a href="#deprecations" class="table-of-contents__link toc-highlight">Deprecations</a><ul><li><a href="#ops-tooling" class="table-of-contents__link toc-highlight">Ops Tooling</a></li><li><a href="#kaas-2" class="table-of-contents__link toc-highlight">KaaS</a></li></ul></li><li><a href="#standards-conformance" class="table-of-contents__link toc-highlight">Standards Conformance</a></li><li><a href="#release-tagging" class="table-of-contents__link toc-highlight">Release Tagging</a></li><li><a href="#list-of-known-issues--restrictions-in-r8" class="table-of-contents__link toc-highlight">List of known issues &amp; restrictions in R8</a></li><li><a href="#documentation" class="table-of-contents__link toc-highlight">Documentation</a></li><li><a href="#contributing" class="table-of-contents__link toc-highlight">Contributing</a></li><li><a href="#next-releases" class="table-of-contents__link toc-highlight">Next releases</a></li><li><a href="#thanks" class="table-of-contents__link toc-highlight">Thanks</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs">Contribute</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org" target="_blank" rel="noopener noreferrer" class="footer__link-item">Matrix<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://fosstodon.org/@sovereigncloudstack" target="_blank" rel="noopener noreferrer" class="footer__link-item">Mastodon<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/SovereignCloudStack/docs" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Sovereign Cloud Stack, SCS and the logo are registered trademarks of the Open Source Business Alliance e.V. — Other trademarks are property of their respective owners.</div></div></div></footer></div>
+</body>
+</html>

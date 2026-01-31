@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-standards docs-version-current docs-doc-page docs-doc-id-scs-0218-v1-container-registry-for-scs-standard-implementation" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Container registry for SCS standard implementation | One platform — standardized, built and operated by many.</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.scs.community/img/scs-og-basic.png"><meta data-rh="true" name="twitter:image" content="https://docs.scs.community/img/scs-og-basic.png"><meta data-rh="true" property="og:url" content="https://docs.scs.community/standards/scs-0218-v1-container-registry-for-scs-standard-implementation"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-standards-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-standards-current"><meta data-rh="true" property="og:title" content="Container registry for SCS standard implementation | One platform — standardized, built and operated by many."><meta data-rh="true" name="description" content="Introduction"><meta data-rh="true" property="og:description" content="Introduction"><link data-rh="true" rel="icon" href="/img/favicon.png"><link data-rh="true" rel="canonical" href="https://docs.scs.community/standards/scs-0218-v1-container-registry-for-scs-standard-implementation"><link data-rh="true" rel="alternate" href="https://docs.scs.community/standards/scs-0218-v1-container-registry-for-scs-standard-implementation" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.scs.community/standards/scs-0218-v1-container-registry-for-scs-standard-implementation" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Standards","item":"https://docs.scs.community/standards/standards/overview"},{"@type":"ListItem","position":2,"name":"KaaS","item":"https://docs.scs.community/standards/kaas/"},{"@type":"ListItem","position":3,"name":"scs-0218","item":"https://docs.scs.community/standards/kaas/scs-0218"},{"@type":"ListItem","position":4,"name":"V1","item":"https://docs.scs.community/standards/scs-0218-v1-container-registry-for-scs-standard-implementation"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="SCS Community Blog RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="SCS Community Blog Atom Feed">
+<link rel="alternate" type="application/json" href="/blog/feed.json" title="SCS Community Blog JSON Feed">
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://matomo.scs.community/">
+<script>var _paq=window._paq=window._paq||[];_paq.push(["setDocumentTitle",document.domain+"/"+document.title]),_paq.push(["disableCookies"]),_paq.push(["trackPageView"]),_paq.push(["enableLinkTracking"]),function(){var e="https://matomo.scs.community/";_paq.push(["setTrackerUrl",e+"matomo.php"]),_paq.push(["setSiteId","2"]);var a=document,t=a.createElement("script"),p=a.getElementsByTagName("script")[0];t.async=!0,t.src=e+"matomo.js",p.parentNode.insertBefore(t,p)}()</script><link rel="stylesheet" href="/assets/css/styles.7136250c.css">
+<script src="/assets/js/runtime~main.ff722ccb.js" defer="defer"></script>
+<script src="/assets/js/main.6cc1e574.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="SCS" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="SCS" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"></b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/standards">Standards</a><a class="navbar__item navbar__link" href="/docs">For Operators</a><a class="navbar__item navbar__link" href="/contributor-docs">For Contributors</a><a class="navbar__item navbar__link" href="/user-docs">For Users</a><a class="navbar__item navbar__link" href="/community">Community</a><a class="navbar__item navbar__link" href="/docs/faq">FAQ</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/SovereignCloudStack/docs" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/standards/"><span title="Introduction" class="linkLabel_WmDU">Introduction</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/standards/certification/overview"><span title="Certification" class="categoryLinkLabel_W154">Certification</span></a><button aria-label="Expand sidebar category &#x27;Certification&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/standards/standards/overview"><span title="Standards" class="categoryLinkLabel_W154">Standards</span></a><button aria-label="Collapse sidebar category &#x27;Standards&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/global/"><span title="Global" class="categoryLinkLabel_W154">Global</span></a><button aria-label="Expand sidebar category &#x27;Global&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/"><span title="IaaS" class="categoryLinkLabel_W154">IaaS</span></a><button aria-label="Expand sidebar category &#x27;IaaS&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/standards/kaas/"><span title="KaaS" class="categoryLinkLabel_W154">KaaS</span></a><button aria-label="Collapse sidebar category &#x27;KaaS&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/scs-0200"><span title="scs-0200" class="categoryLinkLabel_W154">scs-0200</span></a><button aria-label="Expand sidebar category &#x27;scs-0200&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/scs-0210"><span title="scs-0210" class="categoryLinkLabel_W154">scs-0210</span></a><button aria-label="Expand sidebar category &#x27;scs-0210&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/scs-0211"><span title="scs-0211" class="categoryLinkLabel_W154">scs-0211</span></a><button aria-label="Expand sidebar category &#x27;scs-0211&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/scs-0212"><span title="scs-0212" class="categoryLinkLabel_W154">scs-0212</span></a><button aria-label="Expand sidebar category &#x27;scs-0212&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/scs-0213"><span title="scs-0213" class="categoryLinkLabel_W154">scs-0213</span></a><button aria-label="Expand sidebar category &#x27;scs-0213&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/scs-0214"><span title="scs-0214" class="categoryLinkLabel_W154">scs-0214</span></a><button aria-label="Expand sidebar category &#x27;scs-0214&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/scs-0215"><span title="scs-0215" class="categoryLinkLabel_W154">scs-0215</span></a><button aria-label="Expand sidebar category &#x27;scs-0215&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/scs-0216"><span title="scs-0216" class="categoryLinkLabel_W154">scs-0216</span></a><button aria-label="Expand sidebar category &#x27;scs-0216&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/scs-0217"><span title="scs-0217" class="categoryLinkLabel_W154">scs-0217</span></a><button aria-label="Expand sidebar category &#x27;scs-0217&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/standards/kaas/scs-0218"><span title="scs-0218" class="categoryLinkLabel_W154">scs-0218</span></a><button aria-label="Collapse sidebar category &#x27;scs-0218&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-4 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/standards/scs-0218-v1-container-registry-for-scs-standard-implementation"><span title="V1" class="linkLabel_WmDU">V1</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/scs-0219"><span title="scs-0219" class="categoryLinkLabel_W154">scs-0219</span></a><button aria-label="Expand sidebar category &#x27;scs-0219&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iam/"><span title="IAM" class="categoryLinkLabel_W154">IAM</span></a><button aria-label="Expand sidebar category &#x27;IAM&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/ops/"><span title="Ops" class="categoryLinkLabel_W154">Ops</span></a><button aria-label="Expand sidebar category &#x27;Ops&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/standards/standards/overview"><span>Standards</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/standards/kaas/"><span>KaaS</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/standards/kaas/scs-0218"><span>scs-0218</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">V1</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Container registry for SCS standard implementation</h1></header><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="introduction">Introduction<a href="#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction" translate="no">​</a></h2>
+<p>A container registry is an infrastructure service to enable storing and accessing container
+images. Images can be pushed to the registry by e.g. Continuous integration pipelines and
+be pulled from by runtime environments like Kubernetes clusters.</p>
+<p>In the standard document [&quot;Requirements for container registries&quot;], requirements for a
+registry in the context of SCS were introduced. These are based on the principals, that
+a usable project should be open source, active and feature-rich, especially with regard
+to security.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="terminology">Terminology<a href="#terminology" class="hash-link" aria-label="Direct link to Terminology" title="Direct link to Terminology" translate="no">​</a></h2>
+<p>Cloud Service Provider (abbr. CSP)
+Entity that provides scalable computing resources</p>
+<p>Cloud Native Computing Foundation (abbr. CNCF)
+Organization that hosts and develops open source projects for cloud native computing</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="motivation">Motivation<a href="#motivation" class="hash-link" aria-label="Direct link to Motivation" title="Direct link to Motivation" translate="no">​</a></h2>
+<p>In order to provide a usable, complete experience for the SCS reference implementation, it must be decided
+on a registry in accordance with requirements set by the [&quot;Requirements for container registries&quot;] standard
+as well as other dependencies set by the SCS project, including the <a href="https://github.com/SovereignCloudStack/standards/blob/main/Drafts/OSS-Health.md" target="_blank" rel="noopener noreferrer" class="">OSS requirements</a>.</p>
+<p>This document should finally lead to a decision about the container registry used as a reference implementation of the SCS container registry.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="evaluated-projects">Evaluated projects<a href="#evaluated-projects" class="hash-link" aria-label="Direct link to Evaluated projects" title="Direct link to Evaluated projects" translate="no">​</a></h3>
+<p>A few open source projects were evaluated for this document in order to find suitable candidates
+for the SCS reference implementation. These projects can be found in the following list of
+evaluated projects with their classified categories and comments. An initial assessment was
+done with the checks for <a href="https://github.com/SovereignCloudStack/standards/blob/main/Drafts/OSS-Health.md" target="_blank" rel="noopener noreferrer" class="">OSS healthiness</a>
+and a general overview of the features described in [&quot;Requirements for container registries&quot;], which enables
+classifying the projects into one of three categories as follows:</p>
+<ul>
+<li class="">
+<p>✔️<!-- --> The project passed all OSS health checks and will be considered
+further as a valid candidate.</p>
+</li>
+<li class="">
+<p>❔<!-- --> The project passed almost all OSS health checks.
+There is place for improvement, but the missing points are not crucial from the OSS
+health check perspective. The project will be considered further as a valid candidate.</p>
+</li>
+<li class="">
+<p>❌<!-- --> The project does not pass the OSS health checks. Some OSS health check
+showstoppers have been found (e.g. open core software, not actively maintained).
+The project is filtered at this stage and won&#x27;t be considered further.</p>
+</li>
+</ul>
+<p>The following list contains these projects with a small assessment listed below them:</p>
+<ul>
+<li class="">
+<p>✔️<!-- --> <a href="https://github.com/goharbor/harbor" target="_blank" rel="noopener noreferrer" class="">Harbor</a></p>
+<ul>
+<li class="">Harbor project meets all &quot;four opens&quot;<!-- -->
+<ul>
+<li class="">Source code is open and available under the <a href="https://github.com/goharbor/harbor/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="">Apache 2 license</a></li>
+<li class="">Community is <a href="https://github.com/goharbor/harbor#community" target="_blank" rel="noopener noreferrer" class="">open</a>, structured and
+well organized via <a href="https://github.com/goharbor/community" target="_blank" rel="noopener noreferrer" class="">workgroups</a> and
+various communications channels e.g. Slack, mailing lists, etc.
+(#harbor Slack channel contains 3k+ members)</li>
+<li class="">The development process is open via GitHub issues and well described in the
+<a href="https://github.com/goharbor/harbor/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" class="">contributing</a>
+document</li>
+<li class="">The design process is open via GitHub issues. Proposals are <a href="https://github.com/goharbor/community/tree/main/proposals" target="_blank" rel="noopener noreferrer" class="">public</a>.
+The decision process is well described as well. The project&#x27;s roadmap is
+available in the <a href="https://github.com/goharbor/harbor/blob/main/ROADMAP.md" target="_blank" rel="noopener noreferrer" class="">roadmap</a> document</li>
+</ul>
+</li>
+<li class="">Maturity is on the CNCF <a href="https://www.cncf.io/projects/harbor/" target="_blank" rel="noopener noreferrer" class="">graduation</a> level.
+CNCF graduated projects are considered to be stable, widely adopted and production-ready</li>
+<li class="">Security<!-- -->
+<ul>
+<li class="">The security disclosure and response policy is well described in the project&#x27;s
+<a href="https://github.com/goharbor/harbor/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" class="">security</a> document</li>
+<li class="">The code is reviewed within a standard PR process</li>
+</ul>
+</li>
+<li class="">Activity<!-- -->
+<ul>
+<li class="">250+ contributors, 4k+ forks, 13k+ GitHub stars</li>
+<li class="">The project has been <a href="https://github.com/goharbor/harbor/blob/main/ADOPTERS.md" target="_blank" rel="noopener noreferrer" class="">adopted</a>
+by many companies that run Harbor in their production environments</li>
+<li class="">The project collaborates with other communities and projects
+(see <a href="https://goharbor.io/community/" target="_blank" rel="noopener noreferrer" class="">Partners of Harbor</a> section of the
+project&#x27;s website)</li>
+<li class="">The project is visible and actively contributes to various conferences, e.g.
+<a href="https://goharbor.io/blog/harbor-at-fosdem-2022/" target="_blank" rel="noopener noreferrer" class="">FOSDEM 22</a>,
+<a href="https://www.youtube.com/watch?v=REgvBPH369M" target="_blank" rel="noopener noreferrer" class="">KubeCon Europe</a>, etc.</li>
+</ul>
+</li>
+<li class="">Lock-in risk assessment<!-- -->
+<ul>
+<li class="">The project&#x27;s <a href="https://github.com/goharbor/community/blob/main/MAINTAINERS.md" target="_blank" rel="noopener noreferrer" class="">maintainers</a>
+document shows that there are a sufficient number of core
+maintainers/contributors that differ over various companies, we therefore deem
+the lock-in risk arising from a single point of failure to be low</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">
+<p>✔️<!-- --> <a href="https://github.com/dragonflyoss/Dragonfly2" target="_blank" rel="noopener noreferrer" class="">Dragonfly</a></p>
+<ul>
+<li class="">Dragonfly project meets all &quot;four opens&quot;<!-- -->
+<ul>
+<li class="">Source code is open and available under the <a href="https://github.com/dragonflyoss/Dragonfly2/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="">Apache 2 license</a></li>
+<li class="">Community is <a href="https://github.com/dragonflyoss/Dragonfly2#community" target="_blank" rel="noopener noreferrer" class="">open</a>
+organized via multiple channels e.g. Slack, mailing lists, etc.
+(#dragonfly Slack channel contains ~50 members)</li>
+<li class="">The development process is open via GitHub issues and well described in the
+<a href="https://github.com/dragonflyoss/Dragonfly2/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" class="">contributing</a> document</li>
+<li class="">The design process is open via GitHub issues. The project&#x27;s roadmap is available in
+the project&#x27;s <a href="https://d7y.io/docs/next/" target="_blank" rel="noopener noreferrer" class="">webpage</a> (select &#x27;Roadmap&#x27; from menu).</li>
+</ul>
+</li>
+<li class="">Maturity is on the CNCF <a href="https://www.cncf.io/projects/dragonfly/" target="_blank" rel="noopener noreferrer" class="">incubating</a> level
+CNCF incubating project is considered stable and used in production by users with
+the healthy pool of contributors</li>
+<li class="">Security<!-- -->
+<ul>
+<li class="">The security disclosure is handled via a dedicated email address</li>
+<li class="">The code is reviewed within a standard PR process</li>
+</ul>
+</li>
+<li class="">Activity<!-- -->
+<ul>
+<li class="">30+ contributors, 100+ forks, 1k+ GitHub stars</li>
+<li class="">The project has been <a href="https://github.com/dragonflyoss/Dragonfly2/blob/main/ADOPTERS.md" target="_blank" rel="noopener noreferrer" class="">adopted</a>
+by many companies that run Harbor in their production environments</li>
+<li class="">The project is visible and actively contributes to various conferences,
+e.g. <a href="https://www.youtube.com/watch?v=LcxBgmmeA80" target="_blank" rel="noopener noreferrer" class="">KubeCon North America</a>,
+<a href="https://www.youtube.com/watch?v=MGNtPHQYP14" target="_blank" rel="noopener noreferrer" class="">KubeCon Europe</a>, etc.</li>
+</ul>
+</li>
+<li class="">Lock-in risk assessment<!-- -->
+<ul>
+<li class="">The list of the project&#x27;s <a href="https://github.com/dragonflyoss/Dragonfly2/blob/main/MAINTAINERS.md" target="_blank" rel="noopener noreferrer" class="">maintainers</a>
+includes contributors from various companies and the <a href="https://dragonfly.devstats.cncf.io/d/7/companies-contributing-in-repository-groups" target="_blank" rel="noopener noreferrer" class="">companies contributing dashboard</a>
+shows that ~10 companies are actively contributing to a repository group</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">
+<p>❔<!-- --> <a href="https://github.com/quay/quay" target="_blank" rel="noopener noreferrer" class="">Project Quay</a></p>
+<ul>
+<li class="">Project Quay meets all &quot;four opens&quot;<!-- -->
+<ul>
+<li class="">Source code is open and available under the <a href="https://github.com/quay/quay/blob/master/LICENSE" target="_blank" rel="noopener noreferrer" class="">Apache 2 license</a></li>
+<li class="">Community is <a href="https://github.com/quay/quay#community" target="_blank" rel="noopener noreferrer" class="">open</a> organized via mailing
+list and IRC</li>
+<li class="">Development process is open via <a href="https://issues.redhat.com/projects/PROJQUAY/issues" target="_blank" rel="noopener noreferrer" class="">JBoss JIRA</a>
+issues and well described in the <a href="https://github.com/quay/quay/blob/master/GOVERNANCE.md" target="_blank" rel="noopener noreferrer" class="">governance</a> document</li>
+<li class="">Design process is open via <a href="https://issues.redhat.com/projects/PROJQUAY/issues" target="_blank" rel="noopener noreferrer" class="">JBoss JIRA</a>
+issues. The project&#x27;s roadmap is available on the project&#x27;s <a href="https://www.projectquay.io/#contribute" target="_blank" rel="noopener noreferrer" class="">webpage</a></li>
+</ul>
+</li>
+<li class="">Maturity<!-- -->
+<ul>
+<li class="">Project Quay is an open-source project that started <a href="https://github.com/quay/quay/commit/0349af754204375d74ac5833713b607398981ff7" target="_blank" rel="noopener noreferrer" class="">~9 years ago</a>.
+It powers Red Hat enterprise products Red Hat Quay and Quay.io, which are used in
+a productive way by many. Therefore, the project&#x27;s maturity is at the good level</li>
+</ul>
+</li>
+<li class="">Security<!-- -->
+<ul>
+<li class="">The security disclosure is handled via a dedicated email address</li>
+<li class="">The code is reviewed within a standard PR process</li>
+</ul>
+</li>
+<li class="">Activity<!-- -->
+<ul>
+<li class="">50+ contributors, 200+ forks, 2k+ GitHub stars</li>
+<li class="">The project has been used by many <a href="https://www.projectquay.io" target="_blank" rel="noopener noreferrer" class="">companies</a> that
+run Quay in their production environments</li>
+</ul>
+</li>
+<li class="">Lock-in risk assessment<!-- -->
+<ul>
+<li class="">While the project&#x27;s owners/maintainers list is not publicly available - the active
+contributors can be seen <a href="https://github.com/quay/quay/graphs/contributors" target="_blank" rel="noopener noreferrer" class="">here</a>.
+The most active contributors in the recent past come from one company.
+Therefore, it is hard to judge the risk of project failure caused by low
+diversity across the companies. This should be improved.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">
+<p>❌<!-- --> <a href="https://github.com/sapcc/keppel" target="_blank" rel="noopener noreferrer" class="">Keppel</a></p>
+<ul>
+<li class="">The project seems to be not widely used in a productive way and also the activity
+around is currently not on a good level (5+ contributors). The development
+process as well as the design process seem to be open, but neither of them are
+documented yet.</li>
+</ul>
+</li>
+<li class="">
+<p>❌<!-- --> <a href="https://github.com/sonatype/nexus-public" target="_blank" rel="noopener noreferrer" class="">Nexus</a></p>
+<ul>
+<li class="">Nexus is an <strong>open core</strong> software that offers paid <a href="https://www.sonatype.com/products/repository-oss-vs-pro-features" target="_blank" rel="noopener noreferrer" class="">pro version</a> with advanced features</li>
+</ul>
+</li>
+<li class="">
+<p>❌<!-- --> <a href="https://jfrog.com/community/open-source/" target="_blank" rel="noopener noreferrer" class="">JFrog</a></p>
+<ul>
+<li class="">JFrog Artifactory is shipped as an <strong>open core</strong> <a href="https://jfrog.com/community/open-source/" target="_blank" rel="noopener noreferrer" class="">software</a>
+with limited features. The software is primarily offered as a paid <a href="https://jfrog.com/pricing/#devops-onprem" target="_blank" rel="noopener noreferrer" class="">pro version</a></li>
+</ul>
+</li>
+<li class="">
+<p>❌<!-- --> <a href="https://github.com/uber/kraken" target="_blank" rel="noopener noreferrer" class="">Kraken</a></p>
+<ul>
+<li class="">It seems that the project is not actively maintained as is discussed in the related
+project&#x27;s <a href="https://github.com/uber/kraken/issues/313" target="_blank" rel="noopener noreferrer" class="">issue</a></li>
+</ul>
+</li>
+<li class="">
+<p>❌<!-- --> <a href="https://github.com/SUSE/Portus" target="_blank" rel="noopener noreferrer" class="">Portus</a></p>
+<ul>
+<li class="">It seems that the project is not actively maintained as is discussed in the related
+project&#x27;s <a href="https://github.com/SUSE/Portus/issues/2352" target="_blank" rel="noopener noreferrer" class="">issue</a></li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="deeper-look-into-selected-projects">Deeper look into selected projects<a href="#deeper-look-into-selected-projects" class="hash-link" aria-label="Direct link to Deeper look into selected projects" title="Direct link to Deeper look into selected projects" translate="no">​</a></h3>
+<p>In the previous section, a wide range of open-source container registry projects (Quay, Harbor, Dragonfly,
+Keppel, Portus, Kraken, etc.) has been carefully evaluated based on the two main
+factors: the open-source health and range of supported features.</p>
+<p>The open-source software health is crucial and container registry implementation should
+pass it. It evaluates several important metrics of an open source software like whether the code/community/development/design
+is fully open or whether the project&#x27;s maturity, security, and activity are on the desired
+level. This check also evaluates the lock-in risk due to possible single points of
+failure or internal project conflicts and several other aspects.
+Overall, three projects passed the OSS health checks:</p>
+<ul>
+<li class=""><a href="https://github.com/goharbor/harbor" target="_blank" rel="noopener noreferrer" class="">Harbor</a></li>
+<li class=""><a href="https://github.com/quay/quay" target="_blank" rel="noopener noreferrer" class="">Project Quay</a></li>
+<li class=""><a href="https://github.com/quay/quay" target="_blank" rel="noopener noreferrer" class="">Dragonfly</a></li>
+</ul>
+<p>The above projects were then evaluated from the &quot;supported features&quot; perspective.
+The document [&quot;Requirements for container registries&quot;] provides a &quot;Required and desirable features check&quot;, which
+provides desired feature sets for open-source container registry implementations according to
+SCS requirements (and nice-to-haves). The list of required features is quite long and contains
+features that are primarily focused on security (authentication, vulnerability scanning, content trust, and validation, etc.),
+scalability (HA mode, registry replication, p2p integration, etc.) and visibility (monitoring).
+These requirements should ensure that the selected container registry implementation
+could be offered by CSPs as a secure and enterprise-ready solution.</p>
+<p>The following section compares the selected projects Dragonfly, Quay, and Harbor.</p>
+<p><a href="https://github.com/dragonflyoss/Dragonfly2" target="_blank" rel="noopener noreferrer" class="">Dragonfly</a> is a healthy open-source project with a growing community
+and CNCF incubating maturity level. It is considered stable, and widely used by many
+companies in their production environments. We currently see that it is not as
+feature-rich as Harbor or Quay, hence it is not considered the best choice here.
+It seems, that its main aim (currently) is to offer (an efficient, stable, and secure)
+container distribution solution based on p2p technology. This improves download
+efficiency and saves bandwidth across CSPs. It also offers integration possibilities
+that allow one to use it as a p2p distribution network via a &quot;preheat&quot; API. This
+integration was implemented in the Harbor project via Dragonfly &quot;preheat&quot; adapter, and
+both parties may benefit from the integration. Harbor profits from Dragonfly&#x27;s p2p
+distribution capabilities and on the other hand the Dragonfly project profits from
+Harbor&#x27;s feature-rich container registry &quot;frontend&quot;.</p>
+<p><a href="https://github.com/quay/quay" target="_blank" rel="noopener noreferrer" class="">Quay</a> is an open-source project maintained by Red Hat. Its OSS health is
+on a good level, the surrounding community is growing, and we consider it to be quite
+mature as it powers enterprise solutions like Red Hat Quay and Quay.io.
+Besides this, there is still a place for OSS health improvement. It is hard to
+distinguish the risk of project failure caused by low diversity across the companies
+because the project&#x27;s owners/maintainers list is not publicly available and is stored in
+the Red Hat private repository.
+Its feature set is impressive and this project fulfills all must-haves defined in
+this document. Quay gives you security over your repositories with image
+vulnerability scanning (Clair integration), content validation (Cosign integration),
+and access controls. Harbor stands out here as it allows users to use also project Trivy
+for vulnerability scanning. Project Quay also provides a scalable open-source
+platform to host container images across any size organization. One drawback in
+comparison to Harbor is that the proxy cache feature is still marked as a
+<a href="https://docs.projectquay.io/use_quay.html#quay-as-cache-proxy" target="_blank" rel="noopener noreferrer" class="">Technology Preview</a>,
+hence this feature may not be completely production-ready yet. On the other hand,
+the project Quay supports <a href="https://docs.projectquay.io/use_quay.html#build-support" target="_blank" rel="noopener noreferrer" class="">building Dockerfiles</a>
+using a set of workers on e.g. Kubernetes. Build triggers, such as GitHub webhooks
+can be configured to automatically build new versions of repositories when new code is
+committed. This feature is not supported by the <a href="https://github.com/goharbor/harbor/issues/6235" target="_blank" rel="noopener noreferrer" class="">Harbor project</a>.</p>
+<p><a href="https://github.com/goharbor/harbor" target="_blank" rel="noopener noreferrer" class="">Harbor</a> is an outstanding open-source, community-led project with fully open and
+well-documented processes. Its large and thriving community powers the fast-growing
+feature set and attracts more and more developers and companies to active contributions.
+Harbor&#x27;s CNCF graduation in 2020 made it one of the best choices for enterprise
+customers that want to operate container registries securely and in a large scale.
+Its community size, landscape, and CNCF graduation make a significant difference in
+comparison to Quay&#x27;s open-source health capabilities.
+The list of supported features is also impressive. This project fulfills all must-haves
+defined in this document and overcome project Quay with a production-ready proxy cache
+feature and more options that the user may use in case of image vulnerability scanning.
+In addition, Harbor profits from p2p distribution capabilities via integration of p2p
+solutions like Kraken and Dragonfly. It is worth mentioning that Harbor, by design,
+operates on a single storage backend (e.g. S3). It means that the storage of container
+images is shared even when the Harbor instance serves multiple tenants. The same
+approach is used in Quay and Dragonfly projects, but e.g. Keppel uses multi-tenant-aware
+storage drivers instead so that each customer gets their own separate storage backend.
+CSP that considers offering container registry &quot;as a service&quot; solution based on Harbor
+should be aware of this shared storage backend architecture.</p>
+<p>In the following table, the feature sets of the evaluated projects that passed the OSS health state
+are listed and matched against. This enables a better understanding of the decision-making for this document.</p>
+<table><thead><tr><th>Features</th><th>Harbor</th><th>Quay</th><th>Dragonfly</th></tr></thead><tbody><tr><td>Audit Logs</td><td>✓</td><td>✓</td><td>✗</td></tr><tr><td>Authentication of system identities</td><td>✓ Robot Accounts</td><td>✓ Robot Accounts</td><td>✗</td></tr><tr><td>Authentication of users</td><td>✓ Local database, LDAP, OIDC, UAA</td><td>✓ Local database, LDAP, Keystone, JWT</td><td>✓ Local database</td></tr><tr><td>Authorization</td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>Automation</td><td>✓ Webhooks (HTTP, Slack)</td><td>✓ Webhooks (HTTP, Slack, E-mail ...), building images</td><td>✗</td></tr><tr><td>Vulnerability scanning</td><td>✓ Trivy, Clair</td><td>✓ Clair</td><td>✗</td></tr><tr><td>Content Trust and Validation</td><td>✓ Cosign</td><td>✓ Cosign</td><td>✗</td></tr><tr><td>Multi-tenancy</td><td>✓ (not on the storage level)</td><td>✓ (not on the storage level)</td><td>✓ (not on the storage level)</td></tr><tr><td>Backup and restore</td><td>✓</td><td>✓</td><td>✗</td></tr><tr><td>Monitoring</td><td>✓ Prometheus metrics, Tracing</td><td>✓ Prometheus metrics, Tracing (only for Clair)</td><td>✓ Prometheus metrics, Tracing</td></tr><tr><td>HA mode</td><td>✓</td><td>✓</td><td>✗</td></tr><tr><td>Registry replication</td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>Proxy cache</td><td>✓</td><td>✓ Feature is in the technology preview stage (non production ready)</td><td>✗</td></tr><tr><td>Quota management</td><td>✓ Based on storage consumption</td><td>✓ Based on storage consumption</td><td>✗</td></tr><tr><td>Garbage collection</td><td>✓ Non-blocking</td><td>✓ Non-blocking</td><td>✗</td></tr><tr><td>Retention policy</td><td>✓ Multiple tag retention rules</td><td>✓ Only tag expiration rules</td><td>✗</td></tr><tr><td>Additional supported artifacts</td><td>✗ (only OCI artifacts)</td><td>✗ (only OCI artifacts)</td><td>✓ Maven, YUM</td></tr><tr><td>Integration possibilities</td><td>✓ Dragonfly (P2P), Kraken (P2P)</td><td>✗</td><td>✓ Harbor, Nydus, eStargz</td></tr><tr><td>Deployment capabilities</td><td>✓ Docker-compose, Helm chart, Operator</td><td>✓ Docker-compose, Operator</td><td>✓ Docker-compose, Helm chart</td></tr><tr><td>Administration capabilities</td><td>✓ Terraform, CRDs, Client libraries</td><td>✓ Ansible, Client libraries</td><td>✓ Client libraries</td></tr></tbody></table>
+<p>Notes:</p>
+<ul>
+<li class="">Automation: Harbor should support webhooks following CloudEvents spec in the <a href="https://github.com/goharbor/harbor/issues/17748" target="_blank" rel="noopener noreferrer" class="">next release</a></li>
+<li class="">Content Trust and Validation: Harbor announced the deprecation of <a href="https://github.com/goharbor/harbor/discussions/16612" target="_blank" rel="noopener noreferrer" class="">Notary</a>
+integration, hence it is not mentioned in the table</li>
+<li class="">Multi-tenancy: Harbor, Quay, as well as Dragonfly, operates on a single storage
+backend (e.g. S3), i.e. the storage of container images is shared between tenants</li>
+<li class="">Additional supported artifacts: Harbor announced the deprecation of <a href="https://github.com/goharbor/harbor/discussions/15057" target="_blank" rel="noopener noreferrer" class="">Chartmuseum</a>
+integration, hence it is not mentioned in the table</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="decision">Decision<a href="#decision" class="hash-link" aria-label="Direct link to Decision" title="Direct link to Decision" translate="no">​</a></h2>
+<p>Based on the requirements laid out in [&quot;Requirements for container registries&quot;], the OSS health check
+and the possible software solutions presented in this document, it was decided to use the <strong>Harbor</strong> project
+as the container registry for the SCS reference implementation.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-documents">Related Documents<a href="#related-documents" class="hash-link" aria-label="Direct link to Related Documents" title="Direct link to Related Documents" translate="no">​</a></h2>
+<p><a class="" href="/standards/scs-0212-v1-requirements-for-container-registries">&quot;Requirements for container registries&quot;</a>
+<a href="https://github.com/goharbor/harbor" target="_blank" rel="noopener noreferrer" class="">harbor</a>
+<a href="https://github.com/dragonflyoss/Dragonfly2" target="_blank" rel="noopener noreferrer" class="">dragonfly</a>
+<a href="https://github.com/quay/quay" target="_blank" rel="noopener noreferrer" class="">projectquay</a></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/standards/kaas/scs-0218"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">scs-0218: Container registry for SCS standard implementation</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/standards/kaas/scs-0219"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">scs-0219: KaaS Networking Standard</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a></li><li><a href="#terminology" class="table-of-contents__link toc-highlight">Terminology</a></li><li><a href="#motivation" class="table-of-contents__link toc-highlight">Motivation</a><ul><li><a href="#evaluated-projects" class="table-of-contents__link toc-highlight">Evaluated projects</a></li><li><a href="#deeper-look-into-selected-projects" class="table-of-contents__link toc-highlight">Deeper look into selected projects</a></li></ul></li><li><a href="#decision" class="table-of-contents__link toc-highlight">Decision</a></li><li><a href="#related-documents" class="table-of-contents__link toc-highlight">Related Documents</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs">Contribute</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org" target="_blank" rel="noopener noreferrer" class="footer__link-item">Matrix<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://fosstodon.org/@sovereigncloudstack" target="_blank" rel="noopener noreferrer" class="footer__link-item">Mastodon<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/SovereignCloudStack/docs" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Sovereign Cloud Stack, SCS and the logo are registered trademarks of the Open Source Business Alliance e.V. — Other trademarks are property of their respective owners.</div></div></div></footer></div>
+</body>
+</html>

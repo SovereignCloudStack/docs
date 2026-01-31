@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-standards docs-version-current docs-doc-page docs-doc-id-scs-0403-v1-csp-kaas-observability-stack" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Architecture for the Cloud Service provider Observability System for the KaaS Layer | One platform — standardized, built and operated by many.</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.scs.community/img/scs-og-basic.png"><meta data-rh="true" name="twitter:image" content="https://docs.scs.community/img/scs-og-basic.png"><meta data-rh="true" property="og:url" content="https://docs.scs.community/standards/scs-0403-v1-csp-kaas-observability-stack"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-standards-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-standards-current"><meta data-rh="true" property="og:title" content="Architecture for the Cloud Service provider Observability System for the KaaS Layer | One platform — standardized, built and operated by many."><meta data-rh="true" name="description" content="Introduction"><meta data-rh="true" property="og:description" content="Introduction"><link data-rh="true" rel="icon" href="/img/favicon.png"><link data-rh="true" rel="canonical" href="https://docs.scs.community/standards/scs-0403-v1-csp-kaas-observability-stack"><link data-rh="true" rel="alternate" href="https://docs.scs.community/standards/scs-0403-v1-csp-kaas-observability-stack" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.scs.community/standards/scs-0403-v1-csp-kaas-observability-stack" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Standards","item":"https://docs.scs.community/standards/standards/overview"},{"@type":"ListItem","position":2,"name":"Ops","item":"https://docs.scs.community/standards/ops/"},{"@type":"ListItem","position":3,"name":"scs-0403","item":"https://docs.scs.community/standards/ops/scs-0403"},{"@type":"ListItem","position":4,"name":"V1","item":"https://docs.scs.community/standards/scs-0403-v1-csp-kaas-observability-stack"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="SCS Community Blog RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="SCS Community Blog Atom Feed">
+<link rel="alternate" type="application/json" href="/blog/feed.json" title="SCS Community Blog JSON Feed">
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://matomo.scs.community/">
+<script>var _paq=window._paq=window._paq||[];_paq.push(["setDocumentTitle",document.domain+"/"+document.title]),_paq.push(["disableCookies"]),_paq.push(["trackPageView"]),_paq.push(["enableLinkTracking"]),function(){var e="https://matomo.scs.community/";_paq.push(["setTrackerUrl",e+"matomo.php"]),_paq.push(["setSiteId","2"]);var a=document,t=a.createElement("script"),p=a.getElementsByTagName("script")[0];t.async=!0,t.src=e+"matomo.js",p.parentNode.insertBefore(t,p)}()</script><link rel="stylesheet" href="/assets/css/styles.7136250c.css">
+<script src="/assets/js/runtime~main.ff722ccb.js" defer="defer"></script>
+<script src="/assets/js/main.6cc1e574.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="SCS" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="SCS" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"></b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/standards">Standards</a><a class="navbar__item navbar__link" href="/docs">For Operators</a><a class="navbar__item navbar__link" href="/contributor-docs">For Contributors</a><a class="navbar__item navbar__link" href="/user-docs">For Users</a><a class="navbar__item navbar__link" href="/community">Community</a><a class="navbar__item navbar__link" href="/docs/faq">FAQ</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/SovereignCloudStack/docs" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/standards/"><span title="Introduction" class="linkLabel_WmDU">Introduction</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/standards/certification/overview"><span title="Certification" class="categoryLinkLabel_W154">Certification</span></a><button aria-label="Expand sidebar category &#x27;Certification&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/standards/standards/overview"><span title="Standards" class="categoryLinkLabel_W154">Standards</span></a><button aria-label="Collapse sidebar category &#x27;Standards&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/global/"><span title="Global" class="categoryLinkLabel_W154">Global</span></a><button aria-label="Expand sidebar category &#x27;Global&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iaas/"><span title="IaaS" class="categoryLinkLabel_W154">IaaS</span></a><button aria-label="Expand sidebar category &#x27;IaaS&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/kaas/"><span title="KaaS" class="categoryLinkLabel_W154">KaaS</span></a><button aria-label="Expand sidebar category &#x27;KaaS&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/iam/"><span title="IAM" class="categoryLinkLabel_W154">IAM</span></a><button aria-label="Expand sidebar category &#x27;IAM&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/standards/ops/"><span title="Ops" class="categoryLinkLabel_W154">Ops</span></a><button aria-label="Collapse sidebar category &#x27;Ops&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/ops/scs-0400"><span title="scs-0400" class="categoryLinkLabel_W154">scs-0400</span></a><button aria-label="Expand sidebar category &#x27;scs-0400&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/ops/scs-0401"><span title="scs-0401" class="categoryLinkLabel_W154">scs-0401</span></a><button aria-label="Expand sidebar category &#x27;scs-0401&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/ops/scs-0402"><span title="scs-0402" class="categoryLinkLabel_W154">scs-0402</span></a><button aria-label="Expand sidebar category &#x27;scs-0402&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/standards/ops/scs-0403"><span title="scs-0403" class="categoryLinkLabel_W154">scs-0403</span></a><button aria-label="Collapse sidebar category &#x27;scs-0403&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-4 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/standards/scs-0403-v1-csp-kaas-observability-stack"><span title="V1" class="linkLabel_WmDU">V1</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/ops/scs-0410"><span title="scs-0410" class="categoryLinkLabel_W154">scs-0410</span></a><button aria-label="Expand sidebar category &#x27;scs-0410&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/ops/scs-0411"><span title="scs-0411" class="categoryLinkLabel_W154">scs-0411</span></a><button aria-label="Expand sidebar category &#x27;scs-0411&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/standards/ops/scs-0412"><span title="scs-0412" class="categoryLinkLabel_W154">scs-0412</span></a><button aria-label="Expand sidebar category &#x27;scs-0412&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/standards/standards/overview"><span>Standards</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/standards/ops/"><span>Ops</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/standards/ops/scs-0403"><span>scs-0403</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">V1</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Architecture for the Cloud Service provider Observability System for the KaaS Layer</h1></header><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="introduction">Introduction<a href="#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction" translate="no">​</a></h2>
+<p>Cloud Service Providers offer a variety of products to a customer. Those can include compute resources like virtual machines, networking, and identity and access management. As customers of those services build their applications upon those offered services the service provider needs to ensure a certain quality level of their offerings. This is done by observing the infrastructure. Observability systems leverage different types of telemetry data which include:</p>
+<ol>
+<li class="">Metrics: Usually time series data about different parameters of a system which can include e.g. CPU usage, number of active requests, health status, etc.</li>
+<li class="">Logs: Messages of software events during runtime</li>
+<li class="">Traces: A more developer-oriented form of logging to provide insights into an application or to analyze request flows in distributed systems.</li>
+</ol>
+<p>Based on those data, an alerting system can be used to send out notifications to an Operations Team if a system behaves abnormally. Based on the telemetry data the Operations Team can find the issue, work on it, and mitigate future incidents.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="motivation">Motivation<a href="#motivation" class="hash-link" aria-label="Direct link to Motivation" title="Direct link to Motivation" translate="no">​</a></h2>
+<p>Currently, only the IaaS Layer of the SCS Reference Implementation has an Observability Stack consisting of tools like Prometheus, Grafana, and Alertmanager as well as several Exporters to extract monitoring data from the several OpenStack components and additional software that is involved in the Reference Implementation. As the Kubernetes as a Service Layer becomes more and more important and the work on the Cluster API approach to create customer clusters progresses further, an observability solution for this layer is also needed. CSP should be able to watch over customer clusters and intervene if a cluster gets in a malfunctioning state. For this, a toolset and architecture are needed which is proposed in this ADR.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="requirements">Requirements<a href="#requirements" class="hash-link" aria-label="Direct link to Requirements" title="Direct link to Requirements" translate="no">​</a></h2>
+<p>A survey was conducted to gather the needs and requirements of a CSP when providing Kubernetes as a Service. The feedback of the survey led to the following requirement on a Kubernetes as a Service Observability System:</p>
+<ul>
+<li class="">Telemetry Data that MUST be fetched:<!-- -->
+<ul>
+<li class="">CPU, RAM, Disk, Network</li>
+<li class="">HTTP Connectivity Metrics</li>
+<li class="">Control Plane and Pod metrics (States, Ready, etc.)</li>
+<li class="">K8s certs metrics</li>
+<li class="">Metrics of underlying node</li>
+<li class="">Logs of control plane, kubelet and containerd</li>
+</ul>
+</li>
+<li class="">Telemetry Data that MAY be fetched:<!-- -->
+<ul>
+<li class="">K8s resources (exporters, kubestate metrics, cadvisor, parts of the kubelet)</li>
+<li class="">Ingress controller exporter (http error rate, cert metrics like expiration date)</li>
+</ul>
+</li>
+<li class="">Telemetry Data that SHOULD NOT BE fetched:<!-- -->
+<ul>
+<li class="">Any metrics or logs a CSP does not need to provide support with respect to their SLA with a Customer.</li>
+</ul>
+</li>
+<li class="">Telemetry Data that MUST NOT be fetched:<!-- -->
+<ul>
+<li class="">Secrets</li>
+<li class="">Customer Specific Workload Metrics</li>
+</ul>
+</li>
+<li class="">The Alerting Mechanism MUST include a default ruleset</li>
+<li class="">The Observability Stack MUST run on the CSP Infrastructure</li>
+<li class="">The Observability Stack MUST be High Available</li>
+<li class="">The Observability Stack MUST be able to observe itself</li>
+<li class="">Observed Clusters SHOULD have a low resource impact on the used software to provide telemetry data for the Observability Stack</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="options-considered">Options considered<a href="#options-considered" class="hash-link" aria-label="Direct link to Options considered" title="Direct link to Options considered" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="use-of-the-dnation-observability-stack-as-a-base">Use of the dNation Observability Stack as a base<a href="#use-of-the-dnation-observability-stack-as-a-base" class="hash-link" aria-label="Direct link to Use of the dNation Observability Stack as a base" title="Direct link to Use of the dNation Observability Stack as a base" translate="no">​</a></h4>
+<p>The <a href="https://github.com/dNationCloud/kubernetes-monitoring" target="_blank" rel="noopener noreferrer" class="">dNation monitoring stack</a> offers a lot of basic capabilities needed on an observability stack for Kubernetes like Prometheus Operator, Grafana, Alertmanager, Loki, Promtail and Thanos.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pull-based-architecture">Pull-based Architecture<a href="#pull-based-architecture" class="hash-link" aria-label="Direct link to Pull-based Architecture" title="Direct link to Pull-based Architecture" translate="no">​</a></h4>
+<p>Each customer cluster has Thanos and Prometheus installed in addition to Thanos and Prometheus on the Observer Cluster. Metrics of a customer cluster are pulled from Thanos (Customer Cluster) for short term queries, as for long term queries the data of all Thanos instances is stored in an external Object Store of the CSP.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="push-based-archtitecture">Push-based Archtitecture<a href="#push-based-archtitecture" class="hash-link" aria-label="Direct link to Push-based Archtitecture" title="Direct link to Push-based Archtitecture" translate="no">​</a></h4>
+<p>Here, Thanos and Prometheus are only used on the CSP side to store and manage all observability data. For the customer clusters only the Prometheus Agent will be used. Prometheus Agent will push all metrics of a Customer Cluster to the central Thanos instance and is preserved in an external Object Store. This introduces less complexity and resource consumption on the customer workload clusters.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="scope-of-the-observability-architecture">Scope of the Observability Architecture<a href="#scope-of-the-observability-architecture" class="hash-link" aria-label="Direct link to Scope of the Observability Architecture" title="Direct link to Scope of the Observability Architecture" translate="no">​</a></h4>
+<p>The Observability Cluster and Architecture SHOULD be defined in a modular way so that it can be used to not only observe the Kubernetes Layer of an SCS Stack, but every aspect of an SCS Stack.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="observing-the-observability-infrastructure">Observing the Observability Infrastructure<a href="#observing-the-observability-infrastructure" class="hash-link" aria-label="Direct link to Observing the Observability Infrastructure" title="Direct link to Observing the Observability Infrastructure" translate="no">​</a></h4>
+<p>For usage in production, it needs to be possible to observe the Observability Cluster itself.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="alerting-rulesets">Alerting Rulesets<a href="#alerting-rulesets" class="hash-link" aria-label="Direct link to Alerting Rulesets" title="Direct link to Alerting Rulesets" translate="no">​</a></h4>
+<p>Use a mix of <a href="https://github.com/kubernetes-monitoring/kubernetes-mixin/tree/master/alerts" target="_blank" rel="noopener noreferrer" class="">kubernetes-mixin alerts</a> and <a href="https://github.com/dNationCloud/kubernetes-monitoring/tree/main/jsonnet/rules" target="_blank" rel="noopener noreferrer" class="">dNation Alerts Ruleset</a>, as they offer an extensive and well reviewed set of default Alerts covering the important Parts of a Kubernetes Deployment (Nodes, Controlplane, K8s Resources, etc.)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="decisions">Decisions<a href="#decisions" class="hash-link" aria-label="Direct link to Decisions" title="Direct link to Decisions" translate="no">​</a></h2>
+<ol>
+<li class="">Base the MVP-0 Implementation on the dNation Kubernetes Monitoring Stack.</li>
+<li class="">The <strong>Push-based</strong> Architecture was chosen over the Pull-based Approach.</li>
+<li class="">The Observability Stack will be created based on the dNation observability stack</li>
+<li class="">The Observability Stack can be used as a standalone component to use with the Kubernetes Layer. It should be possible to observe other parts of an SCS Stack like the status of the OpenStack components, but this will not be mandatory.</li>
+<li class="">The Observability Stack should be designed that it is possible to provision two observer clusters side by side, observing each other. To do this is only a recommendation for production usage.</li>
+<li class="">The MVP-0 will consist of the following features:<!-- -->
+<ul>
+<li class="">Observability data from KaaS Clusters is scraped<!-- -->
+<ul>
+<li class="">K8s cluster that hosts observer deployment is deployed</li>
+<li class="">S3 compatible bucket as a storage for long term metrics is configured</li>
+<li class="">thanos query-frontend is deployed and configured</li>
+<li class="">thanos query is deployed and configured</li>
+<li class="">thanos receiver is deployed and configured (simple deployment, non HA, without router)</li>
+<li class="">thanos ruler is deployed and configured</li>
+<li class="">thanos compactor is deployed and configured</li>
+<li class="">thanos bucket-web is deployed and configured</li>
+<li class="">thanos storegateway is deployed and configured</li>
+<li class="">prometheus server is deployed and configured</li>
+<li class="">prometheus alertmanager is deployed and configured</li>
+<li class="">prometheus black-box exporter is deployed and configured</li>
+<li class="">kaas-metric-importer is deployed and configured (service aims to differentiate between intentional deletion of KaaS instances and failures in the KaaS monitoring agent)</li>
+</ul>
+</li>
+<li class="">Alerts are defined on the KaaS Clusters metrics<!-- -->
+<ul>
+<li class="">all prometheus alerts are working as expected</li>
+</ul>
+</li>
+<li class="">There exist Dashboards for KaaS Cluster Health<!-- -->
+<ul>
+<li class="">KaaS L0 dashboard counters are working correctly</li>
+<li class="">Dedicated L0 dashboards are deployed for KaaS and for IaaS monitoring layers</li>
+</ul>
+</li>
+<li class="">There exist Dashboards for SCS services endpoints health (BlackBox exporter)</li>
+<li class="">There exist Dashboards for IaaS layer health</li>
+<li class="">Automatic Setup of Exporters for Observability of managed K8s clusters<!-- -->
+<ul>
+<li class="">KaaS service is mocked</li>
+<li class="">VM that will host a mock of KaaS service is deployed</li>
+<li class="">a script that deploys a multiple KinD clusters and register them in observer is created</li>
+</ul>
+</li>
+<li class="">Automatic Setup of Thanos sidecar for Observability of IaaS layer (testbed)<!-- -->
+<ul>
+<li class="">IaaS service is mocked</li>
+<li class="">OSISM testbed is deployed</li>
+<li class="">implement an option to deploy thanos sidecar with some simple config in OSISM testbed</li>
+</ul>
+</li>
+<li class="">There exist Dashboards for Harbor Registry Health</li>
+<li class="">Alerts are defined on the Harbor Registry metrics</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="reference">Reference<a href="#reference" class="hash-link" aria-label="Direct link to Reference" title="Direct link to Reference" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="outcome-of-the-csp-survey-about-requirements-for-kaas-observability">Outcome of the CSP Survey about Requirements for KaaS Observability<a href="#outcome-of-the-csp-survey-about-requirements-for-kaas-observability" class="hash-link" aria-label="Direct link to Outcome of the CSP Survey about Requirements for KaaS Observability" title="Direct link to Outcome of the CSP Survey about Requirements for KaaS Observability" translate="no">​</a></h3>
+<p>A survey was conducted to gather the needs and requirements of a CSP when providing Kubernetes as a Service. The results of the Survey (Questions with answers) were the following:</p>
+<ol>
+<li class="">
+<p>What is your understanding of a managed Kubernetes Offering:</p>
+<ul>
+<li class="">Hassle-Free Installation and Maintenance (customer viewpoint); Providing control plane and worker nodes and responsibility for correct function but agnostic to workload</li>
+<li class="">Day0, 1 and 2 (~planning, provisioning, operations) full lifecycle management or let customer manages some parts of that, depending on customer contract</li>
+</ul>
+</li>
+<li class="">
+<p>What Type and Depth of observability is needed</p>
+<ul>
+<li class="">CPU, RAM, HDD and Network usage, Health and Function of Cluster Nodes, control plane and if desired Customer Workload</li>
+</ul>
+</li>
+<li class="">
+<p>Do you have an observability infrastructure, if yes, how it is built</p>
+<ul>
+<li class="">Grafana/Thanos/Prometheus/Loki/Promtail/Alertmanger Stack, i.e. <a href="https://raw.githubusercontent.com/dNationCloud/kubernetes-monitoring-stack/main/thanos-deployment-architecture.svg" target="_blank" rel="noopener noreferrer" class="">Example Infrastructure</a></li>
+</ul>
+</li>
+<li class="">
+<p>Data Must haves</p>
+<ul>
+<li class="">CPU, RAM, Disk, Network</li>
+<li class="">HTTP Connectivity Metrics</li>
+<li class="">Control Plane and Pod metrics (States, Ready, etc.)</li>
+<li class="">Workload specific metrics</li>
+<li class="">Node Stats</li>
+<li class="">K8s resources (exporters, kubestate metrics, cadvisor, parts of the kubelet)</li>
+<li class="">Ingress controller exporter (http error rate, cert metrics like expiration date)</li>
+<li class="">K8s certs metrics</li>
+<li class="">Metrics of underlying node</li>
+<li class="">Logs of control plane, kubelet and containerd</li>
+</ul>
+</li>
+<li class="">
+<p>Must Not haves</p>
+<ul>
+<li class="">Secrets, otherwise as much as possible for anomaly detection over long time data</li>
+</ul>
+</li>
+<li class="">
+<p>Must have Alerts</p>
+<ul>
+<li class="">Dependent on SLAs and SLA Types, highly individual</li>
+<li class="">Use of <a href="https://github.com/kubernetes-monitoring/kubernetes-mixin/tree/master/alerts" target="_blank" rel="noopener noreferrer" class="">kubernetes-mixin alerts</a> and <a href="https://github.com/dNationCloud/kubernetes-monitoring/tree/main/jsonnet/rules" target="_blank" rel="noopener noreferrer" class="">dNation Alerts Ruleset</a></li>
+</ul>
+</li>
+<li class="">
+<p>Must NOT Alert on</p>
+<ul>
+<li class="">Should not wake people, nothing that does not lead to Action items</li>
+</ul>
+</li>
+<li class="">
+<p>Observability from Within Or Outside KaaS. How does the architecture look like?</p>
+<ul>
+<li class="">Monitoring Infra on CSP Side</li>
+<li class="">Data from Customer Clusters and Mon Infra on CSP and KaaS, get both data. KaaS Monitoring can also be used by customer</li>
+</ul>
+</li>
+<li class="">
+<p>Special Constraints</p>
+<ul>
+<li class="">HA Setup in different Clusters on Different Sites</li>
+</ul>
+</li>
+</ol></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/standards/ops/scs-0403"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">scs-0403: Architecture for the Cloud Service provider Observability System for the KaaS Layer</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/standards/ops/scs-0410"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">scs-0410: Gnocchi as database for metering</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a></li><li><a href="#motivation" class="table-of-contents__link toc-highlight">Motivation</a></li><li><a href="#requirements" class="table-of-contents__link toc-highlight">Requirements</a><ul><li><a href="#options-considered" class="table-of-contents__link toc-highlight">Options considered</a></li></ul></li><li><a href="#decisions" class="table-of-contents__link toc-highlight">Decisions</a></li><li><a href="#reference" class="table-of-contents__link toc-highlight">Reference</a><ul><li><a href="#outcome-of-the-csp-survey-about-requirements-for-kaas-observability" class="table-of-contents__link toc-highlight">Outcome of the CSP Survey about Requirements for KaaS Observability</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs">Contribute</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org" target="_blank" rel="noopener noreferrer" class="footer__link-item">Matrix<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://fosstodon.org/@sovereigncloudstack" target="_blank" rel="noopener noreferrer" class="footer__link-item">Mastodon<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/SovereignCloudStack/docs" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Sovereign Cloud Stack, SCS and the logo are registered trademarks of the Open Source Business Alliance e.V. — Other trademarks are property of their respective owners.</div></div></div></footer></div>
+</body>
+</html>
