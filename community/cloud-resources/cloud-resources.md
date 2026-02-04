@@ -12,9 +12,12 @@ For access to the SCS Hardware Landscape, please send an email to the [SCS Proje
 Please note that the email address you provide will also be used for your login details and further communication.
 The email should contain the following information:
 
+- Short summary of the intended usage of the SCS Hardware Landscape
 - link to PR for [SSH access](#ssh-access)
   - OPTIONAL: if needed, information about the SSH key to be used
 - link to PR for [VPN access](#vpn-access)
+
+The SCS Project Board will assess the request based on the intended usage and will then take care of the request in a timely manor.
 
 ### SSH Access
 
