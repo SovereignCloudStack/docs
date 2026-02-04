@@ -17,7 +17,7 @@ The email should contain the following information:
   - OPTIONAL: if needed, information about the SSH key to be used
 - link to PR for [VPN access](#vpn-access)
 
-The SCS Project Board will assess the request based on the intended usage and will then take care of the request in a timely manor.
+The SCS Project Board will assess the request based on the intended usage and available capacity and will then take a decision in a timely manner.
 
 ### SSH Access
 
