@@ -5,7 +5,7 @@ import { themes as prismThemes } from 'prism-react-renderer'
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Compatible by Design. Open by Default.',
+  title: 'Sovereign Cloud Stack - Compatible by Design. Open by Default.',
   tagline: 'Documentation and Community Platform for the Sovereign Cloud Stack',
   url: 'https://docs.scs.community',
   baseUrl: '/',
