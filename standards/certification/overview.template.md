@@ -1,11 +1,26 @@
 <!-- markdownlint-disable -->
 # Certification
 
-SCS certificates come with various scopes. See [Scopes and Versions](scopes-versions.md) for details.
+SCS provides a certification framework with various scopes.
+See [Scopes and Versions](scopes-versions.md) for details.
 
 ## Becoming certified
 
-In order for a cloud service offering to obtain a certificate, it has to conform to all standards of the respective scope, which will be tested at regular intervals, and the results of these tests will be made available publicly. For more details on how to become certified, please consult the corresponding [document](/standards/scs-0004-v1-achieving-certification).
+In order to obtain a certification, all standards of the respective scope must be adhered to.
+This is tested at regular intervals, and the results of these tests will be made available publicly.
+There are various types of certifications, which are described below.
+
+### Certification of infrastructure
+
+Cloud service providers can obtain a certification for their infrastructure offerings.
+
+The standard [SCS-0004](https://docs.scs.community/standards/global/scs-0004) describes the certification of infrastructure offerings in depth.
+
+### Certification of integrators
+
+Implementation partners and cloud service providers can obtain a certification recognizing their technical knowledge and experience to provide technical support to other organizations using SCS.
+
+The standard [SCS-0007](https://docs.scs.community/standards/global/scs-0007) describes the integrator certification in depth.
 
 ## Compliant cloud environments
 
