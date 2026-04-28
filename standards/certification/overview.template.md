@@ -24,6 +24,4 @@ The standard [SCS-0007](https://docs.scs.community/standards/global/scs-0007) de
 
 ## Compliant cloud environments
 
-This is a list of clouds that we test on a nightly basis against the certificate scope _SCS-compatible IaaS_.
-
 <!--CLOUDS-->
