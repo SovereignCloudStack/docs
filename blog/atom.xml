@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://docs.scs.community/blog</id>
+    <title>SCS Community Blog</title>
+    <updated>2026-04-08T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://docs.scs.community/blog"/>
+    <subtitle>Latest articles from the Sovereign Cloud Stack community</subtitle>
+    <icon>https://docs.scs.community/img/favicon.png</icon>
+    <rights>Copyright © 2026 Sovereign Cloud Stack</rights>
+    <entry>
+        <title type="html"><![CDATA[CVE-2026-33551 OpenStack privilege escalation with EC2 credentials from Application Credentials]]></title>
+        <id>https://docs.scs.community/blog/openstack_privescal_ec2_creds_from_appcreds_cve_2026_33551</id>
+        <link href="https://docs.scs.community/blog/openstack_privescal_ec2_creds_from_appcreds_cve_2026_33551"/>
+        <updated>2026-04-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The vulnerability]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-vulnerability">The vulnerability<a href="https://docs.scs.community/blog/openstack_privescal_ec2_creds_from_appcreds_cve_2026_33551#the-vulnerability" class="hash-link" aria-label="Direct link to The vulnerability" title="Direct link to The vulnerability" translate="no">​</a></h2>
+<p>OpenStack allows the creation of Application Credentials to give its bearer
+access to a project with the privileges of the user who created the AppCreds.
+Application Credentials can have a limited lifetime and can be revoked. They
+can also be <em>restricted</em> (which means that they can not be used to create
+additional application credentials) or can be assigned roles with lower
+privileges, limiting the privileges that the bearer has.</p>
+<p>When AppCreds are used to create EC2 credentials, keystone failed to
+require <em>unrestricted</em> AppCreds and failed to require the member role,
+giving AppCreds that are <em>restricted</em> or that have limited roles the
+ability to create EC2 credentials with the full privileges of the user
+who created the AppCred.</p>
+<p>This issue was reported by Maxence Bornecque from Orange Cyberdefense CERT
+Vulnerability Intelligence Watch Team and has been assigned
+<a href="https://nvd.nist.gov/vuln/detail/CVE-2026-33551" target="_blank" rel="noopener noreferrer" class="">CVE-2026-33551</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="impact-on-the-scs-software-ecosystem">Impact on the SCS software ecosystem<a href="https://docs.scs.community/blog/openstack_privescal_ec2_creds_from_appcreds_cve_2026_33551#impact-on-the-scs-software-ecosystem" class="hash-link" aria-label="Direct link to Impact on the SCS software ecosystem" title="Direct link to Impact on the SCS software ecosystem" translate="no">​</a></h2>
+<p>This issue affects OpenStack environments that allow the creation of EC2
+style credentials, which is typically used for S3 access or EC2 compatibility.
+This is typically the case for SCS clouds, as S3 compatibility is a requirement.</p>
+<p>While creating AppCreds with roles with lower privileges is not a very common
+use case, it is supported by OpenStack clouds and is actually a good practice
+to limit the privileges of running components or the delegated privileges for
+human bearers of the AppCred. The fact that EC2 credentials can be used to
+work around and regain the privileges of the user who created the original
+AppCred is a serious issue, as it breaks the principle of least privileges
+and may weaken or break security models for applications or delegated
+authorizations.</p>
+<p>Note that this vulnerability does not allow to escalate privileges further
+than the original AppCred creator's privileges and does require the attacker
+to get access to the limited AppCred in the first place.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="embargo">Embargo<a href="https://docs.scs.community/blog/openstack_privescal_ec2_creds_from_appcreds_cve_2026_33551#embargo" class="hash-link" aria-label="Direct link to Embargo" title="Direct link to Embargo" translate="no">​</a></h2>
+<p>The issue has been reported to the OpenStack Vulnerability Management Team in
+private. The reporters and upstream developers have worked together to address
+the issue with fixes and an embargo date
+has been set to Tuesday, 2026-04-07, 15:00 UTC (17:00 CEST). At this point in
+time, the patches get merged and the OpenStack Security Advisory
+<a href="https://security.openstack.org/ossa/OSSA-2026-005.html" target="_blank" rel="noopener noreferrer" class="">OSSA-2026-005</a> is
+published. The issue is tracked in OpenStack issue
+<a href="https://bugs.launchpad.net/nova/+bug/2142138" target="_blank" rel="noopener noreferrer" class="">#2142138</a>, which should become
+publically accessible after the lift of the embargo and the publication
+of this advisory.</p>
+<p>Under the used responsible disclosure approach, the information was shared with
+a select group of trustable users of OpenStack, so they can prepare updates and
+protect their user data in time for the publication.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="mitigation-and-fixes">Mitigation and Fixes<a href="https://docs.scs.community/blog/openstack_privescal_ec2_creds_from_appcreds_cve_2026_33551#mitigation-and-fixes" class="hash-link" aria-label="Direct link to Mitigation and Fixes" title="Direct link to Mitigation and Fixes" translate="no">​</a></h2>
+<p>The temporary fix for this issue would be to disable the creation of EC2
+credentials which however would prevent to enable new S3 access.</p>
+<p>There are patches from the upstream OpenStack keystone developers available.
+They add a check in the EC2 credential creation path that requires the
+AppCred to be unrestricted and to have at least member access to the project.</p>
+<p>The SCS ecosystem software providers provide fixed keystone images and
+installation instructions here as soon as the updated images are available:</p>
+<ul>
+<li class=""><a href="https://osism.tech/docs/appendix/security/ossa-2026-005" target="_blank" rel="noopener noreferrer" class="">OSISM</a></li>
+<li class=""><a href="https://yaook.cloud/security-advisories-cve-2026-33551" target="_blank" rel="noopener noreferrer" class="">yaook</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="thanks">Thanks<a href="https://docs.scs.community/blog/openstack_privescal_ec2_creds_from_appcreds_cve_2026_33551#thanks" class="hash-link" aria-label="Direct link to Thanks" title="Direct link to Thanks" translate="no">​</a></h2>
+<p>The author would like to thank Maxence Bornecque, Grzegorz Grasza,
+Douglas Mendizabal, Artem Goncharov, and Jeremy Stanley for reporting,
+fixing and coordinating this issue.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sovereign-cloud-stack-security-contact">Sovereign Cloud Stack Security Contact<a href="https://docs.scs.community/blog/openstack_privescal_ec2_creds_from_appcreds_cve_2026_33551#sovereign-cloud-stack-security-contact" class="hash-link" aria-label="Direct link to Sovereign Cloud Stack Security Contact" title="Direct link to Sovereign Cloud Stack Security Contact" translate="no">​</a></h2>
+<p>SCS security contact is <a href="mailto:security@scs.community" target="_blank" rel="noopener noreferrer" class="">security@scs.community</a>, as published on
+<a href="https://sovereigncloudstack.org/.well-known/security.txt" target="_blank" rel="noopener noreferrer" class="">https://sovereigncloudstack.org/.well-known/security.txt</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="version-history">Version history<a href="https://docs.scs.community/blog/openstack_privescal_ec2_creds_from_appcreds_cve_2026_33551#version-history" class="hash-link" aria-label="Direct link to Version history" title="Direct link to Version history" translate="no">​</a></h2>
+<ul>
+<li class="">Typo fixes and yaook link, v1.0, 2026-04-09, 10:30 CEST</li>
+<li class="">Initial draft, v0,9, 2026-04-08, 13:45 CEST</li>
+</ul>]]></content>
+        <author>
+            <name>Kurt Garloff</name>
+            <uri>https://github.com/garloff</uri>
+        </author>
+        <category label="security" term="security"/>
+        <category label="openstack" term="openstack"/>
+        <category label="cve" term="cve"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CVE-2026-24708 OpenStack Missing image format validation on resize]]></title>
+        <id>https://docs.scs.community/blog/openstack_image_resize_missing_validation_cve_2026_24708</id>
+        <link href="https://docs.scs.community/blog/openstack_image_resize_missing_validation_cve_2026_24708"/>
+        <updated>2026-02-17T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The vulnerability]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-vulnerability">The vulnerability<a href="https://docs.scs.community/blog/openstack_image_resize_missing_validation_cve_2026_24708#the-vulnerability" class="hash-link" aria-label="Direct link to The vulnerability" title="Direct link to The vulnerability" translate="no">​</a></h2>
+<p>OpenStack supports a variety of image formats to ease migration from other
+virtualization platforms. The qemu-img tools are used to deal with these
+images. Unfortunately, OpenStack developers had to learn that qemu-img is
+not as robust as expected when dealing with untrusted images. This has lead to
+<a href="https://sovereigncloudstack.org/community_blog/sovereign-cloud-stack-security-advisory-vmdk-image-processing-cve-2022-47951/" target="_blank" rel="noopener noreferrer" class="">CVE-2022-47951</a>
+and
+<a href="https://sovereigncloudstack.org/community_blog/scs-security-advisory-on-arbitrary-file-access-through-qcow2-external-data-file-cve-2024-32498/" target="_blank" rel="noopener noreferrer" class="">CVE-2024-32498</a>
+and
+<a href="https://sovereigncloudstack.org/community_blog/scs-security-advisory-on-incomplete-qcow2-and-vmdk-image-handling-protections-cve-2024-40767/" target="_blank" rel="noopener noreferrer" class="">CVE-2024-40767</a>
+.</p>
+<p>Analyzing all potentially vulnerable code paths, at least one had been overlooked
+by developers before: When resizing VMs in Nova to a flavor with a new root
+disk/ephemeral disk size, and Nova's flat image backend is in use, <code>qemu-img</code> is called
+on the backing image file without an explicit format specifier, opening up the
+possibility to overwrite files on the host system by writing a malicious QCOW header
+to a root or ephemeral disk.</p>
+<p>This vulnerability has been assigned <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-24708" target="_blank" rel="noopener noreferrer" class="">CVE-2026-24708</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="impact-on-the-scs-software-ecosystem">Impact on the SCS software ecosystem<a href="https://docs.scs.community/blog/openstack_image_resize_missing_validation_cve_2026_24708#impact-on-the-scs-software-ecosystem" class="hash-link" aria-label="Direct link to Impact on the SCS software ecosystem" title="Direct link to Impact on the SCS software ecosystem" translate="no">​</a></h2>
+<p>By default, Nova uses cow images, i.e. <code>use_cow_images</code> in <code>nova.conf</code> defaults
+to <code>True</code>.</p>
+<p>This value is not changed in either <a href="https://osism.tech/" target="_blank" rel="noopener noreferrer" class="">OSISM</a> nor
+<a href="https://alasca.cloud/en/projects/yaook/" target="_blank" rel="noopener noreferrer" class="">yaook</a>, so neither of these implementations
+is affected by the vulnerability. Operators need to have made a deliberate effort
+to override this setting.</p>
+<p><em>If this setting is set to <code>False</code>, authenticated users may write malicious QCOW2
+or VMDK headers to the disk and then use the VM resize to overwrite files on the host
+with zeros, causing failure of the compute host.</em></p>
+<p>The overwriting of arbitrary files with zeroes has been reproduced using QCOW
+headers; it may be possible to do more controlled damage (e.g. writing non-zeros)
+using more exotic features in e.g. the VMDK headers and this way cause more than
+a Denial-of-Service but gain privileges or exfiltrate data.</p>
+<p>Operators that are using <code>use_cow_images=False</code> in their nova config are
+advised to apply the fixes urgently or change this setting temporarily.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="embargo">Embargo<a href="https://docs.scs.community/blog/openstack_image_resize_missing_validation_cve_2026_24708#embargo" class="hash-link" aria-label="Direct link to Embargo" title="Direct link to Embargo" translate="no">​</a></h2>
+<p>The issue has been reported to the OpenStack Vulnerability Management Team in
+private. The reporters and upstream developers have worked together to address
+the issue with fixes and an embargo date
+has been set to Tuesday, 2026-02-17, 15:00 UTC (16:00 CET). At this point in
+time, the patches get merged and the OpenStack Security Advisory
+<a href="https://security.openstack.org/ossa/OSSA-2026-002.html" target="_blank" rel="noopener noreferrer" class="">OSSA-2026-002</a> is
+published. The issue is tracked in OpenStack issue
+<a href="https://bugs.launchpad.net/nova/+bug/2137507" target="_blank" rel="noopener noreferrer" class="">#2137507</a>, which should become
+publically accessible after the lift of the embargo and the publication
+of this advisory.</p>
+<p>Under the used responsible disclosure approach, the information was shared with
+a select group of trustable users of OpenStack, so they can prepare updates and
+protect their user data in time for the publication.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="mitigation-and-fixes">Mitigation and Fixes<a href="https://docs.scs.community/blog/openstack_image_resize_missing_validation_cve_2026_24708#mitigation-and-fixes" class="hash-link" aria-label="Direct link to Mitigation and Fixes" title="Direct link to Mitigation and Fixes" translate="no">​</a></h2>
+<p>The temporary fix for this issue is to avoid <code>use_cow_images=false</code> in
+<code>/etc/nova.conf</code>. This will stop this issue from being triggered.
+Alternatively, full glance format-inspector protection should help against
+this.</p>
+<p>There are patches from the upstream OpenStack developers available. They work
+by passing <code>-f raw</code> to <code>qemu-img</code> when a resize happens with raw images and
+<code>-f qcow2</code> for QCOW2 images. Other images are disallowed for resizing.</p>
+<p>The SCS ecosystem software providers will provide fixed nova-compute images and
+installation instructions here as soon as the updated images are available:</p>
+<ul>
+<li class=""><a href="https://yaook.cloud/security-advisories-cve-2026-24708" target="_blank" rel="noopener noreferrer" class="">yaook</a></li>
+<li class=""><a href="https://osism.tech/docs/appendix/security/ossa-2026-002" target="_blank" rel="noopener noreferrer" class="">OSISM</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="thanks">Thanks<a href="https://docs.scs.community/blog/openstack_image_resize_missing_validation_cve_2026_24708#thanks" class="hash-link" aria-label="Direct link to Thanks" title="Direct link to Thanks" translate="no">​</a></h2>
+<p>The author would like to thank Dan Smith, Jay Faulkner, Sylvain Bauza,
+Melanie Witt, and Jeremy Stanley for reporting, reproducing, fixing
+and coordinating this issue.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="version-history">Version history<a href="https://docs.scs.community/blog/openstack_image_resize_missing_validation_cve_2026_24708#version-history" class="hash-link" aria-label="Direct link to Version history" title="Direct link to Version history" translate="no">​</a></h2>
+<ul>
+<li class="">Mention glance format-inspector protection, v1.0, 2026-02-17, 15:30 CET.</li>
+<li class="">Typos fixed, v0.6, 2026-02-16, 15:45 CET.</li>
+<li class="">Initial Draft, v0.5, 2026-02-16, 15:00 CET.</li>
+</ul>]]></content>
+        <author>
+            <name>Kurt Garloff</name>
+            <uri>https://github.com/garloff</uri>
+        </author>
+        <category label="security" term="security"/>
+        <category label="openstack" term="openstack"/>
+        <category label="cve" term="cve"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CVE-2026-22797 OpenStack privilege escalation with oauth2 tokens]]></title>
+        <id>https://docs.scs.community/blog/openstack_oauth2_privescalation_cve_2026_22797</id>
+        <link href="https://docs.scs.community/blog/openstack_oauth2_privescalation_cve_2026_22797"/>
+        <updated>2026-01-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Prefix]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="prefix">Prefix<a href="https://docs.scs.community/blog/openstack_oauth2_privescalation_cve_2026_22797#prefix" class="hash-link" aria-label="Direct link to Prefix" title="Direct link to Prefix" translate="no">​</a></h2>
+<p>This advisory was drafted a few days ago, before the issue was public.
+As the issue turned out to only affect very specific configurations (which are
+not used in any standard SCS setting), we did not publish it with the urgency
+that we normally apply to protect our partners in time for a vulnerability becoming
+public.</p>
+<p>Instead, we have taken the time to sort out the publication place in the the new Docs
+blog space, as described by the previous blog post.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-vulnerability">The vulnerability<a href="https://docs.scs.community/blog/openstack_oauth2_privescalation_cve_2026_22797#the-vulnerability" class="hash-link" aria-label="Direct link to The vulnerability" title="Direct link to The vulnerability" translate="no">​</a></h2>
+<p>Keystone is the central Identity and Access Management component in OpenStack.
+Whenever you talk to an OpenStack service, you authenticate to keystone via
+one of the supported methods. In return, keystone will issue a token that
+entitles you to have certain privileges when talking to the individual services.</p>
+<p>One of the supported ways to authenticate is to use oauth2 tokens.
+When keystonemiddleware investigates these
+tokens it adds headers that indicate privileges associated with the account.</p>
+<p>Unfortunately, keystonemiddleware does not clear headers when receiving
+oauth2 tokens, so an authenticated user can send oauth2 tokens with
+headers that actually indicate admin privileges and can trick services
+into assuming elevated privileges.
+The issue was introduced with keystonemiddleware 10.5.0 when support for
+<code>external_oauth2_tokens</code> was added.</p>
+<p>The vulnerability has been assigned <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-22797" target="_blank" rel="noopener noreferrer" class="">CVE-2026-22797</a>.</p>
+<p>The issue was reported by Grzegorz Grasza of RedHat.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="impact-on-openstack-deployments">Impact on OpenStack deployments<a href="https://docs.scs.community/blog/openstack_oauth2_privescalation_cve_2026_22797#impact-on-openstack-deployments" class="hash-link" aria-label="Direct link to Impact on OpenStack deployments" title="Direct link to Impact on OpenStack deployments" translate="no">​</a></h2>
+<p>When keystone is configured to accept oauth2 tokens for authentication, anyone
+able to produce and send any valid tokens may inject headers to impersonate other
+users or assume additional roles up to and including admin privileges. Admin
+privileges allow unrestricted access via the API and are only meant to be used
+by the cloud operators.</p>
+<p><em>To abuse this vulnerability, the attacker must be an authenticated
+user of the platform. In addition, the platform must be configured to
+accept oauth2 tokens, which is not a supported configuration in yaook
+nor a simple change versus the default configuration is OSISM.</em></p>
+<p>To make services accept oauth2 tokens, their config would need
+to be changed via <code>paste.ini</code></p>
+<div class="language-ini codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-ini codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">[pipeline:main]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">pipeline = ext_oauth2_token</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">[filter:ext_oauth2_token]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">paste.filter_factory = keystonemiddleware.external_oauth2_token:filter_factory</span><br></span></code></pre></div></div>
+<p>in order to be affected. This is not the case in any default configurations and
+also not when using the OIDC federation with keycloak that is documented for SCS.</p>
+<p>Providers are advised to investigate whether they have done changes to enable oauth2
+tokens via keystonemiddleware as depicted above and assume that they are affected
+in that case.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="embargo">Embargo<a href="https://docs.scs.community/blog/openstack_oauth2_privescalation_cve_2026_22797#embargo" class="hash-link" aria-label="Direct link to Embargo" title="Direct link to Embargo" translate="no">​</a></h2>
+<p>The issue has been reported to the OpenStack Vulnerability Management Team in
+private. The reporters and upstream developers have worked together to address
+the issue with fixes and an embargo date has been set to Thursday, 2026-01-15,
+15:00 UTC (16:00 CET). At this point in
+time, the patches get merged and the OpenStack Security Advisory
+(<a href="https://security.openstack.org/ossa/OSSA-2026-001.html" target="_blank" rel="noopener noreferrer" class="">OSSA-2026-001</a>)
+is published. The issue is tracked in OpenStack issue
+<a href="https://bugs.launchpad.net/keystonemiddleware/+bug/2129018" target="_blank" rel="noopener noreferrer" class="">#2219018</a>, which should become
+publically accessible after the lift of the embargo and the publication
+of this advisory.</p>
+<p>Under the used responsible disclosure approach, the information was shared with
+a select group of trustable users of OpenStack, so they can prepare updates and
+protect their infrastructure at the time this issue becomes public.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="mitigation-and-fixes">Mitigation and Fixes<a href="https://docs.scs.community/blog/openstack_oauth2_privescalation_cve_2026_22797#mitigation-and-fixes" class="hash-link" aria-label="Direct link to Mitigation and Fixes" title="Direct link to Mitigation and Fixes" translate="no">​</a></h2>
+<p>The fix is straightforward and consists of clearing headers and explicitly
+unsetting the critical headers. For affected setups, it is recommended to update
+the keystone services immediately.</p>
+<p>For clouds that can not update keystone directly, the dangerous headers could
+be filtered out by a reverse proxy or similar network infrastructure in front
+of the openstack API services or the oauth2 tokens could be temporarily disabled
+by reverting back to the standard</p>
+<div class="language-ini codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-ini codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">[filter:authtoken]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">paste.filter_factory = keystonemiddleware.auth_token:filter_factory</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="links-to-specific-information-from-related-openstack-distributions">Links to specific information from related OpenStack distributions<a href="https://docs.scs.community/blog/openstack_oauth2_privescalation_cve_2026_22797#links-to-specific-information-from-related-openstack-distributions" class="hash-link" aria-label="Direct link to Links to specific information from related OpenStack distributions" title="Direct link to Links to specific information from related OpenStack distributions" translate="no">​</a></h3>
+<ul>
+<li class=""><a href="https://alasca.cloud/" target="_blank" rel="noopener noreferrer" class="">ALASCA</a> has issued an
+<a href="https://lists.alasca.cloud/hyperkitty/list/yaook@lists.alasca.cloud/thread/Q2GZ7PNXHJ7YHRDALKXTHZMTHS7PM5NE/" target="_blank" rel="noopener noreferrer" class="">advisory for yaook</a>
+basically stating that it's not really possible to use yaook in a way that it would be affected.</li>
+<li class=""><a href="https://osism.cloud/" target="_blank" rel="noopener noreferrer" class="">OSISM</a> has published an
+<a href="https://osism.tech/docs/appendix/security/ossa-2026-001/" target="_blank" rel="noopener noreferrer" class="">advisary for OSISM</a>
+with more details how to get a fixed keystone container deployed in case you
+have manually enabled such oauth2 tokens.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="thanks">Thanks<a href="https://docs.scs.community/blog/openstack_oauth2_privescalation_cve_2026_22797#thanks" class="hash-link" aria-label="Direct link to Thanks" title="Direct link to Thanks" translate="no">​</a></h2>
+<p>The authors would like to thank Grzegorz Grasza, Thomas Goirand (zigo),
+Jay Faulkner, David Wilde, Artem Goncharov and Jeremy Stanley for their
+work on this issue.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sovereign-cloud-stack-security-contact">Sovereign Cloud Stack Security Contact<a href="https://docs.scs.community/blog/openstack_oauth2_privescalation_cve_2026_22797#sovereign-cloud-stack-security-contact" class="hash-link" aria-label="Direct link to Sovereign Cloud Stack Security Contact" title="Direct link to Sovereign Cloud Stack Security Contact" translate="no">​</a></h2>
+<p>SCS security contact is <a href="mailto:security@scs.community" target="_blank" rel="noopener noreferrer" class="">security@scs.community</a>, as published on
+<a href="https://scs.community/.well-known/security.txt" target="_blank" rel="noopener noreferrer" class="">https://scs.community/.well-known/security.txt</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="version-history">Version history<a href="https://docs.scs.community/blog/openstack_oauth2_privescalation_cve_2026_22797#version-history" class="hash-link" aria-label="Direct link to Version history" title="Direct link to Version history" translate="no">​</a></h2>
+<ul>
+<li class="">Initial Draft, v0.1, 2026-01-13, 22:30 CET.</li>
+<li class="">Release, v1.0, 2026-01-20, 08:30 CET.</li>
+<li class="">Release to SCS docs blog, v1.1, 2026-01-23, 10:30 CET.</li>
+</ul>]]></content>
+        <author>
+            <name>Kurt Garloff</name>
+            <uri>https://github.com/garloff</uri>
+        </author>
+        <category label="security" term="security"/>
+        <category label="openstack" term="openstack"/>
+        <category label="cve" term="cve"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Introducing A New Blog Site On Our Docs Page]]></title>
+        <id>https://docs.scs.community/blog/introducing_new_blog</id>
+        <link href="https://docs.scs.community/blog/introducing_new_blog"/>
+        <updated>2026-01-22T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Evolution of SCS activities]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="evolution-of-scs-activities">Evolution of SCS activities<a href="https://docs.scs.community/blog/introducing_new_blog#evolution-of-scs-activities" class="hash-link" aria-label="Direct link to Evolution of SCS activities" title="Direct link to Evolution of SCS activities" translate="no">​</a></h2>
+<p>Previously, we had a project web site that covered many
+areas of work that was done in the SCS project until it was successfully completed
+at the end of 2024. It covered the standardization work as well as the development
+of the reference implementation and also had a vast collection of links and technical
+content, a lot of which was related to the reference implementation. For newcomers,
+it was somewhat hard to distill the various aspects and goals of SCS though.</p>
+<p>With the end of the funded project, we split the activities into different organizations
+with distinct goals:</p>
+<ol>
+<li class="">The <a href="https://sovereigncloudstack.org/en/about-scs/network/" target="_blank" rel="noopener noreferrer" class="">Forum SCS Standards</a> is
+responsible for governing the standardization process. While it pulls significant input
+from the various software projects that belong to the SCS ecosystem, it is neutral towards
+them beyond the preference for standards compliance. This reflects that there can and
+ideally should be several implementations for a standard.
+The <a href="https://sovereigncloudstack.org/" target="_blank" rel="noopener noreferrer" class="">new website</a> serves as an overall entrance point to
+Sovereign Cloud Stack with a focus on the standardization and certification.</li>
+<li class="">The SCS community consists of individuals and organizations that develop, support,
+test, use, or otherwise contribute to the software and standards that implement and
+codify SCS. The community elects a <a href="https://docs.scs.community/standards/scs-0005-v2-project-governance" target="_blank" rel="noopener noreferrer" class="">project board</a>
+that organizes and motivates contributions. The work of the community is mainly visible
+on the <a href="https://docs.scs.community/" target="_blank" rel="noopener noreferrer" class="">Documentation web site</a> and the
+<a href="https://github.com/SovereignCloudStack/" target="_blank" rel="noopener noreferrer" class="">github site</a>.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="blog-articles">Blog articles<a href="https://docs.scs.community/blog/introducing_new_blog#blog-articles" class="hash-link" aria-label="Direct link to Blog articles" title="Direct link to Blog articles" translate="no">​</a></h2>
+<p>Blog articles with technical content relating to a specific implementation (or a set
+of implementations) are not a great fit for the general web site.
+The good news is that the SCS project's rich
+<a href="https://docs.scs.community/" target="_blank" rel="noopener noreferrer" class="">Documentation site</a> is architected in a way that
+it assembles documentation from various places. Unlike the Forum, it does not need
+to prioritize neutrality as top priority, but benefits and prefers those projects
+that contribute useful content to it.</p>
+<p>We have decided to use docusaurus' blog feature to publish blog articles
+<a href="https://docs.scs.community/blog/" target="_blank" rel="noopener noreferrer" class="">here</a>. We appreciate contributions.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="old-blog-content">Old blog content<a href="https://docs.scs.community/blog/introducing_new_blog#old-blog-content" class="hash-link" aria-label="Direct link to Old blog content" title="Direct link to Old blog content" translate="no">​</a></h2>
+<p>The blog content from the old web site has been migrated over into the
+<a href="https://sovereigncloudstack.org/en/community_blog/" target="_blank" rel="noopener noreferrer" class="">archive on the new site</a>. You
+can also find the other types of community news <a href="https://sovereigncloudstack.org/en/community-news/" target="_blank" rel="noopener noreferrer" class="">there</a>.</p>
+<p>Some news that might fit the Blog category have also been published in the
+<a href="https://sovereigncloudstack.org/en/insights/news/" target="_blank" rel="noopener noreferrer" class="">main news section</a> on the new web site.</p>]]></content>
+        <author>
+            <name>Kurt Garloff</name>
+            <uri>https://github.com/garloff</uri>
+        </author>
+        <category label="docusaurus" term="docusaurus"/>
+        <category label="scs" term="scs"/>
+        <category label="community" term="community"/>
+        <category label="blog" term="blog"/>
+    </entry>
+</feed>
