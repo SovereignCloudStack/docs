@@ -10,7 +10,7 @@ Determine the type of your documentation and click to continue.
 2. [Operational documentation](#2-operational-documentation)
 3. [Community documentation](#3-community-documentation)
 
-If unsure don't hestitate to ask us at [Matrix](https://github.com/SovereignCloudStack/docs/blob/main/community/communication/matrix.md)
+If unsure don't hestitate to ask us at [Matrix](https://docs.scs.community/community/tools/matrix)
 
 ## 1. Technical Documentation
 

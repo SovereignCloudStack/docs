@@ -17,7 +17,7 @@ it was somewhat hard to distill the various aspects and goals of SCS though.
 With the end of the funded project, we split the activities into different organizations
 with distinct goals:
 
-1. The [Forum SCS Standards](https://sovereigncloudstack.org/en/about-scs/network/) is
+1. The [Forum SCS Standards](https://sovereigncloudstack.org/en/about-scs/) is
    responsible for governing the standardization process. While it pulls significant input
    from the various software projects that belong to the SCS ecosystem, it is neutral towards
    them beyond the preference for standards compliance. This reflects that there can and
