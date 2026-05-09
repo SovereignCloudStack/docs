@@ -34,7 +34,7 @@ with distinct goals:
 ## Blog articles
 
 Blog articles with technical content relating to a specific implementation (or a set
-of implementations) are not a great fit for Forum's web site.
+of implementations) are not a great fit for the general web site.
 The good news is that the SCS project's rich
 [Documentation site](https://docs.scs.community/) is architected in a way that
 it assembles documentation from various places. Unlike the Forum, it does not need

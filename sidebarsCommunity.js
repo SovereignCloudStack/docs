@@ -62,6 +62,7 @@ const sidebars = {
           items: [
             'cloud-resources/cloud-resources',
             'cloud-resources/getting-started-openstack',
+            'cloud-resources/hardware-landscape',
             'cloud-resources/plusserver-gx-scs',
             'cloud-resources/wavestack'
           ]
