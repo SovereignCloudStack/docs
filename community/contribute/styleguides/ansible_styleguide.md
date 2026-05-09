@@ -15,7 +15,7 @@ disable the package_latest rule.
 
 ## Key Order
 
-To check the key order we use our own rule. This can be found [here](https://github.com/osism/zuul-jobs/tree/main/roles/ansible-lint/files).
+To check the key order we use our [own rule](https://github.com/osism/zuul-jobs/tree/main/roles/ansible-lint/).
 
 ### Positioning and use of the become directive
 

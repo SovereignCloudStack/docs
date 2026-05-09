@@ -10,7 +10,7 @@ Determine the type of your documentation and click to continue.
 2. [Operational documentation](#2-operational-documentation)
 3. [Community documentation](#3-community-documentation)
 
-If unsure don't hestitate to ask us at [Matrix](https://github.com/SovereignCloudStack/docs/blob/main/community/communication/matrix.md)
+If unsure don't hestitate to ask us at [Matrix](https://docs.scs.community/community/tools/matrix)
 
 ## 1. Technical Documentation
 
@@ -53,7 +53,7 @@ File a Pull Request within the [docs](https://github.com/SovereignCloudStack/doc
 
 Once it is approved and merged, a postinstall script will be triggered within the build process. This initiates downloading, copy and distilling which results in this static generated [documentation](https://docs.scs.community) page – now with your content.
 
-An explanation on how the sync & distill workflow and a guide on how to test it in a local development environment you will find [here](https://github.com/SovereignCloudStack/docs/blob/main/community/contribute/docs-workflow-explanation.md).
+Here is an explanation on how the [sync & distill workflow works and a guide on how to test it in a local development environment](https://github.com/SovereignCloudStack/docs/blob/main/community/contribute/docs-workflow-explanation.md).
 
 ## 2. Operational documentation
 
@@ -68,6 +68,6 @@ File a Pull Request within the [docs](https://github.com/SovereignCloudStack/doc
 
 ## 3. Community documentation
 
-Your doc files contain knowledge regarding our community? Choose the right directory. If unsure don't hestitate to ask us at [Matrix](https://github.com/SovereignCloudStack/docs/blob/main/community/communication/matrix.md).
+Your doc files contain knowledge regarding our community? Choose the right directory. If unsure don't hestitate to ask us at [Matrix](https://docs.scs.community/community/tools/matrix).
 
 File a Pull Request within the `docs` repository and add your markdown files to the fitting directory.
