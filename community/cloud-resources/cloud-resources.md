@@ -34,7 +34,7 @@ Once the PR has been accepted, [configure your VPN access by following the steps
 
 ### SCS Hardware Landscape Usage
 
-More information on how to use the Hardware Landscape can be found [here](hardware-landscape.md).
+Here is [more information on how to use the Hardware Landscape](hardware-landscape.md).
 
 ## SCS2 @ plusserver
 
@@ -44,7 +44,7 @@ To apply for a new project, please create a pull request against this document (
 
 ### SCS2 Usage
 
-A brief guide on how to use the resources provided by plusserver GmbH can be found [here](plusserver-gx-scs.md).
+Here is a [brief guide on how to use the resources provided by plusserver GmbH](plusserver-gx-scs.md).
 
 ### SCS2 Users
 
@@ -101,7 +101,7 @@ To apply for a new project, please create a pull request against this document (
 
 ### Wavestack Usage
 
-A brief guide on how to use the resources provided by Wavecon GmbH can be found [here](wavestack.md).
+Here is [a brief guide on how to use the resources provided by Wavecon GmbH](wavestack.md).
 
 ### Wavestack Service Users
 
