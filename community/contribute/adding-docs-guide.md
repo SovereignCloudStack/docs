@@ -68,6 +68,6 @@ File a Pull Request within the [docs](https://github.com/SovereignCloudStack/doc
 
 ## 3. Community documentation
 
-Your doc files contain knowledge regarding our community? Choose the right directory. If unsure don't hestitate to ask us at [Matrix](https://github.com/SovereignCloudStack/docs/blob/main/community/communication/matrix.md).
+Your doc files contain knowledge regarding our community? Choose the right directory. If unsure don't hestitate to ask us at [Matrix](https://docs.scs.community/community/tools/matrix).
 
 File a Pull Request within the `docs` repository and add your markdown files to the fitting directory.
