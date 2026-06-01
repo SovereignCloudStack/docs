@@ -2,7 +2,7 @@
 
 ## Zuul CI/CD pipelines and project gating
 
-Since we are expecting a lot of pipelines beeing created and used GitHub actions won't keep up
+Since we are expecting a lot of pipelines being created and used GitHub actions won't keep up
 well. We also expect cross-repository and even cross-project dependencies. Therefore we decided to
 use Zuul as our main pipeline solution.
 
@@ -21,7 +21,7 @@ Note: This needs to be updated!
     - these [pipelines](https://github.com/SovereignCloudStack/zuul-config/blob/main/zuul.d/) are triggered by events
     - here are [some default jobs](https://opendev.org/zuul/zuul-jobs/src/branch/master/playbooks)
 - If you have _self-defined_ jobs, you need to create a folder _.playbooks_
-  - this folder containers ansible playbooks which will be triggered
+  - this folder contains ansible playbooks which will be triggered
 
 ### General information about Zuul
 
