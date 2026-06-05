@@ -14,7 +14,7 @@ const sidebars = {
       },
       label: 'Governance',
       items: [
-        'governance/project-board'
+        'governance/project-board',
         'governance/project-board-2025'
       ]
     },
