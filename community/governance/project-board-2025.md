@@ -10,7 +10,7 @@ For the term 2025 the project board consisted of:
 Spokesperson: Felix Kronlage-Dammers, @fkr
 
 | Name, Firstname         | Github Handle                                  | E-Mail                                                        | Remark                         |
-| ----------------------- | ---------------------------------------------- | ------------------------------------------------------------- |---------------------------------
+| ----------------------- | ---------------------------------------------- | ------------------------------------------------------------- | ------------------------------ |
 | Berendt, Christian      | [@berendt](https://github.com/berendt)         | [berendt@osism.tech](mailto:berendt@osism.tech)               | Elected by Community           |
 | Feder, Matej            | [@matofeder](https://github.com/matofeder)     | [matej.feder@dnation.cloud](mailto:matej.feder@dnation.cloud) | Elected by Community           |
 | Garloff, Kurt           | [@garloff](https://github.com/garloff)         | [scs@garloff.de](mailto:scs@garloff.de)                       | Elected by Community           |
