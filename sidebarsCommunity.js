@@ -13,7 +13,7 @@ const sidebars = {
         id: 'governance/index'
       },
       label: 'Governance',
-      items: ['governance/project-board']
+      items: ['governance/project-board', 'governance/project-board-2025']
     },
     {
       type: 'category',
