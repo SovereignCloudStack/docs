@@ -19,6 +19,12 @@
   },
   {
     "repo": "osism/osism.github.io",
+    "source": "docs/concepts",
+    "target": "docs/02-iaas/",
+    "label": ""
+  },
+  {
+    "repo": "osism/osism.github.io",
     "source": "docs/guides",
     "target": "docs/02-iaas/",
     "label": ""
