@@ -24,8 +24,6 @@ const sidebars = {
           label: 'Compliance Check Pipeline',
           id: 'certification/pipeline'
         }
-        'certification/getting-scs-compatible-certified',
-        'certification/test-and-adapt-example',
         'certification/overview'
       ]
     },
