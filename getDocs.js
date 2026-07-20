@@ -10,12 +10,18 @@ const reposJson = fs
 const repos = JSON.parse(reposJson)
 const ghUrl = 'https://github.com/'
 
+// Resolve a repo entry to a clone URL.
+// A full URL (e.g. a GitHub or GitLab repo) is used as-is; a bare
+// "owner/name" is treated as a GitHub shorthand for backwards compatibility.
+const cloneUrl = (repo) =>
+  /^(https?:\/\/|git@)/.test(repo) ? repo : ghUrl + repo
+
 // Clone each repository, remove git folders and README files, and copy the docs to the target directory
 repos.forEach((repo) => {
   const repoDir = `repo_to_be_edited/${repo.label}`
 
   // Clone the repository
-  const cloneCommand = `git clone ${ghUrl + repo.repo} ${repoDir}`
+  const cloneCommand = `git clone ${cloneUrl(repo.repo)} ${repoDir}`
   execSync(cloneCommand)
 
   // Remove git folders
