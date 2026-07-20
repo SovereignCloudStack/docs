@@ -20,8 +20,8 @@ const cloneUrl = (repo) =>
 repos.forEach((repo) => {
   const repoDir = `repo_to_be_edited/${repo.label}`
 
-  // Clone the repository
-  const cloneCommand = `git clone ${cloneUrl(repo.repo)} ${repoDir}`
+  // Clone the repository (shallow, single branch — we only need a snapshot of the docs)
+  const cloneCommand = `git clone --depth 1 ${cloneUrl(repo.repo)} ${repoDir}`
   execSync(cloneCommand)
 
   // Remove git folders
