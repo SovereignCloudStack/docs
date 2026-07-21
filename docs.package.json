@@ -6,27 +6,9 @@
     "label": "06-releases"
   },
   {
-    "repo": "osism/osism.github.io",
-    "source": "docs/guides/operations-guide/openstack/tools/*",
-    "target": "docs/02-iaas/components",
-    "label": ""
-  },
-  {
     "repo": "SovereignCloudStack/standards",
     "source": ["Standards/*.md", "Tests/scs-*.yaml"],
     "target": "standards",
-    "label": ""
-  },
-  {
-    "repo": "osism/osism.github.io",
-    "source": "docs/guides",
-    "target": "docs/02-iaas/",
-    "label": ""
-  },
-  {
-    "repo": "osism/osism.github.io",
-    "source": "docs/testbed",
-    "target": "docs/02-iaas/deployment-examples",
     "label": ""
   },
   {

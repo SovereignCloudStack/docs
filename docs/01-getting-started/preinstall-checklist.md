@@ -126,7 +126,7 @@ For the download of installation data such as container images, operating system
 either access to publicly accessible networks must be provided or a caching proxy or a dedicated
 repository server must be provided directly from the network for "Node communication".
 
-The [Configuration Guide](https://docs.scs.community/docs/iaas/guides/configuration-guide/proxy) provides more detailed information on how this can be configured.
+The OSISM [Proxy Configuration Guide](https://osism.tech/docs/guides/configuration-guide/proxy/) provides more detailed information on how this can be configured.
 
 TBD:
 

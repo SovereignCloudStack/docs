@@ -10,11 +10,11 @@ administration of user identities to the organizational entities that the
 users are part of. Usually that's customer organizations but it could also
 be the operator itself. Federation protocols like OpenID Connect can be used
 to achieve that goal. To simplify connecting the different parts of SCS
-to customer owned IAM solutions, SCS deploys Keycloak as central Identity
-Provider (IdP) service.
+to customer owned IAM solutions, the SCS reference implementation uses
+Keycloak as central Identity Provider (IdP) service.
 
-Currently this is deployed automatically only in the [osism/testbed](https://docs.scs.community/docs/iaas/guides/deploy-guide/examples/testbed/),
-which provides [its own documentation for authentication with OIDC](https://docs.scs.community/docs/iaas/guides/deploy-guide/examples/testbed#authentication-with-oidc).
+Keycloak is available as a [component of OSISM](https://osism.tech/docs/concepts/components/keycloak/)
+that operators can enable and configure as the central IdP.
 
 The following sections describe how this is done.
 

@@ -71,18 +71,18 @@
     {
       "title": "IaaS Layer",
       "body": "SCS offers OpenStack infrastructure solutions based on KVM virtualization to deploy VM workloads and enabling the container layer optionally.",
-      "url": "/docs/category/iaas-layer",
+      "url": "/docs/iaas/",
       "buttonText": "Learn More",
       "components": [
         {
           "title": "Image Manager",
-          "url": "/docs/iaas/components/image-manager",
+          "url": "https://osism.tech/docs/guides/operations-guide/openstack/tools/image-manager",
           "mandatory": "true",
           "stable": "true"
         },
         {
           "title": "Flavor Manager",
-          "url": "/docs/iaas/components/flavor-manager",
+          "url": "https://osism.tech/docs/guides/operations-guide/openstack/tools/flavor-manager",
           "mandatory": "true",
           "stable": "true"
         }
