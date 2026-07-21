@@ -8,7 +8,7 @@ sidebar_position: 1
 The SCS reference implementation of the Infrastructure-as-a-Service (IaaS) layer
 was built with [**OSISM**](https://osism.tech/docs). It builds on
 [OpenStack](https://openstack.org/) for compute, network and identity services and
-[Ceph](https://ceph.io/) for storage. The OpenStack deployment is based on
+[Ceph](https://www.ceph.io/en/) for storage. The OpenStack deployment is based on
 [Kolla](https://opendev.org/openstack/kolla) (container images) and
 [kolla-ansible](https://opendev.org/openstack/kolla-ansible), which OSISM wraps with
 additional Ansible playbooks and tooling to deploy and operate the whole stack.
