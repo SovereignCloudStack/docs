@@ -4,6 +4,7 @@
 const sidebarsDocs = {
   docs: [
     'index',
+    'getting-started/preinstall-checklist',
     {
       type: 'category',
       label: 'IaaS Layer',
@@ -333,6 +334,7 @@ const sidebarsDocs = {
             'iam/SCS-example-setup-configuration-description'
           ]
         },
+        'iam/iaas-roles',
         'iam/intra-SCS-federation-setup-description-for-osism-doc-operations'
       ]
     },
