@@ -1,12 +1,11 @@
 <!-- markdownlint-disable -->
 # Certification
 
-SCS provides a certification framework with various scopes.
-See [Scopes and Versions](scopes-versions.md) for details.
+SCS provides a certification framework with various [scopes](https://docs.scs.community/standards/scopes/).
 
 ## Becoming certified
 
-In order to obtain a certification, all standards of the respective scope must be adhered to.
+In order to obtain a certification for a certain scope, the corresponding scope standard must be adhered to.
 This is tested at regular intervals, and the results of these tests will be made available publicly.
 There are various types of certifications, which are described below.
 

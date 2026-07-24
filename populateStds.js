@@ -12,6 +12,7 @@ const trackIntros = {
     'KaaS': 'Standards in this track are concerned with Kubernetes as a Service layer, outlining norms and best practices for deploying, managing, and operating Kubernetes clusters. These standards aim to ensure that the orchestration of containers is streamlined, secure, and compatible across various cloud environments and platforms.',
     'IAM': 'This track revolves around Identity and Access Management (IAM) standards, providing guidelines for ensuring secure and efficient user authentication, authorization, and administration. It addresses issues related to user identity, permissions, roles, and policies, aiming to safeguard and streamline access to cloud resources and services.',
     'Ops': 'Operational Tooling Standards cover the protocols and guidelines associated with tools and utilities used for monitoring, management, and maintenance of the cloud environment. This includes standards for status pages, alerts, logs, and other operational tools, aiming to optimize the reliability, performance, and security of cloud services and resources.',
+    'Scopes': 'This track contains certificate scopes. A certificate scope is a standard that has to be fulfilled in order for a certificate to be awarded. It usually refers to other standards in regards to actual subject matter — what properties the subject has to satisfy —, and it contains regulations regarding the testing regime.'
 }
 const legend =`   
 <p>*Legend to the column headings and entries:</p>\n
