@@ -47,48 +47,6 @@ const sidebarsDocs = {
       items: [
         {
           type: 'category',
-          label: 'Overview',
-          link: {
-            type: 'generated-index'
-          },
-          items: [
-            // 'container/overview/architecture',
-            // 'container/overview/knowledge'
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Deployment Examples',
-          link: {
-            type: 'generated-index'
-          },
-          items: [
-            {
-              type: 'category',
-              label: 'Deployment A',
-              link: {
-                type: 'generated-index'
-              },
-              items: [
-                // 'container/deployment-examples/a/index',
-                // 'container/deployment-examples/a/hardware',
-                // 'container/deployment-examples/a/software'
-              ]
-            }
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Guides',
-          link: {
-            type: 'generated-index'
-          },
-          items: [
-            // 'container/guides/guide1'
-          ]
-        },
-        {
-          type: 'category',
           label: 'Components',
           link: {
             type: 'generated-index'
@@ -166,7 +124,6 @@ const sidebarsDocs = {
         type: 'generated-index'
       },
       items: [
-        // 'operating-scs/overview',
         {
           type: 'category',
           label: 'Components',
