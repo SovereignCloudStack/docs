@@ -10,10 +10,12 @@ const config = {
   url: 'https://docs.scs.community',
   baseUrl: '/',
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
   markdown: {
-    mermaid: true
+    mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: 'warn'
+    }
   },
   organizationName: 'SovereignCloudStack', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
@@ -120,7 +122,18 @@ const config = {
         id: 'standards',
         path: 'standards',
         routeBasePath: 'standards',
-        sidebarPath: require.resolve('./sidebarsStandards.js')
+        sidebarPath: require.resolve('./sidebarsStandards.js'),
+        // The vendored standards content (see getDocs.js) ships a README.md
+        // that Docusaurus would render at `/standards/` — the same route as our
+        // own standards/index.md. Skip it; index.md is the page we want there.
+        // Repeats Docusaurus' default excludes, which this option replaces.
+        exclude: [
+          'README.md',
+          '**/_*.{js,jsx,ts,tsx,md,mdx}',
+          '**/_*/**',
+          '**/*.test.{js,jsx,ts,tsx}',
+          '**/__tests__/**'
+        ]
       }
     ],
     './src/plugins/docusaurus-plugin-matomo-analytics/index.js',

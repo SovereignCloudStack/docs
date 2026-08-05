@@ -14,6 +14,8 @@ of the reference implementation and also had a vast collection of links and tech
 content, a lot of which was related to the reference implementation. For newcomers,
 it was somewhat hard to distill the various aspects and goals of SCS though.
 
+<!-- truncate -->
+
 With the end of the funded project, we split the activities into different organizations
 with distinct goals:
 
