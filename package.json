@@ -37,10 +37,10 @@
     "format": "prettier --log-level warn --write \"./**/*.{jsx,js}\""
   },
   "dependencies": {
-    "@docusaurus/core": "^3.9.2",
-    "@docusaurus/plugin-client-redirects": "^3.9.2",
-    "@docusaurus/preset-classic": "^3.9.2",
-    "@docusaurus/theme-mermaid": "^3.9.2",
+    "@docusaurus/core": "^3.10.2",
+    "@docusaurus/plugin-client-redirects": "^3.10.2",
+    "@docusaurus/preset-classic": "^3.10.2",
+    "@docusaurus/theme-mermaid": "^3.10.2",
     "@easyops-cn/docusaurus-search-local": "^0.45.0",
     "@fullcalendar/core": "^6.0.1",
     "@fullcalendar/daygrid": "^6.0.1",
@@ -61,10 +61,10 @@
     "yaml": "^2.9.0"
   },
   "devDependencies": {
-    "@docusaurus/eslint-plugin": "^3.6.3",
-    "@docusaurus/module-type-aliases": "^3.6.3",
-    "@docusaurus/tsconfig": "^3.6.3",
-    "@docusaurus/types": "^3.6.3",
+    "@docusaurus/eslint-plugin": "^3.10.2",
+    "@docusaurus/module-type-aliases": "^3.10.2",
+    "@docusaurus/tsconfig": "^3.10.2",
+    "@docusaurus/types": "^3.10.2",
     "@types/react": "^18.3.12",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "eslint": "^8.28.0",
