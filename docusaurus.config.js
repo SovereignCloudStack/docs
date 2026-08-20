@@ -71,10 +71,14 @@ const config = {
       '@docusaurus/plugin-client-redirects',
       {
         redirects: [
-          // {
-          //   to: '/community/collaboration',
-          //   from: '/community/calendar'
-          // }
+          {
+            to: '/standards/scopes/scs-0501',
+            from: '/standards/scs-compatible-iaas'
+          },
+          {
+            to: '/standards/scopes/scs-0502',
+            from: '/standards/scs-compatible-kaas'
+          }
         ],
         createRedirects(existingPath) {
           if (existingPath.includes('/community')) {
