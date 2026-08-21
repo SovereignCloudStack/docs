@@ -26,6 +26,16 @@ const sidebars = {
             'application-examples/opendesk-on-scs/user-import',
             'application-examples/opendesk-on-scs/contribute'
           ]
+        },
+        {
+          type: 'link',
+          label: 'Auto-scaling GitLab Runner',
+          href: 'https://gitlab.com/alasca.cloud/infra/configuration/-/blob/develop/gitlab-runner-managers/README.md'
+        },
+        {
+          type: 'link',
+          label: 'Auto-scaling Woodpecker CI Runner',
+          href: 'https://gitlab.com/alasca.cloud/infra/configuration/-/blob/develop/woodpecker-ci.alasca.cloud/Readme.md'
         }
       ]
     },

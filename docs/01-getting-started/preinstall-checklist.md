@@ -27,7 +27,7 @@ of questions or a task list that should be discussed, clarified and processed in
 _Opensource benefits from the collaboration of its users and its developers._
 
 For this reason, we are collecting questions, important topics to be clarified and hints to make it easier for users of the Sovereign Cloud Stack to increase the success with it.
-Therefore we would be very pleased if specific experiences from users, implementers and operators [are contributing](https://github.com/SovereignCloudStack/docs/docs/01-getting-started/preinstall-checklist.md) to this list.
+Therefore we would be very pleased if specific experiences from users, implementers and operators [are contributing](https://github.com/SovereignCloudStack/docs/blob/main/docs/01-getting-started/preinstall-checklist.md) to this list.
 
 ## General
 
@@ -126,7 +126,7 @@ For the download of installation data such as container images, operating system
 either access to publicly accessible networks must be provided or a caching proxy or a dedicated
 repository server must be provided directly from the network for "Node communication".
 
-The [Configuration Guide](https://docs.scs.community/docs/iaas/guides/configuration-guide/proxy) provides more detailed information on how this can be configured.
+The OSISM [Proxy Configuration Guide](https://osism.tech/docs/guides/configuration-guide/proxy/) provides more detailed information on how this can be configured.
 
 TBD:
 
