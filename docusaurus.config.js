@@ -72,12 +72,12 @@ const config = {
       {
         redirects: [
           {
-            to: '/standards/scopes/scs-0501',
-            from: '/standards/scs-compatible-iaas'
+            from: '/standards/scs-compatible-iaas',
+            to: '/standards/scopes/scs-0501'
           },
           {
-            to: '/standards/scopes/scs-0502',
-            from: '/standards/scs-compatible-kaas'
+            from: '/standards/scs-compatible-kaas',
+            to: '/standards/scopes/scs-0502'
           }
         ],
         createRedirects(existingPath) {
