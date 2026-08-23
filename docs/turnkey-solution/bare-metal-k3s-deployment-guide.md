@@ -6,6 +6,14 @@ title: Bare-Metal K3s Deployment Guide
 
 # Bare-Metal K3s Deployment Guide
 
+> **Note:** **[graphwiz.AI generated content]**
+>
+> This document was generated with AI assistance. It is
+> currently in **draft** status: while it reflects a verified reference
+> deployment, it has not yet been fully tested/reviewed by the SCS
+> project. Please validate all commands against your own environment
+> before using them in production.
+
 This guide describes how to deploy an SCS-compliant Kubernetes cluster using **K3s on bare-metal infrastructure**. It covers the complete deployment from bare-metal setup to SCS compliance verification.
 
 **Target Audience:** Operators deploying SCS-compliant KaaS on bare-metal hardware without cloud provider dependencies.
@@ -70,8 +78,8 @@ This guide describes how to deploy an SCS-compliant Kubernetes cluster using **K
 
 ### Software Requirements
 
-- Ubuntu 22.04 LTS or Debian 12 on all nodes
-- Ansible 2.14+ for automation
+- Ubuntu 24.04 LTS or Debian 13 on all nodes
+- Ansible core 2.19+ for automation
 - Ceph cluster (v17+ Quincy or v18+ Reef)
 - Git for version control
 - kubectl for cluster management
@@ -133,7 +141,7 @@ Install K3s on master node (k3s-master-01):
 
 ```bash
 # On master node
-curl -sfL https://get.k3s.io | sh -
+curl -sfL https://get.k3s.io | sudo sh -
 
 # Get token for worker nodes
 sudo cat /var/lib/rancher/k3s/server/node-token
@@ -185,13 +193,13 @@ kubectl patch storageclass local-path -p \
 Deploy HAProxy ingress controller:
 
 ```bash
-kubectl apply -f https://github.com/haproxytech/kubernetes-ingress/releases/download/v2.8.3/haproxy-ingress-kubernetes-ingress.yaml
+kubectl apply -f https://raw.githubusercontent.com/haproxytech/kubernetes-ingress/v3.2.13/deploy/haproxy-ingress.yaml
 ```
 
 Configure MetalLB for LoadBalancer services:
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.12/config/manifests/metallb-native.yaml
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.16.0/config/manifests/metallb-native.yaml
 
 # Create IPAddressPool
 cat <<EOF | kubectl apply -f -
