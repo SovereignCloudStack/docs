@@ -22,4 +22,4 @@ The standard [SCS-0007](https://docs.scs.community/standards/global/scs-0007) de
 
 ## Compliant cloud environments
 
-See [compliance monitor](https://docs.scs.community/standards/certification/monitor).
+See the [SCS Compliance Monitor](https://docs.scs.community/standards/certification/monitor) for a list of compliant cloud environments.
