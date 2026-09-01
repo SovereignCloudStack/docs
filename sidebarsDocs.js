@@ -346,7 +346,8 @@ const sidebarsDocs = {
       },
       items: [
         'turnkey-solution/overview',
-        'turnkey-solution/hardware-landscape'
+        'turnkey-solution/hardware-landscape',
+        'turnkey-solution/bare-metal-k3s-deployment-guide'
       ]
     },
     {
