@@ -11,8 +11,8 @@ async function insertCloudTable(pathIn, pathOut) {
 }
 
 insertCloudTable(
-  `standards/certification/overview.template.md`,
-  `standards/certification/overview.md`
+  `standards/certification/monitor.template.md`,
+  `standards/certification/monitor.md`
 ).catch((e) => {
   console.log(e)
 })
