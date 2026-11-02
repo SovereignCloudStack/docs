@@ -12,6 +12,11 @@ const sidebars = {
       items: [
         {
           type: 'doc',
+          label: 'Compliance Monitor',
+          id: 'certification/monitor'
+        },
+        {
+          type: 'doc',
           label: 'Compliance Check Pipeline',
           id: 'certification/pipeline'
         }

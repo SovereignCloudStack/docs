@@ -1,7 +1,7 @@
 # SCS Compliance Check Pipeline Manual
 
 The SCS compliance check suite runs automated tests, generates a signed report for the run, and feeds it to
-the compliance monitor. Roughly speaking, this process has to be performed daily, for instance, using a
+the [SCS Compliance Monitor](https://docs.scs.community/standards/certification/monitor). Roughly speaking, this process has to be performed daily, for instance, using a
 continuous-integration "pipeline".
 
 Providers of public clouds do not need to use their own pipelines; those clouds can be tested via the
@@ -35,7 +35,7 @@ to be used for purposes other than compliance testing (such as the
    Github first and then clone the fork.
 
 3. Add your subject to the results table. This is necessary so your subject shows up in the
-   [compliance monitor web-site](https://compliance.sovereignit.cloud/page/table). Add the following lines
+   compliance monitor. Add the following lines
    (substituting all-caps parts except `HM`) to
    [compliance-monitor/templates/overview.md.j2](https://github.com/SovereignCloudStack/standards/blob/main/compliance-monitor/templates/overview.md.j2):
 
