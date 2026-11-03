@@ -32,7 +32,7 @@ jobs:
           echo "DIFF_DOCUMENTS=${DIFF_DOCUMENTS}" >> $GITHUB_ENV
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
           node-version-file: ".nvmrc"
           cache: npm
