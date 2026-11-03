@@ -15,6 +15,7 @@ For the term 2027 the following people have been nominated / have nominated them
 
 | Name, Firstname | Github Handle                                  | E-Mail                                    |
 | --------------- | ---------------------------------------------- | ----------------------------------------- |
+| Schoone, Jan    | [@jschoone](https://github.com/jschoone)       | [jan.schoone@uhurutec.com](mailto:jan.schoone@uhurutec.com) |
 | Bayr, Michael   | [@michaelbayr](https://github.com/michaelbayr) | [mb@artcodix.com](mailto:mb@artcodix.com) |
 | Klare, Jan      | [@jklare](https://github.com/jklare)           | [klare@osism.de](mailto:klare@osism.de)   |
 | Garloff, Kurt   | [@garloff](https://github.com/garloff)         | [scs@garloff.de](mailto:scs@garloff.de)   |
