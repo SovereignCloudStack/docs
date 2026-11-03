@@ -1,4 +1,4 @@
-# The SCS Project Board
+# The SCS Project Board 2026
 
 The governance of the community is described in the procedural standard [SCS-0005](https://docs.scs.community/standards/global/scs-0005).
 The SCS Project Board can be reached via e-mail: [project-board@lists.scs.community](mailto:project-board@lists.scs.community).
