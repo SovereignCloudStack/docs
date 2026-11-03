@@ -13,10 +13,10 @@ Nominations are open until 2026-11-27, 11:00 CET.
 
 For the term 2027 the following people have been nominated / have nominated themselves:
 
-| Name, Firstname | Github Handle                                  | E-Mail                                    |
-| --------------- | ---------------------------------------------- | ----------------------------------------- |
+| Name, Firstname | Github Handle                                  | E-Mail                                                      |
+| --------------- | ---------------------------------------------- | ----------------------------------------------------------- |
 | Schoone, Jan    | [@jschoone](https://github.com/jschoone)       | [jan.schoone@uhurutec.com](mailto:jan.schoone@uhurutec.com) |
-| Bayr, Michael   | [@michaelbayr](https://github.com/michaelbayr) | [mb@artcodix.com](mailto:mb@artcodix.com) |
-| Klare, Jan      | [@jklare](https://github.com/jklare)           | [klare@osism.de](mailto:klare@osism.de)   |
-| Garloff, Kurt   | [@garloff](https://github.com/garloff)         | [scs@garloff.de](mailto:scs@garloff.de)   |
-|                 |                                                |                                           |
+| Bayr, Michael   | [@michaelbayr](https://github.com/michaelbayr) | [mb@artcodix.com](mailto:mb@artcodix.com)                   |
+| Klare, Jan      | [@jklare](https://github.com/jklare)           | [klare@osism.de](mailto:klare@osism.de)                     |
+| Garloff, Kurt   | [@garloff](https://github.com/garloff)         | [scs@garloff.de](mailto:scs@garloff.de)                     |
+|                 |                                                |                                                             |
