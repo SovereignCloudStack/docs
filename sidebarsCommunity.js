@@ -14,7 +14,8 @@ const sidebars = {
       },
       label: 'Governance',
       items: [
-        'governance/project-board',
+        'governance/project-board-2027',
+        'governance/project-board-2026',
         'governance/project-board-2025'
       ]
     },
