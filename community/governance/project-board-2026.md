@@ -9,14 +9,15 @@ For the term 2026 the project board consists of:
 
 Spokesperson: Kurt Garloff, @garloff
 
-| Name, Firstname             | Github Handle                                  | E-Mail                                                      | Remark                                    |
-| --------------------------- | ---------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------- |
-| Bayr, Michael               | [@michaelbayr](https://github.com/michaelbayr) | [mb@artcodix.com](mailto:mb@artcodix.com)                   | Elected by Community                      |
-| Garloff, Kurt               | [@garloff](https://github.com/garloff)         | [scs@garloff.de](mailto:scs@garloff.de)                     | Elected by Community                      |
-| Kemper, Janis               | [@janiskemper](https://github.com/janiskemper) | [janis.kemper@syself.com](mailto:janis.kemper@syself.com)   | Deputy Representative Forum SCS-Standards |
-| Klare, Jan                  | [@jklare](https://github.com/jklare)           | [klare@osism.de](mailto:klare@osism.de)                     | Elected by Community                      |
-| ~~Kronlage-Dammers, Felix~~ | ~~[@fkr](https://github.com/fkr)~~             | ~~[fkr@osb-alliance.com](mailto:fkr@osb-alliance.com)~~     | Represents Forum SCS-Standards            |
-| Schoone, Jan                | [@jschoone](https://github.com/jschoone)       | [jan.schoone@uhurutec.com](mailto:jan.schoone@uhurutec.com) | Elected by Community                      |
+| Name, Firstname             | Github Handle                                  | E-Mail                                                      | Remark                                             |
+| --------------------------- | ---------------------------------------------- | ----------------------------------------------------------- | -------------------------------------------------- |
+| Bayr, Michael               | [@michaelbayr](https://github.com/michaelbayr) | [mb@artcodix.com](mailto:mb@artcodix.com)                   | Elected by Community                               |
+| Garloff, Kurt               | [@garloff](https://github.com/garloff)         | [scs@garloff.de](mailto:scs@garloff.de)                     | Elected by Community                               |
+| Gerber, Daniel.             | [@gerbsen](https://github.com/gerbsen)         | [gerber@osb-alliance.com](mailto:gerber@osb-alliance.com)   | Represents Forum SCS-Standards (successor of @fkr) |
+| Kemper, Janis               | [@janiskemper](https://github.com/janiskemper) | [janis.kemper@syself.com](mailto:janis.kemper@syself.com)   | Deputy Representative Forum SCS-Standards          |
+| Klare, Jan                  | [@jklare](https://github.com/jklare)           | [klare@osism.de](mailto:klare@osism.de)                     | Elected by Community                               |
+| ~~Kronlage-Dammers, Felix~~ | ~~[@fkr](https://github.com/fkr)~~             | ~~[fkr@osb-alliance.com](mailto:fkr@osb-alliance.com)~~     | ~~Represents Forum SCS-Standards~~                 |
+| Schoone, Jan                | [@jschoone](https://github.com/jschoone)       | [jan.schoone@uhurutec.com](mailto:jan.schoone@uhurutec.com) | Elected by Community                               |
 
 ## Project Board Term 2026 Nominees
 
