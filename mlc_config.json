@@ -10,6 +10,12 @@
       "headers": {
         "Accept-Encoding": "zstd, br, gzip, deflate"
       }
+    },
+    {
+      "urls": ["https://lwn.net"],
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36"
+      }
     }
   ],
   "aliveStatusCodes": [200, 300]
